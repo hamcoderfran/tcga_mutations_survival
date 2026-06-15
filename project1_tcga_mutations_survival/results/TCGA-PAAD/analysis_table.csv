@@ -1,0 +1,169 @@
+case_id,submitter_id,vital_status,days_to_death,gender,race,ethnicity,age_at_diagnosis_days,days_to_last_follow_up,ajcc_pathologic_stage,primary_diagnosis,tumor_grade,event,time,age_years,stage_num,sex_male,mut_TTN
+620e0648-ec20-4a12-a6cb-5546fe829c77,TCGA-HZ-7918,Alive,,male,white,not hispanic or latino,26573.0,969.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,969.0,72.75290896646133,2.0,1,0
+cf825b86-7ec2-4e90-bcce-3b5637b90b70,TCGA-3A-A9IS,Alive,,male,white,not hispanic or latino,24621.0,998.0,Stage IB,"Neuroendocrine carcinoma, NOS",G1,0,998.0,67.40862422997947,1.0,1,0
+18960eb6-2d79-4d12-886a-4cd1e8fc1e21,TCGA-IB-AAUW,Dead,230.0,female,white,not hispanic or latino,23306.0,230.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,230.0,63.80835044490075,2.0,0,0
+a4569ce7-dde7-4660-a24c-409d294b2b8c,TCGA-2J-AABP,Alive,,female,white,Unknown,21484.0,463.0,Stage IIB,"Carcinoma, undifferentiated, NOS",G4,0,463.0,58.81998631074607,2.0,0,0
+7240d5da-b54e-436b-8069-f2c9f516b75e,TCGA-2L-AAQM,Alive,,male,white,Unknown,19315.0,1383.0,Stage IIB,"Neuroendocrine carcinoma, NOS",G1,0,1383.0,52.88158795345654,2.0,1,0
+13cf4e4c-8d5f-4854-a350-428fdf1ff340,TCGA-3A-A9IO,Alive,,male,white,not hispanic or latino,20451.0,1942.0,,"Neuroendocrine carcinoma, NOS",G1,0,1942.0,55.9917864476386,,1,0
+3a3a8fe1-e35c-45d0-aa0b-4fefa9ee9183,TCGA-US-A77J,Dead,568.0,female,white,not hispanic or latino,29904.0,568.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,568.0,81.87268993839835,2.0,0,0
+1c2341f3-558b-4555-90ff-c7a23ef85c0b,TCGA-3A-A9IV,Alive,,female,white,not hispanic or latino,21732.0,1103.0,Stage IB,"Neuroendocrine carcinoma, NOS",G1,0,1103.0,59.49897330595483,1.0,0,0
+5898434d-cfa3-4515-a0c0-810d7e515120,TCGA-3A-A9IR,Alive,,female,white,not hispanic or latino,23406.0,1542.0,Stage IB,"Neuroendocrine carcinoma, NOS",G1,0,1542.0,64.08213552361396,1.0,0,0
+65e5bf5f-f22a-4ec2-8839-aeda37212b98,TCGA-IB-7654,Dead,476.0,male,white,not hispanic or latino,29292.0,476.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,476.0,80.19712525667352,2.0,1,0
+6983fc34-9577-45e1-b246-40e18fab953f,TCGA-IB-AAUV,Alive,,male,white,not hispanic or latino,18059.0,404.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,404.0,49.44284736481862,2.0,1,0
+1422bc35-4597-4e76-aa75-8e79613e67d5,TCGA-FB-AAPP,Dead,485.0,male,white,not hispanic or latino,26239.0,485.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,485.0,71.8384668035592,2.0,1,0
+4c9e6085-41c3-4cfe-ad3d-5f94196a86e0,TCGA-F2-7273,Dead,592.0,male,black or african american,not hispanic or latino,20327.0,,,"Adenocarcinoma, NOS",,1,592.0,55.65229295003422,,1,0
+5f9a5aba-8db8-45cc-8784-c5058445bd6f,TCGA-HZ-8638,Dead,151.0,female,white,not hispanic or latino,30821.0,151.0,Stage IA,Mucinous adenocarcinoma,GX,1,151.0,84.3832991101985,1.0,0,0
+565ee830-5236-4414-aeaa-48ea7eb3b753,TCGA-HZ-7923,Alive,,male,white,not hispanic or latino,23760.0,314.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,314.0,65.05133470225873,2.0,1,0
+3e09fd70-6464-42f6-96a6-b51d7c298fc5,TCGA-H8-A6C1,Alive,,male,white,not hispanic or latino,19677.0,671.0,Stage IIA,"Adenocarcinoma, NOS",G2,0,671.0,53.87268993839836,2.0,1,0
+1521ac6d-31f7-4240-9d54-4f7600e78e16,TCGA-HZ-7289,Dead,661.0,male,white,not hispanic or latino,28402.0,,,"Adenocarcinoma, NOS",,1,661.0,77.76043805612593,,1,0
+c53d66d9-ad9a-417e-a441-df5bcf1ae13f,TCGA-RL-AAAS,Alive,,female,white,not hispanic or latino,22126.0,9.0,Stage IB,"Infiltrating duct carcinoma, NOS",G2,0,9.0,60.577686516084874,1.0,0,0
+dd5074b2-462d-4267-8b9b-5a4c54e5978c,TCGA-3A-A9IN,Alive,,female,white,not hispanic or latino,22799.0,2084.0,Stage IB,"Neuroendocrine carcinoma, NOS",G2,0,2084.0,62.42026009582478,1.0,0,0
+1fe937f7-b4e5-4cf6-be9b-215a012533c6,TCGA-HZ-7920,Dead,236.0,male,white,not hispanic or latino,26167.0,236.0,Stage IB,"Infiltrating duct carcinoma, NOS",G2,1,236.0,71.6413415468857,1.0,1,0
+e4babd46-005a-4af3-8041-131648d9c2c6,TCGA-F2-7276,Dead,216.0,male,white,not hispanic or latino,23713.0,216.0,Stage IIB,"Adenocarcinoma, NOS",G1,1,216.0,64.92265571526352,2.0,1,0
+c60a4c63-607b-4d59-8625-bc5d20207647,TCGA-F2-6880,Alive,,male,white,not reported,25809.0,295.0,Stage IIB,"Adenocarcinoma, NOS",G1,0,295.0,70.6611909650924,2.0,1,0
+d47e214d-efbc-436d-b928-303d1f5135c4,TCGA-FB-A7DR,Dead,353.0,male,asian,not hispanic or latino,17649.0,353.0,Stage IIA,Mucinous adenocarcinoma,G2,1,353.0,48.32032854209446,2.0,1,0
+0a3c8161-4186-4c95-8288-9928d6db0355,TCGA-IB-AAUP,Alive,,male,white,not hispanic or latino,24864.0,431.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,431.0,68.07392197125257,2.0,1,0
+459028fd-0cd8-4e6d-a668-71fd60bd0a37,TCGA-HZ-8637,Dead,517.0,female,white,hispanic or latino,27929.0,517.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,517.0,76.46543463381246,2.0,0,0
+05d2adb3-5c6d-4edc-ba4c-bdbf628f4eee,TCGA-IB-7888,Dead,1332.0,female,black or african american,not hispanic or latino,24117.0,1332.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,1332.0,66.02874743326488,2.0,0,0
+2ad10199-1381-42b7-b54f-da34c1b1d3c0,TCGA-FB-A78T,Dead,375.0,female,white,not hispanic or latino,26179.0,375.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,375.0,71.67419575633129,2.0,0,0
+2e0701e1-e16f-457f-b939-7b1128f4a58b,TCGA-HV-A7OL,Alive,,male,asian,not reported,25768.0,252.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,252.0,70.54893908281998,2.0,1,0
+a8c3e333-865d-4060-8ce4-453aa6f9f0e8,TCGA-2J-AABO,Alive,,male,white,Unknown,15869.0,440.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,440.0,43.44695414099932,2.0,1,0
+b8e0f4fb-c916-43b8-afd2-8077a7e3aebc,TCGA-HZ-A8P1,Alive,,male,white,not hispanic or latino,29631.0,7.0,Stage IB,"Infiltrating duct carcinoma, NOS",G1,0,7.0,81.12525667351129,1.0,1,0
+2048d0f9-ed9f-46df-bcd4-3dfd9137670f,TCGA-FB-AAPS,Alive,,female,white,not hispanic or latino,22981.0,228.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,228.0,62.91854893908282,2.0,0,1
+9a2db69e-d429-45d4-89ca-a2c4e0cfc116,TCGA-XD-AAUI,Dead,366.0,female,white,not hispanic or latino,18607.0,366.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,366.0,50.94318959616701,2.0,0,0
+638b1a6a-c222-414c-96bc-f259f0afb278,TCGA-IB-AAUN,Dead,144.0,female,white,not hispanic or latino,27128.0,144.0,Stage IB,"Infiltrating duct carcinoma, NOS",G2,1,144.0,74.27241615331964,1.0,0,0
+d14154a5-9c8a-4c55-8c2d-64f3cad7b7d5,TCGA-IB-7647,Dead,666.0,male,white,not hispanic or latino,15188.0,666.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,666.0,41.582477754962355,2.0,1,1
+953359da-e535-48e6-97dc-1b4ccad6a671,TCGA-FB-AAPY,Dead,1059.0,male,white,not hispanic or latino,26085.0,1059.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,1059.0,71.41683778234086,2.0,1,0
+5bfe94ed-88b9-44ce-8bbd-1285ab9678a4,TCGA-RB-A7B8,Dead,466.0,female,white,not hispanic or latino,30034.0,,,Adenocarcinoma with mixed subtypes,,1,466.0,82.22861054072553,,0,0
+b0cb81ad-3c20-4d56-ab7d-f64c0caee1ce,TCGA-FB-A545,Dead,732.0,female,white,not hispanic or latino,26635.0,732.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,732.0,72.92265571526352,2.0,0,0
+507a4e05-d5ab-4dbb-9b4f-76b1a21b79dd,TCGA-2J-AABR,Alive,,female,white,Unknown,22131.0,438.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G3,0,438.0,60.591375770020534,2.0,0,0
+869e61d6-fbbf-4ca2-be1a-57b82a03c7a1,TCGA-IB-AAUO,Dead,239.0,female,white,not hispanic or latino,23833.0,,,"Infiltrating duct carcinoma, NOS",,1,239.0,65.25119780971937,,0,0
+556baca9-03d6-48a3-9216-4fc441e99f90,TCGA-3A-A9I7,Alive,,male,black or african american,not hispanic or latino,16766.0,1323.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,1323.0,45.90280629705681,2.0,1,0
+31aca8a3-7107-4b9d-8b6a-c07caa2a9339,TCGA-IB-A5SS,Dead,460.0,female,white,not hispanic or latino,,,,"Basal cell carcinoma, NOS",,1,460.0,,,0,0
+d8aa891c-8050-471e-ad3e-32b9c5e9db03,TCGA-2L-AAQA,Dead,143.0,male,white,Unknown,28074.0,143.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,143.0,76.86242299794661,2.0,1,0
+ff03311b-d20d-49ee-8de4-d4487c3f2633,TCGA-FZ-5919,Dead,741.0,female,white,not hispanic or latino,21666.0,,,"Infiltrating duct carcinoma, NOS",,1,741.0,59.318275154004105,,0,1
+8475c44d-e091-4c65-b1b4-9a77ae3c0e1d,TCGA-FB-AAQ6,Dead,244.0,male,white,not hispanic or latino,31532.0,,,"Infiltrating duct carcinoma, NOS",,1,244.0,86.32991101984942,,1,0
+70c2c861-01de-47bc-abfd-b7d14d68e1a1,TCGA-HZ-8519,Alive,,male,white,not hispanic or latino,26947.0,454.0,Stage IA,"Adenocarcinoma, NOS",G3,0,454.0,73.77686516084873,1.0,1,0
+77e49007-3e44-4157-beae-8f7e94234c78,TCGA-IB-7885,Alive,,female,white,not hispanic or latino,28554.0,1257.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,1257.0,78.17659137577002,2.0,0,0
+6c0ea771-ea86-4db6-994a-2372b2b8f536,TCGA-IB-A5ST,Alive,,female,white,not hispanic or latino,23672.0,635.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,635.0,64.8104038329911,2.0,0,0
+712c2f78-c736-42ce-b689-a954c5290987,TCGA-IB-A7LX,Dead,250.0,male,white,not hispanic or latino,20898.0,250.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,250.0,57.215605749486656,2.0,1,0
+53c94a86-1b4d-4833-a169-d990c460b301,TCGA-US-A779,Dead,511.0,female,white,not hispanic or latino,20051.0,511.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G1,1,511.0,54.89664613278576,2.0,0,0
+8e7d5615-5142-4d53-a460-2cafade1f690,TCGA-2L-AAQE,Dead,684.0,male,white,Unknown,20618.0,684.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,684.0,56.44900752908966,2.0,1,0
+c24c54ea-4095-460d-bb53-e3629a56cd62,TCGA-2J-AABK,Alive,,male,white,Unknown,26188.0,484.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,484.0,71.69883641341546,2.0,1,0
+735dd13d-33a5-4fac-bc55-3f37e9b16e57,TCGA-FZ-5926,Dead,541.0,female,white,not hispanic or latino,26881.0,541.0,Stage III,"Infiltrating duct carcinoma, NOS",G2,1,541.0,73.59616700889802,3.0,0,1
+c26002e7-abf1-42b9-bf36-0e97249d872f,TCGA-PZ-A5RE,Dead,470.0,female,white,not hispanic or latino,16255.0,470.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,470.0,44.50376454483231,2.0,0,0
+cfda26b9-d417-425c-9a72-fa76ca4b296c,TCGA-IB-AAUM,Alive,,male,white,not hispanic or latino,28013.0,8.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,8.0,76.69541409993155,2.0,1,0
+6a0a280d-4a30-4071-afe7-de6b82a6e34c,TCGA-IB-A7M4,Alive,,male,white,not hispanic or latino,29792.0,483.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,483.0,81.56605065023956,2.0,1,0
+45e48080-0b27-45f4-8149-1ae7e36c6933,TCGA-IB-A6UG,Dead,41.0,male,white,not hispanic or latino,23751.0,41.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,41.0,65.02669404517454,2.0,1,0
+cd9dc5c5-1161-43ea-a617-1356a3b23e16,TCGA-3A-A9IU,Dead,458.0,male,white,not hispanic or latino,24369.0,,,"Infiltrating duct carcinoma, NOS",,1,458.0,66.71868583162218,,1,0
+16b38977-aea1-4c75-89ec-4fb551f652dd,TCGA-HV-AA8X,Dead,532.0,female,asian,not reported,27662.0,532.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,532.0,75.73442847364818,2.0,0,1
+e3a19e63-bae5-498b-9687-41194aa5728d,TCGA-2J-AABA,Dead,607.0,male,white,Unknown,20133.0,607.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,607.0,55.121149897330596,2.0,1,1
+232073a1-2bf3-4539-a396-bde7836f9aeb,TCGA-2J-AABV,Dead,652.0,male,white,Unknown,27699.0,,,"Infiltrating duct carcinoma, NOS",,1,652.0,75.83572895277207,,1,0
+d4f66f06-9289-45c1-b9eb-aaef991a4bb6,TCGA-HV-A5A3,Dead,128.0,male,asian,not reported,18475.0,128.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,128.0,50.58179329226557,2.0,1,0
+f73dfd7f-e054-46ff-9485-e8d05afe2da6,TCGA-IB-7886,Dead,123.0,male,white,not hispanic or latino,29319.0,123.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,123.0,80.27104722792608,2.0,1,1
+3264459c-adeb-486e-ab8f-274574441593,TCGA-HV-A5A4,Alive,,female,asian,not reported,26311.0,232.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,232.0,72.03559206023272,2.0,0,1
+afe89625-b355-454d-8c0b-b4161edd69f8,TCGA-IB-AAUQ,Dead,183.0,male,white,not hispanic or latino,18422.0,,,"Infiltrating duct carcinoma, NOS",,1,183.0,50.43668720054757,,1,0
+2faea98a-edf7-4e92-bfb7-f91a36259872,TCGA-HZ-7919,Dead,593.0,female,white,not hispanic or latino,19064.0,593.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,593.0,52.19438740588638,2.0,0,0
+345a375c-15cc-453a-8054-e68a35178082,TCGA-FZ-5921,Dead,155.0,female,Unknown,Unknown,31074.0,155.0,Stage IIB,"Infiltrating duct carcinoma, NOS",GX,1,155.0,85.07597535934292,2.0,0,0
+c70621cc-c8e1-441d-93ec-bd6922cc7f61,TCGA-S4-A8RM,Alive,,male,white,not hispanic or latino,24589.0,737.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,737.0,67.32101300479124,2.0,1,0
+3559f697-8fec-4f36-962c-632272fe9c9c,TCGA-IB-7651,Dead,603.0,female,white,not hispanic or latino,23580.0,603.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,603.0,64.55852156057495,2.0,0,1
+a53c919a-4e08-46f1-af3f-30b16b597c33,TCGA-IB-AAUU,Alive,,male,white,not hispanic or latino,13127.0,245.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,245.0,35.93976728268309,2.0,1,1
+58c1c391-5ea3-4432-bb1e-e7e1974954bc,TCGA-2J-AABE,Alive,,male,white,Unknown,26943.0,676.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,676.0,73.7659137577002,2.0,1,0
+3cbf56e6-dccc-40fe-b06e-2621a2121e9d,TCGA-3A-A9IB,Dead,224.0,female,white,not hispanic or latino,25312.0,224.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,224.0,69.30047912388775,2.0,0,0
+74aa6675-28b7-46dc-9015-f07a07c7b018,TCGA-US-A77G,Dead,12.0,male,white,not hispanic or latino,23443.0,12.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,12.0,64.18343600273785,2.0,1,0
+517e0f20-56cc-470e-8c5f-543efa10cfb5,TCGA-3A-A9IZ,Dead,308.0,male,white,hispanic or latino,17294.0,308.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,308.0,47.34839151266256,2.0,1,0
+597a5a56-244b-4218-a55d-5d08217ea28c,TCGA-XD-AAUL,Alive,,male,white,not hispanic or latino,20607.0,498.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,498.0,56.41889117043121,2.0,1,0
+01775b06-5836-469c-8537-120cb8cc94e9,TCGA-IB-7897,Dead,486.0,female,white,not hispanic or latino,19718.0,486.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,486.0,53.98494182067078,2.0,0,0
+02dbd5fa-e31f-4486-8df8-5b851f2e92bd,TCGA-HZ-8315,Dead,299.0,female,white,not hispanic or latino,19839.0,299.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,299.0,54.31622176591376,2.0,0,0
+02ef2e1a-5afe-4c00-a3ea-7f4a153f1da4,TCGA-HZ-8636,Dead,545.0,female,white,not hispanic or latino,21501.0,545.0,Stage IV,"Infiltrating duct carcinoma, NOS",G3,1,545.0,58.86652977412731,4.0,0,0
+0944ce65-a89a-4916-b90a-f674b334281e,TCGA-IB-7893,Dead,117.0,male,white,not hispanic or latino,23703.0,117.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G3,1,117.0,64.8952772073922,2.0,1,0
+09fd6d9e-c715-4d57-88f9-238dd74c79a7,TCGA-US-A774,Dead,695.0,female,white,not hispanic or latino,27957.0,695.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,695.0,76.54209445585215,2.0,0,0
+0b4b50c7-aa0b-4a64-807b-d3cb47eeeb6f,TCGA-2J-AABU,Dead,277.0,male,white,Unknown,20795.0,,,"Infiltrating duct carcinoma, NOS",,1,277.0,56.93360711841205,,1,0
+0fa89fbc-307a-48d5-adce-192556755c22,TCGA-HV-AA8V,Alive,,male,asian,not reported,18357.0,920.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,920.0,50.25872689938399,2.0,1,0
+10f0d40b-c4c4-441b-9cfb-bef5e44aa91e,TCGA-3A-A9IH,Alive,,female,white,not hispanic or latino,24174.0,1021.0,Stage IA,"Infiltrating duct carcinoma, NOS",G2,0,1021.0,66.18480492813141,1.0,0,0
+17142718-742e-464a-8e0f-a6b9ac8fad75,TCGA-HZ-A49H,Alive,,female,white,not hispanic or latino,24891.0,491.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,491.0,68.14784394250513,2.0,0,0
+1756244e-13bc-4ed7-8b91-005608803d91,TCGA-Q3-A5QY,Alive,,male,white,not hispanic or latino,21277.0,416.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,416.0,58.25325119780972,2.0,1,0
+1782bf45-7350-4053-8dd1-45faf4ed8dd9,TCGA-IB-7644,Dead,394.0,female,white,not hispanic or latino,24043.0,394.0,Stage IV,"Infiltrating duct carcinoma, NOS",G2,1,394.0,65.82614647501711,4.0,0,0
+178e68c0-4cb8-4042-a942-5a159ec1e12b,TCGA-IB-7652,Alive,,female,asian,not hispanic or latino,18129.0,1116.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,1116.0,49.634496919917865,2.0,0,0
+1b31d2e9-5b05-4fff-88d6-3a95bf8f8d43,TCGA-HV-A5A5,Alive,,female,asian,not reported,22329.0,289.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,289.0,61.13347022587269,2.0,0,0
+1db061c0-9b28-4bf9-8ad2-0383c69b6800,TCGA-2L-AAQL,Dead,292.0,male,white,Unknown,30092.0,292.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,292.0,82.3874058863792,2.0,1,0
+1f5494c4-e26c-4512-96d9-30412b5b32ce,TCGA-F2-A7TX,Dead,95.0,male,white,not reported,28239.0,95.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,95.0,77.3141683778234,2.0,1,0
+20094e3e-cee3-41dd-8553-1fc393117786,TCGA-F2-A44G,Dead,233.0,female,white,not hispanic or latino,,,,"Infiltrating duct carcinoma, NOS",,1,233.0,,,0,0
+21814c02-6aa5-4b98-8fd8-41ca0b04ccd2,TCGA-HZ-8005,Dead,120.0,male,white,not hispanic or latino,29674.0,120.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,120.0,81.24298425735797,2.0,1,0
+23908554-b98e-4ff8-98e7-dee3e2c5feaf,TCGA-Q3-AA2A,Alive,,female,white,not hispanic or latino,23685.0,95.0,Stage IB,"Infiltrating duct carcinoma, NOS",G1,0,95.0,64.84599589322382,1.0,0,0
+27286a38-1035-4a22-9ebc-874df8c49026,TCGA-HZ-A49I,Dead,308.0,male,white,not hispanic or latino,28454.0,308.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,308.0,77.90280629705681,2.0,1,1
+2be42cc2-9b97-4821-afc2-d1e42eb3932d,TCGA-HZ-7926,Dead,518.0,male,black or african american,not hispanic or latino,21364.0,,,"Infiltrating duct carcinoma, NOS",,1,518.0,58.49144421629021,,1,0
+2c636fb4-c341-4c55-b920-27bc2d40c815,TCGA-HZ-A4BH,Alive,,male,white,not reported,27637.0,194.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,194.0,75.66598220396989,2.0,1,0
+2e8f90f4-aed3-43b0-985c-dfdc2581f24f,TCGA-2J-AAB8,Alive,,male,white,Unknown,26028.0,80.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,80.0,71.26078028747433,2.0,1,0
+31c23e65-1f18-4f59-8a54-31febedef8a2,TCGA-LB-A9Q5,Dead,313.0,female,white,not hispanic or latino,23508.0,,,"Infiltrating duct carcinoma, NOS",,1,313.0,64.36139630390144,,0,0
+31e66b80-c684-4ee8-82ae-36d00f36bc88,TCGA-IB-7889,Dead,481.0,female,white,not hispanic or latino,31393.0,481.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G1,1,481.0,85.94934976043805,2.0,0,0
+33833131-1482-42d5-9cf5-01cade540234,TCGA-2J-AAB4,Alive,,male,white,Unknown,17794.0,729.0,Stage IIB,"Adenocarcinoma, NOS",G2,0,729.0,48.71731690622861,2.0,1,0
+396ff766-a383-4f42-bce3-f2f32b7f1151,TCGA-3A-A9I9,Dead,634.0,male,white,not hispanic or latino,24731.0,634.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,634.0,67.709787816564,2.0,1,1
+40d9b9f7-42b7-4cfd-af95-660777ad0529,TCGA-FB-A5VM,Dead,498.0,male,white,not hispanic or latino,27539.0,,,"Infiltrating duct carcinoma, NOS",,1,498.0,75.39767282683094,,1,0
+40fc7973-91c4-4fa8-a105-7fc3d6f3817c,TCGA-HV-A5A6,Dead,2036.0,female,asian,not reported,25536.0,,,"Infiltrating duct carcinoma, NOS",,1,2036.0,69.91375770020534,,0,0
+4387a2c2-8007-4735-a48c-34a2b476018e,TCGA-IB-8126,Alive,,female,white,not hispanic or latino,29213.0,462.0,Stage III,"Infiltrating duct carcinoma, NOS",G1,0,462.0,79.98083504449008,3.0,0,0
+47cb93bc-8f6b-4b2a-804c-bb4fc78df9e1,TCGA-HZ-A49G,Alive,,female,white,not hispanic or latino,21491.0,660.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,660.0,58.83915126625599,2.0,0,0
+4a60e87e-6bc1-4ae0-9ccb-4cdc3e99c608,TCGA-OE-A75W,Dead,267.0,male,white,not hispanic or latino,27684.0,267.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G1,1,267.0,75.79466119096509,2.0,1,1
+4b37b026-1d41-4bad-8996-7cb1f0e569af,TCGA-HZ-8002,Dead,366.0,male,white,not hispanic or latino,22433.0,366.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,366.0,61.41820670773443,2.0,1,0
+4f87e061-e773-48f2-84ba-32401396500e,TCGA-IB-A5SQ,Dead,219.0,female,white,not hispanic or latino,20760.0,219.0,Stage IB,"Infiltrating duct carcinoma, NOS",G2,1,219.0,56.837782340862425,1.0,0,0
+4fcfd545-c259-4a9d-a393-7135795048a8,TCGA-FZ-5924,Dead,480.0,male,white,not hispanic or latino,30571.0,480.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G3,1,480.0,83.69883641341546,2.0,1,0
+503d7e36-df78-428d-9971-09ff707645c2,TCGA-YH-A8SY,Alive,,female,white,not hispanic or latino,26859.0,388.0,,"Adenocarcinoma, NOS",G2,0,388.0,73.53593429158111,,0,0
+514d12b0-6f60-406e-bde9-a090e918ebff,TCGA-HZ-A4BK,Alive,,male,white,not hispanic or latino,26503.0,657.0,Stage IIB,"Adenocarcinoma, NOS",G3,0,657.0,72.56125941136209,2.0,1,0
+5494af7d-403a-423b-b7ff-e6db9c117e93,TCGA-IB-7890,Dead,598.0,male,Unknown,Unknown,26747.0,598.0,Stage IB,"Infiltrating duct carcinoma, NOS",G3,1,598.0,73.22929500342231,1.0,1,0
+55cee1dd-15a0-4717-a281-63e08e2cfdf9,TCGA-HZ-8001,Alive,,male,white,not hispanic or latino,25227.0,706.0,Stage III,"Infiltrating duct carcinoma, NOS",G2,0,706.0,69.06776180698152,3.0,1,1
+56a1b8ff-a71c-4e5f-9c3c-d8162ff896aa,TCGA-IB-A6UF,Alive,,male,white,not hispanic or latino,23152.0,666.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,666.0,63.38672142368241,2.0,1,0
+570f9947-1ce5-49c7-9619-49439df6c7a9,TCGA-F2-A44H,Alive,,male,white,not hispanic or latino,24007.0,586.0,Stage IIA,"Adenocarcinoma, NOS",G2,0,586.0,65.72758384668036,2.0,1,0
+5750a6ed-2516-456d-97d4-2f6486845ed8,TCGA-LB-A7SX,Dead,393.0,female,black or african american,not hispanic or latino,27295.0,393.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,393.0,74.7296372347707,2.0,0,0
+5965cd7b-f384-4473-826a-8381e362d10e,TCGA-FB-AAQ3,Dead,31.0,female,white,not hispanic or latino,23953.0,31.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,31.0,65.57973990417523,2.0,0,0
+5971a597-1e16-4f6d-8d7b-0e69c6bdcead,TCGA-HZ-A77P,Alive,,male,white,not hispanic or latino,28403.0,330.0,Stage IIB,"Adenocarcinoma, NOS",G1,0,330.0,77.76317590691308,2.0,1,0
+5aa57fff-4515-4076-8798-55015bb4f156,TCGA-US-A77E,Dead,430.0,male,white,not hispanic or latino,26745.0,430.0,Stage IIB,"Adenocarcinoma, NOS",G3,1,430.0,73.22381930184805,2.0,1,1
+5c51fbfe-153c-4cd2-97bd-e444daa0b20f,TCGA-HV-A7OP,Alive,,male,asian,not reported,26322.0,978.0,Stage IIB,"Infiltrating duct carcinoma, NOS",GX,0,978.0,72.06570841889118,2.0,1,1
+5dbb4642-6636-4d67-9e73-25c7312aec44,TCGA-F2-A8YN,Alive,,male,white,not hispanic or latino,28047.0,517.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,517.0,76.78850102669405,2.0,1,0
+67e9abc1-4b6f-4054-bdc4-29906c55c682,TCGA-3A-A9IC,Dead,738.0,female,white,not hispanic or latino,22400.0,738.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,738.0,61.327857631759066,2.0,0,0
+68c0bc1b-3195-4ed6-8345-3ca53dfc54fc,TCGA-HZ-8003,Dead,596.0,female,white,not hispanic or latino,,,,"Infiltrating duct carcinoma, NOS",,1,596.0,,,0,0
+69285f58-9b70-4262-acc0-8cf3d47540c3,TCGA-IB-AAUS,Alive,,female,white,not hispanic or latino,30684.0,225.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,225.0,84.0082135523614,2.0,0,0
+6a4e10b6-e6c4-4210-ae4d-0d8e8d0cb3ec,TCGA-Z5-AAPL,Alive,,female,white,not hispanic or latino,27152.0,467.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G1,0,467.0,74.33812457221082,2.0,0,0
+6f777943-ffcb-46d9-872d-514559dee00d,TCGA-HZ-7922,Alive,,female,white,not hispanic or latino,22413.0,4.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G1,0,4.0,61.36344969199179,2.0,0,1
+70797499-16e6-48cc-8ae4-1e692713dad3,TCGA-2J-AAB6,Dead,293.0,male,white,Unknown,27600.0,293.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,293.0,75.564681724846,2.0,1,1
+712335e1-f1e9-44b9-957c-497ea5e8fa2f,TCGA-FB-AAPU,Dead,381.0,female,asian,not hispanic or latino,15129.0,381.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,381.0,41.42094455852156,2.0,0,0
+75119d1a-93e5-4ae7-9d60-69ee929a0772,TCGA-2J-AAB1,Dead,66.0,male,white,Unknown,23962.0,66.0,Stage IIB,Mucinous adenocarcinoma,G3,1,66.0,65.60438056125942,2.0,1,0
+758b70f6-8064-4f43-aabe-e5f968fe2955,TCGA-H6-A45N,Dead,397.0,female,white,not hispanic or latino,32111.0,,,"Malignant melanoma, NOS",,1,397.0,87.9151266255989,,0,0
+7a1d9862-910b-403e-9eab-697dc65618c7,TCGA-IB-7645,Dead,1502.0,female,Unknown,Unknown,17336.0,,,"Infiltrating duct carcinoma, NOS",,1,1502.0,47.46338124572211,,0,0
+7ebe2e36-4692-4b4b-a75d-b75972f664c2,TCGA-FZ-5923,Dead,619.0,male,white,not hispanic or latino,26216.0,619.0,Stage IV,"Infiltrating duct carcinoma, NOS",G1,1,619.0,71.77549623545517,4.0,1,1
+81b6b844-d760-4146-9b01-1c4b2596eb77,TCGA-FB-AAQ0,Dead,473.0,male,white,not hispanic or latino,24988.0,473.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G3,1,473.0,68.41341546885695,2.0,1,1
+886d6116-d496-444f-9b7b-7449dad31055,TCGA-2J-AABF,Dead,691.0,male,white,Unknown,26936.0,691.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,691.0,73.74674880219028,2.0,1,1
+88eaebfc-d740-4cdc-88f5-df5e08633e2d,TCGA-IB-AAUT,Alive,,male,white,not hispanic or latino,23801.0,287.0,Stage IIB,Mucinous adenocarcinoma,G1,0,287.0,65.16358658453115,2.0,1,0
+8d9bd437-8b4b-4da5-87ba-6b5790f05022,TCGA-F2-6879,Dead,334.0,male,white,not reported,21167.0,,,"Adenocarcinoma, NOS",,1,334.0,57.95208761122519,,1,0
+959e1f13-360e-4e12-add5-bf9a376990d2,TCGA-3A-A9IX,Alive,,male,white,not hispanic or latino,14729.0,1037.0,Stage IA,"Infiltrating duct carcinoma, NOS",G2,0,1037.0,40.32580424366872,1.0,1,0
+98f1d0eb-0977-4f53-a3b1-e6875a34c27b,TCGA-HZ-A8P0,Alive,,male,white,not hispanic or latino,27850.0,0.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G1,0,0.0,76.24914442162903,2.0,1,0
+9d449aa3-b740-4d5a-9aea-880b6f84cff4,TCGA-3E-AAAZ,Dead,2182.0,male,white,hispanic or latino,26234.0,2182.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,1,2182.0,71.82477754962355,2.0,1,0
+9d5c5303-550f-454f-8fd4-8abcdd311215,TCGA-RB-AA9M,Alive,,male,white,not hispanic or latino,15807.0,286.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,286.0,43.27720739219713,2.0,1,1
+a1d138fb-bba7-44d2-8071-c14470634e4c,TCGA-FZ-5920,Dead,61.0,male,black or african american,not hispanic or latino,19287.0,61.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,61.0,52.80492813141684,2.0,1,1
+a28cfa95-5a99-40f3-928e-7a94f2492d2c,TCGA-2L-AAQI,Dead,103.0,male,white,Unknown,24381.0,103.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,103.0,66.75154004106776,2.0,1,0
+a2fd0991-cfbd-4162-8ca9-2ed096f54a14,TCGA-HZ-8317,Dead,378.0,female,white,not hispanic or latino,25214.0,378.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G1,1,378.0,69.0321697467488,2.0,0,0
+a46fb053-616d-41e4-b38b-2bccf17125c0,TCGA-FZ-5922,Dead,1101.0,male,white,not hispanic or latino,30373.0,,,"Infiltrating duct carcinoma, NOS",,1,1101.0,83.15674195756331,,1,0
+a5748656-5330-417a-8938-01f69ddb3576,TCGA-2J-AAB9,Dead,627.0,female,white,Unknown,26441.0,,,"Infiltrating duct carcinoma, NOS",,1,627.0,72.39151266255989,,0,0
+ab449860-46e5-485e-abd5-31c5abef2c58,TCGA-L1-A7W4,Dead,278.0,female,white,not hispanic or latino,17950.0,,,"Infiltrating duct carcinoma, NOS",,1,278.0,49.14442162902122,,0,0
+b2e29f26-29af-4e2d-84dd-c513b4a07c70,TCGA-FB-A4P5,Dead,179.0,female,white,not hispanic or latino,25412.0,179.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,179.0,69.57426420260096,2.0,0,0
+b84b58c7-95b8-4162-8e61-414f8fe422c6,TCGA-YB-A89D,Alive,,male,white,not hispanic or latino,21792.0,350.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,0,350.0,59.663244353182755,2.0,1,0
+bd73ed94-5f4f-4eb3-8b9b-391af4422d0e,TCGA-IB-A5SP,Alive,,male,white,Unknown,28317.0,482.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G2,0,482.0,77.52772073921972,2.0,1,1
+c53328b4-0930-4e6a-a648-283b5565295e,TCGA-2J-AABH,Alive,,male,white,Unknown,22425.0,1287.0,Stage IIA,"Adenocarcinoma, NOS",G3,0,1287.0,61.39630390143737,2.0,1,0
+c6388925-c0a1-4610-a6b9-d9d9500d88c6,TCGA-IB-A5SO,Dead,365.0,male,white,Unknown,26405.0,,,"Infiltrating duct carcinoma, NOS",,1,365.0,72.29295003422314,,1,0
+ca2da39a-263c-4238-9826-de7d52e63d0f,TCGA-IB-7891,Dead,913.0,female,white,not hispanic or latino,18202.0,913.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G1,1,913.0,49.83436002737851,2.0,0,0
+ce2bfd9e-6382-47bb-9fd1-b77afe57e948,TCGA-S4-A8RP,Dead,702.0,female,white,not reported,28353.0,702.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,1,702.0,77.62628336755647,2.0,0,0
+ce9e0431-19a1-4ea9-85b0-44a9e9792e03,TCGA-HZ-A77Q,Alive,,female,white,not hispanic or latino,20366.0,33.0,Stage IIB,"Adenocarcinoma, NOS",G2,0,33.0,55.75906913073238,2.0,0,0
+d1e0f479-77dd-42cd-89cb-c1eeac60c10a,TCGA-IB-7646,Dead,145.0,male,white,not hispanic or latino,22280.0,,,"Infiltrating duct carcinoma, NOS",,1,145.0,60.99931553730322,,1,0
+d211e0c1-7968-4343-8aae-27fab0039367,TCGA-US-A776,Alive,,male,white,not hispanic or latino,22283.0,1216.0,Stage IIA,Mucinous adenocarcinoma,G2,0,1216.0,61.007529089664615,2.0,1,1
+dd7bcdd8-1660-4dab-9860-9d136c4cee77,TCGA-XN-A8T3,Alive,,male,white,hispanic or latino,24810.0,951.0,Stage IB,"Infiltrating duct carcinoma, NOS",G2,0,951.0,67.92607802874743,1.0,1,1
+ec9ac713-08e9-4559-b606-5f58d2c4df50,TCGA-IB-7649,Dead,467.0,female,Unknown,Unknown,26773.0,467.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,467.0,73.30047912388775,2.0,0,0
+ecdd0e44-0add-4a08-a3f8-ab2f51df7afd,TCGA-FB-AAPQ,Dead,1130.0,male,white,not hispanic or latino,24078.0,1130.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,1130.0,65.92197125256673,2.0,1,0
+ede2e8a7-465e-4725-880d-519899aba0c0,TCGA-YY-A8LH,Alive,,female,white,not hispanic or latino,22376.0,2016.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,2016.0,61.2621492128679,2.0,0,1
+f2313562-c894-486d-a9b6-ed362e12a32a,TCGA-FB-AAPZ,Alive,,male,white,not hispanic or latino,19847.0,716.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G3,0,716.0,54.338124572210816,2.0,1,0
+f5558dc7-5bef-426f-a6bf-b704fd5dbda0,TCGA-FB-AAQ2,Dead,153.0,female,white,not hispanic or latino,29677.0,,,"Infiltrating duct carcinoma, NOS",,1,153.0,81.25119780971937,,0,0
+f852de27-b600-44a4-ab30-d74108dfc2e9,TCGA-LB-A8F3,Alive,,female,black or african american,not hispanic or latino,23624.0,379.0,Stage IIA,"Infiltrating duct carcinoma, NOS",G1,0,379.0,64.67898699520876,2.0,0,0
+f89d429f-4747-468b-b894-89583bd8ab02,TCGA-XD-AAUG,Alive,,female,white,not hispanic or latino,24291.0,420.0,Stage IV,"Infiltrating duct carcinoma, NOS",G2,0,420.0,66.50513347022587,4.0,0,0
+f91eb33d-76f0-418c-9962-11a5b31ca1dc,TCGA-HZ-7925,Dead,614.0,male,white,not hispanic or latino,24514.0,,,"Infiltrating duct carcinoma, NOS",,1,614.0,67.11567419575633,,1,1
+f96ab3fe-bb11-4585-a35e-52d400e55ab7,TCGA-2L-AAQJ,Dead,394.0,female,white,Unknown,18103.0,394.0,Stage III,"Infiltrating duct carcinoma, NOS",G2,1,394.0,49.56331279945243,3.0,0,0
+fe01a390-f45e-4352-a253-af8ef7ee9628,TCGA-HZ-A77O,Dead,160.0,female,white,not hispanic or latino,28532.0,,,"Infiltrating duct carcinoma, NOS",,1,160.0,78.11635865845311,,0,0
+fe699c36-82ef-45dd-b636-8c18a9ef6c76,TCGA-IB-7887,Dead,110.0,female,white,not hispanic or latino,22990.0,110.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,110.0,62.94318959616701,2.0,0,0
+ff8dac97-42ff-4f48-81c4-50315ad8de58,TCGA-FB-AAQ1,Dead,123.0,male,white,not hispanic or latino,18172.0,123.0,Stage IIB,"Infiltrating duct carcinoma, NOS",G2,1,123.0,49.752224503764545,2.0,1,0

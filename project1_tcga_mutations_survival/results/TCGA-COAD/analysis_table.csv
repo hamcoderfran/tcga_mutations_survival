@@ -1,0 +1,414 @@
+case_id,submitter_id,vital_status,days_to_death,gender,race,ethnicity,age_at_diagnosis_days,days_to_last_follow_up,ajcc_pathologic_stage,primary_diagnosis,tumor_grade,event,time,age_years,stage_num,sex_male,mut_TTN
+39b6ae01-c97b-4234-8a28-208fdf170432,TCGA-A6-6649,Alive,,male,white,not hispanic or latino,24237.0,735.0,Stage IIIB,"Adenocarcinoma, NOS",,0,735.0,66.35728952772074,3.0,1,1
+c113808a-773f-4179-82d6-9083518404b5,TCGA-AD-6548,Alive,,female,white,not hispanic or latino,29758.0,650.0,Stage I,"Adenocarcinoma, NOS",,0,650.0,81.47296372347706,1.0,0,1
+03efbc94-a43d-4db0-9377-e397348430a6,TCGA-AA-3524,Alive,,male,not reported,not reported,31197.0,1096.0,Stage II,"Adenocarcinoma, NOS",,0,1096.0,85.41273100616016,2.0,1,0
+28033279-cc74-4775-afdf-2497f6ddb55c,TCGA-AA-3506,Alive,,male,not reported,not reported,28275.0,1765.0,Stage I,"Adenocarcinoma, NOS",,0,1765.0,77.41273100616016,1.0,1,0
+99c532b0-6b42-4925-a344-fc7262c415ee,TCGA-DM-A285,Dead,179.0,female,white,not hispanic or latino,26021.0,179.0,Stage IV,Mucinous adenocarcinoma,,1,179.0,71.24161533196441,4.0,0,1
+14efca0c-882d-4fba-b15c-64af6e213b80,TCGA-AA-3976,Alive,,male,not reported,not reported,25599.0,791.0,Stage IIIA,"Adenocarcinoma, NOS",,0,791.0,70.08624229979466,3.0,1,0
+5e7074a6-5011-4dc5-950c-41365dbc6d09,TCGA-AD-6964,Dead,331.0,male,white,not hispanic or latino,21782.0,,,"Adenocarcinoma, NOS",,1,331.0,59.63586584531143,,1,1
+7ad0617e-bc4a-4869-8419-744f04d9b7a3,TCGA-AZ-6601,Dead,3042.0,male,white,not hispanic or latino,,,,Not Reported,,1,3042.0,,,1,1
+639e1050-088a-48fe-a0ef-4a01a3468cac,TCGA-AA-3496,Alive,,female,not reported,not reported,30438.0,31.0,Stage II,"Adenocarcinoma, NOS",,0,31.0,83.33470225872689,2.0,0,1
+95d4f0c4-5997-4ffb-b876-0ddfeee972bb,TCGA-A6-4105,Dead,442.0,male,white,not hispanic or latino,29461.0,,,Not Reported,,1,442.0,80.65982203969884,,1,1
+cc53bf9e-5e27-4305-a08b-552120c10aa5,TCGA-AA-3950,Alive,,female,not reported,not reported,29130.0,730.0,Stage IIA,Mucinous adenocarcinoma,,0,730.0,79.75359342915812,2.0,0,1
+57a2044d-20cc-4d02-b268-ce570a0fabe3,TCGA-AA-3713,Alive,,male,not reported,not reported,24927.0,579.0,Stage IV,"Adenocarcinoma, NOS",,0,579.0,68.24640657084188,4.0,1,1
+d7ba64d7-b4e5-488d-9f28-bcb7bf3c0f35,TCGA-AA-3522,Alive,,male,not reported,not reported,24653.0,1127.0,Stage IIA,"Adenocarcinoma, NOS",,0,1127.0,67.49623545516769,2.0,1,0
+dde411b2-5d2b-4638-8149-89bc1eb3c7ad,TCGA-AA-3697,Alive,,male,not reported,not reported,28367.0,2587.0,Stage II,"Adenocarcinoma, NOS",,0,2587.0,77.66461327857631,2.0,1,0
+315ef7f6-ca21-4d87-8f19-40bd455885ec,TCGA-AY-4071,Dead,29.0,female,white,not hispanic or latino,23320.0,29.0,Stage I,"Adenocarcinoma, NOS",,1,29.0,63.846680355920604,1.0,0,1
+cc1d6ad3-b60d-482e-8fa4-0af26823007d,TCGA-CM-5863,Alive,,female,white,not hispanic or latino,22127.0,457.0,Stage IIIB,Mucinous adenocarcinoma,,0,457.0,60.580424366872,3.0,0,0
+d7ebd11a-1339-4b28-be90-a788d2cfa706,TCGA-AA-3811,Dead,306.0,female,not reported,not reported,30893.0,306.0,Stage III,Adenocarcinoma with neuroendocrine differentiation,,1,306.0,84.58042436687201,3.0,0,1
+c777a777-373a-4773-9566-6c373261f00a,TCGA-CM-4750,Alive,,female,white,not hispanic or latino,12478.0,244.0,Stage IIIA,"Adenocarcinoma, NOS",,0,244.0,34.16290212183436,3.0,0,1
+ba49b428-246d-46d2-b549-39a5fc8f7003,TCGA-AA-3554,Alive,,female,not reported,not reported,22799.0,546.0,Stage IIA,"Adenocarcinoma, NOS",,0,546.0,62.42026009582478,2.0,0,0
+41658cf8-0de1-4a97-bb60-0f0107c84e00,TCGA-AA-3675,Alive,,male,not reported,not reported,30801.0,1431.0,Stage II,"Adenocarcinoma, NOS",,0,1431.0,84.32854209445586,2.0,1,0
+568dbda7-88b5-4330-881f-dc5d6c7ce4ae,TCGA-G4-6307,Alive,,female,white,not hispanic or latino,13648.0,1674.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1674.0,37.36618754277892,3.0,0,1
+01ad5016-f691-4bca-82a0-910429d8d25b,TCGA-AA-3561,Alive,,male,not reported,not reported,26420.0,424.0,Stage IIA,"Adenocarcinoma, NOS",,0,424.0,72.33401779603011,2.0,1,0
+0dacc5ce-498f-4c60-9f78-7a013ffaa9ce,TCGA-D5-5538,Dead,1661.0,female,white,not hispanic or latino,22981.0,,,Not Reported,,1,1661.0,62.91854893908282,,0,1
+563d67a1-f1ba-4722-aa2d-9b35b1689468,TCGA-CA-5255,Alive,,male,asian,not hispanic or latino,16743.0,376.0,Stage IIA,"Adenocarcinoma, NOS",,0,376.0,45.83983572895277,2.0,1,0
+44c2854e-3f8c-48e1-b4d5-1b5778d4fce4,TCGA-AA-3858,Alive,,male,not reported,not reported,24806.0,945.0,Stage I,"Adenocarcinoma, NOS",,0,945.0,67.9151266255989,1.0,1,1
+89a6384e-1cea-440b-9f17-d57cb0805174,TCGA-A6-2676,Dead,1305.0,female,white,not hispanic or latino,27403.0,1305.0,Stage IIB,"Adenocarcinoma, NOS",,1,1305.0,75.02532511978097,2.0,0,0
+10881458-55b2-41d1-8358-4ee6ccb8ec85,TCGA-AA-A02K,Dead,426.0,male,not reported,not reported,18506.0,426.0,Stage IV,"Adenocarcinoma, NOS",,1,426.0,50.666666666666664,4.0,1,0
+cc22913d-2dda-48bb-82aa-9960b73f3e44,TCGA-NH-A5IV,Alive,,female,black or african american,not hispanic or latino,32872.0,0.0,Stage IIA,"Adenocarcinoma, NOS",,0,0.0,89.99863107460644,2.0,0,1
+ff1407c6-9174-4bae-a19b-d34ca71b898c,TCGA-A6-2680,Alive,,female,black or african american,not hispanic or latino,26533.0,1068.0,Stage II,"Adenocarcinoma, NOS",,0,1068.0,72.64339493497604,2.0,0,0
+b54865b6-824e-4163-b759-21a6eacc98ce,TCGA-A6-6781,Alive,,male,white,not hispanic or latino,15842.0,598.0,Stage IIIC,Mucinous adenocarcinoma,,0,598.0,43.37303216974675,3.0,1,1
+81a7184e-f9f5-4e3f-9603-5f5642386c1e,TCGA-T9-A92H,Alive,,male,black or african american,not hispanic or latino,30058.0,362.0,Stage IIA,"Adenocarcinoma, NOS",,0,362.0,82.2943189596167,2.0,1,0
+c6f6c032-5d4e-4028-aed0-24a587620354,TCGA-AY-A8YK,Alive,,male,black or african american,not hispanic or latino,16140.0,573.0,Stage IVA,"Adenocarcinoma, NOS",,0,573.0,44.18891170431211,4.0,1,0
+2d3ce817-b269-4662-a92d-392bd3662399,TCGA-CM-5341,Alive,,female,white,not hispanic or latino,30163.0,884.0,Stage IIIA,"Adenocarcinoma, NOS",,0,884.0,82.58179329226557,3.0,0,0
+9382987c-b5b3-48fe-8194-4d83fe340cd0,TCGA-F4-6807,Alive,,female,white,not hispanic or latino,18690.0,1309.0,Stage IIIC,"Adenocarcinoma, NOS",,0,1309.0,51.17043121149897,3.0,0,1
+e703af88-c05f-4d7b-b225-d640e4d1a2a5,TCGA-AZ-4616,Dead,156.0,female,white,not hispanic or latino,30043.0,156.0,Stage IV,"Adenocarcinoma, NOS",,1,156.0,82.25325119780972,4.0,0,1
+3e1886a8-2ed2-41ee-8b58-10f5321ade6f,TCGA-DM-A28K,Alive,,male,white,not hispanic or latino,27428.0,2988.0,Stage IIA,Mucinous adenocarcinoma,,0,2988.0,75.09377138945928,2.0,1,0
+d4da3298-3a02-44a6-bdcd-d260f38e520b,TCGA-AY-A71X,Alive,,female,black or african american,not hispanic or latino,19904.0,588.0,Stage I,"Adenocarcinoma, NOS",,0,588.0,54.49418206707735,1.0,0,1
+96ac1f4b-79b0-4517-8caf-fc05abcaaf4f,TCGA-A6-6652,Alive,,male,black or african american,not hispanic or latino,21638.0,751.0,Stage IVA,"Adenocarcinoma, NOS",,0,751.0,59.24161533196441,4.0,1,1
+0c53b010-4243-4da3-a059-7f54c9a850ec,TCGA-F4-6703,Alive,,male,white,not hispanic or latino,23644.0,1456.0,Stage IIA,"Adenocarcinoma, NOS",,0,1456.0,64.7337440109514,2.0,1,1
+de287a25-981d-49f8-81af-fe0300e4cd31,TCGA-AZ-4315,Alive,,male,white,not hispanic or latino,22340.0,1776.0,Stage IIA,"Adenocarcinoma, NOS",,0,1776.0,61.163586584531146,2.0,1,1
+2b94070a-21ec-457b-88af-3d2a89b97ac6,TCGA-AA-3712,Alive,,male,not reported,not reported,23831.0,0.0,Stage III,"Adenocarcinoma, NOS",,0,0.0,65.2457221081451,3.0,1,0
+35c295c2-37d1-44b2-87a3-1039645e5bae,TCGA-AA-3510,Alive,,male,not reported,not reported,25902.0,1946.0,Stage II,"Adenocarcinoma, NOS",,0,1946.0,70.91581108829568,2.0,1,1
+081a3dc7-45e1-457d-add0-c4686140a8d0,TCGA-AA-A00D,Alive,,male,not reported,not reported,25689.0,578.0,Stage I,"Adenocarcinoma, NOS",,0,578.0,70.33264887063655,1.0,1,0
+10994156-7c2f-420e-aeb8-11d566b3d5e4,TCGA-AA-3971,Alive,,male,not reported,not reported,21518.0,489.0,Stage III,"Adenocarcinoma, NOS",,0,489.0,58.913073237508556,3.0,1,1
+2a971e32-b0e7-4a3f-8c40-62d69c0307d8,TCGA-AA-A03F,Dead,0.0,female,not reported,not reported,32872.0,0.0,Stage III,Mucinous adenocarcinoma,,1,0.0,89.99863107460644,3.0,0,0
+6fa41234-9077-4d05-a295-6820f3bedf5b,TCGA-AA-A02O,Alive,,male,not reported,not reported,30288.0,28.0,Stage II,"Adenocarcinoma, NOS",,0,28.0,82.92402464065708,2.0,1,1
+613aa3e8-a70b-45a9-9c08-0c2346c8bf00,TCGA-AD-A5EJ,Alive,,female,black or african american,not hispanic or latino,27180.0,0.0,Stage IIA,"Adenocarcinoma, NOS",,0,0.0,74.41478439425052,2.0,0,1
+19089ae0-b590-4649-9d94-a147fa506e32,TCGA-G4-6627,Alive,,male,white,not hispanic or latino,30697.0,2175.0,Stage IIA,"Adenocarcinoma, NOS",,0,2175.0,84.04380561259411,2.0,1,1
+5da56982-6de7-4994-aa9e-3b01200b2959,TCGA-AA-3861,Alive,,male,not reported,not reported,26602.0,914.0,Stage IIA,"Adenocarcinoma, NOS",,0,914.0,72.83230663928816,2.0,1,1
+56d5b0b9-9093-4286-a2c6-7faa9a1680f5,TCGA-AZ-6603,Dead,899.0,female,white,not hispanic or latino,28424.0,899.0,,"Adenocarcinoma, NOS",,1,899.0,77.82067077344284,,0,1
+95a54459-3fac-42d5-8ec1-ed66d971d64d,TCGA-CA-6716,Alive,,male,asian,not hispanic or latino,23943.0,371.0,Stage IIA,"Papillary adenocarcinoma, NOS",,0,371.0,65.55236139630391,2.0,1,0
+4138aca8-e085-45fb-b353-74852efe61bf,TCGA-CM-6676,Alive,,male,white,not hispanic or latino,30223.0,337.0,Stage I,"Adenocarcinoma, NOS",,0,337.0,82.7460643394935,1.0,1,0
+93ca8937-97c0-4f6e-bdec-66d32f2a7b3d,TCGA-AA-A029,Alive,,male,not reported,not reported,24686.0,1581.0,Stage II,"Adenocarcinoma, NOS",,0,1581.0,67.58658453114305,2.0,1,1
+80809d79-92e1-4d6c-ba2e-0a9589997792,TCGA-AA-A01C,Alive,,male,not reported,not reported,27729.0,457.0,Stage IIIA,"Adenocarcinoma, NOS",,0,457.0,75.91786447638604,3.0,1,0
+fb9e7684-a7f7-4f17-bc5d-1f359e1b0d42,TCGA-CM-6680,Alive,,female,white,not hispanic or latino,28701.0,366.0,Stage IIIB,"Adenocarcinoma, NOS",,0,366.0,78.57905544147845,3.0,0,0
+c293a148-a88c-4fb3-b2f4-e64e918044f9,TCGA-CK-4950,Alive,,female,black or african american,not hispanic or latino,24944.0,2599.0,Stage IIIB,Mucinous adenocarcinoma,,0,2599.0,68.29295003422314,3.0,0,1
+3a785e32-7960-4c72-84c4-fb42c4dd86f1,TCGA-A6-2678,Alive,,female,white,not hispanic or latino,16030.0,1286.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1286.0,43.88774811772758,3.0,0,0
+fbb69964-f962-4b89-b59b-dd05f8faf61a,TCGA-AZ-6599,Dead,206.0,male,white,not hispanic or latino,26438.0,206.0,Stage I,"Adenocarcinoma, NOS",,1,206.0,72.3832991101985,1.0,1,1
+e7af286b-3dec-4cf2-8fbd-fa64b3efdf7f,TCGA-F4-6809,Dead,403.0,female,white,not hispanic or latino,19039.0,403.0,Stage IVA,"Adenocarcinoma, NOS",,1,403.0,52.12594113620808,4.0,0,0
+ce00896a-f7d2-4123-bb95-24cb6e53fc32,TCGA-5M-AAT6,Dead,290.0,female,black or african american,hispanic or latino,15071.0,,,Not Reported,,1,290.0,41.2621492128679,,0,1
+a94e1279-a975-480a-93e9-7b1ff05cbcbf,TCGA-3L-AA1B,Alive,,female,black or african american,not hispanic or latino,22379.0,475.0,Stage I,"Adenocarcinoma, NOS",,0,475.0,61.270362765229294,1.0,0,0
+e2edbf3f-25d8-49aa-b656-2a59c3b99aeb,TCGA-AA-A01D,Dead,334.0,female,not reported,not reported,17501.0,,,Not Reported,,1,334.0,47.9151266255989,,0,1
+68801d41-535f-4b38-989b-ef4fe5f00039,TCGA-A6-6653,Alive,,male,white,not hispanic or latino,29996.0,742.0,Stage I,"Adenocarcinoma, NOS",,0,742.0,82.1245722108145,1.0,1,1
+b6202d8d-dd3c-4fa2-9242-6e55759846af,TCGA-CM-5344,Alive,,female,white,hispanic or latino,14426.0,670.0,Stage IIIB,"Adenocarcinoma, NOS",,0,670.0,39.49623545516769,3.0,0,1
+9b2c325c-1f03-43c7-ad5c-b49c6d205635,TCGA-DM-A28A,Dead,805.0,male,white,not hispanic or latino,28833.0,805.0,Stage IIIC,"Adenocarcinoma, NOS",,1,805.0,78.94045174537987,3.0,1,0
+b823d6e5-54b0-43d3-95e2-9be33dc6f734,TCGA-DM-A0XF,Dead,1162.0,female,white,not hispanic or latino,25032.0,1162.0,Stage IIIC,"Adenocarcinoma, NOS",,1,1162.0,68.53388090349075,3.0,0,1
+88e64f45-adc4-4223-9838-4d7d45b8f0c0,TCGA-AA-3526,Alive,,male,not reported,not reported,21123.0,580.0,Stage I,"Adenocarcinoma, NOS",,0,580.0,57.831622176591374,1.0,1,0
+192da41f-f0a5-494e-8eb9-96bcdae56ff8,TCGA-AA-3819,Alive,,female,not reported,not reported,15280.0,761.0,Stage IIA,"Adenocarcinoma, NOS",,0,761.0,41.83436002737851,2.0,0,0
+65056295-8fcd-4f82-a3c9-a5acd79521fe,TCGA-A6-6648,Alive,,male,white,not hispanic or latino,20641.0,766.0,Stage IVA,"Adenocarcinoma, NOS",,0,766.0,56.511978097193705,4.0,1,0
+17633a60-e12b-4a7c-bd8a-c16341ddc606,TCGA-CA-5256,Alive,,female,asian,not reported,19785.0,379.0,Stage IIA,"Adenocarcinoma, NOS",,0,379.0,54.168377823408626,2.0,0,0
+a56d528b-238a-4556-92c8-7645304a2da0,TCGA-AA-3558,Alive,,male,not reported,not reported,25752.0,638.0,Stage I,"Adenocarcinoma, NOS",,0,638.0,70.50513347022587,1.0,1,0
+300fff5a-0f61-402d-b845-3938ba7b1294,TCGA-QG-A5YX,Alive,,female,black or african american,not hispanic or latino,22617.0,1003.0,Stage IIA,"Adenocarcinoma, NOS",,0,1003.0,61.921971252566735,2.0,0,0
+9c45eaec-d854-4f51-80a3-2d80d6b4aebc,TCGA-QG-A5Z1,Dead,256.0,male,black or african american,not hispanic or latino,26220.0,256.0,Stage IIIB,"Adenocarcinoma, NOS",,1,256.0,71.78644763860369,3.0,1,0
+e831369c-78c0-4c75-9cf3-f46ed669312e,TCGA-AA-3544,Alive,,male,not reported,not reported,24959.0,426.0,Stage I,"Adenocarcinoma, NOS",,0,426.0,68.33401779603011,1.0,1,0
+eeb42912-0c7a-46bb-bd95-369b2b425727,TCGA-F4-6570,Dead,188.0,female,white,not hispanic or latino,28772.0,188.0,Stage IIA,"Adenocarcinoma, NOS",,1,188.0,78.77344284736482,2.0,0,1
+dc22eba5-6fb7-4875-b30a-99fa00758301,TCGA-D5-6920,Alive,,female,white,not hispanic or latino,28124.0,377.0,Stage IIA,"Adenocarcinoma, NOS",,0,377.0,76.99931553730322,2.0,0,1
+02f9668c-71e6-485f-88b1-b37dc8bdd2ab,TCGA-AA-3866,Alive,,female,not reported,not reported,28672.0,518.0,Stage I,"Adenocarcinoma, NOS",,0,518.0,78.4996577686516,1.0,0,1
+1a09207e-9184-4f32-bd07-a9f4dc6c825d,TCGA-AA-3833,Alive,,female,not reported,not reported,23011.0,485.0,Stage IIA,"Adenocarcinoma, NOS",,0,485.0,63.00068446269678,2.0,0,1
+81e7cca8-2d71-4446-9692-872c2fe68d0a,TCGA-A6-6654,Alive,,female,white,not hispanic or latino,23953.0,726.0,Stage IIIB,"Adenocarcinoma, NOS",,0,726.0,65.57973990417523,3.0,0,0
+21bdad0d-c6a2-428c-b2b4-0de282b34abc,TCGA-AA-3850,Dead,0.0,male,not reported,not reported,27090.0,0.0,Stage I,"Adenocarcinoma, NOS",,1,0.0,74.16837782340862,1.0,1,1
+955464c8-9c62-430c-87b8-107db5c980a8,TCGA-AD-6889,Dead,2532.0,male,asian,not reported,,,,Not Reported,,1,2532.0,,,1,1
+a9cb21d1-4c4a-4f30-ad4d-c54bed26f187,TCGA-AA-3975,Alive,,male,not reported,not reported,29310.0,1036.0,Stage I,"Adenocarcinoma, NOS",,0,1036.0,80.24640657084188,1.0,1,1
+bfb07784-693b-4c25-874e-4ad6e04a5d46,TCGA-AA-3529,Dead,0.0,female,not reported,not reported,28609.0,0.0,Stage IIIC,"Adenocarcinoma, NOS",,1,0.0,78.32717316906229,3.0,0,0
+23d0681a-912a-408f-b19a-0bbcf5ffc2f3,TCGA-AA-3695,Alive,,female,not reported,not reported,23164.0,0.0,Stage IV,"Adenocarcinoma, NOS",,0,0.0,63.419575633128,4.0,0,0
+3eb37b12-b8b4-40a3-bd8b-f89fc39c05fa,TCGA-A6-6782,Alive,,male,white,not hispanic or latino,30012.0,617.0,Stage IIB,"Adenocarcinoma, NOS",,0,617.0,82.16837782340862,2.0,1,0
+7a481097-14a3-4916-9632-d899c25fd284,TCGA-AA-A022,Alive,,female,not reported,not reported,32446.0,0.0,Stage II,"Adenocarcinoma, NOS",,0,0.0,88.83230663928816,2.0,0,1
+5342e2e8-1465-4f7b-9450-ef27280f80c7,TCGA-CK-4952,Alive,,female,white,not hispanic or latino,17826.0,475.0,Stage IIIC,Mucinous adenocarcinoma,,0,475.0,48.80492813141684,3.0,0,1
+96e013d9-8e89-46a7-8d07-bae95af36708,TCGA-CM-5860,Alive,,male,white,not hispanic or latino,16344.0,974.0,Stage IIA,"Adenocarcinoma, NOS",,0,974.0,44.747433264887064,2.0,1,0
+cac80259-3a26-4a99-b0d3-13454068e6ed,TCGA-AZ-4684,Alive,,male,white,not hispanic or latino,18252.0,1977.0,Stage IVA,"Adenocarcinoma, NOS",,0,1977.0,49.97125256673511,4.0,1,1
+d259eeb2-d15e-436d-9d37-2d0b7658bc91,TCGA-D5-6534,Alive,,female,white,not hispanic or latino,22778.0,1316.0,Stage IIA,Mucinous adenocarcinoma,,0,1316.0,62.362765229295,2.0,0,0
+92c043b6-8d53-4c1c-808a-c4be5e2926e6,TCGA-DM-A1D8,Dead,383.0,female,white,not hispanic or latino,18311.0,383.0,,"Adenocarcinoma, NOS",,1,383.0,50.13278576317591,,0,1
+4ad9784e-1edc-4186-9b45-4dfe0003f74b,TCGA-A6-6138,Alive,,male,white,not hispanic or latino,22523.0,685.0,Stage I,"Adenocarcinoma, NOS",,0,685.0,61.66461327857632,1.0,1,1
+9d8c4693-8e36-473b-bb34-a7cdc04dd223,TCGA-CM-6170,Alive,,female,white,not hispanic or latino,26663.0,457.0,Stage I,"Adenocarcinoma, NOS",,0,457.0,72.99931553730322,1.0,0,0
+33522271-b2ca-4da4-a942-501ab9117c51,TCGA-AA-3693,Alive,,female,not reported,not reported,28459.0,0.0,Stage IV,"Adenocarcinoma, NOS",,0,0.0,77.91649555099247,4.0,0,1
+e8e80df9-e3ba-4dec-b8fc-a5e80d8c6798,TCGA-AD-6890,Alive,,male,white,not reported,23769.0,746.0,,"Adenocarcinoma, NOS",,0,746.0,65.07597535934292,,1,1
+db246424-3979-4f23-b316-8d30c449ee15,TCGA-AA-3984,Alive,,female,not reported,not reported,22585.0,0.0,Stage IIA,"Adenocarcinoma, NOS",,0,0.0,61.83436002737851,2.0,0,1
+227f945f-76fd-4a63-9609-d4e730a3d22a,TCGA-CM-5349,Alive,,female,white,not hispanic or latino,24867.0,915.0,Stage IIA,"Adenocarcinoma, NOS",,0,915.0,68.08213552361396,2.0,0,1
+aa85d9e8-caa6-422c-95ce-780e4ac2a5e4,TCGA-AA-3532,Alive,,male,not reported,not reported,23133.0,882.0,Stage IIA,"Adenocarcinoma, NOS",,0,882.0,63.3347022587269,2.0,1,0
+0a815133-0edd-4422-89f2-2f067b6f2156,TCGA-AA-3848,Dead,306.0,female,not reported,not reported,30194.0,306.0,Stage IIIC,"Adenocarcinoma, NOS",,1,306.0,82.66666666666667,3.0,0,0
+091e3084-04ee-4497-893c-d46226dec78f,TCGA-AA-A00U,Alive,,male,not reported,not reported,18263.0,518.0,Stage IIIB,"Adenocarcinoma, NOS",,0,518.0,50.001368925393564,3.0,1,0
+e6ec5a68-7555-4f26-bd7e-9cdb4c5f7004,TCGA-AA-3549,Alive,,male,not reported,not reported,25415.0,639.0,Stage I,"Adenocarcinoma, NOS",,0,639.0,69.58247775496235,1.0,1,0
+ec3f3f11-75df-4fcc-ba03-f19aca907645,TCGA-CM-6162,Alive,,female,white,not hispanic or latino,17624.0,365.0,Stage IIIB,Mucinous adenocarcinoma,,0,365.0,48.251882272416154,3.0,0,1
+21ddbfaa-1b21-4a2b-be2c-237dd69b20ff,TCGA-A6-6140,Alive,,male,white,not hispanic or latino,22835.0,734.0,Stage IIA,"Adenocarcinoma, NOS",,0,734.0,62.51882272416153,2.0,1,0
+0e87e5fd-d5bb-4c0d-952d-711a6abbf336,TCGA-AA-3821,Alive,,female,not reported,not reported,29706.0,31.0,Stage I,Mucinous adenocarcinoma,,0,31.0,81.3305954825462,1.0,0,1
+8e87ddca-f43e-4c6f-9d5b-430b666a7f6c,TCGA-CM-6169,Alive,,male,black or african american,not hispanic or latino,24564.0,396.0,Stage IIA,"Adenocarcinoma, NOS",,0,396.0,67.25256673511294,2.0,1,1
+6a4031c6-ee88-48be-81a5-a522720edd02,TCGA-CM-6164,Alive,,female,white,not hispanic or latino,16802.0,883.0,Stage IIA,"Adenocarcinoma, NOS",,0,883.0,46.001368925393564,2.0,0,0
+62d39be5-f029-4eb8-8b00-46470e06a755,TCGA-AA-A00Q,Alive,,female,not reported,not reported,24199.0,1278.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1278.0,66.25325119780972,3.0,0,0
+df5ab6cc-6f68-4b6b-95e2-954c6b57ba9c,TCGA-CA-6718,Dead,306.0,male,asian,not hispanic or latino,17109.0,306.0,Stage IIA,"Adenocarcinoma, NOS",,1,306.0,46.841889117043124,2.0,1,1
+b76d1de7-6447-474d-bf67-77e0bb2da73a,TCGA-AD-6901,Dead,682.0,male,white,not reported,28579.0,682.0,,"Adenocarcinoma, NOS",,1,682.0,78.24503764544832,,1,1
+303286c2-bc58-4bbb-9171-74cdb1d7f62f,TCGA-G4-6306,Alive,,male,white,not hispanic or latino,26163.0,1359.0,,"Adenocarcinoma, NOS",,0,1359.0,71.63039014373716,,1,1
+79d33c28-a7e2-4fca-8be1-a16fb6d68d49,TCGA-G4-6311,Alive,,male,white,not hispanic or latino,29297.0,1199.0,Stage III,"Adenocarcinoma, NOS",,0,1199.0,80.21081451060917,3.0,1,1
+55697871-b9aa-4acd-8dbe-dcd5391db8f0,TCGA-CM-6674,Alive,,male,white,not hispanic or latino,14368.0,394.0,Stage IIA,"Adenocarcinoma, NOS",,0,394.0,39.337440109514034,2.0,1,1
+20ccd267-74e5-4574-a8e1-028bcd74aaeb,TCGA-AA-3872,Alive,,male,not reported,not reported,16651.0,0.0,Stage IV,"Adenocarcinoma, NOS",,0,0.0,45.58795345653662,4.0,1,0
+31a3877d-3e82-450e-811f-3448b06f3950,TCGA-AA-3655,Alive,,male,not reported,not reported,24896.0,1856.0,Stage II,"Adenocarcinoma, NOS",,0,1856.0,68.1615331964408,2.0,1,0
+4c6c8d3d-e4a3-490a-9211-cfbe7e6ee25b,TCGA-A6-5665,Alive,,female,white,not hispanic or latino,30915.0,671.0,Stage IIA,"Adenocarcinoma, NOS",,0,671.0,84.64065708418892,2.0,0,1
+84e34cf2-b3bb-4a1a-8fb7-6c2c604c4008,TCGA-AA-A01S,Alive,,female,not reported,not reported,17257.0,31.0,Stage III,"Adenocarcinoma, NOS",,0,31.0,47.24709103353867,3.0,0,1
+e3ca9046-9634-4332-b19f-88b18110f941,TCGA-CM-4751,Alive,,male,white,not hispanic or latino,22891.0,822.0,Stage IIIB,"Adenocarcinoma, NOS",,0,822.0,62.672142368240934,3.0,1,1
+e6c8c5fc-158a-4de4-b3f6-3b645584bbc7,TCGA-AA-A03J,Alive,,female,not reported,not reported,23986.0,1246.0,Stage I,"Adenocarcinoma, NOS",,0,1246.0,65.67008898015058,1.0,0,0
+a19cd9f8-482b-4b70-b7d7-06d6bb1b0260,TCGA-CM-5862,Dead,153.0,male,white,not hispanic or latino,29493.0,153.0,Stage IVA,"Adenocarcinoma, NOS",,1,153.0,80.74743326488706,4.0,1,1
+d5a1f43e-25a7-47f5-b63e-43714f9f732a,TCGA-QL-A97D,Alive,,female,black or african american,not reported,30914.0,666.0,Stage I,"Adenocarcinoma, NOS",,0,666.0,84.63791923340177,1.0,0,1
+4563e4e0-a661-46de-ad25-9c86a621e147,TCGA-AA-3812,Alive,,female,not reported,not reported,29980.0,1066.0,Stage IIA,"Adenocarcinoma, NOS",,0,1066.0,82.08076659822039,2.0,0,0
+ea923671-3903-4a79-830d-e7e4b1eabab0,TCGA-AD-6899,Dead,176.0,male,white,not reported,30693.0,176.0,Stage IIIC,Mucinous adenocarcinoma,,1,176.0,84.03285420944559,3.0,1,0
+c59d90a6-9cda-426d-b8ea-41f0a87033d5,TCGA-AZ-4323,Dead,43.0,male,white,not hispanic or latino,13755.0,43.0,Stage IV,"Adenocarcinoma, NOS",,1,43.0,37.659137577002056,4.0,1,0
+cee553c8-460d-436b-b55d-8f41624816cc,TCGA-G4-6317,Alive,,female,white,not hispanic or latino,18822.0,1095.0,Stage IIIC,"Adenocarcinoma, NOS",,0,1095.0,51.53182751540041,3.0,0,1
+9f45a227-1fd5-478c-a194-4a5c61b68cc3,TCGA-QG-A5YW,Alive,,female,black or african american,not hispanic or latino,20391.0,896.0,Stage IIIC,"Adenocarcinoma, NOS",,0,896.0,55.827515400410675,3.0,0,1
+326c1637-ea91-4006-b440-d38420af1ae5,TCGA-A6-6137,Alive,,male,white,not hispanic or latino,20095.0,824.0,Stage IIIB,"Adenocarcinoma, NOS",,0,824.0,55.017111567419576,3.0,1,1
+b728e6e8-a0e4-496b-904c-6f07c12e901f,TCGA-A6-3810,Alive,,male,white,not hispanic or latino,22999.0,1111.0,Stage IIA,"Adenocarcinoma, NOS",,0,1111.0,62.9678302532512,2.0,1,0
+7ea546ce-f48a-4d9c-96b4-a0124c692870,TCGA-CM-4752,Alive,,male,black or african american,not hispanic or latino,21519.0,396.0,Stage IIA,"Adenocarcinoma, NOS",,0,396.0,58.91581108829569,2.0,1,0
+b16bb717-d1cf-4237-a554-43f3995b82f2,TCGA-AA-3815,Alive,,female,not reported,not reported,23922.0,1005.0,Stage IIA,"Adenocarcinoma, NOS",,0,1005.0,65.49486652977413,2.0,0,1
+fac2c617-8149-45bb-b766-fbe13dc3c425,TCGA-DM-A1D7,Dead,405.0,male,white,not hispanic or latino,30222.0,,,Not Reported,,1,405.0,82.74332648870636,,1,1
+5116e3b4-2bac-40f5-8046-b9c1783faaa5,TCGA-A6-3807,Alive,,female,white,not hispanic or latino,19624.0,1054.0,Stage IIIC,"Adenocarcinoma, NOS",,0,1054.0,53.72758384668035,3.0,0,0
+0f940ec0-eb0b-422a-a764-a26c8e5c216d,TCGA-AA-3837,Alive,,male,not reported,not reported,24655.0,1186.0,Stage IIA,Mucinous adenocarcinoma,,0,1186.0,67.50171115674196,2.0,1,1
+ebc5a6f8-34fd-48c1-a2b9-7f60f45fbf27,TCGA-D5-6537,Dead,146.0,male,white,not hispanic or latino,23504.0,,,Not Reported,,1,146.0,64.3504449007529,,1,0
+7a6c54f1-f4e4-426b-b306-2ca3c4de12ca,TCGA-AA-3854,Alive,,female,not reported,not reported,26022.0,1096.0,Stage I,Mucinous adenocarcinoma,,0,1096.0,71.24435318275154,1.0,0,1
+3a8ca50f-bc9f-4250-8c8d-22893763ea46,TCGA-D5-6926,Alive,,male,white,not hispanic or latino,23768.0,275.0,Stage IIIB,"Adenocarcinoma, NOS",,0,275.0,65.07323750855578,3.0,1,1
+268c01b3-d2ce-44c0-a2fe-ea846a1253cc,TCGA-CA-6717,Alive,,male,asian,not hispanic or latino,20984.0,388.0,Stage IIA,Mucinous adenocarcinoma,,0,388.0,57.451060917180016,2.0,1,1
+bc42fe2d-1a33-428d-a601-b1871f4c8d9b,TCGA-AA-3966,Alive,,female,not reported,not reported,32537.0,61.0,Stage IIA,Mucinous adenocarcinoma,,0,61.0,89.08145106091717,2.0,0,1
+3aae5316-6a5d-4b83-9020-ad691d4edf99,TCGA-G4-6626,Dead,1.0,male,white,not hispanic or latino,32871.0,1.0,Stage IIA,"Adenocarcinoma, NOS",,1,1.0,89.99589322381931,2.0,1,0
+4aadf2a2-ce1e-4f94-b146-59292e83e7fd,TCGA-CM-5868,Alive,,female,white,not hispanic or latino,21672.0,518.0,Stage IVA,"Adenocarcinoma, NOS",,0,518.0,59.3347022587269,4.0,0,1
+e8841edf-e070-425b-b4d4-bbb2115f9dbd,TCGA-AA-3973,Alive,,male,not reported,not reported,25536.0,397.0,Stage IV,"Adenocarcinoma, NOS",,0,397.0,69.91375770020534,4.0,1,0
+628408ce-0691-4e0b-b4c7-aca9a0d73bb0,TCGA-AA-3673,Alive,,female,not reported,not reported,19509.0,1522.0,Stage II,"Adenocarcinoma, NOS",,0,1522.0,53.412731006160165,2.0,0,0
+c594196e-49ef-4195-a6b6-4ef4a1d9ec15,TCGA-AA-3538,Alive,,female,not reported,not reported,19752.0,791.0,Stage I,"Adenocarcinoma, NOS",,0,791.0,54.078028747433265,1.0,0,0
+3334201d-a3c0-45ec-a9ed-cf48cc8c38e8,TCGA-AZ-4614,Dead,172.0,female,white,not hispanic or latino,26267.0,172.0,Stage IVA,"Adenocarcinoma, NOS",,1,172.0,71.9151266255989,4.0,0,0
+750770db-53cf-4021-a8c2-5e0ddb97fef5,TCGA-AA-3994,Alive,,male,not reported,not reported,25323.0,822.0,Stage IIIB,Mucinous adenocarcinoma,,0,822.0,69.3305954825462,3.0,1,1
+b3c267aa-345d-40d8-a8da-f9f08c64f9c7,TCGA-D5-6923,Alive,,male,white,not hispanic or latino,21118.0,378.0,Stage I,"Adenocarcinoma, NOS",,0,378.0,57.817932922655714,1.0,1,0
+36eaf209-c332-4321-b6aa-51a3368ecd79,TCGA-AA-3555,Alive,,female,not reported,not reported,29617.0,911.0,Stage IIA,"Adenocarcinoma, NOS",,0,911.0,81.08692676249144,2.0,0,0
+cbdabbcd-d8f1-4d7c-9e18-ebd83d888c51,TCGA-AA-3949,Alive,,female,not reported,not reported,32081.0,791.0,Stage IIIB,Mucinous adenocarcinoma,,0,791.0,87.83299110198494,3.0,0,0
+b612d491-7442-4119-a53c-5ebcc35c31f4,TCGA-A6-2672,Alive,,female,white,not hispanic or latino,30237.0,1419.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1419.0,82.78439425051334,3.0,0,1
+23252dca-e836-47a0-b294-758ad60aa259,TCGA-G4-6299,Alive,,male,white,not hispanic or latino,25318.0,2268.0,Stage IIIC,"Adenocarcinoma, NOS",,0,2268.0,69.31690622861053,3.0,1,0
+56e612e8-2c29-4782-be79-2813cc8dd2e6,TCGA-AA-A00J,Alive,,male,not reported,not reported,29371.0,549.0,Stage IIIB,Mucinous adenocarcinoma,,0,549.0,80.41341546885695,3.0,1,0
+131e0571-de86-415f-b3fb-dc9f971258d3,TCGA-D5-6932,Alive,,male,white,not hispanic or latino,25466.0,346.0,Stage IIA,"Adenocarcinoma, NOS",,0,346.0,69.72210814510609,2.0,1,1
+97f6c8d3-09a0-4128-8f10-41e736648a5f,TCGA-AA-A01R,Alive,,male,not reported,not reported,17289.0,1065.0,Stage III,Mucinous adenocarcinoma,,0,1065.0,47.3347022587269,3.0,1,1
+9dcb4e16-b582-4cd0-87cf-04f480ec2cec,TCGA-AA-3542,Alive,,male,not reported,not reported,25324.0,395.0,Stage IIIC,"Adenocarcinoma, NOS",,0,395.0,69.33333333333333,3.0,1,0
+b079a153-62f9-4026-a2f8-a1390168bbb9,TCGA-A6-4107,Alive,,female,white,not hispanic or latino,21064.0,987.0,Stage IIIB,"Adenocarcinoma, NOS",,0,987.0,57.67008898015058,3.0,0,1
+b08b5f49-9434-4653-9772-097ec29b2ca3,TCGA-D5-6540,Alive,,male,white,not hispanic or latino,24282.0,491.0,Stage I,Mucinous adenocarcinoma,,0,491.0,66.48049281314168,1.0,1,1
+bc02f801-081b-489b-87cb-d275c70299d5,TCGA-AA-3845,Dead,0.0,female,not reported,not reported,31593.0,0.0,Stage IIA,"Adenocarcinoma, NOS",,1,0.0,86.49691991786447,2.0,0,1
+384400c1-98d6-4cc3-8724-de6711f6208b,TCGA-AA-3980,Alive,,female,not reported,not reported,32630.0,242.0,Stage I,"Adenocarcinoma, NOS",,0,242.0,89.33607118412047,1.0,0,0
+5c24435e-8e50-42c2-80c7-919b1cad0133,TCGA-AA-3955,Alive,,male,not reported,not reported,14186.0,638.0,Stage IIIB,"Adenocarcinoma, NOS",,0,638.0,38.83915126625599,3.0,1,1
+857a5889-19e7-4208-8362-f1377c408037,TCGA-A6-A567,Dead,1881.0,male,black or african american,not reported,21105.0,,,"Adenocarcinoma, NOS",,1,1881.0,57.782340862423,,1,1
+19d1a5fc-3ce9-4e43-a364-a4150bcf911b,TCGA-A6-2686,Dead,1126.0,female,white,not hispanic or latino,29623.0,1126.0,Stage IIA,"Adenocarcinoma, NOS",,1,1126.0,81.10335386721424,2.0,0,1
+eed7405f-f8f3-41a4-a0e7-242f23087f59,TCGA-CM-6171,Alive,,female,white,not hispanic or latino,28307.0,427.0,Stage I,"Adenocarcinoma, NOS",,0,427.0,77.5003422313484,1.0,0,1
+794131b8-f4be-4f15-b3b9-6f0b10a5a38b,TCGA-CA-6715,Alive,,male,asian,not hispanic or latino,23075.0,383.0,Stage IIIB,"Papillary adenocarcinoma, NOS",,0,383.0,63.175906913073234,3.0,1,0
+d17a2ab0-faef-40de-a87d-1291868b200d,TCGA-AA-3679,Alive,,male,not reported,not reported,21611.0,457.0,Stage IV,"Adenocarcinoma, NOS",,0,457.0,59.167693360711844,4.0,1,0
+0b8de222-119a-40f3-8beb-12b9d933225b,TCGA-AA-3856,Alive,,male,not reported,not reported,21670.0,30.0,Stage IIA,"Adenocarcinoma, NOS",,0,30.0,59.32922655715264,2.0,1,0
+d2c99bed-3446-4d12-99e0-00611faa37dc,TCGA-AA-A004,Alive,,male,not reported,not reported,27943.0,424.0,Stage IIA,"Adenocarcinoma, NOS",,0,424.0,76.50376454483231,2.0,1,0
+c658f35d-ceeb-4189-8e3d-03e3b9706667,TCGA-CK-5915,Alive,,male,white,not hispanic or latino,23040.0,0.0,Stage I,"Adenocarcinoma, NOS",,0,0.0,63.08008213552361,1.0,1,0
+790266bc-c252-43f4-85d1-1b06ee529cf8,TCGA-A6-A566,Dead,758.0,female,black or african american,not hispanic or latino,20438.0,,,Not Reported,,1,758.0,55.95619438740589,,0,1
+26a41625-4680-47b2-afa9-6a72b148e1c0,TCGA-CA-5254,Alive,,female,asian,not hispanic or latino,15415.0,386.0,Stage IIA,"Adenocarcinoma, NOS",,0,386.0,42.20396988364134,2.0,0,1
+4f9775f2-b663-4daf-aa9e-50915cae9407,TCGA-A6-3808,Alive,,male,white,not hispanic or latino,26666.0,1014.0,Stage IIA,"Adenocarcinoma, NOS",,0,1014.0,73.00752908966462,2.0,1,0
+32b77693-18e1-4692-8488-add1940c9e7c,TCGA-AU-6004,Alive,,female,white,not hispanic or latino,25259.0,824.0,Stage I,"Adenocarcinoma, NOS",,0,824.0,69.15537303216975,1.0,0,1
+ddf69ed9-4c53-48b8-9f01-495bd60c3425,TCGA-AA-3514,Alive,,female,not reported,not reported,29738.0,31.0,Stage I,"Adenocarcinoma, NOS",,0,31.0,81.41820670773443,1.0,0,0
+f5c3bc61-1018-4351-bb23-aacc1459365f,TCGA-AA-3710,Alive,,female,not reported,not reported,29465.0,821.0,Stage IIA,"Adenocarcinoma, NOS",,0,821.0,80.67077344284736,2.0,0,0
+98d45099-feae-4dad-aa38-ec03fed6d999,TCGA-A6-5659,Alive,,male,white,not hispanic or latino,30028.0,926.0,Stage I,"Adenocarcinoma, NOS",,0,926.0,82.21218343600273,1.0,1,1
+654c6f5c-3e5c-49f0-b53f-87cd9797d7c9,TCGA-AA-3947,Alive,,female,not reported,not reported,22035.0,1004.0,Stage IIB,Mucinous adenocarcinoma,,0,1004.0,60.328542094455855,2.0,0,1
+0dc41cd5-0672-407c-9b4a-0f5f3970aa54,TCGA-A6-5660,Alive,,male,black or african american,not hispanic or latino,26803.0,888.0,Stage IIIC,"Adenocarcinoma, NOS",,0,888.0,73.38261464750171,3.0,1,0
+e83e5700-f968-4978-bb78-56a83936ce8c,TCGA-D5-6536,Alive,,male,white,not hispanic or latino,26890.0,543.0,Stage IIA,"Adenocarcinoma, NOS",,0,543.0,73.6208076659822,2.0,1,0
+286cbae3-8324-43b7-9b20-0f40dda1588e,TCGA-D5-6930,Alive,,male,white,not hispanic or latino,24764.0,406.0,Stage IIA,Mucinous adenocarcinoma,,0,406.0,67.80013689253936,2.0,1,1
+c48e2ce0-3806-4675-92f3-d38ff67c5efa,TCGA-DM-A28M,Alive,,male,white,not hispanic or latino,23043.0,2895.0,Stage IIA,"Adenocarcinoma, NOS",,0,2895.0,63.08829568788501,2.0,1,0
+c6ed47f4-358b-4f06-b5cd-cdf1d5c47b43,TCGA-F4-6704,Alive,,male,american indian or alaska native,not hispanic or latino,21949.0,47.0,Stage IIIC,Mucinous adenocarcinoma,,0,47.0,60.09308692676249,3.0,1,1
+aee20b98-df51-4ead-86cc-0d5f60a74b90,TCGA-AZ-6600,Dead,368.0,male,black or african american,not hispanic or latino,23581.0,368.0,Stage IV,"Adenocarcinoma, NOS",,1,368.0,64.56125941136209,4.0,1,0
+64bd568d-0509-48fe-8d0a-aef2a85d5c57,TCGA-F4-6856,Alive,,male,white,not hispanic or latino,16519.0,1074.0,Stage I,Mucinous adenocarcinoma,,0,1074.0,45.22655715263518,1.0,1,1
+4beee9d4-ee52-4fed-bcc4-d300f5ddd4d0,TCGA-A6-5661,Alive,,female,black or african american,not hispanic or latino,29446.0,1020.0,Stage IIA,"Adenocarcinoma, NOS",,0,1020.0,80.61875427789185,2.0,0,1
+c21d2c68-920f-4526-b754-286579c049f3,TCGA-AA-3663,Alive,,male,not reported,not reported,15675.0,212.0,Stage II,"Adenocarcinoma, NOS",,0,212.0,42.91581108829569,2.0,1,1
+2db3c23d-c591-4ea0-b0a8-ed9c4343c80e,TCGA-CK-4951,Dead,2134.0,female,white,not hispanic or latino,29462.0,,,Mucinous adenocarcinoma,,1,2134.0,80.66255989048597,,0,1
+85e95dda-6198-464a-9187-fd0832bebb72,TCGA-AA-3492,Dead,1.0,female,not reported,not reported,32871.0,1.0,Stage II,"Adenocarcinoma, NOS",,1,1.0,89.99589322381931,2.0,0,1
+7a70f061-9a6f-408e-a416-7f5295ceba3b,TCGA-CK-6751,Alive,,female,white,not hispanic or latino,32354.0,518.0,Stage I,Mucinous adenocarcinoma,,0,518.0,88.58042436687201,1.0,0,0
+d761bc06-dee8-478a-be99-8af9c504e49c,TCGA-AA-3684,Alive,,female,not reported,not reported,23741.0,0.0,Stage IV,Mucinous adenocarcinoma,,0,0.0,64.99931553730322,4.0,0,1
+8c0894fb-5e78-40ae-be0b-329ca30f758a,TCGA-DM-A1HB,Alive,,male,white,not hispanic or latino,27708.0,4126.0,Stage IIIB,Mucinous adenocarcinoma,,0,4126.0,75.86036960985626,3.0,1,1
+f2ef5afa-6191-43a1-a023-d53c0d985139,TCGA-AA-3846,Alive,,female,not reported,not reported,27057.0,518.0,Stage IIA,"Adenocarcinoma, NOS",,0,518.0,74.07802874743327,2.0,0,1
+1c111912-c664-42f5-9802-065b1994a2f4,TCGA-F4-6855,Alive,,female,white,not hispanic or latino,25890.0,1442.0,Stage IIA,"Adenocarcinoma, NOS",,0,1442.0,70.88295687885011,2.0,0,1
+57cdaa1c-4e94-4a28-ab3b-300c0457555f,TCGA-A6-2674,Alive,,male,white,not hispanic or latino,26292.0,1331.0,Stage IV,Mucinous adenocarcinoma,,0,1331.0,71.9835728952772,4.0,1,1
+f87c6dcc-1a9e-4df5-962c-1f946e2611f8,TCGA-AA-A01T,Alive,,female,not reported,not reported,23192.0,1005.0,Stage III,"Adenocarcinoma, NOS",,0,1005.0,63.49623545516769,3.0,0,1
+84959e50-17f5-4f2b-8e0c-5ebb139d2c3a,TCGA-QG-A5Z2,Alive,,male,black or african american,not hispanic or latino,22367.0,952.0,Stage I,"Adenocarcinoma, NOS",,0,952.0,61.23750855578371,1.0,1,1
+fb4cc403-694c-421f-b360-3108b6d57ad5,TCGA-AU-3779,Alive,,female,white,not hispanic or latino,29460.0,441.0,Stage IIA,"Adenocarcinoma, NOS",,0,441.0,80.65708418891171,2.0,0,1
+aedde4a5-6520-40b9-9721-c9b826490b7a,TCGA-CM-6166,Alive,,female,white,not hispanic or latino,17807.0,669.0,Stage I,"Adenocarcinoma, NOS",,0,669.0,48.75290896646133,1.0,0,0
+75c3004d-1ef4-49f9-86e0-1bb7b9553a3d,TCGA-CM-6168,Alive,,female,black or african american,not hispanic or latino,30834.0,395.0,Stage IIA,"Adenocarcinoma, NOS",,0,395.0,84.41889117043121,2.0,0,1
+d651f9ba-8746-46c4-852c-6c2992c7d10e,TCGA-AA-3667,Alive,,female,not reported,not reported,13302.0,426.0,Stage I,"Adenocarcinoma, NOS",,0,426.0,36.41889117043121,1.0,0,1
+a06c09a8-0951-49f4-a765-5147bbcae109,TCGA-AA-3664,Alive,,female,not reported,not reported,27363.0,1643.0,Stage II,"Adenocarcinoma, NOS",,0,1643.0,74.91581108829568,2.0,0,0
+a512701f-88bb-4b05-8c94-fd285b9dd13e,TCGA-AA-3666,Dead,61.0,male,not reported,not reported,25020.0,61.0,Stage III,"Adenocarcinoma, NOS",,1,61.0,68.50102669404518,3.0,1,0
+81f6b141-2195-4091-9cd3-dfb022663949,TCGA-AA-3930,Dead,61.0,male,not reported,not reported,24321.0,61.0,Stage IV,"Adenocarcinoma, NOS",,1,61.0,66.58726899383984,4.0,1,1
+3d8fd9b2-9aa2-4c81-8843-535ae66d6140,TCGA-AZ-4308,Alive,,female,white,not hispanic or latino,17321.0,3324.0,Stage IIIB,"Adenocarcinoma, NOS",,0,3324.0,47.422313483915126,3.0,0,0
+1e0789d6-7efb-4807-8d36-cd9224675a0c,TCGA-NH-A8F8,Dead,511.0,male,black or african american,not hispanic or latino,29185.0,511.0,Stage IV,"Adenocarcinoma, NOS",,1,511.0,79.90417522245038,4.0,1,1
+b4c3cf95-a27c-4bcf-9321-38723473e83b,TCGA-AA-3855,Alive,,male,not reported,not reported,26541.0,975.0,Stage I,"Adenocarcinoma, NOS",,0,975.0,72.66529774127311,1.0,1,0
+c8d6fe73-3504-42a5-9723-e1916fba8208,TCGA-AZ-6606,Dead,357.0,male,white,not hispanic or latino,29704.0,357.0,Stage IV,"Adenocarcinoma, NOS",,1,357.0,81.32511978097193,4.0,1,0
+ca5b878f-8bff-410a-8e6e-b1c133018c8d,TCGA-G4-6315,Alive,,male,white,not hispanic or latino,24174.0,1883.0,Stage IV,"Adenocarcinoma, NOS",,0,1883.0,66.18480492813141,4.0,1,0
+7b47489f-c3cc-4388-b5d7-c7c02790a5f6,TCGA-AA-3956,Alive,,male,not reported,not reported,24045.0,1035.0,Stage IIA,"Adenocarcinoma, NOS",,0,1035.0,65.83162217659138,2.0,1,1
+2c30dc20-18a8-44f9-ab10-558c1e5634dc,TCGA-AY-6196,Alive,,male,white,not hispanic or latino,17311.0,6.0,Stage IIIC,Mucinous adenocarcinoma,,0,6.0,47.39493497604381,3.0,1,1
+6775ce57-b4cf-425c-a898-061bb9a8a1a8,TCGA-DM-A280,Dead,236.0,female,white,not hispanic or latino,25649.0,236.0,Stage IIA,Mucinous adenocarcinoma,,1,236.0,70.22313483915127,2.0,0,1
+c83d38fc-e011-4f75-a100-96513611f3e9,TCGA-QG-A5YV,Alive,,female,black or african american,not hispanic or latino,23499.0,1301.0,Stage IIIC,"Adenocarcinoma, NOS",,0,1301.0,64.33675564681725,3.0,0,0
+3758f4f7-ac2f-4f9d-bee2-526196f8129a,TCGA-CK-5913,Alive,,female,white,not hispanic or latino,21399.0,1561.0,Stage IIA,"Adenocarcinoma, NOS",,0,1561.0,58.587268993839835,2.0,0,1
+da21e143-dbf6-4ac7-8872-f1d9ae39512d,TCGA-G4-6320,Alive,,male,white,not hispanic or latino,26840.0,804.0,Stage III,"Adenocarcinoma, NOS",,0,804.0,73.4839151266256,3.0,1,1
+043a4745-566b-4106-b159-99cb8b394b81,TCGA-AA-3877,Alive,,female,not reported,not reported,30377.0,943.0,Stage I,Mucinous adenocarcinoma,,0,943.0,83.16769336071184,1.0,0,1
+73a142e1-8ac2-4cfe-b8cf-7e9dea64f488,TCGA-AA-A02J,Dead,153.0,female,not reported,not reported,25749.0,153.0,Stage IV,"Adenocarcinoma, NOS",,1,153.0,70.49691991786447,4.0,0,1
+01240896-3f3f-4bf9-9799-55c87bfacf36,TCGA-F4-6854,Alive,,female,white,not hispanic or latino,28272.0,16.0,Stage IIA,"Adenocarcinoma, NOS",,0,16.0,77.40451745379877,2.0,0,1
+01f493d4-229d-47a6-baa8-32a342c65d01,TCGA-AA-A00O,Alive,,female,not reported,not reported,30316.0,822.0,Stage IIIC,"Adenocarcinoma, NOS",,0,822.0,83.00068446269678,3.0,0,1
+022f39e9-57ee-4b2b-8b3a-8929e3d69a37,TCGA-DM-A28F,Dead,1094.0,male,white,not hispanic or latino,26856.0,1094.0,Stage IIIB,"Adenocarcinoma, NOS",,1,1094.0,73.52772073921972,3.0,1,1
+0687bea4-911a-4ef2-9fa2-531ef6ba7910,TCGA-NH-A6GC,Alive,,female,black or african american,not hispanic or latino,24355.0,389.0,Stage IVB,Mucinous adenocarcinoma,,0,389.0,66.68035592060232,4.0,0,0
+0712566e-3371-4715-95f1-5b792e72d758,TCGA-AA-A010,Alive,,female,not reported,not reported,16922.0,1064.0,Stage IIB,"Adenocarcinoma, NOS",,0,1064.0,46.32991101984942,2.0,0,1
+07dc5a1d-64b7-42ba-928e-9753bd533c1e,TCGA-A6-2675,Alive,,male,white,not hispanic or latino,28813.0,1321.0,Stage IIA,"Adenocarcinoma, NOS",,0,1321.0,78.88569472963724,2.0,1,0
+09942e9f-c178-44bc-9cd9-f5bfa350b23f,TCGA-AA-3519,Alive,,male,not reported,not reported,23131.0,276.0,Stage III,"Adenocarcinoma, NOS",,0,276.0,63.32922655715264,3.0,1,0
+0a94eecf-4db2-4846-8383-c83ff02e4a9f,TCGA-D5-6922,Alive,,male,white,not hispanic or latino,27771.0,308.0,Stage IIIA,"Adenocarcinoma, NOS",,0,308.0,76.03285420944559,3.0,1,0
+0c463362-7925-4d9a-9d63-098b50af2fb9,TCGA-G4-6323,Alive,,male,black or african american,not hispanic or latino,18334.0,419.0,Stage IA,"Adenocarcinoma, NOS",,0,419.0,50.195756331279945,1.0,1,1
+0cb0dac8-4ce2-444a-b1ae-1550e065b4d9,TCGA-AA-A01V,Alive,,male,not reported,not reported,21792.0,31.0,Stage I,"Adenocarcinoma, NOS",,0,31.0,59.663244353182755,1.0,1,1
+0cbe9848-8eac-4ea8-a36b-fb74b4a33de7,TCGA-AA-A00K,Alive,,male,not reported,not reported,29189.0,549.0,Stage IIA,"Adenocarcinoma, NOS",,0,549.0,79.9151266255989,2.0,1,0
+0ec6ed47-db99-4273-9823-ffbde6a77091,TCGA-A6-6651,Alive,,female,white,not hispanic or latino,20110.0,662.0,Stage IIIB,"Adenocarcinoma, NOS",,0,662.0,55.058179329226554,3.0,0,0
+0f008098-d8aa-46dc-8445-cca59838c582,TCGA-AD-5900,Alive,,male,white,not hispanic or latino,24776.0,370.0,Stage I,Mucinous adenocarcinoma,,0,370.0,67.83299110198494,1.0,1,1
+0f74d992-00da-4728-9564-086ca1b95921,TCGA-A6-2679,Alive,,female,white,not hispanic or latino,26820.0,1366.0,Stage IIB,"Adenocarcinoma, NOS",,0,1366.0,73.42915811088295,2.0,0,0
+10628a61-bd5e-4415-af97-631c5ca320cb,TCGA-AA-A00A,Alive,,male,not reported,not reported,29463.0,1157.0,Stage IIA,"Adenocarcinoma, NOS",,0,1157.0,80.66529774127311,2.0,1,0
+1136dd50-242a-4659-aad4-c53f9e759bb3,TCGA-5M-AAT4,Dead,49.0,male,black or african american,hispanic or latino,27095.0,49.0,Stage IV,"Adenocarcinoma, NOS",,1,49.0,74.18206707734429,4.0,1,1
+124b6856-f581-46da-9068-b0a49b999785,TCGA-AA-A00E,Alive,,male,not reported,not reported,23741.0,913.0,Stage IIA,"Adenocarcinoma, NOS",,0,913.0,64.99931553730322,2.0,1,0
+132229e5-947d-43e9-a54c-a97d4be7d604,TCGA-AA-A01F,Alive,,male,not reported,not reported,26298.0,974.0,Stage IIIB,"Adenocarcinoma, NOS",,0,974.0,72.0,3.0,1,0
+13ae9d83-a22f-451f-88bb-686051725cf3,TCGA-AA-A01P,Dead,1158.0,female,not reported,not reported,29554.0,1158.0,Stage III,"Adenocarcinoma, NOS",,1,1158.0,80.91444216290212,3.0,0,1
+143f2dd6-a280-41c5-9242-442ef91b73ec,TCGA-DM-A288,Dead,427.0,male,white,not hispanic or latino,25084.0,427.0,Stage IIIC,Mucinous adenocarcinoma,,1,427.0,68.67624914442163,3.0,1,1
+14cc6f5b-5692-471e-98b4-ae200b3d8fed,TCGA-AY-5543,Alive,,female,black or african american,not hispanic or latino,23870.0,1004.0,Stage IVA,"Adenocarcinoma, NOS",,0,1004.0,65.35249828884326,4.0,0,0
+15b987ba-77ab-477b-a54a-65ec5c7c399e,TCGA-AA-3495,Alive,,male,not reported,not reported,28886.0,1127.0,Stage I,"Adenocarcinoma, NOS",,0,1127.0,79.08555783709788,1.0,1,0
+1add38c2-df6f-47c9-9373-0bec0e40baf8,TCGA-AA-3851,Alive,,male,not reported,not reported,27090.0,1006.0,Stage IIA,"Adenocarcinoma, NOS",,0,1006.0,74.16837782340862,2.0,1,0
+1b0b0533-7c4f-4edd-a75e-8b56f49d54ab,TCGA-DM-A1D0,Alive,,female,white,not hispanic or latino,28875.0,3974.0,Stage IIA,"Adenocarcinoma, NOS",,0,3974.0,79.05544147843942,2.0,0,0
+264c0d45-078a-4207-a101-71f99bcd237e,TCGA-G4-6303,Dead,2003.0,female,white,not hispanic or latino,20672.0,,,Not Reported,,1,2003.0,56.596851471594796,,0,0
+26a12266-c6d8-42f9-bd4e-5093d827ac9a,TCGA-AM-5820,Alive,,female,white,not hispanic or latino,21902.0,14.0,Stage IVA,"Adenocarcinoma, NOS",,0,14.0,59.964407939767284,4.0,0,1
+27d9c162-11bb-48fb-a41a-aa05fcb4c1c2,TCGA-G4-6293,Alive,,female,white,not hispanic or latino,18076.0,4051.0,Stage III,"Adenocarcinoma, NOS",,0,4051.0,49.489390828199866,3.0,0,1
+27e2438d-bd01-4c50-9102-563276ed9922,TCGA-D5-6898,Alive,,female,white,not hispanic or latino,18874.0,229.0,Stage I,"Adenocarcinoma, NOS",,0,229.0,51.67419575633128,1.0,0,0
+28d03569-8717-40da-8989-70baf2b18f9f,TCGA-A6-5667,Alive,,female,white,not hispanic or latino,14756.0,887.0,Stage IIIB,"Adenocarcinoma, NOS",,0,887.0,40.39972621492129,3.0,0,0
+2900eadd-7e27-4371-94e5-7d58cdff0138,TCGA-F4-6461,Dead,338.0,female,white,not hispanic or latino,15439.0,,,Not Reported,,1,338.0,42.26967830253251,,0,1
+2a7bbafe-d499-4241-ba3d-a52ba0a5db3c,TCGA-F4-6460,Dead,972.0,female,white,not hispanic or latino,18950.0,,,Not Reported,,1,972.0,51.88227241615332,,0,1
+2dced66c-1f0d-4039-a5e5-54cca77c16e9,TCGA-AA-3548,Alive,,female,not reported,not reported,26175.0,1034.0,Stage IIIC,"Adenocarcinoma, NOS",,0,1034.0,71.66324435318275,3.0,0,0
+31d960d7-8f5b-4d22-bf5e-fae0849c4efd,TCGA-D5-5540,Alive,,male,white,not hispanic or latino,26972.0,1706.0,Stage IIA,"Adenocarcinoma, NOS",,0,1706.0,73.84531143052703,2.0,1,1
+33e989b9-fac4-47d8-b429-269044ac772a,TCGA-AA-3977,Alive,,male,not reported,not reported,23832.0,761.0,,"Adenocarcinoma, NOS",,0,761.0,65.24845995893224,,1,1
+3470b1af-689f-467a-9f9e-de74088f9b94,TCGA-CM-6161,Alive,,female,white,not hispanic or latino,13363.0,457.0,Stage I,"Adenocarcinoma, NOS",,0,457.0,36.58590006844627,1.0,0,1
+35620be9-3ba5-4be7-9e00-83103e6a92e6,TCGA-AA-A02E,Dead,90.0,female,not reported,not reported,30256.0,90.0,Stage IV,"Adenocarcinoma, NOS",,1,90.0,82.83641341546885,4.0,0,1
+35c9264f-34ec-4d75-ab80-aaac86108fc8,TCGA-AY-6386,Alive,,female,black or african american,not hispanic or latino,24453.0,542.0,Stage IIIB,"Adenocarcinoma, NOS",,0,542.0,66.94866529774127,3.0,0,0
+38d65618-4857-490e-86b3-0a3f772a9f60,TCGA-CK-5916,Dead,643.0,female,white,not hispanic or latino,26024.0,643.0,Stage I,"Adenocarcinoma, NOS",,1,643.0,71.24982888432581,1.0,0,1
+39aec099-a33e-47a4-a602-cbf65ddd3830,TCGA-D5-6541,Alive,,male,white,not hispanic or latino,18029.0,474.0,Stage IIA,"Adenocarcinoma, NOS",,0,474.0,49.360711841204655,2.0,1,0
+39d3b5b3-d51e-4d77-a8aa-2977fa734fab,TCGA-AA-3869,Dead,822.0,male,not reported,not reported,28062.0,822.0,Stage IV,"Adenocarcinoma, NOS",,1,822.0,76.82956878850102,4.0,1,1
+3e0c34cb-fca5-4bcf-a5c1-5a7d286dd072,TCGA-CA-5797,Alive,,male,asian,not hispanic or latino,20662.0,383.0,Stage IIA,"Adenocarcinoma, NOS",,0,383.0,56.56947296372348,2.0,1,0
+40c217ee-429f-41f4-adc6-db9186622b17,TCGA-CM-6172,Alive,,female,white,not hispanic or latino,25902.0,335.0,Stage IIIB,"Adenocarcinoma, NOS",,0,335.0,70.91581108829568,3.0,0,1
+47a8e514-904c-4867-8f43-7eb573be835b,TCGA-AD-6963,Alive,,male,white,not reported,21294.0,834.0,,"Adenocarcinoma, NOS",,0,834.0,58.299794661190965,,1,1
+4881a390-c4e4-48b4-ae66-140c64a87614,TCGA-A6-A5ZU,Alive,,male,black or african american,not hispanic or latino,21554.0,293.0,Stage IIIB,"Adenocarcinoma, NOS",,0,293.0,59.011635865845314,3.0,1,1
+490eabca-4575-4bd6-9604-6b6e23d069ce,TCGA-NH-A50T,Alive,,female,black or african american,not hispanic or latino,25089.0,553.0,Stage IIA,"Adenocarcinoma, NOS",,0,553.0,68.68993839835728,2.0,0,0
+4a785dc7-f5f6-4607-a19d-e6354b2fb5a9,TCGA-F4-6808,Alive,,female,white,not hispanic or latino,19803.0,1024.0,Stage I,"Adenocarcinoma, NOS",,0,1024.0,54.217659137577,1.0,0,1
+4be66108-e72a-406b-bb4b-f58ff2877336,TCGA-AA-A01Q,Alive,,female,not reported,not reported,17715.0,31.0,Stage II,"Adenocarcinoma, NOS",,0,31.0,48.50102669404517,2.0,0,0
+51dcbfac-6f04-4364-877d-0bf1bd566335,TCGA-NH-A6GA,Dead,302.0,male,black or african american,not hispanic or latino,21319.0,,,Not Reported,,1,302.0,58.36824093086927,,1,0
+5498d5ef-ad24-4034-9750-7c996c5355e1,TCGA-AA-3875,Alive,,female,not reported,not reported,28640.0,549.0,Stage I,"Adenocarcinoma, NOS",,0,549.0,78.41204654346338,1.0,0,0
+565e2726-4942-4726-89d3-c5e3797f7204,TCGA-A6-2671,Dead,1331.0,male,white,not hispanic or latino,32159.0,,,Not Reported,,1,1331.0,88.04654346338124,,1,1
+56c8b812-ca8e-4eb2-b0fe-f264316789bf,TCGA-DM-A1HA,Alive,,male,white,not hispanic or latino,30272.0,2600.0,Stage IIIC,"Adenocarcinoma, NOS",,0,2600.0,82.88021902806297,3.0,1,1
+56eb96a4-d2c2-42fb-b26c-1a80012bcb8e,TCGA-CM-4747,Alive,,male,white,not hispanic or latino,17198.0,761.0,Stage IVA,"Adenocarcinoma, NOS",,0,761.0,47.08555783709788,4.0,1,0
+57b0f89f-1b75-453e-922c-01cd4d44ca49,TCGA-CK-5914,Alive,,male,white,not hispanic or latino,29586.0,669.0,Stage IIIB,"Adenocarcinoma, NOS",,0,669.0,81.00205338809035,3.0,1,1
+58facedb-fcb8-4ecf-8338-2bfa4947acef,TCGA-A6-6141,Alive,,male,black or african american,not hispanic or latino,11391.0,255.0,Stage IIA,"Adenocarcinoma, NOS",,0,255.0,31.186858316221766,2.0,1,0
+5a195baa-2d05-4273-a7c4-64cc816b0406,TCGA-AA-3982,Alive,,male,not reported,not reported,27608.0,822.0,Stage IIIB,"Adenocarcinoma, NOS",,0,822.0,75.58658453114305,3.0,1,0
+5b259d18-3976-4f44-967f-fe5fa8447c8b,TCGA-CM-5864,Alive,,male,white,not hispanic or latino,22219.0,457.0,Stage I,"Adenocarcinoma, NOS",,0,457.0,60.832306639288156,1.0,1,0
+5d66191d-da49-4d7e-89a4-a382db338340,TCGA-D5-6931,Alive,,male,white,not hispanic or latino,28292.0,365.0,Stage IIIC,"Adenocarcinoma, NOS",,0,365.0,77.45927446954141,3.0,1,1
+5d73b382-3da3-4220-890e-2095228bbe6c,TCGA-CK-4948,Alive,,female,white,not hispanic or latino,16736.0,4502.0,Stage III,"Adenocarcinoma, NOS",,0,4502.0,45.82067077344285,3.0,0,0
+5f1399ef-8100-49e7-806f-9f532e55c0ba,TCGA-AA-3520,Alive,,female,not reported,not reported,31531.0,731.0,Stage II,"Adenocarcinoma, NOS",,0,731.0,86.32717316906229,2.0,0,0
+5f6ed48b-3b5a-4d20-8fbf-c9aa3feea186,TCGA-RU-A8FL,Alive,,male,black or african american,not hispanic or latino,18975.0,1177.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1177.0,51.950718685831625,3.0,1,0
+605baa86-79e3-484d-82d2-4de27d405ba1,TCGA-AM-5821,Alive,,female,white,not hispanic or latino,24903.0,28.0,Stage IIA,"Adenocarcinoma, NOS",,0,28.0,68.18069815195072,2.0,0,1
+60ad2c8a-6bbf-43fc-ae73-cc1f6d6c163c,TCGA-AA-A00F,Alive,,male,not reported,not reported,24379.0,1035.0,Stage IIIC,"Adenocarcinoma, NOS",,0,1035.0,66.7460643394935,3.0,1,0
+6454ff0c-26f8-4cc2-b77c-7e5abdc20acd,TCGA-NH-A8F7,Alive,,female,black or african american,not hispanic or latino,19535.0,543.0,Stage IIA,"Adenocarcinoma, NOS",,0,543.0,53.4839151266256,2.0,0,1
+64b0461f-038d-4712-948e-818dc2f10eef,TCGA-D5-6929,Alive,,female,white,not hispanic or latino,17919.0,408.0,Stage IV,"Adenocarcinoma, NOS",,0,408.0,49.059548254620125,4.0,0,1
+64dcf1a5-c78c-4d3f-852c-15865b3b6189,TCGA-AZ-6607,Dead,97.0,male,white,not hispanic or latino,25448.0,97.0,Stage IV,"Adenocarcinoma, NOS",,1,97.0,69.67282683093771,4.0,1,1
+65ab030d-39f2-48ab-80ac-90cb1faa823a,TCGA-CA-5796,Alive,,female,asian,not hispanic or latino,19353.0,377.0,Stage IIA,Mucinous adenocarcinoma,,0,377.0,52.98562628336756,2.0,0,1
+67ba29e7-f294-4dcd-9630-ad768c22c588,TCGA-AA-3494,Alive,,male,not reported,not reported,20089.0,31.0,Stage IV,"Adenocarcinoma, NOS",,0,31.0,55.00068446269678,4.0,1,0
+69fb431f-0caf-4cdd-9085-eda5b18ed15d,TCGA-AA-A02H,Dead,61.0,female,not reported,not reported,27362.0,61.0,Stage IV,"Adenocarcinoma, NOS",,1,61.0,74.91307323750856,4.0,0,1
+6baf61b6-ae5b-42f0-adc9-0d26fda231f7,TCGA-AY-4070,Dead,496.0,female,black or african american,not hispanic or latino,18807.0,,,Not Reported,,1,496.0,51.49075975359343,,0,0
+6cd8d2dd-5545-43b0-b796-ae0506d62eb8,TCGA-A6-6650,Alive,,female,black or african american,not hispanic or latino,25516.0,627.0,Stage IIA,"Adenocarcinoma, NOS",,0,627.0,69.8590006844627,2.0,0,0
+6e9e0c2f-2ddb-40f1-8e8c-618119e62ec1,TCGA-AA-3488,Dead,153.0,male,not reported,not reported,21519.0,153.0,Stage IV,"Adenocarcinoma, NOS",,1,153.0,58.91581108829569,4.0,1,0
+6f2b5a14-569c-4084-8c67-b1a44d787897,TCGA-AA-A01G,Alive,,male,not reported,not reported,23133.0,365.0,Stage IIA,Mucinous adenocarcinoma,,0,365.0,63.3347022587269,2.0,1,0
+6fc5e56a-1f5e-4ff1-948e-5ef636ebb48d,TCGA-AA-3852,Dead,0.0,male,not reported,not reported,32203.0,0.0,Stage IIA,Mucinous adenocarcinoma,,1,0.0,88.16700889801506,2.0,1,0
+7144a65f-a63f-4b79-8fe2-cfe48696de03,TCGA-G4-6302,Dead,0.0,female,white,not hispanic or latino,32872.0,0.0,Stage IIA,Mucinous adenocarcinoma,,1,0.0,89.99863107460644,2.0,0,1
+74a0264d-1d31-430d-9a88-e7334c8aa96c,TCGA-A6-A56B,Dead,1711.0,male,black or african american,not hispanic or latino,20903.0,1711.0,Stage IIIB,"Adenocarcinoma, NOS",,1,1711.0,57.229295003422315,3.0,1,0
+755d3bde-76c3-45c1-8427-8e4d5d686dc1,TCGA-CK-6747,Alive,,female,white,not hispanic or latino,32052.0,820.0,Stage IIA,"Adenocarcinoma, NOS",,0,820.0,87.75359342915812,2.0,0,0
+75ea63a9-357b-4566-bd78-eaa67809decd,TCGA-DM-A0X9,Alive,,female,white,not hispanic or latino,26217.0,3641.0,Stage IIA,"Adenocarcinoma, NOS",,0,3641.0,71.77823408624229,2.0,0,0
+764c97c9-01d3-45cb-86bd-f8a52b5468da,TCGA-AA-A02R,Dead,670.0,female,not reported,not reported,30834.0,670.0,Stage IIA,"Adenocarcinoma, NOS",,1,670.0,84.41889117043121,2.0,0,1
+76e96b5a-b565-42c7-a651-34d5132e6dde,TCGA-CM-6679,Alive,,male,white,not hispanic or latino,21519.0,306.0,Stage IIA,"Adenocarcinoma, NOS",,0,306.0,58.91581108829569,2.0,1,1
+7dfbc0ed-e684-4966-8b59-fb6b9e80c129,TCGA-AA-3841,Alive,,male,not reported,not reported,24230.0,1124.0,Stage IIA,"Adenocarcinoma, NOS",,0,1124.0,66.33812457221082,2.0,1,0
+7f6898e2-a840-4ad1-80f7-783f8b766fcc,TCGA-WS-AB45,Alive,,female,black or african american,not hispanic or latino,,2130.0,Stage IIA,Mucinous adenocarcinoma,,0,2130.0,,2.0,0,1
+80e677b1-5ebe-4069-a1a5-1538ffee6642,TCGA-AA-3509,Alive,,female,not reported,not reported,19786.0,1915.0,Stage II,"Adenocarcinoma, NOS",,0,1915.0,54.171115674195754,2.0,0,0
+835c3e23-ac2b-4bc9-ac65-e3e81adecf77,TCGA-AA-3941,Alive,,female,not reported,not reported,31015.0,730.0,Stage IVA,"Adenocarcinoma, NOS",,0,730.0,84.91444216290212,4.0,0,0
+8368d745-c74d-4236-ba75-16ca7aaeb3ca,TCGA-AA-3502,Alive,,male,not reported,not reported,26724.0,1065.0,Stage I,"Adenocarcinoma, NOS",,0,1065.0,73.16632443531827,1.0,1,1
+849031de-ac8a-4012-9362-d192512997f1,TCGA-AZ-6605,Dead,159.0,male,white,not hispanic or latino,28485.0,159.0,Stage IIIB,"Adenocarcinoma, NOS",,1,159.0,77.98767967145791,3.0,1,1
+849442d3-eb82-416e-9d36-2fc15dfac67a,TCGA-DM-A1D4,Dead,2821.0,male,white,not hispanic or latino,31323.0,,,Not Reported,,1,2821.0,85.75770020533881,,1,1
+85a57cfe-f1c9-44d9-8b50-022c0d3438d1,TCGA-AZ-5403,Dead,1910.0,male,white,not hispanic or latino,15983.0,1910.0,Stage II,"Adenocarcinoma, NOS",,1,1910.0,43.75906913073238,2.0,1,0
+85bdc1ac-a1a4-46c2-bc2d-e5fabf5c89e9,TCGA-DM-A28E,Alive,,female,white,not hispanic or latino,26602.0,3648.0,Stage IIA,"Adenocarcinoma, NOS",,0,3648.0,72.83230663928816,2.0,0,0
+8632579e-d318-4dab-9994-d3945afc42ab,TCGA-A6-3809,Alive,,female,white,not hispanic or latino,26274.0,996.0,Stage IIB,Mucinous adenocarcinoma,,0,996.0,71.93429158110882,2.0,0,1
+86d18004-9478-4e46-83b4-4fbe445ccb70,TCGA-AA-A01I,Alive,,male,not reported,not reported,27759.0,943.0,Stage I,"Adenocarcinoma, NOS",,0,943.0,76.0,1.0,1,1
+88832340-46ad-449c-8f81-6a8e5b495510,TCGA-A6-6780,Alive,,male,white,not hispanic or latino,27250.0,612.0,Stage IIA,Mucinous adenocarcinoma,,0,612.0,74.60643394934976,2.0,1,1
+8a84b03a-e37e-4827-98f0-4d480ec31037,TCGA-CK-6748,Alive,,female,white,not hispanic or latino,16529.0,61.0,Stage IV,Mucinous adenocarcinoma,,0,61.0,45.2539356605065,4.0,0,1
+8c043ecd-2265-411f-bc3b-dc341cf56ac2,TCGA-CM-6163,Alive,,male,white,not hispanic or latino,27150.0,427.0,Stage I,"Adenocarcinoma, NOS",,0,427.0,74.33264887063655,1.0,1,1
+92554413-9ebc-4354-8e1b-9682f3a031d9,TCGA-4N-A93T,Alive,,male,black or african american,not hispanic or latino,24523.0,146.0,Stage IIIB,"Adenocarcinoma, NOS",,0,146.0,67.14031485284052,3.0,1,0
+94067eb7-98b7-4975-bab1-c09e1b454a25,TCGA-D5-5541,Alive,,male,white,not hispanic or latino,23109.0,1701.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1701.0,63.26899383983573,3.0,1,1
+9cdca5d8-ea77-4df9-b2ba-0d5e8ec37bcd,TCGA-CA-6719,Alive,,male,asian,not hispanic or latino,28343.0,435.0,Stage IIA,"Adenocarcinoma, NOS",,0,435.0,77.59890485968515,2.0,1,0
+9d68516e-7e5c-403e-8aca-ea1abe0d6014,TCGA-NH-A50U,Dead,334.0,male,black or african american,not hispanic or latino,15450.0,334.0,Stage IVA,Mucinous adenocarcinoma,,1,334.0,42.299794661190965,4.0,1,0
+9fd08502-355b-4f5a-a25c-73ec7184f6d3,TCGA-F4-6459,Dead,262.0,female,white,not hispanic or latino,22574.0,262.0,Stage IIIB,"Adenocarcinoma, NOS",,1,262.0,61.804243668720055,3.0,0,1
+a117ace8-ac5a-48d8-8aee-3024d6f0f873,TCGA-D5-6538,Alive,,female,white,not hispanic or latino,29194.0,521.0,Stage IIIB,"Adenocarcinoma, NOS",,0,521.0,79.92881587953457,3.0,0,0
+a123dc45-e427-461e-8d60-c51307aa498c,TCGA-D5-6535,Alive,,female,white,not hispanic or latino,29278.0,460.0,Stage IIIB,"Adenocarcinoma, NOS",,0,460.0,80.15879534565366,3.0,0,1
+a435fdf4-a89a-499e-9006-cbb5693eab26,TCGA-AA-A02Y,Alive,,male,not reported,not reported,26724.0,1216.0,Stage I,"Adenocarcinoma, NOS",,0,1216.0,73.16632443531827,1.0,1,1
+a54b322b-80d3-435c-8d14-25841b741f6c,TCGA-5M-AATE,Alive,,male,black or african american,hispanic or latino,27870.0,1200.0,Stage IIA,"Adenocarcinoma, NOS",,0,1200.0,76.30390143737166,2.0,1,1
+a56f6562-d2af-47b9-bf81-94b3b4893173,TCGA-DM-A0XD,Dead,743.0,male,white,not hispanic or latino,24583.0,,,"Adenocarcinoma, NOS",,1,743.0,67.30458590006845,,1,1
+a5e14add-1552-4606-9ffe-3a03bcf76640,TCGA-4T-AA8H,Alive,,female,black or african american,not hispanic or latino,15494.0,385.0,Stage IIA,Mucinous adenocarcinoma,,0,385.0,42.42026009582478,2.0,0,0
+a6f98ee5-9638-4ebe-804b-fba54aea9f90,TCGA-CK-6746,Alive,,female,white,not hispanic or latino,30957.0,0.0,Stage IIB,"Adenocarcinoma, NOS",,0,0.0,84.75564681724846,2.0,0,1
+a72dd578-3a6f-4807-a843-4a942500944e,TCGA-AA-A01K,Alive,,female,not reported,not reported,27029.0,943.0,Stage IIIC,"Adenocarcinoma, NOS",,0,943.0,74.00136892539356,3.0,0,1
+a782f174-241d-42c6-9bc4-61cc39f8b397,TCGA-D5-6927,Alive,,male,white,not hispanic or latino,12737.0,287.0,Stage IIA,"Adenocarcinoma, NOS",,0,287.0,34.87200547570158,2.0,1,1
+a85e8208-a6f5-4e91-8f35-ef574f4273fc,TCGA-CM-6677,Alive,,female,white,not hispanic or latino,27575.0,337.0,Stage IIA,"Adenocarcinoma, NOS",,0,337.0,75.49623545516769,2.0,0,0
+a8b4284d-cbbb-43e3-897b-d04af4bfba74,TCGA-AZ-6598,Dead,1503.0,female,white,not hispanic or latino,28182.0,1503.0,Stage II,"Adenocarcinoma, NOS",,1,1503.0,77.15811088295688,2.0,0,1
+aa909ffb-03e1-4e3f-8888-2212b23d90b7,TCGA-AA-3696,Dead,153.0,female,not reported,not reported,27667.0,153.0,Stage IV,"Adenocarcinoma, NOS",,1,153.0,75.74811772758385,4.0,0,0
+abb0d53f-f74e-45dc-8fbb-40863016f3c6,TCGA-AA-3681,Alive,,female,not reported,not reported,28399.0,182.0,Stage III,"Adenocarcinoma, NOS",,0,182.0,77.75222450376455,3.0,0,0
+ac13d568-f79e-4ba7-b7bf-18e4354e0920,TCGA-D5-6532,Alive,,male,white,not hispanic or latino,22344.0,555.0,Stage IIA,"Adenocarcinoma, NOS",,0,555.0,61.17453798767967,2.0,1,0
+acd51808-870c-4684-a2de-aa0b058729e1,TCGA-AY-A69D,Alive,,female,black or african american,not hispanic or latino,20299.0,543.0,Stage IIA,"Adenocarcinoma, NOS",,0,543.0,55.57563312799452,2.0,0,0
+ae6b315f-3f78-4695-adfa-48b0bbab2c89,TCGA-D5-5537,Dead,1381.0,male,white,not hispanic or latino,31227.0,,,Not Reported,,1,1381.0,85.49486652977413,,1,1
+af06cde0-c69a-4bb1-a234-8023b95e4835,TCGA-AA-A017,Alive,,female,not reported,not reported,21032.0,457.0,Stage IIA,"Adenocarcinoma, NOS",,0,457.0,57.582477754962355,2.0,0,0
+b3fea9bb-53f9-4ddb-922d-b570562d7a7d,TCGA-G4-6322,Alive,,male,white,not hispanic or latino,23825.0,792.0,Stage IIIB,Mucinous adenocarcinoma,,0,792.0,65.22929500342231,3.0,1,1
+b718134c-5231-4f29-a423-7bad17c93fc5,TCGA-AZ-5407,Alive,,female,white,not hispanic or latino,18820.0,2683.0,Stage I,"Adenocarcinoma, NOS",,0,2683.0,51.526351813826146,1.0,0,0
+b89267a4-0e6b-401e-85b0-e66775858aa6,TCGA-CM-5348,Alive,,male,white,not hispanic or latino,26543.0,699.0,Stage IIIB,"Adenocarcinoma, NOS",,0,699.0,72.67077344284736,3.0,1,1
+b95720b1-aa00-4c6a-b202-3350d035829f,TCGA-AA-3489,Dead,214.0,male,not reported,not reported,27606.0,214.0,Stage II,"Adenocarcinoma, NOS",,1,214.0,75.58110882956879,2.0,1,0
+bab21810-f51b-421e-a87f-1f1136cbc77a,TCGA-F4-6806,Alive,,female,white,not hispanic or latino,21625.0,1260.0,Stage I,"Adenocarcinoma, NOS",,0,1260.0,59.20602327173169,1.0,0,1
+bce5579c-08c6-48e9-853e-fac85ba8cbea,TCGA-AA-3831,Alive,,male,not reported,not reported,24411.0,547.0,Stage IIA,"Adenocarcinoma, NOS",,0,547.0,66.83367556468173,2.0,1,1
+be85f845-b281-467c-8b97-bed7b7fdff64,TCGA-D5-6924,Alive,,male,white,not hispanic or latino,24964.0,435.0,Stage IIA,"Adenocarcinoma, NOS",,0,435.0,68.34770704996578,2.0,1,0
+c0b8c55c-b993-481d-aeea-9ebfa64ee20e,TCGA-CM-4746,Alive,,male,black or african american,not hispanic or latino,22403.0,1126.0,Stage I,"Adenocarcinoma, NOS",,0,1126.0,61.33607118412046,1.0,1,1
+c4d74653-d26b-4e51-aee0-82ee3d42f883,TCGA-AA-3517,Alive,,male,not reported,not reported,22099.0,1186.0,Stage IIA,"Adenocarcinoma, NOS",,0,1186.0,60.50376454483231,2.0,1,0
+c5c4a0a5-900d-483d-9282-475654d63265,TCGA-AA-3518,Alive,,female,not reported,not reported,29769.0,31.0,Stage IIA,"Adenocarcinoma, NOS",,0,31.0,81.50308008213553,2.0,0,0
+c616f95f-4ea1-4019-8c17-041878085c88,TCGA-AA-3678,Alive,,female,not reported,not reported,22219.0,1430.0,Stage III,"Adenocarcinoma, NOS",,0,1430.0,60.832306639288156,3.0,0,0
+c82bbe23-0264-45a7-b1a6-82b4654108c8,TCGA-AA-3864,Alive,,male,not reported,not reported,26237.0,1612.0,Stage II,"Adenocarcinoma, NOS",,0,1612.0,71.83299110198494,2.0,1,1
+c8d7eb0f-2502-4277-a8ef-435b08f3c863,TCGA-CM-4743,Alive,,male,white,not hispanic or latino,25291.0,701.0,Stage IIA,"Adenocarcinoma, NOS",,0,701.0,69.24298425735797,2.0,1,1
+c9e829d9-cd08-41a9-a5a4-34f2d7d619c7,TCGA-AA-A01Z,Alive,,male,not reported,not reported,24990.0,1126.0,Stage II,"Adenocarcinoma, NOS",,0,1126.0,68.41889117043121,2.0,1,0
+ca22edd4-eb7c-4677-84aa-6f0354459a19,TCGA-AA-A00R,Alive,,female,not reported,not reported,23528.0,30.0,Stage I,"Adenocarcinoma, NOS",,0,30.0,64.41615331964408,1.0,0,0
+cab7bdbc-0a11-4901-97c3-26b884f79cb5,TCGA-AA-3968,Alive,,female,not reported,not reported,20089.0,669.0,Stage I,"Adenocarcinoma, NOS",,0,669.0,55.00068446269678,1.0,0,1
+cbe23011-93b7-4e9f-b934-bd0122f91f54,TCGA-F4-6463,Alive,,male,white,not hispanic or latino,18804.0,1087.0,Stage IIA,Mucinous adenocarcinoma,,0,1087.0,51.48254620123203,2.0,1,1
+cc15469c-7bad-4e86-9da3-ae0c72e9d380,TCGA-CM-4744,Alive,,male,white,not hispanic or latino,25506.0,609.0,Stage I,"Adenocarcinoma, NOS",,0,609.0,69.83162217659138,1.0,1,0
+cd845618-4cc4-49c2-9055-c171d4c24ee1,TCGA-CM-4748,Alive,,male,white,not hispanic or latino,19509.0,792.0,Stage IIIB,Mucinous adenocarcinoma,,0,792.0,53.412731006160165,3.0,1,0
+d181c72b-843c-4b2d-b014-2a6dd1c3c1ec,TCGA-AA-3553,Alive,,female,not reported,not reported,22524.0,730.0,Stage I,"Adenocarcinoma, NOS",,0,730.0,61.667351129363446,1.0,0,0
+d3062aac-4c42-41b4-a9f3-90aa72e6fb1e,TCGA-F4-6569,Alive,,male,white,not hispanic or latino,22203.0,1087.0,Stage I,"Adenocarcinoma, NOS",,0,1087.0,60.78850102669404,1.0,1,1
+d3b7ada6-5395-4212-a921-8e97c92b605d,TCGA-NH-A50V,Alive,,male,black or african american,not hispanic or latino,25467.0,588.0,Stage IIIB,"Adenocarcinoma, NOS",,0,588.0,69.72484599589322,3.0,1,0
+d42bc7f0-cfb2-4ece-ae47-521308635633,TCGA-CM-6167,Alive,,female,black or african american,not hispanic or latino,21031.0,456.0,Stage IIIC,"Adenocarcinoma, NOS",,0,456.0,57.57973990417522,3.0,0,0
+d5619045-060a-4b60-86e4-6a5774994fd4,TCGA-AA-3989,Dead,242.0,male,not reported,not reported,30712.0,242.0,Stage IV,"Adenocarcinoma, NOS",,1,242.0,84.0848733744011,4.0,1,0
+d5a296ae-c165-413c-adcc-33c9e99ff873,TCGA-D5-7000,Alive,,female,white,not hispanic or latino,28913.0,312.0,Stage I,Mucinous adenocarcinoma,,0,312.0,79.15947980835044,1.0,0,1
+d71ae66e-2c8a-4fd8-8b4b-a5a2d456a21d,TCGA-DM-A1DB,Dead,1348.0,male,white,not hispanic or latino,24888.0,1348.0,Stage IIA,"Adenocarcinoma, NOS",,1,1348.0,68.13963039014374,2.0,1,1
+dbbee8f5-d83d-4195-85cf-f89d327da0a9,TCGA-A6-5657,Alive,,male,black or african american,not hispanic or latino,23920.0,962.0,Stage IIIB,"Adenocarcinoma, NOS",,0,962.0,65.48939082819986,3.0,1,1
+dca004bf-9c14-45a1-b186-ab3759f6c7fe,TCGA-AA-3685,Alive,,male,not reported,not reported,25506.0,1127.0,Stage II,"Adenocarcinoma, NOS",,0,1127.0,69.83162217659138,2.0,1,1
+dd4be58e-da22-4bcd-bf4c-2b9e60ffda19,TCGA-AA-A02F,Alive,,female,not reported,not reported,25051.0,1216.0,Stage IV,"Carcinoma, NOS",,0,1216.0,68.58590006844626,4.0,0,1
+dd7a53ee-cb08-40c4-9935-51d1ca17e9e8,TCGA-A6-A565,Dead,494.0,female,black or african american,Unknown,12526.0,494.0,Stage IIIC,Mucinous adenocarcinoma,,1,494.0,34.2943189596167,3.0,0,1
+df228c56-89ac-4122-93b3-6c0740c4ec09,TCGA-AA-3534,Alive,,female,not reported,not reported,28489.0,882.0,Stage IIA,"Adenocarcinoma, NOS",,0,882.0,77.99863107460644,2.0,0,0
+e17959bd-045d-4540-b43a-c3863e8ff3c0,TCGA-G4-6295,Alive,,female,white,not hispanic or latino,25758.0,254.0,Stage II,"Adenocarcinoma, NOS",,0,254.0,70.52156057494867,2.0,0,0
+e3b0ee77-c419-4b2b-833f-90a221415489,TCGA-NH-A6GB,Alive,,female,black or african american,not hispanic or latino,26100.0,476.0,Stage IIIC,"Adenocarcinoma, NOS",,0,476.0,71.45790554414785,3.0,0,0
+e3b6018c-ab2c-47c5-b183-a295d0110835,TCGA-DM-A1D9,Alive,,female,white,not hispanic or latino,24514.0,4270.0,Stage IIA,"Adenocarcinoma, NOS",,0,4270.0,67.11567419575633,2.0,0,0
+e457344d-76fb-46bf-b362-61a6e811d131,TCGA-AA-A00N,Dead,122.0,male,not reported,not reported,27667.0,122.0,Stage IIB,Mucinous adenocarcinoma,,1,122.0,75.74811772758385,2.0,1,1
+e4c0d890-a634-48bd-9108-e674532b0d2e,TCGA-D5-6531,Alive,,male,white,not hispanic or latino,27633.0,540.0,Stage IIA,"Adenocarcinoma, NOS",,0,540.0,75.65503080082135,2.0,1,1
+e588714a-7753-4c3c-abb6-eaf1aab53ab3,TCGA-AZ-4682,Dead,680.0,male,white,not hispanic or latino,22409.0,680.0,Stage IVA,"Adenocarcinoma, NOS",,1,680.0,61.35249828884326,4.0,1,0
+e5921d6b-51cf-44be-b295-610cf7c3a69a,TCGA-A6-2685,Alive,,female,black or african american,not hispanic or latino,17757.0,1133.0,Stage IIA,"Adenocarcinoma, NOS",,0,1133.0,48.616016427104725,2.0,0,0
+e75985cb-357e-4072-b047-eea37965d70c,TCGA-DM-A282,Alive,,female,white,not hispanic or latino,22265.0,4233.0,Stage IIA,Mucinous adenocarcinoma,,0,4233.0,60.95824777549623,2.0,0,0
+e76258b7-e13a-4b05-855b-d792701ffba1,TCGA-F4-6805,Alive,,female,white,not hispanic or latino,21241.0,1047.0,Stage IIA,"Adenocarcinoma, NOS",,0,1047.0,58.15468856947297,2.0,0,0
+e8ec26bd-c88d-42b9-ac8a-ab121b8140f8,TCGA-AD-A5EK,Alive,,male,black or african american,not hispanic or latino,18731.0,500.0,Stage I,"Adenocarcinoma, NOS",,0,500.0,51.28268309377139,1.0,1,0
+eb191e71-4b6e-4c8d-8348-519be5a1e657,TCGA-DM-A1D6,Dead,570.0,male,white,not hispanic or latino,32302.0,570.0,Stage IIA,Mucinous adenocarcinoma,,1,570.0,88.43805612594113,2.0,1,0
+eb4e4e09-98b3-4e85-8dd2-75676ff2af14,TCGA-A6-5656,Alive,,male,white,not hispanic or latino,27184.0,1001.0,Stage I,"Adenocarcinoma, NOS",,0,1001.0,74.42573579739904,1.0,1,1
+eecaa5cd-0b69-4af2-a782-035025f207b6,TCGA-D5-6928,Alive,,male,white,not hispanic or latino,29411.0,354.0,Stage IIA,Mucinous adenocarcinoma,,0,354.0,80.52292950034223,2.0,1,1
+ef4bb5bf-4535-4bd1-8a74-aba920123ee2,TCGA-D5-6539,Alive,,female,white,not hispanic or latino,16703.0,380.0,,"Adenocarcinoma, NOS",,0,380.0,45.73032169746749,,0,0
+f3b9defb-88ed-4c95-9feb-7197d869676c,TCGA-AA-3680,Dead,335.0,female,not reported,not reported,24655.0,335.0,Stage IV,"Adenocarcinoma, NOS",,1,335.0,67.50171115674196,4.0,0,0
+f4a804d3-b5c4-4da5-800f-6e5757ecfa1c,TCGA-DM-A1DA,Dead,228.0,female,white,not hispanic or latino,26169.0,228.0,Stage IIIC,"Adenocarcinoma, NOS",,1,228.0,71.64681724845995,3.0,0,1
+f4e047a5-bdb2-4bc2-aff0-e0f45bcc9062,TCGA-CM-6165,Alive,,male,white,not hispanic or latino,27302.0,488.0,Stage IIA,"Adenocarcinoma, NOS",,0,488.0,74.74880219028063,2.0,1,1
+f6c674bf-396d-4bfe-8d08-e7266c314be3,TCGA-AY-6197,Alive,,male,white,not hispanic or latino,21957.0,652.0,Stage IIA,"Adenocarcinoma, NOS",,0,652.0,60.114989733059545,2.0,1,1
+f83b909c-da90-41ed-b532-a2ef9371cff9,TCGA-DM-A28C,Dead,2475.0,male,white,not hispanic or latino,29002.0,,,Not Reported,,1,2475.0,79.4031485284052,,1,0
+f88c0259-58ff-4bcc-a777-7705cdbd8213,TCGA-A6-5664,Alive,,male,black or african american,not hispanic or latino,29426.0,672.0,Stage IIIC,"Adenocarcinoma, NOS",,0,672.0,80.56399726214921,3.0,1,0
+f89bbd17-c732-4847-b71c-a8627a702747,TCGA-D5-6530,Alive,,male,white,not hispanic or latino,19591.0,621.0,Stage I,"Adenocarcinoma, NOS",,0,621.0,53.637234770705,1.0,1,1
+f9b5e6a5-c2da-4a0d-9251-bb6f557b7b58,TCGA-AA-3660,Alive,,female,not reported,not reported,18932.0,2375.0,Stage II,"Adenocarcinoma, NOS",,0,2375.0,51.832991101984945,2.0,0,1
+fa83dfb5-7386-4a35-9861-aa866478d5f1,TCGA-D5-6533,Alive,,female,white,not hispanic or latino,24971.0,775.0,,"Adenocarcinoma, NOS",,0,775.0,68.3668720054757,,0,1
+fa96d094-0165-401c-8fd5-6d1ee4ef3994,TCGA-AA-A00W,Alive,,male,not reported,not reported,29311.0,456.0,Stage I,"Adenocarcinoma, NOS",,0,456.0,80.24914442162903,1.0,1,0
+fafd4576-0709-49e1-926f-ad1ee09907ec,TCGA-A6-2683,Dead,504.0,female,white,not hispanic or latino,21171.0,,,Not Reported,,1,504.0,57.96303901437371,,0,0
+fdffda5f-72b2-4153-b7f1-d7043b7ca898,TCGA-AA-3818,Dead,30.0,female,not reported,not reported,28763.0,30.0,Stage IIA,"Adenocarcinoma, NOS",,1,30.0,78.74880219028063,2.0,0,1
+ffa7e03a-4a3c-41f0-937a-4fb862fd2194,TCGA-DM-A28G,Dead,1849.0,male,white,not hispanic or latino,27641.0,1849.0,Stage IIA,"Adenocarcinoma, NOS",,1,1849.0,75.67693360711841,2.0,1,1
+c46971a1-cbac-425d-bac2-f4142c92522e,TCGA-AA-3672,Alive,,female,not reported,not reported,32872.0,0.0,Stage III,"Adenocarcinoma, NOS",,0,0.0,89.99863107460644,3.0,0,1
+265d7b06-65fe-42c5-ad21-e6b160e94718,TCGA-AA-3552,Dead,396.0,male,not reported,not reported,31290.0,396.0,Stage IIIC,"Adenocarcinoma, NOS",,1,396.0,85.66735112936345,3.0,1,0
+c085da47-d634-491a-80ea-514e5a231f70,TCGA-CK-5912,Dead,1493.0,male,white,not hispanic or latino,,,,Not Reported,,1,1493.0,,,1,0
+733d8b6a-ca9d-4a69-8c9c-1f88733e8b68,TCGA-AA-3970,Alive,,male,not reported,not reported,23741.0,1096.0,Stage IIA,"Adenocarcinoma, NOS",,0,1096.0,64.99931553730322,2.0,1,0
+65bb7520-f055-43a8-b735-1152fa2c9e04,TCGA-A6-2670,Alive,,male,white,not hispanic or latino,16512.0,775.0,Stage IIA,"Adenocarcinoma, NOS",Not Reported,0,775.0,45.20739219712526,2.0,1,0
+13eff2e5-e33a-485f-9ba4-8a7ccb3c7528,TCGA-AD-6888,Dead,472.0,male,white,not hispanic or latino,27159.0,,,Not Reported,,1,472.0,74.35728952772074,,1,1
+e394e9ec-7288-4ede-9ef8-41b631d100dd,TCGA-AA-3715,Dead,579.0,male,not reported,not reported,28428.0,579.0,Stage II,Adenosquamous carcinoma,,1,579.0,77.83162217659138,2.0,1,1
+401a37f3-6630-4400-a811-a262351e37de,TCGA-AA-3531,Alive,,female,not reported,not reported,27514.0,1035.0,Stage IIA,"Adenocarcinoma, NOS",,0,1035.0,75.32922655715264,2.0,0,0
+c1e141af-bdd1-4176-8c0e-cf1ab0c1d9d3,TCGA-AA-3952,Dead,61.0,male,not reported,not reported,,,,Not Reported,,1,61.0,,,1,0
+d4e1472a-7b5f-46f4-acb7-b961f634e28e,TCGA-AA-A024,Dead,1188.0,male,not reported,not reported,,,,Not Reported,,1,1188.0,,,1,1
+1ad0b9b9-7ded-4281-b114-9dcc6138c037,TCGA-AA-3530,Alive,,male,not reported,not reported,29402.0,580.0,Stage I,"Adenocarcinoma, NOS",,0,580.0,80.49828884325804,1.0,1,0
+bce3ce45-4fb3-4d8e-9ec7-d24427c2ba4d,TCGA-AA-3692,Dead,1095.0,female,not reported,not reported,17563.0,,,Not Reported,,1,1095.0,48.0848733744011,,0,0
+ac6a3df9-41b1-4e5a-a15e-f44481384c23,TCGA-AA-3860,Alive,,female,not reported,not reported,19449.0,945.0,Stage IIIB,"Adenocarcinoma, NOS",,0,945.0,53.24845995893224,3.0,0,1
+f38d49b7-6cad-4460-abd0-3685a3b2d941,TCGA-AA-3814,Alive,,female,not reported,not reported,31380.0,0.0,Stage IIA,Adenocarcinoma with mixed subtypes,,0,0.0,85.91375770020534,2.0,0,0
+269e8ca8-722d-449b-ace1-6545bd72bdd6,TCGA-AA-3527,Alive,,female,not reported,not reported,32871.0,0.0,Stage IIA,"Adenocarcinoma, NOS",,0,0.0,89.99589322381931,2.0,0,0
+2c9996bb-af6e-4424-881a-e81b9c9aeb78,TCGA-AA-3688,Alive,,male,not reported,not reported,29220.0,578.0,Stage IV,"Adenocarcinoma, NOS",,0,578.0,80.0,4.0,1,0
+ab9cc98a-86ae-4913-bcb2-cc3aeff8abb1,TCGA-G4-6298,Dead,0.0,male,black or african american,not hispanic or latino,32872.0,0.0,Stage IIIB,"Adenocarcinoma, NOS",,1,0.0,89.99863107460644,3.0,1,0
+f1e6ce83-b4a0-4643-8e8e-a1ef8a158a27,TCGA-AZ-6608,Dead,59.0,female,white,not hispanic or latino,,,,"Hodgkin lymphoma, NOS",,1,59.0,,,0,1
+41f8c9fd-ae52-4458-886b-faf37de77dd0,TCGA-G4-6294,Dead,858.0,male,white,not hispanic or latino,,,,Not Reported,,1,858.0,,,1,1
+86a9e44f-728e-48e4-9e1b-682b023f7c0a,TCGA-AA-3967,Alive,,male,not reported,not reported,28216.0,943.0,Stage IIIB,"Adenocarcinoma, NOS",,0,943.0,77.25119780971937,3.0,1,1
+912b61a1-6a5b-451c-b753-9c3dac03e8cb,TCGA-AA-3543,Alive,,male,not reported,not reported,30772.0,30.0,Stage I,Mucinous adenocarcinoma,,0,30.0,84.24914442162903,1.0,1,0
+d9d7f0d4-fa64-48f2-8037-52cbf0b34ad8,TCGA-AA-3516,Dead,396.0,female,not reported,not reported,,,,Not Reported,,1,396.0,,,0,0
+b107565b-7558-4745-952b-689178367e1c,TCGA-AA-3525,Alive,,male,not reported,not reported,32871.0,1.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1.0,89.99589322381931,3.0,1,0
+abe658e0-33f9-4f57-849b-dec4d20964d6,TCGA-G4-6314,Alive,,female,white,not hispanic or latino,27958.0,1093.0,Stage IV,"Adenocarcinoma, NOS",,0,1093.0,76.5448323066393,4.0,0,1
+d976782c-90c1-421d-b83c-7fc2617e2709,TCGA-A6-2677,Dead,740.0,female,white,not hispanic or latino,,,Stage III,Clear cell carcinoma,,1,740.0,,3.0,0,1
+77a44132-af22-4115-9fa2-78f2f74bf687,TCGA-A6-2682,Dead,424.0,male,white,not hispanic or latino,,,Stage II,"Adenocarcinoma, NOS",,1,424.0,,2.0,1,1
+14c13b05-abfe-472e-83a9-b28f60e58ad8,TCGA-G4-6310,Alive,,male,white,not hispanic or latino,25243.0,1935.0,Stage IIIB,"Adenocarcinoma, NOS",,0,1935.0,69.11156741957564,3.0,1,1
