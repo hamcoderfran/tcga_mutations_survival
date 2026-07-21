@@ -21,6 +21,8 @@
         "nonanal": 0.6,
         "pentane": 0.5,
         "2_butanone": 0.8,
+        "acetaldehyde": 0.55,
+        "ethanol": 0.35,
         "isoprene": -0.3
       }
     },

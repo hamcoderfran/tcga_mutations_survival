@@ -82,6 +82,16 @@ def predict_cmd(
     out_dir: Optional[Path] = typer.Option(None, help="Write CSV/JSON/plot report here"),
     no_opentargets: bool = typer.Option(False, help="Disable Open Targets enrichment"),
     top: int = typer.Option(12, help="Rows to display"),
+    mode: str = typer.Option(
+        "hybrid",
+        help="physiology | hybrid | legacy — cell/blood/alveolar physio vs prior-only",
+    ),
+    va: Optional[float] = typer.Option(None, help="Alveolar ventilation VA (L/min)"),
+    q: Optional[float] = typer.Option(None, help="Cardiac output Q (L/min)"),
+    cell_fractions: Optional[str] = typer.Option(
+        None,
+        help="scRNA cell-state fractions as state=frac pairs, e.g. tumor_epithelial_warburg=0.4,hepatocyte_ketogenic=0.5",
+    ),
 ):
     """Predict exhaled VOC concentration shifts (ppb) for a disease context."""
     tumor = None
@@ -93,6 +103,14 @@ def predict_cmd(
             tumor_type=tumor_type,
             metastatic=metastatic,
         )
+    frac_map = {}
+    if cell_fractions:
+        for part in cell_fractions.split(","):
+            if "=" not in part:
+                continue
+            k, v = part.split("=", 1)
+            frac_map[k.strip()] = float(v)
+    mode_norm = mode if mode in {"physiology", "hybrid", "legacy"} else "hybrid"
     query = DiseaseQuery(
         disease=disease,
         tumor=tumor,
@@ -100,27 +118,50 @@ def predict_cmd(
         age_years=age,
         sex=sex if sex in {"female", "male", "other"} else None,
         smoking_status=smoking if smoking in {"never", "former", "current"} else None,
+        mode=mode_norm,  # type: ignore[arg-type]
+        alveolar_ventilation_l_per_min=va,
+        cardiac_output_l_per_min=q,
+        cell_state_fractions=frac_map,
     )
     predictor = ExhalePathPredictor(use_opentargets=not no_opentargets)
     result = predictor.predict(query)
 
-    table = Table(title=f"ExhalePath · {result.bundle.disease_name}")
+    table = Table(title=f"ExhalePath · {result.bundle.disease_name} · {mode_norm}")
     table.add_column("VOC")
     table.add_column("Healthy ppb", justify="right")
     table.add_column("Predicted ppb", justify="right")
     table.add_column("Δ ppb", justify="right")
     table.add_column("Fold", justify="right")
+    table.add_column("Blood→Alv", justify="right")
     table.add_column("Drivers")
     for p in result.bundle.predictions[:top]:
+        alv = f"{p.physiology.alveolar_fraction:.3f}" if p.physiology else "—"
         table.add_row(
             p.name,
             f"{p.healthy_ppb:.2f}",
             f"{p.predicted_ppb:.2f}",
             f"{p.delta_ppb:+.2f}",
             f"{p.fold_change:.2f}x",
+            alv,
             ", ".join(p.top_pathway_drivers[:3]) or "—",
         )
     rprint(table)
+    if result.bundle.cell_states:
+        cs = Table(title="Affected cell states (density × activity)")
+        cs.add_column("State")
+        cs.add_column("Tissue")
+        cs.add_column("Density", justify="right")
+        cs.add_column("Activity", justify="right")
+        cs.add_column("Source", justify="right")
+        for s in result.bundle.cell_states[:8]:
+            cs.add_row(
+                s.name,
+                s.tissue,
+                f"{s.density:.3f}",
+                f"{s.activity:.3f}",
+                f"{s.effective_source:.3f}",
+            )
+        rprint(cs)
     for note in result.bundle.notes:
         rprint(f"[dim]• {note}[/dim]")
 

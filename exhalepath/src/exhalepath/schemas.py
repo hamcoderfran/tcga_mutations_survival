@@ -45,10 +45,58 @@ class DiseaseQuery(BaseModel):
         default_factory=dict,
         description="Optional pathway_id → activity score overrides",
     )
+    # Optional single-cell informed overrides (fractions 0–1, activity ≥0)
+    cell_state_fractions: dict[str, float] = Field(
+        default_factory=dict,
+        description="Override cell-state densities from scRNA-seq / cytometry fractions",
+    )
+    cell_state_activity: dict[str, float] = Field(
+        default_factory=dict,
+        description="Override cell-state metabolic activity scores",
+    )
+    alveolar_ventilation_l_per_min: Optional[float] = Field(
+        default=None, gt=0, description="Override VA (L/min) for alveolar release"
+    )
+    cardiac_output_l_per_min: Optional[float] = Field(
+        default=None, gt=0, description="Override cardiac output Q (L/min)"
+    )
+    mode: Literal["physiology", "hybrid", "legacy"] = Field(
+        default="hybrid",
+        description="physiology=cell/blood/alveolar model; legacy=prior path; hybrid=blend",
+    )
     age_years: Optional[float] = None
     sex: Optional[Literal["female", "male", "other"]] = None
     smoking_status: Optional[Literal["never", "former", "current"]] = None
     include_uncertainty: bool = True
+
+
+class CellStateActivity(BaseModel):
+    state_id: str
+    name: str
+    tissue: str
+    density: float
+    activity: float
+    effective_source: float
+    marker_hit_score: float = 0.0
+    marker_genes_hit: list[str] = Field(default_factory=list)
+    produces_chains: list[str] = Field(default_factory=list)
+    disease_modulated: bool = False
+
+
+class PhysiologyTrace(BaseModel):
+    voc_id: str
+    tissue_production: float
+    blood_delivery: float
+    hepatic_first_pass: float
+    perfusion_fraction: float
+    lambda_blood_air: float
+    alveolar_fraction: float
+    alveolar_ventilation_l_per_min: float
+    cardiac_output_l_per_min: float
+    predicted_ppb: float
+    contributing_cell_states: list[str] = Field(default_factory=list)
+    contributing_chains: list[str] = Field(default_factory=list)
+    tissue_breakdown: dict[str, float] = Field(default_factory=dict)
 
 
 class VOCPrediction(BaseModel):
@@ -64,6 +112,7 @@ class VOCPrediction(BaseModel):
     ci_high_ppb: Optional[float] = None
     top_pathway_drivers: list[str] = Field(default_factory=list)
     confidence: float = Field(ge=0.0, le=1.0, default=0.5)
+    physiology: Optional[PhysiologyTrace] = None
 
 
 class PathwayScore(BaseModel):
@@ -80,6 +129,7 @@ class PredictionBundle(BaseModel):
     query: DiseaseQuery
     pathway_scores: list[PathwayScore]
     predictions: list[VOCPrediction]
+    cell_states: list[CellStateActivity] = Field(default_factory=list)
     model_version: str
     notes: list[str] = Field(default_factory=list)
     metadata: dict[str, Any] = Field(default_factory=dict)

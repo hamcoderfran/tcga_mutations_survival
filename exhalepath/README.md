@@ -15,19 +15,42 @@ Breath VOC panels are promising non-invasive biomarkers, but most work is empiri
 ## Architecture
 
 ```
-Disease + tumor context + mutations
+Disease + tumor context + mutations (+ optional scRNA cell fractions)
         │
         ▼
  Pathway activity scoring  ← Reactome gene sets + Open Targets
         │
-        ▼
- Mechanistic VOC emission priors (pathway × VOC coefficients)
+        ├─► Multi-step VOC pathway chains (e.g. ketogenesis→acetone, Warburg→acetaldehyde)
+        │
+        ├─► Affected cell states: density × metabolic activity
+        │         │
+        │         ▼
+        │   Tissue VOC production
+        │         │
+        │         ▼
+        │   Blood transfer (perfusion, hepatic first-pass)
+        │         │
+        │         ▼
+        │   Farhi alveolar release (λ blood:air, VA, Q) → ppb
         │
         ▼
- Optional ML calibrators (per-VOC HistGradientBoosting)
+ Optional ML calibrators (hybrid blend)
         │
         ▼
- Exhaled VOC panel: healthy ppb → predicted ppb, Δppb, fold-change, CIs
+ Exhaled VOC panel: healthy ppb → predicted ppb, Δppb, fold-change, CIs + physio traces
+```
+
+### Physiology mode
+
+```bash
+# Full cell→blood→alveolar model (diabetes acetone / cancer acetaldehyde chains)
+python -m exhalepath predict "type 2 diabetes" --mode physiology --out-dir ./runs/t2d_physio
+python -m exhalepath predict LUAD --mode physiology --stage III --site lung \
+  --genes KRAS,TP53,HK2,LDHA --out-dir ./runs/luad_physio
+
+# Override cell-state fractions from single-cell analysis
+python -m exhalepath predict PAAD --mode physiology \
+  --cell-fractions tumor_epithelial_warburg=0.55,hepatocyte_ketogenic=0.4
 ```
 
 ### Data scale

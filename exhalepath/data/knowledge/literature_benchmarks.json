@@ -51,6 +51,15 @@
       "refs": ["PMID:21903721"]
     },
     {
+      "case_id": "luad_acetaldehyde_warburg",
+      "disease": "LUAD",
+      "tumor": {"stage": "III", "primary_site": "lung", "histology": "adenocarcinoma"},
+      "mutated_genes": ["KRAS", "TP53", "HK2", "LDHA"],
+      "expect_elevated": ["acetaldehyde", "ethanol"],
+      "min_fold": {"acetaldehyde": 1.15},
+      "refs": ["DOI:10.1016/j.cpt.2024.12.004"]
+    },
+    {
       "case_id": "cld_zero_shot",
       "disease": "cirrhosis",
       "mutated_genes": [],

@@ -18,17 +18,22 @@ def _load_json(path: Path) -> dict[str, Any]:
 
 
 class KnowledgeBase:
-    """Curated VOC / pathway / disease priors bundled with ExhalePath."""
+    """Curated VOC / pathway / disease / physiology priors bundled with ExhalePath."""
 
     def __init__(self, knowledge_dir: Path | None = None):
         self.root = Path(knowledge_dir or KNOWLEDGE_DIR)
         self.voc_catalog = _load_json(self.root / "voc_catalog.json")
         self.pathway_map = _load_json(self.root / "pathway_voc_map.json")
         self.disease_priors = _load_json(self.root / "disease_voc_priors.json")
+        self.pathway_chains_doc = _load_json(self.root / "voc_pathway_chains.json")
+        self.cell_state_doc = _load_json(self.root / "cell_state_atlas.json")
+        self.physio_constants = _load_json(self.root / "physio_constants.json")
 
         self.vocs = {v["voc_id"]: v for v in self.voc_catalog["vocs"]}
         self.pathways = {p["pathway_id"]: p for p in self.pathway_map["pathways"]}
         self.diseases = {d["disease_id"]: d for d in self.disease_priors["diseases"]}
+        self.pathway_chains = list(self.pathway_chains_doc.get("chains") or [])
+        self.cell_states = list(self.cell_state_doc.get("cell_states") or [])
         self._alias_index = self._build_alias_index()
 
     def _build_alias_index(self) -> dict[str, str]:
@@ -74,7 +79,6 @@ class KnowledgeBase:
             if key == alias:
                 score = 100.0
             elif key in alias:
-                # query is more specific fragment inside alias — weak unless substantial
                 score = 40.0 * (len(key) / max(len(alias), 1))
             elif alias in key:
                 score = 55.0 * (len(alias) / max(len(key), 1))
@@ -121,6 +125,9 @@ class KnowledgeBase:
         for geneset in self.pathway_gene_universe().values():
             genes |= geneset
         return genes
+
+    def chains_for_voc(self, voc_id: str) -> list[dict[str, Any]]:
+        return [c for c in self.pathway_chains if c.get("voc_id") == voc_id]
 
 
 @lru_cache(maxsize=1)
