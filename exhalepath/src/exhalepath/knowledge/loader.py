@@ -126,3 +126,8 @@ class KnowledgeBase:
 @lru_cache(maxsize=1)
 def default_knowledge() -> KnowledgeBase:
     return KnowledgeBase()
+
+
+def clear_knowledge_cache() -> None:
+    """Drop cached KnowledgeBase (use after swapping knowledge JSON in tests)."""
+    default_knowledge.cache_clear()

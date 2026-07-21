@@ -133,6 +133,71 @@
         "acetone": 0.20,
         "ethanol": 0.15
       }
+    },
+    {
+      "pathway_id": "gut_microbiome_fermentation",
+      "name": "Gut microbiome carbohydrate fermentation",
+      "reactome_ids": [],
+      "seed_genes": ["FFAR2", "FFAR3", "SLC5A8", "GPR41", "GPR43", "MUC2", "TJP1", "OCLN", "MYD88", "TLR4", "NOD2"],
+      "voc_effects": {
+        "ethanol": 0.55,
+        "acetaldehyde": 0.40,
+        "hydrogen_sulfide": 0.35,
+        "methanol": 0.25,
+        "indole": 0.30
+      }
+    },
+    {
+      "pathway_id": "microbial_proteolysis_putrefaction",
+      "name": "Microbial proteolysis / putrefaction",
+      "reactome_ids": [],
+      "seed_genes": ["IDO1", "TDO2", "AHR", "CYP1B1", "SULT1A1", "FMO3", "IL10", "IL17A"],
+      "voc_effects": {
+        "indole": 0.85,
+        "phenol": 0.75,
+        "ammonia": 0.45,
+        "hydrogen_sulfide": 0.55,
+        "dms": 0.35,
+        "dimethyl_disulfide": 0.50
+      }
+    },
+    {
+      "pathway_id": "neuroinflammation",
+      "name": "Neuroinflammation / microglial activation",
+      "reactome_ids": ["R-HSA-913531", "R-HSA-168249"],
+      "seed_genes": ["TNF", "IL1B", "IL6", "NFKB1", "TLR4", "CX3CR1", "TREM2", "AIF1", "GFAP", "CSF1R", "NLRP3"],
+      "voc_effects": {
+        "hexanal": 0.35,
+        "pentane": 0.30,
+        "nonanal": 0.25,
+        "ethane": 0.20,
+        "ammonia": 0.15
+      }
+    },
+    {
+      "pathway_id": "neurotransmitter_metabolism",
+      "name": "Neurotransmitter / monoamine metabolism",
+      "reactome_ids": ["R-HSA-112310", "R-HSA-209776"],
+      "seed_genes": ["MAOA", "MAOB", "COMT", "TH", "DDC", "TPH2", "GAD1", "GAD2", "SLC6A4", "SLC6A3", "DRD2"],
+      "voc_effects": {
+        "ammonia": 0.30,
+        "indole": 0.25,
+        "acetaldehyde": 0.20,
+        "formaldehyde": 0.15
+      }
+    },
+    {
+      "pathway_id": "brain_energy_metabolism",
+      "name": "Brain energy / mitochondrial metabolism",
+      "reactome_ids": ["R-HSA-163200", "R-HSA-1428517"],
+      "seed_genes": ["PPARGC1A", "TFAM", "SOD2", "PARK7", "PINK1", "PRKN", "SNCA", "APP", "PSEN1", "MAPT", "TOMM40"],
+      "voc_effects": {
+        "acetone": 0.35,
+        "isoprene": 0.25,
+        "2_butanone": 0.20,
+        "pentane": 0.25,
+        "hexanal": 0.30
+      }
     }
   ]
 }

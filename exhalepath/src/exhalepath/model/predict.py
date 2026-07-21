@@ -91,9 +91,18 @@ class ExhalePathPredictor:
             cols = self._bundle["feature_columns"]
             x = pd.DataFrame([[feats.get(c, 0.0) for c in cols]], columns=cols)
             ml_fc = float(self._bundle["models"][voc_id].predict(x)[0])
-            # Blend mechanistic prior with ML calibrator
-            log2fc = 0.35 * mech_fc + 0.65 * ml_fc
-            confidence = min(0.92, confidence + 0.25)
+            # Microbiome / neurological / unresolved diseases rely on pathways and VOCs
+            # that may be absent from the cancer-heavy calibrator — prefer mechanistic.
+            category = (disease.get("category") or "").lower()
+            mech_heavy = category in {
+                "microbiome",
+                "neurological",
+                "neurodegenerative",
+                "inflammatory",
+            } or bool(disease.get("_unresolved"))
+            w_mech = 0.75 if mech_heavy else 0.35
+            log2fc = w_mech * mech_fc + (1.0 - w_mech) * ml_fc
+            confidence = min(0.92, confidence + (0.12 if mech_heavy else 0.25))
             return log2fc, drivers, confidence
 
         return mech_fc, drivers, confidence

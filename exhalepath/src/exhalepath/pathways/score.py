@@ -23,7 +23,27 @@ def _site_multiplier(pathway_id: str, tumor: TumorContext | None, default_site: 
             "Kras_mapk_proliferation": 1.15,
         },
         "pancreas": {"Kras_mapk_proliferation": 1.3, "glycolysis_warburg": 1.2},
-        "colon": {"glycolysis_warburg": 1.15, "one_carbon_folate": 1.1},
+        "colon": {
+            "glycolysis_warburg": 1.15,
+            "one_carbon_folate": 1.1,
+            "gut_microbiome_fermentation": 1.25,
+            "microbial_proteolysis_putrefaction": 1.2,
+        },
+        "gut": {
+            "gut_microbiome_fermentation": 1.4,
+            "microbial_proteolysis_putrefaction": 1.35,
+        },
+        "intestin": {  # intestine / small_intestine
+            "gut_microbiome_fermentation": 1.35,
+            "microbial_proteolysis_putrefaction": 1.3,
+        },
+        "stomach": {"urea_cycle": 1.25, "gut_microbiome_fermentation": 1.15},
+        "brain": {
+            "neuroinflammation": 1.35,
+            "neurotransmitter_metabolism": 1.3,
+            "brain_energy_metabolism": 1.3,
+            "lipid_peroxidation": 1.15,
+        },
         "breast": {"pi3k_akt_mtor": 1.2, "lipid_peroxidation": 1.1},
         "kidney": {"urea_cycle": 1.2},
         "ovary": {"lipid_peroxidation": 1.15, "glycolysis_warburg": 1.1},

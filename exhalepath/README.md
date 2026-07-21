@@ -108,6 +108,15 @@ Bundled under `data/knowledge/`:
 
 Any unrecognized disease still runs: Open Targets enrichments (when online) + generic pathway scoring.
 
+### Dysbiosis & brain conditions
+
+First-class atlas entries (not just zero-shot fallbacks) include:
+
+- **Microbiome / dysbiosis:** gut dysbiosis, SIBO, *C. difficile*, *H. pylori*, IBD  
+- **Neurological:** Alzheimer, Parkinson, depression, schizophrenia, epilepsy, MS, TBI, autism spectrum, glioblastoma  
+
+These use dedicated pathways (`gut_microbiome_fermentation`, `microbial_proteolysis_putrefaction`, `neuroinflammation`, `neurotransmitter_metabolism`, `brain_energy_metabolism`) and microbiome VOCs (`indole`, `phenol`, `dimethyl_disulfide`). Predictions for these categories up-weight the mechanistic pathway model over the cancer-trained calibrator.
+
 ## Tumor covariates
 
 `TumorContext` modulates pathway scores and VOC output via:

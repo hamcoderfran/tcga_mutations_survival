@@ -222,6 +222,39 @@
       "healthy_ppb_high": 5.0,
       "sources": ["one_carbon", "methanol_oxidation"],
       "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "indole",
+      "name": "Indole",
+      "cas": "120-72-9",
+      "formula": "C8H7N",
+      "healthy_ppb_median": 1.8,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 10.0,
+      "sources": ["microbial_tryptophan", "gut_dysbiosis"],
+      "refs": ["PMID:21903721", "PMID:31484320"]
+    },
+    {
+      "voc_id": "phenol",
+      "name": "Phenol",
+      "cas": "108-95-2",
+      "formula": "C6H6O",
+      "healthy_ppb_median": 3.5,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 20.0,
+      "sources": ["microbial_aromatic", "gut_dysbiosis"],
+      "refs": ["PMID:31484320"]
+    },
+    {
+      "voc_id": "dimethyl_disulfide",
+      "name": "Dimethyl disulfide",
+      "cas": "624-92-0",
+      "formula": "C2H6S2",
+      "healthy_ppb_median": 1.0,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 8.0,
+      "sources": ["methionine_metabolism", "microbiome"],
+      "refs": ["PMID:31484320"]
     }
   ]
 }
