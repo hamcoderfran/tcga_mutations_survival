@@ -1,0 +1,227 @@
+{
+  "version": "1.0.0",
+  "unit": "ppb",
+  "description": "Literature-anchored endogenous exhaled VOC baselines and disease fold-change priors. Values are typical healthy medians / reported ranges used as mechanistic priors, not patient-specific measurements.",
+  "vocs": [
+    {
+      "voc_id": "acetone",
+      "name": "Acetone",
+      "cas": "67-64-1",
+      "formula": "C3H6O",
+      "healthy_ppb_median": 477.0,
+      "healthy_ppb_low": 100.0,
+      "healthy_ppb_high": 2000.0,
+      "sources": ["ketone_body_metabolism", "lipid_oxidation"],
+      "refs": ["PMID:21903721", "DOI:10.1016/j.cpt.2024.12.004"]
+    },
+    {
+      "voc_id": "isoprene",
+      "name": "Isoprene",
+      "cas": "78-79-5",
+      "formula": "C5H8",
+      "healthy_ppb_median": 105.0,
+      "healthy_ppb_low": 50.0,
+      "healthy_ppb_high": 250.0,
+      "sources": ["cholesterol_biosynthesis", "mevalonate_pathway"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "pentane",
+      "name": "n-Pentane",
+      "cas": "109-66-0",
+      "formula": "C5H12",
+      "healthy_ppb_median": 8.5,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 30.0,
+      "sources": ["lipid_peroxidation", "oxidative_stress"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "ethane",
+      "name": "Ethane",
+      "cas": "74-84-0",
+      "formula": "C2H6",
+      "healthy_ppb_median": 2.5,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 10.0,
+      "sources": ["lipid_peroxidation"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "hexanal",
+      "name": "Hexanal",
+      "cas": "66-25-1",
+      "formula": "C6H12O",
+      "healthy_ppb_median": 4.2,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 15.0,
+      "sources": ["lipid_peroxidation", "omega6_oxidation"],
+      "refs": ["DOI:10.1039/D5NR01714A"]
+    },
+    {
+      "voc_id": "heptanal",
+      "name": "Heptanal",
+      "cas": "111-71-7",
+      "formula": "C7H14O",
+      "healthy_ppb_median": 3.1,
+      "healthy_ppb_low": 0.3,
+      "healthy_ppb_high": 12.0,
+      "sources": ["lipid_peroxidation"],
+      "refs": ["DOI:10.1039/D5NR01714A"]
+    },
+    {
+      "voc_id": "nonanal",
+      "name": "Nonanal",
+      "cas": "124-19-6",
+      "formula": "C9H18O",
+      "healthy_ppb_median": 5.0,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 20.0,
+      "sources": ["lipid_peroxidation"],
+      "refs": ["DOI:10.1016/j.cca.2025.01.027"]
+    },
+    {
+      "voc_id": "decanal",
+      "name": "Decanal",
+      "cas": "112-31-2",
+      "formula": "C10H20O",
+      "healthy_ppb_median": 3.8,
+      "healthy_ppb_low": 0.4,
+      "healthy_ppb_high": 15.0,
+      "sources": ["lipid_peroxidation"],
+      "refs": ["DOI:10.1016/j.cca.2025.01.027"]
+    },
+    {
+      "voc_id": "ethanol",
+      "name": "Ethanol",
+      "cas": "64-17-5",
+      "formula": "C2H6O",
+      "healthy_ppb_median": 120.0,
+      "healthy_ppb_low": 20.0,
+      "healthy_ppb_high": 500.0,
+      "sources": ["glycolysis_fermentation", "microbiome"],
+      "refs": ["DOI:10.1016/j.cca.2025.01.027"]
+    },
+    {
+      "voc_id": "2_butanone",
+      "name": "2-Butanone",
+      "cas": "78-93-3",
+      "formula": "C4H8O",
+      "healthy_ppb_median": 1.2,
+      "healthy_ppb_low": 0.45,
+      "healthy_ppb_high": 2.5,
+      "sources": ["fatty_acid_oxidation", "protein_catabolism"],
+      "refs": ["DOI:10.3233/CBM-160587"]
+    },
+    {
+      "voc_id": "dms",
+      "name": "Dimethyl sulfide",
+      "cas": "75-18-3",
+      "formula": "C2H6S",
+      "healthy_ppb_median": 14.5,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 50.0,
+      "sources": ["methionine_metabolism", "liver_detox"],
+      "refs": ["DOI:10.3233/CBM-160587"]
+    },
+    {
+      "voc_id": "dmts",
+      "name": "Dimethyl trisulfide",
+      "cas": "3658-80-8",
+      "formula": "C2H6S3",
+      "healthy_ppb_median": 0.12,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 0.26,
+      "sources": ["methionine_metabolism"],
+      "refs": ["DOI:10.3233/CBM-160587"]
+    },
+    {
+      "voc_id": "ammonia",
+      "name": "Ammonia",
+      "cas": "7664-41-7",
+      "formula": "NH3",
+      "healthy_ppb_median": 250.0,
+      "healthy_ppb_low": 50.0,
+      "healthy_ppb_high": 1000.0,
+      "sources": ["urea_cycle", "protein_catabolism"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "methanol",
+      "name": "Methanol",
+      "cas": "67-56-1",
+      "formula": "CH4O",
+      "healthy_ppb_median": 160.0,
+      "healthy_ppb_low": 40.0,
+      "healthy_ppb_high": 500.0,
+      "sources": ["pectin_metabolism", "one_carbon"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "toluene",
+      "name": "Toluene",
+      "cas": "108-88-3",
+      "formula": "C7H8",
+      "healthy_ppb_median": 1.5,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 8.0,
+      "sources": ["aromatic_hydrocarbon_metabolism"],
+      "refs": ["DOI:10.1016/j.cca.2025.01.027"]
+    },
+    {
+      "voc_id": "benzene",
+      "name": "Benzene",
+      "cas": "71-43-2",
+      "formula": "C6H6",
+      "healthy_ppb_median": 0.8,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 5.0,
+      "sources": ["aromatic_hydrocarbon_metabolism"],
+      "refs": ["DOI:10.1016/j.cca.2025.01.027"]
+    },
+    {
+      "voc_id": "limonene",
+      "name": "Limonene",
+      "cas": "138-86-3",
+      "formula": "C10H16",
+      "healthy_ppb_median": 2.0,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 15.0,
+      "sources": ["terpene_metabolism", "liver_detox"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "hydrogen_sulfide",
+      "name": "Hydrogen sulfide",
+      "cas": "7783-06-4",
+      "formula": "H2S",
+      "healthy_ppb_median": 8.0,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 40.0,
+      "sources": ["cysteine_metabolism", "microbiome"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "acetaldehyde",
+      "name": "Acetaldehyde",
+      "cas": "75-07-0",
+      "formula": "C2H4O",
+      "healthy_ppb_median": 15.0,
+      "healthy_ppb_low": 2.0,
+      "healthy_ppb_high": 60.0,
+      "sources": ["ethanol_metabolism", "glycolysis"],
+      "refs": ["PMID:21903721"]
+    },
+    {
+      "voc_id": "formaldehyde",
+      "name": "Formaldehyde",
+      "cas": "50-00-0",
+      "formula": "CH2O",
+      "healthy_ppb_median": 1.1,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 5.0,
+      "sources": ["one_carbon", "methanol_oxidation"],
+      "refs": ["PMID:21903721"]
+    }
+  ]
+}

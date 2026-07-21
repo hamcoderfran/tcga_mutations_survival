@@ -1,0 +1,197 @@
+{
+  "version": "1.0.0",
+  "description": "Disease-level exhaled VOC fold-change priors (disease vs healthy) compiled from breath-VOC cancer meta-analyses and metabolic disease literature. Used as Bayesian-style offsets on top of pathway scores.",
+  "diseases": [
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "name": "Lung adenocarcinoma",
+      "aliases": ["LUAD", "TCGA-LUAD", "lung cancer", "NSCLC"],
+      "mondo_id": "MONDO:0005061",
+      "category": "cancer",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "glycolysis_warburg": 1.3,
+        "Kras_mapk_proliferation": 1.5,
+        "cytochrome_p450_detox": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.9,
+        "heptanal": 0.7,
+        "nonanal": 0.6,
+        "pentane": 0.5,
+        "2_butanone": 0.8,
+        "isoprene": -0.3
+      }
+    },
+    {
+      "disease_id": "breast_invasive_carcinoma",
+      "name": "Breast invasive carcinoma",
+      "aliases": ["BRCA", "TCGA-BRCA", "breast cancer"],
+      "mondo_id": "MONDO:0007254",
+      "category": "cancer",
+      "default_site": "breast",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.2,
+        "pi3k_akt_mtor": 1.4,
+        "glycolysis_warburg": 1.2,
+        "methionine_transsulfuration": 1.1
+      },
+      "voc_log2fc_prior": {
+        "dmts": 1.5,
+        "hexanal": 0.6,
+        "2_butanone": 0.5,
+        "acetone": 0.3
+      }
+    },
+    {
+      "disease_id": "pancreatic_adenocarcinoma",
+      "name": "Pancreatic adenocarcinoma",
+      "aliases": ["PAAD", "TCGA-PAAD", "PDAC", "pancreatic cancer"],
+      "mondo_id": "MONDO:0005192",
+      "category": "cancer",
+      "default_site": "pancreas",
+      "pathway_bias": {
+        "Kras_mapk_proliferation": 1.8,
+        "glycolysis_warburg": 1.5,
+        "lipid_peroxidation": 1.3,
+        "apoptosis_necrosis": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 0.7,
+        "2_butanone": 0.9,
+        "hexanal": 0.8,
+        "ethanol": 0.4
+      }
+    },
+    {
+      "disease_id": "colon_adenocarcinoma",
+      "name": "Colon adenocarcinoma",
+      "aliases": ["COAD", "TCGA-COAD", "colorectal cancer", "CRC"],
+      "mondo_id": "MONDO:0002032",
+      "category": "cancer",
+      "default_site": "colon",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.3,
+        "Kras_mapk_proliferation": 1.3,
+        "one_carbon_folate": 1.2,
+        "lipid_peroxidation": 1.1
+      },
+      "voc_log2fc_prior": {
+        "acetone": 0.4,
+        "pentane": 0.5,
+        "hexanal": 0.7,
+        "hydrogen_sulfide": 0.6
+      }
+    },
+    {
+      "disease_id": "hepatocellular_carcinoma",
+      "name": "Hepatocellular carcinoma",
+      "aliases": ["LIHC", "TCGA-LIHC", "HCC", "liver cancer"],
+      "mondo_id": "MONDO:0007256",
+      "category": "cancer",
+      "default_site": "liver",
+      "pathway_bias": {
+        "methionine_transsulfuration": 1.8,
+        "urea_cycle": 1.5,
+        "cytochrome_p450_detox": 1.6,
+        "fatty_acid_oxidation": 1.3
+      },
+      "voc_log2fc_prior": {
+        "dms": 1.2,
+        "limonene": 1.0,
+        "ammonia": 0.8,
+        "acetone": 0.5
+      }
+    },
+    {
+      "disease_id": "type_2_diabetes",
+      "name": "Type 2 diabetes mellitus",
+      "aliases": ["T2D", "diabetes", "diabetes mellitus"],
+      "mondo_id": "MONDO:0005148",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.6,
+        "fatty_acid_oxidation": 1.4,
+        "glycolysis_warburg": 0.8
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.4,
+        "isoprene": -0.2,
+        "ethanol": 0.3
+      }
+    },
+    {
+      "disease_id": "chronic_liver_disease",
+      "name": "Chronic liver disease",
+      "aliases": ["cirrhosis", "CLD", "liver failure"],
+      "mondo_id": "MONDO:0005154",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "methionine_transsulfuration": 1.7,
+        "urea_cycle": 1.8,
+        "cytochrome_p450_detox": 1.4
+      },
+      "voc_log2fc_prior": {
+        "dms": 1.5,
+        "ammonia": 1.3,
+        "limonene": 0.9
+      }
+    },
+    {
+      "disease_id": "chronic_kidney_disease",
+      "name": "Chronic kidney disease",
+      "aliases": ["CKD", "renal failure", "uremia"],
+      "mondo_id": "MONDO:0005300",
+      "category": "metabolic",
+      "default_site": "kidney",
+      "pathway_bias": {
+        "urea_cycle": 1.5,
+        "one_carbon_folate": 1.1
+      },
+      "voc_log2fc_prior": {
+        "ammonia": 1.1,
+        "acetone": 0.4,
+        "dms": 0.5
+      }
+    },
+    {
+      "disease_id": "inflammatory_bowel_disease",
+      "name": "Inflammatory bowel disease",
+      "aliases": ["IBD", "Crohn", "ulcerative colitis"],
+      "mondo_id": "MONDO:0005265",
+      "category": "inflammatory",
+      "default_site": "intestine",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "apoptosis_necrosis": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hydrogen_sulfide": 1.0,
+        "pentane": 0.6,
+        "hexanal": 0.5
+      }
+    },
+    {
+      "disease_id": "ovarian_cancer",
+      "name": "Ovarian cancer",
+      "aliases": ["OV", "TCGA-OV", "ovarian carcinoma"],
+      "mondo_id": "MONDO:0008170",
+      "category": "cancer",
+      "default_site": "ovary",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "glycolysis_warburg": 1.3,
+        "pi3k_akt_mtor": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "nonanal": 0.6,
+        "decanal": 0.5,
+        "2_butanone": 0.4
+      }
+    }
+  ]
+}

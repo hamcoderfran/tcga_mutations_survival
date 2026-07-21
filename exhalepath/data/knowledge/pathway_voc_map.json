@@ -1,0 +1,138 @@
+{
+  "version": "1.0.0",
+  "description": "Mechanistic priors linking metabolic pathway activity to exhaled VOC emission. Coefficients are log2 fold-change per unit pathway dysregulation score (z-like).",
+  "pathways": [
+    {
+      "pathway_id": "lipid_peroxidation",
+      "name": "Lipid peroxidation / oxidative stress",
+      "reactome_ids": ["R-HSA-3299685", "R-HSA-2142753"],
+      "seed_genes": ["GPX4", "SOD2", "CAT", "ACYSL4", "ALOX15", "ALOX5", "NOS2", "CYBB", "NFE2L2", "KEAP1", "HMOX1", "PTGS2"],
+      "voc_effects": {
+        "pentane": 0.55,
+        "ethane": 0.45,
+        "hexanal": 0.70,
+        "heptanal": 0.60,
+        "nonanal": 0.65,
+        "decanal": 0.55
+      }
+    },
+    {
+      "pathway_id": "glycolysis_warburg",
+      "name": "Glycolysis / Warburg metabolism",
+      "reactome_ids": ["R-HSA-70171", "R-HSA-69205"],
+      "seed_genes": ["HK2", "PKM", "LDHA", "PFKP", "GAPDH", "ENO1", "SLC2A1", "MYC", "HIF1A", "TP53"],
+      "voc_effects": {
+        "ethanol": 0.35,
+        "acetaldehyde": 0.40,
+        "acetone": 0.20,
+        "2_butanone": 0.25
+      }
+    },
+    {
+      "pathway_id": "ketone_body_metabolism",
+      "name": "Ketone body metabolism",
+      "reactome_ids": ["R-HSA-74182"],
+      "seed_genes": ["HMGCS2", "HMGCL", "BDH1", "OXCT1", "ACAT1"],
+      "voc_effects": {
+        "acetone": 0.90,
+        "2_butanone": 0.40
+      }
+    },
+    {
+      "pathway_id": "mevalonate_cholesterol",
+      "name": "Mevalonate / cholesterol biosynthesis",
+      "reactome_ids": ["R-HSA-191273", "R-HSA-2426168"],
+      "seed_genes": ["HMGCR", "MVK", "MVD", "FDPS", "SQLE", "CYP51A1", "SREBF2"],
+      "voc_effects": {
+        "isoprene": 0.85,
+        "limonene": 0.30
+      }
+    },
+    {
+      "pathway_id": "fatty_acid_oxidation",
+      "name": "Mitochondrial fatty acid beta-oxidation",
+      "reactome_ids": ["R-HSA-77289"],
+      "seed_genes": ["CPT1A", "CPT2", "ACADM", "ACADL", "HADHA", "ACADVL", "PPARA"],
+      "voc_effects": {
+        "acetone": 0.35,
+        "2_butanone": 0.55,
+        "pentane": 0.20
+      }
+    },
+    {
+      "pathway_id": "methionine_transsulfuration",
+      "name": "Methionine / transsulfuration",
+      "reactome_ids": ["R-HSA-1614635", "R-HSA-1614603"],
+      "seed_genes": ["MAT1A", "MAT2A", "AHCY", "CBS", "CTH", "BHMT", "MTR"],
+      "voc_effects": {
+        "dms": 0.75,
+        "dmts": 0.80,
+        "hydrogen_sulfide": 0.50
+      }
+    },
+    {
+      "pathway_id": "urea_cycle",
+      "name": "Urea cycle / ammonia detoxification",
+      "reactome_ids": ["R-HSA-70635"],
+      "seed_genes": ["CPS1", "OTC", "ASS1", "ASL", "ARG1", "NAGS"],
+      "voc_effects": {
+        "ammonia": 0.85
+      }
+    },
+    {
+      "pathway_id": "one_carbon_folate",
+      "name": "One-carbon / folate metabolism",
+      "reactome_ids": ["R-HSA-196757"],
+      "seed_genes": ["MTHFR", "MTR", "SHMT1", "SHMT2", "DHFR", "TYMS", "PHGDH"],
+      "voc_effects": {
+        "formaldehyde": 0.45,
+        "methanol": 0.25
+      }
+    },
+    {
+      "pathway_id": "cytochrome_p450_detox",
+      "name": "Cytochrome P450 / xenobiotic detoxification",
+      "reactome_ids": ["R-HSA-211859", "R-HSA-211945"],
+      "seed_genes": ["CYP1A1", "CYP1A2", "CYP2E1", "CYP3A4", "CYP2D6", "GSTM1", "GSTT1", "NAT2"],
+      "voc_effects": {
+        "toluene": 0.40,
+        "benzene": 0.35,
+        "limonene": 0.50
+      }
+    },
+    {
+      "pathway_id": "apoptosis_necrosis",
+      "name": "Apoptosis / necrotic cell death",
+      "reactome_ids": ["R-HSA-109581", "R-HSA-5218859"],
+      "seed_genes": ["CASP3", "CASP8", "CASP9", "BAX", "BCL2", "TP53", "RIPK1", "MLKL"],
+      "voc_effects": {
+        "hexanal": 0.25,
+        "acetone": 0.15,
+        "ammonia": 0.20
+      }
+    },
+    {
+      "pathway_id": "Kras_mapk_proliferation",
+      "name": "RAS-MAPK proliferation signaling",
+      "reactome_ids": ["R-HSA-5673001", "R-HSA-112409"],
+      "seed_genes": ["KRAS", "NRAS", "HRAS", "BRAF", "MAP2K1", "EGFR", "ERBB2"],
+      "voc_effects": {
+        "ethanol": 0.20,
+        "acetaldehyde": 0.25,
+        "2_butanone": 0.30,
+        "hexanal": 0.20
+      }
+    },
+    {
+      "pathway_id": "pi3k_akt_mtor",
+      "name": "PI3K-AKT-mTOR growth signaling",
+      "reactome_ids": ["R-HSA-1257604", "R-HSA-165159"],
+      "seed_genes": ["PIK3CA", "PTEN", "AKT1", "MTOR", "TSC1", "TSC2", "RHEB"],
+      "voc_effects": {
+        "isoprene": 0.25,
+        "acetone": 0.20,
+        "ethanol": 0.15
+      }
+    }
+  ]
+}
