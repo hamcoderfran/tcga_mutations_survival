@@ -53,6 +53,24 @@ python -m exhalepath predict PAAD --mode physiology \
   --cell-fractions tumor_epithelial_warburg=0.55,hepatocyte_ketogenic=0.4
 ```
 
+### ChEMBL chemogenomic training (millions of activity rows)
+
+ChEMBL (∼2.9M compounds, ∼**24M** bioactivities) does **not** label exhaled ppb. It trains the **chemogenomic middle layer**: which chemicals potently modulate VOC-pathway enzymes, plus VOC physicochemical priors (AlogP → blood–air λ hints).
+
+```bash
+# Offline multi-million-row drill (no network)
+python -m exhalepath harvest-chembl --offline-demo --demo-rows 1000000
+python -m exhalepath train-chembl --max-rows 2000000
+
+# Live API harvest for pathway seed genes (cap as needed; raise for fuller slice)
+python -m exhalepath harvest-chembl --max-per-target 5000 --max-rows 500000
+python -m exhalepath train-chembl
+```
+
+Outputs: `data/chembl/chembl_pathway_activities.csv`, distilled `data/knowledge/chembl_pathway_priors.json`, aux model `data/models/chembl_aux_model.joblib`. Predict-time features include `chembl_lig_*` / `chembl_voc_ligandability`.
+
+For the full database dump, download ChEMBL SQLite from EBI FTP and filter to ExhalePath seed-gene targets — same activity schema feeds `train-chembl`.
+
 ### Single-cell Census harvest (top US diseases + body-wide healthy tissues)
 
 ExhalePath pulls **CELLxGENE Census** primary human cells (~97M), keeps **composition summaries** (disease × tissue × cell type), leans into diseases/tissues with the most cells, and calibrates cell-state densities.
@@ -157,6 +175,8 @@ print(result.top(10))
 |---|---|
 | `biomarker` | **Whole-body engine:** disease + location → top-N VOCs by \|Δppb\| |
 | `predict` | VOC ppb panel for a disease / tumor context |
+| `harvest-chembl` | ChEMBL activities for pathway genes + VOC physchem |
+| `train-chembl` | Fit chemogenomic aux model on ChEMBL pChEMBL rows |
 | `build-corpus` | Pull GDC + pathway data; write training matrices |
 | `train` | Fit per-VOC calibrators |
 | `list-diseases` | ~100-disease atlas |

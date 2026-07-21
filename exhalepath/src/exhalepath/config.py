@@ -12,6 +12,8 @@ MODELS_DIR = DATA_DIR / "models"
 GDC_API = "https://api.gdc.cancer.gov"
 REACTOME_CONTENT = "https://reactome.org/ContentService"
 OPENTARGETS_API = "https://api.platform.opentargets.org/api/v4/graphql"
+CHEMBL_API = "https://www.ebi.ac.uk/chembl/api/data"
+CHEMBL_DIR = DATA_DIR / "chembl"
 
 # Broad TCGA / TARGET cancer project panel for multi-million mutation rows
 DEFAULT_GDC_PROJECTS = [

@@ -30,6 +30,8 @@ class KnowledgeBase:
         self.physio_constants = _load_json(self.root / "physio_constants.json")
         body_path = self.root / "whole_body_tissues.json"
         self.whole_body_doc = _load_json(body_path) if body_path.exists() else {"tissues": []}
+        chembl_path = self.root / "chembl_pathway_priors.json"
+        self.chembl_priors = _load_json(chembl_path) if chembl_path.exists() else {}
 
         self.vocs = {v["voc_id"]: v for v in self.voc_catalog["vocs"]}
         self.pathways = {p["pathway_id"]: p for p in self.pathway_map["pathways"]}

@@ -31,6 +31,22 @@ def build_feature_vector(
         feats[f"emit_{pid}"] = feats[f"{FEATURE_PREFIX_PATHWAY}{pid}"] * coef
 
     feats["disease_prior_log2fc"] = float(disease.get("voc_log2fc_prior", {}).get(voc_id, 0.0))
+    # ChEMBL-distilled chemogenomic ligandability (0 if harvest not run)
+    chembl_pw = (getattr(kb, "chembl_priors", None) or {}).get("pathways") or {}
+    lig_sum = 0.0
+    lig_n = 0
+    for pid in kb.pathways:
+        lig = float((chembl_pw.get(pid) or {}).get("ligandability") or 0.0)
+        feats[f"chembl_lig_{pid}"] = lig
+        coef = float(kb.pathways[pid].get("voc_effects", {}).get(voc_id, 0.0))
+        if abs(coef) > 0:
+            lig_sum += lig * abs(coef)
+            lig_n += 1
+    feats["chembl_voc_ligandability"] = lig_sum / max(lig_n, 1)
+    voc_phys = (getattr(kb, "chembl_priors", None) or {}).get("voc_physchem") or {}
+    vp = voc_phys.get(voc_id) or {}
+    feats["chembl_alogp"] = float(vp["alogp"]) if vp.get("alogp") is not None else 0.0
+    feats["chembl_mwt"] = float(vp["full_mwt"]) if vp.get("full_mwt") is not None else 0.0
     feats["stage_num"] = stage_ordinal(tumor.stage if tumor else None)
     feats["metastatic"] = 1.0 if (tumor and tumor.metastatic) else 0.0
     feats["tumor_burden"] = (
@@ -96,11 +112,34 @@ def feature_frame_for_training(
         for voc_id in kb.vocs
     }
 
+    chembl_pw = (getattr(kb, "chembl_priors", None) or {}).get("pathways") or {}
+    voc_phys = (getattr(kb, "chembl_priors", None) or {}).get("voc_physchem") or {}
+
     for pid in pathway_ids:
         score = merged.get(f"score_{pid}", pd.Series(0.0, index=merged.index)).astype(float)
         feats[f"{FEATURE_PREFIX_PATHWAY}{pid}"] = score
         coefs = merged["voc_id"].map(lambda v, pid=pid: coef_lookup.get((pid, v), 0.0)).astype(float)
         feats[f"emit_{pid}"] = score * coefs
+        lig = float((chembl_pw.get(pid) or {}).get("ligandability") or 0.0)
+        feats[f"chembl_lig_{pid}"] = lig
+
+    def _voc_lig(v: str) -> float:
+        s = 0.0
+        n = 0
+        for pid in pathway_ids:
+            coef = coef_lookup.get((pid, v), 0.0)
+            if abs(coef) > 0:
+                s += float((chembl_pw.get(pid) or {}).get("ligandability") or 0.0) * abs(coef)
+                n += 1
+        return s / max(n, 1)
+
+    feats["chembl_voc_ligandability"] = merged["voc_id"].map(_voc_lig).astype(float)
+    feats["chembl_alogp"] = (
+        merged["voc_id"].map(lambda v: (voc_phys.get(v) or {}).get("alogp") or 0.0).astype(float)
+    )
+    feats["chembl_mwt"] = (
+        merged["voc_id"].map(lambda v: (voc_phys.get(v) or {}).get("full_mwt") or 0.0).astype(float)
+    )
 
     y = merged["log2_fold_change"].astype(float)
     voc_ids = merged["voc_id"].astype(str)

@@ -66,6 +66,78 @@ def train_cmd(
     rprint("[green]Training complete[/green]", result["model_path"])
 
 
+@app.command("harvest-chembl")
+def harvest_chembl_cmd(
+    out_dir: Path = typer.Option(None, help="Output dir (default data/chembl)"),
+    max_per_target: int = typer.Option(5_000, help="Max activities per gene target"),
+    max_rows: Optional[int] = typer.Option(
+        500_000, help="Cap total harvested activity rows (None = no cap)"
+    ),
+    max_genes: Optional[int] = typer.Option(None, help="Limit seed genes (debug)"),
+    offline_demo: bool = typer.Option(
+        False,
+        help="Synthesize multi-million ChEMBL-like rows without API (training drill)",
+    ),
+    demo_rows: int = typer.Option(1_000_000, help="Rows to synthesize in offline-demo"),
+    apply_lambda_hints: bool = typer.Option(
+        True, help="Merge VOC AlogP→λ hints into physio_constants (setdefault)"
+    ),
+):
+    """
+    Harvest ChEMBL bioactivities for VOC-pathway seed genes (+ VOC physchem).
+
+    ChEMBL (~24M activities) trains the chemogenomic middle layer — enzyme/pathway
+    modulation and VOC physicochemical priors — NOT exhaled ppb labels.
+    """
+    from .config import CHEMBL_DIR
+    from .ingest.chembl_harvest import (
+        apply_chembl_lambda_hints_to_physio,
+        harvest_chembl_for_pathways,
+    )
+
+    paths = harvest_chembl_for_pathways(
+        out_dir=out_dir or CHEMBL_DIR,
+        max_per_target=max_per_target,
+        max_rows=None if offline_demo else max_rows,
+        max_genes=max_genes,
+        offline_demo=offline_demo,
+        demo_rows=demo_rows,
+    )
+    rprint("[green]ChEMBL harvest complete[/green]")
+    for k, v in paths.items():
+        rprint(f"  {k}: {v}")
+    if apply_lambda_hints and paths.get("priors"):
+        phys = apply_chembl_lambda_hints_to_physio(priors_path=paths["priors"])
+        rprint(f"[green]Physio λ hints updated:[/green] {phys}")
+
+
+@app.command("train-chembl")
+def train_chembl_cmd(
+    activities: Path = typer.Option(
+        None, help="chembl_pathway_activities.csv (default data/chembl/...)"
+    ),
+    out_dir: Path = typer.Option(MODELS_DIR),
+    max_rows: Optional[int] = typer.Option(
+        2_000_000, help="Subsample cap for fitting (None = all rows)"
+    ),
+):
+    """Train chemogenomic auxiliary model on ChEMBL activity rows (pChEMBL)."""
+    from .config import CHEMBL_DIR
+    from .model.train_chembl import train_chembl_aux_model
+
+    result = train_chembl_aux_model(
+        activities_path=activities or (CHEMBL_DIR / "chembl_pathway_activities.csv"),
+        out_dir=out_dir,
+        max_rows=max_rows,
+    )
+    m = result["metrics"]
+    rprint(
+        f"[green]ChEMBL aux model trained[/green] {result['model_path']}\n"
+        f"  rows={m['n_rows']:,}  MAE(pChEMBL)={m['mae_pchembl']:.3f}  "
+        f"R²={m['r2_pchembl']:.3f}"
+    )
+
+
 @app.command("predict")
 def predict_cmd(
     disease: str = typer.Argument(..., help="Disease name, alias, or TCGA project"),

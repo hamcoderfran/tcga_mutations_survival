@@ -11,6 +11,9 @@ build/
 venv/
 data/cache/
 data/processed/
+data/chembl/*
+!data/chembl/.gitkeep
+!data/chembl/chembl_manifest.json
 data/census/*
 !data/census/.gitkeep
 !data/census/census_manifest.json

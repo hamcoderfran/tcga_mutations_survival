@@ -116,5 +116,6 @@
     "propionaldehyde": 35,
     "crotonaldehyde": 40
   },
-  "alveolar_release_efficiency_notes": "Farhi-like alveolar fraction = 1 / (1 + VA/(Q*lambda)). High-lambda VOCs (acetone, ethanol) are blood-retained; low-lambda gases (isoprene, pentane) are efficiently exhaled."
+  "alveolar_release_efficiency_notes": "Farhi-like alveolar fraction = 1 / (1 + VA/(Q*lambda)). High-lambda VOCs (acetone, ethanol) are blood-retained; low-lambda gases (isoprene, pentane) are efficiently exhaled.",
+  "chembl_lambda_hints_applied": 0
 }

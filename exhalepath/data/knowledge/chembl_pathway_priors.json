@@ -1,0 +1,478 @@
+{
+  "version": "1.0.0",
+  "description": "Distilled ChEMBL chemogenomic priors for ExhalePath. ligandability scales pathway\u2192VOC emission confidence; VOC AlogP hints refine blood\u2013air partition.",
+  "n_source_activities": 2000,
+  "pathways": {
+    "Kras_mapk_proliferation": {
+      "n_activities": 82,
+      "n_molecules": 82,
+      "mean_pchembl": 6.708510728740753,
+      "median_pchembl": 6.6830201410176056,
+      "ligandability": 0.32486522515574584
+    },
+    "apoptosis_necrosis": {
+      "n_activities": 116,
+      "n_molecules": 116,
+      "mean_pchembl": 6.359510472341641,
+      "median_pchembl": 6.400654981271008,
+      "ligandability": 0.3049941374711868
+    },
+    "brain_energy_metabolism": {
+      "n_activities": 163,
+      "n_molecules": 163,
+      "mean_pchembl": 6.318925081522948,
+      "median_pchembl": 6.2427214514057425,
+      "ligandability": 0.32100355943091297
+    },
+    "cytochrome_p450_detox": {
+      "n_activities": 112,
+      "n_molecules": 112,
+      "mean_pchembl": 6.8998277178505045,
+      "median_pchembl": 6.865353306748355,
+      "ligandability": 0.3720983610834119
+    },
+    "fatty_acid_oxidation": {
+      "n_activities": 85,
+      "n_molecules": 85,
+      "mean_pchembl": 6.591125318304333,
+      "median_pchembl": 6.622553505923115,
+      "ligandability": 0.31328299470235804
+    },
+    "glycolysis_warburg": {
+      "n_activities": 176,
+      "n_molecules": 176,
+      "mean_pchembl": 6.419076913535995,
+      "median_pchembl": 6.440776271742747,
+      "ligandability": 0.33987626443137176
+    },
+    "gut_microbiome_fermentation": {
+      "n_activities": 136,
+      "n_molecules": 136,
+      "mean_pchembl": 6.258938982294859,
+      "median_pchembl": 6.250018439009049,
+      "ligandability": 0.3016700864637992
+    },
+    "ketone_body_metabolism": {
+      "n_activities": 73,
+      "n_molecules": 73,
+      "mean_pchembl": 6.68143876143107,
+      "median_pchembl": 6.609739715730525,
+      "ligandability": 0.31326439921144367
+    },
+    "lipid_peroxidation": {
+      "n_activities": 184,
+      "n_molecules": 184,
+      "mean_pchembl": 6.639498672825148,
+      "median_pchembl": 6.5615448775326595,
+      "ligandability": 0.37401229801165325
+    },
+    "methionine_transsulfuration": {
+      "n_activities": 105,
+      "n_molecules": 105,
+      "mean_pchembl": 6.328366785632679,
+      "median_pchembl": 6.359128527528013,
+      "ligandability": 0.29472843171434654
+    },
+    "mevalonate_cholesterol": {
+      "n_activities": 98,
+      "n_molecules": 98,
+      "mean_pchembl": 6.291609253916264,
+      "median_pchembl": 6.259211844060097,
+      "ligandability": 0.2858260049612956
+    },
+    "microbial_proteolysis_putrefaction": {
+      "n_activities": 108,
+      "n_molecules": 108,
+      "mean_pchembl": 6.327747251471054,
+      "median_pchembl": 6.362524539805573,
+      "ligandability": 0.2964133706659739
+    },
+    "neuroinflammation": {
+      "n_activities": 182,
+      "n_molecules": 182,
+      "mean_pchembl": 6.274279494004624,
+      "median_pchembl": 6.269451732850005,
+      "ligandability": 0.32159038247264565
+    },
+    "neurotransmitter_metabolism": {
+      "n_activities": 159,
+      "n_molecules": 159,
+      "mean_pchembl": 6.336809992868532,
+      "median_pchembl": 6.301275874421,
+      "ligandability": 0.32191310005947377
+    },
+    "one_carbon_folate": {
+      "n_activities": 97,
+      "n_molecules": 97,
+      "mean_pchembl": 6.343578457206047,
+      "median_pchembl": 6.386503408513241,
+      "ligandability": 0.2916621584012418
+    },
+    "pi3k_akt_mtor": {
+      "n_activities": 120,
+      "n_molecules": 120,
+      "mean_pchembl": 6.328502073844384,
+      "median_pchembl": 6.365199867265673,
+      "ligandability": 0.3031106283846624
+    },
+    "urea_cycle": {
+      "n_activities": 68,
+      "n_molecules": 68,
+      "mean_pchembl": 6.22739955285298,
+      "median_pchembl": 6.137735744123346,
+      "ligandability": 0.25599072765451697
+    }
+  },
+  "voc_physchem": {
+    "acetone": {
+      "molecule_chembl_id": "CHEMBL_VOC_0",
+      "full_mwt": 100,
+      "alogp": 3.2409191213851827,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 2.321016925776566
+    },
+    "isoprene": {
+      "molecule_chembl_id": "CHEMBL_VOC_1",
+      "full_mwt": 90,
+      "alogp": 0.747350707889554,
+      "psa": 25.688056738204683,
+      "lambda_blood_air_hint": 17.315189633324078
+    },
+    "pentane": {
+      "molecule_chembl_id": "CHEMBL_VOC_2",
+      "full_mwt": 100,
+      "alogp": 0.33478692372505825,
+      "psa": 96.45999033289766,
+      "lambda_blood_air_hint": 24.144853614162738
+    },
+    "ethane": {
+      "molecule_chembl_id": "CHEMBL_VOC_3",
+      "full_mwt": 90,
+      "alogp": 0.9187125818486496,
+      "psa": 16.639073077821,
+      "lambda_blood_air_hint": 15.081710371248004
+    },
+    "hexanal": {
+      "molecule_chembl_id": "CHEMBL_VOC_4",
+      "full_mwt": 110,
+      "alogp": 1.6819453885067859,
+      "psa": 25.228927868532665,
+      "lambda_blood_air_hint": 8.153031382818433
+    },
+    "heptanal": {
+      "molecule_chembl_id": "CHEMBL_VOC_5",
+      "full_mwt": 110,
+      "alogp": 1.2242595650766646,
+      "psa": 60.91641702425624,
+      "lambda_blood_air_hint": 11.78987368693736
+    },
+    "nonanal": {
+      "molecule_chembl_id": "CHEMBL_VOC_6",
+      "full_mwt": 110,
+      "alogp": 1.017161025402265,
+      "psa": 40.81050263509604,
+      "lambda_blood_air_hint": 13.931364046499512
+    },
+    "decanal": {
+      "molecule_chembl_id": "CHEMBL_VOC_7",
+      "full_mwt": 120,
+      "alogp": 0.9564413209208954,
+      "psa": 50.04627202551383,
+      "lambda_blood_air_hint": 14.630040813403626
+    },
+    "ethanol": {
+      "molecule_chembl_id": "CHEMBL_VOC_8",
+      "full_mwt": 100,
+      "alogp": 0.908279767560136,
+      "psa": 47.65077934912968,
+      "lambda_blood_air_hint": 15.209049779634489
+    },
+    "2_butanone": {
+      "molecule_chembl_id": "CHEMBL_VOC_9",
+      "full_mwt": 100,
+      "alogp": 1.8701043548284795,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 7.005892607921587
+    },
+    "dms": {
+      "molecule_chembl_id": "CHEMBL_VOC_10",
+      "full_mwt": 100,
+      "alogp": -0.46861984265596957,
+      "psa": 35.528915190419994,
+      "lambda_blood_air_hint": 46.13355742049647
+    },
+    "dmts": {
+      "molecule_chembl_id": "CHEMBL_VOC_11",
+      "full_mwt": 110,
+      "alogp": 0.12359415989919231,
+      "psa": 30.522496670680674,
+      "lambda_blood_air_hint": 28.6247725197153
+    },
+    "ammonia": {
+      "molecule_chembl_id": "CHEMBL_VOC_12",
+      "full_mwt": 80,
+      "alogp": 1.9474079874793504,
+      "psa": 33.8763129252924,
+      "lambda_blood_air_hint": 6.582747614749187
+    },
+    "methanol": {
+      "molecule_chembl_id": "CHEMBL_VOC_13",
+      "full_mwt": 90,
+      "alogp": 0.2741004263516319,
+      "psa": 41.68116622050496,
+      "lambda_blood_air_hint": 25.355072154065603
+    },
+    "toluene": {
+      "molecule_chembl_id": "CHEMBL_VOC_14",
+      "full_mwt": 90,
+      "alogp": 0.41719142203603377,
+      "psa": 34.583078104265255,
+      "lambda_blood_air_hint": 22.593473406186412
+    },
+    "benzene": {
+      "molecule_chembl_id": "CHEMBL_VOC_15",
+      "full_mwt": 90,
+      "alogp": 1.6913682607449911,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 8.091352259719391
+    },
+    "limonene": {
+      "molecule_chembl_id": "CHEMBL_VOC_16",
+      "full_mwt": 110,
+      "alogp": 1.9572210447581504,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 6.530893990298786
+    },
+    "hydrogen_sulfide": {
+      "molecule_chembl_id": "CHEMBL_VOC_17",
+      "full_mwt": 80,
+      "alogp": 2.356401048432157,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 4.734342062163308
+    },
+    "acetaldehyde": {
+      "molecule_chembl_id": "CHEMBL_VOC_18",
+      "full_mwt": 100,
+      "alogp": 0.5907838620501293,
+      "psa": 61.81280462646288,
+      "lambda_blood_air_hint": 19.643806535756404
+    },
+    "formaldehyde": {
+      "molecule_chembl_id": "CHEMBL_VOC_19",
+      "full_mwt": 90,
+      "alogp": 0.15159448145548882,
+      "psa": 58.119258862697706,
+      "lambda_blood_air_hint": 27.98607099342714
+    },
+    "indole": {
+      "molecule_chembl_id": "CHEMBL_VOC_20",
+      "full_mwt": 100,
+      "alogp": -0.5181849497326165,
+      "psa": 63.63651090133361,
+      "lambda_blood_air_hint": 48.01365111602694
+    },
+    "phenol": {
+      "molecule_chembl_id": "CHEMBL_VOC_21",
+      "full_mwt": 100,
+      "alogp": 2.3378812589177813,
+      "psa": 36.98453156246059,
+      "lambda_blood_air_hint": 4.805532949595008
+    },
+    "dimethyl_disulfide": {
+      "molecule_chembl_id": "CHEMBL_VOC_22",
+      "full_mwt": 110,
+      "alogp": 0.399800020638995,
+      "psa": 57.40144682667423,
+      "lambda_blood_air_hint": 22.912368886561598
+    },
+    "propanol": {
+      "molecule_chembl_id": "CHEMBL_VOC_23",
+      "full_mwt": 100,
+      "alogp": 0.8787560807138044,
+      "psa": 34.49238050698188,
+      "lambda_blood_air_hint": 15.575262389208113
+    },
+    "isopropanol": {
+      "molecule_chembl_id": "CHEMBL_VOC_24",
+      "full_mwt": 100,
+      "alogp": -0.5300134512725221,
+      "psa": 29.91171534756065,
+      "lambda_blood_air_hint": 48.47353673429042
+    },
+    "butane": {
+      "molecule_chembl_id": "CHEMBL_VOC_25",
+      "full_mwt": 100,
+      "alogp": 1.4156507836999603,
+      "psa": 23.656887119652897,
+      "lambda_blood_air_hint": 10.10467211458108
+    },
+    "hexane": {
+      "molecule_chembl_id": "CHEMBL_VOC_26",
+      "full_mwt": 100,
+      "alogp": 2.017206580492595,
+      "psa": 14.111053222262361,
+      "lambda_blood_air_hint": 6.222683277882817
+    },
+    "octane": {
+      "molecule_chembl_id": "CHEMBL_VOC_27",
+      "full_mwt": 100,
+      "alogp": 1.7433593895301525,
+      "psa": 34.49277047298754,
+      "lambda_blood_air_hint": 7.759329840991868
+    },
+    "styrene": {
+      "molecule_chembl_id": "CHEMBL_VOC_28",
+      "full_mwt": 90,
+      "alogp": 2.6967371655185106,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 3.598669740063692
+    },
+    "ethylbenzene": {
+      "molecule_chembl_id": "CHEMBL_VOC_29",
+      "full_mwt": 100,
+      "alogp": 1.732721599889039,
+      "psa": 0.0,
+      "lambda_blood_air_hint": 7.826136889896855
+    },
+    "xylene": {
+      "molecule_chembl_id": "CHEMBL_VOC_30",
+      "full_mwt": 100,
+      "alogp": -0.10207085824579476,
+      "psa": 10.429029427571745,
+      "lambda_blood_air_hint": 34.33403143146567
+    },
+    "cyclohexane": {
+      "molecule_chembl_id": "CHEMBL_VOC_31",
+      "full_mwt": 100,
+      "alogp": 1.840971064689471,
+      "psa": 70.95772110714665,
+      "lambda_blood_air_hint": 7.172327754854512
+    },
+    "methyl_acetate": {
+      "molecule_chembl_id": "CHEMBL_VOC_32",
+      "full_mwt": 110,
+      "alogp": 1.3554178100594347,
+      "psa": 65.19852567816508,
+      "lambda_blood_air_hint": 10.607273489006438
+    },
+    "ethyl_acetate": {
+      "molecule_chembl_id": "CHEMBL_VOC_33",
+      "full_mwt": 110,
+      "alogp": 0.1223248102165373,
+      "psa": 26.15518576948098,
+      "lambda_blood_air_hint": 28.65406992851368
+    },
+    "acetonitrile": {
+      "molecule_chembl_id": "CHEMBL_VOC_34",
+      "full_mwt": 100,
+      "alogp": 1.8576399038177729,
+      "psa": 23.897111484449677,
+      "lambda_blood_air_hint": 7.076622577086033
+    },
+    "furan": {
+      "molecule_chembl_id": "CHEMBL_VOC_35",
+      "full_mwt": 100,
+      "alogp": 0.4985044698204465,
+      "psa": 11.38822247575689,
+      "lambda_blood_air_hint": 21.160378685947023
+    },
+    "2_pentanone": {
+      "molecule_chembl_id": "CHEMBL_VOC_36",
+      "full_mwt": 110,
+      "alogp": 0.9538664459351867,
+      "psa": 18.882684384128908,
+      "lambda_blood_air_hint": 14.660431191266257
+    },
+    "3_methylbutanal": {
+      "molecule_chembl_id": "CHEMBL_VOC_37",
+      "full_mwt": 110,
+      "alogp": 1.724983234564226,
+      "psa": 47.01606065557105,
+      "lambda_blood_air_hint": 7.875096203391693
+    },
+    "benzaldehyde": {
+      "molecule_chembl_id": "CHEMBL_VOC_38",
+      "full_mwt": 100,
+      "alogp": 1.315916577507104,
+      "psa": 32.77309692094442,
+      "lambda_blood_air_hint": 10.95038019039747
+    },
+    "octanal": {
+      "molecule_chembl_id": "CHEMBL_VOC_39",
+      "full_mwt": 110,
+      "alogp": 0.7418817269507788,
+      "psa": 32.229586151798955,
+      "lambda_blood_air_hint": 17.3916743774616
+    },
+    "undecane": {
+      "molecule_chembl_id": "CHEMBL_VOC_40",
+      "full_mwt": 110,
+      "alogp": 0.3808798196722655,
+      "psa": 23.330066516031174,
+      "lambda_blood_air_hint": 23.264411075954946
+    },
+    "dodecane": {
+      "molecule_chembl_id": "CHEMBL_VOC_41",
+      "full_mwt": 110,
+      "alogp": 1.0461293198028951,
+      "psa": 46.274367188762355,
+      "lambda_blood_air_hint": 13.609893853777493
+    },
+    "carbon_disulfide": {
+      "molecule_chembl_id": "CHEMBL_VOC_42",
+      "full_mwt": 80,
+      "alogp": -0.8904850781285882,
+      "psa": 47.137178890462124,
+      "lambda_blood_air_hint": 64.81414215908818
+    },
+    "methyl_mercaptan": {
+      "molecule_chembl_id": "CHEMBL_VOC_43",
+      "full_mwt": 90,
+      "alogp": 2.037719384899064,
+      "psa": 51.665063113826896,
+      "lambda_blood_air_hint": 6.120659436063707
+    },
+    "trimethylamine": {
+      "molecule_chembl_id": "CHEMBL_VOC_44",
+      "full_mwt": 100,
+      "alogp": 2.809662683018314,
+      "psa": 24.340515455677266,
+      "lambda_blood_air_hint": 3.2856255037146886
+    },
+    "dimethyl_amine": {
+      "molecule_chembl_id": "CHEMBL_VOC_45",
+      "full_mwt": 100,
+      "alogp": 0.6486275920195362,
+      "psa": 73.21812517402493,
+      "lambda_blood_air_hint": 18.74909643252664
+    },
+    "pyrrole": {
+      "molecule_chembl_id": "CHEMBL_VOC_46",
+      "full_mwt": 100,
+      "alogp": 1.1734108128442202,
+      "psa": 22.338228994773857,
+      "lambda_blood_air_hint": 12.283049880989857
+    },
+    "allyl_methyl_sulfide": {
+      "molecule_chembl_id": "CHEMBL_VOC_47",
+      "full_mwt": 100,
+      "alogp": 0.6125723131259885,
+      "psa": 37.594034939448946,
+      "lambda_blood_air_hint": 19.30188351666987
+    },
+    "propionaldehyde": {
+      "molecule_chembl_id": "CHEMBL_VOC_48",
+      "full_mwt": 100,
+      "alogp": 0.5372981876991343,
+      "psa": 50.92323543457438,
+      "lambda_blood_air_hint": 20.509054270544873
+    },
+    "crotonaldehyde": {
+      "molecule_chembl_id": "CHEMBL_VOC_49",
+      "full_mwt": 100,
+      "alogp": 0.4897005726243767,
+      "psa": 6.196282763155057,
+      "lambda_blood_air_hint": 21.311047622923184
+    }
+  }
+}
