@@ -74,8 +74,13 @@ Disease + location (+ genes)
    └─ Top-50 VOC Δppb + mechanism WHY text
 ```
 
-## Tests
+## Tests & dataset completion gate
 
 ```bash
 pytest -q
+
+# Full dataset suite (pytest + audit + multisite + public breath) — must pass
+python -m exhalepath eval-completion --out-dir runs/completion
 ```
+
+Latest completion status is recorded in `data/knowledge/completion_status.json`.

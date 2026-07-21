@@ -66,6 +66,37 @@ def train_cmd(
     rprint("[green]Training complete[/green]", result["model_path"])
 
 
+@app.command("eval-completion")
+def eval_completion_cmd(
+    out_dir: Path = typer.Option(Path("runs/completion"), help="Output directory"),
+):
+    """
+    Full dataset completion gate: pytest + audit + multisite + public breath.
+
+    Exits non-zero if any research-ready gate fails.
+    """
+    from .eval.completion import run_completion_suite
+
+    report = run_completion_suite(out_dir=out_dir)
+    g = report["gates"]
+    rprint(f"[bold]Completion {'PASSED' if report['passed'] else 'FAILED'}[/bold]")
+    for k, v in g.items():
+        mark = "✓" if v else "✗"
+        rprint(f"  {mark} {k}")
+    pb = report["public_breath"]
+    rprint(
+        f"  lit recall@15={pb['literature'].get('mean_elevated_recall_at_k')} "
+        f"dir={pb['literature'].get('mean_directional_accuracy')}"
+    )
+    rprint(
+        f"  sci_data elev_dir={pb['scientific_data'].get('mean_elevated_directional_accuracy')} "
+        f"recall={pb['scientific_data'].get('mean_elevated_recall_at_k')}"
+    )
+    rprint(f"  report: {out_dir / 'completion_report.json'}")
+    if not report["passed"]:
+        raise typer.Exit(code=1)
+
+
 @app.command("integrate-datasources")
 def integrate_datasources_cmd(
     offline: bool = typer.Option(

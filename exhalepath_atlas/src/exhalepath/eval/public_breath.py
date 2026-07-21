@@ -88,10 +88,31 @@ def evaluate_public_breath(
 
     recalls = [c["elevated_recall_at_k"] for c in cases_out if c["elevated_recall_at_k"] is not None]
     dirs = [c["directional_accuracy"] for c in cases_out if c["directional_accuracy"] is not None]
+    elev_dirs = [
+        c["elevated_directional_accuracy"]
+        for c in cases_out
+        if c["elevated_directional_accuracy"] is not None
+    ]
+    lit = [c for c in cases_out if str(c.get("source", "")).startswith("literature")]
+    sci = [c for c in cases_out if str(c.get("source", "")).startswith("scientific_data")]
+
+    def _avg(key, rows):
+        vals = [r[key] for r in rows if r.get(key) is not None]
+        return float(sum(vals) / len(vals)) if vals else None
+
     overall = {
         "n_cases": len(cases_out),
         "mean_elevated_recall_at_k": float(sum(recalls) / len(recalls)) if recalls else None,
         "mean_directional_accuracy": float(sum(dirs) / len(dirs)) if dirs else None,
+        "mean_elevated_directional_accuracy": float(sum(elev_dirs) / len(elev_dirs))
+        if elev_dirs
+        else None,
+        "literature_elevated_recall_at_k": _avg("elevated_recall_at_k", lit),
+        "literature_directional_accuracy": _avg("directional_accuracy", lit),
+        "scientific_data_elevated_directional_accuracy": _avg(
+            "elevated_directional_accuracy", sci
+        ),
+        "scientific_data_elevated_recall_at_k": _avg("elevated_recall_at_k", sci),
         "top_k": top_k,
         "mode": mode,
     }

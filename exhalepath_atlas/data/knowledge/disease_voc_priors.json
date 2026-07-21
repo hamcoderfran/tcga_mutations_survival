@@ -322,8 +322,8 @@
         "hydrogen_sulfide": 1.0,
         "pentane": 0.6,
         "hexanal": 0.5,
-        "indole": 0.7,
-        "phenol": 0.5,
+        "indole": 0.85,
+        "phenol": 0.65,
         "octanal": 0.2975,
         "3_methylbutanal": 0.255,
         "methyl_mercaptan": 0.55,
@@ -332,7 +332,9 @@
         "propanol": 0.55,
         "acetaldehyde": 0.55,
         "ethyl_acetate": 0.55,
-        "carbon_disulfide": 0.55
+        "carbon_disulfide": 0.55,
+        "trimethylamine": 0.75,
+        "dimethyl_amine": 0.45
       }
     },
     {
@@ -1193,19 +1195,23 @@
       "category": "pulmonary",
       "default_site": "lung",
       "pathway_bias": {
-        "lipid_peroxidation": 1.4,
-        "cytochrome_p450_detox": 1.25,
+        "lipid_peroxidation": 1.5,
+        "cytochrome_p450_detox": 1.35,
         "glycolysis_warburg": 1.15
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.7,
-        "pentane": 0.55,
-        "benzene": 0.35,
-        "toluene": 0.3,
-        "2_butanone": 0.4,
+        "hexanal": 0.75,
+        "pentane": 0.6,
+        "benzene": 0.55,
+        "toluene": 0.4,
+        "2_butanone": 0.45,
         "xylene": 0.2125,
-        "furan": 0.2125,
-        "styrene": 0.17
+        "furan": 0.35,
+        "styrene": 0.17,
+        "octane": 0.3,
+        "phenol": 0.4,
+        "isopropanol": 0.35,
+        "dodecane": 0.35
       },
       "atlas_source": "top100_template"
     },
@@ -1220,19 +1226,25 @@
       "category": "pulmonary",
       "default_site": "lung",
       "pathway_bias": {
-        "lipid_peroxidation": 1.4,
-        "cytochrome_p450_detox": 1.25,
+        "lipid_peroxidation": 1.5,
+        "cytochrome_p450_detox": 1.35,
         "glycolysis_warburg": 1.15
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.7,
-        "pentane": 0.55,
-        "benzene": 0.35,
-        "toluene": 0.3,
+        "hexanal": 0.75,
+        "pentane": 0.6,
+        "benzene": 0.4,
+        "toluene": 0.35,
         "2_butanone": 0.4,
         "xylene": 0.2125,
-        "furan": 0.2125,
-        "styrene": 0.17
+        "furan": 0.45,
+        "styrene": 0.17,
+        "propanol": 0.55,
+        "benzaldehyde": 0.5,
+        "ethylbenzene": 0.45,
+        "octane": 0.4,
+        "ethyl_acetate": 0.4,
+        "2_pentanone": 0.45
       },
       "atlas_source": "top100_template"
     },
