@@ -27,6 +27,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+census = ["cellxgene-census>=1.18.0"]
 
 [project.scripts]
 exhalepath = "exhalepath.cli:main"
