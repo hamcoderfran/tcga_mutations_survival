@@ -90,6 +90,10 @@ voc nl "24yo obese male with depression"         # optional light LLM → slots 
 voc nl "stage II LUAD left lower lobe KRAS TP53" --llm rules --yes
 voc ask --nl "depression with obesity" --llm ollama   # tiny local model if Ollama is up
 
+# Creutzfeldt–Jakob clinical VOC tempo (incubating → terminal; research hypothesis)
+voc cjd-profile --age 62 --sex female
+voc "Creutzfeldt-Jakob disease" -l brain --genes PRNP --age 62 --sex female
+
 # Explicit subcommands still work
 voc biomarker "type 2 diabetes" -l pancreas --top 20
 voc explain "type 2 diabetes" --location pancreas --top 10

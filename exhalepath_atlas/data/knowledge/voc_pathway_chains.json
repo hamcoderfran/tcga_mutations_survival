@@ -141,7 +141,8 @@
         "lung_adenocarcinoma",
         "alzheimer_disease",
         "parkinson_disease",
-        "traumatic_brain_injury"
+        "traumatic_brain_injury",
+        "creutzfeldt_jakob"
       ],
       "primary_tissues": [
         "tumor",
@@ -445,7 +446,8 @@
         "lung_adenocarcinoma",
         "alzheimer_disease",
         "traumatic_brain_injury",
-        "multiple_sclerosis"
+        "multiple_sclerosis",
+        "creutzfeldt_jakob"
       ],
       "primary_tissues": [
         "lung",
@@ -544,7 +546,10 @@
           "spontaneous": true
         }
       ],
-      "stoichiometry": 0.9
+      "stoichiometry": 0.9,
+      "disease_anchors": [
+        "creutzfeldt_jakob"
+      ]
     },
     {
       "chain_id": "trimethylamine_choline",
@@ -657,7 +662,10 @@
           ]
         }
       ],
-      "stoichiometry": 0.6
+      "stoichiometry": 0.6,
+      "disease_anchors": [
+        "creutzfeldt_jakob"
+      ]
     },
     {
       "chain_id": "2_pentanone_fao",

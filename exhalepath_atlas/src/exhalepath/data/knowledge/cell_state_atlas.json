@@ -110,14 +110,16 @@
         "colon_adenocarcinoma": 1.2456896252637715,
         "epilepsy": 0.55,
         "pancreatic_adenocarcinoma": 1.1038358530894805,
-        "hepatocellular_carcinoma": 1.1894287428806873
+        "hepatocellular_carcinoma": 1.1894287428806873,
+        "creutzfeldt_jakob": 1.2
       },
       "disease_activity_mult": {
         "lung_adenocarcinoma": 1.8,
         "alzheimer_disease": 2.0,
         "parkinson_disease": 1.9,
         "traumatic_brain_injury": 2.5,
-        "multiple_sclerosis": 2.1
+        "multiple_sclerosis": 2.1,
+        "creutzfeldt_jakob": 2.2
       },
       "census_healthy_fraction": 0.6118409683996726,
       "census_calibrated": true
@@ -151,13 +153,15 @@
         "breast_invasive_carcinoma": 0.55,
         "lung_adenocarcinoma": 0.55,
         "type_2_diabetes": 2.878126986379893,
-        "epilepsy": 4.784291193014333
+        "epilepsy": 4.784291193014333,
+        "creutzfeldt_jakob": 3.2
       },
       "disease_activity_mult": {
         "alzheimer_disease": 2.3,
         "parkinson_disease": 2.0,
         "multiple_sclerosis": 2.5,
-        "traumatic_brain_injury": 2.2
+        "traumatic_brain_injury": 2.2,
+        "creutzfeldt_jakob": 2.4
       },
       "census_healthy_fraction": 0.1135741779987275,
       "census_calibrated": true
@@ -193,14 +197,16 @@
         "type_2_diabetes": 1.2847367558314102,
         "colon_adenocarcinoma": 0.55,
         "inflammatory_bowel_disease": 0.55,
-        "multiple_sclerosis": 1.0924193146135357
+        "multiple_sclerosis": 1.0924193146135357,
+        "creutzfeldt_jakob": 2.1
       },
       "disease_activity_mult": {
         "alzheimer_disease": 1.5,
         "parkinson_disease": 1.6,
         "major_depressive_disorder": 1.3,
         "epilepsy": 1.4,
-        "schizophrenia": 1.35
+        "schizophrenia": 1.35,
+        "creutzfeldt_jakob": 1.9
       },
       "census_healthy_fraction": 0.266266324368537,
       "census_calibrated": true

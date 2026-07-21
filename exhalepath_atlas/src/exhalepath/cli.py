@@ -792,6 +792,50 @@ def biomarker_cmd(
         )
 
 
+@app.command("cjd-profile")
+def cjd_profile_cmd(
+    age: float = typer.Option(62, help="Patient age"),
+    sex: str = typer.Option("female", help="female|male|other"),
+    genes: str = typer.Option("PRNP", help="Comma-separated genes"),
+    out_dir: Path = typer.Option(
+        Path("runs/cjd_clinical_profile"), help="Write JSON + Markdown profile"
+    ),
+):
+    """
+    Whole clinical VOC tempo for Creutzfeldt–Jakob disease (incubating → terminal).
+
+    Research hypothesis — no validated exhaled VOC signature for CJD exists.
+    """
+    import sys
+    from pathlib import Path as P
+
+    # Prefer installed package script path; fall back to repo scripts/
+    repo_scripts = P(__file__).resolve().parents[2] / "scripts"
+    if str(repo_scripts) not in sys.path:
+        sys.path.insert(0, str(repo_scripts.parent))
+    from scripts.cjd_clinical_profile import run_profile
+
+    sex_n = sex if sex in {"female", "male", "other"} else "female"
+    gene_list = [g.strip().upper() for g in genes.split(",") if g.strip()]
+    profile = run_profile(
+        age=age, sex=sex_n, genes=gene_list or ["PRNP"], out_dir=out_dir
+    )
+    s = profile["summary"]
+    rprint("[bold]CJD clinical VOC profile[/bold]")
+    rprint(s["interpretation"])
+    rprint(
+        f"  first hint: {s['first_meaningful_hint_phase']} · "
+        f"first obvious: {s['first_obvious_phase']}"
+    )
+    for ph in profile["phases"]:
+        ox = ph["oxidative_panel"]
+        rprint(
+            f"  • {ph['label']}: [cyan]{ox['verdict']}[/cyan] "
+            f"mean|log2FC|={ox['mean_abs_log2fc_oxidative']}"
+        )
+    rprint(f"[green]Wrote[/green] {out_dir / 'cjd_clinical_profile.md'}")
+
+
 @app.command("list-diseases")
 def list_diseases():
     """List curated disease atlas entries."""
@@ -952,6 +996,7 @@ def main(argv: Optional[list[str]] = None):
         "biomarker",
         "ask",
         "nl",
+        "cjd-profile",
         "list-diseases",
         "list-locations",
         "list-vocs",

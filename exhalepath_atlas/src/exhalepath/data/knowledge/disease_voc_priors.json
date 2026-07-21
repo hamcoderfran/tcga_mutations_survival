@@ -541,6 +541,51 @@
       }
     },
     {
+      "disease_id": "creutzfeldt_jakob",
+      "name": "Creutzfeldt-Jakob disease",
+      "aliases": [
+        "CJD",
+        "Creutzfeldt-Jakob",
+        "Creutzfeldt Jakob",
+        "Creutzfeldt-Jakob disease",
+        "Creutzfeldt Jakob disease",
+        "sCJD",
+        "sporadic CJD",
+        "prion disease",
+        "human prion disease",
+        "transmissible spongiform encephalopathy",
+        "TSE"
+      ],
+      "mondo_id": "MONDO:0005370",
+      "category": "neurological",
+      "default_site": "brain",
+      "atlas_source": "curated_prion",
+      "pathway_bias": {
+        "neuroinflammation": 1.85,
+        "lipid_peroxidation": 1.7,
+        "apoptosis_necrosis": 1.65,
+        "brain_energy_metabolism": 1.55,
+        "neurotransmitter_metabolism": 1.35,
+        "methionine_transsulfuration": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.95,
+        "heptanal": 0.55,
+        "nonanal": 0.7,
+        "octanal": 0.4,
+        "pentane": 0.85,
+        "ethane": 0.55,
+        "acetone": 0.45,
+        "ammonia": 0.4,
+        "hydrogen_sulfide": 0.25,
+        "acetaldehyde": 0.3,
+        "isoprene": -0.35,
+        "propanol": 0.18,
+        "2_butanone": 0.22
+      },
+      "clinical_notes": "Rapidly progressive prion neurodegeneration with spongiform change, neuronal loss, and reactive gliosis. Typical sCJD course ~4\u20136 months. No published exhaled-VOC gold standard; priors analogized from acute oxidative neurodegeneration + necrosis literature (AD/PD/TBI panels)."
+    },
+    {
       "disease_id": "parkinson_disease",
       "name": "Parkinson disease",
       "aliases": [

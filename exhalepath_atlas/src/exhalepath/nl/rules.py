@@ -31,6 +31,13 @@ _DISEASE_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"\bschizophren", re.I), "schizophrenia"),
     (re.compile(r"\bAlzheimer", re.I), "alzheimer disease"),
     (re.compile(r"\bParkinson", re.I), "parkinson disease"),
+    (
+        re.compile(
+            r"\bCreutzfeldt[-\s]?Jakob\b|\bCJD\b|\bsCJD\b|\bprion disease\b",
+            re.I,
+        ),
+        "creutzfeldt_jakob",
+    ),
     (re.compile(r"\btype\s*2\s*diabetes\b|\bT2D\b", re.I), "type 2 diabetes"),
     (re.compile(r"\bcirrhosis\b", re.I), "cirrhosis"),
     (re.compile(r"\basthma\b", re.I), "asthma"),
@@ -61,6 +68,9 @@ _DEFAULT_SITE = {
     "type 2 diabetes": "systemic",
     "obesity": "adipose",
     "heart disease": "heart",
+    "creutzfeldt_jakob": "brain",
+    "creutzfeldt-jakob disease": "brain",
+    "cjd": "brain",
 }
 
 
