@@ -106,6 +106,10 @@ voc ask --nl "depression with obesity" --llm ollama   # tiny local model if Olla
 voc cjd-profile --age 62 --sex female
 voc "Creutzfeldt-Jakob disease" -l brain --genes PRNP --age 62 --sex female
 
+# Type 2 diabetes clinical VOC tempo + literature acetone gate
+voc diabetes-profile --age 55 --sex male
+voc "type 2 diabetes" -l systemic -c obesity --age 55 --sex male
+
 # Explicit subcommands still work
 voc biomarker "type 2 diabetes" -l pancreas --top 20
 voc explain "type 2 diabetes" --location pancreas --top 10
