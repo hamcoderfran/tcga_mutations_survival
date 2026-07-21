@@ -67,6 +67,16 @@ class DiseaseQuery(BaseModel):
     age_years: Optional[float] = None
     sex: Optional[Literal["female", "male", "other"]] = None
     smoking_status: Optional[Literal["never", "former", "current"]] = None
+    comorbidities: list[str] = Field(
+        default_factory=list,
+        description="Comorbid conditions fused into pathway/VOC/cell-state priors",
+    )
+    comorbidity_weight: float = Field(
+        default=0.65,
+        ge=0.0,
+        le=1.5,
+        description="Relative weight of each comorbidity prior vs primary disease",
+    )
     include_uncertainty: bool = True
 
 

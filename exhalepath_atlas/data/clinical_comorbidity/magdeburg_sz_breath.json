@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "source": "magdeburg_ptrms_schizophrenia",
+  "doi": "10.6084/m9.figshare.19181742",
+  "paper_doi": "10.1080/15622975.2022.2040052",
+  "matrix": "exhaled_breath",
+  "n_diagnosis_mz": 12,
+  "diagnosis_effects": [
+    {
+      "mz": "33",
+      "coefficient": 306.213929,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": "methanol"
+    },
+    {
+      "mz": "39",
+      "coefficient": 82.6154842,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": null
+    },
+    {
+      "mz": "40",
+      "coefficient": 3.33182266,
+      "p_fdr": 0.01823177,
+      "significant_fdr": true,
+      "voc_id": null
+    },
+    {
+      "mz": "41",
+      "coefficient": 243.515263,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": null
+    },
+    {
+      "mz": "59",
+      "coefficient": 1303.53095,
+      "p_fdr": 0.04861805,
+      "significant_fdr": true,
+      "voc_id": "acetone"
+    },
+    {
+      "mz": "60",
+      "coefficient": 143.550768,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": "trimethylamine"
+    },
+    {
+      "mz": "69",
+      "coefficient": 199.661967,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": "isoprene"
+    },
+    {
+      "mz": "70",
+      "coefficient": 11.4771375,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": "isoprene"
+    },
+    {
+      "mz": "74",
+      "coefficient": 17.9326661,
+      "p_fdr": 0.02430902,
+      "significant_fdr": true,
+      "voc_id": null
+    },
+    {
+      "mz": "85",
+      "coefficient": 4.82416333,
+      "p_fdr": 0.01041815,
+      "significant_fdr": true,
+      "voc_id": null
+    },
+    {
+      "mz": "88",
+      "coefficient": 4687.19094,
+      "p_fdr": 0.03646354,
+      "significant_fdr": true,
+      "voc_id": null
+    },
+    {
+      "mz": "90",
+      "coefficient": 14.0878982,
+      "p_fdr": 0.0397784,
+      "significant_fdr": true,
+      "voc_id": null
+    }
+  ],
+  "expect_suppressed_vocs": [
+    "acetone",
+    "isoprene",
+    "methanol",
+    "trimethylamine"
+  ],
+  "expect_elevated_vocs": [],
+  "notes": "PTR-MS m/z mapped to ExhalePath VOCs. Directions follow the published abstract (reduced in schizophrenia vs healthy controls)."
+}

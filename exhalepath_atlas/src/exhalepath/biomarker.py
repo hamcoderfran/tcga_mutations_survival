@@ -157,6 +157,8 @@ class ExhaleBiomarkerEngine:
         smoking_status: str | None = None,
         metastatic: bool = False,
         explain: bool = True,
+        comorbidities: list[str] | None = None,
+        comorbidity_weight: float = 0.65,
     ) -> BiomarkerReport:
         loc = resolve_location(location) if location else resolve_location(
             self.kb.resolve_disease(disease).get("default_site") or "systemic"
@@ -194,6 +196,8 @@ class ExhaleBiomarkerEngine:
             smoking_status=smoking_status
             if smoking_status in {"never", "former", "current"}
             else None,
+            comorbidities=list(comorbidities or []),
+            comorbidity_weight=float(comorbidity_weight),
         )
         result = self.predictor.predict(query)
         # Rank by absolute delta ppb (quantity change), then |log2fc|
@@ -218,9 +222,20 @@ class ExhaleBiomarkerEngine:
         census = None
         if explain:
             from .explain.mechanisms import MechanismExplainer
+            from .knowledge.comorbidity import (
+                merge_disease_with_comorbidities,
+                resolve_comorbid_diseases,
+            )
 
             explainer = MechanismExplainer(knowledge=self.kb, use_opentargets=False)
-            use_genes = genes or explainer.default_genes_for_disease(disease_obj)
+            fused = disease_obj
+            if comorbidities:
+                fused = merge_disease_with_comorbidities(
+                    disease_obj,
+                    resolve_comorbid_diseases(self.kb, list(comorbidities)),
+                    weight=float(comorbidity_weight),
+                )
+            use_genes = genes or explainer.default_genes_for_disease(fused)
             site = (loc.get("tissue_id") or loc.get("name") or "").split()[0]
             census = explainer.census_context(
                 result.bundle.disease_id,
@@ -230,7 +245,7 @@ class ExhaleBiomarkerEngine:
             mechanisms = [
                 explainer.explain_voc(
                     voc=p,
-                    disease=disease_obj,
+                    disease=fused,
                     pathway_scores=result.bundle.pathway_scores,
                     cell_states=result.bundle.cell_states,
                     genes=use_genes,

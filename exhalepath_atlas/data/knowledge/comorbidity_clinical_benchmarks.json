@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "description": "Comorbidity-aware clinical evaluation cases for depression\u00b1obesity and schizophrenia\u00b1heart disease, grounded in open breath PTR-MS cohorts and the largest open depression plasma metabolome (ST003181, n=401), with UK Biobank\u2013scale comorbidity literature anchors.",
+  "datasets": {
+    "magdeburg_sz_breath": {
+      "doi": "10.6084/m9.figshare.19181742",
+      "matrix": "exhaled_breath",
+      "n_mz_tested": 12
+    },
+    "st003181_depression": {
+      "study_id": "ST003181",
+      "matrix": "blood_plasma",
+      "n_samples": 401,
+      "n_depression": 240,
+      "n_control": 159
+    }
+  },
+  "cases": [
+    {
+      "case_id": "clinical_mdd_primary",
+      "disease": "depression",
+      "comorbidities": [],
+      "location": "brain",
+      "age_years": 24,
+      "sex": "male",
+      "expect_elevated": [
+        "indole",
+        "ammonia",
+        "pentane",
+        "hexanal",
+        "trimethylamine"
+      ],
+      "expect_suppressed": [
+        "isoprene"
+      ],
+      "source": "frontiers_mdd_breath+ST003181",
+      "n_clinical_samples": 401
+    },
+    {
+      "case_id": "clinical_mdd_obesity_comorbid",
+      "disease": "depression",
+      "comorbidities": [
+        "obesity"
+      ],
+      "location": "brain",
+      "age_years": 24,
+      "sex": "male",
+      "expect_elevated": [
+        "acetone",
+        "ammonia",
+        "2_butanone",
+        "isopropanol",
+        "indole"
+      ],
+      "expect_suppressed": [
+        "isoprene"
+      ],
+      "source": "ST003181+UKB_comorbidity_lit+MDD_breath",
+      "n_clinical_samples": 401,
+      "refs": [
+        "PMID:21903721",
+        "UKB depression\u2013obesity metabolic comorbidity literature",
+        "ST003181",
+        "DOI:10.3389/fpsyt.2022.819607"
+      ]
+    },
+    {
+      "case_id": "clinical_sz_primary",
+      "disease": "schizophrenia",
+      "comorbidities": [],
+      "location": "brain",
+      "age_years": 18,
+      "sex": "male",
+      "expect_elevated": [
+        "pentane",
+        "ethane",
+        "ammonia"
+      ],
+      "expect_suppressed": [
+        "acetone",
+        "isoprene",
+        "methanol",
+        "trimethylamine"
+      ],
+      "source": "magdeburg_ptrms_sz+atlas_lit",
+      "n_clinical_samples": null,
+      "refs": [
+        "10.6084/m9.figshare.19181742",
+        "10.1080/15622975.2022.2040052"
+      ]
+    },
+    {
+      "case_id": "clinical_sz_heart_comorbid",
+      "disease": "schizophrenia",
+      "comorbidities": [
+        "heart_disease"
+      ],
+      "location": "brain",
+      "age_years": 18,
+      "sex": "male",
+      "expect_elevated": [
+        "pentane",
+        "ethane",
+        "ammonia",
+        "hexanal"
+      ],
+      "expect_suppressed": [
+        "isoprene",
+        "acetone",
+        "methanol",
+        "trimethylamine"
+      ],
+      "source": "magdeburg_ptrms_sz+heart_comorbidity",
+      "n_clinical_samples": null,
+      "refs": [
+        "DOI:10.6084/m9.figshare.19181742",
+        "DOI:10.1080/15622975.2022.2040052",
+        "UKB severe mental illness\u2013CVD comorbidity literature"
+      ],
+      "notes": "Breath Magdeburg: acetone/isoprene/methanol/TMA reduced in SZ; CVD comorbidity adds peroxidation (pentane/hexanal) elevation."
+    }
+  ]
+}

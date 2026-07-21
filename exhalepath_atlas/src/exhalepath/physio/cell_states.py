@@ -59,6 +59,14 @@ def estimate_cell_states(
 
         dens_mult = float(st.get("disease_density_mult", {}).get(did, 1.0))
         act_mult = float(st.get("disease_activity_mult", {}).get(did, 1.0))
+        # Soft-max with comorbidity disease_ids when fused
+        for cid in disease.get("_comorbid_ids") or []:
+            dens_mult = max(
+                dens_mult, float(st.get("disease_density_mult", {}).get(cid, 1.0))
+            )
+            act_mult = max(
+                act_mult, float(st.get("disease_activity_mult", {}).get(cid, 1.0))
+            )
         disease_modulated = dens_mult != 1.0 or act_mult != 1.0 or marker_score >= 0.08
 
         density = float(st.get("baseline_density", 0.05)) * dens_mult * (1.0 + 0.8 * marker_score)

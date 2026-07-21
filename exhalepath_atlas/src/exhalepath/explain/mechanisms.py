@@ -157,6 +157,19 @@ class MechanismExplainer:
                 continue
             pw = self.kb.pathways.get(pid) or {}
             genes.extend(list(pw.get("seed_genes") or [])[:6])
+        # Comorbidity category / pathway seeds
+        for cmeta in disease.get("_comorbidities") or []:
+            cid = cmeta.get("disease_id")
+            if not cid:
+                continue
+            cdis = self.kb.diseases.get(cid) or {}
+            ccat = (cdis.get("category") or "default").lower()
+            genes.extend(list(CATEGORY_DRIVER_GENES.get(ccat, []))[:6])
+            for pid, bias in (cdis.get("pathway_bias") or {}).items():
+                if float(bias) < 1.2:
+                    continue
+                pw = self.kb.pathways.get(pid) or {}
+                genes.extend(list(pw.get("seed_genes") or [])[:4])
         # unique preserve order
         seen = set()
         out = []
@@ -165,7 +178,7 @@ class MechanismExplainer:
             if gu not in seen:
                 seen.add(gu)
                 out.append(gu)
-        return out[:16]
+        return out[:20]
 
     def census_context(
         self, disease_id: str, *, disease_name: str | None = None, preferred_tissue: str | None = None

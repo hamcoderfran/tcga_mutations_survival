@@ -10,6 +10,10 @@ import pandas as pd
 
 from ..config import MODELS_DIR
 from ..ingest.opentargets import OpenTargetsClient
+from ..knowledge.comorbidity import (
+    merge_disease_with_comorbidities,
+    resolve_comorbid_diseases,
+)
 from ..knowledge.loader import KnowledgeBase, default_knowledge
 from ..pathways.score import score_pathways
 from ..physio.census_fractions import census_cell_state_fractions_for_disease
@@ -129,7 +133,23 @@ class ExhalePathPredictor:
             query = DiseaseQuery.model_validate(query)
 
         disease = self.kb.resolve_disease(query.disease)
+        if query.comorbidities:
+            comorbid = resolve_comorbid_diseases(self.kb, list(query.comorbidities))
+            disease = merge_disease_with_comorbidities(
+                disease,
+                comorbid,
+                weight=float(query.comorbidity_weight),
+            )
         assoc = self._associated_genes(disease.get("name") or query.disease)
+        # Also pull OT associations for comorbidities (soft)
+        if query.comorbidities and self.use_opentargets:
+            for c in disease.get("_comorbidities") or []:
+                cname = c.get("name")
+                if not cname:
+                    continue
+                extra = self._associated_genes(cname)
+                for g, s in extra.items():
+                    assoc[g] = max(float(assoc.get(g, 0.0)), 0.55 * float(s))
         pathway_scores = score_pathways(
             kb=self.kb,
             disease=disease,
@@ -237,6 +257,16 @@ class ExhalePathPredictor:
         ]
         if physio_result:
             notes.extend(physio_result.notes)
+        if disease.get("_comorbidities"):
+            names = [
+                c.get("name") or c.get("disease_id")
+                for c in disease["_comorbidities"]
+            ]
+            notes.append(
+                "Comorbidities fused into pathway bias, VOC priors, and cell-state "
+                f"modulation: {', '.join(str(n) for n in names)} "
+                f"(weight={query.comorbidity_weight})."
+            )
         if disease.get("_unresolved"):
             notes.append(
                 f"Disease '{query.disease}' was not in the curated atlas; "
@@ -266,6 +296,8 @@ class ExhalePathPredictor:
                 "mode": query.mode,
                 "n_cell_states": len(physio_result.cell_states) if physio_result else 0,
                 "n_chains": len(physio_result.chain_fluxes) if physio_result else 0,
+                "comorbidities": disease.get("_comorbidities") or [],
+                "comorbidity_ids": disease.get("_comorbid_ids") or [],
             },
         )
         return PredictionResult(bundle=bundle)

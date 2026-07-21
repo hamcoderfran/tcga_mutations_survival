@@ -164,6 +164,51 @@ def eval_public_breath_cmd(
     )
 
 
+@app.command("harvest-clinical-comorbidity")
+def harvest_clinical_comorbidity_cmd():
+    """
+    Harvest Magdeburg SZ breath + ST003181 depression plasma (n=401) and build
+    comorbidity clinical benchmarks (depression±obesity, schizophrenia±heart).
+    """
+    from .ingest.clinical_comorbidity import build_comorbidity_clinical_benchmarks
+
+    path = build_comorbidity_clinical_benchmarks()
+    rprint(f"[green]Clinical comorbidity benchmarks:[/green] {path}")
+
+
+@app.command("eval-comorbidity-clinical")
+def eval_comorbidity_clinical_cmd(
+    out_dir: Path = typer.Option(Path("runs/comorbidity_clinical_eval")),
+    top_k: int = typer.Option(15, help="Top-k predicted VOCs for recall"),
+    mode: str = typer.Option("hybrid"),
+    comorbidity_weight: float = typer.Option(0.65),
+):
+    """Evaluate comorbidity-aware predictions against clinical breath/metabolome cases."""
+    from .eval.comorbidity_clinical import evaluate_comorbidity_clinical
+
+    report = evaluate_comorbidity_clinical(
+        top_k=top_k,
+        mode=mode,
+        comorbidity_weight=comorbidity_weight,
+        out_dir=out_dir,
+    )
+    rprint("[bold]Comorbidity clinical eval[/bold]")
+    rprint(f"  cases: {report['n_cases']}")
+    rprint(f"  mean elevated recall@{top_k}: {report['mean_elevated_recall_at_k']}")
+    rprint(f"  mean elevated directional: {report['mean_elevated_directional_accuracy']}")
+    rprint(
+        f"  mean suppressed directional: {report['mean_suppressed_directional_accuracy']}"
+    )
+    rprint(f"  mean directional accuracy: {report['mean_directional_accuracy']}")
+    for c in report["cases"]:
+        rprint(
+            f"  • {c['case_id']}: dir={c['directional_accuracy']} "
+            f"elev@k={c['elevated_recall_at_k']} "
+            f"comorbid={c['comorbidities']}"
+        )
+    rprint(f"  report: {out_dir / 'comorbidity_clinical_eval.json'}")
+
+
 @app.command("build-mechanism-packs")
 def build_mechanism_packs_cmd(
     out: Path = typer.Option(
@@ -423,6 +468,15 @@ def biomarker_cmd(
     age: Optional[float] = typer.Option(None),
     sex: Optional[str] = typer.Option(None),
     smoking: Optional[str] = typer.Option(None, help="never|former|current"),
+    comorbidities: Optional[str] = typer.Option(
+        None,
+        "--comorbidities",
+        "-c",
+        help="Comma-separated comorbidities, e.g. obesity,heart_disease",
+    ),
+    comorbidity_weight: float = typer.Option(
+        0.65, help="Relative weight of comorbidity priors (0–1.5)"
+    ),
     metastatic: bool = typer.Option(False),
     out_dir: Optional[Path] = typer.Option(
         None, help="Write top-50 biomarker CSV/JSON/plots here"
@@ -436,6 +490,7 @@ def biomarker_cmd(
     Whole-body exhaled biomarker prediction: disease + any cell location → top VOCs (ppb).
 
     Models ~100 atlas diseases × full-body tissue map × 50-VOC panel.
+    Comorbidities fuse pathway bias, VOC priors, and cell-state modulation.
     """
     from .biomarker import ExhaleBiomarkerEngine
     from .viz.report import save_biomarker_report
@@ -444,6 +499,11 @@ def biomarker_cmd(
         use_opentargets=not no_opentargets, reload_knowledge=True
     )
     mode_norm = mode if mode in {"physiology", "hybrid", "legacy"} else "hybrid"
+    comorb = (
+        [x.strip() for x in comorbidities.split(",") if x.strip()]
+        if comorbidities
+        else None
+    )
     report = engine.predict(
         disease,
         location=location,
@@ -458,10 +518,18 @@ def biomarker_cmd(
         smoking_status=smoking,
         metastatic=metastatic,
         explain=not no_explain,
+        comorbidities=comorb,
+        comorbidity_weight=comorbidity_weight,
     )
+    comorb_label = ""
+    meta = report.result.bundle.metadata or {}
+    if meta.get("comorbidities"):
+        comorb_label = " + " + "+".join(
+            str(c.get("name") or c.get("disease_id")) for c in meta["comorbidities"]
+        )
     table = Table(
         title=(
-            f"ExhalePath Biomarker · {report.disease_name} @ "
+            f"ExhalePath Biomarker · {report.disease_name}{comorb_label} @ "
             f"{report.location.get('name') or location}"
         )
     )

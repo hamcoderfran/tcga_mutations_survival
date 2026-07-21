@@ -56,17 +56,29 @@ python -m exhalepath biomarker "lung adenocarcinoma" \
   --location lung --genes KRAS,TP53 --top 50 \
   --out-dir runs/atlas_luad
 
+# Comorbidities fuse pathway bias, VOC priors, and cell-state modulation
+python -m exhalepath biomarker "depression" -l brain \
+  --age 24 --sex male --comorbidities obesity --top 20
+
+python -m exhalepath biomarker "schizophrenia" -l brain \
+  --age 18 --sex male --comorbidities heart_disease --top 20
+
 python -m exhalepath explain "type 2 diabetes" --location pancreas --top 10
 python -m exhalepath build-mechanism-packs --top-vocs 12
 
 python -m exhalepath harvest-public-breath
 python -m exhalepath eval-public-breath --top-k 15
+
+# Clinical comorbidity eval (Magdeburg SZ breath + ST003181 depression n=401)
+python -m exhalepath harvest-clinical-comorbidity
+python -m exhalepath eval-comorbidity-clinical --top-k 15
 ```
 
 ## Architecture
 
 ```
-Disease + location (+ genes)
+Disease + comorbidities + location (+ genes)
+   ├─ Fuse comorbidity pathway_bias / VOC priors / cell-state mults
    ├─ Open Targets / GDC drivers (pri 8–9)
    ├─ Census cell populations (CELLxGENE)
    ├─ Pathway scores + Reactome genes (pri 6)
