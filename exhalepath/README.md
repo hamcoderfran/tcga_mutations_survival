@@ -53,6 +53,17 @@ python -m exhalepath predict PAAD --mode physiology \
   --cell-fractions tumor_epithelial_warburg=0.55,hepatocyte_ketogenic=0.4
 ```
 
+### Single-cell Census harvest (top US diseases + body-wide healthy tissues)
+
+ExhalePath pulls **CELLxGENE Census** primary human cells (~97M), keeps **composition summaries** (disease × tissue × cell type), leans into diseases/tissues with the most cells, and calibrates cell-state densities.
+
+```bash
+pip install cellxgene-census
+python -m exhalepath harvest-census --top-n 100 --min-cells 5000
+```
+
+Outputs land in `data/census/` (`census_manifest.json`, healthy tissue tables, disease→ExhalePath state fractions). Predictions auto-use Census fractions when available.
+
 ### Data scale
 
 `build-corpus` harvests clinical cases and mutation edges across dozens of GDC projects, expands pathway gene sets via Reactome, and materializes case×pathway×VOC training matrices that reach **hundreds of thousands to millions of rows** depending on project count.

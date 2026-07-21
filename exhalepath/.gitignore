@@ -11,6 +11,13 @@ build/
 venv/
 data/cache/
 data/processed/
+data/census/*
+!data/census/.gitkeep
+!data/census/census_manifest.json
+!data/census/top100_disease_census_match.csv
+!data/census/healthy_tissue_summary.csv
+!data/census/healthy_exhalepath_state_fractions.csv
+!data/census/disease_exhalepath_state_fractions.csv
 runs/
 *.png
 .DS_Store

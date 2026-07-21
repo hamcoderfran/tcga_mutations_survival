@@ -12,6 +12,7 @@ from ..config import MODELS_DIR
 from ..ingest.opentargets import OpenTargetsClient
 from ..knowledge.loader import KnowledgeBase, default_knowledge
 from ..pathways.score import score_pathways
+from ..physio.census_fractions import census_cell_state_fractions_for_disease
 from ..physio.engine import PhysiologyEngine
 from ..schemas import DiseaseQuery, PathwayScore, PredictionBundle, VOCPrediction
 from .features import build_feature_vector, mechanistic_log2fc
@@ -137,6 +138,12 @@ class ExhalePathPredictor:
             pathway_overrides=query.pathway_overrides,
             associated_genes=assoc,
         )
+
+        # Lean into Census single-cell fractions when user did not override them
+        if not query.cell_state_fractions:
+            census_fracs = census_cell_state_fractions_for_disease(disease.get("disease_id", ""))
+            if census_fracs:
+                query = query.model_copy(update={"cell_state_fractions": census_fracs})
 
         physio_result = None
         if query.mode in {"physiology", "hybrid"}:

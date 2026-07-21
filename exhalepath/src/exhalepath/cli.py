@@ -10,6 +10,7 @@ from rich.table import Table
 
 from .config import DEFAULT_GDC_PROJECTS, MODELS_DIR, PROCESSED_DIR
 from .ingest.build_corpus import build_training_corpus
+from .ingest.census_harvest import CENSUS_DIR, calibrate_atlas_from_census, harvest_census_compositions
 from .model.predict import ExhalePathPredictor
 from .model.train import train_calibrator
 from .schemas import DiseaseQuery, TumorContext
@@ -191,6 +192,35 @@ def list_vocs():
         rprint(
             f"{v['voc_id']:18} {v['name']:22} healthy≈{v['healthy_ppb_median']} ppb  CAS {v.get('cas')}"
         )
+
+
+@app.command("harvest-census")
+def harvest_census_cmd(
+    out_dir: Path = typer.Option(CENSUS_DIR, help="Output directory for Census summaries"),
+    min_cells: int = typer.Option(5_000, help="Min Census cells for a disease to harvest"),
+    top_n: int = typer.Option(100, help="Max diseases to harvest (re-ranked by cell abundance)"),
+    calibrate: bool = typer.Option(True, help="Calibrate cell_state_atlas from harvested fractions"),
+    no_opportunistic: bool = typer.Option(
+        False, help="Only harvest top-100 US list matches (skip other data-rich Census diseases)"
+    ),
+):
+    """
+    Download CELLxGENE Census single-cell compositions for top US diseases +
+    healthy cells across body tissues. Lean into diseases/tissues with the most cells.
+    Stores summaries (not full raw matrices), then calibrates ExhalePath cell states.
+    """
+    paths = harvest_census_compositions(
+        out_dir=out_dir,
+        min_disease_cells=min_cells,
+        top_n_diseases=top_n,
+        include_opportunistic=not no_opportunistic,
+    )
+    rprint("[green]Census harvest complete[/green]")
+    for k, v in paths.items():
+        rprint(f"  {k}: {v}")
+    if calibrate:
+        atlas = calibrate_atlas_from_census(census_dir=out_dir)
+        rprint(f"[green]Atlas calibrated:[/green] {atlas}")
 
 
 @app.command("audit")
