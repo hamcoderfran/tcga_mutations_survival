@@ -935,6 +935,57 @@ def cjd_profile_cmd(
     rprint(f"[green]Wrote[/green] {out_dir / 'cjd_clinical_profile.md'}")
 
 
+@app.command("diabetes-profile")
+def diabetes_profile_cmd(
+    age: float = typer.Option(55, help="Patient age"),
+    sex: str = typer.Option("male", help="female|male|other"),
+    genes: str = typer.Option("TCF7L2,PPARG", help="Comma-separated genes"),
+    out_dir: Path = typer.Option(
+        Path("runs/diabetes_clinical_profile"),
+        help="Write JSON + Markdown profile",
+    ),
+):
+    """
+    Clinical VOC tempo for type 2 diabetes (prediabetes → ketotic) + literature eval.
+
+    Gates on published breath acetone / ketone expectations (PMID:21903721).
+    """
+    import sys
+    from pathlib import Path as P
+
+    repo_scripts = P(__file__).resolve().parents[2] / "scripts"
+    if str(repo_scripts) not in sys.path:
+        sys.path.insert(0, str(repo_scripts.parent))
+    from scripts.diabetes_clinical_profile import run_profile
+
+    sex_n = sex if sex in {"female", "male", "other"} else "male"
+    gene_list = [g.strip().upper() for g in genes.split(",") if g.strip()]
+    profile = run_profile(
+        age=age,
+        sex=sex_n,
+        genes=gene_list or ["TCF7L2", "PPARG"],
+        out_dir=out_dir,
+    )
+    s = profile["summary"]
+    mark = "PASSED" if s["overall_passed"] else "FAILED"
+    rprint(f"[bold]Diabetes clinical VOC profile — {mark}[/bold]")
+    rprint(s["interpretation"])
+    for pid, t in s["tempo"].items():
+        af = t["acetone_fold"]
+        rprint(
+            f"  • {pid}: [cyan]{t['verdict']}[/cyan] "
+            f"acetone={af:.2f}× lit={'yes' if t['literature_passed'] else 'no'}"
+        )
+    lit = s["primary_literature_eval"]
+    rprint(
+        f"  literature (poorly controlled): acetone_pass={lit['acetone_pass']} "
+        f"dir_acc={lit['directional_accuracy']}"
+    )
+    rprint(f"[green]Wrote[/green] {out_dir / 'diabetes_clinical_profile.md'}")
+    if not s["overall_passed"]:
+        raise typer.Exit(code=1)
+
+
 @app.command("list-diseases")
 def list_diseases():
     """List curated disease atlas entries."""
@@ -1098,6 +1149,7 @@ def main(argv: Optional[list[str]] = None):
         "ask",
         "nl",
         "cjd-profile",
+        "diabetes-profile",
         "list-diseases",
         "list-locations",
         "list-vocs",
