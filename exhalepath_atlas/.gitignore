@@ -37,3 +37,4 @@ src/*.egg-info/
 *.egg-info/
 *.png
 .DS_Store
+data/datasources/hbdb/*.xls

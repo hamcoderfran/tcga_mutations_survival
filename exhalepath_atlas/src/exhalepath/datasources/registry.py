@@ -1,4 +1,4 @@
-"""Registry and integrator for priority 1–12 datasources."""
+"""Registry and integrator for priority 1–14 datasources."""
 
 from __future__ import annotations
 
@@ -18,6 +18,8 @@ from .ds09_gdc import GDCSource
 from .ds10_bindingdb import BindingDBSource
 from .ds11_blood_proxy import BloodProxySource
 from .ds12_nist import NISTSource
+from .ds13_hbdb import HBDBSource
+from .ds14_kegg import KEGGSource
 
 SOURCE_CLASSES = [
     MetabolomicsReposSource,
@@ -32,6 +34,8 @@ SOURCE_CLASSES = [
     BindingDBSource,
     BloodProxySource,
     NISTSource,
+    HBDBSource,
+    KEGGSource,
 ]
 
 
@@ -46,7 +50,7 @@ def integrate_all_datasources(
     priorities: list[int] | None = None,
 ) -> dict[str, Any]:
     """
-    Harvest + fuse priority 1–12 datasources into exhalepath_atlas knowledge/.
+    Harvest + fuse priority 1–14 datasources into exhalepath_atlas knowledge/.
 
     offline=True skips live HTTP where possible (still writes curated tables).
     """

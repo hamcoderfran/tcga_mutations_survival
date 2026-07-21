@@ -66,7 +66,69 @@
         "acetaldehyde": 0.4,
         "acetone": 0.2,
         "2_butanone": 0.25
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map04750",
+          "name": "Inflammatory mediator regulation of TRP channels"
+        },
+        {
+          "kegg_pathway_id": "map04936",
+          "name": "Alcoholic liver disease"
+        },
+        {
+          "kegg_pathway_id": "map05034",
+          "name": "Alcoholism"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        },
+        {
+          "kegg_pathway_id": "map00360",
+          "name": "Phenylalanine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map00430",
+          "name": "Taurine and hypotaurine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00440",
+          "name": "Phosphonate and phosphinate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00470",
+          "name": "D-Amino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00564",
+          "name": "Glycerophospholipid metabolism"
+        }
+      ]
     },
     {
       "pathway_id": "ketone_body_metabolism",
@@ -86,7 +148,17 @@
         "2_butanone": 0.4,
         "isopropanol": 0.55,
         "2_pentanone": 0.35
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
     },
     {
       "pathway_id": "mevalonate_cholesterol",
@@ -107,7 +179,37 @@
       "voc_effects": {
         "isoprene": 0.85,
         "limonene": 0.3
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00900",
+          "name": "Terpenoid backbone biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01062",
+          "name": "Biosynthesis of terpenoids and steroids"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map00902",
+          "name": "Monoterpenoid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00903",
+          "name": "Limonene degradation"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        }
+      ]
     },
     {
       "pathway_id": "fatty_acid_oxidation",
@@ -130,7 +232,17 @@
         "pentane": 0.2,
         "2_pentanone": 0.45,
         "isopropanol": 0.3
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
     },
     {
       "pathway_id": "methionine_transsulfuration",
@@ -154,7 +266,37 @@
         "hydrogen_sulfide": 0.5,
         "carbon_disulfide": 0.45,
         "methyl_mercaptan": 0.6
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00920",
+          "name": "Sulfur metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01320",
+          "name": "Sulfur cycle"
+        },
+        {
+          "kegg_pathway_id": "map00270",
+          "name": "Cysteine and methionine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00450",
+          "name": "Selenocompound metabolism"
+        }
+      ]
     },
     {
       "pathway_id": "urea_cycle",
@@ -172,7 +314,69 @@
       ],
       "voc_effects": {
         "ammonia": 0.85
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00220",
+          "name": "Arginine biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00230",
+          "name": "Purine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00250",
+          "name": "Alanine, aspartate and glutamate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00260",
+          "name": "Glycine, serine and threonine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00460",
+          "name": "Cyanoamino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00630",
+          "name": "Glyoxylate and dicarboxylate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00785",
+          "name": "Lipoic acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00910",
+          "name": "Nitrogen metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01230",
+          "name": "Biosynthesis of amino acids"
+        },
+        {
+          "kegg_pathway_id": "map01310",
+          "name": "Nitrogen cycle"
+        },
+        {
+          "kegg_pathway_id": "map04964",
+          "name": "Proximal tubule bicarbonate reclamation"
+        }
+      ]
     },
     {
       "pathway_id": "one_carbon_folate",
@@ -192,7 +396,37 @@
       "voc_effects": {
         "formaldehyde": 0.45,
         "methanol": 0.25
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00625",
+          "name": "Chloroalkane and chloroalkene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00680",
+          "name": "Methane metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        }
+      ]
     },
     {
       "pathway_id": "cytochrome_p450_detox",
@@ -219,7 +453,57 @@
         "ethylbenzene": 0.35,
         "xylene": 0.35,
         "benzaldehyde": 0.3
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00623",
+          "name": "Toluene degradation"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        },
+        {
+          "kegg_pathway_id": "map00361",
+          "name": "Chlorocyclohexane and chlorobenzene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        },
+        {
+          "kegg_pathway_id": "map00902",
+          "name": "Monoterpenoid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00903",
+          "name": "Limonene degradation"
+        },
+        {
+          "kegg_pathway_id": "map01062",
+          "name": "Biosynthesis of terpenoids and steroids"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map00627",
+          "name": "Aminobenzoate degradation"
+        }
+      ]
     },
     {
       "pathway_id": "apoptosis_necrosis",
@@ -244,7 +528,69 @@
         "ammonia": 0.2,
         "3_methylbutanal": 0.35,
         "dimethyl_amine": 0.25
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map00220",
+          "name": "Arginine biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00230",
+          "name": "Purine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00250",
+          "name": "Alanine, aspartate and glutamate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00260",
+          "name": "Glycine, serine and threonine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00460",
+          "name": "Cyanoamino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00630",
+          "name": "Glyoxylate and dicarboxylate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00785",
+          "name": "Lipoic acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00910",
+          "name": "Nitrogen metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01230",
+          "name": "Biosynthesis of amino acids"
+        },
+        {
+          "kegg_pathway_id": "map01310",
+          "name": "Nitrogen cycle"
+        }
+      ]
     },
     {
       "pathway_id": "Kras_mapk_proliferation",
@@ -267,7 +613,69 @@
         "acetaldehyde": 0.25,
         "2_butanone": 0.3,
         "hexanal": 0.2
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map04750",
+          "name": "Inflammatory mediator regulation of TRP channels"
+        },
+        {
+          "kegg_pathway_id": "map04936",
+          "name": "Alcoholic liver disease"
+        },
+        {
+          "kegg_pathway_id": "map05034",
+          "name": "Alcoholism"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        },
+        {
+          "kegg_pathway_id": "map00360",
+          "name": "Phenylalanine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map00430",
+          "name": "Taurine and hypotaurine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00440",
+          "name": "Phosphonate and phosphinate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00470",
+          "name": "D-Amino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00564",
+          "name": "Glycerophospholipid metabolism"
+        }
+      ]
     },
     {
       "pathway_id": "pi3k_akt_mtor",
@@ -289,7 +697,57 @@
         "isoprene": 0.25,
         "acetone": 0.2,
         "ethanol": 0.15
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00900",
+          "name": "Terpenoid backbone biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01062",
+          "name": "Biosynthesis of terpenoids and steroids"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map04750",
+          "name": "Inflammatory mediator regulation of TRP channels"
+        },
+        {
+          "kegg_pathway_id": "map04936",
+          "name": "Alcoholic liver disease"
+        },
+        {
+          "kegg_pathway_id": "map05034",
+          "name": "Alcoholism"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        }
+      ]
     },
     {
       "pathway_id": "gut_microbiome_fermentation",
@@ -317,7 +775,69 @@
         "propanol": 0.4,
         "ethyl_acetate": 0.35,
         "trimethylamine": 0.4
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map04750",
+          "name": "Inflammatory mediator regulation of TRP channels"
+        },
+        {
+          "kegg_pathway_id": "map04936",
+          "name": "Alcoholic liver disease"
+        },
+        {
+          "kegg_pathway_id": "map05034",
+          "name": "Alcoholism"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        },
+        {
+          "kegg_pathway_id": "map00360",
+          "name": "Phenylalanine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map00430",
+          "name": "Taurine and hypotaurine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00440",
+          "name": "Phosphonate and phosphinate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00470",
+          "name": "D-Amino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00564",
+          "name": "Glycerophospholipid metabolism"
+        }
+      ]
     },
     {
       "pathway_id": "microbial_proteolysis_putrefaction",
@@ -345,7 +865,69 @@
         "pyrrole": 0.35,
         "methyl_mercaptan": 0.55,
         "allyl_methyl_sulfide": 0.3
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00380",
+          "name": "Tryptophan metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00400",
+          "name": "Phenylalanine, tyrosine and tryptophan biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00402",
+          "name": "Benzoxazinoid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00999",
+          "name": "Biosynthesis of various plant secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map04974",
+          "name": "Protein digestion and absorption"
+        },
+        {
+          "kegg_pathway_id": "map00350",
+          "name": "Tyrosine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00361",
+          "name": "Chlorocyclohexane and chlorobenzene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map00627",
+          "name": "Aminobenzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        },
+        {
+          "kegg_pathway_id": "map00220",
+          "name": "Arginine biosynthesis"
+        }
+      ]
     },
     {
       "pathway_id": "neuroinflammation",
@@ -373,7 +955,69 @@
         "nonanal": 0.25,
         "ethane": 0.2,
         "ammonia": 0.15
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00220",
+          "name": "Arginine biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00230",
+          "name": "Purine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00250",
+          "name": "Alanine, aspartate and glutamate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00260",
+          "name": "Glycine, serine and threonine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00460",
+          "name": "Cyanoamino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00630",
+          "name": "Glyoxylate and dicarboxylate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00785",
+          "name": "Lipoic acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00910",
+          "name": "Nitrogen metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01230",
+          "name": "Biosynthesis of amino acids"
+        },
+        {
+          "kegg_pathway_id": "map01310",
+          "name": "Nitrogen cycle"
+        },
+        {
+          "kegg_pathway_id": "map04964",
+          "name": "Proximal tubule bicarbonate reclamation"
+        }
+      ]
     },
     {
       "pathway_id": "neurotransmitter_metabolism",
@@ -400,7 +1044,69 @@
         "indole": 0.25,
         "acetaldehyde": 0.2,
         "formaldehyde": 0.15
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00220",
+          "name": "Arginine biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00230",
+          "name": "Purine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00250",
+          "name": "Alanine, aspartate and glutamate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00260",
+          "name": "Glycine, serine and threonine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00460",
+          "name": "Cyanoamino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00630",
+          "name": "Glyoxylate and dicarboxylate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00785",
+          "name": "Lipoic acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00910",
+          "name": "Nitrogen metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01230",
+          "name": "Biosynthesis of amino acids"
+        },
+        {
+          "kegg_pathway_id": "map01310",
+          "name": "Nitrogen cycle"
+        },
+        {
+          "kegg_pathway_id": "map04964",
+          "name": "Proximal tubule bicarbonate reclamation"
+        }
+      ]
     },
     {
       "pathway_id": "brain_energy_metabolism",
@@ -428,7 +1134,29 @@
         "2_butanone": 0.2,
         "pentane": 0.25,
         "hexanal": 0.3
-      }
+      },
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map00900",
+          "name": "Terpenoid backbone biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01062",
+          "name": "Biosynthesis of terpenoids and steroids"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        }
+      ]
     }
   ]
 }

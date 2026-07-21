@@ -1,6 +1,6 @@
 # ExhalePath Atlas
 
-**Fully integrated exhaled VOC biomarker platform** — priority datasources **1–12**, whole-body physiology, and mechanism explainability across **100+ diseases**.
+**Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, whole-body physiology, and mechanism explainability across **100+ diseases**.
 
 This folder is the GitHub deliverable that packages the complete stack (prediction + validation + all external data integrations).
 
@@ -10,8 +10,8 @@ This folder is the GitHub deliverable that packages the complete stack (predicti
 
 | Pri | Datasource | Role |
 |---|---|---|
-| 1 | Metabolomics Workbench / MetaboLights / MassIVE | Public breath study catalog & validation hooks |
-| 2 | HMDB (+ breath flags) | VOC identity / biofluid annotation |
+| 1 | Metabolomics Workbench / MetaboLights / MassIVE | Quantified breath studies + healthy ppbv baselines |
+| 2 | HMDB (+ PubChem bridge) | VOC identity / biofluid annotation for full panel |
 | 3 | Blood:air λ partition table | Farhi alveolar physics |
 | 4 | mVOC microbial emitters | Dysbiosis → breath VOC routes |
 | 5 | PubChem physchem | MW / XLogP / TPSA for VOC panel |
@@ -22,6 +22,8 @@ This folder is the GitHub deliverable that packages the complete stack (predicti
 | 10 | BindingDB pharmacology notes | Ligand-class VOC effects |
 | 11 | Blood→breath proxy links | Systemic metabolite bridges (UKB-style, public) |
 | 12 | NIST/GC-MS RI metadata | Peak→VOC identification aids |
+| 13 | HBDB / EPA VOLATILOME | Full 777-compound breath catalog + disease links |
+| 14 | KEGG | VOC → reaction → pathway → enzyme maps |
 | + | ChEMBL / CELLxGENE Census / public breathomics | Bundled from ExhalePath core |
 
 ## Install

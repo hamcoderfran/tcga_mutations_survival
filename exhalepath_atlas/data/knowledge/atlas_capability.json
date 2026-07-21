@@ -1,6 +1,6 @@
 {
   "n_diseases": 104,
-  "n_datasources_integrated": 12,
+  "n_datasources_integrated": 14,
   "priorities": [
     1,
     2,
@@ -13,14 +13,18 @@
     9,
     10,
     11,
-    12
+    12,
+    13,
+    14
   ],
   "knowledge_fragments": [
     "datasource_bindingdb.json",
     "datasource_blood_proxy.json",
     "datasource_gdc.json",
     "datasource_gtex.json",
+    "datasource_hbdb.json",
     "datasource_hmdb.json",
+    "datasource_kegg.json",
     "datasource_metabolomics.json",
     "datasource_mvoc.json",
     "datasource_nist.json",

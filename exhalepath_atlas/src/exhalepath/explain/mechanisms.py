@@ -13,6 +13,7 @@ Builds per-disease mechanism packs for the full ~100-disease atlas.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -59,6 +60,8 @@ class VocMechanism:
     cell_states: list[dict[str, Any]] = field(default_factory=list)
     driver_genes: list[str] = field(default_factory=list)
     genetic_alterations: list[dict[str, Any]] = field(default_factory=list)
+    kegg: dict[str, Any] = field(default_factory=dict)
+    hbdb: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -75,6 +78,8 @@ class VocMechanism:
             "cell_states": self.cell_states,
             "driver_genes": self.driver_genes,
             "genetic_alterations": self.genetic_alterations,
+            "kegg": self.kegg,
+            "hbdb": self.hbdb,
         }
 
 
@@ -251,6 +256,66 @@ class MechanismExplainer:
         pw_hits.sort(key=lambda x: abs(x["contribution"]), reverse=True)
         pw_hits = pw_hits[:6]
 
+        # Priority 14 KEGG compound / pathway / enzyme evidence for this VOC
+        kegg_ev: dict[str, Any] = {}
+        kegg_path = KNOWLEDGE_DIR / "datasource_kegg.json"
+        if kegg_path.exists():
+            kegg_doc = json.loads(kegg_path.read_text())
+            for row in kegg_doc.get("vocs") or []:
+                if row.get("voc_id") == voc.voc_id and row.get("kegg_compound_id"):
+                    kegg_ev = {
+                        "kegg_compound_id": row.get("kegg_compound_id"),
+                        "kegg_url": row.get("kegg_url"),
+                        "pathways": (row.get("pathways") or [])[:8],
+                        "enzymes": (row.get("enzymes") or [])[:12],
+                        "reactions": (row.get("reactions") or [])[:12],
+                    }
+                    # Attach top KEGG pathway names onto pw_hits for transparency
+                    for kp in kegg_ev["pathways"][:3]:
+                        pw_hits.append(
+                            {
+                                "pathway_id": f"kegg:{kp.get('kegg_pathway_id')}",
+                                "name": f"KEGG {kp.get('name')}",
+                                "score": 0.0,
+                                "emission_coef": 0.0,
+                                "contribution": 0.0,
+                                "seed_genes": [],
+                                "hit_genes": [],
+                                "source": "kegg",
+                            }
+                        )
+                    break
+
+        # Priority 13 HBDB / VOLATILOME disease association for this VOC
+        hbdb_ev: dict[str, Any] = {}
+        hbdb_path = KNOWLEDGE_DIR / "datasource_hbdb.json"
+        if hbdb_path.exists():
+            hbdb = json.loads(hbdb_path.read_text())
+            did = disease.get("disease_id")
+            for drow in hbdb.get("disease_associations") or []:
+                if drow.get("disease_id") != did:
+                    continue
+                in_atlas = voc.voc_id in (drow.get("atlas_voc_ids") or [])
+                name_hit = any(
+                    _norm_token(voc.name) in _norm_token(n)
+                    or _norm_token(n) in _norm_token(voc.name)
+                    for n in (drow.get("hbdb_style_voc_names") or [])
+                )
+                if in_atlas or name_hit:
+                    hbdb_ev = {
+                        "disease_id": did,
+                        "in_atlas_priors": in_atlas,
+                        "hbdb_style_name_match": name_hit,
+                        "source": drow.get("source"),
+                    }
+                break
+            # Flag if compound is in full VOLATILOME / breath catalog
+            for c in hbdb.get("atlas_mapped_compounds") or []:
+                if c.get("atlas_voc_id") == voc.voc_id:
+                    hbdb_ev["volatilome"] = True
+                    hbdb_ev["dtxsid"] = c.get("dtxsid")
+                    break
+
         chains = []
         if voc.physiology and voc.physiology.contributing_chains:
             chains = list(voc.physiology.contributing_chains)
@@ -332,6 +397,8 @@ class MechanismExplainer:
             chains=chains,
             drivers=drivers,
             census=census,
+            kegg=kegg_ev,
+            hbdb=hbdb_ev,
         )
         return VocMechanism(
             voc_id=voc.voc_id,
@@ -342,11 +409,13 @@ class MechanismExplainer:
             predicted_ppb=float(voc.predicted_ppb),
             healthy_ppb=float(voc.healthy_ppb),
             why=why,
-            pathways=pw_hits,
+            pathways=pw_hits[:8],
             chains=list(chains),
             cell_states=state_rows,
             driver_genes=drivers[:12],
             genetic_alterations=genetic[:16],
+            kegg=kegg_ev,
+            hbdb=hbdb_ev,
         )
 
     def build_disease_pack(
@@ -438,6 +507,10 @@ class MechanismExplainer:
         return pack
 
 
+def _norm_token(s: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", str(s).lower()).strip()
+
+
 def _compose_why(
     *,
     voc_name: str,
@@ -448,11 +521,14 @@ def _compose_why(
     chains: list[str],
     drivers: list[str],
     census: dict[str, Any],
+    kegg: dict[str, Any] | None = None,
+    hbdb: dict[str, Any] | None = None,
 ) -> str:
     dir_word = {"up": "elevated", "down": "reduced", "near_baseline": "near baseline"}[direction]
     bits = [f"{voc_name} is predicted {dir_word} in {disease_name}"]
-    if pathways:
-        top = pathways[0]
+    mech_pathways = [p for p in pathways if not str(p.get("pathway_id") or "").startswith("kegg:")]
+    if mech_pathways:
+        top = mech_pathways[0]
         genes = ", ".join((top.get("hit_genes") or top.get("seed_genes") or [])[:4]) or "pathway enzymes"
         bits.append(
             f"primarily via {top.get('name')} (score={top.get('score', 0):.2f}; genes {genes})"
@@ -474,6 +550,26 @@ def _compose_why(
         bits.append(
             f"Census enriched population example: {ct.get('cell_type')} in {ct.get('tissue')}"
         )
+    if kegg and kegg.get("kegg_compound_id"):
+        kp = ", ".join(
+            (p.get("name") or p.get("kegg_pathway_id") or "")
+            for p in (kegg.get("pathways") or [])[:2]
+        )
+        enz = ", ".join((kegg.get("enzymes") or [])[:3])
+        detail = f"KEGG {kegg['kegg_compound_id']}"
+        if kp:
+            detail += f" ({kp})"
+        if enz:
+            detail += f"; EC {enz}"
+        bits.append(detail)
+    if hbdb:
+        flags = []
+        if hbdb.get("volatilome"):
+            flags.append("VOLATILOME/HBDB breath compound")
+        if hbdb.get("in_atlas_priors") or hbdb.get("hbdb_style_name_match"):
+            flags.append("disease–VOC association in breathomics literature layer")
+        if flags:
+            bits.append(" + ".join(flags))
     return "; ".join(bits) + "."
 
 

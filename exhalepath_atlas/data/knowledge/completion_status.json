@@ -18,7 +18,7 @@
     "multisite_composite_accuracy": 0.994,
     "audit_literature_case_pass_rate": 1.0,
     "n_diseases_smoke_ok": 104,
-    "n_datasources": 12
+    "n_datasources": 14
   },
   "command": "python -m exhalepath eval-completion"
 }

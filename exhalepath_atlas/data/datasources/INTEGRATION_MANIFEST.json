@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "product": "exhalepath_atlas",
-  "n_datasources": 12,
+  "n_datasources": 14,
   "offline": true,
   "datasources": [
     {
@@ -10,12 +10,17 @@
       "title": "Metabolomics Workbench / MetaboLights / MassIVE",
       "harvest": {
         "catalog": "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog.json",
+        "quantified": "/workspace/exhalepath_atlas/data/datasources/metabolomics/mw_quantified_studies.json",
+        "metabolights": "/workspace/exhalepath_atlas/data/datasources/metabolomics/metabolights_studies.json",
+        "atlas_mapped": "/workspace/exhalepath_atlas/data/datasources/metabolomics/atlas_mapped_quantified.json",
         "disease_index": "/workspace/exhalepath_atlas/data/datasources/metabolomics/disease_study_index.json",
         "manifest": "/workspace/exhalepath_atlas/data/datasources/metabolomics/manifest.json"
       },
       "fuse": {
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_metabolomics.json",
-        "n_studies": 5
+        "n_studies": 9,
+        "n_atlas_mapped_rows": 11,
+        "n_healthy_baselines": 8
       }
     },
     {
@@ -28,7 +33,8 @@
       },
       "fuse": {
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_hmdb.json",
-        "n_vocs": 20
+        "n_vocs": 50,
+        "n_catalog_enriched": 50
       }
     },
     {
@@ -161,12 +167,43 @@
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_nist.json",
         "n_vocs": 24
       }
+    },
+    {
+      "priority": 13,
+      "key": "hbdb",
+      "title": "HBDB / EPA VOLATILOME breath compound catalog",
+      "harvest": {
+        "compounds": "/workspace/exhalepath_atlas/data/datasources/hbdb/volatilome_compounds.json",
+        "disease_associations": "/workspace/exhalepath_atlas/data/datasources/hbdb/hbdb_disease_associations.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/hbdb/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_hbdb.json",
+        "n_compounds": 777,
+        "n_atlas_enriched": 44,
+        "n_diseases": 108
+      }
+    },
+    {
+      "priority": 14,
+      "key": "kegg",
+      "title": "KEGG VOC reaction / pathway / enzyme maps",
+      "harvest": {
+        "maps": "/workspace/exhalepath_atlas/data/datasources/kegg/kegg_voc_maps.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/kegg/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_kegg.json",
+        "n_mapped": 28,
+        "n_voc_catalog_enriched": 28,
+        "n_pathways_enriched": 16
+      }
     }
   ],
   "note": "ChEMBL chemogenomic harvest remains available via `python -m exhalepath harvest-chembl` (already bundled in this atlas tree).",
   "capability": {
     "n_diseases": 104,
-    "n_datasources_integrated": 12,
+    "n_datasources_integrated": 14,
     "priorities": [
       1,
       2,
@@ -179,14 +216,18 @@
       9,
       10,
       11,
-      12
+      12,
+      13,
+      14
     ],
     "knowledge_fragments": [
       "datasource_bindingdb.json",
       "datasource_blood_proxy.json",
       "datasource_gdc.json",
       "datasource_gtex.json",
+      "datasource_hbdb.json",
       "datasource_hmdb.json",
+      "datasource_kegg.json",
       "datasource_metabolomics.json",
       "datasource_mvoc.json",
       "datasource_nist.json",

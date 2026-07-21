@@ -189,7 +189,7 @@
     },
     "2_butanone": {
       "molecule_chembl_id": "CHEMBL_VOC_9",
-      "full_mwt": 100,
+      "full_mwt": 110,
       "alogp": 1.8701043548284795,
       "psa": 0.0,
       "lambda_blood_air_hint": 7.005892607921587

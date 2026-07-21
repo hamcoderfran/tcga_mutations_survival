@@ -100,17 +100,18 @@ def eval_completion_cmd(
 @app.command("integrate-datasources")
 def integrate_datasources_cmd(
     offline: bool = typer.Option(
-        False, help="Skip live HTTP; still write curated priority 1–12 tables"
+        False, help="Skip live HTTP; still write curated priority 1–14 tables"
     ),
     priorities: Optional[str] = typer.Option(
-        None, help="Comma-separated priorities to run, e.g. 1,2,3 (default: all 1–12)"
+        None, help="Comma-separated priorities to run, e.g. 1,2,13,14 (default: all 1–14)"
     ),
 ):
     """
-    Harvest + fuse priority datasources 1–12 into exhalepath_atlas knowledge/.
+    Harvest + fuse priority datasources 1–14 into exhalepath_atlas knowledge/.
 
     1 metabolomics repos · 2 HMDB · 3 λ partition · 4 mVOC · 5 PubChem · 6 Reactome
     7 GTEx priors · 8 Open Targets/GWAS · 9 GDC/TCGA · 10 BindingDB · 11 blood proxy · 12 NIST RI
+    13 HBDB/VOLATILOME · 14 KEGG VOC pathways
     """
     from pathlib import Path as P
 

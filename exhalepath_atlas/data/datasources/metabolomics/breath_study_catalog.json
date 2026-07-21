@@ -1,7 +1,17 @@
 {
-  "version": "1.0.0",
-  "n_curated_studies": 5,
+  "version": "2.0.0",
+  "n_curated_studies": 9,
   "studies": [
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST003200",
+      "title": "9 common breath VOCs in 504 healthy subjects (ppbv)",
+      "disease_hints": [
+        "healthy_baseline",
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST003200"
+    },
     {
       "repo": "metabolomics_workbench",
       "accession": "ST002449",
@@ -13,6 +23,36 @@
       "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002449"
     },
     {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000883",
+      "title": "Breathprinting malaria-associated biomarkers",
+      "disease_hints": [
+        "infectious",
+        "malaria"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000883"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000587",
+      "title": "Exhaled breath condensate in decompensated heart failure",
+      "disease_hints": [
+        "heart_failure",
+        "cardiovascular"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000587"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001164",
+      "title": "Cystic fibrosis acute pulmonary exacerbations (breath)",
+      "disease_hints": [
+        "cystic_fibrosis",
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001164"
+    },
+    {
       "repo": "metabolights",
       "accession": "MTBLS2400",
       "title": "Epilepsy breath metabolomics (SESI-HRMS)",
@@ -20,6 +60,15 @@
         "epilepsy"
       ],
       "url": "https://www.ebi.ac.uk/metabolights/MTBLS2400"
+    },
+    {
+      "repo": "metabolights",
+      "accession": "MTBLS2436",
+      "title": "Breath / VOC MetaboLights study (GC-MS)",
+      "disease_hints": [
+        "pulmonary"
+      ],
+      "url": "https://www.ebi.ac.uk/metabolights/MTBLS2436"
     },
     {
       "repo": "massive",
@@ -40,16 +89,8 @@
         "copd"
       ],
       "url": "https://doi.org/10.6084/m9.figshare.23522490.v6"
-    },
-    {
-      "repo": "metabolomics_workbench",
-      "accession": "ST001236",
-      "title": "Breath VOC related MW study (catalogued)",
-      "disease_hints": [
-        "pulmonary"
-      ],
-      "url": "https://www.metabolomicsworkbench.org/"
     }
   ],
-  "live_probe": []
+  "live_mw_discovery": [],
+  "n_mw_quantified_studies": 4
 }
