@@ -187,9 +187,11 @@ class ExhalePathPredictor:
                     healthy_ppb=healthy,
                     weight_physio=w_phys,
                 )
-                # Do not let an under-calibrated physio branch cancel a positive legacy signal
+                # Do not let an under-calibrated physio branch cancel legacy direction
                 if legacy_ppb >= healthy and trace.predicted_ppb < healthy:
                     pred_ppb = max(pred_ppb, legacy_ppb)
+                if legacy_ppb < healthy and trace.predicted_ppb > healthy:
+                    pred_ppb = min(pred_ppb, legacy_ppb)
                 conf = min(0.93, conf + 0.1)
                 drivers = list(dict.fromkeys(drivers + trace.contributing_chains[:3]))
 

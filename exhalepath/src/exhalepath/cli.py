@@ -254,6 +254,39 @@ def audit_cmd(
         raise typer.Exit(code=1)
 
 
+@app.command("eval-multisite")
+def eval_multisite_cmd(
+    out_dir: Path = typer.Option(Path("runs/multisite_eval"), help="Output directory"),
+    mode: str = typer.Option("hybrid", help="physiology | hybrid | legacy"),
+):
+    """Test 20 diseases × 5 sites against literature VOC expectations; report accuracy."""
+    from .eval.multisite import run_multisite_literature_eval
+
+    report = run_multisite_literature_eval(out_dir=out_dir, mode=mode)
+    o = report["overall"]
+    rprint(
+        f"[bold]Multisite literature eval[/bold]\n"
+        f"  diseases × sites:     {o['n_diseases']} × {o['n_sites_per_disease']}\n"
+        f"  predictions:          {o['n_predictions']}\n"
+        f"  directional accuracy: {o['directional_accuracy']:.1%}\n"
+        f"  min-fold accuracy:    {o['min_fold_accuracy']}\n"
+        f"  site sensitivity:     {o['site_sensitivity']}\n"
+        f"  disease pass rate:    {o['disease_pass_rate']:.1%} "
+        f"({o['n_diseases_passed']}/{o['n_diseases']})\n"
+        f"  composite accuracy:   {o['composite_accuracy']:.1%}\n"
+        f"  grade: {o['grading']}\n"
+        f"  report: {out_dir / 'multisite_accuracy_report.json'}"
+    )
+    fails = [d for d in report["diseases"] if not d["passed"]]
+    if fails:
+        rprint("[yellow]Diseases below pass threshold:[/yellow]")
+        for d in fails:
+            rprint(
+                f"  • {d['disease']}: dir={d['directional_accuracy']:.0%} "
+                f"fold={d['min_fold_accuracy']} site={d['site_sensitivity']}"
+            )
+
+
 def main():
     app()
 
