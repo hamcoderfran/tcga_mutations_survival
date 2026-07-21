@@ -1,0 +1,1654 @@
+{
+  "version": "1.0.0",
+  "n_diseases": 104,
+  "disease_genes": [
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "name": "Lung adenocarcinoma",
+      "genes": [
+        {
+          "gene": "EGFR",
+          "score": 0.9
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.9
+        },
+        {
+          "gene": "TP53",
+          "score": 0.85
+        },
+        {
+          "gene": "ALK",
+          "score": 0.7
+        },
+        {
+          "gene": "MET",
+          "score": 0.65
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "breast_invasive_carcinoma",
+      "name": "Breast invasive carcinoma",
+      "genes": [
+        {
+          "gene": "BRCA1",
+          "score": 0.85
+        },
+        {
+          "gene": "BRCA2",
+          "score": 0.85
+        },
+        {
+          "gene": "PIK3CA",
+          "score": 0.8
+        },
+        {
+          "gene": "TP53",
+          "score": 0.8
+        },
+        {
+          "gene": "ESR1",
+          "score": 0.75
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "pancreatic_adenocarcinoma",
+      "name": "Pancreatic adenocarcinoma",
+      "genes": [
+        {
+          "gene": "KRAS",
+          "score": 0.95
+        },
+        {
+          "gene": "TP53",
+          "score": 0.85
+        },
+        {
+          "gene": "CDKN2A",
+          "score": 0.8
+        },
+        {
+          "gene": "SMAD4",
+          "score": 0.75
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "colon_adenocarcinoma",
+      "name": "Colon adenocarcinoma",
+      "genes": [
+        {
+          "gene": "APC",
+          "score": 0.9
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.85
+        },
+        {
+          "gene": "TP53",
+          "score": 0.8
+        },
+        {
+          "gene": "PIK3CA",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "hepatocellular_carcinoma",
+      "name": "Hepatocellular carcinoma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "type_2_diabetes",
+      "name": "Type 2 diabetes mellitus",
+      "genes": [
+        {
+          "gene": "TCF7L2",
+          "score": 0.9
+        },
+        {
+          "gene": "PPARG",
+          "score": 0.75
+        },
+        {
+          "gene": "KCNJ11",
+          "score": 0.7
+        },
+        {
+          "gene": "IRS1",
+          "score": 0.65
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "chronic_liver_disease",
+      "name": "Chronic liver disease",
+      "genes": [
+        {
+          "gene": "PNPLA3",
+          "score": 0.85
+        },
+        {
+          "gene": "TM6SF2",
+          "score": 0.7
+        },
+        {
+          "gene": "HSD17B13",
+          "score": 0.65
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "chronic_kidney_disease",
+      "name": "Chronic kidney disease",
+      "genes": [
+        {
+          "gene": "UMOD",
+          "score": 0.75
+        },
+        {
+          "gene": "SHROOM3",
+          "score": 0.65
+        },
+        {
+          "gene": "APOL1",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "inflammatory_bowel_disease",
+      "name": "Inflammatory bowel disease",
+      "genes": [
+        {
+          "gene": "NOD2",
+          "score": 0.85
+        },
+        {
+          "gene": "IL23R",
+          "score": 0.8
+        },
+        {
+          "gene": "ATG16L1",
+          "score": 0.75
+        },
+        {
+          "gene": "TNF",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "ovarian_cancer",
+      "name": "Ovarian cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "gut_dysbiosis",
+      "name": "Gut dysbiosis",
+      "genes": [
+        {
+          "gene": "NOD2",
+          "score": 0.5
+        },
+        {
+          "gene": "TNF",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "sibo",
+      "name": "Small intestinal bacterial overgrowth",
+      "genes": [
+        {
+          "gene": "NOD2",
+          "score": 0.5
+        },
+        {
+          "gene": "TNF",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "clostridioides_difficile_infection",
+      "name": "Clostridioides difficile infection",
+      "genes": [
+        {
+          "gene": "NOD2",
+          "score": 0.5
+        },
+        {
+          "gene": "TNF",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "helicobacter_pylori_infection",
+      "name": "Helicobacter pylori infection",
+      "genes": [
+        {
+          "gene": "IL1B",
+          "score": 0.65
+        },
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "CYP2C19",
+          "score": 0.55
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "alzheimer_disease",
+      "name": "Alzheimer disease",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.95
+        },
+        {
+          "gene": "APP",
+          "score": 0.8
+        },
+        {
+          "gene": "PSEN1",
+          "score": 0.75
+        },
+        {
+          "gene": "TREM2",
+          "score": 0.7
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.65
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "parkinson_disease",
+      "name": "Parkinson disease",
+      "genes": [
+        {
+          "gene": "SNCA",
+          "score": 0.9
+        },
+        {
+          "gene": "LRRK2",
+          "score": 0.85
+        },
+        {
+          "gene": "GBA",
+          "score": 0.8
+        },
+        {
+          "gene": "PRKN",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "major_depressive_disorder",
+      "name": "Major depressive disorder",
+      "genes": [
+        {
+          "gene": "SLC6A4",
+          "score": 0.7
+        },
+        {
+          "gene": "BDNF",
+          "score": 0.65
+        },
+        {
+          "gene": "FKBP5",
+          "score": 0.6
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "schizophrenia",
+      "name": "Schizophrenia",
+      "genes": [
+        {
+          "gene": "DRD2",
+          "score": 0.7
+        },
+        {
+          "gene": "CACNA1C",
+          "score": 0.7
+        },
+        {
+          "gene": "GRIN2A",
+          "score": 0.65
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "epilepsy",
+      "name": "Epilepsy",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "multiple_sclerosis",
+      "name": "Multiple sclerosis",
+      "genes": [
+        {
+          "gene": "HLA-DRB1",
+          "score": 0.9
+        },
+        {
+          "gene": "IL2RA",
+          "score": 0.75
+        },
+        {
+          "gene": "IL7R",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "glioblastoma",
+      "name": "Glioblastoma",
+      "genes": [
+        {
+          "gene": "EGFR",
+          "score": 0.9
+        },
+        {
+          "gene": "PTEN",
+          "score": 0.85
+        },
+        {
+          "gene": "IDH1",
+          "score": 0.8
+        },
+        {
+          "gene": "TP53",
+          "score": 0.8
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "traumatic_brain_injury",
+      "name": "Traumatic brain injury",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "autism_spectrum_disorder",
+      "name": "Autism spectrum disorder",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "heart_disease",
+      "name": "Heart disease",
+      "genes": [
+        {
+          "gene": "LDLR",
+          "score": 0.8
+        },
+        {
+          "gene": "PCSK9",
+          "score": 0.75
+        },
+        {
+          "gene": "APOB",
+          "score": 0.75
+        },
+        {
+          "gene": "CDKN2B-AS1",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "cancer_prostate",
+      "name": "Prostate cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cancer_stomach",
+      "name": "Gastric cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cancer_kidney",
+      "name": "Kidney cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cancer_bladder",
+      "name": "Bladder cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cancer_skin_melanoma",
+      "name": "Melanoma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cancer_blood",
+      "name": "Hematologic cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "neuroblastoma",
+      "name": "Neuroblastoma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "bipolar",
+      "name": "Bipolar disorder",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "als",
+      "name": "ALS",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "stroke",
+      "name": "Stroke / cerebrovascular",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "copd",
+      "name": "COPD",
+      "genes": [
+        {
+          "gene": "HHIP",
+          "score": 0.7
+        },
+        {
+          "gene": "CHRNA3",
+          "score": 0.65
+        },
+        {
+          "gene": "FAM13A",
+          "score": 0.65
+        },
+        {
+          "gene": "CYP2A6",
+          "score": 0.6
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "asthma",
+      "name": "Asthma",
+      "genes": [
+        {
+          "gene": "ORMDL3",
+          "score": 0.8
+        },
+        {
+          "gene": "IL33",
+          "score": 0.75
+        },
+        {
+          "gene": "TSLP",
+          "score": 0.7
+        },
+        {
+          "gene": "HLA-DQA1",
+          "score": 0.65
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "ild",
+      "name": "Interstitial lung disease",
+      "genes": [
+        {
+          "gene": "HHIP",
+          "score": 0.5
+        },
+        {
+          "gene": "CYP1A1",
+          "score": 0.45
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "covid19",
+      "name": "COVID-19",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "influenza",
+      "name": "Influenza / viral pneumonia",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "tuberculosis",
+      "name": "Tuberculosis",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "type1_diabetes",
+      "name": "Type 1 diabetes",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "obesity",
+      "name": "Obesity",
+      "genes": [
+        {
+          "gene": "FTO",
+          "score": 0.85
+        },
+        {
+          "gene": "MC4R",
+          "score": 0.8
+        },
+        {
+          "gene": "LEPR",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "gerd",
+      "name": "GERD",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "celiac",
+      "name": "Celiac disease",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "lupus",
+      "name": "Systemic lupus erythematosus",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "rheumatoid_arthritis",
+      "name": "Rheumatoid arthritis",
+      "genes": [
+        {
+          "gene": "HLA-DRB1",
+          "score": 0.9
+        },
+        {
+          "gene": "PTPN22",
+          "score": 0.8
+        },
+        {
+          "gene": "STAT4",
+          "score": 0.7
+        }
+      ],
+      "source": "opentargets_gwas_curated"
+    },
+    {
+      "disease_id": "osteoarthritis",
+      "name": "Osteoarthritis",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "psoriasis",
+      "name": "Psoriasis",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "atopic_dermatitis",
+      "name": "Atopic dermatitis",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "hiv",
+      "name": "HIV infection",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cmv",
+      "name": "Cytomegalovirus infection",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "sepsis",
+      "name": "Sepsis",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "hypertension",
+      "name": "Hypertension",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "hyperlipidemia",
+      "name": "Hyperlipidemia",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "thyroid",
+      "name": "Thyroid disease",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "endometriosis",
+      "name": "Endometriosis",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "pcos",
+      "name": "PCOS",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "infertility",
+      "name": "Infertility",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "adhd",
+      "name": "ADHD",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "migraine",
+      "name": "Migraine",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "chronic_pain",
+      "name": "Chronic pain",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "osteoporosis",
+      "name": "Osteoporosis",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "gout",
+      "name": "Gout",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "anemia",
+      "name": "Anemia",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "sickle_cell",
+      "name": "Sickle cell disease",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cystic_fibrosis",
+      "name": "Cystic fibrosis",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "down_syndrome",
+      "name": "Down syndrome",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "hearing_loss",
+      "name": "Hearing loss",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "macular_degeneration",
+      "name": "Age-related macular degeneration",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "glaucoma",
+      "name": "Glaucoma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "diabetic_retinopathy",
+      "name": "Diabetic retinopathy",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "periodontitis",
+      "name": "Periodontitis",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "uti",
+      "name": "Urinary tract infection",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "pneumonia_bacterial",
+      "name": "Bacterial pneumonia",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "nafld",
+      "name": "NAFLD/NASH",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "alcohol_use",
+      "name": "Alcohol use disorder",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "opioid_use",
+      "name": "Opioid use disorder",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "tobacco_use",
+      "name": "Tobacco use disorder",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "anxiety",
+      "name": "Anxiety disorders",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "ptsd",
+      "name": "PTSD",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "sleep_apnea",
+      "name": "Sleep apnea",
+      "genes": [
+        {
+          "gene": "HHIP",
+          "score": 0.5
+        },
+        {
+          "gene": "CYP1A1",
+          "score": 0.45
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "gout_ckd_overlap",
+      "name": "Hyperuricemia",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "vasculitis",
+      "name": "Vasculitis",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "sjogren",
+      "name": "Sjogren syndrome",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "scleroderma",
+      "name": "Systemic sclerosis",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "myasthenia",
+      "name": "Myasthenia gravis",
+      "genes": [
+        {
+          "gene": "TNF",
+          "score": 0.6
+        },
+        {
+          "gene": "IL6",
+          "score": 0.55
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "huntington",
+      "name": "Huntington disease",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "lewy_body",
+      "name": "Lewy body dementia",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "frontotemporal",
+      "name": "Frontotemporal dementia",
+      "genes": [
+        {
+          "gene": "APOE",
+          "score": 0.55
+        },
+        {
+          "gene": "MAPT",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "breast_benign",
+      "name": "Benign breast disease",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "endometrial_cancer",
+      "name": "Endometrial cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "cervical_cancer",
+      "name": "Cervical cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "head_neck_cancer",
+      "name": "Head and neck cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "thyroid_cancer",
+      "name": "Thyroid cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "esophageal_cancer",
+      "name": "Esophageal cancer",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "mesothelioma",
+      "name": "Mesothelioma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "sarcoma",
+      "name": "Sarcoma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "wilms",
+      "name": "Wilms tumor",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "retinoblastoma",
+      "name": "Retinoblastoma",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.7
+        },
+        {
+          "gene": "KRAS",
+          "score": 0.65
+        },
+        {
+          "gene": "MYC",
+          "score": 0.6
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "acute_kidney_injury",
+      "name": "Acute kidney injury",
+      "genes": [
+        {
+          "gene": "PPARG",
+          "score": 0.55
+        },
+        {
+          "gene": "INSR",
+          "score": 0.5
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "pulmonary_hypertension",
+      "name": "Pulmonary hypertension",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "arrhythmia",
+      "name": "Cardiac arrhythmia",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "peripheral_artery",
+      "name": "Peripheral artery disease",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    },
+    {
+      "disease_id": "venous_thromboembolism",
+      "name": "Venous thromboembolism",
+      "genes": [
+        {
+          "gene": "TP53",
+          "score": 0.4
+        }
+      ],
+      "source": "category_fallback"
+    }
+  ]
+}

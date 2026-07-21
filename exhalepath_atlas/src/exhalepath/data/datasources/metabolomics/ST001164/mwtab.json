@@ -1,0 +1,344 @@
+{
+"METABOLOMICS WORKBENCH":{"STUDY_ID":"ST001164","ANALYSIS_ID":"AN001925","VERSION":"1","CREATED_ON":"April 4, 2019, 12:32 pm"},
+
+"PROJECT":{"PROJECT_TITLE":"Early Detection of Cystic Fibrosis Acute Pulmonary Exacerbations in Adult and Pediatric Patients by Exhaled Breath Condensate Metabolomics.","PROJECT_SUMMARY":"LC-MS for non-targeted EBC metabolomic profiling of cystic fibrosis acute pulmonary exacerbations in adult and pediatric patients","INSTITUTE":"Georgia Institute of Technology","LAST_NAME":"ZANG","FIRST_NAME":"XIAOLING","ADDRESS":"901 Atlantic Drive Atlanta, GA 30332-0400","EMAIL":"xlingzang@163.com","PHONE":"+86 15863037065"},
+
+"STUDY":{"STUDY_TITLE":"Early Detection of Cystic Fibrosis Acute Pulmonary Exacerbations in Adult and Pediatric Patients by Exhaled Breath Condensate Metabolomics.","STUDY_SUMMARY":"LC-MS non-targeted metabolomics study of EBC samples from cystic fibrosis acute pulmonary exacerbations in adult and pediatric patients","INSTITUTE":"Georgia Institute of Technology","LAST_NAME":"ZANG","FIRST_NAME":"XIAOLING","ADDRESS":"901 Atlantic Drive Atlanta, GA 30332-0400","EMAIL":"xlingzang@163.com","PHONE":"+86 15863037065"},
+
+"SUBJECT":{"SUBJECT_TYPE":"Human","SUBJECT_SPECIES":"Homo sapiens","TAXONOMY_ID":"9606"},
+"SUBJECT_SAMPLE_FACTORS":[
+{
+"Subject ID":"-",
+"Sample ID":"2STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"8STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"10STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"13STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"16STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"20STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"21STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"22STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"112STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"115STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"128STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"131STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"132STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"133STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"135STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"136STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"139STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"141STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"143STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"144STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"145STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"148STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"150STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"151STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"152STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"154STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"155STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"157STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"158STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"162STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"164STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"175STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"176STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"177STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"184STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"187STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"188STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"196STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"201STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"207STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"215STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"218STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"219STABLE",
+"Factors":{"Class":"S"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"6APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"9APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"24APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"28APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"51APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"116APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"117APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"118APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"122APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"125APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"129APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"138APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"156APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"166APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"171APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"181APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"190APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"193APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"198APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"210APE",
+"Factors":{"Class":"A"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"221APE",
+"Factors":{"Class":"A"}
+}
+],
+"COLLECTION":{"COLLECTION_SUMMARY":"This study used EBC samples made available by the CF Biospecimen Registry, a part of the Emory+Children’s Center for CF and Airways Disease Research. EBC sample collection followed the guidelines approved by the Georgia Institute of Technology and the Emory University Institutional Review Boards (approval number IRB00000372). An R-Tube collector (Respiratory Research, Inc., Austin, TX, USA) was used to collect EBC samples, which were immediately frozen at -80 °C until processed.","SAMPLE_TYPE":"Breath"},
+
+"TREATMENT":{"TREATMENT_SUMMARY":"Stable CF, APE and pre-APE patients"},
+
+"SAMPLEPREP":{"SAMPLEPREP_SUMMARY":"EBC samples were thawed and lyophilized at -40 °C and ~100 mTorr for 24 hours using a VirTis bench top freeze-dryer (SP Industries, Stone Ridge, NY, USA). Sample residues were reconstituted in water/methanol (90:10 v/v) with a concentration factor of 20, and analyzed by UPLC-MS."},
+
+"CHROMATOGRAPHY":{"CHROMATOGRAPHY_TYPE":"Reversed phase","INSTRUMENT_NAME":"Thermo Dionex Ultimate 3000","COLUMN_NAME":"Waters Acquity BEH C18 (50 x 2.1mm, 1.7 um)"},
+
+"ANALYSIS":{"ANALYSIS_TYPE":"MS"},
+
+"MS":{"INSTRUMENT_NAME":"Waters Synapt G2 S QTOF","INSTRUMENT_TYPE":"QTOF","MS_TYPE":"ESI","ION_MODE":"NEGATIVE","MS_COMMENTS":"None","MS_RESULTS_FILE":"ST001164_AN001925_Results.txt UNITS:Normalized peak area Has m/z:Yes Has RT:Yes RT units:Minutes"}
+
+}
+

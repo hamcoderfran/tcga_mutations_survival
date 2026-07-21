@@ -1,0 +1,170 @@
+{
+"METABOLOMICS WORKBENCH":{"STUDY_ID":"ST000587","ANALYSIS_ID":"AN000902","VERSION":"1","CREATED_ON":"April 12, 2017, 12:11 pm"},
+
+"PROJECT":{"PROJECT_TITLE":"Mayo Metabolomics Pilot and Feasibility Award: Metabolomics of Exhaled Breath Condensate in Decompensated Heart Failure","PROJECT_SUMMARY":"Metabolomics is a large-scale approach to monitoring as many as possible of the compounds involved in cellular processes in a single assay to derive metabolic profiles. Compared with genomics or proteomics, metabolomics reflects changes in phenotype and therefore function. Nearly all the blood volume-cardiac output in humans flows through the lungs at a rate of 5L/min and traverses through capillaries with a very thin blood-gas barrier (approximately 2μm, 600–800 nm; in some places <200 nm) to allow sufficient gas diffusion. However, there is evidence that many other biochemicals from the blood can be found in the exhaled air. Collection of exhaled breath condensate (EBC) is a relatively new, noninvasive method that allows assessment of biochemical profiles that may not only link to airway physiology, but also to other changing processes in the body. The aims of this study are: (1) Working with the Mayo Clinic Metabolomics Resource Core Laboratory to develop the optimal method for performing metabolomics of EBC, (2) Collecting and metabolomic profiling of the EBCs from patients with heart failure; (2) Comparing the profiles of these patients obtained during stable and acute exacerbation periods as well as during recovery from a decompensation; (3) Comparing the profiles of these patients with age and gender matched controls; (4) Correlation of EBC metabolomic profiles with clinical phenotypes. The proposed metabolomics profiles would be obtained from patients involved in IRB approved, ongoing, primarily NIH funded studies focused on understanding pulmonary congestion in heart failure patients. This includes a recently started project capturing patients as they present in the emergency room with decompensated heart failure. Phenotyping for this study includes novel measures of pulmonary capillary recruitment, alveolar-capillary conductance, pulmonary capillary blood volume, thoracic CT imaging combined with in-hospital clinical data, including blood biomarkers such as BNP and catecholamines. Measurements are performed upon admission (within 24hours) and then repeated just prior to dismissal. In addition, we would collect EBC on stable HF patients and in age and gender matched controls healthy controls from our other ongoing studies. The overall aim will be to identify novel patterns or biomarkers for developing a point-of-care test (POC) for tracking disease status in HF patients.","INSTITUTE":"Mayo Clinic","DEPARTMENT":"Cardiovascular Diseases","LABORATORY":"Mayo Metabolomics Core","LAST_NAME":"Johnson","FIRST_NAME":"Bruce","ADDRESS":"200 First St. SW, Rochester, Minnesota, 55905, USA","EMAIL":"johnson.bruce@mayo.edu","PHONE":"507-284-4441"},
+
+"STUDY":{"STUDY_TITLE":"Metabolomics of Exhaled Breath Condensate in Decompensated Heart Failure","STUDY_SUMMARY":"The aim of the study was to test weather characteristic differences or changes in metabolic profile exist between exhaled breath condensate (EBC) and saliva of healthy individuals and heart failure patients. EBC NMR profiling was performed.","INSTITUTE":"Mayo Clinic","DEPARTMENT":"Cardiovascular Diseases","LABORATORY":"Mayo Metabolomics Core","LAST_NAME":"Johnson","FIRST_NAME":"Bruce","ADDRESS":"200 First Street SW, Rochester, MN 55905","EMAIL":"johnson.bruce@mayo.edu","PHONE":"507-284-4441"},
+
+"SUBJECT":{"SUBJECT_TYPE":"Human","SUBJECT_SPECIES":"Homo sapiens","TAXONOMY_ID":"9606"},
+"SUBJECT_SAMPLE_FACTORS":[
+{
+"Subject ID":"-",
+"Sample ID":"HF01",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF02",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF03",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF04",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF05",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF06",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF07",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF09",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF12",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF13",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"HF17",
+"Factors":{"factor":"heart failure"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C10",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C11",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C14",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C15",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C16",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C18",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C19",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C20",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C21",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C22",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C23",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"C24",
+"Factors":{"factor":"control"},
+"Additional sample data":{"type":"EBC"}
+}
+],
+"COLLECTION":{"COLLECTION_SUMMARY":"The samples were collected in Dr. Bruce Johnson lab, at the Department of Cardiovascular Diseases, Mayo Clinic. EBC samples were collected using Jaeger EcoScreen cooling unit (-20°C). Patients were breathing through mouth piece while wearing a nose clip during 30 minutes. Saliva was collected from the same patients during last 15 minutes. The samples were frozen immediately after collection."},
+
+"TREATMENT":{"TREATMENT_SUMMARY":"We will focus initially on patients with classic systolic HF who are admitted to St Mary’s Hospital with decompensated disease. These patients are currently being studied to quantify changes in lung water during the “recompensation” diuresis in the hospital and the related changes in alveolar gas conductance and breathing pattern to develop a predictive algorithm for likelihood of readmission, but also to obtain a better understanding of fluid regulation in the lungs. As these subjects are recruited, we will recruit age and sex matched stable HF patients going through similar testing in parallel running studies as well as age and sex matched control subjects. We will target 12 subjects per group and in addition to the EBC collection we will obtain saliva samples and blood at the same time points."},
+
+"SAMPLEPREP":{"SAMPLEPREP_SUMMARY":"EBC: Transfer 800μl aliquots of EBC samples into a 1.5ml microcentrifuge tubes and dry down (lyophilize) each sample in a centrifugal vacuum evaporator for 4-6 h. Apply no heating during the drying process. In the dried EBC samples add 250μl of phosphate buffer and 250μl of 4mM TSP-d4 solution. Vortex for 20 s. Transfer the solution to 5mm NMR tube."},
+
+"CHROMATOGRAPHY":{"CHROMATOGRAPHY_TYPE":"-","INSTRUMENT_NAME":"-","COLUMN_NAME":"-"},
+
+"ANALYSIS":{"ANALYSIS_TYPE":"NMR"},
+
+"NM":{"INSTRUMENT_NAME":"Bruker 600 MHz Avance III HD spectrometer","INSTRUMENT_TYPE":"FT-NMR","NMR_EXPERIMENT_TYPE":"1D-1H","SPECTROMETER_FREQUENCY":"600 MHz"},
+
+"NMR_METABOLITE_DATA":{
+"Units":"uM",
+
+"Data":[{"Metabolite":"Acetate","HF01":"73.8","HF02":"193.8","HF03":"47.7","HF04":"123.9","HF05":"142.2","HF06":"80.6","HF07":"64.2","HF09":"67.7","HF12":"57.6","HF13":"19.6","HF17":"179.7","C10":"69.4","C11":"201.4","C14":"203.1","C15":"40.1","C16":"183.7","C18":"290.8","C19":"55.8","C20":"33.4","C21":"199.4","C22":"152.5","C23":"132.3","C24":"168.6"},{"Metabolite":"Acetone","HF01":"1.1","HF02":"0.9","HF03":"0.6","HF04":"0","HF05":"0.8","HF06":"0.9","HF07":"0","HF09":"0.9","HF12":"1.9","HF13":"1.8","HF17":"1","C10":"0","C11":"0.8","C14":"0","C15":"0.7","C16":"1.7","C18":"4.3","C19":"2","C20":"1.6","C21":"0","C22":"1.6","C23":"1.6","C24":"1.9"},{"Metabolite":"Ethylene glycol","HF01":"4.5","HF02":"3.7","HF03":"2.4","HF04":"7.2","HF05":"2.6","HF06":"2.1","HF07":"3.8","HF09":"1.8","HF12":"1.7","HF13":"1.6","HF17":"0","C10":"4.2","C11":"2.7","C14":"0","C15":"1.4","C16":"2.3","C18":"0","C19":"3.1","C20":"1.4","C21":"0","C22":"3.7","C23":"1.9","C24":"6.7"},{"Metabolite":"Formate","HF01":"36.2","HF02":"19.5","HF03":"19.7","HF04":"53.6","HF05":"26.6","HF06":"17.1","HF07":"27.5","HF09":"17","HF12":"21.9","HF13":"18.7","HF17":"0","C10":"25.8","C11":"24.2","C14":"45.5","C15":"22.6","C16":"55.7","C18":"59","C19":"19.3","C20":"17","C21":"44.5","C22":"51.1","C23":"26.3","C24":"48.9"},{"Metabolite":"Isopropanol","HF01":"0","HF02":"1.2","HF03":"0.7","HF04":"0","HF05":"0","HF06":"0.8","HF07":"0","HF09":"0","HF12":"0.9","HF13":"0","HF17":"0","C10":"0","C11":"0","C14":"0","C15":"0.8","C16":"0","C18":"0","C19":"0","C20":"0","C21":"0","C22":"1.4","C23":"0","C24":"0"},{"Metabolite":"Lactate","HF01":"4.3","HF02":"3.3","HF03":"3.1","HF04":"10.6","HF05":"49.7","HF06":"20.4","HF07":"5.7","HF09":"3.2","HF12":"4.4","HF13":"4.2","HF17":"11.3","C10":"19.9","C11":"7","C14":"0","C15":"6.9","C16":"4","C18":"43.2","C19":"7.6","C20":"4","C21":"91.2","C22":"4.4","C23":"5.2","C24":"141.1"},{"Metabolite":"Methanol","HF01":"20.7","HF02":"20.5","HF03":"0","HF04":"19.9","HF05":"21","HF06":"20.5","HF07":"20.7","HF09":"20.4","HF12":"22.7","HF13":"22.7","HF17":"13","C10":"20.2","C11":"20.6","C14":"20.1","C15":"20.9","C16":"24.2","C18":"21.2","C19":"22.4","C20":"21.4","C21":"13.9","C22":"22.4","C23":"22.5","C24":"23.2"},{"Metabolite":"Propionate","HF01":"12.1","HF02":"43.8","HF03":"4.2","HF04":"8.3","HF05":"15.4","HF06":"14.7","HF07":"4.8","HF09":"14.1","HF12":"7.9","HF13":"0","HF17":"0","C10":"0","C11":"55.8","C14":"54.7","C15":"5.1","C16":"17.9","C18":"43.7","C19":"7.2","C20":"0","C21":"26.1","C22":"17","C23":"21.5","C24":"22.6"},{"Metabolite":"Pyruvate","HF01":"0","HF02":"7.9","HF03":"7.4","HF04":"0","HF05":"1.8","HF06":"0","HF07":"8.7","HF09":"8.5","HF12":"0","HF13":"0","HF17":"6.4","C10":"8.2","C11":"0","C14":"0","C15":"7.6","C16":"10.6","C18":"0","C19":"12.8","C20":"9.3","C21":"0","C22":"0","C23":"0","C24":"4.7"}],
+
+"Metabolites":[{"metabolite_name":"Acetate"},{"metabolite_name":"Acetone"},{"metabolite_name":"Ethylene glycol"},{"metabolite_name":"Formate"},{"metabolite_name":"Isopropanol"},{"metabolite_name":"Lactate"},{"metabolite_name":"Methanol"},{"metabolite_name":"Propionate"},{"metabolite_name":"Pyruvate"}]
+}
+
+}
+

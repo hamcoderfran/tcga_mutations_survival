@@ -1,0 +1,7 @@
+{
+  "priority": 14,
+  "key": "kegg",
+  "title": "KEGG VOC reaction / pathway / enzyme maps",
+  "n_vocs": 28,
+  "offline": true
+}

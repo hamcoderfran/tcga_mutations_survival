@@ -1,0 +1,2399 @@
+{
+  "version": "1.0.0",
+  "source": "KEGG REST API",
+  "license_note": "KEGG academic use; cite Kanehisa Laboratories",
+  "n_vocs": 50,
+  "n_mapped": 28,
+  "vocs": [
+    {
+      "voc_id": "acetone",
+      "name": "Acetone",
+      "kegg_compound_id": "C00207",
+      "formula": "C3H6O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.80",
+        "1.14.13.226",
+        "1.14.14.141",
+        "1.1.1.-",
+        "1.14.14.148",
+        "2.6.3.1",
+        "4.1.1.4",
+        "4.1.2.46",
+        "4.1.2.47",
+        "4.1.99.16",
+        "4.2.3.22",
+        "6.4.1.6"
+      ],
+      "reactions": [
+        "R01366",
+        "R01550",
+        "R01553",
+        "R03796",
+        "R05564",
+        "R05568",
+        "R05735",
+        "R08207",
+        "R08543",
+        "R09002",
+        "R09487",
+        "R10703",
+        "R10704"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00207"
+    },
+    {
+      "voc_id": "isoprene",
+      "name": "Isoprene",
+      "kegg_compound_id": "C16521",
+      "formula": "C5H8",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00900",
+          "name": "Terpenoid backbone biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01062",
+          "name": "Biosynthesis of terpenoids and steroids"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        }
+      ],
+      "enzymes": [
+        "4.2.3.27"
+      ],
+      "reactions": [
+        "R08199"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C16521"
+    },
+    {
+      "voc_id": "pentane",
+      "name": "n-Pentane",
+      "kegg_compound_id": "C13388",
+      "error": "404 Client Error: Not Found for url: https://rest.kegg.jp/get/cpd:C13388",
+      "status": "error"
+    },
+    {
+      "voc_id": "ethane",
+      "name": "Ethane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "hexanal",
+      "name": "3-Oxopentanoic acid",
+      "kegg_compound_id": "C02233",
+      "formula": "C5H8O3",
+      "pathways": [],
+      "enzymes": [],
+      "reactions": [],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C02233"
+    },
+    {
+      "voc_id": "heptanal",
+      "name": "Heptanal",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "nonanal",
+      "name": "Nonanal",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "decanal",
+      "name": "Decanal",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "ethanol",
+      "name": "Ethanol",
+      "kegg_compound_id": "C00469",
+      "formula": "C2H6O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map04750",
+          "name": "Inflammatory mediator regulation of TRP channels"
+        },
+        {
+          "kegg_pathway_id": "map04936",
+          "name": "Alcoholic liver disease"
+        },
+        {
+          "kegg_pathway_id": "map05034",
+          "name": "Alcoholism"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.1",
+        "1.1.1.2",
+        "1.1.1.71",
+        "1.1.2.7",
+        "1.1.2.8",
+        "1.1.5.5",
+        "1.1.99.36",
+        "2.3.1.152",
+        "2.3.1.268",
+        "3.1.1.67",
+        "3.1.1.113",
+        "3.5.1.75"
+      ],
+      "reactions": [
+        "R00746",
+        "R00754",
+        "R02359",
+        "R02682",
+        "R04410",
+        "R05198",
+        "R09127",
+        "R09479",
+        "R09552",
+        "R11957",
+        "R12515"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00469"
+    },
+    {
+      "voc_id": "2_butanone",
+      "name": "Methyl ethyl ketone",
+      "kegg_compound_id": "C02845",
+      "formula": "C4H8O",
+      "pathways": [],
+      "enzymes": [
+        "4.1.2.46"
+      ],
+      "reactions": [
+        "R09358"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C02845"
+    },
+    {
+      "voc_id": "dms",
+      "name": "Dimethyl sulfide",
+      "kegg_compound_id": "C00580",
+      "formula": "C2H6S",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00920",
+          "name": "Sulfur metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01320",
+          "name": "Sulfur cycle"
+        }
+      ],
+      "enzymes": [
+        "1.8.2.4",
+        "1.8.5.3",
+        "1.14.13.131",
+        "1.14.13.245",
+        "2.1.1.19",
+        "2.1.1.96",
+        "2.1.1.334",
+        "4.4.1.3"
+      ],
+      "reactions": [
+        "R02572",
+        "R02573",
+        "R02574",
+        "R09500",
+        "R09501",
+        "R09786",
+        "R11546",
+        "R12319",
+        "R13452",
+        "R13453"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00580"
+    },
+    {
+      "voc_id": "dmts",
+      "name": "Dimethyl trisulfide",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "ammonia",
+      "name": "Ammonia",
+      "kegg_compound_id": "C00014",
+      "formula": "NH3",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00220",
+          "name": "Arginine biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00230",
+          "name": "Purine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00250",
+          "name": "Alanine, aspartate and glutamate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00260",
+          "name": "Glycine, serine and threonine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00460",
+          "name": "Cyanoamino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00630",
+          "name": "Glyoxylate and dicarboxylate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00785",
+          "name": "Lipoic acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00910",
+          "name": "Nitrogen metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01230",
+          "name": "Biosynthesis of amino acids"
+        },
+        {
+          "kegg_pathway_id": "map01310",
+          "name": "Nitrogen cycle"
+        },
+        {
+          "kegg_pathway_id": "map04964",
+          "name": "Proximal tubule bicarbonate reclamation"
+        },
+        {
+          "kegg_pathway_id": "map04966",
+          "name": "Collecting duct acid secretion"
+        },
+        {
+          "kegg_pathway_id": "map04974",
+          "name": "Protein digestion and absorption"
+        },
+        {
+          "kegg_pathway_id": "map05110",
+          "name": "Vibrio cholerae infection"
+        },
+        {
+          "kegg_pathway_id": "map05120",
+          "name": "Epithelial cell signaling in Helicobacter pylori infection"
+        }
+      ],
+      "enzymes": [
+        "1.3.7.8",
+        "1.4.1.1",
+        "1.4.1.2",
+        "1.4.1.3",
+        "1.4.1.4",
+        "1.4.1.5",
+        "1.4.1.7",
+        "1.4.1.8",
+        "1.4.1.9",
+        "1.4.1.10",
+        "1.4.1.11",
+        "1.4.1.12",
+        "1.4.1.13",
+        "1.4.1.14",
+        "1.4.1.15",
+        "1.4.1.16",
+        "1.4.1.18",
+        "1.4.1.19",
+        "1.4.1.20",
+        "1.4.1.21",
+        "1.4.1.23",
+        "1.4.1.24",
+        "1.4.1.25",
+        "1.4.1.26",
+        "1.4.1.27",
+        "1.4.1.28",
+        "1.4.2.1",
+        "1.4.3.1",
+        "1.4.3.2",
+        "1.4.3.3",
+        "1.4.3.4",
+        "1.4.3.5",
+        "1.4.3.7",
+        "1.4.3.8",
+        "1.4.3.10",
+        "1.4.3.11",
+        "1.4.3.12",
+        "1.4.3.13",
+        "1.4.3.14",
+        "1.4.3.15",
+        "1.4.3.16",
+        "1.4.3.19",
+        "1.4.3.20",
+        "1.4.3.21",
+        "1.4.3.22",
+        "1.4.3.25",
+        "1.4.3.26",
+        "1.4.3.27",
+        "1.4.5.1",
+        "1.4.7.1",
+        "1.4.9.1",
+        "1.4.9.2",
+        "1.4.99.2",
+        "1.4.99.6",
+        "1.5.3.27",
+        "1.7.1.4",
+        "1.7.1.7",
+        "1.7.1.10",
+        "1.7.1.14",
+        "1.7.1.15",
+        "1.7.2.2",
+        "1.7.2.7",
+        "1.7.7.1",
+        "1.7.99.1",
+        "1.13.12.15",
+        "1.13.99.3",
+        "1.14.11.37",
+        "1.14.12.1",
+        "1.14.12.14",
+        "1.14.13.35",
+        "1.14.99.39",
+        "1.18.6.1",
+        "1.18.6.2",
+        "1.19.6.1",
+        "1.21.4.2",
+        "1.21.98.2",
+        "2.1.1.21",
+        "2.1.1.247",
+        "2.1.1.248",
+        "2.1.2.10",
+        "2.3.2.1",
+        "2.3.2.5",
+        "2.3.2.7",
+        "2.3.2.13",
+        "2.3.2.14",
+        "2.5.1.44",
+        "2.5.1.48",
+        "2.5.1.61",
+        "2.6.1.85",
+        "2.6.1.123",
+        "2.7.1.62",
+        "2.7.2.2",
+        "2.7.3.8",
+        "2.7.7.51",
+        "3.5.1.1",
+        "3.5.1.2",
+        "3.5.1.3",
+        "3.5.1.4",
+        "3.5.1.5",
+        "3.5.1.6",
+        "3.5.1.7",
+        "3.5.1.19",
+        "3.5.1.20",
+        "3.5.1.29",
+        "3.5.1.30",
+        "3.5.1.35",
+        "3.5.1.38",
+        "3.5.1.42",
+        "3.5.1.43",
+        "3.5.1.44",
+        "3.5.1.49",
+        "3.5.1.50",
+        "3.5.1.53",
+        "3.5.1.54",
+        "3.5.1.57",
+        "3.5.1.59",
+        "3.5.1.66",
+        "3.5.1.67",
+        "3.5.1.73",
+        "3.5.1.75",
+        "3.5.1.77",
+        "3.5.1.84",
+        "3.5.1.86",
+        "3.5.1.87",
+        "3.5.1.99",
+        "3.5.1.100",
+        "3.5.1.101",
+        "3.5.1.107",
+        "3.5.1.110",
+        "3.5.1.111",
+        "3.5.1.116",
+        "3.5.1.119",
+        "3.5.1.121",
+        "3.5.1.122",
+        "3.5.1.126",
+        "3.5.1.131",
+        "3.5.1.139",
+        "3.5.1.140",
+        "3.5.1.141",
+        "3.5.2.18",
+        "3.5.3.5",
+        "3.5.3.6",
+        "3.5.3.9",
+        "3.5.3.12",
+        "3.5.3.13",
+        "3.5.3.15",
+        "3.5.3.23",
+        "3.5.3.26",
+        "3.5.3.27",
+        "3.5.4.1",
+        "3.5.4.2",
+        "3.5.4.3",
+        "3.5.4.4",
+        "3.5.4.5",
+        "3.5.4.6",
+        "3.5.4.7",
+        "3.5.4.8",
+        "3.5.4.11",
+        "3.5.4.12",
+        "3.5.4.13",
+        "3.5.4.15",
+        "3.5.4.17",
+        "3.5.4.18",
+        "3.5.4.20",
+        "3.5.4.21",
+        "3.5.4.22",
+        "3.5.4.23",
+        "3.5.4.24",
+        "3.5.4.26",
+        "3.5.4.28",
+        "3.5.4.30",
+        "3.5.4.31",
+        "3.5.4.32",
+        "3.5.4.33",
+        "3.5.4.34",
+        "3.5.4.35",
+        "3.5.4.37",
+        "3.5.4.40",
+        "3.5.4.41",
+        "3.5.4.42",
+        "3.5.4.45",
+        "3.5.4.46",
+        "3.5.5.1",
+        "3.5.5.2",
+        "3.5.5.4",
+        "3.5.5.5",
+        "3.5.5.6",
+        "3.5.5.7",
+        "3.5.5.8",
+        "3.5.99.2",
+        "3.5.99.5",
+        "3.5.99.6",
+        "3.5.99.7",
+        "3.5.99.8",
+        "3.5.99.10",
+        "3.5.99.11",
+        "3.8.1.8",
+        "4.1.1.107",
+        "4.1.1.108",
+        "4.1.1.109",
+        "4.1.3.27",
+        "4.1.99.1",
+        "4.1.99.2",
+        "4.1.99.23",
+        "4.2.1.87",
+        "4.2.1.104",
+        "4.2.1.168",
+        "4.2.3.2",
+        "4.2.3.134",
+        "4.3.1.1",
+        "4.3.1.2",
+        "4.3.1.3",
+        "4.3.1.4",
+        "4.3.1.6",
+        "4.3.1.7",
+        "4.3.1.9",
+        "4.3.1.10",
+        "4.3.1.12",
+        "4.3.1.13",
+        "4.3.1.14",
+        "4.3.1.15",
+        "4.3.1.16",
+        "4.3.1.17",
+        "4.3.1.18",
+        "4.3.1.19",
+        "4.3.1.20",
+        "4.3.1.22",
+        "4.3.1.23",
+        "4.3.1.24",
+        "4.3.1.25",
+        "4.3.1.27",
+        "4.3.1.28",
+        "4.3.1.29",
+        "4.3.1.30",
+        "4.3.1.31",
+        "4.3.1.32",
+        "4.3.1.33",
+        "4.3.2.10",
+        "4.3.3.6",
+        "4.3.3.8",
+        "4.3.99.3",
+        "4.4.1.1",
+        "4.4.1.2",
+        "4.4.1.11",
+        "4.4.1.13",
+        "4.4.1.15",
+        "4.4.1.25",
+        "4.4.1.28",
+        "4.4.1.35",
+        "4.4.1.36",
+        "4.4.1.46",
+        "4.5.1.2",
+        "4.5.1.4",
+        "6.3.1.1",
+        "6.3.1.2",
+        "6.3.1.4",
+        "6.3.1.5",
+        "6.3.1.7",
+        "6.3.1.14",
+        "6.3.3.5",
+        "6.3.4.2",
+        "6.3.4.7",
+        "6.3.4.16",
+        "6.3.4.20",
+        "6.3.5.1",
+        "6.3.5.2",
+        "6.3.5.4",
+        "6.3.5.5",
+        "6.3.5.13"
+      ],
+      "reactions": [
+        "R00005",
+        "R00018",
+        "R00084",
+        "R00088",
+        "R00123",
+        "R00131",
+        "R00141",
+        "R00143",
+        "R00145",
+        "R00146",
+        "R00148",
+        "R00149",
+        "R00150",
+        "R00152",
+        "R00153",
+        "R00181",
+        "R00189",
+        "R00193",
+        "R00195",
+        "R00213",
+        "R00220",
+        "R00221",
+        "R00223",
+        "R00243",
+        "R00248",
+        "R00250",
+        "R00253",
+        "R00254",
+        "R00256",
+        "R00269",
+        "R00270",
+        "R00277",
+        "R00279",
+        "R00283",
+        "R00284",
+        "R00321",
+        "R00347",
+        "R00348",
+        "R00357",
+        "R00359",
+        "R00364",
+        "R00365",
+        "R00366",
+        "R00396",
+        "R00445",
+        "R00446",
+        "R00447",
+        "R00469",
+        "R00482",
+        "R00483",
+        "R00484",
+        "R00485",
+        "R00486",
+        "R00490",
+        "R00524",
+        "R00532",
+        "R00540",
+        "R00552",
+        "R00571",
+        "R00581",
+        "R00606",
+        "R00648",
+        "R00654",
+        "R00665",
+        "R00671",
+        "R00673",
+        "R00675",
+        "R00676",
+        "R00677",
+        "R00681",
+        "R00682",
+        "R00688",
+        "R00689",
+        "R00697",
+        "R00728",
+        "R00729",
+        "R00737",
+        "R00748",
+        "R00749",
+        "R00765",
+        "R00782",
+        "R00787",
+        "R00789",
+        "R00790",
+        "R00823",
+        "R00825",
+        "R00905",
+        "R00917",
+        "R00974",
+        "R00980",
+        "R00985",
+        "R00996",
+        "R00997",
+        "R00999",
+        "R01001",
+        "R01031",
+        "R01032",
+        "R01053",
+        "R01088",
+        "R01134",
+        "R01149",
+        "R01151",
+        "R01152",
+        "R01168",
+        "R01212",
+        "R01221",
+        "R01230",
+        "R01244",
+        "R01258",
+        "R01259",
+        "R01268",
+        "R01283",
+        "R01286",
+        "R01340",
+        "R01342",
+        "R01374",
+        "R01410",
+        "R01411",
+        "R01416",
+        "R01434",
+        "R01469",
+        "R01485",
+        "R01544",
+        "R01560",
+        "R01563",
+        "R01579",
+        "R01586",
+        "R01619",
+        "R01649",
+        "R01650",
+        "R01663",
+        "R01676",
+        "R01685",
+        "R01710",
+        "R01853",
+        "R01854",
+        "R01874",
+        "R01878",
+        "R01887",
+        "R01922",
+        "R01937",
+        "R01938",
+        "R02145",
+        "R02150",
+        "R02173",
+        "R02190",
+        "R02196",
+        "R02197",
+        "R02233",
+        "R02273",
+        "R02280",
+        "R02286",
+        "R02302",
+        "R02322",
+        "R02325",
+        "R02359",
+        "R02382",
+        "R02408",
+        "R02423",
+        "R02457",
+        "R02485",
+        "R02529",
+        "R02532",
+        "R02540",
+        "R02556",
+        "R02605",
+        "R02612",
+        "R02613",
+        "R02618",
+        "R02621",
+        "R02622",
+        "R02711",
+        "R02712",
+        "R02755",
+        "R02815",
+        "R02908",
+        "R02922",
+        "R02923",
+        "R02938",
+        "R02953",
+        "R02974",
+        "R03030",
+        "R03046",
+        "R03093",
+        "R03096",
+        "R03139",
+        "R03148",
+        "R03180",
+        "R03188",
+        "R03349",
+        "R03358",
+        "R03459",
+        "R03528",
+        "R03540",
+        "R03542",
+        "R03593",
+        "R03613",
+        "R03696",
+        "R03800",
+        "R03804",
+        "R03887",
+        "R03909",
+        "R03983",
+        "R04011",
+        "R04012",
+        "R04025",
+        "R04027",
+        "R04058",
+        "R04125",
+        "R04140",
+        "R04189",
+        "R04200",
+        "R04201",
+        "R04239",
+        "R04283",
+        "R04300",
+        "R04341",
+        "R04349",
+        "R04350",
+        "R04397",
+        "R04641",
+        "R04666",
+        "R04674",
+        "R04687",
+        "R04688",
+        "R04731",
+        "R04770",
+        "R04857",
+        "R04890",
+        "R04893",
+        "R04907",
+        "R04908",
+        "R04930",
+        "R04941",
+        "R04975",
+        "R05030",
+        "R05077",
+        "R05079",
+        "R05156",
+        "R05170",
+        "R05172",
+        "R05185",
+        "R05186",
+        "R05279",
+        "R05280",
+        "R05334",
+        "R05358",
+        "R05546",
+        "R05551",
+        "R05552",
+        "R05554",
+        "R05563",
+        "R05569",
+        "R05574",
+        "R05585",
+        "R05590",
+        "R05591",
+        "R05712",
+        "R05758",
+        "R05780",
+        "R05782",
+        "R05783",
+        "R05861",
+        "R06124",
+        "R06131",
+        "R06132",
+        "R06134",
+        "R06138",
+        "R06154",
+        "R06740",
+        "R06852",
+        "R06967",
+        "R06968",
+        "R06969",
+        "R06970",
+        "R06971",
+        "R07164",
+        "R07165",
+        "R07166",
+        "R07167",
+        "R07226",
+        "R07307",
+        "R07316",
+        "R07400",
+        "R07415",
+        "R07598",
+        "R07634",
+        "R07641",
+        "R07700",
+        "R07782",
+        "R07793",
+        "R07855",
+        "R07984",
+        "R08170",
+        "R08221",
+        "R08228",
+        "R08305",
+        "R08308",
+        "R08348",
+        "R08365",
+        "R08514",
+        "R08569",
+        "R08583",
+        "R08637",
+        "R08654",
+        "R08660",
+        "R08667",
+        "R08686",
+        "R08698",
+        "R08846",
+        "R08920",
+        "R09253",
+        "R09285",
+        "R09287",
+        "R09366",
+        "R09377",
+        "R09493",
+        "R09519",
+        "R09537",
+        "R09566",
+        "R09647",
+        "R09648",
+        "R09649",
+        "R09650",
+        "R09660",
+        "R09661",
+        "R09680",
+        "R09683",
+        "R09799",
+        "R09809",
+        "R09830",
+        "R09876",
+        "R09948",
+        "R09950",
+        "R09978",
+        "R09983",
+        "R09993",
+        "R09998",
+        "R10002",
+        "R10012",
+        "R10014",
+        "R10054",
+        "R10079",
+        "R10086",
+        "R10088",
+        "R10223",
+        "R10231",
+        "R10232",
+        "R10245",
+        "R10270",
+        "R10277",
+        "R10312",
+        "R10408",
+        "R10470",
+        "R10695",
+        "R10775",
+        "R10949",
+        "R11017",
+        "R11018",
+        "R11023",
+        "R11031",
+        "R11032",
+        "R11094",
+        "R11098",
+        "R11099",
+        "R11209",
+        "R11328",
+        "R11409",
+        "R11532",
+        "R11559",
+        "R11560",
+        "R11604",
+        "R11617",
+        "R11619",
+        "R11864",
+        "R11916",
+        "R11917",
+        "R11918",
+        "R11919",
+        "R12084",
+        "R12152",
+        "R12162",
+        "R12185",
+        "R12188",
+        "R12331",
+        "R12333",
+        "R12408",
+        "R12623",
+        "R12625",
+        "R12684",
+        "R12686",
+        "R12937",
+        "R12938",
+        "R12939",
+        "R13021",
+        "R13022",
+        "R13023",
+        "R13080",
+        "R13138",
+        "R13139",
+        "R13141",
+        "R13194",
+        "R13195",
+        "R13308",
+        "R13389",
+        "R13420",
+        "R13421",
+        "R13558",
+        "R13625",
+        "R13628",
+        "R13629",
+        "R13636",
+        "R13697",
+        "R13715"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00014"
+    },
+    {
+      "voc_id": "methanol",
+      "name": "Methanol",
+      "kegg_compound_id": "C00132",
+      "formula": "CH4O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00680",
+          "name": "Methane metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.244",
+        "1.1.2.7",
+        "1.1.2.10",
+        "1.1.3.13",
+        "1.1.99.37",
+        "1.2.98.1",
+        "1.11.1.6",
+        "1.11.1.7",
+        "1.11.1.21",
+        "1.13.11.8",
+        "1.14.13.25",
+        "1.14.14.117",
+        "1.14.18.3",
+        "1.14.18.13",
+        "2.1.1.90",
+        "2.1.1.246",
+        "2.3.1.152",
+        "2.3.1.232",
+        "3.1.1.11",
+        "3.1.1.44",
+        "3.1.1.59",
+        "3.1.1.61",
+        "3.1.1.78",
+        "3.1.1.82",
+        "3.1.1.85",
+        "3.1.1.95",
+        "3.1.1.97",
+        "3.1.1.100",
+        "3.1.1.114",
+        "3.1.1.122",
+        "3.1.1.123",
+        "3.1.6.16",
+        "3.3.2.14"
+      ],
+      "reactions": [
+        "R00602",
+        "R00605",
+        "R00608",
+        "R00614",
+        "R01142",
+        "R01143",
+        "R01144",
+        "R01145",
+        "R01146",
+        "R02362",
+        "R02624",
+        "R03551",
+        "R04280",
+        "R04384",
+        "R04409",
+        "R04608",
+        "R05825",
+        "R06250",
+        "R06685",
+        "R06729",
+        "R08149",
+        "R08150",
+        "R08974",
+        "R08975",
+        "R09061",
+        "R09098",
+        "R09273",
+        "R09274",
+        "R09337",
+        "R09518",
+        "R09553",
+        "R09725",
+        "R09846",
+        "R10319",
+        "R10320",
+        "R10545",
+        "R10681",
+        "R10705",
+        "R10983",
+        "R11166",
+        "R11189",
+        "R13238",
+        "R13239",
+        "R13330",
+        "R13521"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00132"
+    },
+    {
+      "voc_id": "toluene",
+      "name": "Toluene",
+      "kegg_compound_id": "C01455",
+      "formula": "C7H8",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00623",
+          "name": "Toluene degradation"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        }
+      ],
+      "enzymes": [
+        "1.14.12.11",
+        "1.14.13.236",
+        "1.14.13.243",
+        "1.14.13.-",
+        "1.14.15.26",
+        "4.1.1.119",
+        "4.1.99.11"
+      ],
+      "reactions": [
+        "R02550",
+        "R03559",
+        "R03560",
+        "R03562",
+        "R05598",
+        "R05666",
+        "R12504"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C01455"
+    },
+    {
+      "voc_id": "benzene",
+      "name": "Benzene",
+      "kegg_compound_id": "C01407",
+      "formula": "C6H6",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00361",
+          "name": "Chlorocyclohexane and chlorobenzene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        }
+      ],
+      "enzymes": [
+        "1.14.12.3",
+        "1.14.13.244"
+      ],
+      "reactions": [
+        "R03543",
+        "R05536",
+        "R10042"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C01407"
+    },
+    {
+      "voc_id": "limonene",
+      "name": "(R)-Limonene",
+      "kegg_compound_id": "C06099",
+      "formula": "C10H16",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00902",
+          "name": "Monoterpenoid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00903",
+          "name": "Limonene degradation"
+        },
+        {
+          "kegg_pathway_id": "map01062",
+          "name": "Biosynthesis of terpenoids and steroids"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        }
+      ],
+      "enzymes": [
+        "1.14.13.107",
+        "1.14.14.53",
+        "1.17.99.8",
+        "4.2.3.20"
+      ],
+      "reactions": [
+        "R06119",
+        "R06120",
+        "R06398",
+        "R09393",
+        "R12592"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C06099"
+    },
+    {
+      "voc_id": "hydrogen_sulfide",
+      "name": "Hydrogen sulfide",
+      "kegg_compound_id": "C00283",
+      "formula": "H2S",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00270",
+          "name": "Cysteine and methionine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00920",
+          "name": "Sulfur metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01320",
+          "name": "Sulfur cycle"
+        }
+      ],
+      "enzymes": [
+        "1.8.1.2",
+        "1.8.1.18",
+        "1.8.1.19",
+        "1.8.2.3",
+        "1.8.2.5",
+        "1.8.3.4",
+        "1.8.3.7",
+        "1.8.5.4",
+        "1.8.5.5",
+        "1.8.5.8",
+        "1.8.5.10",
+        "1.8.7.1",
+        "1.8.98.3",
+        "1.12.98.4",
+        "1.13.11.55",
+        "2.1.1.251",
+        "2.3.1.10",
+        "2.4.2.59",
+        "2.5.1.47",
+        "2.5.1.48",
+        "2.5.1.49",
+        "2.5.1.65",
+        "2.5.1.73",
+        "2.8.1.2",
+        "2.8.1.3",
+        "2.8.1.5",
+        "2.8.1.8",
+        "2.8.1.16",
+        "3.13.1.5",
+        "3.13.1.7",
+        "4.2.1.22",
+        "4.4.1.1",
+        "4.4.1.2",
+        "4.4.1.9",
+        "4.4.1.10",
+        "4.4.1.13",
+        "4.4.1.15",
+        "4.4.1.28"
+      ],
+      "reactions": [
+        "R00782",
+        "R00858",
+        "R00859",
+        "R00891",
+        "R00897",
+        "R00901",
+        "R01283",
+        "R01287",
+        "R01288",
+        "R01850",
+        "R01851",
+        "R01874",
+        "R01875",
+        "R02846",
+        "R03105",
+        "R03524",
+        "R03533",
+        "R05072",
+        "R05486",
+        "R07274",
+        "R07365",
+        "R07767",
+        "R08577",
+        "R08633",
+        "R09499",
+        "R09997",
+        "R10001",
+        "R10146",
+        "R10149",
+        "R10152",
+        "R10390",
+        "R10419",
+        "R10438",
+        "R10512",
+        "R10534",
+        "R10535",
+        "R10538",
+        "R10803",
+        "R11488",
+        "R11606",
+        "R11878",
+        "R11929",
+        "R12026",
+        "R12423",
+        "R12424",
+        "R12505",
+        "R12690",
+        "R13227"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00283"
+    },
+    {
+      "voc_id": "acetaldehyde",
+      "name": "Acetaldehyde",
+      "kegg_compound_id": "C00084",
+      "formula": "C2H4O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00360",
+          "name": "Phenylalanine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map00430",
+          "name": "Taurine and hypotaurine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00440",
+          "name": "Phosphonate and phosphinate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00470",
+          "name": "D-Amino acid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00564",
+          "name": "Glycerophospholipid metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00621",
+          "name": "Dioxin degradation"
+        },
+        {
+          "kegg_pathway_id": "map00622",
+          "name": "Xylene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00625",
+          "name": "Chloroalkane and chloroalkene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00920",
+          "name": "Sulfur metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        },
+        {
+          "kegg_pathway_id": "map04936",
+          "name": "Alcoholic liver disease"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.1",
+        "1.1.1.2",
+        "1.1.1.71",
+        "1.1.2.7",
+        "1.1.2.8",
+        "1.1.5.5",
+        "1.1.99.36",
+        "1.2.1.3",
+        "1.2.1.4",
+        "1.2.1.5",
+        "1.2.1.10",
+        "1.2.5.2",
+        "1.2.99.6",
+        "1.7.3.1",
+        "1.13.11.88",
+        "1.13.12.16",
+        "1.14.99.39",
+        "2.2.1.4",
+        "2.2.1.8",
+        "2.3.1.190",
+        "3.5.99.12",
+        "3.7.1.12",
+        "3.11.1.1",
+        "4.1.1.1",
+        "4.1.2.4",
+        "4.1.2.5",
+        "4.1.2.33",
+        "4.1.2.36",
+        "4.1.2.42",
+        "4.1.2.48",
+        "4.1.2.49",
+        "4.1.2.50",
+        "4.1.2.62",
+        "4.1.3.39",
+        "4.2.1.112",
+        "4.2.1.155",
+        "4.2.3.2",
+        "4.3.1.7",
+        "4.3.99.4",
+        "4.4.1.38"
+      ],
+      "reactions": [
+        "R00025",
+        "R00224",
+        "R00228",
+        "R00326",
+        "R00710",
+        "R00711",
+        "R00746",
+        "R00747",
+        "R00748",
+        "R00749",
+        "R00750",
+        "R00751",
+        "R00753",
+        "R00754",
+        "R00755",
+        "R00799",
+        "R01019",
+        "R01066",
+        "R01410",
+        "R02345",
+        "R03723",
+        "R05198",
+        "R05380",
+        "R05381",
+        "R05382",
+        "R05565",
+        "R05567",
+        "R05811",
+        "R06171",
+        "R06973",
+        "R07247",
+        "R07772",
+        "R08195",
+        "R08196",
+        "R09127",
+        "R09156",
+        "R09479",
+        "R09524",
+        "R09552",
+        "R09959",
+        "R10285",
+        "R10936",
+        "R12302",
+        "R12612",
+        "R12763",
+        "R13177",
+        "R13309"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00084"
+    },
+    {
+      "voc_id": "formaldehyde",
+      "name": "Formaldehyde",
+      "kegg_compound_id": "C00067",
+      "formula": "CH2O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00625",
+          "name": "Chloroalkane and chloroalkene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00680",
+          "name": "Methane metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.244",
+        "1.1.2.7",
+        "1.1.2.10",
+        "1.1.3.13",
+        "1.1.99.37",
+        "1.2.1.46",
+        "1.2.98.1",
+        "1.4.3.21",
+        "1.4.9.1",
+        "1.5.3.1",
+        "1.5.3.2",
+        "1.5.3.4",
+        "1.5.3.19",
+        "1.5.7.3",
+        "1.5.8.1",
+        "1.5.8.2",
+        "1.5.99.5",
+        "1.8.3.4",
+        "1.11.1.6",
+        "1.11.1.7",
+        "1.11.1.21",
+        "1.13.11.94",
+        "1.14.11.27",
+        "1.14.11.31",
+        "1.14.11.32",
+        "1.14.11.51",
+        "1.14.11.65",
+        "1.14.11.66",
+        "1.14.11.67",
+        "1.14.11.68",
+        "1.14.11.69",
+        "1.14.13.82",
+        "1.14.13.111",
+        "1.14.13.128",
+        "1.14.13.131",
+        "1.14.13.178",
+        "1.14.13.179",
+        "1.14.13.238",
+        "1.14.13.247",
+        "1.14.13.251",
+        "1.14.14.1",
+        "1.14.14.5",
+        "1.14.14.34",
+        "1.14.14.35",
+        "1.14.15.38",
+        "1.14.99.15",
+        "1.14.99.48",
+        "1.14.99.66",
+        "2.1.2.11",
+        "2.2.1.3",
+        "3.5.1.141",
+        "3.8.1.5",
+        "4.1.2.2",
+        "4.1.2.12",
+        "4.1.2.24",
+        "4.1.2.32",
+        "4.1.2.43",
+        "4.1.99.24",
+        "4.1.99.25",
+        "4.2.1.147",
+        "4.4.1.22",
+        "4.5.1.3"
+      ],
+      "reactions": [
+        "R00602",
+        "R00603",
+        "R00604",
+        "R00605",
+        "R00606",
+        "R00608",
+        "R00609",
+        "R00610",
+        "R00612",
+        "R00614",
+        "R01014",
+        "R01146",
+        "R01216",
+        "R01264",
+        "R01306",
+        "R01440",
+        "R01588",
+        "R01851",
+        "R02511",
+        "R02512",
+        "R03345",
+        "R03523",
+        "R03697",
+        "R03698",
+        "R05126",
+        "R05127",
+        "R05274",
+        "R05307",
+        "R05338",
+        "R06154",
+        "R06862",
+        "R06982",
+        "R07939",
+        "R07954",
+        "R07955",
+        "R07956",
+        "R07957",
+        "R07958",
+        "R07959",
+        "R07960",
+        "R07961",
+        "R07962",
+        "R07963",
+        "R07964",
+        "R07965",
+        "R07966",
+        "R07967",
+        "R07968",
+        "R07969",
+        "R07970",
+        "R07971",
+        "R07972",
+        "R07973",
+        "R07974",
+        "R07975",
+        "R07976",
+        "R08058",
+        "R08264",
+        "R08265",
+        "R09093",
+        "R09275",
+        "R09402",
+        "R09431",
+        "R09432",
+        "R09510",
+        "R09511",
+        "R09513",
+        "R09553",
+        "R09786",
+        "R10056",
+        "R10102",
+        "R10203",
+        "R10206",
+        "R10302",
+        "R10468",
+        "R10510",
+        "R11345",
+        "R11457",
+        "R11805",
+        "R12150",
+        "R12151",
+        "R12301",
+        "R12408",
+        "R12459",
+        "R12460",
+        "R12461",
+        "R12462",
+        "R12463",
+        "R12464",
+        "R12511",
+        "R12512",
+        "R12673",
+        "R13016",
+        "R13028",
+        "R13029",
+        "R13379",
+        "R13380",
+        "R13629",
+        "R13630"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00067"
+    },
+    {
+      "voc_id": "indole",
+      "name": "Indole",
+      "kegg_compound_id": "C00463",
+      "formula": "C8H7N",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00380",
+          "name": "Tryptophan metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00400",
+          "name": "Phenylalanine, tyrosine and tryptophan biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00402",
+          "name": "Benzoxazinoid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map00999",
+          "name": "Biosynthesis of various plant secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map04974",
+          "name": "Protein digestion and absorption"
+        }
+      ],
+      "enzymes": [
+        "1.13.11.17",
+        "1.14.14.153",
+        "1.14.16.-",
+        "2.5.1.-",
+        "4.1.1.92",
+        "4.1.2.8",
+        "4.1.99.1",
+        "4.2.1.20",
+        "4.2.1.122"
+      ],
+      "reactions": [
+        "R00673",
+        "R00674",
+        "R02338",
+        "R02339",
+        "R02340",
+        "R07403",
+        "R08609",
+        "R09488",
+        "R12758"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00463"
+    },
+    {
+      "voc_id": "phenol",
+      "name": "Phenol",
+      "kegg_compound_id": "C00146",
+      "formula": "C6H6O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00350",
+          "name": "Tyrosine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00361",
+          "name": "Chlorocyclohexane and chlorobenzene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00362",
+          "name": "Benzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map00627",
+          "name": "Aminobenzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        },
+        {
+          "kegg_pathway_id": "map04974",
+          "name": "Protein digestion and absorption"
+        },
+        {
+          "kegg_pathway_id": "map05208",
+          "name": "Chemical carcinogenesis - reactive oxygen species"
+        }
+      ],
+      "enzymes": [
+        "1.14.13.7",
+        "1.14.13.244",
+        "1.14.14.20",
+        "2.1.1.25",
+        "2.4.2.55",
+        "2.7.1.238",
+        "3.1.1.2",
+        "4.1.1.61",
+        "4.1.1.91",
+        "4.1.99.2"
+      ],
+      "reactions": [
+        "R00728",
+        "R00815",
+        "R01238",
+        "R01239",
+        "R01241",
+        "R05625",
+        "R07697",
+        "R09539",
+        "R10042",
+        "R10043",
+        "R10608",
+        "R11653",
+        "R12759"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00146"
+    },
+    {
+      "voc_id": "dimethyl_disulfide",
+      "name": "Dimethyl disulfide",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "propanol",
+      "name": "Tyramine",
+      "kegg_compound_id": "C00483",
+      "formula": "C8H11NO",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00350",
+          "name": "Tyrosine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00680",
+          "name": "Methane metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00950",
+          "name": "Isoquinoline alkaloid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01060",
+          "name": "Biosynthesis of plant secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01063",
+          "name": "Biosynthesis of alkaloids derived from shikimate pathway"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01110",
+          "name": "Biosynthesis of secondary metabolites"
+        },
+        {
+          "kegg_pathway_id": "map01240",
+          "name": "Biosynthesis of cofactors"
+        },
+        {
+          "kegg_pathway_id": "map04080",
+          "name": "Neuroactive ligand-receptor interaction"
+        },
+        {
+          "kegg_pathway_id": "map04974",
+          "name": "Protein digestion and absorption"
+        }
+      ],
+      "enzymes": [
+        "1.4.3.4",
+        "1.4.3.21",
+        "1.4.9.2",
+        "1.4.3.-",
+        "1.14.18.1",
+        "2.1.1.27",
+        "2.3.1.110",
+        "4.1.1.25",
+        "4.1.1.28",
+        "6.3.4.24"
+      ],
+      "reactions": [
+        "R00736",
+        "R02382",
+        "R02383",
+        "R02384",
+        "R02385",
+        "R08436",
+        "R10902"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00483"
+    },
+    {
+      "voc_id": "isopropanol",
+      "name": "Propan-2-ol",
+      "kegg_compound_id": "C01845",
+      "formula": "C3H8O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.80",
+        "1.14.13.227",
+        "1.1.1.-"
+      ],
+      "reactions": [
+        "R01550",
+        "R10702",
+        "R10703"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C01845"
+    },
+    {
+      "voc_id": "butane",
+      "name": "n-Butane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "hexane",
+      "name": "n-Hexane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "octane",
+      "name": "n-Octane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "styrene",
+      "name": "Styrene",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "ethylbenzene",
+      "name": "Ethylbenzene",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "xylene",
+      "name": "Xylene",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "cyclohexane",
+      "name": "Cyclohexane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "methyl_acetate",
+      "name": "Methyl acetate",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "ethyl_acetate",
+      "name": "Ethyl acetate",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "acetonitrile",
+      "name": "Acetylene",
+      "kegg_compound_id": "C01548",
+      "formula": "C2H2",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00625",
+          "name": "Chloroalkane and chloroalkene degradation"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        }
+      ],
+      "enzymes": [
+        "1.18.6.1",
+        "4.2.1.112"
+      ],
+      "reactions": [
+        "R05380",
+        "R05496"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C01548"
+    },
+    {
+      "voc_id": "furan",
+      "name": "4,4'-Dichlorobiphenyl",
+      "kegg_compound_id": "C14248",
+      "formula": "C12H8Cl2",
+      "pathways": [],
+      "enzymes": [],
+      "reactions": [],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C14248"
+    },
+    {
+      "voc_id": "2_pentanone",
+      "name": "2-Pentanone",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "3_methylbutanal",
+      "name": "3-Methylbutanal",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "benzaldehyde",
+      "name": "Benzaldehyde",
+      "kegg_compound_id": "C00261",
+      "formula": "C7H6O",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00623",
+          "name": "Toluene degradation"
+        },
+        {
+          "kegg_pathway_id": "map00627",
+          "name": "Aminobenzoate degradation"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01220",
+          "name": "Degradation of aromatic compounds"
+        }
+      ],
+      "enzymes": [
+        "1.1.1.90",
+        "1.2.1.7",
+        "1.2.1.28",
+        "4.1.1.7",
+        "4.1.2.10",
+        "4.1.2.26",
+        "4.1.2.38"
+      ],
+      "reactions": [
+        "R00027",
+        "R01419",
+        "R01420",
+        "R01763",
+        "R01764",
+        "R01766",
+        "R01767"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00261"
+    },
+    {
+      "voc_id": "octanal",
+      "name": "Octanal",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "undecane",
+      "name": "Undecane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "dodecane",
+      "name": "Dodecane",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "carbon_disulfide",
+      "name": "Methylselenopyruvate",
+      "kegg_compound_id": "C18904",
+      "formula": "C4H6O3Se",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00450",
+          "name": "Selenocompound metabolism"
+        }
+      ],
+      "enzymes": [
+        "2.6.1.-"
+      ],
+      "reactions": [
+        "R09373"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C18904"
+    },
+    {
+      "voc_id": "methyl_mercaptan",
+      "name": "Methanethiol",
+      "kegg_compound_id": "C00409",
+      "formula": "CH4S",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00270",
+          "name": "Cysteine and methionine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00920",
+          "name": "Sulfur metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        }
+      ],
+      "enzymes": [
+        "1.8.1.21",
+        "1.8.3.4",
+        "1.14.13.131",
+        "2.1.1.251",
+        "2.1.1.334",
+        "2.5.1.49",
+        "4.2.1.155",
+        "4.4.1.11"
+      ],
+      "reactions": [
+        "R00651",
+        "R00654",
+        "R01851",
+        "R08635",
+        "R09786",
+        "R09997",
+        "R10001",
+        "R10936",
+        "R10946",
+        "R11546",
+        "R12457",
+        "R12751"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00409"
+    },
+    {
+      "voc_id": "trimethylamine",
+      "name": "Trimethylamine",
+      "kegg_compound_id": "C00565",
+      "formula": "C3H9N",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00680",
+          "name": "Methane metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        }
+      ],
+      "enzymes": [
+        "1.5.8.2",
+        "1.7.2.3",
+        "1.14.13.148",
+        "1.14.13.239",
+        "1.21.4.4",
+        "2.1.1.247",
+        "2.1.1.250",
+        "2.1.1.252",
+        "4.3.99.4"
+      ],
+      "reactions": [
+        "R02511",
+        "R02560",
+        "R04877",
+        "R05623",
+        "R07228",
+        "R09124",
+        "R10016",
+        "R10017",
+        "R10285",
+        "R11875",
+        "R11911"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00565"
+    },
+    {
+      "voc_id": "dimethyl_amine",
+      "name": "Dimethylamine",
+      "kegg_compound_id": "C00543",
+      "formula": "C2H7N",
+      "pathways": [
+        {
+          "kegg_pathway_id": "map00680",
+          "name": "Methane metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        },
+        {
+          "kegg_pathway_id": "map01120",
+          "name": "Microbial metabolism in diverse environments"
+        },
+        {
+          "kegg_pathway_id": "map01200",
+          "name": "Carbon metabolism"
+        }
+      ],
+      "enzymes": [
+        "1.4.3.4",
+        "1.5.8.1",
+        "1.5.8.2",
+        "1.14.13.238",
+        "2.1.1.247",
+        "2.1.1.249",
+        "2.1.1.250",
+        "3.5.1.56",
+        "3.5.3.18",
+        "4.1.2.32"
+      ],
+      "reactions": [
+        "R01588",
+        "R02509",
+        "R02511",
+        "R02512",
+        "R02513",
+        "R08346",
+        "R09124",
+        "R09999",
+        "R10015",
+        "R10016",
+        "R11805"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00543"
+    },
+    {
+      "voc_id": "pyrrole",
+      "name": "Pyrrole",
+      "kegg_compound_id": "C05085",
+      "error": "404 Client Error: Not Found for url: https://rest.kegg.jp/get/cpd:C05085",
+      "status": "error"
+    },
+    {
+      "voc_id": "allyl_methyl_sulfide",
+      "name": "Allyl methyl sulfide",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    },
+    {
+      "voc_id": "propionaldehyde",
+      "name": "Acetoin",
+      "kegg_compound_id": "C00466",
+      "formula": "C4H8O2",
+      "pathways": [],
+      "enzymes": [
+        "2.2.1.4",
+        "2.3.1.190"
+      ],
+      "reactions": [
+        "R02343",
+        "R02344",
+        "R02345",
+        "R09524"
+      ],
+      "status": "mapped",
+      "kegg_url": "https://www.kegg.jp/entry/C00466"
+    },
+    {
+      "voc_id": "crotonaldehyde",
+      "name": "Crotonaldehyde",
+      "kegg_compound_id": null,
+      "status": "unmapped"
+    }
+  ]
+}

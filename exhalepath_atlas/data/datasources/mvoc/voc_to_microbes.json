@@ -1,0 +1,48 @@
+{
+  "indole": [
+    "clostridia_putrefaction",
+    "oral_anaerobes"
+  ],
+  "phenol": [
+    "clostridia_putrefaction"
+  ],
+  "hydrogen_sulfide": [
+    "clostridia_putrefaction",
+    "fermentative_enterobacteriaceae",
+    "sulfate_reducers",
+    "helicobacter_urease",
+    "oral_anaerobes"
+  ],
+  "methyl_mercaptan": [
+    "clostridia_putrefaction",
+    "sulfate_reducers",
+    "oral_anaerobes"
+  ],
+  "dimethyl_disulfide": [
+    "clostridia_putrefaction"
+  ],
+  "ethanol": [
+    "fermentative_enterobacteriaceae"
+  ],
+  "propanol": [
+    "fermentative_enterobacteriaceae"
+  ],
+  "acetaldehyde": [
+    "fermentative_enterobacteriaceae"
+  ],
+  "ethyl_acetate": [
+    "fermentative_enterobacteriaceae"
+  ],
+  "carbon_disulfide": [
+    "sulfate_reducers"
+  ],
+  "trimethylamine": [
+    "choline_tma_producers"
+  ],
+  "dimethyl_amine": [
+    "choline_tma_producers"
+  ],
+  "ammonia": [
+    "helicobacter_urease"
+  ]
+}

@@ -1,0 +1,1188 @@
+{
+"METABOLOMICS WORKBENCH":{"STUDY_ID":"ST002449","ANALYSIS_ID":"AN003997","VERSION":"1","CREATED_ON":"January 20, 2023, 11:24 am"},
+
+"PROJECT":{"PROJECT_TITLE":"Volatile Biomarkers for a Valley Fever Breath Test","PROJECT_TYPE":"GCxGC-TOFMS metabolomics","PROJECT_SUMMARY":"Coccidioidomycosis, or valley fever, is prevalent in AZ, with more than 12,000 new human infections diagnosed every year. In highly endemic areas, e.g., Phoenix and Tucson, up to 30% of community-acquired pneumonia may be caused by Valley fever, and cases are on the rise. The current diagnostics for Valley fever are severely lacking due to invasiveness (biopsy) and poor sensitivity (serology), strongly contributing to an unacceptable 23-day median time-to-diagnosis. There is a critical need for sensitive and non-invasive diagnostics for identifying Valley fever lung infections. Our long-term goal is to substantially shorten the time-to-diagnosis for Valley fever through the development of sensitive and specific breath-based diagnostics for coccidioidomycosis lung infections. The overall objective of this application is to identify and validate putative volatile biomarkers of Coccidioides infections via metabolomics analyses of in vitro cultures, mouse model lung infections, and lung specimens from humans with Valley fever. At the completion of the proposed study, we expect to have identified and validated a panel of 10-15 volatile biomarkers for the sensitive and specific detection of valley fever in lung specimens.","INSTITUTE":"Arizona State University","DEPARTMENT":"School of Life Sciences","LABORATORY":"Bean Laboratory","LAST_NAME":"Bean","FIRST_NAME":"Heather","ADDRESS":"PO Box 874501, Tempe, AZ, 85287, USA","EMAIL":"Heather.D.Bean@asu.edu","PHONE":"480-727-3395","FUNDING_SOURCE":"Arizona Biomedical Research Centre New Investigator Award to HDB","PROJECT_COMMENTS":"Add to Project ID: PR001064"},
+
+"STUDY":{"STUDY_TITLE":"Identify putative volatile biomarkers of Valley fever using a murine lung infection model (Human studies)","STUDY_SUMMARY":"Coccidioides immitis and Coccidioides posadasii are soil-dwelling fungi of arid regions in North and South America that are responsible for Valley fever (coccidioidomycosis). Forty percent of patients with Valley fever exhibit symptoms ranging from mild, self-limiting respiratory infections, to severe, life-threatening pneumonia that requires treatment. Misdiagnosis as bacterial pneumonia commonly occurs in symptomatic Valley fever cases, resulting in inappropriate treatment with antibiotics, increased medical costs, and delay in diagnosis. In this study, we explored the feasibility of developing breath-based diagnostics for Valley fever using lung specimens from persons with community-acquired pneumonia (CAP). To investigate potential volatile biomarkers of Valley fever that arise from host-pathogen interactions, we collected bronchoalveolar lavage fluid (BALF) and sputum from patients treated at Mayo Clinic in Scottsdale, Arizona for untargeted volatile metabolomics via solid phase microextraction (SPME) and two-dimensional gas chromatography coupled to time-of-flight mass spectrometry (GC×GC-TOFMS). We identified 244 total volatile organic compounds (VOCs). Using Random Forest, we identified a subset of these VOCs that were also able to separate Coccidioides positive samples from bacteria positive samples. The data presented here show that Coccidioides and/or the host produce volatile metabolites that may yield biomarkers for a Valley fever breath test that can detect Coccidioidal infection.","INSTITUTE":"Arizona State University","DEPARTMENT":"School of Life Sciences","LABORATORY":"Bean Laboratory","LAST_NAME":"Bean","FIRST_NAME":"Heather","ADDRESS":"PO Box 874501","EMAIL":"Heather.D.Bean@asu.edu","STUDY_TYPE":"Untargeted metabolomics","PHONE":"4807273395"},
+
+"SUBJECT":{"SUBJECT_TYPE":"Mammal","SUBJECT_SPECIES":"Homo sapiens","TAXONOMY_ID":"9606","GENDER":"Male and female"},
+"SUBJECT_SAMPLE_FACTORS":[
+{
+"Subject ID":"-",
+"Sample ID":"Blank_1",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_2",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_2.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_3",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_3.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_4",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_4.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_5",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_5.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_6",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_6.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_7",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_7.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Blank_8",
+"Factors":{"Subject":"Empty run","treatment":"NA"},
+"Additional sample data":{"RAW_FILE_NAME":"Blank_8.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-100A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-100A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-100B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-100B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-100C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-100C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-102A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-102A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-102B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-102B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-102C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-102C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-108A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-108A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-108B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-108B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-108C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-108C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-109A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-109A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-109B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-109B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-109C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-109C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-10A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Cocci+ NTM + bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-10A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-10B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Cocci+ NTM + bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-10B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-10C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Cocci+ NTM + bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-10C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-111A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-111A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-111B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-111B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-111C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-111C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-115A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-115A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-115B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-115B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-115C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-115C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-116A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Fungal + NTM"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-116A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-116B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Fungal + NTM"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-116B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-116C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Fungal + NTM"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-116C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-119A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-119A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-119B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-119B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-119C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-119C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-120A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-120A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-120B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-120B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-120C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-120C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-129A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-129A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-129B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-129B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-129C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-129C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-131A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-131A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-131B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-131B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-131C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-131C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-132A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-132A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-132B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-132B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-132C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-132C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-136A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-136A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-136B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-136B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-136C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-136C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-14A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-14A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-14B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-14B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-14C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-14C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-152A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-152A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-152B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-152B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-152C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-152C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-153A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-153A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-153B_2xprep_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-153B_2xprep_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-153C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-153C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-154A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-154A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-154B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-154B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-154C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-154C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-161A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-161A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-161B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-161B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-161C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-161C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-164A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-164A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-164B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-164B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-164C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-164C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-165A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-165A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-165B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-165B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-165C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-165C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-166A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-166A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-166B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-166B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-166C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-166C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-16A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Bacterial + viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-16A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-16B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Bacterial + viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-16B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-16C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Bacterial + viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-16C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-17A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-17A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-17B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-17B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-17C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-17C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-188A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-188A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-188B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-188B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-188C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-188C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-192A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-192A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-192B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-192B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-192C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-192C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-193A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-193A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-193B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-193B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-193C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-193C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-198A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-198A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-198B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-198B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-198C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-198C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-208A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-208A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-208B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-208B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-208C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-208C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-212A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-212A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-212B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-212B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-212C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-212C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-223A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Z; Unknown"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-223A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-223B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Z; Unknown"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-223B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-28A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-28A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-28B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-28B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-28C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-28C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-32A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-32A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-32B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-32B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-32C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-32C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-33A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-33A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-33B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-33B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-33C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-33C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-39A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-39A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-39B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-39B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-39C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-39C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-3A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-3A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-3B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-3B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-3C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-3C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-41A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-41A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-41B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-41B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-41C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-41C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-49A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Cocci + bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-49A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-49B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Cocci + bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-49B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-49C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Cocci + bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-49C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-51A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Viral + Fungal + Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-51A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-51B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Viral + Fungal + Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-51B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-51C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Viral + Fungal + Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-51C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-53A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Bacterial + Viral + Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-53A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-53B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Multi; Bacterial + Viral + Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-53B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-5A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-5A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-5B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-5B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-61A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-61A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-61B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-61B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-67A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-67A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-67B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-67B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-67C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-67C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-71A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-71A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-71B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-71B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-71C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-71C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-72A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-72A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-72B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-72B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-73A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-73A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-73B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-73B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-73C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-73C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-74A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-74A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-74B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-74B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-74C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-74C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-75A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-75A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-75B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-75B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-75C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-75C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-76A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-76A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-76B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-76B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-76C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-76C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-77A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-77A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-77B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-77B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-77C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-77C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-82A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-82A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-82B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-82B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-82C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-82C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-83A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-83A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-83B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-83B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-83C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Negative"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-83C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-97A_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-97A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-97B_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-97B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"MNBAL-97C_1",
+"Factors":{"Subject":"Human BALF","treatment":"Bacterial"},
+"Additional sample data":{"RAW_FILE_NAME":"MNBAL-97C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Pooled-1_1",
+"Factors":{"Subject":"Pooled BALF","treatment":"Pooled"},
+"Additional sample data":{"RAW_FILE_NAME":"Pooled-1_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Pooled-2_1",
+"Factors":{"Subject":"Pooled BALF","treatment":"Pooled"},
+"Additional sample data":{"RAW_FILE_NAME":"Pooled-2_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Pooled-3_1",
+"Factors":{"Subject":"Pooled BALF","treatment":"Pooled"},
+"Additional sample data":{"RAW_FILE_NAME":"Pooled-3_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Pooled-4_1",
+"Factors":{"Subject":"Pooled BALF","treatment":"Pooled"},
+"Additional sample data":{"RAW_FILE_NAME":"Pooled-4_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Pooled-5_1",
+"Factors":{"Subject":"Pooled BALF","treatment":"Pooled"},
+"Additional sample data":{"RAW_FILE_NAME":"Pooled-5_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R721A_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"R721A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R721B_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"R721B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R721C_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Fungal"},
+"Additional sample data":{"RAW_FILE_NAME":"R721C_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R744A_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R744A_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R744B_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R744B_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R814aA_2xprep_1",
+"Factors":{"Subject":"Human Sputum (tracheal secretions)","treatment":"Bacterial + Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"R814aA_2xprep_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R814aB_1",
+"Factors":{"Subject":"Human Sputum (tracheal secretions)","treatment":"Bacterial + Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"R814aB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R814aC_1",
+"Factors":{"Subject":"Human Sputum (tracheal secretions)","treatment":"Bacterial + Viral"},
+"Additional sample data":{"RAW_FILE_NAME":"R814aC_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R815aA_1",
+"Factors":{"Subject":"Human Sputum (tracheal secretions)","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R815aA_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R815aB_1",
+"Factors":{"Subject":"Human Sputum (tracheal secretions)","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R815aB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R815bA_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Multi; Viral + bacterial (maybe cocci)"},
+"Additional sample data":{"RAW_FILE_NAME":"R815bA_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R815bB_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Multi; Viral + bacterial (maybe cocci)"},
+"Additional sample data":{"RAW_FILE_NAME":"R815bB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R815bC_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Multi; Viral + bacterial (maybe cocci)"},
+"Additional sample data":{"RAW_FILE_NAME":"R815bC_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R816aA_1",
+"Factors":{"Subject":"Human Sputum","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R816aA_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R816aB_1",
+"Factors":{"Subject":"Human Sputum","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R816aB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R820aA_1",
+"Factors":{"Subject":"Human Sputum (induced)","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R820aA_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R820aB_1",
+"Factors":{"Subject":"Human Sputum (induced)","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R820aB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R823aA_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R823aA_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R823aB_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R823aB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R823aC_1",
+"Factors":{"Subject":"Human Bronchial Wash","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R823aC_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R824aA_1",
+"Factors":{"Subject":"Human Sputum (induced)","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R824aA_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"R824aB_1",
+"Factors":{"Subject":"Human Sputum (induced)","treatment":"Cocci"},
+"Additional sample data":{"RAW_FILE_NAME":"R824aB_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Standard mix_1",
+"Factors":{"Subject":"Alkane Standard and Grob Mix","treatment":"Standard Mix"},
+"Additional sample data":{"RAW_FILE_NAME":"Standard mix_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Standard_1",
+"Factors":{"Subject":"Alkane Standard and Grob Mix","treatment":"Standard Mix"},
+"Additional sample data":{"RAW_FILE_NAME":"Standard_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Standard_mix_1",
+"Factors":{"Subject":"Alkane Standard and Grob Mix","treatment":"Standard Mix"},
+"Additional sample data":{"RAW_FILE_NAME":"Standard_mix_1.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Standard_mix_2",
+"Factors":{"Subject":"Alkane Standard and Grob Mix","treatment":"Standard Mix"},
+"Additional sample data":{"RAW_FILE_NAME":"Standard_mix_2.SMP"}
+},
+{
+"Subject ID":"-",
+"Sample ID":"Standard_mix_3",
+"Factors":{"Subject":"Alkane Standard and Grob Mix","treatment":"Standard Mix"},
+"Additional sample data":{"RAW_FILE_NAME":"Standard_mix_3.SMP"}
+}
+],
+"COLLECTION":{"COLLECTION_SUMMARY":"Human lung specimens were collected and stored in -80'C at Mayo Clinic in Scottsdale, Arizona until they were transferred to Arizona State University for VOCs analysis","SAMPLE_TYPE":"Bronchoalveolar lavage"},
+
+"TREATMENT":{"TREATMENT_SUMMARY":"55 bronchoalveolar lavage fluid (BALF), four bronchial wash, and five sputum samples were provided by Tom Gris at Mayo Clinic, Scottsdale, Arizona. Patient samples were categorized by infecting microbial organisms; Coccidioides, fungal, bacterial, viral, multiple, and, non-infectious using hospital codes and doctors notes. A sample was considered Coccidioides positive if it had a positive serology test or was confirmed by culture. Fungal samples were either Coccidioides positive or had a positive fungal culture or fungal smear. Bacterial samples were identified by gram stain, bacterial culture, or PCR. Samples were considered viral positive by PCR. If a sample was considered positive for more than one type of infectious organism (ex, bacterial positive and viral positive) it was labeled multiple. Samples that did not fit into an infectious category, as described, they were labeled non-infectious."},
+
+"SAMPLEPREP":{"SAMPLEPREP_SUMMARY":"The BALF samples were allowed to thaw at 4°C overnight, and then split into technical triplicates of 200 μL that were transferred and sealed into sterilized 2 mL GC headspace vials with Supelco® PTFE/silicone septum magnetic screw caps (Sigma-Aldrich®, St. Louis, MO). All samples were stored in GC headspace vials for up to 14 d at -20°C until analyzed. Samples were randomized for analysis. Volatile metabolites sampling was performed by solid phase microextraction (SPME) using a Gerstel® MPS Robotic Pro MultiPurpose autosampler directed by Maestro® software (Gerstel®, Inc., Linthicum, MD). Volatile metabolite analysis was performed by two-dimensional gas chromatography−time-of-flight mass spectrometry (GC×GC–TOFMS) using a LECO® Pegasus® 4D and Agilent® 7890B GC (LECO® Corp., St. Joseph, MI). An external alkane standards mixture (C8 – C20; Sigma-Aldrich®) was sampled multiple times for calculating retention indices (RI). The injection, chromatographic, and mass spectrometric methods for analyzing the alkane standards were the same as for the samples.","EXTRACTION_METHOD":"Solid-phase microextraction (SPME)"},
+
+"CHROMATOGRAPHY":{"CHROMATOGRAPHY_TYPE":"GCxGC","INSTRUMENT_NAME":"Agilent 7890B","COLUMN_NAME":"Column 1: Rxi-624Sil MS, (60m × 0.25mm × 1.4um); Column 2: Stabilwax, (1m × 0.25mm × 0.5um)","SOLVENT_A":"NA","SOLVENT_B":"NA","FLOW_GRADIENT":"NA","FLOW_RATE":"2 mL∙min-1 (constant)","COLUMN_TEMPERATURE":"230","METHODS_FILENAME":"VF_human_GCxGC_methods.docx"},
+
+"ANALYSIS":{"ANALYSIS_TYPE":"MS","ANALYSIS_PROTOCOL_FILE":"VF_human_MS_methods.docx"},
+
+"MS":{"INSTRUMENT_NAME":"Leco Pegasus 4D GCxGC TOF","INSTRUMENT_TYPE":"GC x GC-TOF","MS_TYPE":"EI","ION_MODE":"POSITIVE","MS_COMMENTS":"See attached protocol","MS_RESULTS_FILE":"ST002449_AN003997_Results.txt UNITS:Peak areas Has m/z:No Has RT:Yes RT units:Seconds"}
+
+}
+

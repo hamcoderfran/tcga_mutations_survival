@@ -1,0 +1,1785 @@
+{
+  "version": "2.0.0",
+  "unit": "ppb",
+  "description": "50-biomarker exhaled VOC panel with literature-typical healthy ppb baselines for whole-body disease biomarker prediction.",
+  "vocs": [
+    {
+      "voc_id": "acetone",
+      "name": "Acetone",
+      "cas": "67-64-1",
+      "formula": "C3H6O",
+      "healthy_ppb_median": 477.0,
+      "healthy_ppb_low": 100.0,
+      "healthy_ppb_high": 2000.0,
+      "sources": [
+        "ketone_body_metabolism",
+        "lipid_oxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0001659",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "CSCPPACGZOOCGX-UHFFFAOYSA-N",
+      "mw": "58.08",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID8021482",
+      "smiles": "CC(C)=O",
+      "kegg_compound_id": "C00207",
+      "kegg_pathways": [
+        "map00650",
+        "map01100"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.80",
+        "1.14.13.226",
+        "1.14.14.141",
+        "1.1.1.-",
+        "1.14.14.148",
+        "2.6.3.1",
+        "4.1.1.4",
+        "4.1.2.46",
+        "4.1.2.47",
+        "4.1.99.16",
+        "4.2.3.22",
+        "6.4.1.6"
+      ],
+      "mw_healthy_ppb_median": 511.16528500000004,
+      "mw_healthy_ppb_q25": 400.24988,
+      "mw_healthy_ppb_q75": 690.4144,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "isoprene",
+      "name": "Isoprene",
+      "cas": "78-79-5",
+      "formula": "C5H8",
+      "healthy_ppb_median": 105.0,
+      "healthy_ppb_low": 50.0,
+      "healthy_ppb_high": 250.0,
+      "sources": [
+        "cholesterol_biosynthesis",
+        "mevalonate_pathway"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0000071",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "RRHGJUQNOFWUDK-UHFFFAOYSA-N",
+      "mw": "68.12",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2020761",
+      "smiles": "CC(=C)C=C",
+      "kegg_compound_id": "C16521",
+      "kegg_pathways": [
+        "map00900",
+        "map01062",
+        "map01110"
+      ],
+      "kegg_enzymes": [
+        "4.2.3.27"
+      ],
+      "mw_healthy_ppb_median": 61.020855,
+      "mw_healthy_ppb_q25": 45.974556,
+      "mw_healthy_ppb_q75": 78.131256,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "pentane",
+      "name": "n-Pentane",
+      "cas": "109-66-0",
+      "formula": "C5H12",
+      "healthy_ppb_median": 8.5,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 30.0,
+      "sources": [
+        "lipid_peroxidation",
+        "oxidative_stress"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0031645",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "OFBQJSOFQDEBGM-UHFFFAOYSA-N",
+      "mw": "72.15",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2025846",
+      "smiles": "CCCCC",
+      "kegg_compound_id": "C13388",
+      "kegg_pathways": [],
+      "kegg_enzymes": []
+    },
+    {
+      "voc_id": "ethane",
+      "name": "Ethane",
+      "cas": "74-84-0",
+      "formula": "C2H6",
+      "healthy_ppb_median": 2.5,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 10.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0003275",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "OTMSDBZUPAUEDD-UHFFFAOYSA-N",
+      "mw": "30.07",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID6026377",
+      "smiles": "CC"
+    },
+    {
+      "voc_id": "hexanal",
+      "name": "Hexanal",
+      "cas": "66-25-1",
+      "formula": "C6H12O",
+      "healthy_ppb_median": 4.2,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "lipid_peroxidation",
+        "omega6_oxidation"
+      ],
+      "refs": [
+        "DOI:10.1039/D5NR01714A"
+      ],
+      "hmdb_id": "HMDB0005994",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "JARKCYVAAOWBJS-UHFFFAOYSA-N",
+      "mw": "100.16",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2021604",
+      "smiles": "CCCCCC=O",
+      "kegg_compound_id": "C02233",
+      "kegg_pathways": [],
+      "kegg_enzymes": []
+    },
+    {
+      "voc_id": "heptanal",
+      "name": "Heptanal",
+      "cas": "111-71-7",
+      "formula": "C7H14O",
+      "healthy_ppb_median": 3.1,
+      "healthy_ppb_low": 0.3,
+      "healthy_ppb_high": 12.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "DOI:10.1039/D5NR01714A"
+      ],
+      "hmdb_id": "HMDB0000517",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "FXHGMKSSBGDXIY-UHFFFAOYSA-N",
+      "mw": "114.19",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID0021597",
+      "smiles": "CCCCCCC=O"
+    },
+    {
+      "voc_id": "nonanal",
+      "name": "Nonanal",
+      "cas": "124-19-6",
+      "formula": "C9H18O",
+      "healthy_ppb_median": 5.0,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 20.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "DOI:10.1016/j.cca.2025.01.027"
+      ],
+      "hmdb_id": "HMDB0005852",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "GYHFUZHODSMOHU-UHFFFAOYSA-N",
+      "mw": "142.24",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID9021639",
+      "smiles": "CCCCCCCCC=O"
+    },
+    {
+      "voc_id": "decanal",
+      "name": "Decanal",
+      "cas": "112-31-2",
+      "formula": "C10H20O",
+      "healthy_ppb_median": 3.8,
+      "healthy_ppb_low": 0.4,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "DOI:10.1016/j.cca.2025.01.027"
+      ],
+      "hmdb_id": "HMDB0011623",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "KSMVZQYAVGTKIV-UHFFFAOYSA-N",
+      "mw": "156.26",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID4021553",
+      "smiles": "CCCCCCCCCC=O"
+    },
+    {
+      "voc_id": "ethanol",
+      "name": "Ethanol",
+      "cas": "64-17-5",
+      "formula": "C2H6O",
+      "healthy_ppb_median": 120.0,
+      "healthy_ppb_low": 20.0,
+      "healthy_ppb_high": 500.0,
+      "sources": [
+        "glycolysis_fermentation",
+        "microbiome"
+      ],
+      "refs": [
+        "DOI:10.1016/j.cca.2025.01.027"
+      ],
+      "hmdb_id": "HMDB0000108",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+      "mw": "46.07",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID9020584",
+      "smiles": "CCO",
+      "kegg_compound_id": "C00469",
+      "kegg_pathways": [
+        "map00010",
+        "map00620",
+        "map01100",
+        "map01110",
+        "map01120",
+        "map04750",
+        "map04936",
+        "map05034",
+        "map05208"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.1",
+        "1.1.1.2",
+        "1.1.1.71",
+        "1.1.2.7",
+        "1.1.2.8",
+        "1.1.5.5",
+        "1.1.99.36",
+        "2.3.1.152",
+        "2.3.1.268",
+        "3.1.1.67",
+        "3.1.1.113",
+        "3.5.1.75"
+      ],
+      "mw_healthy_ppb_median": 191.06025,
+      "mw_healthy_ppb_q25": 129.26175,
+      "mw_healthy_ppb_q75": 278.64578,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "2_butanone",
+      "name": "2-Butanone",
+      "cas": "78-93-3",
+      "formula": "C4H10O",
+      "healthy_ppb_median": 1.2,
+      "healthy_ppb_low": 0.45,
+      "healthy_ppb_high": 2.5,
+      "sources": [
+        "fatty_acid_oxidation",
+        "protein_catabolism"
+      ],
+      "refs": [
+        "DOI:10.3233/CBM-160587"
+      ],
+      "hmdb_id": "HMDB0000474",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "ZWEHNKRNPOVVGH-UHFFFAOYSA-N",
+      "mw": "74.12",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID3021516",
+      "smiles": "CCC(C)=O",
+      "kegg_compound_id": "C02845",
+      "kegg_pathways": [],
+      "kegg_enzymes": [
+        "4.1.2.46"
+      ]
+    },
+    {
+      "voc_id": "dms",
+      "name": "Dimethyl sulfide",
+      "cas": "75-18-3",
+      "formula": "C2H6S",
+      "healthy_ppb_median": 14.5,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 50.0,
+      "sources": [
+        "methionine_metabolism",
+        "liver_detox"
+      ],
+      "refs": [
+        "DOI:10.3233/CBM-160587"
+      ],
+      "hmdb_id": "HMDB0003237",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "QMMFVYPAHWMCMS-UHFFFAOYSA-N",
+      "mw": "62.14",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID9026398",
+      "smiles": "CSC",
+      "kegg_compound_id": "C00580",
+      "kegg_pathways": [
+        "map00920",
+        "map01100",
+        "map01120",
+        "map01320"
+      ],
+      "kegg_enzymes": [
+        "1.8.2.4",
+        "1.8.5.3",
+        "1.14.13.131",
+        "1.14.13.245",
+        "2.1.1.19",
+        "2.1.1.96",
+        "2.1.1.334",
+        "4.4.1.3"
+      ]
+    },
+    {
+      "voc_id": "dmts",
+      "name": "Dimethyl trisulfide",
+      "cas": "3658-80-8",
+      "formula": "C2H6S3",
+      "healthy_ppb_median": 0.12,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 0.26,
+      "sources": [
+        "methionine_metabolism"
+      ],
+      "refs": [
+        "DOI:10.3233/CBM-160587"
+      ],
+      "hmdb_id": "HMDB0031236",
+      "breath_reported": true
+    },
+    {
+      "voc_id": "ammonia",
+      "name": "Ammonia",
+      "cas": "7664-41-7",
+      "formula": "H3N",
+      "healthy_ppb_median": 250.0,
+      "healthy_ppb_low": 50.0,
+      "healthy_ppb_high": 1000.0,
+      "sources": [
+        "urea_cycle",
+        "protein_catabolism"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0000051",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "QGZKDVFQNNGYKY-UHFFFAOYSA-N",
+      "mw": "17.031",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID0023872",
+      "smiles": "N",
+      "kegg_compound_id": "C00014",
+      "kegg_pathways": [
+        "map00220",
+        "map00230",
+        "map00250",
+        "map00260",
+        "map00460",
+        "map00630",
+        "map00785",
+        "map00910",
+        "map01100",
+        "map01110",
+        "map01120",
+        "map01200"
+      ],
+      "kegg_enzymes": [
+        "1.3.7.8",
+        "1.4.1.1",
+        "1.4.1.2",
+        "1.4.1.3",
+        "1.4.1.4",
+        "1.4.1.5",
+        "1.4.1.7",
+        "1.4.1.8",
+        "1.4.1.9",
+        "1.4.1.10",
+        "1.4.1.11",
+        "1.4.1.12",
+        "1.4.1.13",
+        "1.4.1.14",
+        "1.4.1.15",
+        "1.4.1.16",
+        "1.4.1.18",
+        "1.4.1.19",
+        "1.4.1.20",
+        "1.4.1.21"
+      ]
+    },
+    {
+      "voc_id": "methanol",
+      "name": "Methanol",
+      "cas": "67-56-1",
+      "formula": "CH4O",
+      "healthy_ppb_median": 160.0,
+      "healthy_ppb_low": 40.0,
+      "healthy_ppb_high": 500.0,
+      "sources": [
+        "pectin_metabolism",
+        "one_carbon"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0001875",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "OKKJLVBELUTLKV-UHFFFAOYSA-N",
+      "mw": "32.042",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2021731",
+      "smiles": "CO",
+      "kegg_compound_id": "C00132",
+      "kegg_pathways": [
+        "map00650",
+        "map00680",
+        "map01100",
+        "map01120",
+        "map01200",
+        "map01220"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.244",
+        "1.1.2.7",
+        "1.1.2.10",
+        "1.1.3.13",
+        "1.1.99.37",
+        "1.2.98.1",
+        "1.11.1.6",
+        "1.11.1.7",
+        "1.11.1.21",
+        "1.13.11.8",
+        "1.14.13.25",
+        "1.14.14.117",
+        "1.14.18.3",
+        "1.14.18.13",
+        "2.1.1.90",
+        "2.1.1.246",
+        "2.3.1.152",
+        "2.3.1.232",
+        "3.1.1.11",
+        "3.1.1.44"
+      ],
+      "mw_healthy_ppb_median": 106.728725,
+      "mw_healthy_ppb_q25": 82.847534,
+      "mw_healthy_ppb_q75": 150.75299,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "toluene",
+      "name": "Toluene",
+      "cas": "108-88-3",
+      "formula": "C7H8",
+      "healthy_ppb_median": 1.5,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 8.0,
+      "sources": [
+        "aromatic_hydrocarbon_metabolism"
+      ],
+      "refs": [
+        "DOI:10.1016/j.cca.2025.01.027"
+      ],
+      "hmdb_id": "HMDB0003405",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "YXFVVABEGXRONW-UHFFFAOYSA-N",
+      "mw": "92.14",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID7021360",
+      "smiles": "CC1=CC=CC=C1",
+      "kegg_compound_id": "C01455",
+      "kegg_pathways": [
+        "map00623",
+        "map01100",
+        "map01120",
+        "map01220"
+      ],
+      "kegg_enzymes": [
+        "1.14.12.11",
+        "1.14.13.236",
+        "1.14.13.243",
+        "1.14.13.-",
+        "1.14.15.26",
+        "4.1.1.119",
+        "4.1.99.11"
+      ],
+      "mw_healthy_ppb_median": 5.216498,
+      "mw_healthy_ppb_q25": 4.438656,
+      "mw_healthy_ppb_q75": 6.2491317,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "benzene",
+      "name": "Benzene",
+      "cas": "71-43-2",
+      "formula": "C6H6",
+      "healthy_ppb_median": 0.8,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 5.0,
+      "sources": [
+        "aromatic_hydrocarbon_metabolism"
+      ],
+      "refs": [
+        "DOI:10.1016/j.cca.2025.01.027"
+      ],
+      "hmdb_id": "HMDB0001505",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "UHOVQNZJYSORNB-UHFFFAOYSA-N",
+      "mw": "78.11",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID3039242",
+      "smiles": "C1=CC=CC=C1",
+      "kegg_compound_id": "C01407",
+      "kegg_pathways": [
+        "map00361",
+        "map00362",
+        "map01100",
+        "map01120",
+        "map01220",
+        "map05208"
+      ],
+      "kegg_enzymes": [
+        "1.14.12.3",
+        "1.14.13.244"
+      ]
+    },
+    {
+      "voc_id": "limonene",
+      "name": "Limonene",
+      "cas": "138-86-3",
+      "formula": "C10H16",
+      "healthy_ppb_median": 2.0,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "terpene_metabolism",
+        "liver_detox"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0000536",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "XMGQYMWWDOXHJM-UHFFFAOYSA-N",
+      "mw": "136.23",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2029612",
+      "smiles": "CC(=C)C1CCC(C)=CC1",
+      "kegg_compound_id": "C06099",
+      "kegg_pathways": [
+        "map00902",
+        "map00903",
+        "map01062",
+        "map01100",
+        "map01110",
+        "map01120"
+      ],
+      "kegg_enzymes": [
+        "1.14.13.107",
+        "1.14.14.53",
+        "1.17.99.8",
+        "4.2.3.20"
+      ]
+    },
+    {
+      "voc_id": "hydrogen_sulfide",
+      "name": "Hydrogen sulfide",
+      "cas": "7783-06-4",
+      "formula": "H2S",
+      "healthy_ppb_median": 8.0,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 40.0,
+      "sources": [
+        "cysteine_metabolism",
+        "microbiome"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0000606",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "RWSOTUBLDIXVET-UHFFFAOYSA-N",
+      "mw": "34.08",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID4024149",
+      "smiles": "S",
+      "kegg_compound_id": "C00283",
+      "kegg_pathways": [
+        "map00270",
+        "map00920",
+        "map01100",
+        "map01120",
+        "map01200",
+        "map01320"
+      ],
+      "kegg_enzymes": [
+        "1.8.1.2",
+        "1.8.1.18",
+        "1.8.1.19",
+        "1.8.2.3",
+        "1.8.2.5",
+        "1.8.3.4",
+        "1.8.3.7",
+        "1.8.5.4",
+        "1.8.5.5",
+        "1.8.5.8",
+        "1.8.5.10",
+        "1.8.7.1",
+        "1.8.98.3",
+        "1.12.98.4",
+        "1.13.11.55",
+        "2.1.1.251",
+        "2.3.1.10",
+        "2.4.2.59",
+        "2.5.1.47",
+        "2.5.1.48"
+      ]
+    },
+    {
+      "voc_id": "acetaldehyde",
+      "name": "Acetaldehyde",
+      "cas": "75-07-0",
+      "formula": "C2H4O",
+      "healthy_ppb_median": 15.0,
+      "healthy_ppb_low": 2.0,
+      "healthy_ppb_high": 60.0,
+      "sources": [
+        "ethanol_metabolism",
+        "glycolysis"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0000990",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+      "mw": "44.05",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID5039224",
+      "smiles": "CC=O",
+      "kegg_compound_id": "C00084",
+      "kegg_pathways": [
+        "map00010",
+        "map00360",
+        "map00362",
+        "map00430",
+        "map00440",
+        "map00470",
+        "map00564",
+        "map00620",
+        "map00621",
+        "map00622",
+        "map00625",
+        "map00920"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.1",
+        "1.1.1.2",
+        "1.1.1.71",
+        "1.1.2.7",
+        "1.1.2.8",
+        "1.1.5.5",
+        "1.1.99.36",
+        "1.2.1.3",
+        "1.2.1.4",
+        "1.2.1.5",
+        "1.2.1.10",
+        "1.2.5.2",
+        "1.2.99.6",
+        "1.7.3.1",
+        "1.13.11.88",
+        "1.13.12.16",
+        "1.14.99.39",
+        "2.2.1.4",
+        "2.2.1.8",
+        "2.3.1.190"
+      ],
+      "mw_healthy_ppb_median": 113.5688625,
+      "mw_healthy_ppb_q25": 96.07447,
+      "mw_healthy_ppb_q75": 131.30424,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "formaldehyde",
+      "name": "Formaldehyde",
+      "cas": "50-00-0",
+      "formula": "CH2O",
+      "healthy_ppb_median": 1.1,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 5.0,
+      "sources": [
+        "one_carbon",
+        "methanol_oxidation"
+      ],
+      "refs": [
+        "PMID:21903721"
+      ],
+      "hmdb_id": "HMDB0001426",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "WSFSSNUMVMOOMR-UHFFFAOYSA-N",
+      "mw": "30.026",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID7020637",
+      "smiles": "C=O",
+      "kegg_compound_id": "C00067",
+      "kegg_pathways": [
+        "map00625",
+        "map00680",
+        "map01100",
+        "map01120",
+        "map01200"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.244",
+        "1.1.2.7",
+        "1.1.2.10",
+        "1.1.3.13",
+        "1.1.99.37",
+        "1.2.1.46",
+        "1.2.98.1",
+        "1.4.3.21",
+        "1.4.9.1",
+        "1.5.3.1",
+        "1.5.3.2",
+        "1.5.3.4",
+        "1.5.3.19",
+        "1.5.7.3",
+        "1.5.8.1",
+        "1.5.8.2",
+        "1.5.99.5",
+        "1.8.3.4",
+        "1.11.1.6",
+        "1.11.1.7"
+      ]
+    },
+    {
+      "voc_id": "indole",
+      "name": "Indole",
+      "cas": "120-72-9",
+      "formula": "C8H7N",
+      "healthy_ppb_median": 1.8,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 10.0,
+      "sources": [
+        "microbial_tryptophan",
+        "gut_dysbiosis"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "PMID:31484320"
+      ],
+      "hmdb_id": "HMDB0000738",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "SIKJAQJRHWYJAI-UHFFFAOYSA-N",
+      "mw": "117.15",
+      "kegg_compound_id": "C00463",
+      "kegg_pathways": [
+        "map00380",
+        "map00400",
+        "map00402",
+        "map00999",
+        "map01100",
+        "map01110",
+        "map04974"
+      ],
+      "kegg_enzymes": [
+        "1.13.11.17",
+        "1.14.14.153",
+        "1.14.16.-",
+        "2.5.1.-",
+        "4.1.1.92",
+        "4.1.2.8",
+        "4.1.99.1",
+        "4.2.1.20",
+        "4.2.1.122"
+      ]
+    },
+    {
+      "voc_id": "phenol",
+      "name": "Phenol",
+      "cas": "108-95-2",
+      "formula": "C6H6O",
+      "healthy_ppb_median": 3.5,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 20.0,
+      "sources": [
+        "microbial_aromatic",
+        "gut_dysbiosis"
+      ],
+      "refs": [
+        "PMID:31484320"
+      ],
+      "hmdb_id": "HMDB0000228",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "ISWSIDIOOBJBQZ-UHFFFAOYSA-N",
+      "mw": "94.11",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID5021124",
+      "smiles": "OC1=CC=CC=C1",
+      "kegg_compound_id": "C00146",
+      "kegg_pathways": [
+        "map00350",
+        "map00361",
+        "map00362",
+        "map00627",
+        "map01100",
+        "map01120",
+        "map01220",
+        "map04974",
+        "map05208"
+      ],
+      "kegg_enzymes": [
+        "1.14.13.7",
+        "1.14.13.244",
+        "1.14.14.20",
+        "2.1.1.25",
+        "2.4.2.55",
+        "2.7.1.238",
+        "3.1.1.2",
+        "4.1.1.61",
+        "4.1.1.91",
+        "4.1.99.2"
+      ],
+      "mw_healthy_ppb_median": 3.8179284,
+      "mw_healthy_ppb_q25": 3.1048641,
+      "mw_healthy_ppb_q75": 4.8378916,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "dimethyl_disulfide",
+      "name": "Dimethyl disulfide",
+      "cas": "624-92-0",
+      "formula": "C2H6S2",
+      "healthy_ppb_median": 1.0,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 8.0,
+      "sources": [
+        "methionine_metabolism",
+        "microbiome"
+      ],
+      "refs": [
+        "PMID:31484320"
+      ],
+      "hmdb_id": "HMDB0005879",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "WQOXQRCZOLPYPM-UHFFFAOYSA-N",
+      "mw": "94.20"
+    },
+    {
+      "voc_id": "propanol",
+      "name": "1-Propanol",
+      "cas": "71-23-8",
+      "formula": "C3H8O",
+      "healthy_ppb_median": 12.0,
+      "healthy_ppb_low": 1.0,
+      "healthy_ppb_high": 80.0,
+      "sources": [
+        "microbiome",
+        "lipid_oxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0000820",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "BDERNNFJNOPAEC-UHFFFAOYSA-N",
+      "mw": "60.10",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2021739",
+      "smiles": "CCCO",
+      "kegg_compound_id": "C00483",
+      "kegg_pathways": [
+        "map00350",
+        "map00680",
+        "map00950",
+        "map01060",
+        "map01063",
+        "map01100",
+        "map01110",
+        "map01240",
+        "map04080",
+        "map04974"
+      ],
+      "kegg_enzymes": [
+        "1.4.3.4",
+        "1.4.3.21",
+        "1.4.9.2",
+        "1.4.3.-",
+        "1.14.18.1",
+        "2.1.1.27",
+        "2.3.1.110",
+        "4.1.1.25",
+        "4.1.1.28",
+        "6.3.4.24"
+      ],
+      "mw_healthy_ppb_median": 116.38161500000001,
+      "mw_healthy_ppb_q25": 89.38901,
+      "mw_healthy_ppb_q75": 157.03479,
+      "mw_healthy_n": 504.0
+    },
+    {
+      "voc_id": "isopropanol",
+      "name": "2-Propanol",
+      "cas": "67-63-0",
+      "formula": "C3H8O",
+      "healthy_ppb_median": 25.0,
+      "healthy_ppb_low": 2.0,
+      "healthy_ppb_high": 150.0,
+      "sources": [
+        "ketone_body_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0000863",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "KFZMGEQAYNKOFK-UHFFFAOYSA-N",
+      "mw": "60.10",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID7020762",
+      "smiles": "CC(C)O",
+      "kegg_compound_id": "C01845",
+      "kegg_pathways": [
+        "map00650",
+        "map01100"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.80",
+        "1.14.13.227",
+        "1.1.1.-"
+      ]
+    },
+    {
+      "voc_id": "butane",
+      "name": "n-Butane",
+      "cas": "106-97-8",
+      "formula": "C4H10",
+      "healthy_ppb_median": 3.0,
+      "healthy_ppb_low": 0.3,
+      "healthy_ppb_high": 20.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003223",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "IJDNQMDRQITEOD-UHFFFAOYSA-N",
+      "mw": "58.12",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID7024665",
+      "smiles": "CCCC"
+    },
+    {
+      "voc_id": "hexane",
+      "name": "n-Hexane",
+      "cas": "110-54-3",
+      "formula": "C6H14",
+      "healthy_ppb_median": 2.5,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0029599",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "VLKZOEOYAKHREP-UHFFFAOYSA-N",
+      "mw": "86.18",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID0021917",
+      "smiles": "CCCCCC"
+    },
+    {
+      "voc_id": "octane",
+      "name": "n-Octane",
+      "cas": "111-65-9",
+      "formula": "C8H18",
+      "healthy_ppb_median": 1.2,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 8.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031646",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "TVMXDCGIABBOFY-UHFFFAOYSA-N",
+      "mw": "114.23",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID0026882",
+      "smiles": "CCCCCCCC"
+    },
+    {
+      "voc_id": "styrene",
+      "name": "Styrene",
+      "cas": "100-42-5",
+      "formula": "C8H8",
+      "healthy_ppb_median": 0.6,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 5.0,
+      "sources": [
+        "aromatic_hydrocarbon_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003412",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "PPBRXRYQALVLMV-UHFFFAOYSA-N",
+      "mw": "104.15",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2021284",
+      "smiles": "C=CC1=CC=CC=C1"
+    },
+    {
+      "voc_id": "ethylbenzene",
+      "name": "Ethylbenzene",
+      "cas": "100-41-4",
+      "formula": "C8H10",
+      "healthy_ppb_median": 0.7,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 6.0,
+      "sources": [
+        "aromatic_hydrocarbon_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003403",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "YNQLUTRBYVCPMQ-UHFFFAOYSA-N",
+      "mw": "106.16",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID3020596",
+      "smiles": "CCC1=CC=CC=C1"
+    },
+    {
+      "voc_id": "xylene",
+      "name": "Xylene",
+      "cas": "1330-20-7",
+      "formula": "C8H10",
+      "healthy_ppb_median": 0.9,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 8.0,
+      "sources": [
+        "aromatic_hydrocarbon_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003401",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "URLKBWYHVLBVBO-UHFFFAOYSA-N",
+      "mw": "106.16"
+    },
+    {
+      "voc_id": "cyclohexane",
+      "name": "Cyclohexane",
+      "cas": "110-82-7",
+      "formula": "C6H12",
+      "healthy_ppb_median": 1.5,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 10.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0029598",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "XDTMQSROBMDMFD-UHFFFAOYSA-N",
+      "mw": "84.16",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID4021923",
+      "smiles": "C1CCCCC1"
+    },
+    {
+      "voc_id": "methyl_acetate",
+      "name": "Methyl acetate",
+      "cas": "79-20-9",
+      "formula": "C3H6O2",
+      "healthy_ppb_median": 2.0,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "ester_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031647",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "KXKVLQRXCPHEJC-UHFFFAOYSA-N",
+      "mw": "74.08",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID4021767",
+      "smiles": "COC(C)=O"
+    },
+    {
+      "voc_id": "ethyl_acetate",
+      "name": "Ethyl acetate",
+      "cas": "141-78-6",
+      "formula": "C4H8O2",
+      "healthy_ppb_median": 3.5,
+      "healthy_ppb_low": 0.3,
+      "healthy_ppb_high": 25.0,
+      "sources": [
+        "ester_metabolism",
+        "microbiome"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031234",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "XEKOWRVHYACXOJ-UHFFFAOYSA-N",
+      "mw": "88.11",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID1022001",
+      "smiles": "CCOC(C)=O"
+    },
+    {
+      "voc_id": "acetonitrile",
+      "name": "Acetonitrile",
+      "cas": "75-05-8",
+      "formula": "C2H3N",
+      "healthy_ppb_median": 1.0,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 10.0,
+      "sources": [
+        "smoking",
+        "nitrogen_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031296",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "WEVYAHXRMPXWCK-UHFFFAOYSA-N",
+      "mw": "41.05",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID7020009",
+      "smiles": "CC#N",
+      "kegg_compound_id": "C01548",
+      "kegg_pathways": [
+        "map00625",
+        "map01120"
+      ],
+      "kegg_enzymes": [
+        "1.18.6.1",
+        "4.2.1.112"
+      ]
+    },
+    {
+      "voc_id": "furan",
+      "name": "Furan",
+      "cas": "110-00-9",
+      "formula": "C4H4O",
+      "healthy_ppb_median": 0.8,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 6.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031231",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "YLQBMQCUIZJEEH-UHFFFAOYSA-N",
+      "mw": "68.07",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID6020646",
+      "smiles": "O1C=CC=C1",
+      "kegg_compound_id": "C14248",
+      "kegg_pathways": [],
+      "kegg_enzymes": []
+    },
+    {
+      "voc_id": "2_pentanone",
+      "name": "2-Pentanone",
+      "cas": "107-87-9",
+      "formula": "C5H10O",
+      "healthy_ppb_median": 1.4,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 10.0,
+      "sources": [
+        "fatty_acid_oxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0001865",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "XNLICIUVMPYHGG-UHFFFAOYSA-N",
+      "mw": "86.13",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID0021888",
+      "smiles": "CCCC(C)=O"
+    },
+    {
+      "voc_id": "3_methylbutanal",
+      "name": "3-Methylbutanal",
+      "cas": "590-86-3",
+      "formula": "C5H10O",
+      "healthy_ppb_median": 1.8,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 12.0,
+      "sources": [
+        "protein_catabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0006479",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "YGHRJJRRZDOVPD-UHFFFAOYSA-N",
+      "mw": "86.13",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID1021619",
+      "smiles": "CC(C)CC=O"
+    },
+    {
+      "voc_id": "benzaldehyde",
+      "name": "Benzaldehyde",
+      "cas": "100-52-7",
+      "formula": "C7H6O",
+      "healthy_ppb_median": 1.2,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 10.0,
+      "sources": [
+        "aromatic_hydrocarbon_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0000615",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "HUMNYLRZRPPJDN-UHFFFAOYSA-N",
+      "mw": "106.12",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID8039241",
+      "smiles": "O=CC1=CC=CC=C1",
+      "kegg_compound_id": "C00261",
+      "kegg_pathways": [
+        "map00623",
+        "map00627",
+        "map01100",
+        "map01120",
+        "map01220"
+      ],
+      "kegg_enzymes": [
+        "1.1.1.90",
+        "1.2.1.7",
+        "1.2.1.28",
+        "4.1.1.7",
+        "4.1.2.10",
+        "4.1.2.26",
+        "4.1.2.38"
+      ]
+    },
+    {
+      "voc_id": "octanal",
+      "name": "Octanal",
+      "cas": "124-13-0",
+      "formula": "C8H16O",
+      "healthy_ppb_median": 2.2,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 12.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0005853",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "NUJGJRNETVAIRJ-UHFFFAOYSA-N",
+      "mw": "128.21",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID3021643",
+      "smiles": "CCCCCCCC=O"
+    },
+    {
+      "voc_id": "undecane",
+      "name": "Undecane",
+      "cas": "1120-21-4",
+      "formula": "C11H24",
+      "healthy_ppb_median": 1.0,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 8.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031597",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "RSJKGSCJYJTIGS-UHFFFAOYSA-N",
+      "mw": "156.31",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID9021689",
+      "smiles": "CCCCCCCCCCC"
+    },
+    {
+      "voc_id": "dodecane",
+      "name": "Dodecane",
+      "cas": "112-40-3",
+      "formula": "C12H26",
+      "healthy_ppb_median": 0.9,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 7.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031598",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "SNRUBQQJIBEYMU-UHFFFAOYSA-N",
+      "mw": "170.33",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID0026913",
+      "smiles": "CCCCCCCCCCCC"
+    },
+    {
+      "voc_id": "carbon_disulfide",
+      "name": "Carbon disulfide",
+      "cas": "75-15-0",
+      "formula": "CS2",
+      "healthy_ppb_median": 0.5,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 4.0,
+      "sources": [
+        "methionine_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003685",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "QGJOPFRUJISHPQ-UHFFFAOYSA-N",
+      "mw": "76.15",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID6023947",
+      "smiles": "S=C=S",
+      "kegg_compound_id": "C18904",
+      "kegg_pathways": [
+        "map00450"
+      ],
+      "kegg_enzymes": [
+        "2.6.1.-"
+      ]
+    },
+    {
+      "voc_id": "methyl_mercaptan",
+      "name": "Methanethiol",
+      "cas": "74-93-1",
+      "formula": "CH4S",
+      "healthy_ppb_median": 0.4,
+      "healthy_ppb_low": 0.02,
+      "healthy_ppb_high": 5.0,
+      "sources": [
+        "methionine_metabolism",
+        "microbiome"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003264",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "LSDPWZHWYPCBBB-UHFFFAOYSA-N",
+      "mw": "48.11",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID5026382",
+      "smiles": "CS",
+      "kegg_compound_id": "C00409",
+      "kegg_pathways": [
+        "map00270",
+        "map00920",
+        "map01100",
+        "map01120"
+      ],
+      "kegg_enzymes": [
+        "1.8.1.21",
+        "1.8.3.4",
+        "1.14.13.131",
+        "2.1.1.251",
+        "2.1.1.334",
+        "2.5.1.49",
+        "4.2.1.155",
+        "4.4.1.11"
+      ]
+    },
+    {
+      "voc_id": "trimethylamine",
+      "name": "Trimethylamine",
+      "cas": "75-50-3",
+      "formula": "C3H9N",
+      "healthy_ppb_median": 2.0,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 20.0,
+      "sources": [
+        "microbiome",
+        "choline_metabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0000906",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "GETQZCLCWQTVFV-UHFFFAOYSA-N",
+      "mw": "59.11",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2026238",
+      "smiles": "CN(C)C",
+      "kegg_compound_id": "C00565",
+      "kegg_pathways": [
+        "map00680",
+        "map01100",
+        "map01120",
+        "map01200"
+      ],
+      "kegg_enzymes": [
+        "1.5.8.2",
+        "1.7.2.3",
+        "1.14.13.148",
+        "1.14.13.239",
+        "1.21.4.4",
+        "2.1.1.247",
+        "2.1.1.250",
+        "2.1.1.252",
+        "4.3.99.4"
+      ]
+    },
+    {
+      "voc_id": "dimethyl_amine",
+      "name": "Dimethylamine",
+      "cas": "124-40-3",
+      "formula": "C2H7N",
+      "healthy_ppb_median": 3.0,
+      "healthy_ppb_low": 0.3,
+      "healthy_ppb_high": 25.0,
+      "sources": [
+        "protein_catabolism"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0000087",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "ROSDSFDQCJNGOL-UHFFFAOYSA-N",
+      "mw": "45.08",
+      "kegg_compound_id": "C00543",
+      "kegg_pathways": [
+        "map00680",
+        "map01100",
+        "map01120",
+        "map01200"
+      ],
+      "kegg_enzymes": [
+        "1.4.3.4",
+        "1.5.8.1",
+        "1.5.8.2",
+        "1.14.13.238",
+        "2.1.1.247",
+        "2.1.1.249",
+        "2.1.1.250",
+        "3.5.1.56",
+        "3.5.3.18",
+        "4.1.2.32"
+      ]
+    },
+    {
+      "voc_id": "pyrrole",
+      "name": "Pyrrole",
+      "cas": "109-97-7",
+      "formula": "C4H5N",
+      "healthy_ppb_median": 0.5,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 4.0,
+      "sources": [
+        "microbiome"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0000305",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "KAESVJOAVNADME-UHFFFAOYSA-N",
+      "mw": "67.09",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID5021910",
+      "smiles": "N1C=CC=C1",
+      "kegg_compound_id": "C05085",
+      "kegg_pathways": [],
+      "kegg_enzymes": []
+    },
+    {
+      "voc_id": "allyl_methyl_sulfide",
+      "name": "Allyl methyl sulfide",
+      "cas": "10152-76-8",
+      "formula": "C4H8S",
+      "healthy_ppb_median": 0.3,
+      "healthy_ppb_low": 0.02,
+      "healthy_ppb_high": 3.0,
+      "sources": [
+        "microbiome",
+        "diet"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031237",
+      "breath_reported": true,
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID9064976",
+      "inchikey": "NVLPQIPTCCLBEU-UHFFFAOYSA-N",
+      "smiles": "CSCC=C"
+    },
+    {
+      "voc_id": "propionaldehyde",
+      "name": "Propanal",
+      "cas": "123-38-6",
+      "formula": "C3H6O",
+      "healthy_ppb_median": 2.5,
+      "healthy_ppb_low": 0.2,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "lipid_peroxidation"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0003366",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "NBBJYMSMWIIQGU-UHFFFAOYSA-N",
+      "mw": "58.08",
+      "breath_volatilome": true,
+      "dtxsid": "DTXSID2021658",
+      "smiles": "CCC=O",
+      "kegg_compound_id": "C00466",
+      "kegg_pathways": [],
+      "kegg_enzymes": [
+        "2.2.1.4",
+        "2.3.1.190"
+      ]
+    },
+    {
+      "voc_id": "crotonaldehyde",
+      "name": "Crotonaldehyde",
+      "cas": "4170-30-3",
+      "formula": "C4H6O",
+      "healthy_ppb_median": 0.6,
+      "healthy_ppb_low": 0.05,
+      "healthy_ppb_high": 5.0,
+      "sources": [
+        "lipid_peroxidation",
+        "smoking"
+      ],
+      "refs": [
+        "PMID:21903721",
+        "DOI:10.1016/j.cpt.2024.12.004"
+      ],
+      "hmdb_id": "HMDB0031235",
+      "breath_reported": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false,
+      "inchikey": "MLUCVPSAIODCQM-NSCUHMNNSA-N",
+      "mw": "70.09"
+    }
+  ]
+}

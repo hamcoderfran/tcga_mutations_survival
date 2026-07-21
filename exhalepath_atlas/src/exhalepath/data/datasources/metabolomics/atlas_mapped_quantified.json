@@ -1,0 +1,127 @@
+{
+  "version": "1.0.0",
+  "n_rows": 11,
+  "rows": [
+    {
+      "study_id": "ST003200",
+      "voc_id": "acetaldehyde",
+      "metabolite_name": "Acetaldehyde",
+      "units": "parts per billion by volume",
+      "median": 113.5688625,
+      "mean": 118.03677487896826,
+      "q25": 96.07447,
+      "q75": 131.30424,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "acetone",
+      "metabolite_name": "Acetone",
+      "units": "parts per billion by volume",
+      "median": 511.16528500000004,
+      "mean": 618.2439033928572,
+      "q25": 400.24988,
+      "q75": 690.4144,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "ethanol",
+      "metabolite_name": "Ethanol",
+      "units": "parts per billion by volume",
+      "median": 191.06025,
+      "mean": 238.28888769642856,
+      "q25": 129.26175,
+      "q75": 278.64578,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "isoprene",
+      "metabolite_name": "Isoprene",
+      "units": "parts per billion by volume",
+      "median": 61.020855,
+      "mean": 64.68546922222222,
+      "q25": 45.974556,
+      "q75": 78.131256,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "methanol",
+      "metabolite_name": "Methanol",
+      "units": "parts per billion by volume",
+      "median": 106.728725,
+      "mean": 132.91486199603176,
+      "q25": 82.847534,
+      "q75": 150.75299,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "phenol",
+      "metabolite_name": "Phenol",
+      "units": "parts per billion by volume",
+      "median": 3.8179284,
+      "mean": 4.308875442658731,
+      "q25": 3.1048641,
+      "q75": 4.8378916,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "propanol",
+      "metabolite_name": "Propanol",
+      "units": "parts per billion by volume",
+      "median": 116.38161500000001,
+      "mean": 130.56501679761902,
+      "q25": 89.38901,
+      "q75": 157.03479,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "toluene",
+      "metabolite_name": "Toluene",
+      "units": "parts per billion by volume",
+      "median": 5.216498,
+      "mean": 5.7102980259920635,
+      "q25": 4.438656,
+      "q75": 6.2491317,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST000587",
+      "voc_id": "acetone",
+      "metabolite_name": "Acetone",
+      "units": "uM",
+      "median": 1.35,
+      "mean": 1.4500000000000002,
+      "q25": 0.9,
+      "q75": 1.8,
+      "n": 18.0
+    },
+    {
+      "study_id": "ST000587",
+      "voc_id": "isopropanol",
+      "metabolite_name": "Isopropanol",
+      "units": "uM",
+      "median": 0.8500000000000001,
+      "mean": 0.9666666666666667,
+      "q25": 0.8,
+      "q75": 1.2,
+      "n": 6.0
+    },
+    {
+      "study_id": "ST000587",
+      "voc_id": "methanol",
+      "metabolite_name": "Methanol",
+      "units": "uM",
+      "median": 20.799999999999997,
+      "mean": 20.686363636363634,
+      "q25": 20.4,
+      "q75": 22.4,
+      "n": 22.0
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+case_id,project_id,disease_id,voc_id,log2_fold_change,target_ppb,healthy_ppb,primary_site,primary_diagnosis,ajcc_pathologic_stage,stage_num,label_origin,study_id,source
+real::malaria::ST000883,malaria,malaria,2_butanone,0.4328,1.6198210117081622,1.2,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,2_pentanone,0.0,1.4,1.4,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,acetone,0.2295,559.2484164616009,477.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,benzene,0.006,0.8033340345911786,0.8,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,butane,0.0,3.0,3.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,ethanol,0.0,120.0,120.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,ethylbenzene,0.0,0.7,0.7,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,heptanal,0.0,3.1,3.1,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,hexanal,-0.3741,3.2406637341456035,4.2,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,hexane,-0.5378,1.7220512684286904,2.5,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,isoprene,-1.6086,34.4312229119101,105.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,isopropanol,0.1185,27.140138722606068,25.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,nonanal,-0.0349,4.8804970824363885,5.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,octane,0.2887,1.4658468760250545,1.2,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,pentane,0.4666,11.745716699824372,8.5,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,propanol,0.0,12.0,12.0,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::malaria::ST000883,malaria,malaria,toluene,-0.0128,1.4867504379853616,1.5,systemic,Malaria,,2.0,measured_cohort,ST000883,metabolomics_workbench
+real::heart_failure::ST000587,heart_failure,heart_failure,acetone,-0.8301,268.30785027072585,477.0,heart,Heart failure,,2.0,measured_cohort,ST000587,metabolomics_workbench
+real::heart_failure::ST000587,heart_failure,heart_failure,methanol,-0.0552,153.99376134817604,160.0,heart,Heart failure,,2.0,measured_cohort,ST000587,metabolomics_workbench
+real::asthma::23522490,asthma,asthma,2_pentanone,2.1871,6.3754484599166314,1.4,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,acetaldehyde,-0.0231,14.761737089400208,15.0,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,benzaldehyde,0.4466,1.63538963958785,1.2,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,benzene,-0.3132,0.6438836426831879,0.8,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,butane,-0.5089,2.1082741796759117,3.0,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,decanal,0.1238,4.140483993661376,3.8,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,dodecane,-0.3745,0.6942354334116083,0.9,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,ethanol,0.273,144.9981412067931,120.0,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,ethyl_acetate,0.6093,5.339315950506089,3.5,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,ethylbenzene,1.3725,1.8124319484875446,0.7,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,furan,5.7011,41.61904353388784,0.8,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,hexane,-0.4482,1.8323919054215487,2.5,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,isopropanol,-0.3719,19.319102792954336,25.0,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,octane,1.121,2.609972138051719,1.2,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,phenol,-0.5502,2.390239068856891,3.5,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,propanol,0.6753,19.163145722402156,12.0,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::asthma::23522490,asthma,asthma,undecane,0.0018,1.0012484435826914,1.0,lung,Asthma,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,2_pentanone,-2.1871,0.30742935376590425,1.4,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,acetaldehyde,-0.1606,13.419793767865881,15.0,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,benzaldehyde,-0.0591,1.151835271342532,1.2,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,benzene,0.54,1.1631780138562486,0.8,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,butane,0.2896,3.6669040104506814,3.0,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,decanal,-0.3424,2.997166888917403,3.8,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,dodecane,-0.6262,0.5830925950441173,0.9,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,ethanol,-0.1982,104.59648758723355,120.0,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,ethyl_acetate,-0.4695,2.5277519924570093,3.5,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,ethylbenzene,-0.8811,0.3800673045417028,0.7,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,furan,-4.3969,0.03797442434065724,0.8,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,hexane,0.252,2.9771421234124205,2.5,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,isopropanol,-0.1993,21.774326488850136,25.0,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,octane,-0.6516,0.7638887267341467,1.2,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,phenol,0.089,3.722714355126146,3.5,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,propanol,-0.2816,9.872137582869444,12.0,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,undecane,0.0701,1.0497894469607874,1.0,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::copd::23522490,copd,copd,xylene,0.2545,1.0736300124344615,0.9,lung,COPD,,2.0,measured_cohort_relative,23522490,scientific_data_figshare
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,hydrogen_sulfide,0.8,13.928809012737986,8.0,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,ethane,1.279,6.066767801243463,2.5,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,indole,0.55,2.635354252702126,1.8,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,dms,0.7,23.555319494330828,14.5,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,phenol,0.4,4.618277687705129,3.5,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,acetone,0.35,607.9654192312881,477.0,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,ethanol,0.3,147.73732960138994,120.0,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,hexanal,0.55,6.149159922971627,4.2,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,pentane,0.5,12.020815280171309,8.5,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,isoprene,-0.3,85.28650161740474,105.0,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,acetone,2.117,2069.1828960725647,477.0,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,pentane,0.862,15.44922797962484,8.5,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,methanol,0.2,183.7917367995256,160.0,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::cystic_fibrosis::10.1164/ajrccm.161.4.9906122,cystic_fibrosis,cystic_fibrosis,ammonia,0.35,318.64015682981557,250.0,lung,Cystic fibrosis,,2.0,literature:quantified,10.1164/ajrccm.161.4.9906122,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,isoprene,-0.35,82.38133027915883,105.0,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,hexanal,0.5,5.939696961967,4.2,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,isopropanol,0.4,32.98769776932235,25.0,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::heart_failure::10.1016/j.jacc.2012.12.033,heart_failure,heart_failure,ammonia,0.3,307.7861033362291,250.0,heart,Heart failure,,2.0,literature:quantified,10.1016/j.jacc.2012.12.033,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,dodecane,-0.45,0.6588385631755315,0.9,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,butane,-0.45,2.196128543918438,3.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,propanol,0.65,18.830018349522017,12.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,octane,0.65,1.8830018349522017,1.2,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,hexanal,0.65,6.590506422332707,4.2,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,nonanal,0.5,7.0710678118654755,5.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,acetone,0.35,607.9654192312881,477.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,isoprene,-0.35,82.38133027915883,105.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,ethyl_acetate,-0.45,2.5621499679048445,3.5,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,ethylbenzene,-0.45,0.5124299935809689,0.7,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,furan,-0.45,0.5856342783782502,0.8,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,octane,-0.45,0.8784514175673752,1.2,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,furan,0.65,1.2553345566348013,0.8,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,ethylbenzene,0.65,1.098417737055451,0.7,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,hexane,-0.45,1.8301071199320318,2.5,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,isopropanol,-0.45,18.30107119932032,25.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,ethanol,0.3,147.73732960138994,120.0,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,ethane,1.654,7.867624453535659,2.5,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,phenol,-0.45,2.5621499679048445,3.5,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,pentane,0.7,13.808290738056003,8.5,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,benzene,0.65,1.2553345566348013,0.8,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,2_pentanone,-0.45,1.0248599871619377,1.4,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,decanal,-0.45,2.781762822296688,3.8,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,dodecane,-0.45,0.6588385631755315,0.9,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,isoprene,-0.4,79.57511974179589,105.0,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,acetone,0.4,629.4052734386705,477.0,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,2_butanone,0.4,1.583409492927473,1.2,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,toluene,0.35,1.9118409409788932,1.5,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,nonanal,0.5,7.0710678118654755,5.0,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,heptanal,0.55,4.538665657431439,3.1,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,hexanal,0.7,6.8229201293923785,4.2,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,acetaldehyde,-0.062,14.369028273340447,15.0,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,isoprene,-0.25,88.29412360164002,105.0,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,2_butanone,0.3,1.4773732960138994,1.2,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,pentane,0.45,11.611342182412361,8.5,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,acetone,0.35,607.9654192312881,477.0,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,hexanal,0.5,5.939696961967,4.2,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,pentane,0.6,12.883590815338383,8.5,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,isoprene,-0.4,79.57511974179589,105.0,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,nonanal,0.6,7.57858283255199,5.0,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::cancer_prostate::10.1038/sj.bjc.6605810,cancer_prostate,cancer_prostate,formaldehyde,-0.921,0.5809570939435216,1.1,prostate,Prostate cancer,,2.0,literature:mixed,10.1038/sj.bjc.6605810,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,decanal,0.45,5.190952975666702,3.8,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,isoprene,-0.3,85.28650161740474,105.0,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,2_butanone,0.6,1.8188598798124775,1.2,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,isopropanol,0.65,39.22920489483754,25.0,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,phenol,0.65,5.492088685277255,3.5,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,benzaldehyde,-0.45,0.8784514175673752,1.2,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,propanol,-0.45,8.784514175673753,12.0,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,pentane,0.65,13.337929664244763,8.5,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,nonanal,0.45,6.830201283771977,5.0,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,hexanal,1.843,15.067721082321848,4.2,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::copd::10.1164/ajrccm.162.2.9909025,copd,copd,heptanal,0.906,5.808912970609039,3.1,lung,COPD,,2.0,literature:mixed,10.1164/ajrccm.162.2.9909025,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,benzaldehyde,0.65,1.8830018349522017,1.2,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,ethyl_acetate,0.65,5.492088685277255,3.5,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,ethane,1.227,5.851993207372949,2.5,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::asthma::10.1164/ajrccm.162.4.2003064,asthma,asthma,2_pentanone,0.65,2.196835474110902,1.4,lung,Asthma,,2.0,literature:mixed,10.1164/ajrccm.162.4.2003064,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,hexanal,0.65,6.590506422332707,4.2,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,octanal,0.6,3.3345764463228758,2.2,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,heptanal,0.55,4.538665657431439,3.1,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,acetaldehyde,0.6,22.73574849765597,15.0,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,acetone,0.4,629.4052734386705,477.0,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::head_neck_cancer::10.1038/bjc.2014.361,head_neck_cancer,head_neck_cancer,ethanol,1.247,284.8168314375677,120.0,head_neck,Head and neck cancer,,2.0,literature:mixed,10.1038/bjc.2014.361,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,acetone,0.45,651.6012024718466,477.0,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::ards::10.1183/09031936.00005614,ards,ards,ethanol,0.35,152.94727527831148,120.0,lung,ARDS,,2.0,literature:mixed,10.1183/09031936.00005614,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,benzene,0.6,1.2125732532083184,0.8,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,ammonia,0.4,329.8769776932235,250.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,propanol,-0.4,9.094299399062388,12.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,hexanal,0.6,6.366009579343672,4.2,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,toluene,0.35,1.9118409409788932,1.5,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,acetone,0.4,629.4052734386705,477.0,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,isoprene,-0.35,82.38133027915883,105.0,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,2_butanone,0.45,1.6392483081052744,1.2,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,acetone,-0.4,361.49840111272994,477.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,ethanol,0.6,181.88598798124775,120.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,ethanol,0.35,152.94727527831148,120.0,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,isoprene,-0.5,74.24621202458749,105.0,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,methanol,-0.4,121.25732532083184,160.0,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,2_butanone,0.6,1.8188598798124775,1.2,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,ethylbenzene,0.6,1.0610015965572785,0.7,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,isopropanol,-0.4,18.946457081379975,25.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,acetone,0.6,722.9968022254599,477.0,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,heptanal,0.6,4.698721356182234,3.1,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,nonanal,0.6,7.57858283255199,5.0,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::covid19::10.1016/j.ebiom.2020.103154,covid19,covid19,octanal,0.6,3.3345764463228758,2.2,lung,COVID-19,,2.0,literature:directional_only,10.1016/j.ebiom.2020.103154,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,hydrogen_sulfide,0.7,12.996038341699768,8.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,dms,0.55,21.22924259121157,14.5,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,isoprene,-0.4,79.57511974179589,105.0,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::pneumonia_bacterial::10.1038/srep17179,pneumonia_bacterial,pneumonia_bacterial,pentane,0.6,12.883590815338383,8.5,lung,Bacterial pneumonia,,2.0,literature:directional_only,10.1038/srep17179,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,dms,0.4,19.132864706206966,14.5,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,hexanal,0.55,6.149159922971627,4.2,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,pentane,0.6,12.883590815338383,8.5,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::tuberculosis::10.1016/j.tube.2006.03.004,tuberculosis,tuberculosis,ethane,0.6,3.789291416275995,2.5,lung,Tuberculosis,,2.0,literature:directional_only,10.1016/j.tube.2006.03.004,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,styrene,0.6,0.9094299399062388,0.6,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,phenol,0.6,5.3050079827863925,3.5,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,hydrogen_sulfide,0.4,10.556063286183154,8.0,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,toluene,0.6,2.273574849765597,1.5,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,ethylbenzene,0.6,1.0610015965572785,0.7,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,hexanal,0.6,6.366009579343672,4.2,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,pentane,0.55,12.444728415537817,8.5,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,ethanol,0.3,147.73732960138994,120.0,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,ammonia,0.35,318.64015682981557,250.0,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,methanol,0.25,190.27313840043536,160.0,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,acetone,0.6,722.9968022254599,477.0,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,isoprene,0.6,159.15023948359178,105.0,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,isoprene,0.6,159.15023948359178,105.0,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::sleep_apnea::10.1093/toxsci/kfw260,sleep_apnea,sleep_apnea,acetone,0.6,722.9968022254599,477.0,lung,Obstructive sleep apnea,,2.0,literature:directional_only,10.1093/toxsci/kfw260,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,hexanal,0.6,6.366009579343672,4.2,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,nonanal,0.6,7.57858283255199,5.0,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,ammonia,0.35,318.64015682981557,250.0,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::cancer_stomach::10.1186/s12935-017-0475-x,cancer_stomach,cancer_stomach,2_butanone,0.4,1.583409492927473,1.2,stomach,Gastric cancer,,2.0,literature:directional_only,10.1186/s12935-017-0475-x,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,nonanal,-0.4,3.789291416275995,5.0,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,isoprene,-0.4,79.57511974179589,105.0,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,benzene,0.6,1.2125732532083184,0.8,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,pentane,0.45,11.611342182412361,8.5,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,hexanal,-0.3,3.4114600646961897,4.2,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,2_butanone,0.25,1.4270485380032651,1.2,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel
+real::malaria::10.1093/infdis/jiy072,malaria,malaria,acetone,0.35,607.9654192312881,477.0,systemic,Malaria,,2.0,literature:directional_only,10.1093/infdis/jiy072,literature_panel

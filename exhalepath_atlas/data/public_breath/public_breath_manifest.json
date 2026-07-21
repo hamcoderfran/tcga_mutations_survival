@@ -1,0 +1,8 @@
+{
+  "n_cases": 7,
+  "n_sci_data_cases": 3,
+  "paths": {
+    "benchmark": "/workspace/exhalepath_atlas/data/knowledge/public_breath_benchmarks.json",
+    "mapped_means": "/workspace/exhalepath_atlas/data/public_breath/mapped_cohort_voc_means.csv"
+  }
+}

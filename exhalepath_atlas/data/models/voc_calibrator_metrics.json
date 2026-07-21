@@ -1,0 +1,117 @@
+{
+  "2_butanone": {
+    "mae_log2fc": 0.022965753665368502,
+    "r2": 0.8471364652614712,
+    "n_train": 8,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "2_pentanone": {
+    "mae_log2fc": 0.6548501418264532,
+    "r2": 0.7358446683023021,
+    "n_train": 5,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "acetone": {
+    "mae_log2fc": 0.2748715057239312,
+    "r2": -0.3242360016611745,
+    "n_train": 12,
+    "n_test": 3
+  },
+  "ammonia": {
+    "mae_log2fc": 2.535456613312892e-05,
+    "r2": 0.9999983928649405,
+    "n_train": 5,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "benzene": {
+    "mae_log2fc": 0.11758630750395534,
+    "r2": 0.7745123729161021,
+    "n_train": 6,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "ethanol": {
+    "mae_log2fc": 0.003451488663359657,
+    "r2": 0.9997114297487268,
+    "n_train": 10,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "ethylbenzene": {
+    "mae_log2fc": 0.16496839053993279,
+    "r2": 0.8987040611337757,
+    "n_train": 7,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "heptanal": {
+    "mae_log2fc": 0.00033047120256828933,
+    "r2": 0.9999980186198362,
+    "n_train": 5,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "hexanal": {
+    "mae_log2fc": 0.12448699168854109,
+    "r2": -9.417786712059767,
+    "n_train": 10,
+    "n_test": 3
+  },
+  "isoprene": {
+    "mae_log2fc": 0.6891543388324095,
+    "r2": -2.1528069819824203,
+    "n_train": 11,
+    "n_test": 3
+  },
+  "isopropanol": {
+    "mae_log2fc": 0.13264189481137564,
+    "r2": 0.6775506387355483,
+    "n_train": 7,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "nonanal": {
+    "mae_log2fc": 0.04586111964424708,
+    "r2": 0.9300710304159463,
+    "n_train": 8,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "octane": {
+    "mae_log2fc": 0.13454461421280203,
+    "r2": 0.9405048519164456,
+    "n_train": 5,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "pentane": {
+    "mae_log2fc": 0.0016683728404379352,
+    "r2": 0.9990991367503448,
+    "n_train": 11,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "phenol": {
+    "mae_log2fc": 0.11045313445700533,
+    "r2": 0.8810092751871721,
+    "n_train": 6,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "propanol": {
+    "mae_log2fc": 0.032448637644650356,
+    "r2": 0.9889643066831177,
+    "n_train": 6,
+    "n_test": 0,
+    "fit": "all_data_small_n"
+  },
+  "__global__": {
+    "mae_log2fc": 0.14203740953834507,
+    "n_train": 189,
+    "n_test": 0,
+    "fit": "global_fallback"
+  }
+}

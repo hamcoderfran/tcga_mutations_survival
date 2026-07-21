@@ -1,0 +1,50 @@
+{
+  "corpus_type": "real_breath_only",
+  "synthetic_labels": false,
+  "n_cases": 30,
+  "n_voc_targets": 189,
+  "n_label_rows_raw": 189,
+  "diseases": [
+    "ards",
+    "asthma",
+    "cancer_prostate",
+    "cancer_stomach",
+    "copd",
+    "covid19",
+    "cystic_fibrosis",
+    "head_neck_cancer",
+    "heart_failure",
+    "malaria",
+    "pneumonia_bacterial",
+    "sleep_apnea",
+    "tuberculosis"
+  ],
+  "label_origins": {
+    "literature:mixed": 64,
+    "literature:directional_only": 53,
+    "measured_cohort_relative": 35,
+    "measured_cohort": 19,
+    "literature:quantified": 18
+  },
+  "priority_diseases": [
+    "asthma",
+    "copd",
+    "covid19",
+    "pneumonia_bacterial",
+    "tuberculosis",
+    "cystic_fibrosis",
+    "sleep_apnea",
+    "cancer_stomach",
+    "head_neck_cancer",
+    "cancer_prostate",
+    "heart_failure",
+    "malaria",
+    "ards"
+  ],
+  "sources": [
+    "metabolomics_workbench:ST000587,ST000883,ST003200",
+    "scientific_data_figshare:23522490",
+    "literature_panels:priority10_voc_panels.json"
+  ],
+  "note": "Training y are measured cohort folds and published literature log2fc only. Mechanistic pathway priors are features / zero-shot inference \u2014 never synthetic y."
+}

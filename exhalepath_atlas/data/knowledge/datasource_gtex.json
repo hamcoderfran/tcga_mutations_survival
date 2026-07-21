@@ -1,0 +1,866 @@
+{
+  "version": "1.0.0",
+  "n_genes": 13,
+  "n_tissues": 11,
+  "expression": [
+    {
+      "gene": "ALOX15",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "blood",
+      "rel_expression": 0.6,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "brain",
+      "rel_expression": 0.3,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "liver",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "lung",
+      "rel_expression": 0.7,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "ALOX15",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "brain",
+      "rel_expression": 0.5,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "kidney",
+      "rel_expression": 0.4,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "liver",
+      "rel_expression": 0.85,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "lung",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CBS",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "adipose",
+      "rel_expression": 0.5,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "brain",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "heart",
+      "rel_expression": 0.7,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "liver",
+      "rel_expression": 0.9,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "lung",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "muscle",
+      "rel_expression": 0.65,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CPT1A",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "brain",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "liver",
+      "rel_expression": 0.5,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "lung",
+      "rel_expression": 0.8,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP1A1",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "brain",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "kidney",
+      "rel_expression": 0.25,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "liver",
+      "rel_expression": 1.0,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "lung",
+      "rel_expression": 0.35,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "CYP2E1",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "brain",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "liver",
+      "rel_expression": 1.0,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "lung",
+      "rel_expression": 0.2,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "FMO3",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "brain",
+      "rel_expression": 0.7,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "liver",
+      "rel_expression": 0.6,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "lung",
+      "rel_expression": 0.55,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "GPX4",
+      "tissue": "tumor",
+      "rel_expression": 0.5,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "brain",
+      "rel_expression": 0.35,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "liver",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "lung",
+      "rel_expression": 0.5,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HK2",
+      "tissue": "tumor",
+      "rel_expression": 0.9,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "brain",
+      "rel_expression": 0.1,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "kidney",
+      "rel_expression": 0.4,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "liver",
+      "rel_expression": 0.95,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "lung",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCL",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "brain",
+      "rel_expression": 0.35,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "liver",
+      "rel_expression": 0.9,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "lung",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "muscle",
+      "rel_expression": 0.3,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCR",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "brain",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "colon",
+      "rel_expression": 0.15,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "kidney",
+      "rel_expression": 0.35,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "liver",
+      "rel_expression": 1.0,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "lung",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "HMGCS2",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "blood",
+      "rel_expression": 0.5,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "brain",
+      "rel_expression": 0.35,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "gut",
+      "rel_expression": 0.7,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "liver",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "lung",
+      "rel_expression": 0.4,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "muscle",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "IDO1",
+      "tissue": "tumor",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "adipose",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "blood",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "brain",
+      "rel_expression": 0.4,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "colon",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "gut",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "heart",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "kidney",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "liver",
+      "rel_expression": 0.05,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "lung",
+      "rel_expression": 0.55,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "muscle",
+      "rel_expression": 0.7,
+      "source": "gtex_informed_curated"
+    },
+    {
+      "gene": "LDHA",
+      "tissue": "tumor",
+      "rel_expression": 0.95,
+      "source": "gtex_informed_curated"
+    }
+  ],
+  "note": "Relative units 0\u20131; live GTEx bulk download optional later"
+}

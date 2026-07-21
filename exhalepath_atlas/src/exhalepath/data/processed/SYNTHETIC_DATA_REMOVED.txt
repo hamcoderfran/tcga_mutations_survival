@@ -1,0 +1,2 @@
+Synthetic VOC training labels (offline_demo mechanistic+noise) removed.
+Active corpus: real_breath_only (see corpus_manifest.json).

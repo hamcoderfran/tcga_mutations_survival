@@ -1,0 +1,14 @@
+{
+  "priority": 1,
+  "key": "metabolomics",
+  "title": "Metabolomics Workbench / MetaboLights / MassIVE",
+  "n_studies": 9,
+  "n_quantified_rows": 11,
+  "artifacts": [
+    "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog.json",
+    "/workspace/exhalepath_atlas/data/datasources/metabolomics/mw_quantified_studies.json",
+    "/workspace/exhalepath_atlas/data/datasources/metabolomics/metabolights_studies.json",
+    "/workspace/exhalepath_atlas/data/datasources/metabolomics/atlas_mapped_quantified.json",
+    "/workspace/exhalepath_atlas/data/datasources/metabolomics/disease_study_index.json"
+  ]
+}

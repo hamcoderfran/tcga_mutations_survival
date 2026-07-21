@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "n_projects": 15,
+  "projects": [
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "gdc_project": "TCGA-LUAD",
+      "driver_genes": [
+        "KRAS",
+        "TP53",
+        "STK11",
+        "KEAP1",
+        "EGFR"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-LUAD"
+    },
+    {
+      "disease_id": "breast_invasive_carcinoma",
+      "gdc_project": "TCGA-BRCA",
+      "driver_genes": [
+        "PIK3CA",
+        "TP53",
+        "GATA3",
+        "CDH1",
+        "MAP3K1"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-BRCA"
+    },
+    {
+      "disease_id": "colon_adenocarcinoma",
+      "gdc_project": "TCGA-COAD",
+      "driver_genes": [
+        "APC",
+        "TP53",
+        "KRAS",
+        "PIK3CA",
+        "SMAD4"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-COAD"
+    },
+    {
+      "disease_id": "pancreatic_adenocarcinoma",
+      "gdc_project": "TCGA-PAAD",
+      "driver_genes": [
+        "KRAS",
+        "TP53",
+        "CDKN2A",
+        "SMAD4"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-PAAD"
+    },
+    {
+      "disease_id": "hepatocellular_carcinoma",
+      "gdc_project": "TCGA-LIHC",
+      "driver_genes": [
+        "TP53",
+        "CTNNB1",
+        "ALB",
+        "AXIN1"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-LIHC"
+    },
+    {
+      "disease_id": "ovarian_cancer",
+      "gdc_project": "TCGA-OV",
+      "driver_genes": [
+        "TP53",
+        "BRCA1",
+        "BRCA2",
+        "CDK12"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-OV"
+    },
+    {
+      "disease_id": "glioblastoma",
+      "gdc_project": "TCGA-GBM",
+      "driver_genes": [
+        "EGFR",
+        "PTEN",
+        "TP53",
+        "CDKN2A"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-GBM"
+    },
+    {
+      "disease_id": "cancer_prostate",
+      "gdc_project": "TCGA-PRAD",
+      "driver_genes": [
+        "TP53",
+        "SPOP",
+        "FOXA1",
+        "PTEN"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-PRAD"
+    },
+    {
+      "disease_id": "cancer_kidney",
+      "gdc_project": "TCGA-KIRC",
+      "driver_genes": [
+        "VHL",
+        "PBRM1",
+        "SETD2",
+        "BAP1"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-KIRC"
+    },
+    {
+      "disease_id": "cancer_stomach",
+      "gdc_project": "TCGA-STAD",
+      "driver_genes": [
+        "TP53",
+        "ARID1A",
+        "CDH1",
+        "PIK3CA"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-STAD"
+    },
+    {
+      "disease_id": "cancer_skin_melanoma",
+      "gdc_project": "TCGA-SKCM",
+      "driver_genes": [
+        "BRAF",
+        "NRAS",
+        "TP53",
+        "CDKN2A"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-SKCM"
+    },
+    {
+      "disease_id": "cancer_bladder",
+      "gdc_project": "TCGA-BLCA",
+      "driver_genes": [
+        "TP53",
+        "FGFR3",
+        "RB1",
+        "KDM6A"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-BLCA"
+    },
+    {
+      "disease_id": "esophageal_cancer",
+      "gdc_project": "TCGA-ESCA",
+      "driver_genes": [
+        "TP53",
+        "CDKN2A",
+        "NFE2L2"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-ESCA"
+    },
+    {
+      "disease_id": "head_neck_cancer",
+      "gdc_project": "TCGA-HNSC",
+      "driver_genes": [
+        "TP53",
+        "CDKN2A",
+        "PIK3CA",
+        "NOTCH1"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-HNSC"
+    },
+    {
+      "disease_id": "cervical_cancer",
+      "gdc_project": "TCGA-CESC",
+      "driver_genes": [
+        "PIK3CA",
+        "EP300",
+        "FBXW7"
+      ],
+      "gdc_portal": "https://portal.gdc.cancer.gov/projects/TCGA-CESC"
+    }
+  ]
+}

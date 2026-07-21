@@ -1,0 +1,125 @@
+{
+  "version": "1.0.0",
+  "description": "Microbe groups \u2192 VOC/pathway links for dysbiosis breath signals",
+  "ref": "http://bioinformatics.charite.de/mvoc/",
+  "emitters": [
+    {
+      "microbe_group": "clostridia_putrefaction",
+      "taxa_examples": [
+        "Clostridium",
+        "Clostridioides difficile"
+      ],
+      "vocs": [
+        "indole",
+        "phenol",
+        "hydrogen_sulfide",
+        "methyl_mercaptan",
+        "dimethyl_disulfide"
+      ],
+      "pathways": [
+        "microbial_proteolysis_putrefaction"
+      ],
+      "diseases": [
+        "gut_dysbiosis",
+        "clostridioides_difficile_infection",
+        "inflammatory_bowel_disease"
+      ]
+    },
+    {
+      "microbe_group": "fermentative_enterobacteriaceae",
+      "taxa_examples": [
+        "Escherichia",
+        "Klebsiella",
+        "Enterobacter"
+      ],
+      "vocs": [
+        "ethanol",
+        "propanol",
+        "acetaldehyde",
+        "ethyl_acetate",
+        "hydrogen_sulfide"
+      ],
+      "pathways": [
+        "gut_microbiome_fermentation"
+      ],
+      "diseases": [
+        "sibo",
+        "gut_dysbiosis",
+        "inflammatory_bowel_disease"
+      ]
+    },
+    {
+      "microbe_group": "sulfate_reducers",
+      "taxa_examples": [
+        "Desulfovibrio"
+      ],
+      "vocs": [
+        "hydrogen_sulfide",
+        "methyl_mercaptan",
+        "carbon_disulfide"
+      ],
+      "pathways": [
+        "microbial_proteolysis_putrefaction",
+        "methionine_transsulfuration"
+      ],
+      "diseases": [
+        "inflammatory_bowel_disease",
+        "gut_dysbiosis"
+      ]
+    },
+    {
+      "microbe_group": "choline_tma_producers",
+      "taxa_examples": [
+        "Anaerococcus",
+        "Clostridium"
+      ],
+      "vocs": [
+        "trimethylamine",
+        "dimethyl_amine"
+      ],
+      "pathways": [
+        "microbial_proteolysis_putrefaction"
+      ],
+      "diseases": [
+        "chronic_kidney_disease",
+        "gut_dysbiosis",
+        "heart_disease"
+      ]
+    },
+    {
+      "microbe_group": "helicobacter_urease",
+      "taxa_examples": [
+        "Helicobacter pylori"
+      ],
+      "vocs": [
+        "ammonia",
+        "hydrogen_sulfide"
+      ],
+      "pathways": [
+        "urea_cycle",
+        "gut_microbiome_fermentation"
+      ],
+      "diseases": [
+        "helicobacter_pylori_infection"
+      ]
+    },
+    {
+      "microbe_group": "oral_anaerobes",
+      "taxa_examples": [
+        "Porphyromonas",
+        "Fusobacterium"
+      ],
+      "vocs": [
+        "hydrogen_sulfide",
+        "methyl_mercaptan",
+        "indole"
+      ],
+      "pathways": [
+        "microbial_proteolysis_putrefaction"
+      ],
+      "diseases": [
+        "periodontitis"
+      ]
+    }
+  ]
+}

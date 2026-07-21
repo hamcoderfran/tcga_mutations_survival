@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "source": "metabolomics_workbench_ST003181",
+  "study_id": "ST003181",
+  "doi": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST003181",
+  "matrix": "blood_plasma",
+  "n_samples": 401,
+  "n_depression": 240,
+  "n_control": 159,
+  "proxy_summary": {
+    "hexanal": {
+      "n_proxies": 11,
+      "median_fold": 1.1887688703800103
+    },
+    "pentane": {
+      "n_proxies": 11,
+      "median_fold": 1.1887688703800103
+    },
+    "trimethylamine": {
+      "n_proxies": 1,
+      "median_fold": 1.1047981920397452
+    },
+    "dms": {
+      "n_proxies": 1,
+      "median_fold": 1.1915728275900996
+    }
+  },
+  "n_metabolites_tested": 120,
+  "breath_linked_expectations": {
+    "expect_elevated": [
+      "indole",
+      "ammonia",
+      "pentane",
+      "hexanal",
+      "trimethylamine"
+    ],
+    "expect_suppressed": [
+      "isoprene"
+    ],
+    "doi": "10.3389/fpsyt.2022.819607",
+    "notes": "MDD breath PTR-MS + atlas lit panel; ST003181 supplies plasma peroxidation proxies"
+  },
+  "ukb_scale_note": "UK Biobank individual metabolomics/phenotypes are application-gated; ST003181 (n=401) is the largest open depression metabolome used here, augmented with Magdeburg/Frontiers breath PTR-MS directions."
+}

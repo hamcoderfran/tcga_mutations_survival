@@ -1,0 +1,2263 @@
+{
+  "version": "2.0.0",
+  "n_studies": 9,
+  "n_mw_quantified_studies": 4,
+  "n_atlas_mapped_rows": 11,
+  "studies": [
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST003200",
+      "title": "9 common breath VOCs in 504 healthy subjects (ppbv)",
+      "disease_hints": [
+        "healthy_baseline",
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST003200"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002449",
+      "title": "Valley fever / pneumonia breath VOCs",
+      "disease_hints": [
+        "pneumonia_bacterial",
+        "infectious"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002449"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000883",
+      "title": "Breathprinting malaria-associated biomarkers",
+      "disease_hints": [
+        "infectious",
+        "malaria"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000883"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000587",
+      "title": "Exhaled breath condensate in decompensated heart failure",
+      "disease_hints": [
+        "heart_failure",
+        "cardiovascular"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000587"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001164",
+      "title": "Cystic fibrosis acute pulmonary exacerbations (breath)",
+      "disease_hints": [
+        "cystic_fibrosis",
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001164"
+    },
+    {
+      "repo": "metabolights",
+      "accession": "MTBLS2400",
+      "title": "Epilepsy breath metabolomics (SESI-HRMS)",
+      "disease_hints": [
+        "epilepsy"
+      ],
+      "url": "https://www.ebi.ac.uk/metabolights/MTBLS2400"
+    },
+    {
+      "repo": "metabolights",
+      "accession": "MTBLS2436",
+      "title": "Breath / VOC MetaboLights study (GC-MS)",
+      "disease_hints": [
+        "pulmonary"
+      ],
+      "url": "https://www.ebi.ac.uk/metabolights/MTBLS2436"
+    },
+    {
+      "repo": "massive",
+      "accession": "MSV000095340",
+      "title": "Breath metabolites healthy vs asthmatic children",
+      "disease_hints": [
+        "asthma",
+        "copd"
+      ],
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000095340"
+    },
+    {
+      "repo": "figshare_scientific_data",
+      "accession": "23522490",
+      "title": "Clinical breathomics asthma/COPD/bronchiectasis",
+      "disease_hints": [
+        "asthma",
+        "copd"
+      ],
+      "url": "https://doi.org/10.6084/m9.figshare.23522490.v6"
+    }
+  ],
+  "atlas_mapped_quantified": [
+    {
+      "study_id": "ST003200",
+      "voc_id": "acetaldehyde",
+      "metabolite_name": "Acetaldehyde",
+      "units": "parts per billion by volume",
+      "median": 113.5688625,
+      "mean": 118.03677487896826,
+      "q25": 96.07447,
+      "q75": 131.30424,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "acetone",
+      "metabolite_name": "Acetone",
+      "units": "parts per billion by volume",
+      "median": 511.16528500000004,
+      "mean": 618.2439033928572,
+      "q25": 400.24988,
+      "q75": 690.4144,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "ethanol",
+      "metabolite_name": "Ethanol",
+      "units": "parts per billion by volume",
+      "median": 191.06025,
+      "mean": 238.28888769642856,
+      "q25": 129.26175,
+      "q75": 278.64578,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "isoprene",
+      "metabolite_name": "Isoprene",
+      "units": "parts per billion by volume",
+      "median": 61.020855,
+      "mean": 64.68546922222222,
+      "q25": 45.974556,
+      "q75": 78.131256,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "methanol",
+      "metabolite_name": "Methanol",
+      "units": "parts per billion by volume",
+      "median": 106.728725,
+      "mean": 132.91486199603176,
+      "q25": 82.847534,
+      "q75": 150.75299,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "phenol",
+      "metabolite_name": "Phenol",
+      "units": "parts per billion by volume",
+      "median": 3.8179284,
+      "mean": 4.308875442658731,
+      "q25": 3.1048641,
+      "q75": 4.8378916,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "propanol",
+      "metabolite_name": "Propanol",
+      "units": "parts per billion by volume",
+      "median": 116.38161500000001,
+      "mean": 130.56501679761902,
+      "q25": 89.38901,
+      "q75": 157.03479,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST003200",
+      "voc_id": "toluene",
+      "metabolite_name": "Toluene",
+      "units": "parts per billion by volume",
+      "median": 5.216498,
+      "mean": 5.7102980259920635,
+      "q25": 4.438656,
+      "q75": 6.2491317,
+      "n": 504.0
+    },
+    {
+      "study_id": "ST000587",
+      "voc_id": "acetone",
+      "metabolite_name": "Acetone",
+      "units": "uM",
+      "median": 1.35,
+      "mean": 1.4500000000000002,
+      "q25": 0.9,
+      "q75": 1.8,
+      "n": 18.0
+    },
+    {
+      "study_id": "ST000587",
+      "voc_id": "isopropanol",
+      "metabolite_name": "Isopropanol",
+      "units": "uM",
+      "median": 0.8500000000000001,
+      "mean": 0.9666666666666667,
+      "q25": 0.8,
+      "q75": 1.2,
+      "n": 6.0
+    },
+    {
+      "study_id": "ST000587",
+      "voc_id": "methanol",
+      "metabolite_name": "Methanol",
+      "units": "uM",
+      "median": 20.799999999999997,
+      "mean": 20.686363636363634,
+      "q25": 20.4,
+      "q75": 22.4,
+      "n": 22.0
+    }
+  ],
+  "metabolights": [
+    {
+      "accession": "MTBLS2400",
+      "files": [
+        "a_MTBLS2400_DI-MS_negative__metabolite_profiling.txt",
+        "a_MTBLS2400_DI-MS_positive__metabolite_profiling.txt",
+        "i_Investigation.txt",
+        "s_MTBLS2400.txt"
+      ],
+      "isa": {
+        "a_MTBLS2400_DI-MS_negative__metabolite_profiling.txt": {
+          "n_lines": 147,
+          "preview": [
+            "Sample Name\tProtocol REF\tParameter Value[Post Extraction]\tParameter Value[Derivatization]\tExtract Name\tProtocol REF\tParameter Value[DI Instrument]\tTerm Source REF\tTerm Accession Number\tLabeled Extract Name\tLabel\tTerm Source REF\tTerm Accession Number\tProtocol REF\tParameter Value[Scan polarity]\tParameter Value[Scan m/z range]\tParameter Value[Instrument]\tTerm Source REF\tTerm Accession Number\tParameter Value[Ion source]\tTerm Source REF\tTerm Accession Number\tParameter Value[Mass analyzer]\tTerm Source REF\tTerm Accession Number\tMS Assay Name\tRaw Spectral Data File\tProtocol REF\tNormalization Name\tDerived Spectral Data File\tProtocol REF\tData Transformation Name\tMetabolite Assignment File",
+            "BreathTDM_001-1\tExtraction\t\t\tBreathTDM_001-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000661\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000690\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_001-1\tFILES/RAW_FILES/UKBB/20171101_01_Neg_BreathTDM_001.raw\tData transformation\tBreathTDM_001-1\tFILES/DERIVED_FILES/UKBB/20171101_01_Neg_BreathTDM_001.mzXML\tMetabolite identification\tBreathTDM_001-1\t",
+            "BreathTDM_007-1\tExtraction\t\t\tBreathTDM_007-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000669\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000698\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_007-1\tFILES/RAW_FILES/UKBB/20171205_02_Neg_BreathTDM_007.RAW\tData transformation\tBreathTDM_007-1\tFILES/DERIVED_FILES/UKBB/20171205_02_Neg_BreathTDM_007.mzXML\tMetabolite identification\tBreathTDM_007-1\t",
+            "BreathTDM_009-1\tExtraction\t\t\tBreathTDM_009-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000671\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000700\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_009-1\tFILES/RAW_FILES/UKBB/20171205_04_Neg_BreathTDM_009.RAW\tData transformation\tBreathTDM_009-1\tFILES/DERIVED_FILES/UKBB/20171205_04_Neg_BreathTDM_009.mzXML\tMetabolite identification\tBreathTDM_009-1\t",
+            "BreathTDM_010-1\tExtraction\t\t\tBreathTDM_010-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000673\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000702\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_010-1\tFILES/RAW_FILES/UKBB/20171211_02_Neg_BreathTDM_010.RAW\tData transformation\tBreathTDM_010-1\tFILES/DERIVED_FILES/UKBB/20171211_02_Neg_BreathTDM_010.mzXML\tMetabolite identification\tBreathTDM_010-1\t",
+            "BreathTDM_013-1\tExtraction\t\t\tBreathTDM_013-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000675\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000704\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_013-1\tFILES/RAW_FILES/UKBB/20171212_02_Neg_BreathTDM_013.RAW\tData transformation\tBreathTDM_013-1\tFILES/DERIVED_FILES/UKBB/20171212_02_Neg_BreathTDM_013.mzXML\tMetabolite identification\tBreathTDM_013-1\t",
+            "BreathTDM_014-1\tExtraction\t\t\tBreathTDM_014-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000677\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000706\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_014-1\tFILES/RAW_FILES/UKBB/20171212_04_Neg_BreathTDM_014.RAW\tData transformation\tBreathTDM_014-1\tFILES/DERIVED_FILES/UKBB/20171212_04_Neg_BreathTDM_014.mzXML\tMetabolite identification\tBreathTDM_014-1\t",
+            "BreathTDM_016-1\tExtraction\t\t\tBreathTDM_016-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tnegative\t50-300\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000680\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000709\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_016-1\tFILES/RAW_FILES/UKBB/20180103_02_Neg_BreathTDM_016.RAW\tData transformation\tBreathTDM_016-1\tFILES/DERIVED_FILES/UKBB/20180103_02_Neg_BreathTDM_016.mzXML\tMetabolite identification\tBreathTDM_016-1\t"
+          ]
+        },
+        "a_MTBLS2400_DI-MS_positive__metabolite_profiling.txt": {
+          "n_lines": 164,
+          "preview": [
+            "Sample Name\tProtocol REF\tParameter Value[Post Extraction]\tParameter Value[Derivatization]\tExtract Name\tProtocol REF\tParameter Value[DI Instrument]\tTerm Source REF\tTerm Accession Number\tLabeled Extract Name\tLabel\tTerm Source REF\tTerm Accession Number\tProtocol REF\tParameter Value[Scan polarity]\tParameter Value[Scan m/z range]\tParameter Value[Instrument]\tTerm Source REF\tTerm Accession Number\tParameter Value[Ion source]\tTerm Source REF\tTerm Accession Number\tParameter Value[Mass analyzer]\tTerm Source REF\tTerm Accession Number\tMS Assay Name\tRaw Spectral Data File\tProtocol REF\tNormalization Name\tDerived Spectral Data File\tProtocol REF\tData Transformation Name\tMetabolite Assignment File",
+            "BreathTDM_001-1\tExtraction\t\t\tBreathTDM_001-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000662\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000691\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_001-1\tFILES/RAW_FILES/UKBB/20171101_02_Pos_BreathTDM_001.raw\tData transformation\tBreathTDM_001-1\tFILES/DERIVED_FILES/UKBB/20171101_02_Pos_BreathTDM_001.mzXML\tMetabolite identification\tBreathTDM_001-1\t",
+            "BreathTDM_002-1\tExtraction\t\t\tBreathTDM_002-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000663\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000692\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_002-1\tFILES/RAW_FILES/UKBB/20171103_01_Pos_BreathTDM_002.raw\tData transformation\tBreathTDM_002-1\tFILES/DERIVED_FILES/UKBB/20171103_01_Pos_BreathTDM_002.mzXML\tMetabolite identification\tBreathTDM_002-1\t",
+            "BreathTDM_003-1\tExtraction\t\t\tBreathTDM_003-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000664\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000693\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_003-1\tFILES/RAW_FILES/UKBB/20171106_01_Pos_BreathTDM_003.raw\tData transformation\tBreathTDM_003-1\tFILES/DERIVED_FILES/UKBB/20171106_01_Pos_BreathTDM_003.mzXML\tMetabolite identification\tBreathTDM_003-1\t",
+            "BreathTDM_004-1\tExtraction\t\t\tBreathTDM_004-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000665\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000694\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_004-1\tFILES/RAW_FILES/UKBB/20171129_01_Pos_BreathTDM_004.RAW\tData transformation\tBreathTDM_004-1\tFILES/DERIVED_FILES/UKBB/20171129_01_Pos_BreathTDM_004.mzXML\tMetabolite identification\tBreathTDM_004-1\t",
+            "BreathTDM_005-1\tExtraction\t\t\tBreathTDM_005-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000666\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000695\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_005-1\tFILES/RAW_FILES/UKBB/20171129_02_Pos_BreathTDM_005.RAW\tData transformation\tBreathTDM_005-1\tFILES/DERIVED_FILES/UKBB/20171129_02_Pos_BreathTDM_005.mzXML\tMetabolite identification\tBreathTDM_005-1\t",
+            "BreathTDM_006-1\tExtraction\t\t\tBreathTDM_006-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000667\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000696\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_006-1\tFILES/RAW_FILES/UKBB/20171129_03_Pos_BreathTDM_006.RAW\tData transformation\tBreathTDM_006-1\tFILES/DERIVED_FILES/UKBB/20171129_03_Pos_BreathTDM_006.mzXML\tMetabolite identification\tBreathTDM_006-1\t",
+            "BreathTDM_007-1\tExtraction\t\t\tBreathTDM_007-1\tDirect infusion\tFossil Ion Technology SUPER-SESI\t\t\t\t\t\t\tMass spectrometry\tpositive\t100-400\tThermo Scientific Q Exactive Plus\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000668\tsecondary electrospray ionization\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000697\torbitrap\tMS\thttp://purl.obolibrary.org/obo/MS_1000484\tBreathTDM_007-1\tFILES/RAW_FILES/UKBB/20171205_01_Pos_BreathTDM_007.RAW\tData transformation\tBreathTDM_007-1\tFILES/DERIVED_FILES/UKBB/20171205_01_Pos_BreathTDM_007.mzXML\tMetabolite identification\tBreathTDM_007-1\t"
+          ]
+        },
+        "i_Investigation.txt": {
+          "n_lines": 97,
+          "preview": [
+            "ONTOLOGY SOURCE REFERENCE",
+            "Term Source Name\tEFO\tNCIT\tCHMO\tOMIT\tOBI\tMTBLS\tCHEBI",
+            "Term Source File\thttp://data.bioontology.org/ontologies/EFO\t\t\t\thttp://data.bioontology.org/ontologies/OBI\thttps://www.ebi.ac.uk/metabolights/\t",
+            "Term Source Version\t132\t\t\t\t29\t1\t",
+            "Term Source Description\tExperimental Factor Ontology\t\t\t\tOntology for Biomedical Investigations\tMetabolights Ontology\t",
+            "INVESTIGATION",
+            "Investigation Identifier\tMTBLS2400",
+            "Investigation Title\tInvestigation"
+          ]
+        },
+        "s_MTBLS2400.txt": {
+          "n_lines": 164,
+          "preview": [
+            "Source Name\tCharacteristics[Organism]\tTerm Source REF\tTerm Accession Number\tCharacteristics[Organism part]\tTerm Source REF\tTerm Accession Number\tCharacteristics[Variant]\tTerm Source REF\tTerm Accession Number\tCharacteristics[Sample type]\tTerm Source REF\tTerm Accession Number\tProtocol REF\tSample Name\tFactor Value[Age group]\tTerm Source REF\tTerm Accession Number\tFactor Value[Gender]\tTerm Source REF\tTerm Accession Number",
+            "BreathTDM_001-1\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_001-1\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tFemale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C16576",
+            "BreathTDM_001-2\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_001-2\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tFemale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C16576",
+            "BreathTDM_001-3\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_001-3\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tFemale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C16576",
+            "BreathTDM_002-1\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_002-1\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tMale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C20197",
+            "BreathTDM_002-2\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_002-2\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tMale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C20197",
+            "BreathTDM_003-1\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_003-1\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tFemale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C16576",
+            "BreathTDM_003-2\tHomo sapiens\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_9606\tBreath\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94552\t\t\t\tExperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tBreathTDM_003-2\tChild\tNCIT\thttp://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16423\tFemale\tNCIT\thttp://purl.obolibrary.org/obo/NCIT_C16576"
+          ]
+        }
+      },
+      "study_http_status": 200,
+      "study_meta": {
+        "mtblsStudy": {
+          "studyStatus": "Public",
+          "curationRequest": "MANUAL_CURATION",
+          "modifiedTime": "2026-04-14T22:38:37.152160",
+          "statusUpdateTime": "2021-06-21T11:21:49.664274",
+          "read_access": true,
+          "write_access": false,
+          "is_curator": false,
+          "revisionNumber": 2,
+          "revisionDatetime": "2025-09-06T10:47:58.455357",
+          "revisionStatus": 3,
+          "revisionComment": "updating data license",
+          "revisionTaskMessage": "Public FTP Folder sync task completed.",
+          "mhdSubmissionStatus": "",
+          "studyHttpUrl": "http://ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS2400",
+          "studyFtpUrl": "ftp://ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS2400",
+          "studyGlobusUrl": "https://app.globus.org/file-manager?origin_id=47772002-3e5b-4fd3-b97c-18cee38d6df2&origin_path=/pub/databases/metabolights/studies/public/MTBLS2400",
+          "studyAsperaPath": "/studies/public/MTBLS2400",
+          "firstPrivateDate": "2021-01-18T11:00:37.414000",
+          "firstPublicDate": "2021-06-21T00:00:00",
+          "sampleTemplate": "minimum",
+          "studyCategory": "ms-mhd-legacy",
+          "mhdAccession": "",
+          "mhdModelVersion": "0.1",
+          "datasetLicense": "EMBL-EBI Terms of Use",
+          "datasetLicenseUrl": "https://www.ebi.ac.uk/about/terms-of-use/",
+          "templateVersion": "1.0",
+          "studyPermission": {
+            "userName": null,
+            "userRole": null,
+            "partner": null,
+            "submitterOfStudy": null,
+            "obfuscationCode": "",
+            "studyId": "MTBLS2400",
+            "studyStatus": "PUBLIC",
+            "studyCategory": "ms-mhd-legacy",
+            "view": true,
+            "edit": false,
+            "delete": false,
+            "reason": "reason-03",
+            "firstPrivateDate": "2021-01-18",
+            "scopes": {
+              "submission": [
+                "view"
+              ],
+              "metadata-files": [
+                "list",
+                "view",
+                "download"
+              ],
+              "data-files": [
+                "download"
+              ],
+              "data-files-index": [
+                "view"
+              ],
+              "study-publication": [
+                "view"
+              ],
+              "study-revision-date": [
+                "view"
+              ]
+            }
+          },
+          "createdAt": "2021-01-18T00:00:00",
+          "submitters": [
+            "kapil.singh@ukbb.ch"
+          ],
+          "reviewerAccessToken": "mtbls_5b3ff98c-fd3e-4d54-9fdf-eed168b81348",
+          "reviewExpirationDatetime": ""
+        },
+        "isaInvestigation": {
+          "comments": [
+            {
+              "name": "Created With Configuration",
+              "value": "MetaboLightsConfig20150707"
+            },
+            {
+              "name": "Last Opened With Configuration",
+              "value": "MetaboLightsConfig20150707"
+            }
+          ],
+          "identifier": "MTBLS2400",
+          "title": "Investigation",
+          "description": "Created using the MetaboLights Online Editor (MOE)",
+          "submissionDate": "2021-01-18",
+          "publicReleaseDate": "2021-06-21",
+          "filename": "",
+          "people": [],
+          "publications": [],
+          "ontologySourceReferences": [
+            {
+              "comments": [],
+              "name": "EFO",
+              "file": "http://data.bioontology.org/ontologies/EFO",
+              "version": "132",
+              "description": "Experimental Factor Ontology"
+            },
+            {
+              "comments": [],
+              "name": "NCIT",
+              "file": "",
+              "version": "",
+              "description": ""
+            },
+            {
+              "comments": [],
+              "name": "CHMO",
+              "file": "",
+              "version": "",
+              "description": ""
+            },
+            {
+              "comments": [],
+              "name": "OMIT",
+              "file": "",
+              "version": "",
+              "description": ""
+            },
+            {
+              "comments": [],
+              "name": "OBI",
+              "file": "http://data.bioontology.org/ontologies/OBI",
+              "version": "29",
+              "description": "Ontology for Biomedical Investigations"
+            },
+            {
+              "comments": [],
+              "name": "MTBLS",
+              "file": "https://www.ebi.ac.uk/metabolights/",
+              "version": "1",
+              "description": "Metabolights Ontology"
+            },
+            {
+              "comments": [],
+              "name": "CHEBI",
+              "file": "",
+              "version": "",
+              "description": ""
+            }
+          ],
+          "studies": [
+            {
+              "comments": [
+                {
+                  "name": "License",
+                  "value": "EMBL-EBI Terms of Use"
+                },
+                {
+                  "name": "Revision",
+                  "value": "2"
+                },
+                {
+                  "name": "Revision Date",
+                  "value": "2025-09-06"
+                },
+                {
+                  "name": "Revision Log",
+                  "value": "updating data license"
+                }
+              ],
+              "identifier": "MTBLS2400",
+              "filename": "s_MTBLS2400.txt",
+              "title": "Personalised therapeutic management of epileptic patients guided by pathway-driven breath metabolomics",
+              "description": "<p><strong>BACKGROUND: </strong>Therapeutic management of epilepsy remains a challenge, since optimal systemic antiseizure medication (ASM) concentrations do not always correlate with improved clinical outcome and minimal side effects. We tested the feasibility of non-invasive real-time breath metabolomics as an extension of traditional therapeutic drug monitoring for patient-stratification by simultaneously monitoring drug-related and drug-modulated metabolites.</p><p><strong>METHODS: </strong>This proof-of-principle observational study involved 93 breath measurements of 54 paediatric patients monitored over a period of 2.5 years, along with an adults\u2019 cohort of 37 patients measured in two different hospitals. Exhaled breath metabolome of epileptic patients was measured in real-time using secondary electrospray ionization-high resolution mass spectrometry (SESI-HRMS).</p><p><strong>RESULTS: </strong>We show that systemic ASM concentrations could be predicted by the breath test. Total and free valproic acid (VPA; an ASM) is predicted with concordance correlation coefficient (CCC) of 0.63 and 0.66, respectively. We also find i) high between- and within-subject heterogeneity in VPA metabolism; ii) several amino acid metabolic pathways are significantly enriched (p &lt; 0.01) in patients suffering from side effects and iii) tyrosine metabolism is significantly enriched (p &lt; 0.001), with downregulated pathway compounds in non-responders.</p><p><strong>CONCLUSIONS: </strong>These results show that real-time breath analysis of epileptic patients provides reliable estimations of systemic drug concentrations along with risk estimates for drug response and side effects.</p>",
+              "submissionDate": "2021-01-18",
+              "publicReleaseDate": "2021-06-21",
+              "people": [
+                {
+                  "comments": [],
+                  "firstName": "Kapil Dev",
+                  "lastName": "Singh",
+                  "email": "kapil.singh@ukbb.ch",
+                  "affiliation": "University Children's Hospital Basel and Department of Biomedical Engineering, University of Basel, Basel, Switzerland",
+                  "address": "Universit\u00c3\u00a4ts-Kinderspital beider Basel (UKBB), Spitalstrasse 33, 4056 Basel, Switzerland",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "+41 61 704 29 48",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Subinvestigator",
+                      "termSource": {
+                        "comments": [],
+                        "name": "NCIT",
+                        "file": "",
+                        "version": "",
+                        "description": ""
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C54622"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Pablo",
+                  "lastName": "Sinues",
+                  "email": "pablo.sinues@ukbb.ch",
+                  "affiliation": "University Children's Hospital Basel and Department of Biomedical Engineering, University of Basel, Basel, Switzerland",
+                  "address": "Universit\u00c3\u00a4ts-Kinderspital beider Basel (UKBB), Spitalstrasse 33, 4056 Basel, Switzerland",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "+41 61 704 29 49",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Principal Investigator",
+                      "termSource": {
+                        "comments": [],
+                        "name": "NCIT",
+                        "file": "",
+                        "version": "",
+                        "description": ""
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C19924"
+                    }
+                  ]
+                }
+              ],
+              "studyDesignDescriptors": [
+                {
+                  "comments": [],
+                  "annotationValue": "epilepsy",
+                  "termSource": {
+                    "comments": [],
+                    "name": "EFO",
+                    "file": "http://data.bioontology.org/ontologies/EFO",
+                    "version": "132",
+                    "description": "Experimental Factor Ontology"
+                  },
+                  "termAccession": "http://www.ebi.ac.uk/efo/EFO_0000474"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "secondary electrospray ionisation mass spectrometry",
+                  "termSource": {
+                    "comments": [],
+                    "name": "CHMO",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/CHMO_0000490"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "Breath Test",
+                  "termSource": {
+                    "comments": [],
+                    "name": "NCIT",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/NCIT_C116515"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "Drug Monitoring",
+                  "termSource": {
+                    "comments": [],
+                    "name": "OMIT",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/OMIT_0017334"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "untargeted metabolites",
+                  "termSource": {
+                    "comments": [],
+                    "name": "MTBLS",
+                    "file": "https://www.ebi.ac.uk/metabolights/",
+                    "version": "1",
+                    "description": "Metabolights Ontology"
+                  },
+                  "termAccession": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000279"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "volatile organic compound",
+                  "termSource": {
+                    "comments": [],
+                    "name": "CHEBI",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/CHEBI_134179"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "valproic acid",
+                  "termSource": {
+                    "comments": [],
+                    "name": "CHEBI",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/CHEBI_39867"
+                }
+              ],
+              "publications": [
+                {
+                  "comments": [],
+                  "title": "Personalised therapeutic management of epileptic patients guided by pathway-driven breath metabolomics",
+                  "authorList": "Singh Kapil Dev, Osswald Martin, Ziesenitz Victoria C., Awchi Mo, Usemann Jakob, Imbach Lukas L., Kohler Malcolm, Garc\u00eda-G\u00f3mez Diego, van den Anker Johannes, Frey Urs, Datta Alexandre N., Sinues Pablo",
+                  "pubMedID": "",
+                  "doi": "10.1038/s43856-021-00021-3",
+                  "status": {
+                    "comments": [],
+                    "annotationValue": "Published",
+                    "termSource": {
+                      "comments": [],
+                      "name": "EFO",
+                      "file": "http://data.bioontology.org/ontologies/EFO",
+                      "version": "132",
+                      "description": "Experimental Factor Ontology"
+                    },
+                    "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796"
+                  }
+                }
+              ],
+              "factors": [
+                {
+                  "comments": [],
+                  "factorName": "Age group",
+                  "factorType": {
+                    "comments": [],
+                    "annotationValue": "Age Group",
+                    "termSource": {
+                      "comments": [],
+                      "name": "NCIT",
+                      "file": "",
+                      "version": "",
+                      "description": ""
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/NCIT_C20587"
+                  }
+                },
+                {
+                  "comments": [],
+                  "factorName": "Gender",
+                  "factorType": {
+                    "comments": [],
+                    "annotationValue": "Gender",
+                    "termSource": {
+                      "comments": [],
+                      "name": "NCIT",
+                      "file": "",
+                      "version": "",
+                      "description": ""
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/NCIT_C17357"
+                  }
+                }
+              ],
+              "protocols": [
+                {
+                  "comments": [],
+                  "name": "Sample collection",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Sample collection",
+                    "termSource": null,
+                    "termAccession": ""
+                  },
+                  "description": "<p>66 paediatric epileptic patients (mean \u00b1 SD age, 10.7 \u00b1 3.9 years; 37 males and 29 females, see <strong>Supplementary Data 1</strong> in the paper associated with this study) from the University Children\u2019s Hospital Basel (UKBB), under treatment with various ASMs requiring TDM per standard care were enrolled in this study. Furthermore, we also used real-time breath data of 41 adult epileptic patients (mean \u00b1 SD age, 51.6 \u00b1 17.1 years; 29 male and 12 females, see<strong> Supplementary Data 1 </strong>in the paper associated with this study) from the University Hospital Zurich (USZ) to predict blood concentrations of total and free VPA. All subjects were under steady-state of their ASMs at the time of measurements.</p><p><br></p><p>In paediatric dataset (from UKBB) out of 123 attempted breath measurements (from 66 patients), 30 failed (see <strong>Supplementary Data 1</strong> in the paper associated with this study), whereas in adult dataset (from USZ) out of 41 attempted measurements (from 41 patients; in USZ there were no multiple visits from same patient during study duration), 4 failed (see <strong>Supplementary Data 1</strong> in the paper associated with this study). The reasons being either: i) patients suffered from severe neurological impairment, preventing them to understand the instructions of the exhalation manoeuvre, or that the side effects would not allow them to perform the breath test (hence they are unable), ii) some technical issue with instrument during patient visit, or iii) in rare cases clinical laboratories could not return blood concentration of (any) ASMs (see<strong> Supplementary Fig. 1 </strong>in the paper associated with this study). This means our final dataset used in the study contained 93 paediatric measurements (from 54 subjects) and 37 adult measurements (from 37 subjects).</p><p><br></p><p>Paediatric measurements/patients were further annotated as follows, no such annotations were made for adult dataset as it was only used to predict blood concentrations of total and free VPA.</p><p>Following the etiologic classification of epilepsy by the international league against epilepsy (ILAE)<strong>[1] </strong>paediatric patients were divided into three groups. Group 1 consisted of patients with <strong>epilepsies of structural origin</strong>, group 2 consisted of patients suffering from <strong>genetic epilepsies</strong>, as well as epilepsies of unknown origin and, finally, in order to differentiate them from genetic epileptic encephalopathies, group 3 consisted of <strong>developmental and epileptic encephalopathies</strong> was created. None of the enrolled paediatric patients were suffering from epilepsies of metabolic, immune or infectious origin.</p><p><br></p><p>In order to assess the clinical outcome of ASMs, we further classified each data point for three categories: <strong>side effects</strong>, <strong>response to medication and electroencephalography </strong>(EEG). Patients were labelled for each of these categories as <strong>classes I</strong>,<strong> II </strong>or<strong> III</strong> (see <strong>Supplementary Table 1 </strong>in the paper associated with this study for classes definitions). Side effects questionnaire PESQ<strong>[2]</strong> (see <strong>Supplementary Table 2</strong> in the paper associated with this study) was used to facilitate the side effect comparison for epilepsies of different origins.</p><p>&nbsp;</p><p class='ql-align-justify'>Subjects performed prolonged exhalations directly into SESI-HRMS system following <strong>blood </strong>draw for TDM (median = 21.2 min; IQR = 38.6 min). <strong>Fig. 1a </strong>in the paper associated with this study shows a representation of a child exhaling into the device (see <strong>Supplementary Fig. 2</strong> for bigger image in the paper associated with this study). During each measurement, the subjects provided 5\u20116 replicate exhalations both in positive and negative ion mode (see <strong>Fig. 1b </strong>and <strong>Fig. 1c</strong> associated with this study). The total time spent on the breath test was typically in the range of 10-15 min.</p><p class='ql-align-justify'><br></p><p class='ql-align-justify'><strong>Refs: </strong></p><p class='ql-align-justify'><strong>[1] </strong>Scheffer IE, Berkovic S, Capovilla G, Connolly MB, French J, Guilhoto L, Hirsch E, Jain S, Mathern GW, Mosh\u00e9 SL, Nordli DR, Perucca E, Tomson T, Wiebe S, Zhang YH, Zuberi SM. ILAE classification of the epilepsies: Position paper of the ILAE Commission for Classification and Terminology. Epilepsia. 2017 Apr;58(4):512-521. doi:10.1111/epi.13709. Epub 2017 Mar 8. PMID:28276062</p><p class='ql-align-justify'><strong>[2] </strong>Morita DA, Glauser TA, Modi AC. Development and validation of the Pediatric Epilepsy Side Effects Questionnaire. Neurology. 2012 Sep 18;79(12):1252-8. doi:10.1212/WNL.0b013e3182635b87. Epub 2012 Aug 8. PMID:22875082</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Extraction",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Extraction",
+                    "termSource": null,
+                    "termAccession": ""
+                  },
+                  "description": "<p>Extraction was not performed in this study.</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Post Extraction",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Derivatization",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Mass spectrometry",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Mass spectrometry",
+                    "termSource": null,
+                    "termAccession": ""
+                  },
+                  "description": "<p class='ql-align-justify'>All real-time breath mass spectrometry measurements were performed in full MS mode (scan range <em>m/z</em> 100-400, AGC target 1e6, and maximum injection time 500 ms) in both positive (microscans 2 and resolution of 140,000 at <em>m/z</em> 200) and negative (microscans 2 and resolution of 70,000 at <em>m/z </em>200) ion mode. Q Exactive <strong>Tune software</strong> (<strong>version 2.9</strong>) was used to directly control MS for these measurements. The MS was externally calibrated on a weekly basis using a commercially available calibration solution (Pierce Triple Quadrupole, extended mass range, Thermo Fisher Scientific, Germany) and internally calibrated by using common background mass spectrometric contaminant masses as lock masses (positive mode: <em>m/z</em> 149.02332, 279.15909, 355.06993, 371.10123, and 391.28429; negative mode: <em>m/z</em> 60.99312, 73.0295, 87.04515, 89.02442, 101.0608, 115.07645, 225.23295, and 283.26425), which correspond to common background mass spectrometric contaminants.</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Scan polarity",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Scan m/z range",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Instrument",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Ion source",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Mass analyzer",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Data transformation",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Data transformation",
+                    "termSource": null,
+                    "termAccession": ""
+                  },
+                  "description": "<p>Raw mass spectra data from paediatric training-set patients were converted into mzXML file format using <strong>ProteoWizard\u2019s msConvert</strong> (<strong>version 3.0.11233</strong>) and imported into <strong>MATLAB</strong> (<strong>version 2019b</strong>, MathWorks Inc., USA) for further analysis.&nbsp;</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Metabolite identification",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Metabolite identification",
+                    "termSource": null,
+                    "termAccession": ""
+                  },
+                  "description": "<p>First, each spectrum from all files were aligned using the RAFFT algorithm implemented in <strong>MATLAB[1]</strong>. Then <strong>MATLAB &nbsp;</strong>was used to appropriately pick and extract the final list of 3,252 features. Finally, mean of area under curve during each exhalation normalised by exhalation time (nAUC) was computed for each of these features in all measurements (see <strong>Fig. 1c </strong>in the paper associated with this study). This resulted in a data matrix of 75 \u00d7 3,252 (measurements \u00d7 mass spectral features; see <strong>Fig. 1d </strong>in the paper associated with this study). This data matrix was then used to develop models i) to predict drug concentrations (see<strong> Fig. 1e</strong> in the paper associated with this study) and ii) to predict side effect and drug-response scores (see<strong> Fig. 1f </strong>in the paper associated with this study).</p><p>&nbsp;</p><p>For VPA concentration prediction (see <strong>Fig.1e</strong> in the paper associated with this study), First, the full training-set was reduced to 240 features, which were present in at least 80% of the measurements whereby the patients were receiving VPA (i.e. drug-related features). Later features in the training-set were further reduced to only 11 VPA-related features (see<strong> Supplementary Table 4 </strong>in the paper associated with this study). Afterwards, extracted ion chromatograms (XICs) for these 11 features were directly extracted from all paediatric and adult measurements using <strong>inhouse C console app</strong> based on <strong>RawFileReader</strong> (<strong>version 5.0.0.38</strong>) an open source .Net assembly from Thermo Fisher Scientific. These XICs were then used to generate nAUC and three different matrices (UKBB training-set, UKBB test-set, and USZ test-set). The ComBat function from <strong>sva </strong>(<strong>version 3.34.0</strong>)<strong>[2] </strong>was then use to remove known batch effect from these matrices (see <strong>Supplementary Fig. 4</strong> and <strong>Supplementary Data 2</strong> in the paper associated with this study). This reduced training-set was finally used to screen for the best regression model (see <strong>Supplementary Fig. 5</strong> and <strong>6 </strong>in the paper associated with this study). Finally, we found Gaussian process regression using exponential kernel (i.e. eGPR) to be best performing on the training-set and hence it was used on independent test-set containing paediatric and adult patients for final predictions.</p><p>&nbsp;</p><p>In order to gain further insights into the rest of the metabolic signature captured in breath (see <strong>Fig. 1f </strong>in the paper associated with this study), firstly, the full training-set was reduced to 1005 features present in at least 50% of total measurements and with a CV greater than 30% (i.e. drug-regulated features). Later two sample t-test was performed followed by false discovery rate (see <strong>Supplementary Fig. 7</strong> in the paper associated with this study). Afterwards, <strong>MetaboAnalystR </strong>(<strong>version 2.0.4</strong>)<strong>[3] </strong>was used to add more biological insights into differentially abundant ions, by translating ions to metabolic pathways. The prediction of side effects vs no side effects and non-responders vs responders in training-set was conducted using significant metabolites identified by the enrichment analysis using first principle-component (PC1) score. On this score, using only training-set data, a cut-off was assigned (based on Youden's index) to separate predicted classes (see <strong>Supplementary Fig. 8</strong> in the paper associated with this study). Later, we projected UKBB test-set data on the training-set PC1 score to complete this analysis.</p><p><br></p><p><strong>Refs:</strong></p><p><strong>[1] </strong>Wong JW, Durante C, Cartwright HM. Application of fast Fourier transform cross-correlation for the alignment of large chromatographic and spectral datasets. Anal Chem. 2005 Sep 1;77(17):5655-61. doi:10.1021/ac050619p. PMID: 16131078</p><p><strong>[2] </strong>Leek JT, Johnson WE, Parker HS, Jaffe AE, Storey JD. The sva package for removing batch effects and other unwanted variation in high-throughput experiments. Bioinformatics. 2012 Mar 15;28(6):882-3. doi:10.1093/bioinformatics/bts034. Epub 2012 Jan 17. PMID:22257669</p><p><strong>[3] </strong>Chong J, Xia J. MetaboAnalystR: an R package for flexible and reproducible analysis of metabolomics data. Bioinformatics. 2018 Dec 15;34(24):4313-4314. doi:10.1093/bioinformatics/bty528. PMID: 29955821</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Direct infusion",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Direct infusion",
+                    "termSource": null,
+                    "termAccession": ""
+                  },
+                  "description": "<p class='ql-align-justify'>The analytical platform employed for real-time breath analysis consisted of a SESI source (SUPER-SESI, Fossil Ion Technology, Spain) coupled to a HRMS (Q Exactive Plus, Thermo Fisher Scientific, Germany; see <strong>Fig.1a</strong> and<strong> Supplementary Fig. 1</strong> in the paper associated with this study). The SESI ion source was fed with 0.1% ammonium formate in water solution, flowing (solution driving pressure 1.3 bar) through a 20 \u00b5m ID non-coated TaperTip silica capillary emitter (New Objective, USA) to generate electrospray. The settings of the SESI source were as follows: sheath gas flow rate 60, auxiliary gas flow rate 2, spray voltage 3.5 kV, capillary temperature 275 \u00b0C, and S-lens RF level 55.0. Under these conditions, the nano-electrospray currents were typically in the order of 130 nA. SESI temperatures were set at 130 \u00b0C for the sampling line and 90 \u00b0C for the ion source core.&nbsp;</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                }
+              ],
+              "assays": [
+                {
+                  "comments": [
+                    {
+                      "name": "Assay Identifier",
+                      "value": ""
+                    },
+                    {
+                      "name": "Assay Type Label",
+                      "value": "DI-MS"
+                    }
+                  ],
+                  "measurementType": {
+                    "comments": [],
+                    "annotationValue": "metabolite profiling",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000366"
+                  },
+                  "technologyType": {
+                    "comments": [],
+                    "annotationValue": "mass spectrometry",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000470"
+                  },
+                  "technologyPlatform": "Direct infusion MS - negative",
+                  "filename": "a_MTBLS2400_DI-MS_negative__metabolite_profiling.txt",
+                  "dataFiles": [],
+                  "processSequence": [],
+                  "sources": [],
+                  "samples": [],
+                  "otherMaterials": [],
+                  "characteristicCategories": [],
+                  "units": [],
+                  "graph": null
+                },
+                {
+                  "comments": [
+                    {
+                      "name": "Assay Identifier",
+                      "value": ""
+                    },
+                    {
+                      "name": "Assay Type Label",
+                      "value": "DI-MS"
+                    }
+                  ],
+                  "measurementType": {
+                    "comments": [],
+                    "annotationValue": "metabolite profiling",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000366"
+                  },
+                  "technologyType": {
+                    "comments": [],
+                    "annotationValue": "mass spectrometry",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000470"
+                  },
+                  "technologyPlatform": "Direct infusion MS - positive",
+                  "filename": "a_MTBLS2400_DI-MS_positive__metabolite_profiling.txt",
+                  "dataFiles": [],
+                  "processSequence": [],
+                  "sources": [],
+                  "samples": [],
+                  "otherMaterials": [],
+                  "characteristicCategories": [],
+                  "units": [],
+                  "graph": null
+                },
+                {
+                  "comments": [
+                    {
+                      "name": "Assay Identifier",
+                      "value": ""
+                    },
+                    {
+                      "name": "Assay Type Label",
+                      "value": "DI-MS"
+                    }
+                  ],
+                  "measurementType": {
+                    "comments": [],
+                    "annotationValue": "metabolite profiling",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000366"
+                  },
+                  "technologyType": {
+                    "comments": [],
+                    "annotationValue": "mass spectrometry",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000470"
+                  },
+                  "technologyPlatform": "Direct infusion MS - negative",
+                  "filename": "a_MTBLS2400_DI-MS_negative__metabolite_profiling.txt",
+                  "dataFiles": [],
+                  "processSequence": [],
+                  "sources": [],
+                  "samples": [],
+                  "otherMaterials": [],
+                  "characteristicCategories": [],
+                  "units": [],
+                  "graph": null
+                }
+              ],
+              "sources": [],
+              "samples": [],
+              "processSequence": [],
+              "characteristicCategories": [],
+              "units": []
+            }
+          ]
+        },
+        "validation": {
+          "errors": [],
+          "warnings": []
+        }
+      }
+    },
+    {
+      "accession": "MTBLS2436",
+      "files": [
+        "a_MTBLS2436_GC-MS_positive__metabolite_profiling-1.txt",
+        "i_Investigation.txt",
+        "m_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+        "s_MTBLS2436.txt"
+      ],
+      "isa": {
+        "a_MTBLS2436_GC-MS_positive__metabolite_profiling-1.txt": {
+          "n_lines": 14,
+          "preview": [
+            "Sample Name\tProtocol REF\tParameter Value[Post Extraction]\tParameter Value[Derivatization]\tExtract Name\tProtocol REF\tParameter Value[Chromatography Instrument]\tTerm Source REF\tTerm Accession Number\tParameter Value[Autosampler model]\tParameter Value[Column model]\tParameter Value[Column type]\tParameter Value[Guard column]\tLabeled Extract Name\tLabel\tTerm Source REF\tTerm Accession Number\tProtocol REF\tParameter Value[Scan polarity]\tParameter Value[Scan m/z range]\tParameter Value[Instrument]\tTerm Source REF\tTerm Accession Number\tParameter Value[Ion source]\tTerm Source REF\tTerm Accession Number\tParameter Value[Mass analyzer]\tTerm Source REF\tTerm Accession Number\tMS Assay Name\tRaw Spectral Data File\tProtocol REF\tNormalization Name\tDerived Spectral Data File\tProtocol REF\tData Transformation Name\tMetabolite Assignment File",
+            "Blank\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tBlank Hexane\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tBlank\tFILES/RAW_FILES/Primary_Adipocyte_Forskolin_media_blank_151119112806.RAW\tData transformation\tBlank\t\tMetabolite identification\tBlank\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+            "Forskolin Control 1\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tAqueous Phase Extract\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tForskolin Control 1\tFILES/RAW_FILES/24hr_serumfree_Adipomedia_Forskolin_C2_160212102623.RAW\tData transformation\tForskolin Control 1\t\tMetabolite identification\tForskolin Control 1\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+            "Forskolin Control 2\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tAqueous Phase Extract\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tForskolin Control 2\tFILES/RAW_FILES/24hr_serumfree_Adipomedia_Forskolin_C3_160212122550.RAW\tData transformation\tForskolin Control 2\t\tMetabolite identification\tForskolin Control 2\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+            "Forskolin Control 3\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tAqueous Phase Extract\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tForskolin Control 3\tFILES/RAW_FILES/24hr_serumfree_Adipomedia_Forskolin_C4_160212130528.RAW\tData transformation\tForskolin Control 3\t\tMetabolite identification\tForskolin Control 3\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+            "Forskolin 1uM 1\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tAqueous Phase Extract\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tForskolin 1uM 1\tFILES/RAW_FILES/24hr_serumfree_Adipomedia_Forskolin_1uM_2_160212114600.RAW\tData transformation\tForskolin 1uM 1\t\tMetabolite identification\tForskolin 1uM 1\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+            "Forskolin 1uM 2\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tAqueous Phase Extract\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tForskolin 1uM 2\tFILES/RAW_FILES/24hr_serumfree_Adipomedia_Forskolin_1uM3_160212134520.RAW\tData transformation\tForskolin 1uM 2\t\tMetabolite identification\tForskolin 1uM 2\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv",
+            "Forskolin 1uM 3\tExtraction\tMeOH:CHCl3 (2:1; v:v)\tmethoxyamine hydrochloride / N-methyl-N-trimethylsilyltrifluoroacetamide\tAqueous Phase Extract\tChromatography\tThermo Electron TRACE GC Ultra\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000921\t\tZebron ZB-5 GC (0.25 \u00b5m, 0.25 mm x 30 m; Phenomenex)\tlow polarity\t\t\t\t\t\tMass spectrometry\tpositive\t50 - 650\tThermo Scientific DSQ II\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000997\telectron ionization\tMS\thttp://purl.obolibrary.org/obo/MS_1000389\tquadrupole\tMS\thttp://purl.obolibrary.org/obo/MS_1000081\tForskolin 1uM 3\tFILES/RAW_FILES/24hr_serumfree_Adipomedia_Forskolin_1uM_4_160212110612.RAW\tData transformation\tForskolin 1uM 3\t\tMetabolite identification\tForskolin 1uM 3\tm_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv"
+          ]
+        },
+        "i_Investigation.txt": {
+          "n_lines": 97,
+          "preview": [
+            "ONTOLOGY SOURCE REFERENCE",
+            "Term Source Name\tOBI\tMTBLS\tOMIT\tEFO\tNCIT\t\tCHMO",
+            "Term Source File\thttp://data.bioontology.org/ontologies/OBI\thttps://www.ebi.ac.uk/metabolights/\t\t\t\thttp://purl.obolibrary.org/obo/ncit.owl\t",
+            "Term Source Version\t29\t1.0\t\t2021-02-04\t\t18.10e\t",
+            "Term Source Description\tOntology for Biomedical Investigations\tMetabolights Ontology\t\t\t\tNCI Thesaurus OBO Edition\t",
+            "INVESTIGATION",
+            "Investigation Identifier\tMTBLS2436",
+            "Investigation Title\tInvestigation"
+          ]
+        },
+        "m_MTBLS2436_GC-MS_positive__metabolite_profiling-1_v2_maf.tsv": {
+          "n_lines": 235,
+          "preview": [
+            "database_identifier\tchemical_formula\tsmiles\tinchi\tmetabolite_identification\tmass_to_charge\tfragmentation\tmodifications\tcharge\tretention_time\ttaxid\tspecies\tdatabase\tdatabase_version\treliability\turi\tsearch_engine\tsearch_engine_score\tsmallmolecule_abundance_sub\tsmallmolecule_abundance_stdev_sub\tsmallmolecule_abundance_std_error_sub\tBlank\tForskolin Control 1\tForskolin Control 2\tForskolin Control 3\tForskolin 1uM 1\tForskolin 1uM 2\tForskolin 1uM 3\tPPARdelta Control 1\tPPARdelta Control 2\tPPARdelta Control 3\tPPARdelta 100nM 1\tPPARdelta 100nM 2\tPPARdelta 100nM 3",
+            "CHEBI:27856\tC2H5NO\tCC(N)=O\tInChI=1S/C2H5NO/c1-2(3)4/h1H3,(H2,3,4)\tacetamide\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t3.32E-05\t0.000367622\t0.000194941\t0.000420407\t0.000464778\t0.00038622",
+            "CHEBI:16135\tC4H8O2\tCC(C)C(O)=O\tInChI=1S/C4H8O2/c1-3(2)4(5)6/h3H,1-2H3,(H,5,6)\tisobutyric acid\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t0.000478521\t0.000574107\t0.000585688\t6.63E-05\t0.000858541\t0.000691714\t3.15E-06\t0.000556374\t0.000468024\t0.000580429\t0.000515221\t0.000794177",
+            "CHEBI:16000\tC2H7NO\tNCCO\tInChI=1S/C2H7NO/c3-1-2-4/h4H,1-3H2\tethanolamine\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t3.64E-05\t0.00130203\t0.001748412\t0.001043213\t0.000731739\t0.002848862",
+            "unknown\tunknown\tunknown\tunknown\tunknown_4.35\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t5.48E-05\t0.014802771\t0.013949933\t0.017829757\t0.020232836\t0.013668069",
+            "CHEBI:78320\tC3H6O3\tCC(O)C(O)=O\tInChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)\tlactate\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t0.23158319\t0.202340494\t0.208890818\t0.23061212\t0.24314295\t0.234222976\t0.215022696\t0.207265062\t0.225296001\t0.214106725\t0.21477569\t0.256702485",
+            "CHEBI:17497\tC2H4O3\tOCC(O)=O\tInChI=1S/C2H4O3/c3-1-2(4)5/h3H,1H2,(H,4,5)\tglycolic acid\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t2.81E-05\t2.98E-05\t2.76E-05\t1.29E-05\t1.63E-05\t2.06E-05\t1.09E-05\t3.23E-05\t2.62E-05\t3.69E-05\t3.35E-05\t3.39E-05",
+            "CHEBI:16449\tC3H7NO2\tCC(N)C(O)=O\tInChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)\talanine\t\t\t\t\t\t\t\tNIST Library MS Search\t2\t\t\t\t\t\t\t\t0\t\t\t\t\t\t\t0.000279592\t0.000115002\t0.000197647\t0.000184253\t0.000364723\t0.000212716"
+          ],
+          "mapped_vocs": []
+        },
+        "s_MTBLS2436.txt": {
+          "n_lines": 14,
+          "preview": [
+            "Source Name\tCharacteristics[Organism]\tTerm Source REF\tTerm Accession Number\tCharacteristics[Organism part]\tTerm Source REF\tTerm Accession Number\tCharacteristics[Variant]\tTerm Source REF\tTerm Accession Number\tCharacteristics[Sample type]\tTerm Source REF\tTerm Accession Number\tProtocol REF\tSample Name\tFactor Value[Treatment]\tTerm Source REF\tTerm Accession Number\tFactor Value[Replicate]\tTerm Source REF\tTerm Accession Number",
+            "Blank\tblank\t\t\tblank\t\t\t\t\t\texperimental blank\tMTBLS\thttp://www.ebi.ac.uk/metabolights/ontology/MTBLS_000218\tSample collection\tBlank\t\t\t\t\t\t",
+            "Forskolin Control 1\tMus musculus\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_10090\tadipocyte\tBTO\thttp://purl.obolibrary.org/obo/BTO_0000443\tC57BL/6J\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0000606\texperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tForskolin Control 1\tcontrol\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0001461\t1\t\t",
+            "Forskolin Control 2\tMus musculus\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_10090\tadipocyte\tBTO\thttp://purl.obolibrary.org/obo/BTO_0000443\tC57BL/6J\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0000606\texperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tForskolin Control 2\tcontrol\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0001461\t2\t\t",
+            "Forskolin Control 3\tMus musculus\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_10090\tadipocyte\tBTO\thttp://purl.obolibrary.org/obo/BTO_0000443\tC57BL/6J\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0000606\texperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tForskolin Control 3\tcontrol\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0001461\t3\t\t",
+            "Forskolin 1uM 1\tMus musculus\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_10090\tadipocyte\tBTO\thttp://purl.obolibrary.org/obo/BTO_0000443\tC57BL/6J\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0000606\texperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tForskolin 1uM 1\tforskolin\tCHEBI\thttp://purl.obolibrary.org/obo/CHEBI_42471\t1\t\t",
+            "Forskolin 1uM 2\tMus musculus\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_10090\tadipocyte\tBTO\thttp://purl.obolibrary.org/obo/BTO_0000443\tC57BL/6J\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0000606\texperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tForskolin 1uM 2\tforskolin\tCHEBI\thttp://purl.obolibrary.org/obo/CHEBI_42471\t2\t\t",
+            "Forskolin 1uM 3\tMus musculus\tNCBITAXON\thttp://purl.obolibrary.org/obo/NCBITaxon_10090\tadipocyte\tBTO\thttp://purl.obolibrary.org/obo/BTO_0000443\tC57BL/6J\tEFO\thttp://www.ebi.ac.uk/efo/EFO_0000606\texperimental sample\tCHMO\thttp://purl.obolibrary.org/obo/CHMO_0002746\tSample collection\tForskolin 1uM 3\tforskolin\tCHEBI\thttp://purl.obolibrary.org/obo/CHEBI_42471\t3\t\t"
+          ]
+        }
+      },
+      "study_http_status": 200,
+      "study_meta": {
+        "mtblsStudy": {
+          "studyStatus": "Public",
+          "curationRequest": "MANUAL_CURATION",
+          "modifiedTime": "2026-04-14T22:38:43.125112",
+          "statusUpdateTime": "2022-03-03T15:39:15.787209",
+          "read_access": true,
+          "write_access": false,
+          "is_curator": false,
+          "revisionNumber": 2,
+          "revisionDatetime": "2025-09-06T21:45:31.928483",
+          "revisionStatus": 3,
+          "revisionComment": "updating data license",
+          "revisionTaskMessage": "Public FTP Folder sync task completed.",
+          "mhdSubmissionStatus": "",
+          "studyHttpUrl": "http://ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS2436",
+          "studyFtpUrl": "ftp://ftp.ebi.ac.uk/pub/databases/metabolights/studies/public/MTBLS2436",
+          "studyGlobusUrl": "https://app.globus.org/file-manager?origin_id=47772002-3e5b-4fd3-b97c-18cee38d6df2&origin_path=/pub/databases/metabolights/studies/public/MTBLS2436",
+          "studyAsperaPath": "/studies/public/MTBLS2436",
+          "firstPrivateDate": "2021-01-29T16:50:35.951000",
+          "firstPublicDate": "2022-03-03T00:00:00",
+          "sampleTemplate": "minimum",
+          "studyCategory": "ms-mhd-legacy",
+          "mhdAccession": "",
+          "mhdModelVersion": "0.1",
+          "datasetLicense": "EMBL-EBI Terms of Use",
+          "datasetLicenseUrl": "https://www.ebi.ac.uk/about/terms-of-use/",
+          "templateVersion": "1.0",
+          "studyPermission": {
+            "userName": null,
+            "userRole": null,
+            "partner": null,
+            "submitterOfStudy": null,
+            "obfuscationCode": "",
+            "studyId": "MTBLS2436",
+            "studyStatus": "PUBLIC",
+            "studyCategory": "ms-mhd-legacy",
+            "view": true,
+            "edit": false,
+            "delete": false,
+            "reason": "reason-03",
+            "firstPrivateDate": "2021-01-29",
+            "scopes": {
+              "submission": [
+                "view"
+              ],
+              "metadata-files": [
+                "list",
+                "view",
+                "download"
+              ],
+              "data-files": [
+                "download"
+              ],
+              "data-files-index": [
+                "view"
+              ],
+              "study-publication": [
+                "view"
+              ],
+              "study-revision-date": [
+                "view"
+              ]
+            }
+          },
+          "createdAt": "2021-01-29T00:00:00",
+          "submitters": [
+            "l.d.roberts@leeds.ac.uk"
+          ],
+          "reviewerAccessToken": "mtbls_e51bad27-9e29-4cca-8eba-25184e886018",
+          "reviewExpirationDatetime": ""
+        },
+        "isaInvestigation": {
+          "comments": [
+            {
+              "name": "Created With Configuration",
+              "value": "MetaboLightsConfig20150707"
+            },
+            {
+              "name": "Last Opened With Configuration",
+              "value": "MetaboLightsConfig20150707"
+            }
+          ],
+          "identifier": "MTBLS2436",
+          "title": "Investigation",
+          "description": "Created using the MetaboLights Online Editor (MOE)",
+          "submissionDate": "2021-01-29",
+          "publicReleaseDate": "2022-03-03",
+          "filename": "",
+          "people": [],
+          "publications": [],
+          "ontologySourceReferences": [
+            {
+              "comments": [],
+              "name": "OBI",
+              "file": "http://data.bioontology.org/ontologies/OBI",
+              "version": "29",
+              "description": "Ontology for Biomedical Investigations"
+            },
+            {
+              "comments": [],
+              "name": "MTBLS",
+              "file": "https://www.ebi.ac.uk/metabolights/",
+              "version": "1.0",
+              "description": "Metabolights Ontology"
+            },
+            {
+              "comments": [],
+              "name": "OMIT",
+              "file": "",
+              "version": "",
+              "description": ""
+            },
+            {
+              "comments": [],
+              "name": "EFO",
+              "file": "",
+              "version": "2021-02-04",
+              "description": ""
+            },
+            {
+              "comments": [],
+              "name": "NCIT",
+              "file": "",
+              "version": "",
+              "description": ""
+            },
+            {
+              "comments": [],
+              "name": "",
+              "file": "http://purl.obolibrary.org/obo/ncit.owl",
+              "version": "18.10e",
+              "description": "NCI Thesaurus OBO Edition"
+            },
+            {
+              "comments": [],
+              "name": "CHMO",
+              "file": "",
+              "version": "",
+              "description": ""
+            }
+          ],
+          "studies": [
+            {
+              "comments": [
+                {
+                  "name": "License",
+                  "value": "EMBL-EBI Terms of Use"
+                },
+                {
+                  "name": "Revision",
+                  "value": "2"
+                },
+                {
+                  "name": "Revision Date",
+                  "value": "2025-09-06"
+                },
+                {
+                  "name": "Revision Log",
+                  "value": "updating data license"
+                }
+              ],
+              "identifier": "MTBLS2436",
+              "filename": "s_MTBLS2436.txt",
+              "title": "Brown and beige adipose tissue regulate systemic metabolism through a metabolite interorgan signaling axis",
+              "description": "Brown and beige adipose tissue are emerging as distinct endocrine organs. These tissues are functionally associated with skeletal muscle, adipose tissue metabolism and systemic energy expenditure, suggesting an interorgan signaling network. Using metabolomics, we identify 3-methyl-2-oxovaleric acid, 5-oxoproline, and \u03b2-hydroxyisobutyric acid as small molecule metabokines synthesized in browning adipocytes and secreted via monocarboxylate transporters. 3-methyl-2-oxovaleric acid, 5-oxoproline and \u03b2-hydroxyisobutyric acid induce a brown adipocyte-specific phenotype in white adipocytes and mitochondrial oxidative energy metabolism in skeletal myocytes both in vitro and in vivo. 3-methyl-2-oxovaleric acid and 5-oxoproline signal through cAMP-PKA-p38 MAPK and \u03b2-hydroxyisobutyric acid via mTOR. In humans, plasma and adipose tissue 3-methyl-2-oxovaleric acid, 5-oxoproline and \u03b2-hydroxyisobutyric acid concentrations correlate with markers of adipose browning and inversely associate with body mass index. These metabolites reduce adiposity, increase energy expenditure and improve glucose and insulin homeostasis in mouse models of obesity and diabetes. Our findings identify beige adipose-brown adipose-muscle physiological metabokine crosstalk.",
+              "submissionDate": "2021-01-29",
+              "publicReleaseDate": "2022-03-03",
+              "people": [
+                {
+                  "comments": [],
+                  "firstName": "Anna",
+                  "lastName": "Whitehead",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Fynn N",
+                  "lastName": "Krause",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Amy",
+                  "lastName": "Moran",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Amanda D V",
+                  "lastName": "MacCannell",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Jason L",
+                  "lastName": "Scragg",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Ben D",
+                  "lastName": "McNally",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Edward",
+                  "lastName": "Boateng",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Steven A",
+                  "lastName": "Murfitt",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Samuel",
+                  "lastName": "Virtue",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "John",
+                  "lastName": "Wright",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Jack",
+                  "lastName": "Garnham",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Graeme R",
+                  "lastName": "Davies",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "James",
+                  "lastName": "Dodgson",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Jurgen E",
+                  "lastName": "Schneider",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Andrew J",
+                  "lastName": "Murray",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Christopher",
+                  "lastName": "Church",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Antonio",
+                  "lastName": "Vidal-Puig",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Klaus K",
+                  "lastName": "Witte",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Julian L",
+                  "lastName": "Griffin",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                },
+                {
+                  "comments": [],
+                  "firstName": "Lee D",
+                  "lastName": "Roberts",
+                  "email": "",
+                  "affiliation": "",
+                  "address": "",
+                  "fax": "",
+                  "midInitials": "",
+                  "phone": "",
+                  "roles": [
+                    {
+                      "comments": [],
+                      "annotationValue": "Author",
+                      "termSource": {
+                        "comments": [],
+                        "name": "",
+                        "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                        "version": "18.10e",
+                        "description": "NCI Thesaurus OBO Edition"
+                      },
+                      "termAccession": "http://purl.obolibrary.org/obo/NCIT_C42781"
+                    }
+                  ]
+                }
+              ],
+              "studyDesignDescriptors": [
+                {
+                  "comments": [],
+                  "annotationValue": "untargeted metabolites",
+                  "termSource": {
+                    "comments": [],
+                    "name": "MTBLS",
+                    "file": "https://www.ebi.ac.uk/metabolights/",
+                    "version": "1.0",
+                    "description": "Metabolights Ontology"
+                  },
+                  "termAccession": "http://www.ebi.ac.uk/metabolights/ontology/MTBLS_000279"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "adipose browning",
+                  "termSource": {
+                    "comments": [],
+                    "name": "MTBLS",
+                    "file": "https://www.ebi.ac.uk/metabolights/",
+                    "version": "1.0",
+                    "description": "Metabolights Ontology"
+                  },
+                  "termAccession": "http://www.ebi.ac.uk/metabolights/ontology/placeholder"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "Obesity",
+                  "termSource": {
+                    "comments": [],
+                    "name": "NCIT",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/NCIT_C3283"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "diabetes mellitus",
+                  "termSource": {
+                    "comments": [],
+                    "name": "EFO",
+                    "file": "",
+                    "version": "2021-02-04",
+                    "description": ""
+                  },
+                  "termAccession": "http://www.ebi.ac.uk/efo/EFO_0000400"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "interorgan signaling axis",
+                  "termSource": {
+                    "comments": [],
+                    "name": "MTBLS",
+                    "file": "https://www.ebi.ac.uk/metabolights/",
+                    "version": "1.0",
+                    "description": "Metabolights Ontology"
+                  },
+                  "termAccession": "http://www.ebi.ac.uk/metabolights/ontology/placeholder"
+                },
+                {
+                  "comments": [],
+                  "annotationValue": "gas chromatography-mass spectrometry",
+                  "termSource": {
+                    "comments": [],
+                    "name": "CHMO",
+                    "file": "",
+                    "version": "",
+                    "description": ""
+                  },
+                  "termAccession": "http://purl.obolibrary.org/obo/CHMO_0000497"
+                }
+              ],
+              "publications": [
+                {
+                  "comments": [],
+                  "title": "Brown and beige adipose tissue regulate systemic metabolism through a metabolite interorgan signaling axis.",
+                  "authorList": "Whitehead A, Krause FN, Moran A, MacCannell ADV, Scragg JL, McNally BD, Boateng E, Murfitt SA, Virtue S, Wright J, Garnham J, Davies GR, Dodgson J, Schneider JE, Murray AJ, Church C, Vidal-Puig A, Witte KK, Griffin JL, Roberts LD.",
+                  "pubMedID": "33772024",
+                  "doi": "10.1038/s41467-021-22272-3",
+                  "status": {
+                    "comments": [],
+                    "annotationValue": "Published",
+                    "termSource": {
+                      "comments": [],
+                      "name": "EFO",
+                      "file": "",
+                      "version": "2021-02-04",
+                      "description": ""
+                    },
+                    "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796"
+                  }
+                }
+              ],
+              "factors": [
+                {
+                  "comments": [],
+                  "factorName": "Treatment",
+                  "factorType": {
+                    "comments": [],
+                    "annotationValue": "treatment",
+                    "termSource": {
+                      "comments": [],
+                      "name": "EFO",
+                      "file": "",
+                      "version": "2021-02-04",
+                      "description": ""
+                    },
+                    "termAccession": "http://www.ebi.ac.uk/efo/EFO_0000727"
+                  }
+                },
+                {
+                  "comments": [],
+                  "factorName": "Replicate",
+                  "factorType": {
+                    "comments": [],
+                    "annotationValue": "replicate",
+                    "termSource": {
+                      "comments": [],
+                      "name": "EFO",
+                      "file": "",
+                      "version": "2021-02-04",
+                      "description": ""
+                    },
+                    "termAccession": "http://www.ebi.ac.uk/efo/EFO_0000683"
+                  }
+                }
+              ],
+              "protocols": [
+                {
+                  "comments": [],
+                  "name": "Sample collection",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Sample collection",
+                    "termSource": {
+                      "comments": [],
+                      "name": "",
+                      "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                      "version": "18.10e",
+                      "description": "NCI Thesaurus OBO Edition"
+                    },
+                    "termAccession": ""
+                  },
+                  "description": "<p>Primary <strong>white adipose stromal vascular cells </strong>were fractionated from 6- to 10-w-old <strong>C57BL/6J male mice</strong> as previously described<strong>[1],[2]</strong>. Stromal vascular cells were then cultured and differentiated into <strong>adipocytes </strong>according to published methods<strong>[1],[3]</strong>. During the 6-d differentiation, cells were cultured with 100 nM GW0742 (Sigma Aldrich), 250 nM HIC (Sigma Aldrich), 10 \u03bcM AKV (Sigma Aldrich), 5 \u03bcM AHI (Sigma Aldrich), 20 \u03bcM MOVA (Sigma Aldrich), 20 \u03bcM 5OP (Sigma Aldrich), 20 \u03bcM BHIBA (Sigma Aldrich), and 10 \u03bcM BHIVA (Sigma Aldrich) or with 1 \u03bcM forskolin (Sigma Aldrich) on days 5\u20136 of differentiation. For media transfer experiments, treatment media was removed, cells were washed 3 times with phosphate-buffered saline (PBS), and 1.1-ml serum-free media was conditioned on fully differentiated primary <strong>white adipocytes</strong> that had remained untreated (<strong>control</strong>) or had received either 100 nM GW0742 throughout differentiation or 1 \u03bcM forskolin on days 5\u20136 of differentiation within each well of a 12-well plate. <strong>Media </strong>was removed after 24 hrs. <strong>Media </strong>was boiled at 100 \u00b0C for 5 min for denaturation experiments. <strong>Conditioned media</strong> (1 ml) was added to na\u00efve fully differentiated primary <strong>adipocytes </strong>in each well of a 12-well plate. For assessment of aqueous fraction bioactivity and metabolomic analysis, after 24 h conditioning on cells, <strong>serum-free media</strong> was removed from the cells and spun at 600 g for 2 min to remove debris. Aqueous soluble metabolites were extracted from 1 ml of conditioned <strong>media </strong>as previously described<strong>[4]</strong>. For aqueous fraction bioactivity assessment, dried aqueous fractions were then reconstituted in 1 ml of fresh <strong>serum-free media</strong> by vortex-mixing (5 min) followed by sonication (15 min) and then added to na\u00efve <strong>primary adipocytes</strong> in a 12-well plate for 24 h. <strong>Mouse primary brown preadipocytes</strong> were isolated from <strong>C57BL6/J mice</strong>, cultured and differentiated according to established protocols<strong>[5]</strong>.</p><p><br></p><p><strong>Refs:</strong></p><p><strong>[1] </strong>Roberts LD, Bostr\u00f6m P, O'Sullivan JF, Schinzel RT, Lewis GD, Dejam A, Lee YK, Palma MJ, Calhoun S, Georgiadi A, Chen MH, Ramachandran VS, Larson MG, Bouchard C, Rankinen T, Souza AL, Clish CB, Wang TJ, Estall JL, Soukas AA, Cowan CA, Spiegelman BM, Gerszten RE. \u03b2-Aminoisobutyric acid induces browning of white fat and hepatic \u03b2-oxidation and is inversely correlated with cardiometabolic risk factors. Cell Metab. 2014 Jan 7;19(1):96-108. doi: 10.1016/j.cmet.2013.12.003. PMID: 24411942</p><p><strong>[2] </strong>Seale P, Conroe HM, Estall J, Kajimura S, Frontini A, Ishibashi J, Cohen P, Cinti S, Spiegelman BM. Prdm16 determines the thermogenic program of subcutaneous white adipose tissue in mice. J Clin Invest. 2011 Jan;121(1):96-105. doi: 10.1172/JCI44271. Epub 2010 Dec 1. PMID: 21123942</p><p><strong>[3] </strong>Roberts LD, Ashmore T, Kotwica AO, Murfitt SA, Fernandez BO, Feelisch M, Murray AJ, Griffin JL. Inorganic nitrate promotes the browning of white adipose tissue through the nitrate-nitrite-nitric oxide pathway. Diabetes. 2015 Feb;64(2):471-484. doi: 10.2337/db14-0496. Epub 2014 Sep 23. PMID: 25249574</p><p><strong>[4] </strong>Roberts LD, Murray AJ, Menassa D, Ashmore T, Nicholls AW, Griffin JL. The contrasting roles of PPAR\u03b4 and PPAR\u03b3 in regulating the metabolic switch between oxidation and storage of fats in white adipose tissue. Genome Biol. 2011 Aug 11;12(8):R75. doi: 10.1186/gb-2011-12-8-r75. PMID: 21843327</p><p><strong>[5] </strong>Fasshauer M, Klein J, Kriauciunas KM, Ueki K, Benito M, Kahn CR. Essential role of insulin receptor substrate 1 in differentiation of brown adipocytes. Mol Cell Biol. 2001 Jan;21(1):319-29. doi: 10.1128/MCB.21.1.319-329.2001. PMID: 11113206</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Extraction",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Extraction",
+                    "termSource": {
+                      "comments": [],
+                      "name": "",
+                      "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                      "version": "18.10e",
+                      "description": "NCI Thesaurus OBO Edition"
+                    },
+                    "termAccession": ""
+                  },
+                  "description": "<p>Methanol-chloroform (2:1, 600 \u03bcl) was added to collected media 500 \u03bcl and the samples were sonicated for 15 minutes. Chloroform-water (1:1) was then added (200 \u03bcl of each). Samples were centrifuged (16,100 g, 20 minutes) and the organic and aqueous phases were separated and stored at -80\u00b0C until analysis.</p><p><br></p><p>Dried aqueous phase samples were derivatized using methoxyamine hydrochloride solution (20 mg/ml in pyridine; Sigma-Aldrich) and 30 \u03bcl of&nbsp;N-methyl-N-trimethylsilyltrifluoroacetamide (Macherey-Nagel, Duran, Germany).</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Post Extraction",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Derivatization",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Chromatography",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Chromatography",
+                    "termSource": {
+                      "comments": [],
+                      "name": "",
+                      "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                      "version": "18.10e",
+                      "description": "NCI Thesaurus OBO Edition"
+                    },
+                    "termAccession": ""
+                  },
+                  "description": "<p>All GC-MS analyses were made using a Trace GC Ultra coupled to a Trace DSQ II single-quadrupole mass spectrometer (Thermo Scientific, Cheshire, UK). Derivatized aqueous samples were injected splitless onto a 30 m \u00d7 0.25 mm 5% phenylpolysilphenylene-siloxane column with a 0.25 \u03bcm ZB-5 ms stationary phase (Phenomenex). The injector temperature was 230 \u00b0C, and the helium carrier gas was used at a flow rate of 1.2 ml/min. The initial column temperature of 70 \u00b0C was increased by 10 \u00b0C/min to 130 \u00b0C and then increased at a rate of 5 \u00b0C/min to 230 \u00b0C followed by an increase of 20 \u00b0C/min to 310 \u00b0C and held for 5 min (transfer line temperature = 250 \u00b0C).</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Chromatography Instrument",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Autosampler model",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Column model",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Column type",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Guard column",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Mass spectrometry",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Mass spectrometry",
+                    "termSource": {
+                      "comments": [],
+                      "name": "",
+                      "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                      "version": "18.10e",
+                      "description": "NCI Thesaurus OBO Edition"
+                    },
+                    "termAccession": ""
+                  },
+                  "description": "<p>Trace DSQ II single-quadrupole mass spectrometer (Thermo Scientific, Cheshire, UK) was operated with an ion source temperature of 250 \u00b0C and electron ionization (EI) energy of 70 eV with positive ionisation. The detector was turned on after 240 s, and full-scan spectra were collected using 3 scans/s over a range of 50-650&nbsp;m/z.</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Scan polarity",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Scan m/z range",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Instrument",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Ion source",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    },
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "Mass analyzer",
+                        "termSource": {
+                          "comments": [],
+                          "name": "",
+                          "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                          "version": "18.10e",
+                          "description": "NCI Thesaurus OBO Edition"
+                        },
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Data transformation",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Data transformation",
+                    "termSource": {
+                      "comments": [],
+                      "name": "",
+                      "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                      "version": "18.10e",
+                      "description": "NCI Thesaurus OBO Edition"
+                    },
+                    "termAccession": ""
+                  },
+                  "description": "<p>No data transformation was performed in this study. </p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                },
+                {
+                  "comments": [],
+                  "name": "Metabolite identification",
+                  "protocolType": {
+                    "comments": [],
+                    "annotationValue": "Metabolite identification",
+                    "termSource": {
+                      "comments": [],
+                      "name": "",
+                      "file": "http://purl.obolibrary.org/obo/ncit.owl",
+                      "version": "18.10e",
+                      "description": "NCI Thesaurus OBO Edition"
+                    },
+                    "termAccession": ""
+                  },
+                  "description": "<p>GC-MS chromatograms were processed using <strong>Xcalibur </strong>(<strong>version 2.0</strong>; Thermo Electron). Each individual peak was integrated and then normalized to total metabolite concentration. Overlapping peaks were separated using traces of single ions.</p><p>Peak assignment was based on mass fragmentation patterns matched to the <strong>National Institute of Standards and Technology</strong> (<strong>NIST</strong>) library, previously reported literature and comparison to commercially available standards.</p>",
+                  "uri": "",
+                  "version": "",
+                  "parameters": [
+                    {
+                      "comments": [],
+                      "parameterName": {
+                        "comments": [],
+                        "annotationValue": "",
+                        "termSource": null,
+                        "termAccession": ""
+                      }
+                    }
+                  ],
+                  "components": []
+                }
+              ],
+              "assays": [
+                {
+                  "comments": [
+                    {
+                      "name": "Assay Identifier",
+                      "value": ""
+                    },
+                    {
+                      "name": "Assay Type Label",
+                      "value": "GC-MS"
+                    }
+                  ],
+                  "measurementType": {
+                    "comments": [],
+                    "annotationValue": "metabolite profiling",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000366"
+                  },
+                  "technologyType": {
+                    "comments": [],
+                    "annotationValue": "mass spectrometry",
+                    "termSource": {
+                      "comments": [],
+                      "name": "OBI",
+                      "file": "http://data.bioontology.org/ontologies/OBI",
+                      "version": "29",
+                      "description": "Ontology for Biomedical Investigations"
+                    },
+                    "termAccession": "http://purl.obolibrary.org/obo/OBI_0000470"
+                  },
+                  "technologyPlatform": "Gas Chromatography MS - positive",
+                  "filename": "a_MTBLS2436_GC-MS_positive__metabolite_profiling-1.txt",
+                  "dataFiles": [],
+                  "processSequence": [],
+                  "sources": [],
+                  "samples": [],
+                  "otherMaterials": [],
+                  "characteristicCategories": [],
+                  "units": [],
+                  "graph": null
+                }
+              ],
+              "sources": [],
+              "samples": [],
+              "processSequence": [],
+              "characteristicCategories": [],
+              "units": []
+            }
+          ]
+        },
+        "validation": {
+          "errors": [],
+          "warnings": []
+        }
+      }
+    }
+  ],
+  "live_mw_discovery": []
+}

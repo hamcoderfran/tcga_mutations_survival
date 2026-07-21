@@ -1,0 +1,722 @@
+{
+  "version": "2.0.0",
+  "description": "Multi-step biosynthetic / catabolic chains that generate major exhaled VOCs. Each step links metabolites, enzymes/genes, and upstream pathway scores.",
+  "chains": [
+    {
+      "chain_id": "acetone_ketogenesis",
+      "voc_id": "acetone",
+      "name": "Hepatic ketogenesis \u2192 acetone",
+      "disease_anchors": [
+        "type_2_diabetes",
+        "pancreatic_adenocarcinoma"
+      ],
+      "primary_tissues": [
+        "liver",
+        "adipose"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "free_fatty_acids",
+          "to": "acyl_coa",
+          "enzymes": [
+            "CPT1A",
+            "ACSL1"
+          ],
+          "pathway_ids": [
+            "fatty_acid_oxidation"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "acyl_coa",
+          "to": "acetoacetyl_coa",
+          "enzymes": [
+            "ACAT1",
+            "HADHA"
+          ],
+          "pathway_ids": [
+            "fatty_acid_oxidation"
+          ]
+        },
+        {
+          "step": 3,
+          "from": "acetoacetyl_coa",
+          "to": "hmg_coa",
+          "enzymes": [
+            "HMGCS2"
+          ],
+          "pathway_ids": [
+            "ketone_body_metabolism"
+          ]
+        },
+        {
+          "step": 4,
+          "from": "hmg_coa",
+          "to": "acetoacetate",
+          "enzymes": [
+            "HMGCL"
+          ],
+          "pathway_ids": [
+            "ketone_body_metabolism"
+          ]
+        },
+        {
+          "step": 5,
+          "from": "acetoacetate",
+          "to": "acetone",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "ketone_body_metabolism"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0,
+      "notes": "Classic diabetic ketoacidosis / ketosis breath acetone axis."
+    },
+    {
+      "chain_id": "acetaldehyde_warburg",
+      "voc_id": "acetaldehyde",
+      "name": "Warburg glycolysis / ethanol oxidation \u2192 acetaldehyde",
+      "disease_anchors": [
+        "lung_adenocarcinoma",
+        "pancreatic_adenocarcinoma",
+        "colon_adenocarcinoma",
+        "glioblastoma"
+      ],
+      "primary_tissues": [
+        "tumor",
+        "liver"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "glucose",
+          "to": "pyruvate",
+          "enzymes": [
+            "HK2",
+            "PKM",
+            "LDHA"
+          ],
+          "pathway_ids": [
+            "glycolysis_warburg"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "pyruvate",
+          "to": "acetaldehyde",
+          "enzymes": [
+            "PDC",
+            "PDHA1"
+          ],
+          "pathway_ids": [
+            "glycolysis_warburg"
+          ]
+        },
+        {
+          "step": 3,
+          "from": "ethanol",
+          "to": "acetaldehyde",
+          "enzymes": [
+            "ADH1B",
+            "ADH1C",
+            "CYP2E1"
+          ],
+          "pathway_ids": [
+            "cytochrome_p450_detox",
+            "gut_microbiome_fermentation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0,
+      "notes": "Tumor aerobic glycolysis plus ADH/CYP2E1 ethanol routes elevate acetaldehyde."
+    },
+    {
+      "chain_id": "hexanal_lipid_peroxidation",
+      "voc_id": "hexanal",
+      "name": "PUFA peroxidation \u2192 hexanal",
+      "disease_anchors": [
+        "lung_adenocarcinoma",
+        "alzheimer_disease",
+        "parkinson_disease",
+        "traumatic_brain_injury",
+        "creutzfeldt_jakob"
+      ],
+      "primary_tissues": [
+        "tumor",
+        "brain",
+        "lung"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "membrane_pufa",
+          "to": "lipid_radicals",
+          "enzymes": [
+            "ALOX15",
+            "ALOX5",
+            "CYBB",
+            "NOS2"
+          ],
+          "pathway_ids": [
+            "lipid_peroxidation",
+            "neuroinflammation"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "lipid_radicals",
+          "to": "hydroperoxides",
+          "enzymes": [
+            "GPX4"
+          ],
+          "pathway_ids": [
+            "lipid_peroxidation"
+          ]
+        },
+        {
+          "step": 3,
+          "from": "hydroperoxides",
+          "to": "hexanal",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "lipid_peroxidation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "isoprene_mevalonate",
+      "voc_id": "isoprene",
+      "name": "Mevalonate / cholesterol pathway \u2192 isoprene",
+      "disease_anchors": [
+        "type_2_diabetes",
+        "major_depressive_disorder"
+      ],
+      "primary_tissues": [
+        "muscle",
+        "liver"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "hmg_coa",
+          "to": "mevalonate",
+          "enzymes": [
+            "HMGCR"
+          ],
+          "pathway_ids": [
+            "mevalonate_cholesterol"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "mevalonate",
+          "to": "dmapp",
+          "enzymes": [
+            "MVK",
+            "MVD",
+            "FDPS"
+          ],
+          "pathway_ids": [
+            "mevalonate_cholesterol"
+          ]
+        },
+        {
+          "step": 3,
+          "from": "dmapp",
+          "to": "isoprene",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "mevalonate_cholesterol"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "dms_methionine",
+      "voc_id": "dms",
+      "name": "Methionine transamination \u2192 dimethyl sulfide",
+      "disease_anchors": [
+        "hepatocellular_carcinoma",
+        "chronic_liver_disease"
+      ],
+      "primary_tissues": [
+        "liver"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "methionine",
+          "to": "sam",
+          "enzymes": [
+            "MAT1A",
+            "MAT2A"
+          ],
+          "pathway_ids": [
+            "methionine_transsulfuration"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "methionine",
+          "to": "methanethiol",
+          "enzymes": [
+            "CTH",
+            "CBS"
+          ],
+          "pathway_ids": [
+            "methionine_transsulfuration"
+          ]
+        },
+        {
+          "step": 3,
+          "from": "methanethiol",
+          "to": "dms",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "methionine_transsulfuration"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "ammonia_urea",
+      "voc_id": "ammonia",
+      "name": "Protein catabolism / urea-cycle failure \u2192 ammonia",
+      "disease_anchors": [
+        "chronic_liver_disease",
+        "chronic_kidney_disease",
+        "helicobacter_pylori_infection"
+      ],
+      "primary_tissues": [
+        "liver",
+        "gut",
+        "kidney"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "amino_acids",
+          "to": "ammonia",
+          "enzymes": [
+            "GLUD1",
+            "GLS"
+          ],
+          "pathway_ids": [
+            "urea_cycle",
+            "microbial_proteolysis_putrefaction"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "ammonia",
+          "to": "urea",
+          "enzymes": [
+            "CPS1",
+            "OTC",
+            "ARG1"
+          ],
+          "pathway_ids": [
+            "urea_cycle"
+          ],
+          "detox": true
+        }
+      ],
+      "stoichiometry": 1.0,
+      "notes": "Detox step failure increases net ammonia VOC."
+    },
+    {
+      "chain_id": "indole_tryptophan",
+      "voc_id": "indole",
+      "name": "Microbial tryptophanase \u2192 indole",
+      "disease_anchors": [
+        "gut_dysbiosis",
+        "sibo",
+        "inflammatory_bowel_disease",
+        "autism_spectrum_disorder"
+      ],
+      "primary_tissues": [
+        "gut"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "tryptophan",
+          "to": "indole",
+          "enzymes": [
+            "IDO1",
+            "TDO2",
+            "AHR"
+          ],
+          "pathway_ids": [
+            "microbial_proteolysis_putrefaction",
+            "gut_microbiome_fermentation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "h2s_cysteine",
+      "voc_id": "hydrogen_sulfide",
+      "name": "Cysteine / sulfate-reducing microbes \u2192 H2S",
+      "disease_anchors": [
+        "gut_dysbiosis",
+        "sibo",
+        "inflammatory_bowel_disease"
+      ],
+      "primary_tissues": [
+        "gut"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "cysteine",
+          "to": "h2s",
+          "enzymes": [
+            "CBS",
+            "CTH"
+          ],
+          "pathway_ids": [
+            "methionine_transsulfuration",
+            "microbial_proteolysis_putrefaction",
+            "gut_microbiome_fermentation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "ethanol_fermentation",
+      "voc_id": "ethanol",
+      "name": "Microbial / tumor fermentation \u2192 ethanol",
+      "disease_anchors": [
+        "sibo",
+        "gut_dysbiosis",
+        "lung_adenocarcinoma",
+        "glioblastoma"
+      ],
+      "primary_tissues": [
+        "gut",
+        "tumor"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "glucose",
+          "to": "pyruvate",
+          "enzymes": [
+            "HK2",
+            "PKM"
+          ],
+          "pathway_ids": [
+            "glycolysis_warburg",
+            "gut_microbiome_fermentation"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "pyruvate",
+          "to": "ethanol",
+          "enzymes": [
+            "ADH1B"
+          ],
+          "pathway_ids": [
+            "gut_microbiome_fermentation",
+            "glycolysis_warburg"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "pentane_peroxidation",
+      "voc_id": "pentane",
+      "name": "n-6 PUFA peroxidation \u2192 pentane",
+      "disease_anchors": [
+        "lung_adenocarcinoma",
+        "alzheimer_disease",
+        "traumatic_brain_injury",
+        "multiple_sclerosis",
+        "creutzfeldt_jakob"
+      ],
+      "primary_tissues": [
+        "lung",
+        "brain"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "omega6_pufa",
+          "to": "lipid_radicals",
+          "enzymes": [
+            "ALOX15",
+            "CYBB"
+          ],
+          "pathway_ids": [
+            "lipid_peroxidation",
+            "neuroinflammation"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "lipid_radicals",
+          "to": "pentane",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "lipid_peroxidation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "2_butanone_fao",
+      "voc_id": "2_butanone",
+      "name": "Fatty-acid oxidation / protein catabolism \u2192 2-butanone",
+      "disease_anchors": [
+        "pancreatic_adenocarcinoma",
+        "lung_adenocarcinoma",
+        "breast_invasive_carcinoma"
+      ],
+      "primary_tissues": [
+        "tumor",
+        "liver"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "fatty_acids",
+          "to": "ketone_like_intermediates",
+          "enzymes": [
+            "ACADM",
+            "ACADVL",
+            "HADHA"
+          ],
+          "pathway_ids": [
+            "fatty_acid_oxidation",
+            "ketone_body_metabolism"
+          ]
+        },
+        {
+          "step": 2,
+          "from": "ketone_like_intermediates",
+          "to": "2_butanone",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "fatty_acid_oxidation",
+            "Kras_mapk_proliferation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "octanal_lipid_peroxidation",
+      "voc_id": "octanal",
+      "name": "PUFA peroxidation \u2192 octanal",
+      "primary_tissues": [
+        "tumor",
+        "lung",
+        "brain"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "membrane_pufa",
+          "to": "octanal",
+          "enzymes": [
+            "ALOX15",
+            "CYBB"
+          ],
+          "pathway_ids": [
+            "lipid_peroxidation"
+          ],
+          "spontaneous": true
+        }
+      ],
+      "stoichiometry": 0.9,
+      "disease_anchors": [
+        "creutzfeldt_jakob"
+      ]
+    },
+    {
+      "chain_id": "trimethylamine_choline",
+      "voc_id": "trimethylamine",
+      "name": "Microbial choline \u2192 TMA",
+      "primary_tissues": [
+        "gut"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "choline",
+          "to": "trimethylamine",
+          "enzymes": [
+            "FMO3"
+          ],
+          "pathway_ids": [
+            "microbial_proteolysis_putrefaction",
+            "gut_microbiome_fermentation"
+          ]
+        }
+      ],
+      "stoichiometry": 1.0
+    },
+    {
+      "chain_id": "isopropanol_ketone",
+      "voc_id": "isopropanol",
+      "name": "Ketone reduction \u2192 isopropanol",
+      "primary_tissues": [
+        "liver"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "acetone",
+          "to": "isopropanol",
+          "enzymes": [
+            "ADH1B"
+          ],
+          "pathway_ids": [
+            "ketone_body_metabolism",
+            "fatty_acid_oxidation"
+          ]
+        }
+      ],
+      "stoichiometry": 0.8
+    },
+    {
+      "chain_id": "propanol_fermentation",
+      "voc_id": "propanol",
+      "name": "Microbial fermentation \u2192 1-propanol",
+      "primary_tissues": [
+        "gut"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "propionate",
+          "to": "propanol",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "gut_microbiome_fermentation"
+          ]
+        }
+      ],
+      "stoichiometry": 0.85
+    },
+    {
+      "chain_id": "xylene_cyp",
+      "voc_id": "xylene",
+      "name": "Aromatic hydrocarbon / CYP axis \u2192 xylene signal",
+      "primary_tissues": [
+        "lung",
+        "liver"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "aromatic_precursors",
+          "to": "xylene",
+          "enzymes": [
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "pathway_ids": [
+            "cytochrome_p450_detox"
+          ]
+        }
+      ],
+      "stoichiometry": 0.7
+    },
+    {
+      "chain_id": "furan_peroxidation",
+      "voc_id": "furan",
+      "name": "Oxidative stress \u2192 furan",
+      "primary_tissues": [
+        "lung",
+        "tumor"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "lipid_radicals",
+          "to": "furan",
+          "enzymes": [],
+          "spontaneous": true,
+          "pathway_ids": [
+            "lipid_peroxidation"
+          ]
+        }
+      ],
+      "stoichiometry": 0.6,
+      "disease_anchors": [
+        "creutzfeldt_jakob"
+      ]
+    },
+    {
+      "chain_id": "2_pentanone_fao",
+      "voc_id": "2_pentanone",
+      "name": "Fatty-acid oxidation \u2192 2-pentanone",
+      "primary_tissues": [
+        "liver",
+        "adipose"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "fatty_acids",
+          "to": "2_pentanone",
+          "enzymes": [
+            "ACADM",
+            "HADHA"
+          ],
+          "pathway_ids": [
+            "fatty_acid_oxidation",
+            "ketone_body_metabolism"
+          ],
+          "spontaneous": true
+        }
+      ],
+      "stoichiometry": 0.85
+    },
+    {
+      "chain_id": "methyl_mercaptan_sulfur",
+      "voc_id": "methyl_mercaptan",
+      "name": "Methionine / microbial sulfur \u2192 methanethiol",
+      "primary_tissues": [
+        "liver",
+        "gut"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "methionine",
+          "to": "methyl_mercaptan",
+          "enzymes": [
+            "CTH",
+            "CBS"
+          ],
+          "pathway_ids": [
+            "methionine_transsulfuration",
+            "microbial_proteolysis_putrefaction"
+          ]
+        }
+      ],
+      "stoichiometry": 0.9
+    }
+  ]
+}

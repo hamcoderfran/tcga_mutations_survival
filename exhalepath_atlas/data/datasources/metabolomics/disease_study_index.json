@@ -1,0 +1,40 @@
+{
+  "healthy_baseline": [
+    "ST003200"
+  ],
+  "pulmonary": [
+    "ST003200",
+    "ST001164",
+    "MTBLS2436"
+  ],
+  "pneumonia_bacterial": [
+    "ST002449"
+  ],
+  "infectious": [
+    "ST002449",
+    "ST000883"
+  ],
+  "malaria": [
+    "ST000883"
+  ],
+  "heart_failure": [
+    "ST000587"
+  ],
+  "cardiovascular": [
+    "ST000587"
+  ],
+  "cystic_fibrosis": [
+    "ST001164"
+  ],
+  "epilepsy": [
+    "MTBLS2400"
+  ],
+  "asthma": [
+    "MSV000095340",
+    "23522490"
+  ],
+  "copd": [
+    "MSV000095340",
+    "23522490"
+  ]
+}

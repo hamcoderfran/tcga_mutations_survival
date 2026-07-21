@@ -1,0 +1,357 @@
+{
+  "version": "1.0.0",
+  "n_vocs": 50,
+  "description": "Farhi alveolar-release \u03bb table (experimental + QSPR-typical)",
+  "partitions": [
+    {
+      "voc_id": "acetone",
+      "lambda_blood_air": 340.0,
+      "log10_lambda": 2.531478917042255,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "acetaldehyde",
+      "lambda_blood_air": 190.0,
+      "log10_lambda": 2.278753600952829,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "ethanol",
+      "lambda_blood_air": 1800.0,
+      "log10_lambda": 3.255272505103306,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "methanol",
+      "lambda_blood_air": 2500.0,
+      "log10_lambda": 3.3979400086720375,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "isoprene",
+      "lambda_blood_air": 0.75,
+      "log10_lambda": -0.12493873660829995,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "pentane",
+      "lambda_blood_air": 0.4,
+      "log10_lambda": -0.3979400086720376,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "ethane",
+      "lambda_blood_air": 0.2,
+      "log10_lambda": -0.6989700043360187,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "butane",
+      "lambda_blood_air": 0.5,
+      "log10_lambda": -0.3010299956639812,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "hexane",
+      "lambda_blood_air": 0.6,
+      "log10_lambda": -0.2218487496163564,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "octane",
+      "lambda_blood_air": 0.8,
+      "log10_lambda": -0.09691001300805639,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "hexanal",
+      "lambda_blood_air": 50.0,
+      "log10_lambda": 1.6989700043360187,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "heptanal",
+      "lambda_blood_air": 60.0,
+      "log10_lambda": 1.7781512503836436,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "nonanal",
+      "lambda_blood_air": 80.0,
+      "log10_lambda": 1.9030899869919435,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "decanal",
+      "lambda_blood_air": 90.0,
+      "log10_lambda": 1.954242509439325,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "octanal",
+      "lambda_blood_air": 70.0,
+      "log10_lambda": 1.845098040014257,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "ammonia",
+      "lambda_blood_air": 1000.0,
+      "log10_lambda": 3.0,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "dms",
+      "lambda_blood_air": 10.0,
+      "log10_lambda": 1.0,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "dmts",
+      "lambda_blood_air": 15.0,
+      "log10_lambda": 1.1760912590556813,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "dimethyl_disulfide",
+      "lambda_blood_air": 12.0,
+      "log10_lambda": 1.0791812460476249,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "hydrogen_sulfide",
+      "lambda_blood_air": 5.0,
+      "log10_lambda": 0.6989700043360189,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "indole",
+      "lambda_blood_air": 120.0,
+      "log10_lambda": 2.0791812460476247,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "phenol",
+      "lambda_blood_air": 200.0,
+      "log10_lambda": 2.3010299956639813,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "toluene",
+      "lambda_blood_air": 15.0,
+      "log10_lambda": 1.1760912590556813,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "benzene",
+      "lambda_blood_air": 8.0,
+      "log10_lambda": 0.9030899869919435,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "limonene",
+      "lambda_blood_air": 5.0,
+      "log10_lambda": 0.6989700043360189,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "formaldehyde",
+      "lambda_blood_air": 3000.0,
+      "log10_lambda": 3.4771212547196626,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "2_butanone",
+      "lambda_blood_air": 120.0,
+      "log10_lambda": 2.0791812460476247,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "propanol",
+      "lambda_blood_air": 900.0,
+      "log10_lambda": 2.9542425094393248,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "isopropanol",
+      "lambda_blood_air": 800.0,
+      "log10_lambda": 2.9030899869919438,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "styrene",
+      "lambda_blood_air": 20.0,
+      "log10_lambda": 1.3010299956639813,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "ethylbenzene",
+      "lambda_blood_air": 18.0,
+      "log10_lambda": 1.255272505103306,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "xylene",
+      "lambda_blood_air": 20.0,
+      "log10_lambda": 1.3010299956639813,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "cyclohexane",
+      "lambda_blood_air": 1.2,
+      "log10_lambda": 0.07918124604762482,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "methyl_acetate",
+      "lambda_blood_air": 100.0,
+      "log10_lambda": 2.0,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "ethyl_acetate",
+      "lambda_blood_air": 120.0,
+      "log10_lambda": 2.0791812460476247,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "acetonitrile",
+      "lambda_blood_air": 300.0,
+      "log10_lambda": 2.4771212547196626,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "furan",
+      "lambda_blood_air": 5.0,
+      "log10_lambda": 0.6989700043360189,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "2_pentanone",
+      "lambda_blood_air": 90.0,
+      "log10_lambda": 1.954242509439325,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "3_methylbutanal",
+      "lambda_blood_air": 40.0,
+      "log10_lambda": 1.6020599913279623,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "benzaldehyde",
+      "lambda_blood_air": 80.0,
+      "log10_lambda": 1.9030899869919435,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "undecane",
+      "lambda_blood_air": 1.5,
+      "log10_lambda": 0.17609125905568124,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "dodecane",
+      "lambda_blood_air": 2.0,
+      "log10_lambda": 0.3010299956639812,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "carbon_disulfide",
+      "lambda_blood_air": 8.0,
+      "log10_lambda": 0.9030899869919435,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "methyl_mercaptan",
+      "lambda_blood_air": 6.0,
+      "log10_lambda": 0.7781512503836436,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "trimethylamine",
+      "lambda_blood_air": 50.0,
+      "log10_lambda": 1.6989700043360187,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "dimethyl_amine",
+      "lambda_blood_air": 60.0,
+      "log10_lambda": 1.7781512503836436,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "pyrrole",
+      "lambda_blood_air": 30.0,
+      "log10_lambda": 1.4771212547196624,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "allyl_methyl_sulfide",
+      "lambda_blood_air": 10.0,
+      "log10_lambda": 1.0,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "propionaldehyde",
+      "lambda_blood_air": 35.0,
+      "log10_lambda": 1.5440680443502757,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    },
+    {
+      "voc_id": "crotonaldehyde",
+      "lambda_blood_air": 40.0,
+      "log10_lambda": 1.6020599913279623,
+      "source": "curated_literature_qspr",
+      "ref": "DOI:10.1088/1752-7155/10/1/017103"
+    }
+  ]
+}
