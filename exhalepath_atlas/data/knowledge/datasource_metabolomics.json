@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "n_curated_studies": 5,
+  "studies": [
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002449",
+      "title": "Valley fever / pneumonia breath VOCs",
+      "disease_hints": [
+        "pneumonia_bacterial",
+        "infectious"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002449"
+    },
+    {
+      "repo": "metabolights",
+      "accession": "MTBLS2400",
+      "title": "Epilepsy breath metabolomics (SESI-HRMS)",
+      "disease_hints": [
+        "epilepsy"
+      ],
+      "url": "https://www.ebi.ac.uk/metabolights/MTBLS2400"
+    },
+    {
+      "repo": "massive",
+      "accession": "MSV000095340",
+      "title": "Breath metabolites healthy vs asthmatic children",
+      "disease_hints": [
+        "asthma",
+        "copd"
+      ],
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000095340"
+    },
+    {
+      "repo": "figshare_scientific_data",
+      "accession": "23522490",
+      "title": "Clinical breathomics asthma/COPD/bronchiectasis",
+      "disease_hints": [
+        "asthma",
+        "copd"
+      ],
+      "url": "https://doi.org/10.6084/m9.figshare.23522490.v6"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001236",
+      "title": "Breath VOC related MW study (catalogued)",
+      "disease_hints": [
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/"
+    }
+  ],
+  "live_probe": []
+}

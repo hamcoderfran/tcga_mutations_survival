@@ -1,0 +1,150 @@
+{
+  "version": "1.0.0",
+  "n_vocs": 24,
+  "retention_indices": [
+    {
+      "voc_id": "acetone",
+      "ri_nonpolar_approx": 500,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "ethanol",
+      "ri_nonpolar_approx": 500,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "isoprene",
+      "ri_nonpolar_approx": 520,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "pentane",
+      "ri_nonpolar_approx": 500,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "hexane",
+      "ri_nonpolar_approx": 600,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "benzene",
+      "ri_nonpolar_approx": 650,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "toluene",
+      "ri_nonpolar_approx": 760,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "ethylbenzene",
+      "ri_nonpolar_approx": 850,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "xylene",
+      "ri_nonpolar_approx": 860,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "styrene",
+      "ri_nonpolar_approx": 880,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "hexanal",
+      "ri_nonpolar_approx": 800,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "heptanal",
+      "ri_nonpolar_approx": 900,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "octanal",
+      "ri_nonpolar_approx": 1000,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "nonanal",
+      "ri_nonpolar_approx": 1100,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "decanal",
+      "ri_nonpolar_approx": 1200,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "benzaldehyde",
+      "ri_nonpolar_approx": 960,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "limonene",
+      "ri_nonpolar_approx": 1030,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "indole",
+      "ri_nonpolar_approx": 1290,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "phenol",
+      "ri_nonpolar_approx": 980,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "2_butanone",
+      "ri_nonpolar_approx": 580,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "isopropanol",
+      "ri_nonpolar_approx": 500,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "propanol",
+      "ri_nonpolar_approx": 550,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "furan",
+      "ri_nonpolar_approx": 500,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    },
+    {
+      "voc_id": "trimethylamine",
+      "ri_nonpolar_approx": 450,
+      "id_method": "kovats_ri_literature",
+      "note": "Full NIST spectral library is licensed; RI used for peak mapping QC"
+    }
+  ]
+}

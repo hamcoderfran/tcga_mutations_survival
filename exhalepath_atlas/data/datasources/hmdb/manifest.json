@@ -1,0 +1,6 @@
+{
+  "priority": 2,
+  "key": "hmdb",
+  "title": "HMDB + breath VOC annotation layer",
+  "n_vocs": 20
+}

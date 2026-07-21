@@ -1,0 +1,32 @@
+{
+  "n_diseases": 104,
+  "n_datasources_integrated": 12,
+  "priorities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "knowledge_fragments": [
+    "datasource_bindingdb.json",
+    "datasource_blood_proxy.json",
+    "datasource_gdc.json",
+    "datasource_gtex.json",
+    "datasource_hmdb.json",
+    "datasource_metabolomics.json",
+    "datasource_mvoc.json",
+    "datasource_nist.json",
+    "datasource_opentargets.json",
+    "datasource_partition.json",
+    "datasource_pubchem.json",
+    "datasource_reactome.json"
+  ]
+}

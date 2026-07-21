@@ -1,0 +1,199 @@
+{
+  "version": "1.0.0",
+  "product": "exhalepath_atlas",
+  "n_datasources": 12,
+  "offline": true,
+  "datasources": [
+    {
+      "priority": 1,
+      "key": "metabolomics",
+      "title": "Metabolomics Workbench / MetaboLights / MassIVE",
+      "harvest": {
+        "catalog": "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog.json",
+        "disease_index": "/workspace/exhalepath_atlas/data/datasources/metabolomics/disease_study_index.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/metabolomics/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_metabolomics.json",
+        "n_studies": 5
+      }
+    },
+    {
+      "priority": 2,
+      "key": "hmdb",
+      "title": "HMDB + breath VOC annotation layer",
+      "harvest": {
+        "annotations": "/workspace/exhalepath_atlas/data/datasources/hmdb/hmdb_voc_annotations.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/hmdb/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_hmdb.json",
+        "n_vocs": 20
+      }
+    },
+    {
+      "priority": 3,
+      "key": "partition",
+      "title": "Blood:air partition coefficients (\u03bb)",
+      "harvest": {
+        "partitions": "/workspace/exhalepath_atlas/data/datasources/partition/blood_air_partition.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/partition/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_partition.json",
+        "n_lambda_updated": 50
+      }
+    },
+    {
+      "priority": 4,
+      "key": "mvoc",
+      "title": "Microbial VOC (mVOC) emitter atlas",
+      "harvest": {
+        "emitters": "/workspace/exhalepath_atlas/data/datasources/mvoc/mvoc_emitters.json",
+        "voc_index": "/workspace/exhalepath_atlas/data/datasources/mvoc/voc_to_microbes.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/mvoc/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_mvoc.json",
+        "n_prior_fills": 0
+      }
+    },
+    {
+      "priority": 5,
+      "key": "pubchem",
+      "title": "PubChem physicochemical properties",
+      "harvest": {
+        "properties": "/workspace/exhalepath_atlas/data/datasources/pubchem/pubchem_voc_properties.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/pubchem/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_pubchem.json",
+        "n_vocs_enriched": 0
+      }
+    },
+    {
+      "priority": 6,
+      "key": "reactome",
+      "title": "Reactome pathway expansion",
+      "harvest": {
+        "expansions": "/workspace/exhalepath_atlas/data/datasources/reactome/reactome_expansions.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/reactome/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_reactome.json",
+        "n_genes_added": 0
+      }
+    },
+    {
+      "priority": 7,
+      "key": "gtex",
+      "title": "GTEx tissue expression priors",
+      "harvest": {
+        "expression": "/workspace/exhalepath_atlas/data/datasources/gtex/gtex_enzyme_tissue.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/gtex/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_gtex.json",
+        "n_rows": 143
+      }
+    },
+    {
+      "priority": 8,
+      "key": "opentargets",
+      "title": "Open Targets / GWAS disease\u2013gene priors",
+      "harvest": {
+        "disease_genes": "/workspace/exhalepath_atlas/data/datasources/opentargets/disease_gene_priors.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/opentargets/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_opentargets.json",
+        "n_diseases": 104
+      }
+    },
+    {
+      "priority": 9,
+      "key": "gdc",
+      "title": "TCGA/GDC molecular drivers",
+      "harvest": {
+        "drivers": "/workspace/exhalepath_atlas/data/datasources/gdc/gdc_disease_drivers.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/gdc/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_gdc.json",
+        "n_projects": 15
+      }
+    },
+    {
+      "priority": 10,
+      "key": "bindingdb",
+      "title": "BindingDB / pharmacology target notes",
+      "harvest": {
+        "pharmacology": "/workspace/exhalepath_atlas/data/datasources/bindingdb/binding_pharmacology.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/bindingdb/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_bindingdb.json",
+        "n_targets": 7
+      }
+    },
+    {
+      "priority": 11,
+      "key": "blood_proxy",
+      "title": "Blood metabolome \u2192 breath VOC proxy links",
+      "harvest": {
+        "links": "/workspace/exhalepath_atlas/data/datasources/blood_proxy/blood_breath_links.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/blood_proxy/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_blood_proxy.json",
+        "n_links": 8
+      }
+    },
+    {
+      "priority": 12,
+      "key": "nist",
+      "title": "NIST/GC-MS identification metadata",
+      "harvest": {
+        "ri": "/workspace/exhalepath_atlas/data/datasources/nist/gcms_retention_indices.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/nist/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_nist.json",
+        "n_vocs": 24
+      }
+    }
+  ],
+  "note": "ChEMBL chemogenomic harvest remains available via `python -m exhalepath harvest-chembl` (already bundled in this atlas tree).",
+  "capability": {
+    "n_diseases": 104,
+    "n_datasources_integrated": 12,
+    "priorities": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "knowledge_fragments": [
+      "datasource_bindingdb.json",
+      "datasource_blood_proxy.json",
+      "datasource_gdc.json",
+      "datasource_gtex.json",
+      "datasource_hmdb.json",
+      "datasource_metabolomics.json",
+      "datasource_mvoc.json",
+      "datasource_nist.json",
+      "datasource_opentargets.json",
+      "datasource_partition.json",
+      "datasource_pubchem.json",
+      "datasource_reactome.json"
+    ]
+  }
+}

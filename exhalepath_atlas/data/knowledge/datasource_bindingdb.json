@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "ref": "https://www.bindingdb.org/",
+  "targets": [
+    {
+      "gene": "HMGCR",
+      "ligand_class": "statins",
+      "effect_on_voc": {
+        "isoprene": "down"
+      },
+      "note": "Mevalonate block lowers isoprene"
+    },
+    {
+      "gene": "CYP2E1",
+      "ligand_class": "ethanol/solvent substrates",
+      "effect_on_voc": {
+        "acetaldehyde": "up"
+      },
+      "note": "Inducible ethanol oxidation"
+    },
+    {
+      "gene": "IDO1",
+      "ligand_class": "IDO inhibitors",
+      "effect_on_voc": {
+        "indole": "down"
+      },
+      "note": "Tryptophan\u2013kynurenine / indole axis"
+    },
+    {
+      "gene": "PTGS2",
+      "ligand_class": "NSAIDs/COX2i",
+      "effect_on_voc": {
+        "pentane": "down",
+        "hexanal": "mod"
+      },
+      "note": "Inflammatory peroxidation coupling"
+    },
+    {
+      "gene": "ALOX15",
+      "ligand_class": "LOX inhibitors",
+      "effect_on_voc": {
+        "hexanal": "down"
+      },
+      "note": "PUFA peroxidation aldehydes"
+    },
+    {
+      "gene": "FMO3",
+      "ligand_class": "TMA substrates",
+      "effect_on_voc": {
+        "trimethylamine": "mod"
+      },
+      "note": "TMA\u2192TMAO vs breath TMA"
+    },
+    {
+      "gene": "KRAS",
+      "ligand_class": "KRAS G12C inhibitors",
+      "effect_on_voc": {
+        "acetaldehyde": "down",
+        "ethanol": "down"
+      },
+      "note": "Tumor Warburg coupling"
+    }
+  ],
+  "chembl_bridge": "Use exhalepath harvest-chembl for million-scale pChEMBL rows"
+}

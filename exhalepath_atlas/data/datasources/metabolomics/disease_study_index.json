@@ -1,0 +1,22 @@
+{
+  "pneumonia_bacterial": [
+    "ST002449"
+  ],
+  "infectious": [
+    "ST002449"
+  ],
+  "epilepsy": [
+    "MTBLS2400"
+  ],
+  "asthma": [
+    "MSV000095340",
+    "23522490"
+  ],
+  "copd": [
+    "MSV000095340",
+    "23522490"
+  ],
+  "pulmonary": [
+    "ST001236"
+  ]
+}

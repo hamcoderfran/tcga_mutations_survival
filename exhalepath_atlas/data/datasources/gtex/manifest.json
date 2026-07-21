@@ -1,0 +1,6 @@
+{
+  "priority": 7,
+  "key": "gtex",
+  "title": "GTEx tissue expression priors",
+  "n_genes": 13
+}

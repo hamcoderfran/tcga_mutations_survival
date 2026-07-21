@@ -1,0 +1,147 @@
+{
+  "version": "1.0.0",
+  "description": "Breath-reported VOC flags aligned to ExhalePath catalog (HBDB-style)",
+  "n_vocs": 20,
+  "vocs": [
+    {
+      "voc_id": "acetone",
+      "hmdb_id": "HMDB0001659",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0001659",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "isoprene",
+      "hmdb_id": "HMDB0000071",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000071",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "ethanol",
+      "hmdb_id": "HMDB0000108",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000108",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "methanol",
+      "hmdb_id": "HMDB0001875",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0001875",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "ammonia",
+      "hmdb_id": "HMDB0000051",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000051",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "acetaldehyde",
+      "hmdb_id": "HMDB0000990",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000990",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "hexanal",
+      "hmdb_id": "HMDB0005994",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0005994",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "pentane",
+      "hmdb_id": "HMDB0031645",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0031645",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "indole",
+      "hmdb_id": "HMDB0000738",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000738",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "phenol",
+      "hmdb_id": "HMDB0000228",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000228",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "trimethylamine",
+      "hmdb_id": "HMDB0000906",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000906",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "hydrogen_sulfide",
+      "hmdb_id": "HMDB0000606",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000606",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "limonene",
+      "hmdb_id": "HMDB0000536",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000536",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "toluene",
+      "hmdb_id": "HMDB0003405",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0003405",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "benzene",
+      "hmdb_id": "HMDB0001505",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0001505",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "formaldehyde",
+      "hmdb_id": "HMDB0001426",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0001426",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "2_butanone",
+      "hmdb_id": "HMDB0000474",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000474",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "isopropanol",
+      "hmdb_id": "HMDB0000863",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000863",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "propanol",
+      "hmdb_id": "HMDB0000820",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000820",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    },
+    {
+      "voc_id": "benzaldehyde",
+      "hmdb_id": "HMDB0000615",
+      "hmdb_url": "https://hmdb.ca/metabolites/HMDB0000615",
+      "breath_reported": true,
+      "source": "curated_hmdb_map"
+    }
+  ]
+}

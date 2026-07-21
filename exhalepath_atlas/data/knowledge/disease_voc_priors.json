@@ -1,0 +1,3053 @@
+{
+  "version": "2.0.0",
+  "description": "Whole-body disease atlas (~100 US high-burden conditions). Curated entries retained; others filled from category templates + Census-informed sites.",
+  "diseases": [
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "name": "Lung adenocarcinoma",
+      "aliases": [
+        "LUAD",
+        "Lung cancer",
+        "NSCLC",
+        "TCGA-LUAD",
+        "lung adenocarcinoma",
+        "lung cancer",
+        "non-small cell lung carcinoma",
+        "small cell lung carcinoma",
+        "squamous cell lung carcinoma"
+      ],
+      "mondo_id": "MONDO:0005061",
+      "category": "cancer",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "glycolysis_warburg": 1.3,
+        "Kras_mapk_proliferation": 1.5,
+        "cytochrome_p450_detox": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.9,
+        "heptanal": 0.7,
+        "nonanal": 0.6,
+        "pentane": 0.5,
+        "2_butanone": 0.8,
+        "acetaldehyde": 0.55,
+        "ethanol": 0.35,
+        "isoprene": -0.3,
+        "octanal": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "acetone": 0.2125,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "breast_invasive_carcinoma",
+      "name": "Breast invasive carcinoma",
+      "aliases": [
+        "BRCA",
+        "Breast cancer",
+        "TCGA-BRCA",
+        "breast cancer",
+        "breast carcinoma"
+      ],
+      "mondo_id": "MONDO:0007254",
+      "category": "cancer",
+      "default_site": "breast",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.2,
+        "pi3k_akt_mtor": 1.4,
+        "glycolysis_warburg": 1.2,
+        "methionine_transsulfuration": 1.1
+      },
+      "voc_log2fc_prior": {
+        "dmts": 1.5,
+        "hexanal": 0.6,
+        "2_butanone": 0.5,
+        "acetone": 0.3,
+        "heptanal": 0.425,
+        "nonanal": 0.425,
+        "octanal": 0.3825,
+        "pentane": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "acetaldehyde": 0.34,
+        "ethanol": 0.255,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "pancreatic_adenocarcinoma",
+      "name": "Pancreatic adenocarcinoma",
+      "aliases": [
+        "PAAD",
+        "PDAC",
+        "Pancreatic cancer",
+        "TCGA-PAAD",
+        "pancreatic adenocarcinoma",
+        "pancreatic cancer",
+        "pancreatic ductal adenocarcinoma"
+      ],
+      "mondo_id": "MONDO:0005192",
+      "category": "cancer",
+      "default_site": "pancreas",
+      "pathway_bias": {
+        "Kras_mapk_proliferation": 1.8,
+        "glycolysis_warburg": 1.5,
+        "lipid_peroxidation": 1.3,
+        "apoptosis_necrosis": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 0.7,
+        "2_butanone": 0.9,
+        "hexanal": 0.8,
+        "ethanol": 0.4,
+        "heptanal": 0.425,
+        "nonanal": 0.425,
+        "octanal": 0.3825,
+        "pentane": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "acetaldehyde": 0.34,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "colon_adenocarcinoma",
+      "name": "Colon adenocarcinoma",
+      "aliases": [
+        "COAD",
+        "CRC",
+        "Colorectal cancer",
+        "TCGA-COAD",
+        "colon adenocarcinoma",
+        "colon cancer",
+        "colorectal cancer",
+        "rectal adenocarcinoma"
+      ],
+      "mondo_id": "MONDO:0002032",
+      "category": "cancer",
+      "default_site": "colon",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.3,
+        "Kras_mapk_proliferation": 1.3,
+        "one_carbon_folate": 1.2,
+        "lipid_peroxidation": 1.1
+      },
+      "voc_log2fc_prior": {
+        "acetone": 0.4,
+        "pentane": 0.5,
+        "hexanal": 0.7,
+        "hydrogen_sulfide": 0.6,
+        "heptanal": 0.425,
+        "nonanal": 0.425,
+        "octanal": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "2_butanone": 0.4675,
+        "acetaldehyde": 0.34,
+        "ethanol": 0.255,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "hepatocellular_carcinoma",
+      "name": "Hepatocellular carcinoma",
+      "aliases": [
+        "HCC",
+        "LIHC",
+        "Liver cancer",
+        "TCGA-LIHC",
+        "cholangiocarcinoma",
+        "hepatocellular carcinoma",
+        "liver cancer"
+      ],
+      "mondo_id": "MONDO:0007256",
+      "category": "cancer",
+      "default_site": "liver",
+      "pathway_bias": {
+        "methionine_transsulfuration": 1.8,
+        "urea_cycle": 1.5,
+        "cytochrome_p450_detox": 1.6,
+        "fatty_acid_oxidation": 1.3
+      },
+      "voc_log2fc_prior": {
+        "dms": 1.2,
+        "limonene": 1.0,
+        "ammonia": 0.8,
+        "acetone": 0.5,
+        "hexanal": 0.595,
+        "heptanal": 0.425,
+        "nonanal": 0.425,
+        "octanal": 0.3825,
+        "pentane": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "2_butanone": 0.4675,
+        "acetaldehyde": 0.34,
+        "ethanol": 0.255,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "type_2_diabetes",
+      "name": "Type 2 diabetes mellitus",
+      "aliases": [
+        "T2D",
+        "Type 2 diabetes",
+        "diabetes",
+        "diabetes mellitus",
+        "type 2 diabetes mellitus",
+        "type II diabetes mellitus"
+      ],
+      "mondo_id": "MONDO:0005148",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.6,
+        "fatty_acid_oxidation": 1.4,
+        "glycolysis_warburg": 0.8
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.4,
+        "isoprene": -0.2,
+        "ethanol": 0.3,
+        "2_butanone": 0.51,
+        "isopropanol": 0.425,
+        "2_pentanone": 0.34,
+        "ammonia": 0.2975,
+        "trimethylamine": 0.2125
+      }
+    },
+    {
+      "disease_id": "chronic_liver_disease",
+      "name": "Chronic liver disease",
+      "aliases": [
+        "CLD",
+        "Cirrhosis / chronic liver disease",
+        "NAFLD",
+        "NASH",
+        "alcohol-related liver disease",
+        "cirrhosis",
+        "liver cirrhosis",
+        "liver failure",
+        "non-alcoholic fatty liver disease"
+      ],
+      "mondo_id": "MONDO:0005154",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "methionine_transsulfuration": 1.7,
+        "urea_cycle": 1.8,
+        "cytochrome_p450_detox": 1.4
+      },
+      "voc_log2fc_prior": {
+        "dms": 1.5,
+        "ammonia": 1.3,
+        "limonene": 0.9,
+        "acetone": 0.85,
+        "2_butanone": 0.51,
+        "isopropanol": 0.425,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      }
+    },
+    {
+      "disease_id": "chronic_kidney_disease",
+      "name": "Chronic kidney disease",
+      "aliases": [
+        "CKD",
+        "Chronic kidney disease",
+        "chronic kidney disease",
+        "diabetic kidney disease",
+        "kidney failure",
+        "renal failure",
+        "uremia"
+      ],
+      "mondo_id": "MONDO:0005300",
+      "category": "metabolic",
+      "default_site": "kidney",
+      "pathway_bias": {
+        "urea_cycle": 1.5,
+        "one_carbon_folate": 1.1
+      },
+      "voc_log2fc_prior": {
+        "ammonia": 1.1,
+        "acetone": 0.4,
+        "dms": 0.5,
+        "2_butanone": 0.51,
+        "isopropanol": 0.425,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125,
+        "dimethyl_amine": 0.55
+      }
+    },
+    {
+      "disease_id": "inflammatory_bowel_disease",
+      "name": "Inflammatory bowel disease",
+      "aliases": [
+        "Crohn",
+        "Crohn disease",
+        "Crohn's disease",
+        "IBD",
+        "Inflammatory bowel disease",
+        "inflammatory bowel disease",
+        "ulcerative colitis"
+      ],
+      "mondo_id": "MONDO:0005265",
+      "category": "inflammatory",
+      "default_site": "intestine",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.5,
+        "microbial_proteolysis_putrefaction": 1.4
+      },
+      "voc_log2fc_prior": {
+        "hydrogen_sulfide": 1.0,
+        "pentane": 0.6,
+        "hexanal": 0.5,
+        "indole": 0.7,
+        "phenol": 0.5,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255,
+        "methyl_mercaptan": 0.55,
+        "dimethyl_disulfide": 0.55,
+        "ethanol": 0.55,
+        "propanol": 0.55,
+        "acetaldehyde": 0.55,
+        "ethyl_acetate": 0.55,
+        "carbon_disulfide": 0.55
+      }
+    },
+    {
+      "disease_id": "ovarian_cancer",
+      "name": "Ovarian cancer",
+      "aliases": [
+        "OV",
+        "Ovarian cancer",
+        "TCGA-OV",
+        "malignant ovarian serous tumor",
+        "ovarian cancer",
+        "ovarian carcinoma"
+      ],
+      "mondo_id": "MONDO:0008170",
+      "category": "cancer",
+      "default_site": "ovary",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "glycolysis_warburg": 1.3,
+        "pi3k_akt_mtor": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "nonanal": 0.6,
+        "decanal": 0.5,
+        "2_butanone": 0.4,
+        "heptanal": 0.425,
+        "octanal": 0.3825,
+        "pentane": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "acetaldehyde": 0.34,
+        "ethanol": 0.255,
+        "acetone": 0.2125,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "gut_dysbiosis",
+      "name": "Gut dysbiosis",
+      "aliases": [
+        "dysbiosis",
+        "gut microbiome dysbiosis",
+        "intestinal dysbiosis",
+        "microbiome imbalance"
+      ],
+      "mondo_id": null,
+      "category": "microbiome",
+      "default_site": "gut",
+      "pathway_bias": {
+        "gut_microbiome_fermentation": 1.8,
+        "microbial_proteolysis_putrefaction": 1.7,
+        "methionine_transsulfuration": 1.2
+      },
+      "voc_log2fc_prior": {
+        "indole": 1.3,
+        "phenol": 1.1,
+        "hydrogen_sulfide": 1.2,
+        "ammonia": 0.7,
+        "ethanol": 0.6,
+        "dimethyl_disulfide": 0.9,
+        "dms": 0.6,
+        "trimethylamine": 0.595,
+        "dimethyl_amine": 0.3825,
+        "methyl_mercaptan": 0.4675,
+        "propanol": 0.34,
+        "ethyl_acetate": 0.2975,
+        "pyrrole": 0.255,
+        "acetaldehyde": 0.55,
+        "carbon_disulfide": 0.55
+      }
+    },
+    {
+      "disease_id": "sibo",
+      "name": "Small intestinal bacterial overgrowth",
+      "aliases": [
+        "SIBO",
+        "small intestine bacterial overgrowth",
+        "bacterial overgrowth"
+      ],
+      "mondo_id": "MONDO:0006687",
+      "category": "microbiome",
+      "default_site": "small_intestine",
+      "pathway_bias": {
+        "gut_microbiome_fermentation": 1.9,
+        "microbial_proteolysis_putrefaction": 1.5
+      },
+      "voc_log2fc_prior": {
+        "hydrogen_sulfide": 1.4,
+        "ethanol": 0.9,
+        "acetaldehyde": 0.7,
+        "indole": 0.8,
+        "methanol": 0.5,
+        "phenol": 0.68,
+        "trimethylamine": 0.595,
+        "dimethyl_amine": 0.3825,
+        "methyl_mercaptan": 0.4675,
+        "propanol": 0.34,
+        "ethyl_acetate": 0.2975,
+        "pyrrole": 0.255
+      }
+    },
+    {
+      "disease_id": "clostridioides_difficile_infection",
+      "name": "Clostridioides difficile infection",
+      "aliases": [
+        "C. diff",
+        "C. difficile",
+        "C. difficile infection",
+        "CDI",
+        "Clostridioides difficile infection",
+        "Clostridium difficile",
+        "Clostridium difficile infectious disease"
+      ],
+      "mondo_id": "MONDO:0005504",
+      "category": "microbiome",
+      "default_site": "colon",
+      "pathway_bias": {
+        "microbial_proteolysis_putrefaction": 1.8,
+        "gut_microbiome_fermentation": 1.4,
+        "apoptosis_necrosis": 1.2
+      },
+      "voc_log2fc_prior": {
+        "indole": 1.2,
+        "phenol": 1.0,
+        "hydrogen_sulfide": 1.1,
+        "ammonia": 0.8,
+        "dimethyl_disulfide": 0.9,
+        "trimethylamine": 0.595,
+        "dimethyl_amine": 0.3825,
+        "methyl_mercaptan": 0.4675,
+        "propanol": 0.34,
+        "ethyl_acetate": 0.2975,
+        "ethanol": 0.425,
+        "pyrrole": 0.255
+      }
+    },
+    {
+      "disease_id": "helicobacter_pylori_infection",
+      "name": "Helicobacter pylori infection",
+      "aliases": [
+        "H. pylori",
+        "Helicobacter pylori",
+        "Helicobacter pylori infection",
+        "Helicobacter pylori infectious disease",
+        "Hp infection"
+      ],
+      "mondo_id": "MONDO:0005208",
+      "category": "microbiome",
+      "default_site": "stomach",
+      "pathway_bias": {
+        "urea_cycle": 1.6,
+        "gut_microbiome_fermentation": 1.2,
+        "lipid_peroxidation": 1.15
+      },
+      "voc_log2fc_prior": {
+        "ammonia": 1.3,
+        "hydrogen_sulfide": 0.6,
+        "acetone": 0.3,
+        "indole": 0.85,
+        "phenol": 0.68,
+        "trimethylamine": 0.595,
+        "dimethyl_amine": 0.3825,
+        "methyl_mercaptan": 0.4675,
+        "propanol": 0.34,
+        "ethyl_acetate": 0.2975,
+        "ethanol": 0.425,
+        "pyrrole": 0.255
+      }
+    },
+    {
+      "disease_id": "alzheimer_disease",
+      "name": "Alzheimer disease",
+      "aliases": [
+        "AD",
+        "Alzheimer disease",
+        "Alzheimer's",
+        "Alzheimer's disease",
+        "dementia",
+        "dementia Alzheimer",
+        "dementia || Alzheimer disease"
+      ],
+      "mondo_id": "MONDO:0004975",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.7,
+        "brain_energy_metabolism": 1.6,
+        "lipid_peroxidation": 1.4,
+        "neurotransmitter_metabolism": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.8,
+        "pentane": 0.6,
+        "acetone": 0.5,
+        "ethane": 0.4,
+        "nonanal": 0.5,
+        "isoprene": -0.25,
+        "octanal": 0.2975,
+        "propanol": 0.17
+      }
+    },
+    {
+      "disease_id": "parkinson_disease",
+      "name": "Parkinson disease",
+      "aliases": [
+        "PD",
+        "Parkinson disease",
+        "Parkinson's",
+        "Parkinson's disease",
+        "paralysis agitans"
+      ],
+      "mondo_id": "MONDO:0005180",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "brain_energy_metabolism": 1.8,
+        "neuroinflammation": 1.5,
+        "neurotransmitter_metabolism": 1.6,
+        "lipid_peroxidation": 1.3
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.7,
+        "hexanal": 0.7,
+        "acetone": 0.4,
+        "ammonia": 0.35,
+        "2_butanone": 0.3,
+        "ethane": 0.34,
+        "nonanal": 0.34,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      }
+    },
+    {
+      "disease_id": "major_depressive_disorder",
+      "name": "Major depressive disorder",
+      "aliases": [
+        "MDD",
+        "Major depression",
+        "clinical depression",
+        "depression",
+        "major depression",
+        "major depressive disorder",
+        "unipolar depression"
+      ],
+      "mondo_id": "MONDO:0000690",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.7,
+        "neuroinflammation": 1.3,
+        "one_carbon_folate": 1.2,
+        "gut_microbiome_fermentation": 1.15
+      },
+      "voc_log2fc_prior": {
+        "isoprene": -0.4,
+        "indole": 0.45,
+        "ammonia": 0.3,
+        "acetone": 0.25,
+        "hexanal": 0.5525,
+        "pentane": 0.51,
+        "ethane": 0.34,
+        "nonanal": 0.34,
+        "octanal": 0.2975,
+        "propanol": 0.17
+      }
+    },
+    {
+      "disease_id": "schizophrenia",
+      "name": "Schizophrenia",
+      "aliases": [
+        "Schizophrenia",
+        "dementia || schizophrenia",
+        "schizophrenia",
+        "schizophrenic disorder"
+      ],
+      "mondo_id": "MONDO:0005090",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.8,
+        "neuroinflammation": 1.3,
+        "brain_energy_metabolism": 1.25,
+        "one_carbon_folate": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "ethane": 0.45,
+        "ammonia": 0.35,
+        "formaldehyde": 0.3,
+        "isoprene": -0.2,
+        "hexanal": 0.5525,
+        "nonanal": 0.34,
+        "octanal": 0.2975,
+        "acetone": 0.255,
+        "propanol": 0.17
+      }
+    },
+    {
+      "disease_id": "epilepsy",
+      "name": "Epilepsy",
+      "aliases": [
+        "Epilepsy",
+        "epilepsy",
+        "epileptic seizures",
+        "seizure disorder",
+        "temporal lobe epilepsy"
+      ],
+      "mondo_id": "MONDO:0005027",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "brain_energy_metabolism": 1.5,
+        "neurotransmitter_metabolism": 1.4,
+        "neuroinflammation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 0.55,
+        "isoprene": 0.3,
+        "pentane": 0.35,
+        "hexanal": 0.5525,
+        "ethane": 0.34,
+        "nonanal": 0.34,
+        "octanal": 0.2975,
+        "propanol": 0.17
+      }
+    },
+    {
+      "disease_id": "multiple_sclerosis",
+      "name": "Multiple sclerosis",
+      "aliases": [
+        "MS",
+        "Multiple sclerosis",
+        "disseminated sclerosis",
+        "multiple sclerosis"
+      ],
+      "mondo_id": "MONDO:0005301",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.8,
+        "lipid_peroxidation": 1.5,
+        "brain_energy_metabolism": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.75,
+        "pentane": 0.65,
+        "nonanal": 0.45,
+        "ethane": 0.4,
+        "octanal": 0.2975,
+        "acetone": 0.255,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      }
+    },
+    {
+      "disease_id": "glioblastoma",
+      "name": "Glioblastoma",
+      "aliases": [
+        "GBM",
+        "Glioblastoma",
+        "TCGA-GBM",
+        "brain cancer",
+        "glioblastoma",
+        "glioblastoma multiforme",
+        "glioma"
+      ],
+      "mondo_id": "MONDO:0018177",
+      "category": "cancer",
+      "default_site": "brain",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.6,
+        "Kras_mapk_proliferation": 1.3,
+        "pi3k_akt_mtor": 1.4,
+        "neuroinflammation": 1.3,
+        "brain_energy_metabolism": 1.4,
+        "lipid_peroxidation": 1.25
+      },
+      "voc_log2fc_prior": {
+        "acetone": 0.6,
+        "hexanal": 0.7,
+        "2_butanone": 0.55,
+        "ethanol": 0.4,
+        "pentane": 0.45,
+        "heptanal": 0.425,
+        "nonanal": 0.425,
+        "octanal": 0.3825,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "acetaldehyde": 0.34,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      }
+    },
+    {
+      "disease_id": "traumatic_brain_injury",
+      "name": "Traumatic brain injury",
+      "aliases": [
+        "TBI",
+        "concussion",
+        "head injury"
+      ],
+      "mondo_id": "MONDO:0011565",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.6,
+        "lipid_peroxidation": 1.7,
+        "apoptosis_necrosis": 1.4,
+        "brain_energy_metabolism": 1.3
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.9,
+        "hexanal": 0.85,
+        "ethane": 0.6,
+        "acetone": 0.4,
+        "nonanal": 0.34,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      }
+    },
+    {
+      "disease_id": "autism_spectrum_disorder",
+      "name": "Autism spectrum disorder",
+      "aliases": [
+        "ASD",
+        "Autism spectrum disorder",
+        "autism",
+        "autism spectrum disorder",
+        "autistic disorder"
+      ],
+      "mondo_id": "MONDO:0005258",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "gut_microbiome_fermentation": 1.4,
+        "microbial_proteolysis_putrefaction": 1.35,
+        "neurotransmitter_metabolism": 1.3,
+        "neuroinflammation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "indole": 0.7,
+        "phenol": 0.55,
+        "hydrogen_sulfide": 0.5,
+        "ammonia": 0.35,
+        "isoprene": -0.2,
+        "hexanal": 0.5525,
+        "pentane": 0.51,
+        "ethane": 0.34,
+        "nonanal": 0.34,
+        "octanal": 0.2975,
+        "acetone": 0.255,
+        "propanol": 0.17
+      }
+    },
+    {
+      "disease_id": "heart_disease",
+      "name": "Heart disease",
+      "aliases": [
+        "Heart disease",
+        "atherosclerosis",
+        "dilated cardiomyopathy",
+        "myocardial infarction",
+        "coronary artery disease",
+        "heart failure",
+        "cardiomyopathy",
+        "heart disease"
+      ],
+      "mondo_id": null,
+      "category": "cardiovascular",
+      "default_site": "heart",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "fatty_acid_oxidation": 1.2,
+        "mevalonate_cholesterol": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "hexanal": 0.45,
+        "isoprene": -0.2,
+        "acetone": 0.25,
+        "2_pentanone": 0.2125,
+        "trimethylamine": 0.55,
+        "dimethyl_amine": 0.55
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cancer_prostate",
+      "name": "Prostate cancer",
+      "aliases": [
+        "Prostate cancer",
+        "prostate cancer",
+        "prostate adenocarcinoma",
+        "cancer prostate"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "prostate gland",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cancer_stomach",
+      "name": "Gastric cancer",
+      "aliases": [
+        "Gastric cancer",
+        "gastric cancer",
+        "stomach adenocarcinoma",
+        "cancer stomach"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "stomach",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cancer_kidney",
+      "name": "Kidney cancer",
+      "aliases": [
+        "Kidney cancer",
+        "clear cell renal carcinoma",
+        "renal cell carcinoma",
+        "kidney cancer",
+        "cancer kidney"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "kidney",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cancer_bladder",
+      "name": "Bladder cancer",
+      "aliases": [
+        "Bladder cancer",
+        "bladder carcinoma",
+        "bladder cancer",
+        "urothelial carcinoma",
+        "cancer bladder"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "bladder organ",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cancer_skin_melanoma",
+      "name": "Melanoma",
+      "aliases": [
+        "Melanoma",
+        "melanoma",
+        "cutaneous melanoma",
+        "cancer skin melanoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "skin of body",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cancer_blood",
+      "name": "Hematologic cancer",
+      "aliases": [
+        "Hematologic cancer",
+        "B-cell non-Hodgkin lymphoma",
+        "acute myeloid leukemia",
+        "chronic lymphocytic leukemia",
+        "multiple myeloma",
+        "T-cell lymphoma",
+        "lymphoma",
+        "leukemia",
+        "cancer blood"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "blood",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "neuroblastoma",
+      "name": "Neuroblastoma",
+      "aliases": [
+        "Neuroblastoma",
+        "neuroblastoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "adrenal gland",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "bipolar",
+      "name": "Bipolar disorder",
+      "aliases": [
+        "Bipolar disorder",
+        "bipolar disorder",
+        "bipolar"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "als",
+      "name": "ALS",
+      "aliases": [
+        "ALS",
+        "amyotrophic lateral sclerosis",
+        "als"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "stroke",
+      "name": "Stroke / cerebrovascular",
+      "aliases": [
+        "Stroke / cerebrovascular",
+        "stroke",
+        "ischemic stroke",
+        "cerebrovascular disorder"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "copd",
+      "name": "COPD",
+      "aliases": [
+        "COPD",
+        "chronic obstructive pulmonary disease",
+        "emphysema",
+        "chronic bronchitis",
+        "copd"
+      ],
+      "mondo_id": null,
+      "category": "pulmonary",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "cytochrome_p450_detox": 1.25,
+        "glycolysis_warburg": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "pentane": 0.55,
+        "benzene": 0.35,
+        "toluene": 0.3,
+        "2_butanone": 0.4,
+        "xylene": 0.2125,
+        "furan": 0.2125,
+        "styrene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "asthma",
+      "name": "Asthma",
+      "aliases": [
+        "Asthma",
+        "asthma"
+      ],
+      "mondo_id": null,
+      "category": "pulmonary",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "cytochrome_p450_detox": 1.25,
+        "glycolysis_warburg": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "pentane": 0.55,
+        "benzene": 0.35,
+        "toluene": 0.3,
+        "2_butanone": 0.4,
+        "xylene": 0.2125,
+        "furan": 0.2125,
+        "styrene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "ild",
+      "name": "Interstitial lung disease",
+      "aliases": [
+        "Interstitial lung disease",
+        "interstitial lung disease",
+        "pulmonary fibrosis",
+        "idiopathic pulmonary fibrosis",
+        "ild"
+      ],
+      "mondo_id": null,
+      "category": "pulmonary",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "cytochrome_p450_detox": 1.25,
+        "glycolysis_warburg": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "pentane": 0.55,
+        "benzene": 0.35,
+        "toluene": 0.3,
+        "2_butanone": 0.4,
+        "xylene": 0.2125,
+        "furan": 0.2125,
+        "styrene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "covid19",
+      "name": "COVID-19",
+      "aliases": [
+        "COVID-19",
+        "severe acute respiratory syndrome",
+        "covid19"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "influenza",
+      "name": "Influenza / viral pneumonia",
+      "aliases": [
+        "Influenza / viral pneumonia",
+        "influenza",
+        "pneumonia",
+        "viral pneumonia"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "tuberculosis",
+      "name": "Tuberculosis",
+      "aliases": [
+        "Tuberculosis",
+        "tuberculosis"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "type1_diabetes",
+      "name": "Type 1 diabetes",
+      "aliases": [
+        "Type 1 diabetes",
+        "type 1 diabetes mellitus",
+        "type I diabetes mellitus",
+        "type1 diabetes"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "obesity",
+      "name": "Obesity",
+      "aliases": [
+        "Obesity",
+        "obesity",
+        "obesity disease"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "gerd",
+      "name": "GERD",
+      "aliases": [
+        "GERD",
+        "gastroesophageal reflux disease",
+        "gerd"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "celiac",
+      "name": "Celiac disease",
+      "aliases": [
+        "Celiac disease",
+        "celiac disease",
+        "celiac"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "lupus",
+      "name": "Systemic lupus erythematosus",
+      "aliases": [
+        "Systemic lupus erythematosus",
+        "systemic lupus erythematosus",
+        "lupus"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "rheumatoid_arthritis",
+      "name": "Rheumatoid arthritis",
+      "aliases": [
+        "Rheumatoid arthritis",
+        "rheumatoid arthritis"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "osteoarthritis",
+      "name": "Osteoarthritis",
+      "aliases": [
+        "Osteoarthritis",
+        "osteoarthritis"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "psoriasis",
+      "name": "Psoriasis",
+      "aliases": [
+        "Psoriasis",
+        "psoriasis"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "atopic_dermatitis",
+      "name": "Atopic dermatitis",
+      "aliases": [
+        "Atopic dermatitis",
+        "atopic eczema",
+        "atopic dermatitis"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "hiv",
+      "name": "HIV infection",
+      "aliases": [
+        "HIV infection",
+        "HIV infectious disease",
+        "human immunodeficiency virus infectious disease",
+        "hiv"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cmv",
+      "name": "Cytomegalovirus infection",
+      "aliases": [
+        "Cytomegalovirus infection",
+        "cytomegalovirus infection",
+        "cmv"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "sepsis",
+      "name": "Sepsis",
+      "aliases": [
+        "Sepsis",
+        "sepsis",
+        "septic shock"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "hypertension",
+      "name": "Hypertension",
+      "aliases": [
+        "Hypertension",
+        "hypertension",
+        "essential hypertension"
+      ],
+      "mondo_id": null,
+      "category": "cardiovascular",
+      "default_site": "heart",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "fatty_acid_oxidation": 1.2,
+        "mevalonate_cholesterol": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "hexanal": 0.45,
+        "isoprene": -0.2,
+        "acetone": 0.25,
+        "2_pentanone": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "hyperlipidemia",
+      "name": "Hyperlipidemia",
+      "aliases": [
+        "Hyperlipidemia",
+        "hyperlipidemia",
+        "familial hypercholesterolemia"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "thyroid",
+      "name": "Thyroid disease",
+      "aliases": [
+        "Thyroid disease",
+        "Hashimoto thyroiditis",
+        "Graves disease",
+        "hypothyroidism",
+        "hyperthyroidism",
+        "thyroid"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "endometriosis",
+      "name": "Endometriosis",
+      "aliases": [
+        "Endometriosis",
+        "endometriosis"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "pcos",
+      "name": "PCOS",
+      "aliases": [
+        "PCOS",
+        "polycystic ovary syndrome",
+        "pcos"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "infertility",
+      "name": "Infertility",
+      "aliases": [
+        "Infertility",
+        "female infertility",
+        "male infertility",
+        "infertility"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "adhd",
+      "name": "ADHD",
+      "aliases": [
+        "ADHD",
+        "attention deficit hyperactivity disorder",
+        "adhd"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "migraine",
+      "name": "Migraine",
+      "aliases": [
+        "Migraine",
+        "migraine disorder",
+        "migraine"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "chronic_pain",
+      "name": "Chronic pain",
+      "aliases": [
+        "Chronic pain",
+        "chronic pain",
+        "fibromyalgia"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "osteoporosis",
+      "name": "Osteoporosis",
+      "aliases": [
+        "Osteoporosis",
+        "osteoporosis"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "gout",
+      "name": "Gout",
+      "aliases": [
+        "Gout",
+        "gout"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "anemia",
+      "name": "Anemia",
+      "aliases": [
+        "Anemia",
+        "anemia",
+        "iron deficiency anemia",
+        "sickle cell anemia"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "sickle_cell",
+      "name": "Sickle cell disease",
+      "aliases": [
+        "Sickle cell disease",
+        "sickle cell anemia",
+        "sickle cell disease",
+        "sickle cell"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cystic_fibrosis",
+      "name": "Cystic fibrosis",
+      "aliases": [
+        "Cystic fibrosis",
+        "cystic fibrosis"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "down_syndrome",
+      "name": "Down syndrome",
+      "aliases": [
+        "Down syndrome",
+        "down syndrome"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "hearing_loss",
+      "name": "Hearing loss",
+      "aliases": [
+        "Hearing loss",
+        "hearing loss",
+        "sensorineural hearing loss"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "macular_degeneration",
+      "name": "Age-related macular degeneration",
+      "aliases": [
+        "Age-related macular degeneration",
+        "age-related macular degeneration",
+        "macular degeneration"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "glaucoma",
+      "name": "Glaucoma",
+      "aliases": [
+        "Glaucoma",
+        "glaucoma"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "diabetic_retinopathy",
+      "name": "Diabetic retinopathy",
+      "aliases": [
+        "Diabetic retinopathy",
+        "diabetic retinopathy"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "periodontitis",
+      "name": "Periodontitis",
+      "aliases": [
+        "Periodontitis",
+        "periodontitis",
+        "periodontal disease"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255,
+        "methyl_mercaptan": 0.55,
+        "indole": 0.55
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "uti",
+      "name": "Urinary tract infection",
+      "aliases": [
+        "Urinary tract infection",
+        "urinary tract infection",
+        "uti"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "pneumonia_bacterial",
+      "name": "Bacterial pneumonia",
+      "aliases": [
+        "Bacterial pneumonia",
+        "bacterial pneumonia",
+        "pneumococcal pneumonia",
+        "pneumonia bacterial"
+      ],
+      "mondo_id": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "acetonitrile": 0.4,
+        "hexanal": 0.45,
+        "acetone": 0.3,
+        "ammonia": 0.35,
+        "crotonaldehyde": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "nafld",
+      "name": "NAFLD/NASH",
+      "aliases": [
+        "NAFLD/NASH",
+        "non-alcoholic fatty liver disease",
+        "nonalcoholic steatohepatitis",
+        "nafld"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "alcohol_use",
+      "name": "Alcohol use disorder",
+      "aliases": [
+        "Alcohol use disorder",
+        "alcohol use disorder",
+        "alcohol dependence",
+        "alcohol use"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "opioid_use",
+      "name": "Opioid use disorder",
+      "aliases": [
+        "Opioid use disorder",
+        "opioid dependence",
+        "opioid use disorder",
+        "opioid use"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "tobacco_use",
+      "name": "Tobacco use disorder",
+      "aliases": [
+        "Tobacco use disorder",
+        "tobacco use disorder",
+        "nicotine dependence",
+        "tobacco use"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "anxiety",
+      "name": "Anxiety disorders",
+      "aliases": [
+        "Anxiety disorders",
+        "anxiety disorder",
+        "generalized anxiety disorder",
+        "panic disorder",
+        "anxiety"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "ptsd",
+      "name": "PTSD",
+      "aliases": [
+        "PTSD",
+        "post-traumatic stress disorder",
+        "ptsd"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "sleep_apnea",
+      "name": "Sleep apnea",
+      "aliases": [
+        "Sleep apnea",
+        "sleep apnea",
+        "obstructive sleep apnea"
+      ],
+      "mondo_id": null,
+      "category": "pulmonary",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "cytochrome_p450_detox": 1.25,
+        "glycolysis_warburg": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "pentane": 0.55,
+        "benzene": 0.35,
+        "toluene": 0.3,
+        "2_butanone": 0.4,
+        "xylene": 0.2125,
+        "furan": 0.2125,
+        "styrene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "gout_ckd_overlap",
+      "name": "Hyperuricemia",
+      "aliases": [
+        "Hyperuricemia",
+        "hyperuricemia",
+        "gout ckd overlap"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "vasculitis",
+      "name": "Vasculitis",
+      "aliases": [
+        "Vasculitis",
+        "vasculitis"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "sjogren",
+      "name": "Sjogren syndrome",
+      "aliases": [
+        "Sjogren syndrome",
+        "Sj\u00f6gren syndrome",
+        "sjogren"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "scleroderma",
+      "name": "Systemic sclerosis",
+      "aliases": [
+        "Systemic sclerosis",
+        "systemic sclerosis",
+        "scleroderma"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "myasthenia",
+      "name": "Myasthenia gravis",
+      "aliases": [
+        "Myasthenia gravis",
+        "myasthenia gravis",
+        "myasthenia"
+      ],
+      "mondo_id": null,
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.35,
+        "apoptosis_necrosis": 1.2,
+        "gut_microbiome_fermentation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "hydrogen_sulfide": 0.45,
+        "octanal": 0.2975,
+        "3_methylbutanal": 0.255
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "huntington",
+      "name": "Huntington disease",
+      "aliases": [
+        "Huntington disease",
+        "huntington"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "lewy_body",
+      "name": "Lewy body dementia",
+      "aliases": [
+        "Lewy body dementia",
+        "dementia || Alzheimer disease || Lewy body dementia",
+        "lewy body"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "frontotemporal",
+      "name": "Frontotemporal dementia",
+      "aliases": [
+        "Frontotemporal dementia",
+        "frontotemporal dementia",
+        "frontotemporal"
+      ],
+      "mondo_id": null,
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "brain_energy_metabolism": 1.35,
+        "lipid_peroxidation": 1.3,
+        "neurotransmitter_metabolism": 1.25
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.4,
+        "nonanal": 0.4,
+        "acetone": 0.3,
+        "octanal": 0.2975,
+        "propanol": 0.17,
+        "isoprene": -0.1275
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "breast_benign",
+      "name": "Benign breast disease",
+      "aliases": [
+        "Benign breast disease",
+        "benign breast neoplasm",
+        "fibrocystic breast disease",
+        "breast benign"
+      ],
+      "mondo_id": null,
+      "category": "unspecified",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.15,
+        "glycolysis_warburg": 1.1
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.3,
+        "acetone": 0.2,
+        "pentane": 0.25,
+        "octanal": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "endometrial_cancer",
+      "name": "Endometrial cancer",
+      "aliases": [
+        "Endometrial cancer",
+        "endometrial cancer",
+        "uterine corpus endometrial carcinoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "cervical_cancer",
+      "name": "Cervical cancer",
+      "aliases": [
+        "Cervical cancer",
+        "cervical cancer",
+        "cervical squamous cell carcinoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "head_neck_cancer",
+      "name": "Head and neck cancer",
+      "aliases": [
+        "Head and neck cancer",
+        "head and neck squamous cell carcinoma",
+        "oral cavity cancer",
+        "head neck cancer"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "thyroid_cancer",
+      "name": "Thyroid cancer",
+      "aliases": [
+        "Thyroid cancer",
+        "thyroid cancer",
+        "papillary thyroid carcinoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "esophageal_cancer",
+      "name": "Esophageal cancer",
+      "aliases": [
+        "Esophageal cancer",
+        "esophageal adenocarcinoma",
+        "esophageal cancer"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "mesothelioma",
+      "name": "Mesothelioma",
+      "aliases": [
+        "Mesothelioma",
+        "mesothelioma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "sarcoma",
+      "name": "Sarcoma",
+      "aliases": [
+        "Sarcoma",
+        "sarcoma",
+        "osteosarcoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "wilms",
+      "name": "Wilms tumor",
+      "aliases": [
+        "Wilms tumor",
+        "nephroblastoma",
+        "wilms"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "retinoblastoma",
+      "name": "Retinoblastoma",
+      "aliases": [
+        "Retinoblastoma",
+        "retinoblastoma"
+      ],
+      "mondo_id": null,
+      "category": "cancer",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.3,
+        "Kras_mapk_proliferation": 1.25,
+        "apoptosis_necrosis": 1.15
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 0.7,
+        "heptanal": 0.5,
+        "nonanal": 0.5,
+        "octanal": 0.45,
+        "pentane": 0.45,
+        "2_butanone": 0.55,
+        "acetaldehyde": 0.4,
+        "ethanol": 0.3,
+        "acetone": 0.25,
+        "butane": 0.255,
+        "hexane": 0.2975,
+        "propionaldehyde": 0.2975,
+        "furan": 0.2125,
+        "styrene": 0.17,
+        "ethylbenzene": 0.17
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "acute_kidney_injury",
+      "name": "Acute kidney injury",
+      "aliases": [
+        "Acute kidney injury",
+        "acute kidney failure",
+        "acute kidney injury"
+      ],
+      "mondo_id": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.5,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.2
+      },
+      "voc_log2fc_prior": {
+        "acetone": 1.0,
+        "2_butanone": 0.6,
+        "isopropanol": 0.5,
+        "ammonia": 0.35,
+        "2_pentanone": 0.34,
+        "trimethylamine": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "pulmonary_hypertension",
+      "name": "Pulmonary hypertension",
+      "aliases": [
+        "Pulmonary hypertension",
+        "pulmonary hypertension"
+      ],
+      "mondo_id": null,
+      "category": "cardiovascular",
+      "default_site": "heart",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "fatty_acid_oxidation": 1.2,
+        "mevalonate_cholesterol": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "hexanal": 0.45,
+        "isoprene": -0.2,
+        "acetone": 0.25,
+        "2_pentanone": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "arrhythmia",
+      "name": "Cardiac arrhythmia",
+      "aliases": [
+        "Cardiac arrhythmia",
+        "atrial fibrillation",
+        "cardiac arrhythmia",
+        "arrhythmia"
+      ],
+      "mondo_id": null,
+      "category": "cardiovascular",
+      "default_site": "heart",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "fatty_acid_oxidation": 1.2,
+        "mevalonate_cholesterol": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "hexanal": 0.45,
+        "isoprene": -0.2,
+        "acetone": 0.25,
+        "2_pentanone": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "peripheral_artery",
+      "name": "Peripheral artery disease",
+      "aliases": [
+        "Peripheral artery disease",
+        "peripheral arterial disease",
+        "peripheral artery"
+      ],
+      "mondo_id": null,
+      "category": "cardiovascular",
+      "default_site": "heart",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "fatty_acid_oxidation": 1.2,
+        "mevalonate_cholesterol": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "hexanal": 0.45,
+        "isoprene": -0.2,
+        "acetone": 0.25,
+        "2_pentanone": 0.2125
+      },
+      "atlas_source": "top100_template"
+    },
+    {
+      "disease_id": "venous_thromboembolism",
+      "name": "Venous thromboembolism",
+      "aliases": [
+        "Venous thromboembolism",
+        "deep vein thrombosis",
+        "pulmonary embolism",
+        "venous thromboembolism"
+      ],
+      "mondo_id": null,
+      "category": "cardiovascular",
+      "default_site": "heart",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.3,
+        "fatty_acid_oxidation": 1.2,
+        "mevalonate_cholesterol": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.5,
+        "hexanal": 0.45,
+        "isoprene": -0.2,
+        "acetone": 0.25,
+        "2_pentanone": 0.2125
+      },
+      "atlas_source": "top100_template"
+    }
+  ]
+}

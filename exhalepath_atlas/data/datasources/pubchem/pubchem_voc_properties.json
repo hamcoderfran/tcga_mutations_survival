@@ -1,0 +1,390 @@
+{
+  "version": "1.0.0",
+  "n_vocs": 48,
+  "properties": [
+    {
+      "voc_id": "acetone",
+      "cid": 180,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "isoprene",
+      "cid": 6557,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "pentane",
+      "cid": 8003,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "ethane",
+      "cid": 6324,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "hexanal",
+      "cid": 6184,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "heptanal",
+      "cid": 8130,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "nonanal",
+      "cid": 31289,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "decanal",
+      "cid": 8175,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "ethanol",
+      "cid": 702,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "2_butanone",
+      "cid": 6560,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "dms",
+      "cid": 1068,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "ammonia",
+      "cid": 222,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "methanol",
+      "cid": 887,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "toluene",
+      "cid": 1140,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "benzene",
+      "cid": 241,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "limonene",
+      "cid": 22311,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "hydrogen_sulfide",
+      "cid": 402,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "acetaldehyde",
+      "cid": 177,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "formaldehyde",
+      "cid": 712,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "indole",
+      "cid": 798,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "phenol",
+      "cid": 996,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "dimethyl_disulfide",
+      "cid": 12232,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "propanol",
+      "cid": 1031,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "isopropanol",
+      "cid": 3776,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "butane",
+      "cid": 7843,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "hexane",
+      "cid": 8058,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "octane",
+      "cid": 356,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "styrene",
+      "cid": 7501,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "ethylbenzene",
+      "cid": 7500,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "xylene",
+      "cid": 7809,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "cyclohexane",
+      "cid": 8078,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "methyl_acetate",
+      "cid": 6584,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "ethyl_acetate",
+      "cid": 8857,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "acetonitrile",
+      "cid": 6342,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "furan",
+      "cid": 8029,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "2_pentanone",
+      "cid": 7895,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "3_methylbutanal",
+      "cid": 11552,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "benzaldehyde",
+      "cid": 240,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "octanal",
+      "cid": 454,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "undecane",
+      "cid": 14257,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "dodecane",
+      "cid": 8182,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "carbon_disulfide",
+      "cid": 6348,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "methyl_mercaptan",
+      "cid": 878,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "trimethylamine",
+      "cid": 1146,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "dimethyl_amine",
+      "cid": 674,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "pyrrole",
+      "cid": 8027,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "propionaldehyde",
+      "cid": 527,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    },
+    {
+      "voc_id": "crotonaldehyde",
+      "cid": 447466,
+      "xlogp": null,
+      "mw": null,
+      "tpsa": null,
+      "offline": true
+    }
+  ]
+}

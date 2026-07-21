@@ -1,0 +1,469 @@
+{
+  "version": "1.0.0",
+  "n_pathways": 17,
+  "pathways": [
+    {
+      "pathway_id": "lipid_peroxidation",
+      "reactome_ids": [
+        "R-HSA-3299685",
+        "R-HSA-2142753"
+      ],
+      "seed_genes": [
+        "GPX4",
+        "SOD2",
+        "CAT",
+        "ACSL4",
+        "ALOX15",
+        "ALOX5",
+        "NOS2",
+        "CYBB",
+        "NFE2L2",
+        "KEAP1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "expanded_genes": [
+        "GPX4",
+        "SOD2",
+        "CAT",
+        "ACSL4",
+        "ALOX15",
+        "ALOX5",
+        "NOS2",
+        "CYBB",
+        "NFE2L2",
+        "KEAP1",
+        "HMOX1",
+        "PTGS2"
+      ]
+    },
+    {
+      "pathway_id": "glycolysis_warburg",
+      "reactome_ids": [
+        "R-HSA-70171",
+        "R-HSA-69205"
+      ],
+      "seed_genes": [
+        "HK2",
+        "PKM",
+        "LDHA",
+        "PFKP",
+        "GAPDH",
+        "ENO1",
+        "SLC2A1",
+        "MYC",
+        "HIF1A",
+        "TP53"
+      ],
+      "expanded_genes": [
+        "HK2",
+        "PKM",
+        "LDHA",
+        "PFKP",
+        "GAPDH",
+        "ENO1",
+        "SLC2A1",
+        "MYC",
+        "HIF1A",
+        "TP53"
+      ]
+    },
+    {
+      "pathway_id": "ketone_body_metabolism",
+      "reactome_ids": [
+        "R-HSA-74182"
+      ],
+      "seed_genes": [
+        "HMGCS2",
+        "HMGCL",
+        "BDH1",
+        "OXCT1",
+        "ACAT1"
+      ],
+      "expanded_genes": [
+        "HMGCS2",
+        "HMGCL",
+        "BDH1",
+        "OXCT1",
+        "ACAT1"
+      ]
+    },
+    {
+      "pathway_id": "mevalonate_cholesterol",
+      "reactome_ids": [
+        "R-HSA-191273",
+        "R-HSA-2426168"
+      ],
+      "seed_genes": [
+        "HMGCR",
+        "MVK",
+        "MVD",
+        "FDPS",
+        "SQLE",
+        "CYP51A1",
+        "SREBF2"
+      ],
+      "expanded_genes": [
+        "HMGCR",
+        "MVK",
+        "MVD",
+        "FDPS",
+        "SQLE",
+        "CYP51A1",
+        "SREBF2"
+      ]
+    },
+    {
+      "pathway_id": "fatty_acid_oxidation",
+      "reactome_ids": [
+        "R-HSA-77289"
+      ],
+      "seed_genes": [
+        "CPT1A",
+        "CPT2",
+        "ACADM",
+        "ACADL",
+        "HADHA",
+        "ACADVL",
+        "PPARA"
+      ],
+      "expanded_genes": [
+        "CPT1A",
+        "CPT2",
+        "ACADM",
+        "ACADL",
+        "HADHA",
+        "ACADVL",
+        "PPARA"
+      ]
+    },
+    {
+      "pathway_id": "methionine_transsulfuration",
+      "reactome_ids": [
+        "R-HSA-1614635",
+        "R-HSA-1614603"
+      ],
+      "seed_genes": [
+        "MAT1A",
+        "MAT2A",
+        "AHCY",
+        "CBS",
+        "CTH",
+        "BHMT",
+        "MTR"
+      ],
+      "expanded_genes": [
+        "MAT1A",
+        "MAT2A",
+        "AHCY",
+        "CBS",
+        "CTH",
+        "BHMT",
+        "MTR"
+      ]
+    },
+    {
+      "pathway_id": "urea_cycle",
+      "reactome_ids": [
+        "R-HSA-70635"
+      ],
+      "seed_genes": [
+        "CPS1",
+        "OTC",
+        "ASS1",
+        "ASL",
+        "ARG1",
+        "NAGS"
+      ],
+      "expanded_genes": [
+        "CPS1",
+        "OTC",
+        "ASS1",
+        "ASL",
+        "ARG1",
+        "NAGS"
+      ]
+    },
+    {
+      "pathway_id": "one_carbon_folate",
+      "reactome_ids": [
+        "R-HSA-196757"
+      ],
+      "seed_genes": [
+        "MTHFR",
+        "MTR",
+        "SHMT1",
+        "SHMT2",
+        "DHFR",
+        "TYMS",
+        "PHGDH"
+      ],
+      "expanded_genes": [
+        "MTHFR",
+        "MTR",
+        "SHMT1",
+        "SHMT2",
+        "DHFR",
+        "TYMS",
+        "PHGDH"
+      ]
+    },
+    {
+      "pathway_id": "cytochrome_p450_detox",
+      "reactome_ids": [
+        "R-HSA-211859",
+        "R-HSA-211945"
+      ],
+      "seed_genes": [
+        "CYP1A1",
+        "CYP1A2",
+        "CYP2E1",
+        "CYP3A4",
+        "CYP2D6",
+        "GSTM1",
+        "GSTT1",
+        "NAT2"
+      ],
+      "expanded_genes": [
+        "CYP1A1",
+        "CYP1A2",
+        "CYP2E1",
+        "CYP3A4",
+        "CYP2D6",
+        "GSTM1",
+        "GSTT1",
+        "NAT2"
+      ]
+    },
+    {
+      "pathway_id": "apoptosis_necrosis",
+      "reactome_ids": [
+        "R-HSA-109581",
+        "R-HSA-5218859"
+      ],
+      "seed_genes": [
+        "CASP3",
+        "CASP8",
+        "CASP9",
+        "BAX",
+        "BCL2",
+        "TP53",
+        "RIPK1",
+        "MLKL"
+      ],
+      "expanded_genes": [
+        "CASP3",
+        "CASP8",
+        "CASP9",
+        "BAX",
+        "BCL2",
+        "TP53",
+        "RIPK1",
+        "MLKL"
+      ]
+    },
+    {
+      "pathway_id": "Kras_mapk_proliferation",
+      "reactome_ids": [
+        "R-HSA-5673001",
+        "R-HSA-112409"
+      ],
+      "seed_genes": [
+        "KRAS",
+        "NRAS",
+        "HRAS",
+        "BRAF",
+        "MAP2K1",
+        "EGFR",
+        "ERBB2"
+      ],
+      "expanded_genes": [
+        "KRAS",
+        "NRAS",
+        "HRAS",
+        "BRAF",
+        "MAP2K1",
+        "EGFR",
+        "ERBB2"
+      ]
+    },
+    {
+      "pathway_id": "pi3k_akt_mtor",
+      "reactome_ids": [
+        "R-HSA-1257604",
+        "R-HSA-165159"
+      ],
+      "seed_genes": [
+        "PIK3CA",
+        "PTEN",
+        "AKT1",
+        "MTOR",
+        "TSC1",
+        "TSC2",
+        "RHEB"
+      ],
+      "expanded_genes": [
+        "PIK3CA",
+        "PTEN",
+        "AKT1",
+        "MTOR",
+        "TSC1",
+        "TSC2",
+        "RHEB"
+      ]
+    },
+    {
+      "pathway_id": "gut_microbiome_fermentation",
+      "reactome_ids": [],
+      "seed_genes": [
+        "FFAR2",
+        "FFAR3",
+        "SLC5A8",
+        "GPR41",
+        "GPR43",
+        "MUC2",
+        "TJP1",
+        "OCLN",
+        "MYD88",
+        "TLR4",
+        "NOD2"
+      ],
+      "expanded_genes": [
+        "FFAR2",
+        "FFAR3",
+        "SLC5A8",
+        "GPR41",
+        "GPR43",
+        "MUC2",
+        "TJP1",
+        "OCLN",
+        "MYD88",
+        "TLR4",
+        "NOD2"
+      ]
+    },
+    {
+      "pathway_id": "microbial_proteolysis_putrefaction",
+      "reactome_ids": [],
+      "seed_genes": [
+        "IDO1",
+        "TDO2",
+        "AHR",
+        "CYP1B1",
+        "SULT1A1",
+        "FMO3",
+        "IL10",
+        "IL17A"
+      ],
+      "expanded_genes": [
+        "IDO1",
+        "TDO2",
+        "AHR",
+        "CYP1B1",
+        "SULT1A1",
+        "FMO3",
+        "IL10",
+        "IL17A"
+      ]
+    },
+    {
+      "pathway_id": "neuroinflammation",
+      "reactome_ids": [
+        "R-HSA-913531",
+        "R-HSA-168249"
+      ],
+      "seed_genes": [
+        "TNF",
+        "IL1B",
+        "IL6",
+        "NFKB1",
+        "TLR4",
+        "CX3CR1",
+        "TREM2",
+        "AIF1",
+        "GFAP",
+        "CSF1R",
+        "NLRP3"
+      ],
+      "expanded_genes": [
+        "TNF",
+        "IL1B",
+        "IL6",
+        "NFKB1",
+        "TLR4",
+        "CX3CR1",
+        "TREM2",
+        "AIF1",
+        "GFAP",
+        "CSF1R",
+        "NLRP3"
+      ]
+    },
+    {
+      "pathway_id": "neurotransmitter_metabolism",
+      "reactome_ids": [
+        "R-HSA-112310",
+        "R-HSA-209776"
+      ],
+      "seed_genes": [
+        "MAOA",
+        "MAOB",
+        "COMT",
+        "TH",
+        "DDC",
+        "TPH2",
+        "GAD1",
+        "GAD2",
+        "SLC6A4",
+        "SLC6A3",
+        "DRD2"
+      ],
+      "expanded_genes": [
+        "MAOA",
+        "MAOB",
+        "COMT",
+        "TH",
+        "DDC",
+        "TPH2",
+        "GAD1",
+        "GAD2",
+        "SLC6A4",
+        "SLC6A3",
+        "DRD2"
+      ]
+    },
+    {
+      "pathway_id": "brain_energy_metabolism",
+      "reactome_ids": [
+        "R-HSA-163200",
+        "R-HSA-1428517"
+      ],
+      "seed_genes": [
+        "PPARGC1A",
+        "TFAM",
+        "SOD2",
+        "PARK7",
+        "PINK1",
+        "PRKN",
+        "SNCA",
+        "APP",
+        "PSEN1",
+        "MAPT",
+        "TOMM40"
+      ],
+      "expanded_genes": [
+        "PPARGC1A",
+        "TFAM",
+        "SOD2",
+        "PARK7",
+        "PINK1",
+        "PRKN",
+        "SNCA",
+        "APP",
+        "PSEN1",
+        "MAPT",
+        "TOMM40"
+      ]
+    }
+  ]
+}
