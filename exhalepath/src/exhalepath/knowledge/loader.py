@@ -8,6 +8,9 @@ from typing import Any
 
 from ..config import KNOWLEDGE_DIR
 
+# Aliases shorter than this must match exactly (prevents "cancer" → first *cancer* hit)
+_MIN_FUZZY_ALIAS_LEN = 4
+
 
 def _load_json(path: Path) -> dict[str, Any]:
     with path.open() as f:
@@ -45,19 +48,58 @@ class KnowledgeBase:
         s = re.sub(r"[^a-z0-9]+", " ", s)
         return re.sub(r"\s+", " ", s).strip()
 
+    @staticmethod
+    def _token_set(s: str) -> set[str]:
+        stop = {"cancer", "carcinoma", "disease", "syndrome", "the", "of", "and"}
+        return {t for t in s.split() if t and t not in stop}
+
     def resolve_disease(self, query: str) -> dict[str, Any]:
-        key = self._norm(query)
+        if query is None or not str(query).strip():
+            return self._unresolved("unknown")
+
+        key = self._norm(str(query))
+        if not key:
+            return self._unresolved(str(query))
+
         if key in self._alias_index:
-            return self.diseases[self._alias_index[key]]
+            return dict(self.diseases[self._alias_index[key]])
 
-        # Fuzzy substring match on aliases/names
+        # Prefer longest alias containment / token overlap over first substring hit
+        q_tokens = self._token_set(key)
+        candidates: list[tuple[float, int, str]] = []
         for alias, did in self._alias_index.items():
-            if key in alias or alias in key:
-                return self.diseases[did]
+            if len(alias) < _MIN_FUZZY_ALIAS_LEN:
+                continue
+            score = 0.0
+            if key == alias:
+                score = 100.0
+            elif key in alias:
+                # query is more specific fragment inside alias — weak unless substantial
+                score = 40.0 * (len(key) / max(len(alias), 1))
+            elif alias in key:
+                score = 55.0 * (len(alias) / max(len(key), 1))
+            else:
+                a_tokens = self._token_set(alias)
+                if not a_tokens or not q_tokens:
+                    continue
+                overlap = len(a_tokens & q_tokens) / len(a_tokens | q_tokens)
+                if overlap < 0.5:
+                    continue
+                score = 50.0 * overlap
+            if score > 0:
+                candidates.append((score, len(alias), did))
 
-        # Generic fallback: treat as unknown disease with neutral priors
+        if candidates:
+            candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
+            best_score, _, did = candidates[0]
+            if best_score >= 35.0:
+                return dict(self.diseases[did])
+
+        return self._unresolved(str(query))
+
+    def _unresolved(self, query: str) -> dict[str, Any]:
         return {
-            "disease_id": f"custom::{self._norm(query).replace(' ', '_')}",
+            "disease_id": f"custom::{self._norm(query).replace(' ', '_') or 'unknown'}",
             "name": query,
             "aliases": [query],
             "mondo_id": None,

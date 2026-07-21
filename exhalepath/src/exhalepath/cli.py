@@ -152,6 +152,37 @@ def list_vocs():
         )
 
 
+@app.command("audit")
+def audit_cmd(
+    out: Path = typer.Option(
+        Path("runs/audit/audit_report.json"),
+        help="Where to write the full JSON audit report",
+    ),
+):
+    """Run literature accuracy, calibrator holdout, zero-shot, and stress audits."""
+    from .eval.audit import run_full_audit
+
+    report = run_full_audit(out_path=out)
+    lit = report.literature_accuracy
+    rprint(
+        f"[bold]Audit {'PASSED' if report.passed else 'FAILED'}[/bold]\n"
+        f"  literature case pass rate: {lit.get('case_pass_rate', 0):.1%}\n"
+        f"  directional accuracy:      {lit.get('directional_accuracy')}\n"
+        f"  min-fold accuracy:         {lit.get('min_fold_accuracy')}\n"
+        f"  zero-shot pass rate:       {report.zero_shot.get('pass_rate')}\n"
+        f"  stress failures:           {len(report.stress.get('failures', []))}\n"
+        f"  calibrator:                {report.calibrator_holdout}\n"
+        f"  report: {out}"
+    )
+    if not report.passed:
+        for c in lit.get("cases", []):
+            if not c.get("passed"):
+                rprint(f"  [red]FAIL[/red] {c['case_id']}: {c.get('errors')}")
+        for f in report.stress.get("failures", []):
+            rprint(f"  [red]STRESS[/red] {f}")
+        raise typer.Exit(code=1)
+
+
 def main():
     app()
 

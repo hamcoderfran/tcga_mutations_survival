@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import joblib
 import numpy as np
@@ -132,14 +132,23 @@ class ExhalePathPredictor:
             # Bound extreme fold-changes for clinical plausibility
             log2fc = float(np.clip(log2fc, -3.5, 4.5))
             pred_ppb = healthy * (2**log2fc)
-            # Soft clamp to literature-ish dynamic range
+            # Soft clamp to literature-ish dynamic range, then re-derive fold metrics
             low = float(voc.get("healthy_ppb_low", healthy * 0.1))
             high = float(voc.get("healthy_ppb_high", healthy * 10))
-            pred_ppb = float(np.clip(pred_ppb, low * 0.2, high * 8))
+            pred_ppb = float(np.clip(pred_ppb, max(low * 0.2, 1e-9), high * 8))
+            if healthy > 0:
+                log2fc = float(np.log2(pred_ppb / healthy))
+            fold_change = float(pred_ppb / healthy) if healthy > 0 else float("nan")
 
             sigma = 0.35 * (1.1 - conf)  # log2 space uncertainty
-            ci_low = healthy * (2 ** (log2fc - 1.96 * sigma)) if query.include_uncertainty else None
-            ci_high = healthy * (2 ** (log2fc + 1.96 * sigma)) if query.include_uncertainty else None
+            if query.include_uncertainty:
+                ci_low = float(healthy * (2 ** (log2fc - 1.96 * sigma)))
+                ci_high = float(healthy * (2 ** (log2fc + 1.96 * sigma)))
+                ci_low = float(np.clip(ci_low, max(low * 0.2, 1e-9), high * 8))
+                ci_high = float(np.clip(ci_high, max(low * 0.2, 1e-9), high * 8))
+            else:
+                ci_low = None
+                ci_high = None
 
             preds.append(
                 VOCPrediction(
@@ -150,7 +159,7 @@ class ExhalePathPredictor:
                     predicted_ppb=pred_ppb,
                     delta_ppb=pred_ppb - healthy,
                     log2_fold_change=log2fc,
-                    fold_change=float(2**log2fc),
+                    fold_change=fold_change,
                     ci_low_ppb=ci_low,
                     ci_high_ppb=ci_high,
                     top_pathway_drivers=drivers,

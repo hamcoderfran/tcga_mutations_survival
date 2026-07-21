@@ -5,19 +5,10 @@ import pandas as pd
 
 from ..knowledge.loader import KnowledgeBase
 from ..schemas import PathwayScore, TumorContext
+from ..utils import stage_ordinal
 
 
 FEATURE_PREFIX_PATHWAY = "pw_"
-
-
-def stage_ordinal(stage: str | None) -> float:
-    if not stage:
-        return 1.5
-    s = stage.upper().replace("STAGE", "").strip()
-    for roman, num in [("IV", 4), ("III", 3), ("II", 2), ("I", 1), ("0", 0)]:
-        if s.startswith(roman) or roman in s.split():
-            return float(num)
-    return 1.5
 
 
 def build_feature_vector(

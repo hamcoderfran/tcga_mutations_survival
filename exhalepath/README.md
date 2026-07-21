@@ -92,6 +92,11 @@ print(result.top(10))
 | `train` | Fit per-VOC calibrators |
 | `list-diseases` | Curated disease atlas |
 | `list-vocs` | VOC catalog with healthy breath baselines |
+| `audit` | Literature accuracy, calibrator holdout, zero-shot + stress tests |
+
+```bash
+python -m exhalepath audit --out runs/audit/audit_report.json
+```
 
 ## Knowledge bases
 

@@ -8,18 +8,15 @@ import pandas as pd
 
 from ..config import DEFAULT_GDC_PROJECTS, PROCESSED_DIR
 from ..knowledge.loader import KnowledgeBase
+from ..utils import stage_ordinal
 from .gdc_client import GDCClient
 from .reactome_client import ReactomeClient
 
 
 def _stage_to_num(stage: object) -> float | None:
-    if not isinstance(stage, str):
+    if not isinstance(stage, str) or not stage.strip():
         return None
-    s = stage.upper().replace("STAGE", "").strip()
-    for roman, num in [("IV", 4), ("III", 3), ("II", 2), ("I", 1), ("0", 0)]:
-        if s.startswith(roman):
-            return float(num)
-    return None
+    return stage_ordinal(stage, default=float("nan"))
 
 
 def _build_offline_demo_tables(kb: KnowledgeBase, n_cases_per_project: int = 400) -> dict[str, pd.DataFrame]:

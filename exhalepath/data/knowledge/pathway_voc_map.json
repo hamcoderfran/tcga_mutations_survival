@@ -6,7 +6,7 @@
       "pathway_id": "lipid_peroxidation",
       "name": "Lipid peroxidation / oxidative stress",
       "reactome_ids": ["R-HSA-3299685", "R-HSA-2142753"],
-      "seed_genes": ["GPX4", "SOD2", "CAT", "ACYSL4", "ALOX15", "ALOX5", "NOS2", "CYBB", "NFE2L2", "KEAP1", "HMOX1", "PTGS2"],
+      "seed_genes": ["GPX4", "SOD2", "CAT", "ACSL4", "ALOX15", "ALOX5", "NOS2", "CYBB", "NFE2L2", "KEAP1", "HMOX1", "PTGS2"],
       "voc_effects": {
         "pentane": 0.55,
         "ethane": 0.45,
