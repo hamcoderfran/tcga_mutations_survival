@@ -22,6 +22,8 @@ app = typer.Typer(
         "voc — exhaled VOC biomarker prediction.\n\n"
         "Quick start:\n"
         '  voc "depression" -l brain -c obesity --age 24 --sex male\n'
+        '  voc ask                    # interactive question fields\n'
+        '  voc nl "24yo obese male with depression"   # optional light LLM\n'
         '  voc "lung adenocarcinoma" -l lung --stage II --genes KRAS,TP53\n'
         "  voc list-diseases\n"
         "  voc --help"
@@ -29,6 +31,219 @@ app = typer.Typer(
     add_completion=False,
     no_args_is_help=True,
 )
+
+
+def _disease_catalog() -> list[dict]:
+    from .knowledge.loader import KnowledgeBase
+
+    return list(KnowledgeBase().diseases.values())
+
+
+def _run_biomarker_from_slots(
+    slots,
+    *,
+    out_dir: Optional[Path] = None,
+    no_opentargets: bool = False,
+    no_explain: bool = False,
+):
+    """Shared path: QuerySlots → ExhaleBiomarkerEngine → rich table."""
+    from .biomarker import ExhaleBiomarkerEngine
+    from .viz.report import save_biomarker_report
+
+    miss = slots.missing_required()
+    if miss:
+        raise typer.BadParameter(f"Missing required fields: {', '.join(miss)}")
+
+    engine = ExhaleBiomarkerEngine(
+        use_opentargets=not no_opentargets, reload_knowledge=True
+    )
+    kwargs = slots.to_biomarker_kwargs()
+    report = engine.predict(**kwargs, explain=not no_explain)
+
+    comorb_label = ""
+    meta = report.result.bundle.metadata or {}
+    if meta.get("comorbidities"):
+        comorb_label = " + " + "+".join(
+            str(c.get("name") or c.get("disease_id")) for c in meta["comorbidities"]
+        )
+    loc = report.location.get("name") or slots.location
+    table = Table(
+        title=f"ExhalePath Biomarker · {report.disease_name}{comorb_label} @ {loc}"
+    )
+    table.add_column("#", justify="right")
+    table.add_column("VOC")
+    table.add_column("Healthy ppb", justify="right")
+    table.add_column("Predicted ppb", justify="right")
+    table.add_column("Δ ppb", justify="right")
+    table.add_column("Fold", justify="right")
+    table.add_column("Conf", justify="right")
+    for i, p in enumerate(report.top_vocs, 1):
+        table.add_row(
+            str(i),
+            p.name,
+            f"{p.healthy_ppb:.2f}",
+            f"{p.predicted_ppb:.2f}",
+            f"{p.delta_ppb:+.2f}",
+            f"{p.fold_change:.2f}x",
+            f"{p.confidence:.2f}",
+        )
+    rprint(table)
+    if slots.parse_method:
+        rprint(f"[dim]Parsed via: {slots.parse_method}[/dim]")
+    rprint(
+        f"[dim]Modeled {report.n_vocs_modeled} VOCs · showing top {len(report.top_vocs)} "
+        f"by |Δppb| · {report.model_version}[/dim]"
+    )
+    for note in report.notes[:6]:
+        rprint(f"[dim]• {note}[/dim]")
+    if report.mechanisms:
+        rprint("[cyan]Why (mechanisms)[/cyan]")
+        for m in report.mechanisms[:5]:
+            rprint(f"  • {m.get('why')}")
+    if out_dir:
+        paths = save_biomarker_report(report, out_dir)
+        rprint(
+            "[green]Wrote biomarker report:[/green]",
+            json.dumps({k: str(v) for k, v in paths.items()}, indent=2),
+        )
+    return report
+
+
+@app.command("ask")
+def ask_cmd(
+    nl: Optional[str] = typer.Option(
+        None,
+        "--nl",
+        help="Optional natural-language vignette to seed the questionnaire",
+    ),
+    llm: str = typer.Option(
+        "auto",
+        "--llm",
+        help="NL backend: auto | rules | ollama | openai (very light; falls back to rules)",
+    ),
+    yes: bool = typer.Option(
+        False, "--yes", "-y", help="Skip confirmation prompt"
+    ),
+    no_prompt: bool = typer.Option(
+        False,
+        "--no-prompt",
+        help="Do not prompt for missing fields (NL/flags only; fails if disease missing)",
+    ),
+    out_dir: Optional[Path] = typer.Option(None, help="Write biomarker report here"),
+    no_opentargets: bool = typer.Option(False),
+    no_explain: bool = typer.Option(False),
+):
+    """
+    Interactive question fields: disease, comorbidities, location, age, sex, …
+
+    Optionally seed from natural language (``--nl``). Use ``--llm ollama`` for a
+    tiny local model (default ``qwen2.5:0.5b``), ``--llm openai`` for an API, or
+    ``--llm rules`` for zero-weight pattern parsing. Default ``auto`` tries
+    Ollama → OpenAI key → rules.
+    """
+    from .nl import (
+        QuerySlots,
+        confirm_slots,
+        fill_slots_interactively,
+        parse_with_optional_llm,
+    )
+
+    catalog = _disease_catalog()
+    if nl:
+        slots = parse_with_optional_llm(nl, llm=llm, disease_catalog=catalog)
+        rprint("[cyan]Seeded from natural language[/cyan]")
+        for line in slots.summary_lines():
+            rprint(f"  {line}")
+    else:
+        slots = QuerySlots()
+
+    if not no_prompt:
+        names = [d.get("name") or d.get("disease_id") or "" for d in catalog]
+        slots = fill_slots_interactively(slots, disease_catalog=names)
+    elif slots.missing_required():
+        raise typer.BadParameter(
+            "disease is required; pass --nl that names a disease or omit --no-prompt"
+        )
+
+    if not yes and not confirm_slots(slots):
+        rprint("[yellow]Cancelled[/yellow]")
+        raise typer.Exit(code=0)
+
+    _run_biomarker_from_slots(
+        slots,
+        out_dir=out_dir,
+        no_opentargets=no_opentargets,
+        no_explain=no_explain,
+    )
+
+
+@app.command("nl")
+def nl_cmd(
+    text: str = typer.Argument(..., help="Natural-language clinical vignette"),
+    llm: str = typer.Option(
+        "auto",
+        "--llm",
+        help="auto | rules | ollama | openai — very light extractors; rules always available",
+    ),
+    prompt: bool = typer.Option(
+        False,
+        "--prompt/--no-prompt",
+        help="Fill missing fields interactively after parsing (default: only if disease missing)",
+    ),
+    force_prompt: bool = typer.Option(
+        False,
+        "--ask",
+        help="Always open the questionnaire after NL parse (confirm/edit fields)",
+    ),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmation"),
+    out_dir: Optional[Path] = typer.Option(None),
+    no_opentargets: bool = typer.Option(False),
+    no_explain: bool = typer.Option(False),
+    show_slots: bool = typer.Option(
+        False, "--show-slots", help="Print parsed JSON slots and exit"
+    ),
+):
+    """
+    Natural-language input → disease / comorbidities / location / … → biomarker.
+
+    Default path uses a **very light** optional LLM (local Ollama ``qwen2.5:0.5b``
+    or OpenAI-compatible) when available; otherwise a zero-weight rule parser.
+    If disease is still missing, falls back to the interactive questionnaire.
+    """
+    from .nl import (
+        confirm_slots,
+        fill_slots_interactively,
+        parse_with_optional_llm,
+    )
+
+    catalog = _disease_catalog()
+    slots = parse_with_optional_llm(text, llm=llm, disease_catalog=catalog)
+
+    if show_slots:
+        rprint(slots.model_dump_json(indent=2))
+        raise typer.Exit(code=0)
+
+    need_ask = force_prompt or prompt or bool(slots.missing_required())
+    if need_ask:
+        names = [d.get("name") or d.get("disease_id") or "" for d in catalog]
+        slots = fill_slots_interactively(slots, disease_catalog=names)
+
+    if slots.missing_required():
+        raise typer.BadParameter(
+            "Could not resolve disease from text; re-run with --ask or use `voc ask`"
+        )
+
+    if not yes:
+        if not confirm_slots(slots):
+            rprint("[yellow]Cancelled[/yellow]")
+            raise typer.Exit(code=0)
+
+    _run_biomarker_from_slots(
+        slots,
+        out_dir=out_dir,
+        no_opentargets=no_opentargets,
+        no_explain=no_explain,
+    )
 
 
 @app.command("build-corpus")
@@ -735,6 +950,8 @@ def main(argv: Optional[list[str]] = None):
         "train-chembl",
         "predict",
         "biomarker",
+        "ask",
+        "nl",
         "list-diseases",
         "list-locations",
         "list-vocs",

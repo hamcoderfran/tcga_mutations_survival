@@ -84,6 +84,12 @@ voc "lung adenocarcinoma" -l lung --genes KRAS,TP53 --top 50 --out-dir runs/atla
 voc "depression" -l brain --age 24 --sex male -c obesity --top 20
 voc "schizophrenia" -l brain --age 18 --sex male -c heart_disease --top 20
 
+# Natural language OR interactive question fields
+voc ask                                          # prompt: disease, comorbidities, location, …
+voc nl "24yo obese male with depression"         # optional light LLM → slots → predict
+voc nl "stage II LUAD left lower lobe KRAS TP53" --llm rules --yes
+voc ask --nl "depression with obesity" --llm ollama   # tiny local model if Ollama is up
+
 # Explicit subcommands still work
 voc biomarker "type 2 diabetes" -l pancreas --top 20
 voc explain "type 2 diabetes" --location pancreas --top 10
@@ -96,6 +102,16 @@ voc eval-public-breath --top-k 15
 voc harvest-clinical-comorbidity
 voc eval-comorbidity-clinical --top-k 15
 ```
+
+### Natural language / ask mode
+
+| Mode | Command | Notes |
+|---|---|---|
+| Questionnaire | `voc ask` | Impute disease, comorbidities, location, age, sex, stage, genes, smoking, mode |
+| NL + optional LLM | `voc nl "…"` | `--llm auto\|rules\|ollama\|openai`; falls back to rules, then ask if disease missing |
+| Seeded ask | `voc ask --nl "…"` | Parse NL first, then edit fields interactively |
+
+Env: `VOC_LLM`, `VOC_OLLAMA_HOST`, `VOC_OLLAMA_MODEL` (default `qwen2.5:0.5b`), `OPENAI_API_KEY` / `VOC_OPENAI_API_KEY`.
 
 ## Architecture
 
