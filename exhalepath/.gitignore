@@ -14,6 +14,9 @@ data/processed/
 data/chembl/*
 !data/chembl/.gitkeep
 !data/chembl/chembl_manifest.json
+data/public_breath/*
+!data/public_breath/.gitkeep
+!data/public_breath/public_breath_manifest.json
 data/census/*
 !data/census/.gitkeep
 !data/census/census_manifest.json

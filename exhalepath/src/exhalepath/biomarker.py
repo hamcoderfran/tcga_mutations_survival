@@ -33,6 +33,8 @@ class BiomarkerReport:
     model_version: str
     notes: list[str]
     result: PredictionResult
+    mechanisms: list[dict[str, Any]] | None = None
+    census: dict[str, Any] | None = None
 
     @property
     def ranked(self) -> list[VOCPrediction]:
@@ -90,6 +92,11 @@ class BiomarkerReport:
                 f"{i:<5}{p.name[:21]:<22}{p.healthy_ppb:10.2f}{p.predicted_ppb:12.2f}"
                 f"{p.delta_ppb:12.2f}{p.fold_change:8.2f}x"
             )
+        if self.mechanisms:
+            lines.append("")
+            lines.append("Why (top mechanisms):")
+            for m in self.mechanisms[:5]:
+                lines.append(f"  • {m.get('why')}")
         return "\n".join(lines)
 
 
@@ -149,6 +156,7 @@ class ExhaleBiomarkerEngine:
         age_years: float | None = None,
         smoking_status: str | None = None,
         metastatic: bool = False,
+        explain: bool = True,
     ) -> BiomarkerReport:
         loc = resolve_location(location) if location else resolve_location(
             self.kb.resolve_disease(disease).get("default_site") or "systemic"
@@ -206,6 +214,37 @@ class ExhaleBiomarkerEngine:
                 f"Location '{location}' not in Census tissue index; used as free-text primary site."
             )
 
+        mechanisms = None
+        census = None
+        if explain:
+            from .explain.mechanisms import MechanismExplainer
+
+            explainer = MechanismExplainer(knowledge=self.kb, use_opentargets=False)
+            use_genes = genes or explainer.default_genes_for_disease(disease_obj)
+            site = (loc.get("tissue_id") or loc.get("name") or "").split()[0]
+            census = explainer.census_context(
+                result.bundle.disease_id,
+                disease_name=result.bundle.disease_name,
+                preferred_tissue=site,
+            )
+            mechanisms = [
+                explainer.explain_voc(
+                    voc=p,
+                    disease=disease_obj,
+                    pathway_scores=result.bundle.pathway_scores,
+                    cell_states=result.bundle.cell_states,
+                    genes=use_genes,
+                    census=census,
+                ).to_dict()
+                for p in top
+                if abs(p.delta_ppb) >= 0.01 or abs(p.log2_fold_change) >= 0.05
+            ][: min(15, len(top))]
+            if census.get("n_census_cells"):
+                notes.append(
+                    f"Census single-cell context: {census['n_census_cells']:,} cells "
+                    f"(us_id={census.get('us_disease_id')})."
+                )
+
         return BiomarkerReport(
             disease_query=disease,
             disease_id=result.bundle.disease_id,
@@ -217,6 +256,8 @@ class ExhaleBiomarkerEngine:
             model_version=result.bundle.model_version,
             notes=notes,
             result=result,
+            mechanisms=mechanisms,
+            census=census,
         )
 
 

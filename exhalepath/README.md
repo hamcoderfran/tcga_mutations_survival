@@ -53,6 +53,22 @@ python -m exhalepath predict PAAD --mode physiology \
   --cell-fractions tumor_epithelial_warburg=0.55,hepatocyte_ketogenic=0.4
 ```
 
+### Public breath validation + mechanism “WHY” packs
+
+```bash
+# Download Scientific Data 2024 breathomics (asthma/COPD/bronchiectasis) + build cases
+python -m exhalepath harvest-public-breath
+python -m exhalepath eval-public-breath --top-k 15 --out-dir runs/public_breath_eval
+
+# Explain VOC changes via pathways → Census cell populations → driver genes
+python -m exhalepath explain "lung adenocarcinoma" --location lung --genes KRAS,TP53 --top 10
+
+# Build mechanism packs for the full ~100-disease atlas
+python -m exhalepath build-mechanism-packs --top-vocs 15
+```
+
+Each VOC mechanism states **why** it moves: dysregulated pathways, biosynthetic chains, affected cell states (with Census fractions / top cell types), and genetic nodes.
+
 ### ChEMBL chemogenomic training (millions of activity rows)
 
 ChEMBL (∼2.9M compounds, ∼**24M** bioactivities) does **not** label exhaled ppb. It trains the **chemogenomic middle layer**: which chemicals potently modulate VOC-pathway enzymes, plus VOC physicochemical priors (AlogP → blood–air λ hints).
@@ -174,6 +190,10 @@ print(result.top(10))
 | Command | Purpose |
 |---|---|
 | `biomarker` | **Whole-body engine:** disease + location → top-N VOCs by \|Δppb\| |
+| `explain` | WHY VOC changes: pathways, Census cells, driver genes |
+| `build-mechanism-packs` | Mechanism packs for ~100 atlas diseases |
+| `harvest-public-breath` | Scientific Data breathomics → public validation cases |
+| `eval-public-breath` | Top-k / directional eval vs public breath sets |
 | `predict` | VOC ppb panel for a disease / tumor context |
 | `harvest-chembl` | ChEMBL activities for pathway genes + VOC physchem |
 | `train-chembl` | Fit chemogenomic aux model on ChEMBL pChEMBL rows |

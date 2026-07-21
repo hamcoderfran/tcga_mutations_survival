@@ -33,6 +33,22 @@ def save_biomarker_report(report, out_dir: Path) -> dict[str, Path]:
     }
     meta_path = out_dir / "biomarker_meta.json"
     meta_path.write_text(__import__("json").dumps(meta, indent=2))
+    if getattr(report, "mechanisms", None):
+        mech_path = out_dir / "voc_mechanisms.json"
+        mech_path.write_text(
+            __import__("json").dumps(
+                {
+                    "disease_id": report.disease_id,
+                    "disease_name": report.disease_name,
+                    "census": report.census,
+                    "mechanisms": report.mechanisms,
+                },
+                indent=2,
+            )
+        )
+        paths_extra_mech = mech_path
+    else:
+        paths_extra_mech = None
     # Ranked |Δppb| plot (quantity-first biomarker view)
     import matplotlib.pyplot as plt
 
@@ -58,6 +74,8 @@ def save_biomarker_report(report, out_dir: Path) -> dict[str, Path]:
             "delta_plot": delta_plot,
         }
     )
+    if paths_extra_mech is not None:
+        paths["mechanisms"] = paths_extra_mech
     return paths
 
 

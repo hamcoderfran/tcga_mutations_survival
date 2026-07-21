@@ -66,6 +66,98 @@ def train_cmd(
     rprint("[green]Training complete[/green]", result["model_path"])
 
 
+@app.command("harvest-public-breath")
+def harvest_public_breath_cmd(
+    out_dir: Path = typer.Option(None, help="Download dir (default data/public_breath)"),
+):
+    """Download Scientific Data breathomics peak tables and build public validation cases."""
+    from .config import DATA_DIR
+    from .ingest.public_breath import build_public_breath_benchmark
+
+    paths = build_public_breath_benchmark(out_dir=out_dir or (DATA_DIR / "public_breath"))
+    rprint("[green]Public breath benchmark ready[/green]")
+    for k, v in paths.items():
+        rprint(f"  {k}: {v}")
+
+
+@app.command("eval-public-breath")
+def eval_public_breath_cmd(
+    out_dir: Path = typer.Option(Path("runs/public_breath_eval")),
+    top_k: int = typer.Option(15, help="Top-k predicted VOCs for recall"),
+    mode: str = typer.Option("hybrid"),
+):
+    """Evaluate ExhalePath against public breath VOC benchmarks (top-k + direction)."""
+    from .eval.public_breath import evaluate_public_breath
+
+    report = evaluate_public_breath(top_k=top_k, mode=mode, out_dir=out_dir)
+    o = report["overall"]
+    rprint(
+        f"[bold]Public breath eval[/bold]\n"
+        f"  cases: {o['n_cases']}\n"
+        f"  mean elevated recall@{o['top_k']}: {o['mean_elevated_recall_at_k']}\n"
+        f"  mean directional accuracy: {o['mean_directional_accuracy']}\n"
+        f"  report: {out_dir / 'public_breath_eval.json'}"
+    )
+
+
+@app.command("build-mechanism-packs")
+def build_mechanism_packs_cmd(
+    out: Path = typer.Option(
+        Path("data/knowledge/disease_mechanism_packs.json"),
+        help="Output JSON for all atlas diseases",
+    ),
+    top_vocs: int = typer.Option(15, help="VOCs to explain per disease"),
+    mode: str = typer.Option("hybrid"),
+):
+    """
+    Build WHY-mechanism packs for ~100 atlas diseases:
+
+    VOC Δppb → pathways → Census cell populations → driver genes / alterations.
+    """
+    from .explain.mechanisms import build_all_mechanism_packs
+
+    path = build_all_mechanism_packs(out_path=out, top_n_vocs=top_vocs, mode=mode)
+    rprint(f"[green]Mechanism packs written:[/green] {path}")
+
+
+@app.command("explain")
+def explain_cmd(
+    disease: str = typer.Argument(...),
+    location: Optional[str] = typer.Option(None, "--location", "-l"),
+    genes: Optional[str] = typer.Option(None),
+    top: int = typer.Option(10, help="Top VOCs to explain"),
+    out: Optional[Path] = typer.Option(None, help="Write mechanism pack JSON"),
+):
+    """Explain why top VOCs change: pathways, cell states, Census populations, genes."""
+    from .explain.mechanisms import MechanismExplainer
+
+    explainer = MechanismExplainer(use_opentargets=False)
+    pack = explainer.build_disease_pack(
+        disease,
+        location=location,
+        genes=[g.strip().upper() for g in genes.split(",")] if genes else None,
+        top_n=top,
+    )
+    rprint(f"[bold]{pack['disease_name']}[/bold] @ {pack['location'].get('name')}")
+    if pack.get("census", {}).get("top_cell_types"):
+        rprint("[cyan]Top Census cell populations[/cyan]")
+        for ct in pack["census"]["top_cell_types"][:5]:
+            rprint(
+                f"  • {ct['cell_type']} ({ct['tissue']}) n={ct['n_cells']:,} "
+                f"({ct['fraction']:.1%})"
+            )
+    for m in pack["voc_mechanisms"][:top]:
+        rprint(f"\n[green]{m['name']}[/green] Δppb={m['delta_ppb']:+.2f} ({m['direction']})")
+        rprint(f"  {m['why']}")
+        if m.get("driver_genes"):
+            rprint(f"  genes: {', '.join(m['driver_genes'][:8])}")
+    if out:
+        out = Path(out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(pack, indent=2))
+        rprint(f"[green]Wrote[/green] {out}")
+
+
 @app.command("harvest-chembl")
 def harvest_chembl_cmd(
     out_dir: Path = typer.Option(None, help="Output dir (default data/chembl)"),
@@ -272,6 +364,9 @@ def biomarker_cmd(
         None, help="Write top-50 biomarker CSV/JSON/plots here"
     ),
     no_opentargets: bool = typer.Option(False, help="Disable Open Targets enrichment"),
+    no_explain: bool = typer.Option(
+        False, help="Skip VOC mechanism explanations (pathways/cells/genes)"
+    ),
 ):
     """
     Whole-body exhaled biomarker prediction: disease + any cell location → top VOCs (ppb).
@@ -298,6 +393,7 @@ def biomarker_cmd(
         age_years=age,
         smoking_status=smoking,
         metastatic=metastatic,
+        explain=not no_explain,
     )
     table = Table(
         title=(
@@ -329,6 +425,10 @@ def biomarker_cmd(
     )
     for note in report.notes[:6]:
         rprint(f"[dim]• {note}[/dim]")
+    if report.mechanisms:
+        rprint("[cyan]Why (mechanisms)[/cyan]")
+        for m in report.mechanisms[:5]:
+            rprint(f"  • {m.get('why')}")
     if out_dir:
         paths = save_biomarker_report(report, out_dir)
         rprint(
