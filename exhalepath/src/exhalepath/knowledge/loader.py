@@ -28,12 +28,15 @@ class KnowledgeBase:
         self.pathway_chains_doc = _load_json(self.root / "voc_pathway_chains.json")
         self.cell_state_doc = _load_json(self.root / "cell_state_atlas.json")
         self.physio_constants = _load_json(self.root / "physio_constants.json")
+        body_path = self.root / "whole_body_tissues.json"
+        self.whole_body_doc = _load_json(body_path) if body_path.exists() else {"tissues": []}
 
         self.vocs = {v["voc_id"]: v for v in self.voc_catalog["vocs"]}
         self.pathways = {p["pathway_id"]: p for p in self.pathway_map["pathways"]}
         self.diseases = {d["disease_id"]: d for d in self.disease_priors["diseases"]}
         self.pathway_chains = list(self.pathway_chains_doc.get("chains") or [])
         self.cell_states = list(self.cell_state_doc.get("cell_states") or [])
+        self.tissues = {t["tissue_id"]: t for t in self.whole_body_doc.get("tissues") or []}
         self._alias_index = self._build_alias_index()
 
     def _build_alias_index(self) -> dict[str, str]:

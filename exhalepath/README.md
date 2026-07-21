@@ -1,8 +1,8 @@
 # ExhalePath
 
-**Pathway-informed prediction of exhaled volatile organic compounds (VOCs) in parts-per-billion (ppb) for any disease — including tumor stage, site, histology, and driver mutations.**
+**Whole-body exhaled VOC biomarker prediction — think AlphaFold-style structure prediction, but for breath: disease + any location of affected cells → ranked top-50 VOC concentration shifts (ppb).**
 
-ExhalePath connects large-scale disease molecular data (TCGA/GDC mutations + clinical covariates, Reactome pathways, Open Targets associations) to a mechanistic VOC emission model grounded in metabolic biochemistry and breath-biomarker literature. Optional gradient-boosting calibrators learn pathway→ppb mappings on a multi-cohort training corpus.
+ExhalePath models the full human body tissue map (~66 Census-informed sites), ~100 high-burden diseases, and a **50-VOC exhaled panel**. Pathway chains × affected cell states → tissue production → blood transfer → Farhi alveolar release → exhaled ppb. Optional ML calibrators refine well-studied VOCs.
 
 > Research / hypothesis-generation tool. Not a medical device. Predicted ppb values should be validated against breath GC-MS / PTR-MS cohorts before clinical use.
 
@@ -77,7 +77,41 @@ cd exhalepath
 pip install -e ".[dev]"
 ```
 
-## Quickstart
+## Quickstart — biomarker engine (recommended)
+
+```bash
+# Disease + any affected-cell location → top 50 VOCs with Δppb quantities
+python -m exhalepath biomarker "lung adenocarcinoma" \
+  --location lung --genes KRAS,TP53 --top 50 \
+  --out-dir ./runs/biomarker_luad
+
+python -m exhalepath biomarker "Alzheimer's" --location brain --top 50 \
+  --out-dir ./runs/biomarker_ad
+
+python -m exhalepath biomarker "type 2 diabetes" --location pancreas \
+  --affected-fraction 0.4 --top 50
+
+python -m exhalepath list-locations
+python -m exhalepath list-diseases
+```
+
+### Python API (biomarker)
+
+```python
+from exhalepath import ExhaleBiomarkerEngine
+
+engine = ExhaleBiomarkerEngine()
+report = engine.predict(
+    "breast invasive carcinoma",
+    location="left breast upper outer",
+    genes=["PIK3CA", "TP53"],
+    top_n=50,
+)
+print(report.summary())
+report.to_dataframe()  # rank, voc, healthy/predicted/Δ ppb, fold, physio traces
+```
+
+## Quickstart — legacy predict CLI
 
 ```bash
 # 1) Mechanistic prediction (no download required)
@@ -121,11 +155,15 @@ print(result.top(10))
 
 | Command | Purpose |
 |---|---|
+| `biomarker` | **Whole-body engine:** disease + location → top-N VOCs by \|Δppb\| |
 | `predict` | VOC ppb panel for a disease / tumor context |
 | `build-corpus` | Pull GDC + pathway data; write training matrices |
 | `train` | Fit per-VOC calibrators |
-| `list-diseases` | Curated disease atlas |
-| `list-vocs` | VOC catalog with healthy breath baselines |
+| `list-diseases` | ~100-disease atlas |
+| `list-locations` | Whole-body tissue map for affected-cell placement |
+| `list-vocs` | 50-VOC catalog with healthy breath baselines |
+| `harvest-census` | CELLxGENE Census compositions → cell-state calibration |
+| `eval-multisite` | 20 diseases × 5 sites literature directional eval |
 | `audit` | Literature accuracy, calibrator holdout, zero-shot + stress tests |
 
 ```bash
@@ -136,9 +174,15 @@ python -m exhalepath audit --out runs/audit/audit_report.json
 
 Bundled under `data/knowledge/`:
 
-- `voc_catalog.json` — 20 endogenous breath VOCs with healthy ppb medians/ranges + literature anchors
-- `pathway_voc_map.json` — metabolic pathways → VOC emission coefficients (lipid peroxidation, Warburg glycolysis, mevalonate/isoprene, methionine→DMS, urea cycle→ammonia, …)
-- `disease_voc_priors.json` — disease-level pathway biases + VOC log2FC priors (cancers + metabolic / inflammatory diseases)
+- `voc_catalog.json` — **50** endogenous breath VOCs with healthy ppb medians/ranges
+- `whole_body_tissues.json` — full-body anatomic map (~66 tissues; Census healthy-cell counts)
+- `pathway_voc_map.json` — metabolic pathways → VOC emission coefficients
+- `voc_pathway_chains.json` — multi-step biosynthetic chains (ketogenesis→acetone, PUFA→aldehydes, …)
+- `cell_state_atlas.json` — affected cell states (density × activity)
+- `disease_voc_priors.json` — **~100** diseases with pathway biases + VOC log2FC priors
+- `physio_constants.json` — λ blood:air, perfusion, hepatic first-pass, Farhi parameters
+
+Rebuild atlas expansions with `python scripts/build_whole_body_atlas.py`.
 
 Any unrecognized disease still runs: Open Targets enrichments (when online) + generic pathway scoring.
 

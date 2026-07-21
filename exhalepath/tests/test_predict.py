@@ -28,7 +28,7 @@ def test_unknown_disease_still_returns_full_voc_panel():
     result = predictor.predict(
         DiseaseQuery(disease="obscure mitochondrial myopathy XYZ", mutated_genes=["MT-CO1"])
     )
-    assert len(result.bundle.predictions) >= 15
+    assert len(result.bundle.predictions) >= 50
     assert result.bundle.metadata["calibrator_loaded"] in {True, False}
 
 

@@ -171,6 +171,100 @@ def predict_cmd(
         rprint("[green]Wrote report:[/green]", json.dumps({k: str(v) for k, v in paths.items()}, indent=2))
 
 
+@app.command("biomarker")
+def biomarker_cmd(
+    disease: str = typer.Argument(..., help="Disease name / atlas id / alias"),
+    location: Optional[str] = typer.Option(
+        None,
+        "--location",
+        "-l",
+        help="Any anatomic site of affected cells (lung, brain, left breast, gut, …)",
+    ),
+    top: int = typer.Option(50, help="Top-N VOCs by |Δppb| (default 50)"),
+    stage: Optional[str] = typer.Option(None, help="Tumor stage, e.g. II, IIIA, IV"),
+    genes: Optional[str] = typer.Option(
+        None, help="Comma-separated mutated genes, e.g. KRAS,TP53"
+    ),
+    affected_fraction: Optional[float] = typer.Option(
+        None, help="Density of affected cells at location (0–1)"
+    ),
+    affected_activity: Optional[float] = typer.Option(
+        None, help="Metabolic activity of affected cells (≥0)"
+    ),
+    mode: str = typer.Option("hybrid", help="physiology | hybrid | legacy"),
+    age: Optional[float] = typer.Option(None),
+    sex: Optional[str] = typer.Option(None),
+    smoking: Optional[str] = typer.Option(None, help="never|former|current"),
+    metastatic: bool = typer.Option(False),
+    out_dir: Optional[Path] = typer.Option(
+        None, help="Write top-50 biomarker CSV/JSON/plots here"
+    ),
+    no_opentargets: bool = typer.Option(False, help="Disable Open Targets enrichment"),
+):
+    """
+    Whole-body exhaled biomarker prediction: disease + any cell location → top VOCs (ppb).
+
+    Models ~100 atlas diseases × full-body tissue map × 50-VOC panel.
+    """
+    from .biomarker import ExhaleBiomarkerEngine
+    from .viz.report import save_biomarker_report
+
+    engine = ExhaleBiomarkerEngine(
+        use_opentargets=not no_opentargets, reload_knowledge=True
+    )
+    mode_norm = mode if mode in {"physiology", "hybrid", "legacy"} else "hybrid"
+    report = engine.predict(
+        disease,
+        location=location,
+        top_n=top,
+        stage=stage,
+        genes=[g.strip().upper() for g in genes.split(",")] if genes else None,
+        affected_fraction=affected_fraction,
+        affected_activity=affected_activity,
+        mode=mode_norm,
+        sex=sex,
+        age_years=age,
+        smoking_status=smoking,
+        metastatic=metastatic,
+    )
+    table = Table(
+        title=(
+            f"ExhalePath Biomarker · {report.disease_name} @ "
+            f"{report.location.get('name') or location}"
+        )
+    )
+    table.add_column("#", justify="right")
+    table.add_column("VOC")
+    table.add_column("Healthy ppb", justify="right")
+    table.add_column("Predicted ppb", justify="right")
+    table.add_column("Δ ppb", justify="right")
+    table.add_column("Fold", justify="right")
+    table.add_column("Conf", justify="right")
+    for i, p in enumerate(report.top_vocs, 1):
+        table.add_row(
+            str(i),
+            p.name,
+            f"{p.healthy_ppb:.2f}",
+            f"{p.predicted_ppb:.2f}",
+            f"{p.delta_ppb:+.2f}",
+            f"{p.fold_change:.2f}x",
+            f"{p.confidence:.2f}",
+        )
+    rprint(table)
+    rprint(
+        f"[dim]Modeled {report.n_vocs_modeled} VOCs · showing top {len(report.top_vocs)} "
+        f"by |Δppb| · {report.model_version}[/dim]"
+    )
+    for note in report.notes[:6]:
+        rprint(f"[dim]• {note}[/dim]")
+    if out_dir:
+        paths = save_biomarker_report(report, out_dir)
+        rprint(
+            "[green]Wrote biomarker report:[/green]",
+            json.dumps({k: str(v) for k, v in paths.items()}, indent=2),
+        )
+
+
 @app.command("list-diseases")
 def list_diseases():
     """List curated disease atlas entries."""
@@ -180,6 +274,20 @@ def list_diseases():
     for d in kb.diseases.values():
         aliases = ", ".join(d.get("aliases", [])[:4])
         rprint(f"[bold]{d['disease_id']}[/bold] — {d['name']}  ({aliases})")
+
+
+@app.command("list-locations")
+def list_locations():
+    """List whole-body anatomic locations for affected-cell placement."""
+    from .body.tissues import WholeBodyMap
+
+    body = WholeBodyMap()
+    for t in body.list_locations():
+        n = t.get("n_census_healthy_cells") or 0
+        rprint(
+            f"[bold]{t['tissue_id']}[/bold] — {t['name']}  "
+            f"(Census healthy cells: {n:,})"
+        )
 
 
 @app.command("list-vocs")

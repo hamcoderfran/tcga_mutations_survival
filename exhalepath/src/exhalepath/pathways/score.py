@@ -47,6 +47,16 @@ def _site_multiplier(pathway_id: str, tumor: TumorContext | None, default_site: 
         "breast": {"pi3k_akt_mtor": 1.2, "lipid_peroxidation": 1.1},
         "kidney": {"urea_cycle": 1.2},
         "ovary": {"lipid_peroxidation": 1.15, "glycolysis_warburg": 1.1},
+        "heart": {
+            "lipid_peroxidation": 1.2,
+            "fatty_acid_oxidation": 1.25,
+            "mevalonate_cholesterol": 1.15,
+        },
+        "prostate": {"lipid_peroxidation": 1.1, "glycolysis_warburg": 1.1},
+        "skin": {"lipid_peroxidation": 1.15, "apoptosis_necrosis": 1.1},
+        "adipose": {"fatty_acid_oxidation": 1.35, "ketone_body_metabolism": 1.2},
+        "blood": {"glycolysis_warburg": 1.15, "apoptosis_necrosis": 1.15},
+        "bladder": {"lipid_peroxidation": 1.1, "urea_cycle": 1.1},
     }
     for key, pathway_boost in boosts.items():
         if key in site:
@@ -101,11 +111,17 @@ def score_pathways(
         base = hit_frac + 0.5 * soft
         if pid in overrides:
             base = float(overrides[pid])
-        elif not has_molecular and float(disease.get("pathway_bias", {}).get(pid, 1.0)) > 1.0:
-            # Disease-prior pathway activation without gene evidence (zero-shot metabolic diseases)
-            base = 0.35 * (float(disease["pathway_bias"][pid]) - 1.0)
 
         bias = float(disease.get("pathway_bias", {}).get(pid, 1.0))
+        # Disease-atlas pathway_bias always contributes a floor so VOC panel members
+        # linked to biased pathways activate even when supplied genes hit other sets.
+        if bias > 1.0 and pid not in overrides:
+            prior_floor = 0.32 * (bias - 1.0)
+            if not has_molecular:
+                base = max(base, prior_floor)
+            else:
+                base = base + prior_floor
+
         site_m = _site_multiplier(pid, tumor, disease.get("default_site"))
         score = base * bias * stage_m * site_m * burden
 
