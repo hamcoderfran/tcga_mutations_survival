@@ -17,9 +17,17 @@ from .schemas import DiseaseQuery, TumorContext
 from .viz.report import save_prediction_report
 
 app = typer.Typer(
-    name="exhalepath",
-    help="ExhalePath: pathway-informed exhaled VOC (ppb) prediction for any disease.",
+    name="voc",
+    help=(
+        "voc — exhaled VOC biomarker prediction.\n\n"
+        "Quick start:\n"
+        '  voc "depression" -l brain -c obesity --age 24 --sex male\n'
+        '  voc "lung adenocarcinoma" -l lung --stage II --genes KRAS,TP53\n'
+        "  voc list-diseases\n"
+        "  voc --help"
+    ),
     add_completion=False,
+    no_args_is_help=True,
 )
 
 
@@ -699,7 +707,46 @@ def eval_multisite_cmd(
             )
 
 
-def main():
+def main(argv: Optional[list[str]] = None):
+    """
+    Entry point for ``voc`` / ``exhalepath``.
+
+    If the first argument is not a known subcommand, treat the invocation as
+    ``voc biomarker …`` so users can run::
+
+        voc "depression" -l brain -c obesity
+    """
+    import sys
+
+    args = list(sys.argv[1:] if argv is None else argv)
+    # Known top-level commands (keep in sync with @app.command names)
+    commands = {
+        "build-corpus",
+        "train",
+        "eval-completion",
+        "integrate-datasources",
+        "harvest-public-breath",
+        "eval-public-breath",
+        "harvest-clinical-comorbidity",
+        "eval-comorbidity-clinical",
+        "build-mechanism-packs",
+        "explain",
+        "harvest-chembl",
+        "train-chembl",
+        "predict",
+        "biomarker",
+        "list-diseases",
+        "list-locations",
+        "list-vocs",
+        "harvest-census",
+        "audit",
+        "eval-multisite",
+        "help",
+    }
+    if args and not args[0].startswith("-") and args[0] not in commands:
+        # Default to biomarker for disease-first UX
+        args = ["biomarker", *args]
+        sys.argv = [sys.argv[0], *args]
     app()
 
 

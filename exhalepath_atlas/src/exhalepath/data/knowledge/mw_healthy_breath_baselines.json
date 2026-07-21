@@ -1,0 +1,63 @@
+{
+  "version": "1.0.0",
+  "source": "Metabolomics Workbench ST003200",
+  "unit": "ppbv",
+  "vocs": {
+    "acetaldehyde": {
+      "median_ppb": 113.5688625,
+      "q25_ppb": 96.07447,
+      "q75_ppb": 131.30424,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "acetone": {
+      "median_ppb": 511.16528500000004,
+      "q25_ppb": 400.24988,
+      "q75_ppb": 690.4144,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "ethanol": {
+      "median_ppb": 191.06025,
+      "q25_ppb": 129.26175,
+      "q75_ppb": 278.64578,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "isoprene": {
+      "median_ppb": 61.020855,
+      "q25_ppb": 45.974556,
+      "q75_ppb": 78.131256,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "methanol": {
+      "median_ppb": 106.728725,
+      "q25_ppb": 82.847534,
+      "q75_ppb": 150.75299,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "phenol": {
+      "median_ppb": 3.8179284,
+      "q25_ppb": 3.1048641,
+      "q75_ppb": 4.8378916,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "propanol": {
+      "median_ppb": 116.38161500000001,
+      "q25_ppb": 89.38901,
+      "q75_ppb": 157.03479,
+      "n": 504.0,
+      "source_study": "ST003200"
+    },
+    "toluene": {
+      "median_ppb": 5.216498,
+      "q25_ppb": 4.438656,
+      "q75_ppb": 6.2491317,
+      "n": 504.0,
+      "source_study": "ST003200"
+    }
+  }
+}

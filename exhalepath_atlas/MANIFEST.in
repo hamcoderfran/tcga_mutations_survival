@@ -1,0 +1,7 @@
+# Manifest for sdist / wheel source packaging
+include README.md
+include pyproject.toml
+include LICENSE*
+recursive-include src/exhalepath/data *
+recursive-include tests *
+global-exclude *.pyc __pycache__ .DS_Store *.docx *.xls

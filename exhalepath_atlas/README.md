@@ -1,10 +1,35 @@
-# ExhalePath Atlas
+# ExhalePath Atlas (`voc`)
 
-**Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, whole-body physiology, and mechanism explainability across **100+ diseases**.
+**Install once, predict exhaled VOC biomarkers:**
+
+```bash
+pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
+voc "depression" -l brain -c obesity --age 24 --sex male
+```
+
+See [QUICKSTART.md](QUICKSTART.md). Package name on pip: **`voc-breath`** · command: **`voc`**.
+
+**Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, comorbidities, whole-body physiology, and mechanism explainability across **100+ diseases**.
 
 This folder is the GitHub deliverable that packages the complete stack (prediction + validation + all external data integrations).
 
 > Research / hypothesis-generation tool. Not a medical device.
+
+## Install
+
+```bash
+# From GitHub (recommended)
+pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
+
+# From this folder
+cd exhalepath_atlas
+pip install -e ".[dev]"
+
+# One-liner script
+bash install_voc.sh
+```
+
+After install you get the **`voc`** command (aliases: `exhalepath`, `voc-breath`).
 
 ## What is integrated
 
@@ -52,26 +77,24 @@ Artifacts land in:
 ## Biomarker + WHY (100+ diseases)
 
 ```bash
-python -m exhalepath biomarker "lung adenocarcinoma" \
-  --location lung --genes KRAS,TP53 --top 50 \
-  --out-dir runs/atlas_luad
+# Short form (recommended) — disease is the first argument
+voc "lung adenocarcinoma" -l lung --genes KRAS,TP53 --top 50 --out-dir runs/atlas_luad
 
 # Comorbidities fuse pathway bias, VOC priors, and cell-state modulation
-python -m exhalepath biomarker "depression" -l brain \
-  --age 24 --sex male --comorbidities obesity --top 20
+voc "depression" -l brain --age 24 --sex male -c obesity --top 20
+voc "schizophrenia" -l brain --age 18 --sex male -c heart_disease --top 20
 
-python -m exhalepath biomarker "schizophrenia" -l brain \
-  --age 18 --sex male --comorbidities heart_disease --top 20
+# Explicit subcommands still work
+voc biomarker "type 2 diabetes" -l pancreas --top 20
+voc explain "type 2 diabetes" --location pancreas --top 10
+voc list-diseases
+voc list-locations
+voc list-vocs
 
-python -m exhalepath explain "type 2 diabetes" --location pancreas --top 10
-python -m exhalepath build-mechanism-packs --top-vocs 12
-
-python -m exhalepath harvest-public-breath
-python -m exhalepath eval-public-breath --top-k 15
-
-# Clinical comorbidity eval (Magdeburg SZ breath + ST003181 depression n=401)
-python -m exhalepath harvest-clinical-comorbidity
-python -m exhalepath eval-comorbidity-clinical --top-k 15
+voc harvest-public-breath
+voc eval-public-breath --top-k 15
+voc harvest-clinical-comorbidity
+voc eval-comorbidity-clinical --top-k 15
 ```
 
 ## Architecture

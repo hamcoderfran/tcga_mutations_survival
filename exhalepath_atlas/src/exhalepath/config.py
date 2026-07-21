@@ -1,9 +1,42 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
+
+def _resolve_data_dir() -> Path:
+    """
+    Resolve the atlas data directory for both editable repo installs and wheels.
+
+    Priority:
+      1. EXHALEPATH_DATA / VOC_DATA env override
+      2. Packaged data next to this module (``exhalepath/data``) — pip wheel
+      3. Repo layout ``exhalepath_atlas/data`` (editable / source checkout)
+    """
+    for key in ("EXHALEPATH_DATA", "VOC_DATA"):
+        env = os.environ.get(key)
+        if env:
+            p = Path(env).expanduser().resolve()
+            if p.exists():
+                return p
+
+    pkg_data = Path(__file__).resolve().parent / "data"
+    if (pkg_data / "knowledge" / "voc_catalog.json").exists():
+        return pkg_data
+
+    # src/exhalepath/config.py → parents[2] == exhalepath_atlas/
+    repo_data = Path(__file__).resolve().parents[2] / "data"
+    if (repo_data / "knowledge" / "voc_catalog.json").exists():
+        return repo_data
+
+    # Last resort: create writable user cache and point there
+    user = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share")) / "voc-breath"
+    user.mkdir(parents=True, exist_ok=True)
+    return user
+
+
 PACKAGE_ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = PACKAGE_ROOT / "data"
+DATA_DIR = _resolve_data_dir()
 KNOWLEDGE_DIR = DATA_DIR / "knowledge"
 CACHE_DIR = DATA_DIR / "cache"
 PROCESSED_DIR = DATA_DIR / "processed"
@@ -51,4 +84,4 @@ DEFAULT_GDC_PROJECTS = [
     "TCGA-CHOL",
 ]
 
-USER_AGENT = "ExhalePath/0.1 (research; pathway-VOC breath modeling)"
+USER_AGENT = "voc-breath/1.1 (ExhalePath Atlas; research exhaled VOC prediction)"

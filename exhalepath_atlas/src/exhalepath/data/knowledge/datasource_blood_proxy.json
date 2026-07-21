@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "note": "Individual-level UKB requires application; this encodes public blood\u2194breath bridges",
+  "links": [
+    {
+      "blood_metabolite": "3-hydroxybutyrate",
+      "breath_voc": "acetone",
+      "diseases": [
+        "type_2_diabetes",
+        "obesity"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "glucose",
+      "breath_voc": "acetone",
+      "diseases": [
+        "type_2_diabetes"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "TMAO",
+      "breath_voc": "trimethylamine",
+      "diseases": [
+        "chronic_kidney_disease",
+        "heart_disease"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "indoxyl_sulfate",
+      "breath_voc": "indole",
+      "diseases": [
+        "chronic_kidney_disease",
+        "gut_dysbiosis"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "p-cresol_sulfate",
+      "breath_voc": "phenol",
+      "diseases": [
+        "chronic_kidney_disease",
+        "gut_dysbiosis"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "lactate",
+      "breath_voc": "acetaldehyde",
+      "diseases": [
+        "lung_adenocarcinoma",
+        "sepsis"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "ammonia_blood",
+      "breath_voc": "ammonia",
+      "diseases": [
+        "chronic_liver_disease"
+      ],
+      "direction": "up"
+    },
+    {
+      "blood_metabolite": "isoprene_blood",
+      "breath_voc": "isoprene",
+      "diseases": [
+        "major_depressive_disorder",
+        "type_2_diabetes"
+      ],
+      "direction": "mod"
+    }
+  ]
+}

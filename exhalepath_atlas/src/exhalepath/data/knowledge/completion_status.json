@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "gates": {
+    "pytest": true,
+    "audit": true,
+    "multisite_composite_ge_0.90": true,
+    "lit_public_directional_ge_0.90": true,
+    "lit_public_recall_ge_0.85": true,
+    "sci_data_elev_directional_ge_0.60": true,
+    "diseases_ge_100": true,
+    "datasources_ge_12": true
+  },
+  "metrics": {
+    "literature_elevated_recall_at_15": 1.0,
+    "literature_directional_accuracy": 1.0,
+    "scientific_data_elevated_directional_accuracy": 1.0,
+    "scientific_data_elevated_recall_at_15": 0.571,
+    "multisite_composite_accuracy": 0.994,
+    "audit_literature_case_pass_rate": 1.0,
+    "n_diseases_smoke_ok": 104,
+    "n_datasources": 14
+  },
+  "command": "python -m exhalepath eval-completion"
+}

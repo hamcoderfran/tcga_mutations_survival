@@ -38,3 +38,4 @@ runs/
 src/*.egg-info/
 .venv/
 venv/
+src/exhalepath/data/**/*.docx

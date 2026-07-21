@@ -3,13 +3,21 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "exhalepath-atlas"
-version = "1.0.0"
-description = "ExhalePath Atlas: priority 1–14 datasources + whole-body exhaled VOC biomarker prediction across 100+ diseases"
+name = "voc-breath"
+version = "1.1.0"
+description = "voc: whole-body exhaled VOC biomarker prediction (ExhalePath Atlas)"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "ExhalePath Atlas contributors" }]
+keywords = ["VOC", "breath", "metabolomics", "biomarker", "exhalepath"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
 dependencies = [
   "requests>=2.31",
   "pandas>=2.0",
@@ -28,15 +36,31 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "openpyxl>=3.1"]
+dev = ["pytest>=8.0", "openpyxl>=3.1", "build>=1.0"]
 census = ["cellxgene-census>=1.18.0"]
 
+[project.urls]
+Homepage = "https://github.com/hamcoderfran/tcga_mutations_survival"
+Repository = "https://github.com/hamcoderfran/tcga_mutations_survival"
+
 [project.scripts]
+voc = "exhalepath.cli:main"
 exhalepath = "exhalepath.cli:main"
 exhalepath-atlas = "exhalepath.cli:main"
+voc-breath = "exhalepath.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+exhalepath = [
+  "data/knowledge/*.json",
+  "data/census/*",
+  "data/models/*",
+  "data/clinical_comorbidity/*.json",
+  "data/cache/.gitkeep",
+  "data/processed/.gitkeep",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

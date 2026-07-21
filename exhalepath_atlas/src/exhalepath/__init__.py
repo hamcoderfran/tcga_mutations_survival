@@ -1,11 +1,11 @@
-"""ExhalePath Atlas — whole-body exhaled VOC biomarker prediction (ppb) + datasources 1–12."""
+"""ExhalePath Atlas — whole-body exhaled VOC biomarker prediction (ppb)."""
 
 from .biomarker import BiomarkerReport, ExhaleBiomarkerEngine
 from .model.predict import ExhalePathPredictor, PredictionResult
 from .physio import PhysiologyEngine
 from .schemas import CellStateActivity, DiseaseQuery, PhysiologyTrace, TumorContext, VOCPrediction
 
-__version__ = "1.0.0-atlas"
+__version__ = "1.1.0"
 __all__ = [
     "ExhaleBiomarkerEngine",
     "BiomarkerReport",

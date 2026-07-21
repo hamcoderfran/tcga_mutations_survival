@@ -1,0 +1,166 @@
+us_disease_id,us_disease_name,exhalepath_state,n_cells,fraction,n_cells_disease_total
+normal_baseline,Normal / healthy baseline,adipocyte_lipolytic,162648,0.003792577481340359,62476003
+normal_baseline,Normal / healthy baseline,gut_fermentative_microbe,24859,0.0005796547366622399,62476003
+normal_baseline,Normal / healthy baseline,hepatocyte_ketogenic,151682,0.0035368755688644704,62476003
+normal_baseline,Normal / healthy baseline,hepatocyte_sulfur,16212,0.0003780265735052992,62476003
+normal_baseline,Normal / healthy baseline,microglia_activated,4873846,0.11364688521912833,62476003
+normal_baseline,Normal / healthy baseline,neuron_stressed,11418845,0.266261216921917,62476003
+normal_baseline,Normal / healthy baseline,oxidative_stress_cell,26236475,0.6117742872629808,62476003
+normal_baseline,Normal / healthy baseline,tumor_epithelial_warburg,1307,3.047623560149433e-05,62476003
+cmv,Cytomegalovirus infection,oxidative_stress_cell,5866750,1.0,6415859
+alzheimer,Alzheimer disease,microglia_activated,819922,0.3434362050542702,5220168
+alzheimer,Alzheimer disease,neuron_stressed,1541232,0.6455673456599565,5220168
+alzheimer,Alzheimer disease,oxidative_stress_cell,26253,0.010996449285773226,5220168
+covid19,COVID-19,microglia_activated,11733,0.0030467015489282143,4788116
+covid19,COVID-19,neuron_stressed,11988,0.0031129172563326883,4788116
+covid19,COVID-19,oxidative_stress_cell,3825038,0.9932454785058621,4788116
+covid19,COVID-19,tumor_epithelial_warburg,2291,0.0005949026888770595,4788116
+lewy_body,Lewy body dementia,microglia_activated,681599,0.3226079597572485,4027204
+lewy_body,Lewy body dementia,neuron_stressed,1409982,0.6673592776903206,4027204
+lewy_body,Lewy body dementia,oxidative_stress_cell,21197,0.01003276255243097,4027204
+schizophrenia,Schizophrenia,microglia_activated,549091,0.337697664921672,2107428
+schizophrenia,Schizophrenia,neuron_stressed,1065728,0.6554357238447611,2107428
+schizophrenia,Schizophrenia,oxidative_stress_cell,11165,0.006866611233566874,2107428
+parkinson,Parkinson disease,microglia_activated,1247800,0.6994551447341869,1955857
+parkinson,Parkinson disease,neuron_stressed,425149,0.2383175631740622,1955857
+parkinson,Parkinson disease,oxidative_stress_cell,111011,0.06222729209175094,1955857
+cancer_breast,Breast cancer,adipocyte_lipolytic,595,0.00039114166033389695,1634857
+cancer_breast,Breast cancer,hepatocyte_ketogenic,67435,0.04433048380607788,1634857
+cancer_breast,Breast cancer,microglia_activated,1108,0.0007283780834453072,1634857
+cancer_breast,Breast cancer,neuron_stressed,1148,0.0007546733211148129,1634857
+cancer_breast,Breast cancer,oxidative_stress_cell,755166,0.4964317362482481,1634857
+cancer_breast,Breast cancer,tumor_epithelial_warburg,695736,0.45736358688078005,1634857
+frontotemporal,Frontotemporal dementia,microglia_activated,497561,0.3149469086765939,1627290
+frontotemporal,Frontotemporal dementia,neuron_stressed,1072470,0.6788536705014796,1627290
+frontotemporal,Frontotemporal dementia,oxidative_stress_cell,9794,0.006199420821926479,1627290
+glioblastoma,Glioblastoma,hepatocyte_sulfur,2107,0.0015055592077057192,1421428
+glioblastoma,Glioblastoma,microglia_activated,352180,0.2516506130848601,1421428
+glioblastoma,Glioblastoma,neuron_stressed,3632,0.002595249664160974,1421428
+glioblastoma,Glioblastoma,oxidative_stress_cell,538951,0.38510804012919087,1421428
+glioblastoma,Glioblastoma,tumor_epithelial_warburg,502610,0.35914053791408235,1421428
+cancer_lung,Lung cancer,gut_fermentative_microbe,715,0.0006191773514450647,1292899
+cancer_lung,Lung cancer,microglia_activated,1570,0.0013595922262500022,1292899
+cancer_lung,Lung cancer,neuron_stressed,320,0.0002771143391082807,1292899
+cancer_lung,Lung cancer,oxidative_stress_cell,1060909,0.9187284262157093,1292899
+cancer_lung,Lung cancer,tumor_epithelial_warburg,91244,0.07901568986748739,1292899
+heart_disease,Heart disease,adipocyte_lipolytic,2423,0.003571797101876557,1292338
+heart_disease,Heart disease,microglia_activated,79593,0.11732977578607545,1292338
+heart_disease,Heart disease,neuron_stressed,75094,0.11069770184412636,1292338
+heart_disease,Heart disease,oxidative_stress_cell,521260,0.7684007252679216,1292338
+cancer_blood,Hematologic cancer,adipocyte_lipolytic,3294,0.00365454660434485,1001906
+cancer_blood,Hematologic cancer,oxidative_stress_cell,784086,0.8699085697675579,1001906
+cancer_blood,Hematologic cancer,tumor_epithelial_warburg,113963,0.12643688362809719,1001906
+cancer_ovary,Ovarian cancer,oxidative_stress_cell,964058,0.987425422626455,984988
+cancer_ovary,Ovarian cancer,tumor_epithelial_warburg,12277,0.012574577373544941,984988
+lupus,Systemic lupus erythematosus,oxidative_stress_cell,715212,1.0,777258
+ild,Interstitial lung disease,oxidative_stress_cell,286381,1.0,585733
+type2_diabetes,Type 2 diabetes,microglia_activated,58130,0.4690853924242669,443012
+type2_diabetes,Type 2 diabetes,neuron_stressed,48655,0.3926260066816223,443012
+type2_diabetes,Type 2 diabetes,oxidative_stress_cell,17137,0.13828860089411082,443012
+neuroblastoma,Neuroblastoma,hepatocyte_ketogenic,8984,0.022835240082658283,430064
+neuroblastoma,Neuroblastoma,hepatocyte_sulfur,2107,0.005355504324817565,430064
+neuroblastoma,Neuroblastoma,neuron_stressed,231909,0.5894587814257791,430064
+neuroblastoma,Neuroblastoma,oxidative_stress_cell,97996,0.2490830573397352,430064
+neuroblastoma,Neuroblastoma,tumor_epithelial_warburg,52431,0.13326741682700985,430064
+cancer_kidney,Kidney cancer,oxidative_stress_cell,289259,0.9794930836564346,397864
+cancer_kidney,Kidney cancer,tumor_epithelial_warburg,6056,0.020506916343565346,397864
+ckd,Chronic kidney disease,oxidative_stress_cell,313846,1.0,391833
+als,ALS,microglia_activated,168571,0.45220575414123804,391716
+als,ALS,neuron_stressed,199282,0.534590570719603,391716
+als,ALS,oxidative_stress_cell,4922,0.01320367513915901,391716
+cancer_colorectal,Colorectal cancer,gut_fermentative_microbe,1427,0.006776328910753801,345421
+cancer_colorectal,Colorectal cancer,neuron_stressed,3,1.424596126997996e-05,345421
+cancer_colorectal,Colorectal cancer,oxidative_stress_cell,181605,0.862379265478237,345421
+cancer_colorectal,Colorectal cancer,tumor_epithelial_warburg,27551,0.1308301596497393,345421
+bipolar,Bipolar disorder,microglia_activated,92319,0.4997293464257489,332284
+bipolar,Bipolar disorder,neuron_stressed,85471,0.46266063289631804,332284
+bipolar,Bipolar disorder,oxidative_stress_cell,6948,0.03761002067793307,332284
+ibd,Inflammatory bowel disease,gut_fermentative_microbe,1567,0.007218270931603774,252782
+ibd,Inflammatory bowel disease,neuron_stressed,1,4.606426886792453e-06,252782
+ibd,Inflammatory bowel disease,oxidative_stress_cell,215520,0.9927771226415094,252782
+cancer_stomach,Gastric cancer,gut_fermentative_microbe,715,0.008670344994846299,229406
+cancer_stomach,Gastric cancer,oxidative_stress_cell,81750,0.9913296550051537,229406
+type1_diabetes,Type 1 diabetes,microglia_activated,53610,0.5364540596793884,181857
+type1_diabetes,Type 1 diabetes,neuron_stressed,41872,0.4189965377148918,181857
+type1_diabetes,Type 1 diabetes,oxidative_stress_cell,4452,0.044549402605719775,181857
+epilepsy,Epilepsy,microglia_activated,109539,0.8299037805894386,144334
+epilepsy,Epilepsy,neuron_stressed,20940,0.15864838245321616,144334
+epilepsy,Epilepsy,oxidative_stress_cell,1511,0.011447836957345253,144334
+copd,COPD,microglia_activated,807,0.008143782670999253,142422
+copd,COPD,neuron_stressed,714,0.00720527983530789,142422
+copd,COPD,oxidative_stress_cell,97573,0.9846509374936928,142422
+glaucoma,Glaucoma,oxidative_stress_cell,119971,1.0,139633
+acute_kidney_injury,Acute kidney injury,adipocyte_lipolytic,31,0.00025846902957385963,136814
+acute_kidney_injury,Acute kidney injury,oxidative_stress_cell,119906,0.9997415309704262,136814
+influenza,Influenza / viral pneumonia,microglia_activated,367,0.004941696065494304,123282
+influenza,Influenza / viral pneumonia,neuron_stressed,1674,0.022540597312363665,123282
+influenza,Influenza / viral pneumonia,oxidative_stress_cell,72225,0.972517706622142,123282
+cancer_skin_melanoma,Melanoma,microglia_activated,37,0.00050021630975557,75631
+cancer_skin_melanoma,Melanoma,oxidative_stress_cell,39812,0.5382327492969933,75631
+cancer_skin_melanoma,Melanoma,tumor_epithelial_warburg,34119,0.4612670343932511,75631
+wilms,Wilms tumor,hepatocyte_sulfur,2107,0.036478531855955676,62081
+wilms,Wilms tumor,neuron_stressed,197,0.003410664819944598,62081
+wilms,Wilms tumor,oxidative_stress_cell,3025,0.052371883656509695,62081
+wilms,Wilms tumor,tumor_epithelial_warburg,52431,0.90773891966759,62081
+retinoblastoma,Retinoblastoma,hepatocyte_sulfur,2107,0.03726301641199774,57445
+retinoblastoma,Retinoblastoma,neuron_stressed,197,0.0034840124504810412,57445
+retinoblastoma,Retinoblastoma,oxidative_stress_cell,1809,0.0319927843803056,57445
+retinoblastoma,Retinoblastoma,tumor_epithelial_warburg,52431,0.9272601867572157,57445
+rheumatoid_arthritis,Rheumatoid arthritis,oxidative_stress_cell,44225,1.0,48637
+sjogren,Sjogren syndrome,oxidative_stress_cell,28519,1.0,45231
+periodontitis,Periodontitis,oxidative_stress_cell,36879,1.0,38520
+cystic_fibrosis,Cystic fibrosis,oxidative_stress_cell,6203,1.0,33445
+pneumonia_bacterial,Bacterial pneumonia,oxidative_stress_cell,13334,1.0,31923
+hiv,HIV infection,oxidative_stress_cell,1586,1.0,16927
+down_syndrome,Down syndrome,oxidative_stress_cell,2164,1.0,16743
+head_neck_cancer,Head and neck cancer,oxidative_stress_cell,10983,1.0,15328
+cervical_cancer,Cervical cancer,oxidative_stress_cell,10983,1.0,15328
+multiple_sclerosis,Multiple sclerosis,microglia_activated,5822,0.5475921745673439,11686
+multiple_sclerosis,Multiple sclerosis,neuron_stressed,3267,0.3072799097065463,11686
+multiple_sclerosis,Multiple sclerosis,oxidative_stress_cell,1543,0.14512791572610986,11686
+cancer_pancreas,Pancreatic cancer,gut_fermentative_microbe,715,0.2822739834188709,11483
+cancer_pancreas,Pancreatic cancer,oxidative_stress_cell,1818,0.7177260165811291,11483
+esophageal_cancer,Esophageal cancer,gut_fermentative_microbe,715,0.2822739834188709,11483
+esophageal_cancer,Esophageal cancer,oxidative_stress_cell,1818,0.7177260165811291,11483
+cancer_prostate,Prostate cancer,gut_fermentative_microbe,715,0.2822739834188709,11483
+cancer_prostate,Prostate cancer,oxidative_stress_cell,1818,0.7177260165811291,11483
+cancer_liver,Liver cancer,oxidative_stress_cell,4983,0.8050080775444265,6661
+cancer_liver,Liver cancer,tumor_epithelial_warburg,1207,0.1949919224555735,6661
+macular_degeneration,Age-related macular degeneration,microglia_activated,108,0.08138658628485305,5623
+macular_degeneration,Age-related macular degeneration,oxidative_stress_cell,1219,0.9186134137151469,5623
+census::heart_valve_disorder,heart valve disorder,adipocyte_lipolytic,1569,0.021735215482011995,183616
+census::heart_valve_disorder,heart valve disorder,neuron_stressed,10,0.00013852909803704268,183616
+census::heart_valve_disorder,heart valve disorder,oxidative_stress_cell,70608,0.9781262554199509,183616
+census::myelodysplastic_syndrome,myelodysplastic syndrome,oxidative_stress_cell,23171,1.0,176174
+census::bronchopulmonary_dysplasia,bronchopulmonary dysplasia,oxidative_stress_cell,41661,1.0,150671
+census::myelodysplastic/myeloproliferative_disease,myelodysplastic/myeloproliferative disease,oxidative_stress_cell,11576,1.0,130268
+census::tauopathy,tauopathy,microglia_activated,73128,0.589832313015704,124789
+census::tauopathy,tauopathy,neuron_stressed,48450,0.390785684903332,124789
+census::tauopathy,tauopathy,oxidative_stress_cell,2403,0.01938200208096402,124789
+census::basal_cell_carcinoma,basal cell carcinoma,oxidative_stress_cell,94950,0.964919412207069,117098
+census::basal_cell_carcinoma,basal cell carcinoma,tumor_epithelial_warburg,3452,0.03508058779293104,117098
+census::primary_sclerosing_cholangitis,primary sclerosing cholangitis,hepatocyte_ketogenic,38244,0.4582040376205595,104667
+census::primary_sclerosing_cholangitis,primary sclerosing cholangitis,hepatocyte_sulfur,5443,0.06521296351764212,104667
+census::primary_sclerosing_cholangitis,primary sclerosing cholangitis,oxidative_stress_cell,39778,0.47658299886179833,104667
+census::hematologic_disorder,hematologic disorder,oxidative_stress_cell,26700,1.0,100206
+census::pick_disease,Pick disease,microglia_activated,56124,0.5724427037116367,98043
+census::pick_disease,Pick disease,neuron_stressed,39236,0.4001917525983497,98043
+census::pick_disease,Pick disease,oxidative_stress_cell,2683,0.027365543690013566,98043
+census::respiratory_system_disorder,respiratory system disorder,oxidative_stress_cell,82842,1.0,94987
+census::digestive_system_disorder,digestive system disorder,gut_fermentative_microbe,174,0.0025641781366972207,89849
+census::digestive_system_disorder,digestive system disorder,oxidative_stress_cell,67684,0.9974358218633028,89849
+census::juvenile_dermatomyositis,juvenile dermatomyositis,oxidative_stress_cell,76296,1.0,82666
+census::prediabetes_syndrome,prediabetes syndrome,oxidative_stress_cell,1749,1.0,79575
+census::prostatic_acinar_adenocarcinoma,prostatic acinar adenocarcinoma,oxidative_stress_cell,43402,1.0,68322
+census::common_variable_immunodeficiency,common variable immunodeficiency,oxidative_stress_cell,59068,1.0,64759
+census::myocarditis,myocarditis,adipocyte_lipolytic,46,0.0018549883055085088,62705
+census::myocarditis,myocarditis,neuron_stressed,978,0.03943866440842003,62705
+census::myocarditis,myocarditis,oxidative_stress_cell,23774,0.9587063472860714,62705
+census::isolated_focal_cortical_dysplasia_type_ii,isolated focal cortical dysplasia type II,microglia_activated,31428,0.5233290038964932,61525
+census::isolated_focal_cortical_dysplasia_type_ii,isolated focal cortical dysplasia type II,neuron_stressed,27006,0.44969527425317213,61525
+census::isolated_focal_cortical_dysplasia_type_ii,isolated focal cortical dysplasia type II,oxidative_stress_cell,1620,0.0269757218503347,61525
+census::benign_prostatic_hyperplasia,benign prostatic hyperplasia,oxidative_stress_cell,31668,1.0,59853
+census::opiate_dependence,opiate dependence,microglia_activated,45799,0.8438945293066279,54399
+census::opiate_dependence,opiate dependence,neuron_stressed,8188,0.15087247332829687,54399
+census::opiate_dependence,opiate dependence,oxidative_stress_cell,284,0.00523299736507527,54399
+census::oropharynx_squamous_cell_carcinoma,oropharynx squamous cell carcinoma,oxidative_stress_cell,42860,1.0,51200

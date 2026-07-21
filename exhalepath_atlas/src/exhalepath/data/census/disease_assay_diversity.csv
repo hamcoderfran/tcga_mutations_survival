@@ -1,0 +1,391 @@
+disease,assay,n_cells
+Alzheimer disease,10x 3' v2,234101
+Alzheimer disease,10x 3' v3,246362
+Alzheimer disease,10x multiome,15852
+Alzheimer disease,Drop-seq,111920
+B-cell acute lymphoblastic leukemia,10x 3' v3,128588
+B-cell acute lymphoblastic leukemia,10x 5' v1,18122
+B-cell non-Hodgkin lymphoma,10x 5' v1,59746
+B-cell non-Hodgkin lymphoma,10x multiome,583105
+Barrett esophagus,10x 3' v2,8391
+Barrett esophagus,10x 3' v3,2561
+COVID-19,10x 3' transcription profiling,527286
+COVID-19,10x 3' v2,56893
+COVID-19,10x 3' v3,985422
+COVID-19,10x 5' transcription profiling,468730
+COVID-19,10x 5' v1,1480451
+COVID-19,10x 5' v2,1123637
+COVID-19,Seq-Well,28094
+COVID-19,Seq-Well S3,18073
+Crohn disease,10x 3' v1,2130
+Crohn disease,10x 3' v2,132692
+Crohn disease,10x 3' v3,44571
+Down syndrome,10x 5' v1,16743
+HER2 positive breast carcinoma,10x 5' transcription profiling,16017
+HIV infectious disease,10x 5' v1,1751
+HIV infectious disease || leishmaniasis,10x 5' v1,2354
+HIV infectious disease || visceral leishmaniasis,10x 5' v1,12822
+Lewy body dementia,10x 3' v3,120232
+Parkinson disease,10x 3' v3,1810127
+Pick disease,10x 3' v2,48086
+Pick disease,10x 3' v3,49957
+Plasmodium malariae malaria,10x 3' v3,27958
+Sjogren syndrome,10x 3' v2,8306
+Sjogren syndrome,10x 3' v3,36925
+Wilms tumor,10x 3' v3,4636
+acute kidney failure,10x 3' v3,125291
+acute myeloid leukemia,BD Rhapsody Targeted mRNA,27852
+acute myocardial infarction,10x 3' v3,8033
+acute promyelocytic leukemia,BD Rhapsody Targeted mRNA,3734
+adenocarcinoma,10x 3' v2,11483
+age related macular degeneration 7,10x 3' v3,1701
+amyotrophic lateral sclerosis,10x 3' v3,171539
+amyotrophic lateral sclerosis 26 with or without frontotemporal dementia,10x 3' v3,73797
+anencephaly,10x 3' v2,5499
+anthracosis,10x 5' v2,21203
+arrhythmogenic right ventricular cardiomyopathy,10x 3' v3,104496
+aspiration pneumonia,10x 3' v3,10204
+atherosclerosis,10x 3' v2,64303
+atherosclerosis,10x 3' v3,336328
+atherosclerosis || tardive dyskinesia || schizoaffective bipolar disorder,10x 3' v3,4403
+atrial fibrillation || mitral valve insufficiency,10x 3' v3,25034
+basal cell carcinoma,10x 3' v3,55897
+basal cell carcinoma,10x 5' transcription profiling,61201
+benign prostatic hyperplasia,10x 3' v2,27847
+benign prostatic hyperplasia,10x 3' v3,32006
+bipolar I disorder,10x 3' v3,152195
+bipolar I disorder || anorexia nervosa,10x 3' v3,7612
+bipolar I disorder || anorexia nervosa || obsessive-compulsive disorder,10x 3' v3,4102
+bipolar I disorder || atherosclerosis,10x 3' v3,36132
+bipolar I disorder || attention deficit-hyperactivity disorder,10x 3' v3,7023
+bipolar I disorder || brain neoplasm,10x 3' v3,3279
+bipolar I disorder || bulimia nervosa,10x 3' v3,19156
+bipolar I disorder || bulimia nervosa || obsessive-compulsive disorder,10x 3' v3,5006
+bipolar I disorder || obsessive-compulsive disorder,10x 3' v3,18786
+bipolar I disorder || post-traumatic stress disorder,10x 3' v3,689
+bipolar I disorder || type 1 diabetes mellitus,10x 3' v3,13470
+bipolar I disorder || type 2 diabetes mellitus,10x 3' v3,1711
+bipolar II disorder,10x 3' v3,26486
+bipolar II disorder || type 1 diabetes mellitus,10x 3' v3,7272
+bipolar II disorder || type 2 diabetes mellitus,10x 3' v3,474
+bipolar disorder,10x 3' v3,7693
+bipolar disorder || attention deficit-hyperactivity disorder,10x 3' v3,1012
+bipolar disorder || schizoaffective bipolar disorder,10x 3' v3,9839
+bipolar disorder || type 2 diabetes mellitus || schizoaffective bipolar disorder,10x 3' v3,5944
+blastoma,10x 3' v3,57445
+brain cancer,10x 5' v2,16917
+brain neoplasm,10x 3' v3,7056
+breast cancer,10x 3' v2,407759
+breast cancer,10x 3' v3,648636
+breast cancer,10x 5' v2,27970
+breast cancer,Smart-seq2,1010
+breast cancer,inDrop,16055
+breast carcinoma,10x 3' v2,1754
+breast carcinoma,10x 5' v1,5619
+breast mucinous carcinoma,10x 3' v3,5685
+bronchopulmonary dysplasia,10x 3' v3,150671
+cardiomyopathy,10x 3' v3,1285
+cataract,10x 3' v2,1810
+celiac disease,10x 5' v1,896
+chromophobe renal cell carcinoma,10x 3' v2,2576
+chronic kidney disease,10x 3' v3,266542
+chronic obstructive pulmonary disease,10x 3' v2,67943
+chronic obstructive pulmonary disease,10x 3' v3,42687
+chronic rhinitis,Seq-Well,29137
+clear cell renal carcinoma,10x 3' v2,20509
+clear cell renal carcinoma,10x 5' v2,167283
+clonal hematopoiesis,10x 3' v3,47354
+cognitive disorder,10x multiome,28472
+colon adenocarcinoma,10x 3' v2,166939
+colon adenocarcinoma,10x 3' v3,90312
+colon sessile serrated adenoma/polyp,TruDrop,14573
+colorectal cancer,10x 3' v2,41482
+colorectal cancer,10x 3' v3,28990
+colorectal cancer,TruDrop,6215
+colorectal carcinoma || metastatic malignant neoplasm,BD Rhapsody Whole Transcriptome Analysis,31536
+colorectal neoplasm,TruDrop,1608
+common variable immunodeficiency,10x 5' v1,64081
+common variable immunodeficiency,Smart-seq2,678
+congenital heart disease,10x 3' v2,5046
+coronary artery disorder,10x 3' v3,21903
+cystic fibrosis,10x 3' v2,7754
+cystic fibrosis,10x 3' v3,15855
+cystic fibrosis,Drop-seq,9836
+cytomegalovirus infection,10x 3' v3,6415859
+dementia,10x 3' v3,1311254
+dementia,10x multiome,83620
+dementia || Alzheimer disease,10x 3' v3,1486303
+dementia || Alzheimer disease || Lewy body dementia,10x 3' v3,304296
+dementia || Alzheimer disease || Parkinson disease,10x 3' v3,35895
+dementia || Alzheimer disease || Parkinson disease || Lewy body dementia,10x 3' v3,7538
+dementia || Alzheimer disease || amyotrophic lateral sclerosis,10x 3' v3,3215
+dementia || Alzheimer disease || brain neoplasm,10x 3' v3,9293
+dementia || Alzheimer disease || diabetes mellitus,10x 3' v3,50874
+dementia || Alzheimer disease || diabetes mellitus || Parkinson disease || head injury,10x 3' v3,1406
+dementia || Alzheimer disease || frontotemporal dementia,10x 3' v3,12705
+dementia || Alzheimer disease || normal pressure hydrocephalus,10x 3' v3,4589
+dementia || Alzheimer disease || schizophrenia,10x 3' v3,44558
+dementia || Alzheimer disease || schizophrenia || Lewy body dementia,10x 3' v3,6139
+dementia || Lewy body dementia,10x 3' v3,92373
+dementia || Parkinson disease,10x 3' v3,78639
+dementia || Parkinson disease || Lewy body dementia || head injury,10x 3' v3,2533
+dementia || Parkinson disease || progressive supranuclear palsy,10x 3' v3,308
+dementia || amyotrophic lateral sclerosis,10x 3' v3,7632
+dementia || brain neoplasm,10x 3' v3,12810
+dementia || diabetes mellitus || Parkinson disease,10x 3' v3,3990
+dementia || frontotemporal dementia,10x 3' v3,27378
+dementia || head injury,10x 3' v3,13450
+dementia || major depressive disorder || Alzheimer disease || Lewy body dementia,10x 3' v3,4518
+dementia || multiple sclerosis,10x 3' v3,441
+dementia || normal pressure hydrocephalus,10x 3' v3,2394
+dementia || post-traumatic stress disorder,10x 3' v3,4219
+dementia || progressive supranuclear palsy,10x 3' v3,4383
+dementia || schizophrenia,10x 3' v3,247512
+dementia || schizophrenia || Parkinson disease,10x 3' v3,6670
+dementia || schizophrenia || head injury,10x 3' v3,3510
+dementia || tauopathy,10x 3' v3,74692
+dementia || vascular dementia,10x 3' v3,45779
+dementia || vascular dementia || Alzheimer disease,10x 3' v3,140940
+dementia || vascular dementia || Alzheimer disease || Parkinson disease,10x 3' v3,4845
+dementia || vascular dementia || Alzheimer disease || diabetes mellitus,10x 3' v3,6946
+dementia || vascular dementia || Alzheimer disease || schizophrenia,10x 3' v3,4385
+dementia || vascular dementia || diabetes mellitus,10x 3' v3,4960
+dementia || vascular dementia || head injury,10x 3' v3,9061
+dementia || vascular dementia || schizophrenia,10x 3' v3,12153
+dementia || vascular dementia || tauopathy,10x 3' v3,4254
+diabetes mellitus,10x 3' v3,75797
+diabetes mellitus || head injury,10x 3' v3,17147
+diabetes mellitus || schizophrenia,10x 3' v3,654
+diffuse large B-cell lymphoma,10x gene expression flex,32616
+digestive system disorder,10x 3' v2,89849
+dilated cardiomyopathy,10x 3' v3,482581
+enamel caries,10x 3' v2,2015
+epilepsy,10x 3' v2,42251
+epilepsy,10x 3' v3,87654
+epilepsy || schizophrenia,10x 3' v3,1881
+epilepsy || schizophrenia || tardive dyskinesia,10x 3' v3,10445
+estrogen-receptor positive breast cancer,10x 5' transcription profiling,87648
+follicular lymphoma,10x 5' v1,122702
+frontotemporal dementia,10x 3' v3,118536
+gastric cancer,10x 3' v2,101594
+gastric cancer,10x 5' v1,116329
+gastric intestinal metaplasia,10x 3' v2,16375
+gastric intestinal metaplasia,10x 3' v3,11087
+gastritis,10x 3' v2,26639
+gingivitis,10x 3' v3,6587
+glioblastoma,10x 3' v2,269346
+glioblastoma,10x 3' v3,978958
+glioblastoma,10x 5' v1,31316
+glioblastoma,10x 5' v2,8887
+glioblastoma,BD Rhapsody Whole Transcriptome Analysis,10211
+glioblastoma,CEL-seq2,3105
+glioblastoma,Drop-seq,21227
+glioblastoma,STRT-seq,4693
+glioblastoma,Smart-seq2,9331
+glioblastoma,microwell-seq,26909
+head injury,10x 3' v3,17435
+heart disorder,10x 3' v3,1957
+heart failure,10x 3' v3,16329
+heart valve disorder,10x 3' v3,183616
+hematologic disorder,10x 3' v3,100206
+hydrosalpinx,10x 3' v3,17798
+hyperplastic polyp,TruDrop,8359
+hypersensitivity pneumonitis,10x 3' v2,2844
+hypersensitivity pneumonitis,10x 5' transcription profiling,7535
+hypersensitivity pneumonitis,10x 5' v2,9688
+hypertrophic cardiomyopathy,modified STRT-seq,1158
+inflammatory bowel disease,10x 3' v2,8449
+inflammatory bowel disease,10x 5' v1,29049
+inflammatory disease,10x 5' v2,28547
+influenza,10x 3' v3,15316
+influenza,10x 5' v1,19233
+injury,10x 3' v3,11523
+interstitial lung disease,10x 3' v2,64450
+interstitial lung disease,10x 5' transcription profiling,4006
+interstitial lung disease,10x 5' v2,248345
+intestinal failure–associated liver disease,10x 3' v3,11969
+invasive ductal breast carcinoma,10x 3' v2,19782
+invasive ductal breast carcinoma,10x 3' v3,112447
+invasive ductal breast carcinoma,10x 5' v1,54681
+invasive ductal breast carcinoma,10x gene expression flex,6752
+invasive lobular breast carcinoma,10x 3' v2,3961
+invasive lobular breast carcinoma,10x 3' v3,3805
+invasive lobular breast carcinoma,10x 5' v1,8609
+invasive lobular breast carcinoma,10x gene expression flex,3937
+invasive tubular breast carcinoma || invasive lobular breast carcinoma,10x 3' v3,8512
+isolated focal cortical dysplasia type II,10x multiome,61525
+juvenile dermatomyositis,10x 3' v3,82666
+keloid,10x 3' v3,1270
+kidney benign neoplasm,10x 5' transcription profiling,57
+kidney oncocytoma,10x 5' transcription profiling,12610
+"leukoencephalopathy, diffuse hereditary, with spheroids 1",10x 3' v3,19164
+listeriosis,10x 3' v3,28237
+liver cancer,10x 3' v2,6661
+localized scleroderma,10x 3' v2,1074
+long COVID-19,Seq-Well S3,2306
+luminal A breast carcinoma,10x 3' v3,10227
+luminal B breast carcinoma,10x 3' v2,9794
+luminal B breast carcinoma,10x 3' v3,18834
+lung adenocarcinoma,10x 3' transcription profiling,3857
+lung adenocarcinoma,10x 3' v1,5100
+lung adenocarcinoma,10x 3' v2,603826
+lung adenocarcinoma,10x 3' v3,62300
+lung adenocarcinoma,10x 5' v1,7737
+lung adenocarcinoma,10x gene expression flex,2558
+lung adenocarcinoma,BD Rhapsody Whole Transcriptome Analysis,86386
+lung adenocarcinoma,GEXSCOPE technology,16739
+lung adenocarcinoma,Smart-seq2,22974
+lung adenocarcinoma,inDrop,19910
+lung cancer,10x 3' v1,2907
+lung cancer,10x 3' v2,38002
+lung cancer,10x 3' v3,70
+lung large cell carcinoma,10x 3' v2,21167
+lymphangioleiomyomatosis,10x 3' v2,12374
+lymphoid interstitial pneumonia,10x 5' v2,16681
+lymphoma,10x 5' v2,18344
+macular degeneration,10x 3' v3,3922
+major depressive disorder || schizophrenia || atherosclerosis,10x 3' v3,6776
+major depressive disorder || tauopathy,10x 3' v3,4210
+malignant ovarian serous tumor,10x 3' v3,927205
+malignant pancreatic neoplasm,10x 3' v3,2148
+melanoma,10x 3' v3,5531
+melanoma,10x 5' transcription profiling,3670
+melanoma,Smart-seq2,3823
+metastatic melanoma,Smart-seq2,10895
+multiple sclerosis,10x 3' v2,11208
+multiple sclerosis,10x 3' v3,37
+myelodysplastic syndrome,10x 3' v3,176174
+myelodysplastic/myeloproliferative disease,10x 3' v3,130268
+myocardial infarction,10x 3' v3,190143
+myocardial ischemia,10x 3' v3,13441
+myocarditis,10x 3' v3,62705
+neuroblastoma,10x 3' v3,372619
+neuroendocrine carcinoma,10x 3' v2,2623
+non-compaction cardiomyopathy,10x 3' v3,11632
+non-small cell lung carcinoma,10x 3' v2,25109
+non-small cell lung carcinoma,10x 3' v3,67926
+non-small cell lung carcinoma,GEXSCOPE technology,1122
+non-specific interstitial pneumonia,10x 5' transcription profiling,8597
+non-specific interstitial pneumonia,10x 5' v2,21328
+nonpapillary renal cell carcinoma,10x 3' v2,29993
+nonpapillary renal cell carcinoma,10x 5' transcription profiling,177503
+normal,10x 3' transcription profiling,112632
+normal,10x 3' v1,59512
+normal,10x 3' v2,10486800
+normal,10x 3' v3,36719990
+normal,10x 5' transcription profiling,684672
+normal,10x 5' v1,2481997
+normal,10x 5' v2,3597380
+normal,10x gene expression flex,15500
+normal,10x multiome,1636691
+normal,Asteria scRNA-seq kit,7882
+normal,BD Rhapsody Targeted mRNA,64559
+normal,BD Rhapsody Whole Transcriptome Analysis,102744
+normal,CEL-seq,796
+normal,CEL-seq2,18057
+normal,Drop-seq,485877
+normal,HIVE CLX Single-Cell RNAseq Solution,15500
+normal,MARS-seq,22094
+normal,Parse Evercode Whole Transcriptome v2,7750
+normal,Quartz-seq,1441
+normal,SORT-seq,5820
+normal,SPLiT-seq,75555
+normal,ScaleBio single cell RNA sequencing,692774
+normal,Seq-Well,80724
+normal,Seq-Well S3,13585
+normal,Smart-seq,172
+normal,Smart-seq v4,49417
+normal,Smart-seq2,60648
+normal,Smart-seq3,1669
+normal,TruDrop,68266
+normal,inDrop,22164
+normal,mCT-seq,37121
+normal,microwell-seq,598266
+normal,modified STRT-seq,813
+normal,particle-templated instant partition sequencing,23250
+normal,sci-RNA-seq3,4212165
+normal pressure hydrocephalus,10x 3' v3,4737
+obstructive nephropathy,10x multiome,31817
+open-angle glaucoma,10x 5' v2,139633
+opiate dependence,10x 3' v3,54399
+oral cavity squamous cell carcinoma,10x 3' v3,28186
+oropharynx squamous cell carcinoma,10x 3' v3,51200
+ovarian cancer,10x 3' v2,57783
+periodontitis,10x 3' v2,2564
+periodontitis,10x 3' v3,35956
+pilocytic astrocytoma,10x 3' v3,34291
+plasma cell myeloma,MARS-seq,48052
+pleomorphic carcinoma,10x 3' v2,10765
+pneumonia,10x 5' v1,31923
+post-COVID-19 disorder,10x 5' v1,97224
+prediabetes syndrome,10x 3' v2,4450
+prediabetes syndrome,10x 3' v3,75125
+primary biliary cholangitis,10x 3' v3,21754
+primary biliary cholangitis,10x 5' v2,18240
+"primary cutaneous diffuse large B-cell lymphoma, Leg type",10x gene expression flex,7097
+primary sclerosing cholangitis,10x 3' v3,57511
+primary sclerosing cholangitis,10x 5' v2,47156
+progressive supranuclear palsy,10x 3' v2,55100
+progressive supranuclear palsy,10x 3' v3,72442
+prostatic acinar adenocarcinoma,10x 3' v3,68322
+pulmonary emphysema,10x 3' v3,31792
+pulmonary fibrosis,10x 3' v2,193738
+pulmonary fibrosis,10x 5' transcription profiling,57668
+pulmonary fibrosis,Drop-seq,17526
+pulmonary sarcoidosis,10x 5' transcription profiling,4886
+pulmonary sarcoidosis,10x 5' v2,28739
+pulpitis,10x 3' v2,3655
+respiratory failure,Seq-Well S3,3335
+respiratory system disorder,10x 3' transcription profiling,15157
+respiratory system disorder,10x 5' transcription profiling,79830
+rheumatoid arthritis,10x 3' v3,48637
+schizoaffective depressive disorder,10x 3' v3,2804
+schizophrenia,10x 3' v3,240069
+schizophrenia || atherosclerosis,10x 3' v3,17432
+schizophrenia || brain neoplasm,10x 3' v3,4065
+schizophrenia || tardive dyskinesia,10x 3' v3,46412
+schizophrenia || type 1 diabetes mellitus,10x 3' v3,26439
+schizophrenia || type 1 diabetes mellitus || atherosclerosis,10x 3' v3,3717
+schizophrenia || type 1 diabetes mellitus || tardive dyskinesia,10x 3' v3,3010
+schizophrenia || type 2 diabetes mellitus,10x 3' v3,11947
+schizophrenia || type 2 diabetes mellitus || tardive dyskinesia,10x 3' v3,14780
+small cell lung carcinoma,10x 3' v2,32399
+small cell lung carcinoma,10x 3' v3,46641
+squamous cell carcinoma,10x 5' transcription profiling,15328
+squamous cell lung carcinoma,10x 3' v1,4272
+squamous cell lung carcinoma,10x 3' v2,98565
+squamous cell lung carcinoma,10x 5' v1,13172
+squamous cell lung carcinoma,10x gene expression flex,33396
+squamous cell lung carcinoma,BD Rhapsody Whole Transcriptome Analysis,36516
+squamous cell lung carcinoma,GEXSCOPE technology,41120
+squamous cell lung carcinoma,Smart-seq2,3070
+squamous cell lung carcinoma,inDrop,5742
+systemic lupus erythematosus,10x 3' v2,777258
+tauopathy,10x 3' v3,124789
+temporal lobe epilepsy,10x 3' v2,2103
+tongue cancer,10x 3' v3,2992
+toxoplasmosis,10x 3' v3,28098
+triple-negative breast carcinoma,10x 3' v2,27967
+triple-negative breast carcinoma,10x 3' v3,20048
+triple-negative breast carcinoma,10x 5' transcription profiling,113033
+trisomy 18,sci-RNA-seq3,16900
+tubular adenoma,TruDrop,27270
+tubulovillous adenoma,TruDrop,7216
+type 1 diabetes mellitus,10x 3' v2,22400
+type 1 diabetes mellitus,10x 3' v3,24202
+type 1 diabetes mellitus || atherosclerosis,10x 3' v3,1368
+type 1 diabetes mellitus || schizoaffective depressive disorder,10x 3' v3,4182
+type 2 diabetes mellitus,10x 3' v2,29605
+type 2 diabetes mellitus,10x 3' v3,67526
+type 2 diabetes mellitus,10x 5' v1,11509
+type 2 diabetes mellitus || atherosclerosis,10x 3' v3,1176
+ulcerative colitis,10x 3' v2,31378
+ulcerative colitis,10x 3' v3,4513
+uveal melanoma,10x 3' v2,809
+uveal melanoma,10x 3' v3,427
+uveal melanoma,10x 5' v2,50476
+vascular dementia,10x 3' v3,82939
+vascular dementia || Lewy body dementia,10x 3' v3,163
+vascular dementia || diabetes mellitus,10x 3' v3,26600
+vascular dementia || diabetes mellitus || Parkinson disease,10x 3' v3,3906
+vascular dementia || progressive supranuclear palsy,10x 3' v3,3300
