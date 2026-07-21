@@ -1,0 +1,1226 @@
+{
+  "schema_version": "1.0.0",
+  "created_for": "priority10 real breath VOC literature panels",
+  "curation_policy": {
+    "scope": "Human breath, exhaled alveolar gas, ventilator exhalate, or exhaled breath condensate studies in published literature or cited public breath repositories.",
+    "no_invented_numbers": true,
+    "quantified_rule": "Numerical log2 fold changes are calculated only from ratios explicitly reported in the cited source.",
+    "directional_rule": "When a cited source reports only increased/decreased direction for an atlas VOC, measured_log2fc uses conservative placeholder values of +0.6 for increased and -0.4 for decreased, and voc_evidence marks evidence as directional_only.",
+    "null_or_mixed_rule": "Numerical values from studies reporting no statistically significant disease/control separation are retained only when explicitly published and evidence is marked mixed."
+  },
+  "healthy_baseline": {
+    "accession": "ST003200",
+    "title": "A study of 9 common breath VOCs in 504 healthy subjects using PTR-TOF-MS",
+    "repository": "Metabolomics Workbench",
+    "analysis_id": "AN005250",
+    "method": "PTR-TOF-MS, direct breath analysis",
+    "units": "parts per billion by volume",
+    "role": "Healthy breath context for atlas VOCs; disease fold changes below use each cited study's own comparator when available."
+  },
+  "panels": [
+    {
+      "disease_id": "asthma",
+      "disease_name": "Asthma",
+      "location": "Conducting airway epithelium, bronchi, bronchioles, airway smooth muscle, and airway immune compartment",
+      "refs": [
+        {
+          "doi": "10.1164/ajrccm.162.4.2003064",
+          "title": "Elevation of Exhaled Ethane Concentration in Asthma",
+          "year": 2000,
+          "method": "Flow- and pressure-controlled exhaled breath collection; gas chromatography quantification of ethane"
+        },
+        {
+          "doi": "10.1186/s12931-014-0136-8",
+          "title": "Defining adult asthma endotypes by clinical features and patterns of volatile organic compounds in exhaled air",
+          "year": 2014,
+          "method": "Tedlar-bag breath collection with thermal desorption GC-MS VOC profiling"
+        },
+        {
+          "doi": "10.1038/s41597-024-03052-2",
+          "title": "A Clinical Breathomics Dataset",
+          "year": 2024,
+          "method": "Headspace SPME GC-MS clinical breathomics dataset for asthma, bronchiectasis, and COPD"
+        }
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "figshare 23522490.v6",
+          "doi": "10.6084/m9.figshare.23522490.v6",
+          "note": "Asthma peak table source associated with Kuo et al. Scientific Data 2024; no healthy comparator in that dataset."
+        }
+      ],
+      "measured_log2fc": {
+        "ethane": 1.227
+      },
+      "evidence_grade": "quantified",
+      "voc_evidence": {
+        "ethane": {
+          "evidence": "quantified",
+          "source_doi": "10.1164/ajrccm.162.4.2003064",
+          "calculation": "log2(2.06 ppb steroid-naive asthma / 0.88 ppb nonsmoking controls)",
+          "direction": "increased"
+        }
+      },
+      "pathway_links": {
+        "ethane": [
+          "lipid_peroxidation",
+          "oxidative_stress",
+          "type2_airway_inflammation"
+        ]
+      },
+      "cell_states": [
+        "airway epithelium",
+        "eosinophil",
+        "mast cell",
+        "type 2 helper T cell",
+        "airway smooth muscle",
+        "neutrophil in severe or non-type-2 asthma"
+      ],
+      "genes": [
+        "IL4",
+        "IL5",
+        "IL13",
+        "TSLP",
+        "IL33",
+        "ORMDL3",
+        "GSDMB",
+        "ADAM33",
+        "FCER1A",
+        "STAT6"
+      ]
+    },
+    {
+      "disease_id": "copd",
+      "disease_name": "Chronic obstructive pulmonary disease",
+      "location": "Small airway epithelium, bronchioles, alveolar septa, emphysematous parenchyma, and pulmonary microvasculature",
+      "refs": [
+        {
+          "doi": "10.1164/ajrccm.162.2.9909025",
+          "title": "Exhaled Ethane, a Marker of Lipid Peroxidation, is Elevated in Chronic Obstructive Pulmonary Disease",
+          "year": 2000,
+          "method": "Flow- and pressure-controlled exhaled breath collection; gas chromatography quantification of ethane"
+        },
+        {
+          "doi": "10.1164/rccm.200210-1253oc",
+          "title": "Aldehydes in Exhaled Breath Condensate of Patients with Chronic Obstructive Pulmonary Disease",
+          "year": 2003,
+          "method": "Exhaled breath condensate; liquid chromatography tandem mass spectrometry aldehyde quantification"
+        },
+        {
+          "doi": "10.1186/1465-9921-13-72",
+          "title": "Exhaled volatile organic compounds for phenotyping chronic obstructive pulmonary disease: a cross-sectional study",
+          "year": 2012,
+          "method": "Late-expiratory breath sampling with GC-TOF-MS VOC profiling"
+        },
+        {
+          "doi": "10.1038/s41597-024-03052-2",
+          "title": "A Clinical Breathomics Dataset",
+          "year": 2024,
+          "method": "Headspace SPME GC-MS clinical breathomics dataset for asthma, bronchiectasis, and COPD"
+        }
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "figshare 23522490.v6",
+          "doi": "10.6084/m9.figshare.23522490.v6",
+          "note": "COPD peak table source associated with Kuo et al. Scientific Data 2024; no healthy comparator in that dataset."
+        }
+      ],
+      "measured_log2fc": {
+        "ethane": 1.654,
+        "hexanal": 1.843,
+        "heptanal": 0.906
+      },
+      "evidence_grade": "quantified",
+      "voc_evidence": {
+        "ethane": {
+          "evidence": "quantified",
+          "source_doi": "10.1164/ajrccm.162.2.9909025",
+          "calculation": "log2(2.77 ppb steroid-naive COPD / 0.88 ppb healthy controls)",
+          "direction": "increased"
+        },
+        "hexanal": {
+          "evidence": "quantified",
+          "source_doi": "10.1164/rccm.200210-1253oc",
+          "calculation": "log2(63.5 nmol/L COPD EBC / 17.7 nmol/L nonsmoking controls)",
+          "direction": "increased"
+        },
+        "heptanal": {
+          "evidence": "quantified",
+          "source_doi": "10.1164/rccm.200210-1253oc",
+          "calculation": "log2(26.6 nmol/L COPD EBC / 14.2 nmol/L nonsmoking controls)",
+          "direction": "increased"
+        }
+      },
+      "pathway_links": {
+        "ethane": [
+          "lipid_peroxidation",
+          "oxidative_stress"
+        ],
+        "hexanal": [
+          "lipid_peroxidation",
+          "aldehyde_detoxification"
+        ],
+        "heptanal": [
+          "lipid_peroxidation",
+          "aldehyde_detoxification"
+        ]
+      },
+      "cell_states": [
+        "airway epithelium",
+        "neutrophil",
+        "macrophage alveolar",
+        "club cell",
+        "goblet cell metaplasia",
+        "senescent alveolar type II cell"
+      ],
+      "genes": [
+        "SERPINA1",
+        "MMP12",
+        "HHIP",
+        "FAM13A",
+        "CHRNA3",
+        "CHRNA5",
+        "IREB2",
+        "TGFB1",
+        "SFTPD",
+        "AGER"
+      ]
+    },
+    {
+      "disease_id": "covid19",
+      "disease_name": "COVID-19",
+      "location": "ACE2-positive nasal, airway, and alveolar epithelium with pulmonary vascular and systemic immune involvement",
+      "refs": [
+        {
+          "doi": "10.1016/j.ebiom.2020.103154",
+          "title": "Metabolomics of exhaled breath in critically ill COVID-19 patients: A pilot study",
+          "year": 2021,
+          "method": "Real-time online proton-transfer-reaction time-of-flight mass spectrometry in mechanically ventilated ICU patients"
+        },
+        {
+          "doi": "10.1016/j.eclinm.2020.100609",
+          "title": "Diagnosis of COVID-19 by analysis of breath with gas chromatography-ion mobility spectrometry - a feasibility study",
+          "year": 2020,
+          "method": "Breath GC-IMS feasibility study"
+        }
+      ],
+      "measured_log2fc": {
+        "nonanal": 0.6,
+        "octanal": 0.6,
+        "heptanal": 0.6,
+        "acetone": 0.6,
+        "2_butanone": 0.6,
+        "methanol": -0.4
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "nonanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.ebiom.2020.103154",
+          "direction": "increased",
+          "note": "Reported as one of four prominent COVID-19 ARDS VOCs and significantly higher than non-COVID ARDS; no single fold-change reported."
+        },
+        "octanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.eclinm.2020.100609",
+          "direction": "increased",
+          "note": "GC-IMS COVID-19 feature reported elevated in COVID-19 participants."
+        },
+        "heptanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.eclinm.2020.100609",
+          "direction": "increased",
+          "note": "Reported among aldehyde features elevated or altered in COVID-19 breath profiles."
+        },
+        "acetone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.eclinm.2020.100609",
+          "direction": "increased",
+          "note": "Reported elevated in COVID-19 participants."
+        },
+        "2_butanone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.eclinm.2020.100609",
+          "direction": "increased",
+          "note": "Reported as part of an acetone/2-butanone cluster elevated in COVID-19 participants."
+        },
+        "methanol": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.eclinm.2020.100609",
+          "direction": "decreased",
+          "note": "Reported lower in COVID-19 participants."
+        }
+      },
+      "pathway_links": {
+        "nonanal": [
+          "lipid_peroxidation",
+          "epithelial_injury",
+          "apoptosis_necrosis"
+        ],
+        "octanal": [
+          "lipid_peroxidation",
+          "epithelial_injury"
+        ],
+        "heptanal": [
+          "lipid_peroxidation",
+          "epithelial_injury"
+        ],
+        "acetone": [
+          "ketone_body_metabolism",
+          "systemic_inflammation"
+        ],
+        "2_butanone": [
+          "ketone_body_metabolism",
+          "microbial_or_host_carbonyl_metabolism"
+        ],
+        "methanol": [
+          "one_carbon_metabolism",
+          "microbiome_fermentation"
+        ]
+      },
+      "cell_states": [
+        "ciliated airway epithelial cell",
+        "alveolar type II cell",
+        "macrophage alveolar",
+        "neutrophil",
+        "endothelial cell",
+        "activated T cell"
+      ],
+      "genes": [
+        "ACE2",
+        "TMPRSS2",
+        "IFNAR2",
+        "OAS1",
+        "DPP9",
+        "TYK2",
+        "SLC6A20",
+        "IL6",
+        "CXCL10",
+        "NFKB1"
+      ]
+    },
+    {
+      "disease_id": "pneumonia_bacterial",
+      "disease_name": "Bacterial pneumonia (VAP/HAP/CAP)",
+      "location": "Lower airway and alveolar spaces, including infected bronchioles, alveoli, ventilator-exposed airway surfaces, and inflammatory exudate",
+      "refs": [
+        {
+          "doi": "10.1038/srep17179",
+          "title": "Analysis of volatile organic compounds in exhaled breath to diagnose ventilator-associated pneumonia",
+          "year": 2015,
+          "method": "Exhaled air collected before bronchoalveolar lavage; GC-TOF-MS"
+        },
+        {
+          "doi": "10.3390/ijms18020449",
+          "title": "Exhaled Breath Metabolomics for the Diagnosis of Pneumonia in Intubated and Mechanically-Ventilated Intensive Care Unit (ICU)-Patients",
+          "year": 2017,
+          "method": "Thermal desorption GC-MS in mechanically ventilated ICU patients with CAP/HAP"
+        },
+        {
+          "doi": "10.3390/biom14121480",
+          "title": "Analysis of Bacterial Metabolites in Breath Gas of Critically Ill Patients for Diagnosis of Ventilator-Associated Pneumonia-A Proof of Concept Study",
+          "year": 2024,
+          "method": "In vitro bacterial headspace GC-MS plus exhaled breath monitoring in mechanically ventilated patients"
+        }
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "ST002449",
+          "doi": "10.21228/M85H6W",
+          "note": "Volatile Biomarkers for a Valley Fever Breath Test; CAP bacterial-positive specimens used as comparator in SPME GCxGC-TOFMS volatile metabolomics."
+        }
+      ],
+      "measured_log2fc": {
+        "ethanol": 0.6,
+        "acetone": -0.4,
+        "isopropanol": -0.4,
+        "ethylbenzene": 0.6,
+        "propanol": -0.4,
+        "hexanal": 0.6
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "ethanol": {
+          "evidence": "directional_only",
+          "source_doi": "10.1038/srep17179",
+          "direction": "increased",
+          "note": "VAP-positive versus VAP-negative mean peak height direction."
+        },
+        "acetone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1038/srep17179",
+          "direction": "decreased",
+          "note": "VAP-positive versus VAP-negative mean peak height direction."
+        },
+        "isopropanol": {
+          "evidence": "directional_only",
+          "source_doi": "10.1038/srep17179",
+          "direction": "decreased",
+          "note": "Reported as isopropyl alcohol decreased in VAP-positive breath."
+        },
+        "ethylbenzene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1038/srep17179",
+          "direction": "increased",
+          "note": "VAP-positive versus VAP-negative mean peak height direction."
+        },
+        "propanol": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/ijms18020449",
+          "direction": "decreased",
+          "note": "1-propanol reported consistently lower in pneumonia and colonized airways."
+        },
+        "hexanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/biom14121480",
+          "direction": "increased",
+          "note": "Pneumonia meta-analysis and bacterial-metabolite studies repeatedly identify aldehydes including hexanal; no single disease/control fold-change used."
+        }
+      },
+      "pathway_links": {
+        "ethanol": [
+          "microbial_fermentation",
+          "glycolysis_warburg"
+        ],
+        "acetone": [
+          "ketone_body_metabolism",
+          "sepsis_inflammation"
+        ],
+        "isopropanol": [
+          "ketone_body_metabolism",
+          "acetone_reduction"
+        ],
+        "ethylbenzene": [
+          "xenobiotic_retention",
+          "cytochrome_p450_detox"
+        ],
+        "propanol": [
+          "microbial_alcohol_metabolism"
+        ],
+        "hexanal": [
+          "lipid_peroxidation",
+          "neutrophil_oxidative_burst"
+        ]
+      },
+      "cell_states": [
+        "alveolar macrophage",
+        "neutrophil",
+        "airway epithelium",
+        "alveolar type II cell",
+        "bacterial biofilm or planktonic pathogen",
+        "ventilator-stressed epithelium"
+      ],
+      "genes": [
+        "TLR2",
+        "TLR4",
+        "NOD2",
+        "IL6",
+        "TNF",
+        "CXCL8",
+        "NFKB1",
+        "MUC5B",
+        "SFTPA1",
+        "SFTPD"
+      ]
+    },
+    {
+      "disease_id": "tuberculosis",
+      "disease_name": "Pulmonary tuberculosis",
+      "location": "Lung granulomas, infected alveolar macrophages, caseating necrotic lesions, and bronchial airways communicating with cavities",
+      "refs": [
+        {
+          "doi": "10.1016/j.tube.2006.03.004",
+          "title": "Volatile biomarkers of pulmonary tuberculosis in the breath",
+          "year": 2007,
+          "method": "Breath GC-MS with pattern recognition and fuzzy logic classification"
+        },
+        {
+          "doi": "10.1088/1752-7163/aae80e",
+          "title": "Exhaled human breath analysis in active pulmonary tuberculosis diagnostics by comprehensive gas chromatography-mass spectrometry and chemometric techniques",
+          "year": 2019,
+          "method": "Thermal desorption comprehensive two-dimensional GC-TOF-MS and machine learning"
+        },
+        {
+          "doi": "10.1016/j.tube.2010.01.003",
+          "title": "Breath biomarkers of active pulmonary tuberculosis",
+          "year": 2010,
+          "method": "Breath VOC biomarker validation by GC-based analysis"
+        }
+      ],
+      "measured_log2fc": {
+        "benzene": 0.6,
+        "pentane": 0.6,
+        "ethane": 0.6
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "benzene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.tube.2006.03.004",
+          "direction": "increased",
+          "note": "Breath biomarkers included benzene derivatives; atlas maps this conservatively to benzene as an aromatic signal."
+        },
+        "pentane": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.tube.2006.03.004",
+          "direction": "increased",
+          "note": "Breath markers of oxidative stress were increased in hospitalized TB-suspect patients; alkanes were part of the biomarker classes."
+        },
+        "ethane": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.tube.2006.03.004",
+          "direction": "increased",
+          "note": "Conservative lipid-peroxidation alkane placeholder for increased oxidative-stress breath markers."
+        }
+      },
+      "pathway_links": {
+        "benzene": [
+          "microbial_mycobacterium_voc",
+          "xenobiotic_aromatic_metabolism"
+        ],
+        "pentane": [
+          "lipid_peroxidation",
+          "macrophage_oxidative_burst",
+          "apoptosis_necrosis"
+        ],
+        "ethane": [
+          "lipid_peroxidation",
+          "macrophage_oxidative_burst"
+        ]
+      },
+      "cell_states": [
+        "infected alveolar macrophage",
+        "epithelioid macrophage",
+        "foamy macrophage",
+        "neutrophil",
+        "T helper 1 cell",
+        "necrotic granuloma core",
+        "Mycobacterium tuberculosis"
+      ],
+      "genes": [
+        "IFNG",
+        "IL12B",
+        "IL12RB1",
+        "TNF",
+        "SLC11A1",
+        "TLR2",
+        "TLR4",
+        "VDR",
+        "HLA-DRA",
+        "NOS2"
+      ]
+    },
+    {
+      "disease_id": "cystic_fibrosis",
+      "disease_name": "Cystic fibrosis",
+      "location": "CFTR-deficient airway epithelium, submucosal glands, mucus plugs, bronchiectatic airways, and infected airway lumen",
+      "refs": [
+        {
+          "doi": "10.1164/ajrccm.161.4.9906122",
+          "title": "Exhaled Ethane Is Elevated in Cystic Fibrosis and Correlates with Carbon Monoxide Levels and Airway Obstruction",
+          "year": 2000,
+          "method": "Flow- and pressure-controlled exhaled air collection; gas chromatography quantification of ethane"
+        },
+        {
+          "doi": "10.1021/acs.jproteome.9b00443",
+          "title": "Early Detection of Cystic Fibrosis Acute Pulmonary Exacerbations by Exhaled Breath Condensate Metabolomics",
+          "year": 2020,
+          "method": "Exhaled breath condensate UPLC-Orbitrap-MS metabolomics"
+        },
+        {
+          "doi": "10.1021/acs.jproteome.6b00675",
+          "title": "Feasibility of Early Detection of Cystic Fibrosis Acute Pulmonary Exacerbations by Exhaled Breath Condensate Metabolomics: A Pilot Study",
+          "year": 2016,
+          "method": "Exhaled breath condensate UPLC-QTOF-MS metabolomics"
+        }
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "ST001164",
+          "note": "Metabolomics Workbench exhaled breath condensate dataset for CF acute pulmonary exacerbation/stable states."
+        }
+      ],
+      "measured_log2fc": {
+        "ethane": 1.279
+      },
+      "evidence_grade": "quantified",
+      "voc_evidence": {
+        "ethane": {
+          "evidence": "quantified",
+          "source_doi": "10.1164/ajrccm.161.4.9906122",
+          "calculation": "log2(1.99 ppb CF not on steroids / 0.82 ppb nonsmoking controls)",
+          "direction": "increased"
+        }
+      },
+      "pathway_links": {
+        "ethane": [
+          "lipid_peroxidation",
+          "neutrophil_oxidative_burst",
+          "chronic_bacterial_infection"
+        ]
+      },
+      "cell_states": [
+        "CFTR-deficient airway epithelium",
+        "goblet cell",
+        "submucosal gland cell",
+        "neutrophil",
+        "macrophage alveolar",
+        "Pseudomonas aeruginosa biofilm",
+        "Staphylococcus aureus colonization"
+      ],
+      "genes": [
+        "CFTR",
+        "SCNN1A",
+        "SCNN1B",
+        "SCNN1G",
+        "MUC5B",
+        "MUC5AC",
+        "CXCL8",
+        "TLR4",
+        "SLC9A3",
+        "DNAH5"
+      ]
+    },
+    {
+      "disease_id": "sleep_apnea",
+      "disease_name": "Obstructive sleep apnea",
+      "location": "Collapsible upper airway, pharyngeal soft tissue, intermittent hypoxia-exposed pulmonary vasculature, systemic endothelium, and cardiometabolic tissues",
+      "refs": [
+        {
+          "doi": "10.1093/toxsci/kfw260",
+          "title": "Prospective analyses of volatile organic compounds in obstructive sleep apnea patients",
+          "year": 2017,
+          "method": "Purified-air breath collection; GC-MS identification and GC quantification before and after CPAP"
+        },
+        {
+          "doi": "10.3390/medicina55090538",
+          "title": "Exhaled Breath Analysis in Obstructive Sleep Apnea Syndrome: A Review of the Literature",
+          "year": 2019,
+          "method": "Review of exhaled VOC, electronic nose, and exhaled breath condensate studies"
+        }
+      ],
+      "measured_log2fc": {
+        "isoprene": 0.6,
+        "acetone": 0.6,
+        "toluene": 0.6,
+        "ethylbenzene": 0.6,
+        "hexanal": 0.6
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "isoprene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1093/toxsci/kfw260",
+          "direction": "increased",
+          "note": "Increased in all OSA groups; no single fold-change used."
+        },
+        "acetone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1093/toxsci/kfw260",
+          "direction": "increased",
+          "note": "Increased in the most severe OSA group and decreased after CPAP."
+        },
+        "toluene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1093/toxsci/kfw260",
+          "direction": "increased",
+          "note": "Aromatic hydrocarbon concentrations including toluene were higher in severe OSA groups."
+        },
+        "ethylbenzene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1093/toxsci/kfw260",
+          "direction": "increased",
+          "note": "Increased in severe OSA and correlated with severity metrics."
+        },
+        "hexanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/medicina55090538",
+          "direction": "increased",
+          "note": "Review reports Greulich et al. found increased hexanal in OSAS."
+        }
+      },
+      "pathway_links": {
+        "isoprene": [
+          "mevalonate_cholesterol",
+          "intermittent_hypoxia",
+          "sympathetic_activation"
+        ],
+        "acetone": [
+          "ketone_body_metabolism",
+          "insulin_resistance"
+        ],
+        "toluene": [
+          "xenobiotic_retention",
+          "cytochrome_p450_detox"
+        ],
+        "ethylbenzene": [
+          "xenobiotic_retention",
+          "cytochrome_p450_detox",
+          "intermittent_hypoxia"
+        ],
+        "hexanal": [
+          "lipid_peroxidation",
+          "oxidative_stress"
+        ]
+      },
+      "cell_states": [
+        "pharyngeal myocyte",
+        "upper airway epithelium",
+        "endothelial cell",
+        "adipocyte",
+        "sympathetic neuron",
+        "monocyte macrophage",
+        "intermittent-hypoxia stressed cardiomyocyte"
+      ],
+      "genes": [
+        "HIF1A",
+        "VEGFA",
+        "NOS3",
+        "EDN1",
+        "IL6",
+        "TNF",
+        "LEP",
+        "ADIPOQ",
+        "CRP",
+        "SOD2"
+      ]
+    },
+    {
+      "disease_id": "cancer_stomach",
+      "disease_name": "Gastric cancer",
+      "location": "Gastric mucosa, intestinal metaplasia, dysplastic epithelium, invasive gastric carcinoma, and gastric microbiome niche",
+      "refs": [
+        {
+          "doi": "10.1186/s12935-017-0475-x",
+          "title": "Volatile organic metabolites identify patients with gastric carcinoma, gastric ulcer, or gastritis and control patients",
+          "year": 2017,
+          "method": "Expired air SPME GC-MS with PCA/statistical biomarker discovery"
+        },
+        {
+          "doi": "10.1002/jms.4588",
+          "title": "Exhaled breath analysis using on-line preconcentration mass spectrometry for gastric cancer diagnosis",
+          "year": 2020,
+          "method": "Online thermal desorption single-photon ionization mass spectrometry"
+        }
+      ],
+      "measured_log2fc": {
+        "acetone": 0.6,
+        "isoprene": 0.6,
+        "phenol": 0.6,
+        "nonanal": 0.6,
+        "hexanal": 0.6,
+        "styrene": 0.6
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "acetone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1002/jms.4588",
+          "direction": "increased",
+          "note": "Reported higher relative peak intensity in gastric cancer breath profiles."
+        },
+        "isoprene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1002/jms.4588",
+          "direction": "increased",
+          "note": "Reported higher relative peak intensity in gastric cancer breath profiles."
+        },
+        "phenol": {
+          "evidence": "directional_only",
+          "source_doi": "10.1002/jms.4588",
+          "direction": "increased",
+          "note": "Reported higher relative peak intensity in gastric cancer breath profiles."
+        },
+        "nonanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1186/s12935-017-0475-x",
+          "direction": "increased",
+          "note": "Reported as significantly abnormal/elevated in gastric cancer-related breath studies; no single healthy fold-change used."
+        },
+        "hexanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1186/s12935-017-0475-x",
+          "direction": "increased",
+          "note": "Review and gastric breath studies report hexanal upregulation/alteration in gastric cancer."
+        },
+        "styrene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1186/s12935-017-0475-x",
+          "direction": "increased",
+          "note": "Reported in Latvian gastric cancer breath profiles summarized by related gastric cancer breath literature."
+        }
+      },
+      "pathway_links": {
+        "acetone": [
+          "ketone_body_metabolism",
+          "cancer_cachexia"
+        ],
+        "isoprene": [
+          "mevalonate_cholesterol",
+          "tumor_lipid_metabolism"
+        ],
+        "phenol": [
+          "microbial_aromatic_amino_acid_metabolism",
+          "gastric_microbiome"
+        ],
+        "nonanal": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "hexanal": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "styrene": [
+          "xenobiotic_aromatic_metabolism",
+          "microbial_aromatic_metabolism"
+        ]
+      },
+      "cell_states": [
+        "gastric foveolar epithelial cell",
+        "intestinal metaplasia epithelial cell",
+        "gastric carcinoma cell",
+        "cancer-associated fibroblast",
+        "tumor-associated macrophage",
+        "Helicobacter-associated inflammatory niche"
+      ],
+      "genes": [
+        "CDH1",
+        "TP53",
+        "ERBB2",
+        "MET",
+        "CLDN18",
+        "ARID1A",
+        "KRAS",
+        "PIK3CA",
+        "CTNNB1",
+        "RUNX3"
+      ]
+    },
+    {
+      "disease_id": "head_neck_cancer",
+      "disease_name": "Head and neck squamous cell carcinoma",
+      "location": "Upper aerodigestive mucosa including oral cavity, pharynx, larynx, and adjacent tumor microenvironment",
+      "refs": [
+        {
+          "doi": "10.1038/bjc.2014.361",
+          "title": "Analysis of exhaled breath for diagnosing head and neck squamous cell carcinoma: a feasibility study",
+          "year": 2014,
+          "method": "Exhaled breath GC-MS plus nanomaterial sensor array"
+        },
+        {
+          "doi": "10.1007/s10337-013-2611-7",
+          "title": "Volatile Organic Compounds Analysis in Breath Air in Healthy Volunteers and Patients Suffering Epidermoid Laryngeal Carcinomas",
+          "year": 2014,
+          "method": "Tedlar-bag breath sampling with SPME GC-MS"
+        }
+      ],
+      "measured_log2fc": {
+        "ethanol": 1.247,
+        "2_butanone": 0.6
+      },
+      "evidence_grade": "mixed",
+      "voc_evidence": {
+        "ethanol": {
+          "evidence": "quantified",
+          "source_doi": "10.1038/bjc.2014.361",
+          "calculation": "log2(1198.3 ppb HNSCC median / 504.8 ppb healthy median)",
+          "direction": "increased"
+        },
+        "2_butanone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1007/s10337-013-2611-7",
+          "direction": "increased",
+          "note": "Reported particularly high in advanced laryngeal carcinoma; no single fold-change used."
+        }
+      },
+      "pathway_links": {
+        "ethanol": [
+          "microbial_fermentation",
+          "glycolysis_warburg",
+          "alcohol_dehydrogenase_metabolism"
+        ],
+        "2_butanone": [
+          "ketone_body_metabolism",
+          "glycolysis_warburg",
+          "microbial_or_host_carbonyl_metabolism"
+        ]
+      },
+      "cell_states": [
+        "squamous epithelial tumor cell",
+        "basal keratinocyte-like malignant cell",
+        "cancer-associated fibroblast",
+        "tumor-associated macrophage",
+        "neutrophil",
+        "oral microbiome biofilm"
+      ],
+      "genes": [
+        "TP53",
+        "CDKN2A",
+        "PIK3CA",
+        "NOTCH1",
+        "EGFR",
+        "FAT1",
+        "CASP8",
+        "CCND1",
+        "TERT",
+        "KMT2D"
+      ]
+    },
+    {
+      "disease_id": "cancer_prostate",
+      "disease_name": "Prostate cancer",
+      "location": "Prostate peripheral-zone glandular epithelium, prostate tumor glands, stromal microenvironment, and androgen-responsive secretory epithelium",
+      "refs": [
+        {
+          "doi": "10.1038/sj.bjc.6605810",
+          "title": "Detection of lung, breast, colorectal, and prostate cancers from exhaled breath using a single array of nanosensors",
+          "year": 2010,
+          "method": "Exhaled alveolar breath; gold nanoparticle nanosensor array plus GC-MS"
+        },
+        {
+          "doi": "10.1016/j.euf.2018.11.006",
+          "title": "Exhaled-breath Testing for Prostate Cancer Based on Volatile Organic Compound Profiling Using an Electronic Nose Device (Aeonose): A Preliminary Report",
+          "year": 2020,
+          "method": "Electronic nose profiling of exhaled breath"
+        },
+        {
+          "doi": "10.31557/APJCP.2026.27.3.779",
+          "title": "Breath Aldehyde Profiling using PFBHA-GC/MS as a Prostate Cancer Biomarker",
+          "year": 2026,
+          "method": "End-tidal breath PFBHA derivatization with quadrupole GC-MS targeted aldehyde quantification"
+        }
+      ],
+      "measured_log2fc": {
+        "formaldehyde": -0.921,
+        "acetaldehyde": -0.062
+      },
+      "evidence_grade": "mixed",
+      "voc_evidence": {
+        "formaldehyde": {
+          "evidence": "quantified_null",
+          "source_doi": "10.31557/APJCP.2026.27.3.779",
+          "calculation": "log2(3.09 ng PCa median / 5.85 ng control median)",
+          "direction": "decreased",
+          "note": "Published medians did not significantly differentiate prostate cancer from controls."
+        },
+        "acetaldehyde": {
+          "evidence": "quantified_null",
+          "source_doi": "10.31557/APJCP.2026.27.3.779",
+          "calculation": "log2(7.47 ng PCa median / 7.80 ng control median)",
+          "direction": "approximately unchanged",
+          "note": "Published medians did not significantly differentiate prostate cancer from controls."
+        }
+      },
+      "pathway_links": {
+        "formaldehyde": [
+          "one_carbon_metabolism",
+          "aldehyde_detoxification",
+          "tumor_lipid_peroxidation"
+        ],
+        "acetaldehyde": [
+          "aldehyde_detoxification",
+          "alcohol_dehydrogenase_metabolism",
+          "tumor_lipid_peroxidation"
+        ]
+      },
+      "cell_states": [
+        "androgen-responsive prostate luminal epithelial cell",
+        "prostate basal epithelial cell",
+        "prostate carcinoma cell",
+        "cancer-associated fibroblast",
+        "tumor-associated macrophage",
+        "osteotropic metastatic cancer cell in advanced disease"
+      ],
+      "genes": [
+        "AR",
+        "TMPRSS2",
+        "ERG",
+        "PTEN",
+        "SPOP",
+        "FOXA1",
+        "NKX3-1",
+        "BRCA2",
+        "TP53",
+        "MYC"
+      ]
+    },
+    {
+      "disease_id": "heart_failure",
+      "disease_name": "Heart failure",
+      "location": "Failing myocardium, cardiomyocytes, cardiac fibroblasts, pulmonary circulation, liver and skeletal muscle metabolic compartments affected by congestion and low output",
+      "refs": [
+        {
+          "doi": "10.1016/j.jacc.2012.12.033",
+          "title": "Single Exhaled Breath Metabolomic Analysis Identifies Unique Breathprint in Patients With Acute Decompensated Heart Failure",
+          "year": 2013,
+          "method": "Single exhaled vital-capacity breath; selected ion flow tube mass spectrometry"
+        },
+        {
+          "doi": "10.3390/metabo13101049",
+          "title": "Exhaled Breath Analysis Using Selected Ion Flow Tube Mass Spectrometry and Disease Severity in Heart Failure",
+          "year": 2023,
+          "method": "SIFT-MS exhaled breath acetone and pentane monitoring"
+        }
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "ST000587",
+          "note": "Metabolomics Workbench exhaled breath condensate NMR dataset for decompensated heart failure; used as context, not as VOC fold-change source."
+        }
+      ],
+      "measured_log2fc": {
+        "acetone": 2.117,
+        "pentane": 0.862
+      },
+      "evidence_grade": "quantified",
+      "voc_evidence": {
+        "acetone": {
+          "evidence": "quantified",
+          "source_doi": "10.1016/j.jacc.2012.12.033",
+          "calculation": "log2(811 ppb ADHF median / 187 ppb control median)",
+          "direction": "increased"
+        },
+        "pentane": {
+          "evidence": "quantified",
+          "source_doi": "10.1016/j.jacc.2012.12.033",
+          "calculation": "log2(40 ppb ADHF median / 22 ppb control median)",
+          "direction": "increased"
+        }
+      },
+      "pathway_links": {
+        "acetone": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation",
+          "hepatic_congestion"
+        ],
+        "pentane": [
+          "lipid_peroxidation",
+          "mitochondrial_dysfunction",
+          "cardiometabolic_oxidative_stress"
+        ]
+      },
+      "cell_states": [
+        "stressed cardiomyocyte",
+        "cardiac fibroblast",
+        "endothelial cell",
+        "hepatocyte under venous congestion",
+        "skeletal myocyte",
+        "renal tubular cell in cardiorenal syndrome"
+      ],
+      "genes": [
+        "NPPB",
+        "NPPA",
+        "TTN",
+        "MYH7",
+        "LMNA",
+        "BAG3",
+        "PLN",
+        "TNNT2",
+        "ADRB1",
+        "RYR2"
+      ]
+    },
+    {
+      "disease_id": "malaria",
+      "disease_name": "Malaria",
+      "location": "Plasmodium-infected red blood cells, reticuloendothelial clearance organs, hepatocyte stage for early infection, and systemic host inflammatory compartment",
+      "refs": [
+        {
+          "doi": "10.1093/infdis/jiy072",
+          "title": "Breathprinting Reveals Malaria-Associated Biomarkers and Mosquito Attractants",
+          "year": 2018,
+          "method": "Thermal desorption GCxGC-TOF-MS breathprinting in Malawian children"
+        },
+        {
+          "doi": "10.1093/infdis/jiae323",
+          "title": "Breath Biomarkers of Pediatric Malaria: Reproducibility and Response to Antimalarial Therapy",
+          "year": 2024,
+          "method": "Longitudinal pediatric breath VOC profiling before and after antimalarial therapy"
+        },
+        {
+          "doi": "10.3390/diagnostics11122244",
+          "title": "The Potential Use of Volatile Biomarkers for Malaria Diagnosis",
+          "year": 2021,
+          "method": "Review of human breath, skin, and infection-stage VOC biomarkers"
+        }
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "ST000883",
+          "note": "Metabolomics Workbench breath GC-MS dataset for Breathprinting Reveals Malaria-Associated Biomarkers and Mosquito Attractants."
+        }
+      ],
+      "measured_log2fc": {
+        "nonanal": -0.4,
+        "isoprene": -0.4,
+        "benzene": 0.6
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "nonanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1093/infdis/jiae323",
+          "direction": "decreased",
+          "note": "Reported as consistently reduced with Plasmodium infection in pediatric breath studies."
+        },
+        "isoprene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1093/infdis/jiy072",
+          "direction": "decreased",
+          "note": "Included in the six-compound malaria breath classifier; literature summaries report lower breath abundance in infection for this classifier signal."
+        },
+        "benzene": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/diagnostics11122244",
+          "direction": "increased",
+          "note": "Controlled human malaria breath studies reported benzene among compounds varying significantly over malaria infection; no single fold-change used."
+        }
+      },
+      "pathway_links": {
+        "nonanal": [
+          "lipid_peroxidation",
+          "host_odor_modulation",
+          "mosquito_attractant_cue_balance"
+        ],
+        "isoprene": [
+          "mevalonate_cholesterol",
+          "Plasmodium_isoprenoid_metabolism",
+          "erythrocyte_host_metabolism"
+        ],
+        "benzene": [
+          "microbial_or_parasite_voc",
+          "xenobiotic_aromatic_metabolism"
+        ]
+      },
+      "cell_states": [
+        "Plasmodium-infected RBC",
+        "uninfected erythrocyte under oxidative stress",
+        "hepatocyte during liver-stage infection",
+        "monocyte macrophage",
+        "splenic macrophage",
+        "endothelial cell in sequestration"
+      ],
+      "genes": [
+        "HBB",
+        "HBA1",
+        "HBA2",
+        "G6PD",
+        "ACKR1",
+        "TLR9",
+        "IFNG",
+        "TNF",
+        "ICAM1",
+        "PF3D7_1343700"
+      ]
+    },
+    {
+      "disease_id": "ards",
+      "disease_name": "Acute respiratory distress syndrome",
+      "location": "Diffuse alveolar damage involving alveolar epithelium, capillary endothelium, hyaline membranes, edema fluid, and ventilated distal lung",
+      "refs": [
+        {
+          "doi": "10.1183/09031936.00005614",
+          "title": "Exhaled breath metabolomics as a noninvasive diagnostic tool for acute respiratory distress syndrome",
+          "year": 2014,
+          "method": "Ventilated ICU patient breath GC-MS with training and temporal validation cohorts"
+        },
+        {
+          "doi": "10.1007/s001340050589",
+          "title": "Application of a new method for analysis of exhaled gas in critically ill patients",
+          "year": 1998,
+          "method": "CO2-controlled exhaled gas sampling and GC-MS in critically ill patients"
+        },
+        {
+          "doi": "10.1515/cclm.2002.101",
+          "title": "Breath Markers and Soluble Lipid Peroxidation Markers in Critically Ill Patients",
+          "year": 2002,
+          "method": "Exhaled air volatile markers and blood lipid-peroxidation marker analysis in critically ill patients"
+        },
+        {
+          "doi": "10.1016/j.ebiom.2020.103154",
+          "title": "Metabolomics of exhaled breath in critically ill COVID-19 patients: A pilot study",
+          "year": 2021,
+          "method": "PTR-TOF-MS in COVID-19 and non-COVID-19 ARDS patients"
+        }
+      ],
+      "measured_log2fc": {
+        "acetaldehyde": 0.6,
+        "pentane": 0.6,
+        "isoprene": -0.4,
+        "nonanal": 0.6
+      },
+      "evidence_grade": "mixed",
+      "voc_evidence": {
+        "acetaldehyde": {
+          "evidence": "directional_only",
+          "source_doi": "10.1183/09031936.00005614",
+          "direction": "increased",
+          "note": "Identified among three volatile biological ARDS markers; no single fold-change reported."
+        },
+        "pentane": {
+          "evidence": "directional_only",
+          "source_doi": "10.1515/cclm.2002.101",
+          "direction": "increased",
+          "note": "Breath pentane increased with inflammatory status in critically ill ARDS/at-risk cohorts."
+        },
+        "isoprene": {
+          "evidence": "directional_only_mixed",
+          "source_doi": "10.1007/s001340050589",
+          "direction": "decreased",
+          "note": "Early ARDS work reported lower isoprene; Bos et al. 2014 did not reproduce this signal, so entry is mixed."
+        },
+        "nonanal": {
+          "evidence": "directional_only",
+          "source_doi": "10.1016/j.ebiom.2020.103154",
+          "direction": "increased",
+          "note": "COVID-19 ARDS breath study reported nonanal higher than non-COVID ARDS; used here as ARDS-related epithelial/lipid-peroxidation context."
+        }
+      },
+      "pathway_links": {
+        "acetaldehyde": [
+          "apoptosis_necrosis",
+          "microbial_fermentation",
+          "epithelial_injury"
+        ],
+        "pentane": [
+          "lipid_peroxidation",
+          "neutrophil_oxidative_burst",
+          "ventilator_induced_lung_injury"
+        ],
+        "isoprene": [
+          "mevalonate_cholesterol",
+          "critical_illness_muscle_activity",
+          "neuroinflammation"
+        ],
+        "nonanal": [
+          "lipid_peroxidation",
+          "epithelial_injury",
+          "apoptosis_necrosis"
+        ]
+      },
+      "cell_states": [
+        "injured alveolar type I cell",
+        "alveolar type II cell",
+        "pulmonary capillary endothelial cell",
+        "neutrophil",
+        "alveolar macrophage",
+        "fibroproliferative myofibroblast",
+        "ventilator-stressed epithelium"
+      ],
+      "genes": [
+        "IL6",
+        "TNF",
+        "IL1B",
+        "CXCL8",
+        "TLR4",
+        "NFKB1",
+        "SFTPA1",
+        "SFTPD",
+        "AGER",
+        "SERPINE1"
+      ]
+    }
+  ]
+}
