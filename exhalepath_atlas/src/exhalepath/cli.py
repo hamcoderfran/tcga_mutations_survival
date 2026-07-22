@@ -531,6 +531,62 @@ def eval_comorbidity_clinical_cmd(
     rprint(f"  report: {out_dir / 'comorbidity_clinical_eval.json'}")
 
 
+@app.command("eval-vision")
+def eval_vision_cmd(
+    out_dir: Path = typer.Option(Path("runs/vision_eval")),
+    top_k: int = typer.Option(15, help="Top-k for hallmark VOC recall"),
+    mode: str = typer.Option("hybrid"),
+    limit: Optional[int] = typer.Option(
+        None, help="Optional profile limit (debug); default runs all 50"
+    ),
+    profiles: Optional[Path] = typer.Option(
+        None, help="Override path to vision_50_profiles.json"
+    ),
+):
+    """
+    Full vision suite: 50 disease patient profiles vs measured / high-accuracy GT.
+
+    Prints headline % scores for closeness to the original ExhalePath vision
+    (disease + location + patient → ranked VOCs + pathway/cell/site explainability).
+    """
+    from .eval.vision import evaluate_vision
+
+    report = evaluate_vision(
+        top_k=top_k,
+        mode=mode,
+        out_dir=out_dir,
+        profiles_path=profiles,
+        limit=limit,
+    )
+    o = report["overall"]
+    rprint("[bold]Vision evaluation (50 diseases)[/bold]")
+    rprint(f"  profiles: {o['n_profiles']}")
+    rprint(f"  [green]vision fidelity:[/green] {o['vision_fidelity_pct']}%")
+    rprint(f"  evidence-backed (A+B): {o['evidence_backed_pct']}%")
+    rprint(f"  held-out style (A+B+C): {o['held_out_style_pct']}%")
+    rprint(f"  Grade D prior consistency: {o['grade_D_prior_consistency_pct']}%")
+    mm = o.get("metric_means") or {}
+    rprint(
+        "  means — "
+        f"dir={_fmt_pct(mm.get('direction'))} "
+        f"fold={_fmt_pct(mm.get('fold'))} "
+        f"topk={_fmt_pct(mm.get('topk'))} "
+        f"pathway={_fmt_pct(mm.get('pathway'))} "
+        f"cell={_fmt_pct(mm.get('cell'))} "
+        f"site={_fmt_pct(mm.get('site'))}"
+    )
+    for g, row in (o.get("by_grade") or {}).items():
+        rprint(f"  Grade {g} (n={row['n']}): {row['mean_composite_pct']}%")
+    rprint(f"  report: {out_dir / 'VISION_EVAL.md'}")
+    rprint(f"  json: {out_dir / 'vision_eval.json'}")
+
+
+def _fmt_pct(v) -> str:
+    if v is None:
+        return "—"
+    return f"{100.0 * float(v):.0f}%"
+
+
 @app.command("build-mechanism-packs")
 def build_mechanism_packs_cmd(
     out: Path = typer.Option(
@@ -1140,6 +1196,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-public-breath",
         "harvest-clinical-comorbidity",
         "eval-comorbidity-clinical",
+        "eval-vision",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

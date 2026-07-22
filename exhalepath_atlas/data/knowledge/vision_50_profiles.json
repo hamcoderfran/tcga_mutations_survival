@@ -1,0 +1,2512 @@
+{
+  "version": "1.0.0",
+  "description": "50 patient profiles for ExhalePath vision evaluation: disease + location + demographics \u2192 ranked VOC \u0394ppb with pathway/cell/site explainability, scored against measured or high-accuracy approximate ground truth.",
+  "scoring_notes": {
+    "vision_fidelity_pct": "Mean composite score across all 50 profiles (includes Grade D prior-aligned cases).",
+    "evidence_backed_pct": "Mean composite over Grade A+B only (measured/directional literature).",
+    "held_out_style_pct": "Mean composite over Grade A+B+C (excludes prior-only Grade D).",
+    "grade_D_circularity": "Grade D ground truth is derived from atlas mechanistic priors; high scores there measure prior consistency, not independent clinical accuracy."
+  },
+  "n_profiles": 50,
+  "grade_counts": {
+    "A": 6,
+    "B": 20,
+    "C": 6,
+    "D": 18
+  },
+  "profiles": [
+    {
+      "id": "asthma",
+      "name": "Asthma",
+      "query_name": "Asthma",
+      "location": "lung",
+      "grade": "A",
+      "evidence_basis": "Quantified ethane elevation (Olopade 2000) + Sci Data 2024 directional panel",
+      "patient": {
+        "age": 34,
+        "sex": "female",
+        "tempo": "uncontrolled",
+        "comorbidities": [],
+        "genes": [
+          "IL4",
+          "IL5",
+          "IL13",
+          "TSLP",
+          "IL33",
+          "ORMDL3"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "ethane",
+          "pentane",
+          "2_pentanone",
+          "hexanal"
+        ],
+        "should_elevate": [
+          "benzaldehyde",
+          "ethyl_acetate",
+          "octane"
+        ],
+        "must_suppress": [
+          "butane",
+          "hexane",
+          "isopropanol"
+        ],
+        "should_suppress": [],
+        "min_fold": {
+          "ethane": 1.8,
+          "pentane": 1.3
+        },
+        "top_k_should_include": [
+          "ethane",
+          "pentane",
+          "2_pentanone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ],
+        "cell_states_should_include": [
+          "airway epithelium",
+          "eosinophil",
+          "mast cell",
+          "type 2 helper T cell"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "copd",
+      "name": "Chronic obstructive pulmonary disease",
+      "query_name": "Chronic obstructive pulmonary disease",
+      "location": "lung",
+      "grade": "A",
+      "evidence_basis": "Quantified ethane + EBC aldehydes (hexanal/heptanal) + Sci Data 2024",
+      "patient": {
+        "age": 68,
+        "sex": "male",
+        "tempo": "severe",
+        "smoking_status": "former",
+        "comorbidities": [],
+        "genes": [
+          "SERPINA1",
+          "MMP12",
+          "HHIP",
+          "FAM13A",
+          "CHRNA3",
+          "CHRNA5"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "ethane",
+          "hexanal",
+          "heptanal",
+          "pentane"
+        ],
+        "should_elevate": [
+          "benzene",
+          "nonanal",
+          "isopropanol"
+        ],
+        "must_suppress": [
+          "2_pentanone",
+          "decanal",
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {
+          "ethane": 2.0,
+          "hexanal": 2.0
+        },
+        "top_k_should_include": [
+          "ethane",
+          "hexanal",
+          "heptanal"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "cytochrome_p450_detox"
+        ],
+        "cell_states_should_include": [
+          "airway epithelium",
+          "neutrophil",
+          "macrophage alveolar",
+          "club cell"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "heart_failure",
+      "name": "Heart failure",
+      "query_name": "Heart failure",
+      "location": "heart",
+      "grade": "A",
+      "evidence_basis": "Metabolomics Workbench ST000587 exhaled VOC HF vs control",
+      "patient": {
+        "age": 74,
+        "sex": "female",
+        "tempo": "HFrEF_NYHA_III",
+        "comorbidities": [],
+        "genes": [
+          "NPPB",
+          "NPPA",
+          "TTN",
+          "MYH7",
+          "LMNA",
+          "BAG3"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "pentane",
+          "isopropanol",
+          "hexanal"
+        ],
+        "should_elevate": [
+          "isopropanol",
+          "ammonia"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {
+          "acetone": 1.4,
+          "pentane": 1.25
+        },
+        "top_k_should_include": [
+          "acetone",
+          "pentane",
+          "isopropanol"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation",
+          "urea_cycle",
+          "lipid_peroxidation"
+        ],
+        "cell_states_should_include": [
+          "stressed cardiomyocyte",
+          "cardiac fibroblast",
+          "endothelial cell",
+          "hepatocyte under venous congestion"
+        ],
+        "sites_should_include": [
+          "heart",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "lung_adenocarcinoma",
+      "name": "lung adenocarcinoma",
+      "query_name": "lung adenocarcinoma",
+      "location": "lung",
+      "grade": "A",
+      "evidence_basis": "Lung cancer breath aldehyde/alkane panel (DOI:10.1038/bjc.2011.277)",
+      "patient": {
+        "age": 64,
+        "sex": "male",
+        "tempo": "stage_IV",
+        "smoking_status": "current",
+        "comorbidities": [],
+        "genes": [
+          "TP53",
+          "KRAS",
+          "EGFR"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "heptanal",
+          "nonanal",
+          "pentane",
+          "2_butanone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {
+          "hexanal": 1.2,
+          "pentane": 1.15
+        },
+        "top_k_should_include": [
+          "hexanal",
+          "heptanal",
+          "nonanal"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "glycolysis_warburg",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Oxidative-stress",
+          "Tumor"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "malaria",
+      "name": "Malaria",
+      "query_name": "Malaria",
+      "location": "systemic",
+      "grade": "A",
+      "evidence_basis": "Metabolomics Workbench ST000883 malaria breath panel",
+      "patient": {
+        "age": 28,
+        "sex": "male",
+        "tempo": "falciparum_acute",
+        "comorbidities": [],
+        "genes": [
+          "HBB",
+          "HBA1",
+          "HBA2",
+          "G6PD",
+          "ACKR1",
+          "TLR9"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "benzene",
+          "acetone",
+          "pentane"
+        ],
+        "should_elevate": [
+          "acetone",
+          "2_butanone"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ],
+        "should_suppress": [
+          "hexanal"
+        ],
+        "min_fold": {
+          "acetone": 1.3,
+          "pentane": 1.2
+        },
+        "top_k_should_include": [
+          "benzene",
+          "acetone",
+          "pentane"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
+        ],
+        "cell_states_should_include": [
+          "Plasmodium-infected RBC",
+          "uninfected erythrocyte under oxidative stress",
+          "hepatocyte during liver-stage infection",
+          "monocyte macrophage"
+        ],
+        "sites_should_include": [
+          "blood",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "type_2_diabetes",
+      "name": "type 2 diabetes",
+      "query_name": "type 2 diabetes",
+      "location": "systemic",
+      "grade": "A",
+      "evidence_basis": "Breath acetone literature gate (PMID:21903721); ketone panel",
+      "patient": {
+        "age": 55,
+        "sex": "male",
+        "tempo": "poorly_controlled",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "isopropanol",
+          "2_butanone"
+        ],
+        "should_elevate": [
+          "pentane",
+          "2_pentanone"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "acetone": 1.8,
+          "2_butanone": 1.2
+        },
+        "top_k_should_include": [
+          "acetone",
+          "2_butanone"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "cell_states_should_include": [
+          "Ketogenic hepatocyte",
+          "Lipolytic adipocyte"
+        ],
+        "sites_should_include": [
+          "liver",
+          "adipose"
+        ]
+      }
+    },
+    {
+      "id": "alzheimer_disease",
+      "name": "Alzheimer disease",
+      "query_name": "Alzheimer disease",
+      "location": "brain",
+      "grade": "B",
+      "evidence_basis": "AD breath oxidative VOC literature",
+      "patient": {
+        "age": 78,
+        "sex": "female",
+        "tempo": "moderate",
+        "comorbidities": [],
+        "genes": [
+          "APP",
+          "PSEN1"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "hexanal": 1.3,
+          "pentane": 1.25
+        },
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Activated microglia",
+          "Metabolically stressed neuron"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "ards",
+      "name": "Acute respiratory distress syndrome",
+      "query_name": "Acute respiratory distress syndrome",
+      "location": "lung",
+      "grade": "B",
+      "evidence_basis": "Priority-10 ARDS / ventilator exhalate VOC panel",
+      "patient": {
+        "age": 58,
+        "sex": "female",
+        "tempo": "ventilated",
+        "comorbidities": [
+          "pneumonia_bacterial"
+        ],
+        "genes": [
+          "IL6",
+          "TNF",
+          "IL1B",
+          "CXCL8",
+          "TLR4",
+          "NFKB1"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetaldehyde",
+          "pentane",
+          "nonanal",
+          "octanal",
+          "heptanal",
+          "acetone"
+        ],
+        "should_elevate": [
+          "ethanol"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetaldehyde",
+          "pentane",
+          "nonanal"
+        ],
+        "pathways_should_include": [
+          "apoptosis_necrosis",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
+        ],
+        "cell_states_should_include": [
+          "injured alveolar type I cell",
+          "alveolar type II cell",
+          "pulmonary capillary endothelial cell",
+          "neutrophil"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "breast_invasive_carcinoma",
+      "name": "breast cancer",
+      "query_name": "breast cancer",
+      "location": "breast",
+      "grade": "B",
+      "evidence_basis": "Breast cancer breath DMTS/hexanal literature (DOI:10.3233/CBM-160587)",
+      "patient": {
+        "age": 58,
+        "sex": "female",
+        "tempo": "stage_IIA",
+        "comorbidities": [],
+        "genes": [
+          "PIK3CA",
+          "TP53"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "dmts",
+          "hexanal",
+          "2_butanone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "dmts": 1.5,
+          "hexanal": 1.15
+        },
+        "top_k_should_include": [
+          "dmts",
+          "hexanal",
+          "2_butanone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Tumor",
+          "Oxidative"
+        ],
+        "sites_should_include": [
+          "breast"
+        ]
+      }
+    },
+    {
+      "id": "cancer_prostate",
+      "name": "Prostate cancer",
+      "query_name": "Prostate cancer",
+      "location": "prostate",
+      "grade": "B",
+      "evidence_basis": "Priority-10 prostate cancer breath VOC panel",
+      "patient": {
+        "age": 67,
+        "sex": "male",
+        "tempo": "localized_high_grade",
+        "comorbidities": [],
+        "genes": [
+          "AR",
+          "TMPRSS2",
+          "ERG",
+          "PTEN",
+          "SPOP",
+          "FOXA1"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ],
+        "should_elevate": [
+          "acetone",
+          "2_butanone"
+        ],
+        "must_suppress": [
+          "formaldehyde"
+        ],
+        "should_suppress": [
+          "isoprene"
+        ],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane"
+        ],
+        "pathways_should_include": [
+          "one_carbon_folate",
+          "cytochrome_p450_detox",
+          "lipid_peroxidation"
+        ],
+        "cell_states_should_include": [
+          "androgen-responsive prostate luminal epithelial cell",
+          "prostate basal epithelial cell",
+          "prostate carcinoma cell",
+          "cancer-associated fibroblast"
+        ],
+        "sites_should_include": [
+          "prostate"
+        ]
+      }
+    },
+    {
+      "id": "cancer_stomach",
+      "name": "Gastric cancer",
+      "query_name": "Gastric cancer",
+      "location": "stomach",
+      "grade": "B",
+      "evidence_basis": "Priority-10 gastric cancer breath VOC panel",
+      "patient": {
+        "age": 62,
+        "sex": "male",
+        "tempo": "stage_III",
+        "comorbidities": [],
+        "genes": [
+          "CDH1",
+          "TP53",
+          "ERBB2",
+          "MET",
+          "CLDN18",
+          "ARID1A"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "isoprene",
+          "phenol",
+          "nonanal",
+          "hexanal",
+          "styrene"
+        ],
+        "should_elevate": [
+          "2_butanone",
+          "ammonia",
+          "hydrogen_sulfide"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "isoprene",
+          "phenol"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "mevalonate_cholesterol",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation"
+        ],
+        "cell_states_should_include": [
+          "gastric foveolar epithelial cell",
+          "intestinal metaplasia epithelial cell",
+          "gastric carcinoma cell",
+          "cancer-associated fibroblast"
+        ],
+        "sites_should_include": [
+          "stomach",
+          "gut"
+        ]
+      }
+    },
+    {
+      "id": "colon_adenocarcinoma",
+      "name": "colon adenocarcinoma",
+      "query_name": "colon adenocarcinoma",
+      "location": "colon",
+      "grade": "B",
+      "evidence_basis": "CRC breath aldehyde + gut sulfur VOC literature",
+      "patient": {
+        "age": 61,
+        "sex": "female",
+        "tempo": "stage_II",
+        "comorbidities": [],
+        "genes": [
+          "APC",
+          "KRAS",
+          "TP53"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "hydrogen_sulfide",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "hexanal": 1.2
+        },
+        "top_k_should_include": [
+          "hexanal",
+          "hydrogen_sulfide",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "gut_microbiome_fermentation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Tumor",
+          "Colonocyte"
+        ],
+        "sites_should_include": [
+          "colon",
+          "gut"
+        ]
+      }
+    },
+    {
+      "id": "covid19",
+      "name": "COVID-19",
+      "query_name": "COVID-19",
+      "location": "lung",
+      "grade": "B",
+      "evidence_basis": "Priority-10 literature directional breath carbonyl/ketone panel",
+      "patient": {
+        "age": 52,
+        "sex": "male",
+        "tempo": "acute_hospitalized",
+        "comorbidities": [],
+        "genes": [
+          "ACE2",
+          "TMPRSS2",
+          "IFNAR2",
+          "OAS1",
+          "DPP9",
+          "TYK2"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "nonanal",
+          "octanal",
+          "heptanal",
+          "acetone",
+          "2_butanone"
+        ],
+        "should_elevate": [
+          "ethanol"
+        ],
+        "must_suppress": [
+          "methanol",
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "nonanal",
+          "octanal",
+          "heptanal"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "ketone_body_metabolism",
+          "cytochrome_p450_detox"
+        ],
+        "cell_states_should_include": [
+          "ciliated airway epithelial cell",
+          "alveolar type II cell",
+          "macrophage alveolar",
+          "neutrophil"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "cystic_fibrosis",
+      "name": "Cystic fibrosis",
+      "query_name": "Cystic fibrosis",
+      "location": "lung",
+      "grade": "B",
+      "evidence_basis": "Priority-10 literature CF breath VOC panel",
+      "patient": {
+        "age": 22,
+        "sex": "female",
+        "tempo": "chronic_infection",
+        "comorbidities": [],
+        "genes": [
+          "CFTR",
+          "SCNN1A",
+          "SCNN1B",
+          "SCNN1G",
+          "MUC5B",
+          "MUC5AC"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "ethane",
+          "hydrogen_sulfide",
+          "dms",
+          "indole",
+          "pentane",
+          "hexanal"
+        ],
+        "should_elevate": [
+          "phenol",
+          "acetone",
+          "ethanol",
+          "ammonia"
+        ],
+        "must_suppress": [],
+        "should_suppress": [
+          "isoprene"
+        ],
+        "min_fold": {
+          "ethane": 2.063,
+          "hydrogen_sulfide": 1.48,
+          "dms": 1.381
+        },
+        "top_k_should_include": [
+          "ethane",
+          "hydrogen_sulfide",
+          "dms"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "gut_microbiome_fermentation"
+        ],
+        "cell_states_should_include": [
+          "CFTR-deficient airway epithelium",
+          "goblet cell",
+          "submucosal gland cell",
+          "neutrophil"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "glioblastoma",
+      "name": "glioblastoma",
+      "query_name": "glioblastoma",
+      "location": "brain",
+      "grade": "B",
+      "evidence_basis": "GBM breath ketone/aldehyde literature",
+      "patient": {
+        "age": 54,
+        "sex": "male",
+        "tempo": "newly_diagnosed",
+        "comorbidities": [],
+        "genes": [
+          "EGFR",
+          "PTEN",
+          "TP53"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "hexanal",
+          "2_butanone",
+          "ethanol"
+        ],
+        "should_elevate": [
+          "pentane"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "hexanal",
+          "2_butanone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "glycolysis_warburg",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Metabolically stressed neuron",
+          "Oxidative"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "head_neck_cancer",
+      "name": "Head and neck squamous cell carcinoma",
+      "query_name": "Head and neck squamous cell carcinoma",
+      "location": "head_neck",
+      "grade": "B",
+      "evidence_basis": "Priority-10 H&N cancer breath VOC panel",
+      "patient": {
+        "age": 59,
+        "sex": "male",
+        "tempo": "stage_III",
+        "smoking_status": "former",
+        "comorbidities": [],
+        "genes": [
+          "TP53",
+          "CDKN2A",
+          "PIK3CA",
+          "NOTCH1",
+          "EGFR",
+          "FAT1"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "ethanol",
+          "2_butanone",
+          "hexanal",
+          "heptanal",
+          "nonanal",
+          "decanal"
+        ],
+        "should_elevate": [
+          "acetone"
+        ],
+        "must_suppress": [],
+        "should_suppress": [
+          "isoprene"
+        ],
+        "min_fold": {
+          "ethanol": 2.017,
+          "hexanal": 1.381
+        },
+        "top_k_should_include": [
+          "ethanol",
+          "2_butanone",
+          "hexanal"
+        ],
+        "pathways_should_include": [
+          "gut_microbiome_fermentation",
+          "glycolysis_warburg",
+          "cytochrome_p450_detox",
+          "ketone_body_metabolism"
+        ],
+        "cell_states_should_include": [
+          "squamous epithelial tumor cell",
+          "basal keratinocyte-like malignant cell",
+          "cancer-associated fibroblast",
+          "tumor-associated macrophage"
+        ],
+        "sites_should_include": [
+          "head_neck",
+          "oral"
+        ]
+      }
+    },
+    {
+      "id": "hepatocellular_carcinoma",
+      "name": "hepatocellular carcinoma",
+      "query_name": "hepatocellular carcinoma",
+      "location": "liver",
+      "grade": "B",
+      "evidence_basis": "HCC sulfur/ammonia/limonene breath literature",
+      "patient": {
+        "age": 63,
+        "sex": "male",
+        "tempo": "stage_III",
+        "comorbidities": [
+          "chronic_liver_disease"
+        ],
+        "genes": [
+          "TP53",
+          "CTNNB1"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "dms",
+          "ammonia",
+          "limonene",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "dms": 1.5,
+          "ammonia": 1.3
+        },
+        "top_k_should_include": [
+          "dms",
+          "ammonia",
+          "limonene"
+        ],
+        "pathways_should_include": [
+          "methionine_transsulfuration",
+          "urea_cycle",
+          "ketone_body_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Sulfur-metabolizing hepatocyte",
+          "Ketogenic hepatocyte"
+        ],
+        "sites_should_include": [
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "major_depressive_disorder",
+      "name": "depression",
+      "query_name": "depression",
+      "location": "brain",
+      "grade": "B",
+      "evidence_basis": "MDD breath + ST003181 clinical comorbidity benchmarks",
+      "patient": {
+        "age": 24,
+        "sex": "male",
+        "tempo": "moderate",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "indole",
+          "ammonia",
+          "pentane",
+          "hexanal"
+        ],
+        "should_elevate": [
+          "trimethylamine"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "indole",
+          "ammonia",
+          "pentane"
+        ],
+        "pathways_should_include": [
+          "neurotransmitter_metabolism",
+          "neuroinflammation",
+          "lipid_peroxidation"
+        ],
+        "cell_states_should_include": [
+          "Neuron",
+          "Microglia"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "ovarian_cancer",
+      "name": "ovarian cancer",
+      "query_name": "ovarian cancer",
+      "location": "ovary",
+      "grade": "B",
+      "evidence_basis": "Ovarian cancer breath aldehyde panel literature",
+      "patient": {
+        "age": 57,
+        "sex": "female",
+        "tempo": "stage_III",
+        "comorbidities": [],
+        "genes": [
+          "TP53",
+          "BRCA1"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "nonanal",
+          "decanal",
+          "2_butanone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "hexanal": 1.2
+        },
+        "top_k_should_include": [
+          "hexanal",
+          "nonanal",
+          "decanal"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Tumor",
+          "Oxidative"
+        ],
+        "sites_should_include": [
+          "ovary"
+        ]
+      }
+    },
+    {
+      "id": "pancreatic_adenocarcinoma",
+      "name": "pancreatic adenocarcinoma",
+      "query_name": "pancreatic adenocarcinoma",
+      "location": "pancreas",
+      "grade": "B",
+      "evidence_basis": "PAAD breath ketone/aldehyde literature",
+      "patient": {
+        "age": 66,
+        "sex": "male",
+        "tempo": "stage_III",
+        "comorbidities": [],
+        "genes": [
+          "KRAS",
+          "TP53",
+          "CDKN2A"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "2_butanone",
+          "acetone",
+          "hexanal",
+          "acetaldehyde"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "2_butanone": 1.3,
+          "hexanal": 1.2
+        },
+        "top_k_should_include": [
+          "2_butanone",
+          "acetone",
+          "hexanal"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "lipid_peroxidation",
+          "glycolysis_warburg"
+        ],
+        "cell_states_should_include": [
+          "Tumor",
+          "Ketogenic"
+        ],
+        "sites_should_include": [
+          "pancreas",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "parkinson_disease",
+      "name": "Parkinson disease",
+      "query_name": "Parkinson disease",
+      "location": "brain",
+      "grade": "B",
+      "evidence_basis": "PD breath oxidative VOC literature",
+      "patient": {
+        "age": 69,
+        "sex": "male",
+        "tempo": "mid_stage",
+        "comorbidities": [],
+        "genes": [
+          "SNCA",
+          "PRKN"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "pentane",
+          "hexanal"
+        ],
+        "should_elevate": [
+          "acetone"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "pentane": 1.3,
+          "hexanal": 1.3
+        },
+        "top_k_should_include": [
+          "pentane",
+          "hexanal"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Metabolically stressed neuron",
+          "Activated microglia"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "pneumonia_bacterial",
+      "name": "Bacterial pneumonia (VAP/HAP/CAP)",
+      "query_name": "Bacterial pneumonia (VAP/HAP/CAP)",
+      "location": "lung",
+      "grade": "B",
+      "evidence_basis": "Priority-10 literature directional pneumonia breath panel",
+      "patient": {
+        "age": 71,
+        "sex": "female",
+        "tempo": "community_acquired",
+        "comorbidities": [],
+        "genes": [
+          "TLR2",
+          "TLR4",
+          "NOD2",
+          "IL6",
+          "TNF",
+          "CXCL8"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "ethanol",
+          "ethylbenzene",
+          "hexanal",
+          "hydrogen_sulfide",
+          "dms",
+          "pentane"
+        ],
+        "should_elevate": [
+          "ammonia"
+        ],
+        "must_suppress": [
+          "acetone",
+          "isopropanol",
+          "propanol",
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {
+          "hydrogen_sulfide": 1.381
+        },
+        "top_k_should_include": [
+          "ethanol",
+          "ethylbenzene",
+          "hexanal"
+        ],
+        "pathways_should_include": [
+          "gut_microbiome_fermentation",
+          "glycolysis_warburg",
+          "ketone_body_metabolism",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "alveolar macrophage",
+          "neutrophil",
+          "airway epithelium",
+          "alveolar type II cell"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "schizophrenia",
+      "name": "schizophrenia",
+      "query_name": "schizophrenia",
+      "location": "brain",
+      "grade": "B",
+      "evidence_basis": "Magdeburg PTR-MS schizophrenia breath cohort",
+      "patient": {
+        "age": 18,
+        "sex": "male",
+        "tempo": "first_episode",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "pentane",
+          "ethane",
+          "ammonia"
+        ],
+        "should_elevate": [],
+        "must_suppress": [
+          "acetone",
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "pentane",
+          "ethane",
+          "ammonia"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Neuron",
+          "Microglia"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "sleep_apnea",
+      "name": "Obstructive sleep apnea",
+      "query_name": "Obstructive sleep apnea",
+      "location": "pharynx",
+      "grade": "B",
+      "evidence_basis": "Priority-10 literature OSA breath VOC panel",
+      "patient": {
+        "age": 55,
+        "sex": "male",
+        "tempo": "moderate_osa",
+        "comorbidities": [
+          "obesity"
+        ],
+        "genes": [
+          "HIF1A",
+          "VEGFA",
+          "NOS3",
+          "EDN1",
+          "IL6",
+          "TNF"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "isoprene",
+          "acetone",
+          "toluene",
+          "ethylbenzene",
+          "hexanal",
+          "pentane"
+        ],
+        "should_elevate": [
+          "ethanol",
+          "ammonia",
+          "methanol"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "isoprene",
+          "acetone",
+          "toluene"
+        ],
+        "pathways_should_include": [
+          "mevalonate_cholesterol",
+          "brain_energy_metabolism",
+          "ketone_body_metabolism",
+          "cytochrome_p450_detox"
+        ],
+        "cell_states_should_include": [
+          "pharyngeal myocyte",
+          "upper airway epithelium",
+          "endothelial cell",
+          "adipocyte"
+        ],
+        "sites_should_include": [
+          "pharynx",
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "tuberculosis",
+      "name": "Pulmonary tuberculosis",
+      "query_name": "Pulmonary tuberculosis",
+      "location": "lung",
+      "grade": "B",
+      "evidence_basis": "Priority-10 literature TB breath VOC panel",
+      "patient": {
+        "age": 41,
+        "sex": "male",
+        "tempo": "pulmonary_active",
+        "comorbidities": [],
+        "genes": [
+          "IFNG",
+          "IL12B",
+          "IL12RB1",
+          "TNF",
+          "SLC11A1",
+          "TLR2"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "benzene",
+          "pentane",
+          "ethane",
+          "2_butanone",
+          "hexanal"
+        ],
+        "should_elevate": [
+          "toluene",
+          "acetone",
+          "dms"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "benzene",
+          "pentane",
+          "ethane"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "infected alveolar macrophage",
+          "epithelioid macrophage",
+          "foamy macrophage",
+          "neutrophil"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "type1_diabetes",
+      "name": "type 1 diabetes",
+      "query_name": "type 1 diabetes",
+      "location": "systemic",
+      "grade": "B",
+      "evidence_basis": "Ketotic breath acetone axis (stronger than T2D when uncontrolled)",
+      "patient": {
+        "age": 19,
+        "sex": "female",
+        "tempo": "ketotic",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "should_elevate": [
+          "2_pentanone"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "acetone": 2.0
+        },
+        "top_k_should_include": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "cell_states_should_include": [
+          "Ketogenic hepatocyte"
+        ],
+        "sites_should_include": [
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "chronic_kidney_disease",
+      "name": "chronic kidney disease",
+      "query_name": "chronic kidney disease",
+      "location": "kidney",
+      "grade": "C",
+      "evidence_basis": "CKD breath ammonia literature (zero-shot style)",
+      "patient": {
+        "age": 70,
+        "sex": "female",
+        "tempo": "stage_4",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "ammonia",
+          "acetone",
+          "dms"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "ammonia": 1.4
+        },
+        "top_k_should_include": [
+          "ammonia",
+          "acetone",
+          "dms"
+        ],
+        "pathways_should_include": [
+          "urea_cycle",
+          "ketone_body_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Hepatocyte",
+          "Kidney"
+        ],
+        "sites_should_include": [
+          "kidney",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "chronic_liver_disease",
+      "name": "cirrhosis",
+      "query_name": "cirrhosis",
+      "location": "liver",
+      "grade": "C",
+      "evidence_basis": "Zero-shot cirrhosis sulfur/ammonia/limonene literature",
+      "patient": {
+        "age": 58,
+        "sex": "male",
+        "tempo": "decompensated",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "dms",
+          "ammonia",
+          "limonene"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "dms": 1.5,
+          "ammonia": 1.4
+        },
+        "top_k_should_include": [
+          "dms",
+          "ammonia",
+          "limonene"
+        ],
+        "pathways_should_include": [
+          "methionine_transsulfuration",
+          "urea_cycle"
+        ],
+        "cell_states_should_include": [
+          "Sulfur-metabolizing hepatocyte"
+        ],
+        "sites_should_include": [
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "creutzfeldt_jakob",
+      "name": "Creutzfeldt-Jakob disease",
+      "query_name": "Creutzfeldt-Jakob disease",
+      "location": "brain",
+      "grade": "C",
+      "evidence_basis": "CJD clinical oxidative tempo profile (no large breath gold standard)",
+      "patient": {
+        "age": 62,
+        "sex": "female",
+        "tempo": "early_clinical",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "nonanal"
+        ],
+        "should_elevate": [
+          "heptanal",
+          "ethane"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "hexanal": 1.25,
+          "pentane": 1.2
+        },
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "nonanal"
+        ],
+        "pathways_should_include": [
+          "neuroinflammation",
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Activated microglia",
+          "Metabolically stressed neuron"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "gut_dysbiosis",
+      "name": "gut dysbiosis",
+      "query_name": "gut dysbiosis",
+      "location": "gut",
+      "grade": "C",
+      "evidence_basis": "Dysbiosis putrefaction VOC literature",
+      "patient": {
+        "age": 42,
+        "sex": "male",
+        "tempo": "chronic",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "indole",
+          "phenol",
+          "hydrogen_sulfide",
+          "ammonia"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "indole": 1.5,
+          "hydrogen_sulfide": 1.4
+        },
+        "top_k_should_include": [
+          "indole",
+          "phenol",
+          "hydrogen_sulfide"
+        ],
+        "pathways_should_include": [
+          "microbial_proteolysis_putrefaction",
+          "gut_microbiome_fermentation",
+          "urea_cycle"
+        ],
+        "cell_states_should_include": [
+          "Gut",
+          "Microbiome"
+        ],
+        "sites_should_include": [
+          "gut"
+        ]
+      }
+    },
+    {
+      "id": "inflammatory_bowel_disease",
+      "name": "inflammatory bowel disease",
+      "query_name": "inflammatory bowel disease",
+      "location": "gut",
+      "grade": "C",
+      "evidence_basis": "IBD breath H2S/pentane literature",
+      "patient": {
+        "age": 36,
+        "sex": "female",
+        "tempo": "active_flare",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hydrogen_sulfide",
+          "pentane"
+        ],
+        "should_elevate": [
+          "hexanal"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "hydrogen_sulfide": 1.5
+        },
+        "top_k_should_include": [
+          "hydrogen_sulfide",
+          "pentane"
+        ],
+        "pathways_should_include": [
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ],
+        "cell_states_should_include": [
+          "Colonocyte",
+          "Neutrophil",
+          "Microbiome"
+        ],
+        "sites_should_include": [
+          "gut",
+          "colon"
+        ]
+      }
+    },
+    {
+      "id": "sibo",
+      "name": "SIBO",
+      "query_name": "SIBO",
+      "location": "small_intestine",
+      "grade": "C",
+      "evidence_basis": "SIBO fermentation VOC literature",
+      "patient": {
+        "age": 45,
+        "sex": "female",
+        "tempo": "symptomatic",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hydrogen_sulfide",
+          "ethanol",
+          "indole"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {
+          "hydrogen_sulfide": 1.8,
+          "ethanol": 1.4
+        },
+        "top_k_should_include": [
+          "hydrogen_sulfide",
+          "ethanol",
+          "indole"
+        ],
+        "pathways_should_include": [
+          "gut_microbiome_fermentation",
+          "microbial_proteolysis_putrefaction"
+        ],
+        "cell_states_should_include": [
+          "Gut",
+          "Microbiome"
+        ],
+        "sites_should_include": [
+          "small_intestine",
+          "gut"
+        ]
+      }
+    },
+    {
+      "id": "autism_spectrum_disorder",
+      "name": "autism spectrum disorder",
+      "query_name": "autism spectrum disorder",
+      "location": "brain",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned neuro/gut VOC direction (approximate GT)",
+      "patient": {
+        "age": 12,
+        "sex": "male",
+        "tempo": "school_age",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "indole",
+          "pentane",
+          "hexanal"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "indole",
+          "pentane",
+          "hexanal"
+        ],
+        "pathways_should_include": [
+          "neurotransmitter_metabolism",
+          "gut_microbiome_fermentation",
+          "neuroinflammation"
+        ],
+        "cell_states_should_include": [
+          "Neuron",
+          "Gut"
+        ],
+        "sites_should_include": [
+          "brain",
+          "gut"
+        ]
+      }
+    },
+    {
+      "id": "endometriosis",
+      "name": "endometriosis",
+      "query_name": "endometriosis",
+      "location": "pelvis",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned inflammatory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 33,
+        "sex": "female",
+        "tempo": "moderate",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Oxidative",
+          "Immune"
+        ],
+        "sites_should_include": [
+          "pelvis",
+          "ovary"
+        ]
+      }
+    },
+    {
+      "id": "epilepsy",
+      "name": "epilepsy",
+      "query_name": "epilepsy",
+      "location": "brain",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned brain energy / oxidative panel (approximate GT)",
+      "patient": {
+        "age": 31,
+        "sex": "male",
+        "tempo": "drug_resistant",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "hexanal",
+          "pentane"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "hexanal",
+          "pentane"
+        ],
+        "pathways_should_include": [
+          "brain_energy_metabolism",
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ],
+        "cell_states_should_include": [
+          "Metabolically stressed neuron"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "esophageal_cancer",
+      "name": "esophageal cancer",
+      "query_name": "esophageal cancer",
+      "location": "esophagus",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned GI tumor aldehyde panel (approximate GT)",
+      "patient": {
+        "age": 64,
+        "sex": "male",
+        "tempo": "stage_III",
+        "smoking_status": "former",
+        "comorbidities": [],
+        "genes": [
+          "TP53"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "acetone",
+          "2_butanone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "acetone",
+          "2_butanone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg"
+        ],
+        "cell_states_should_include": [
+          "Tumor",
+          "Epithelium"
+        ],
+        "sites_should_include": [
+          "esophagus"
+        ]
+      }
+    },
+    {
+      "id": "heart_disease",
+      "name": "heart disease",
+      "query_name": "heart disease",
+      "location": "heart",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned cardiac ischemia / ketone axis (approximate GT)",
+      "patient": {
+        "age": 65,
+        "sex": "male",
+        "tempo": "CAD",
+        "comorbidities": [
+          "hypertension"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "pentane",
+          "hexanal"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "pentane",
+          "hexanal"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "lipid_peroxidation",
+          "fatty_acid_oxidation"
+        ],
+        "cell_states_should_include": [
+          "Cardiomyocyte",
+          "Endothelial"
+        ],
+        "sites_should_include": [
+          "heart"
+        ]
+      }
+    },
+    {
+      "id": "helicobacter_pylori_infection",
+      "name": "Helicobacter pylori infection",
+      "query_name": "Helicobacter pylori infection",
+      "location": "stomach",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned gastric microbiome VOC direction (approximate GT)",
+      "patient": {
+        "age": 47,
+        "sex": "female",
+        "tempo": "chronic_gastritis",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hydrogen_sulfide",
+          "ammonia",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hydrogen_sulfide",
+          "ammonia",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "gut_microbiome_fermentation",
+          "urea_cycle"
+        ],
+        "cell_states_should_include": [
+          "Gastric",
+          "Epithelium"
+        ],
+        "sites_should_include": [
+          "stomach",
+          "gut"
+        ]
+      }
+    },
+    {
+      "id": "hiv",
+      "name": "HIV",
+      "query_name": "HIV",
+      "location": "systemic",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned chronic infection VOC direction (approximate GT)",
+      "patient": {
+        "age": 44,
+        "sex": "male",
+        "tempo": "untreated",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Immune",
+          "Macrophage"
+        ],
+        "sites_should_include": [
+          "systemic",
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "hypertension",
+      "name": "hypertension",
+      "query_name": "hypertension",
+      "location": "systemic",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned vascular oxidative panel (approximate GT)",
+      "patient": {
+        "age": 60,
+        "sex": "female",
+        "tempo": "uncontrolled",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "pentane",
+          "hexanal",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "pentane",
+          "hexanal",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "cytochrome_p450_detox"
+        ],
+        "cell_states_should_include": [
+          "Endothelial",
+          "Oxidative"
+        ],
+        "sites_should_include": [
+          "systemic",
+          "heart"
+        ]
+      }
+    },
+    {
+      "id": "influenza",
+      "name": "influenza",
+      "query_name": "influenza",
+      "location": "lung",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned viral respiratory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 39,
+        "sex": "female",
+        "tempo": "acute",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Airway",
+          "Alveolar"
+        ],
+        "sites_should_include": [
+          "lung"
+        ]
+      }
+    },
+    {
+      "id": "multiple_sclerosis",
+      "name": "multiple sclerosis",
+      "query_name": "multiple sclerosis",
+      "location": "brain",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned neuroinflammatory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 38,
+        "sex": "female",
+        "tempo": "relapsing",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "neuroinflammation",
+          "lipid_peroxidation",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Activated microglia",
+          "Oligodendrocyte"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    },
+    {
+      "id": "nafld",
+      "name": "NAFLD",
+      "query_name": "NAFLD",
+      "location": "liver",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned hepatic ketone/ammonia axis (approximate GT)",
+      "patient": {
+        "age": 51,
+        "sex": "male",
+        "tempo": "NASH_suspect",
+        "comorbidities": [
+          "obesity"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "2_butanone",
+          "ammonia"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "2_butanone",
+          "ammonia"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation",
+          "urea_cycle"
+        ],
+        "cell_states_should_include": [
+          "Ketogenic hepatocyte"
+        ],
+        "sites_should_include": [
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "obesity",
+      "name": "obesity",
+      "query_name": "obesity",
+      "location": "systemic",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned metabolic ketone axis (approximate GT)",
+      "patient": {
+        "age": 48,
+        "sex": "female",
+        "tempo": "class_II",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "should_elevate": [
+          "ammonia"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "cell_states_should_include": [
+          "Lipolytic adipocyte",
+          "Ketogenic hepatocyte"
+        ],
+        "sites_should_include": [
+          "adipose",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "pcos",
+      "name": "PCOS",
+      "query_name": "PCOS",
+      "location": "systemic",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned metabolic ketone axis (approximate GT)",
+      "patient": {
+        "age": 29,
+        "sex": "female",
+        "tempo": "insulin_resistant",
+        "comorbidities": [
+          "obesity"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "pathways_should_include": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "cell_states_should_include": [
+          "Lipolytic adipocyte",
+          "Ketogenic hepatocyte"
+        ],
+        "sites_should_include": [
+          "ovary",
+          "adipose",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "rheumatoid_arthritis",
+      "name": "rheumatoid arthritis",
+      "query_name": "rheumatoid arthritis",
+      "location": "joint",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned inflammatory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 56,
+        "sex": "female",
+        "tempo": "active",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "ethane"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "ethane"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "neuroinflammation"
+        ],
+        "cell_states_should_include": [
+          "Macrophage",
+          "Synovial",
+          "Oxidative"
+        ],
+        "sites_should_include": [
+          "joint",
+          "systemic"
+        ]
+      }
+    },
+    {
+      "id": "sepsis",
+      "name": "sepsis",
+      "query_name": "sepsis",
+      "location": "systemic",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned oxidative/inflammatory VOC direction (approximate GT)",
+      "patient": {
+        "age": 72,
+        "sex": "male",
+        "tempo": "ICU",
+        "comorbidities": [
+          "pneumonia_bacterial"
+        ]
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "ammonia",
+          "acetone"
+        ],
+        "should_elevate": [
+          "acetonitrile"
+        ],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "ammonia",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Oxidative",
+          "Neutrophil",
+          "Macrophage"
+        ],
+        "sites_should_include": [
+          "lung",
+          "liver"
+        ]
+      }
+    },
+    {
+      "id": "sickle_cell",
+      "name": "sickle cell disease",
+      "query_name": "sickle cell disease",
+      "location": "systemic",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned hemolytic / oxidative panel (approximate GT)",
+      "patient": {
+        "age": 27,
+        "sex": "male",
+        "tempo": "steady_state",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "pentane",
+          "hexanal",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "pentane",
+          "hexanal",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "cell_states_should_include": [
+          "Erythrocyte",
+          "Oxidative"
+        ],
+        "sites_should_include": [
+          "blood",
+          "systemic"
+        ]
+      }
+    },
+    {
+      "id": "thyroid",
+      "name": "thyroid disease",
+      "query_name": "thyroid",
+      "location": "thyroid",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned thyroid metabolic VOC direction (approximate GT)",
+      "patient": {
+        "age": 46,
+        "sex": "female",
+        "tempo": "hyperthyroid",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "acetone",
+          "isoprene",
+          "pentane"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "acetone",
+          "isoprene",
+          "pentane"
+        ],
+        "pathways_should_include": [
+          "mevalonate_cholesterol",
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "cell_states_should_include": [
+          "Thyroid",
+          "Hepatocyte"
+        ],
+        "sites_should_include": [
+          "thyroid",
+          "systemic"
+        ]
+      }
+    },
+    {
+      "id": "traumatic_brain_injury",
+      "name": "traumatic brain injury",
+      "query_name": "traumatic brain injury",
+      "location": "brain",
+      "grade": "D",
+      "evidence_basis": "Atlas prior\u2013aligned acute brain oxidative panel (approximate GT)",
+      "patient": {
+        "age": 35,
+        "sex": "male",
+        "tempo": "acute",
+        "comorbidities": []
+      },
+      "ground_truth": {
+        "must_elevate": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "should_elevate": [],
+        "must_suppress": [],
+        "should_suppress": [],
+        "min_fold": {},
+        "top_k_should_include": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "pathways_should_include": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "brain_energy_metabolism"
+        ],
+        "cell_states_should_include": [
+          "Metabolically stressed neuron",
+          "Activated microglia"
+        ],
+        "sites_should_include": [
+          "brain"
+        ]
+      }
+    }
+  ]
+}
