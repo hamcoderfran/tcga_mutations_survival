@@ -17,7 +17,9 @@
       "name": "blood",
       "aliases": [
         "blood",
-        "blood"
+        "blood",
+        "hematologic",
+        "erythrocyte"
       ],
       "n_census_healthy_cells": 13822662,
       "compartment": "vascular"
@@ -37,7 +39,9 @@
       "name": "lung",
       "aliases": [
         "lung",
-        "lung"
+        "lung",
+        "pulmonary",
+        "airway"
       ],
       "n_census_healthy_cells": 3148828,
       "compartment": "epithelial"
@@ -367,7 +371,8 @@
       "name": "prostate gland",
       "aliases": [
         "prostate gland",
-        "prostate gland"
+        "prostate gland",
+        "prostate"
       ],
       "n_census_healthy_cells": 87105,
       "compartment": "epithelial"
@@ -649,7 +654,9 @@
       "name": "Peritoneum",
       "aliases": [
         "peritoneum",
-        "peritoneal"
+        "peritoneal",
+        "retroperitoneal",
+        "retroperitoneum"
       ],
       "n_census_healthy_cells": 0,
       "compartment": "other"
@@ -662,6 +669,84 @@
       ],
       "n_census_healthy_cells": 0,
       "compartment": "other"
+    },
+    {
+      "tissue_id": "head_neck",
+      "name": "head and neck",
+      "aliases": [
+        "head and neck",
+        "head_neck",
+        "hnscc",
+        "oropharynx",
+        "larynx"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "epithelial"
+    },
+    {
+      "tissue_id": "pharynx",
+      "name": "pharynx",
+      "aliases": [
+        "pharynx",
+        "throat",
+        "upper airway"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "epithelial"
+    },
+    {
+      "tissue_id": "joint",
+      "name": "joint / synovium",
+      "aliases": [
+        "joint",
+        "synovium",
+        "synovial",
+        "articular"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "connective"
+    },
+    {
+      "tissue_id": "pelvis",
+      "name": "pelvis",
+      "aliases": [
+        "pelvis",
+        "pelvic",
+        "pelvic cavity"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "reproductive"
+    },
+    {
+      "tissue_id": "thyroid",
+      "name": "thyroid",
+      "aliases": [
+        "thyroid",
+        "thyroid gland"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "endocrine"
+    },
+    {
+      "tissue_id": "oral",
+      "name": "oral cavity",
+      "aliases": [
+        "oral",
+        "oral cavity",
+        "mouth",
+        "buccal"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "epithelial"
+    },
+    {
+      "tissue_id": "prostate",
+      "name": "prostate",
+      "aliases": [
+        "prostate"
+      ],
+      "n_census_healthy_cells": 0,
+      "compartment": "epithelial"
     }
   ]
 }

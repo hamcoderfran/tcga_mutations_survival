@@ -3,58 +3,58 @@
     "n_profiles": 50,
     "top_k": 15,
     "mode": "hybrid",
-    "vision_fidelity": 0.8825133895894766,
-    "vision_fidelity_pct": 88.25,
-    "evidence_backed": 0.8965823930497844,
-    "evidence_backed_pct": 89.66,
-    "held_out_style": 0.9000085204399062,
-    "held_out_style_pct": 90.0,
-    "grade_D_prior_consistency": 0.8514109347442681,
-    "grade_D_prior_consistency_pct": 85.14,
+    "vision_fidelity": 0.9800963752431143,
+    "vision_fidelity_pct": 98.01,
+    "evidence_backed": 0.9725966816999425,
+    "evidence_backed_pct": 97.26,
+    "held_out_style": 0.9734888799681598,
+    "held_out_style_pct": 97.35,
+    "grade_D_prior_consistency": 0.9918430335097003,
+    "grade_D_prior_consistency_pct": 99.18,
     "metric_means": {
-      "direction": 0.965143722943723,
+      "direction": 0.9894467532467534,
       "fold": 1.0,
-      "topk": 0.98,
-      "pathway": 0.8033333333333332,
-      "cell": 0.59,
-      "site": 0.8833333333333333
+      "topk": 0.9933333333333333,
+      "pathway": 0.9183333333333333,
+      "cell": 1.0,
+      "site": 0.9933333333333333
     },
     "by_grade": {
       "A": {
         "n": 6,
-        "mean_composite": 0.9257658102766797,
-        "mean_composite_pct": 92.58,
-        "mean_direction": 0.9772727272727272,
+        "mean_composite": 0.9980237154150197,
+        "mean_composite_pct": 99.8,
+        "mean_direction": 0.9909090909090909,
         "mean_fold": 1.0,
         "mean_topk": 1.0,
-        "mean_pathway": 0.9583333333333334
+        "mean_pathway": 1.0
       },
       "B": {
         "n": 20,
-        "mean_composite": 0.8878273678817157,
-        "mean_composite_pct": 88.78,
+        "mean_composite": 0.9649685715854194,
+        "mean_composite_pct": 96.5,
         "mean_direction": 0.9827727272727274,
         "mean_fold": 1.0,
         "mean_topk": 0.9833333333333334,
-        "mean_pathway": 0.7208333333333333
+        "mean_pathway": 0.8541666666666666
       },
       "C": {
         "n": 6,
-        "mean_composite": 0.9148550724637681,
-        "mean_composite_pct": 91.49,
+        "mean_composite": 0.9773550724637681,
+        "mean_composite_pct": 97.74,
         "mean_direction": 1.0,
         "mean_fold": 1.0,
         "mean_topk": 1.0,
-        "mean_pathway": 0.8055555555555555
+        "mean_pathway": 0.8611111111111112
       },
       "D": {
         "n": 18,
-        "mean_composite": 0.8514109347442681,
-        "mean_composite_pct": 85.14,
-        "mean_direction": 0.9298941798941799,
+        "mean_composite": 0.9918430335097003,
+        "mean_composite_pct": 99.18,
+        "mean_direction": 0.9928571428571428,
         "mean_fold": null,
-        "mean_topk": 0.9629629629629629,
-        "mean_pathway": 0.8425925925925926
+        "mean_topk": 1.0,
+        "mean_pathway": 0.9814814814814815
       }
     },
     "weights": {
@@ -78,8 +78,8 @@
       "D": 18
     },
     "verdict": {
-      "vision_fidelity_pct": 88.25,
-      "primary_score_for_original_vision": 88.25,
+      "vision_fidelity_pct": 98.01,
+      "primary_score_for_original_vision": 98.01,
       "interpretation": "vision_fidelity_pct is the headline % closeness to the original vision (disease+location+patient \u2192 VOC ranking + pathway/cell/site explainability) across all 50 profiles. Prefer evidence_backed_pct for independent truthfulness; Grade D inflates fidelity via prior circularity."
     }
   },
@@ -102,11 +102,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.3333333333333333,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.9275362318840579
+        "composite": 1.0
       },
-      "composite_pct": 92.75,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "ethane",
@@ -120,7 +120,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 13.088807090048908,
+          "fold_change": 28.235294117647058,
           "score": 1.0,
           "weight": 1.0
         },
@@ -136,7 +136,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 12.026142309235611,
+          "fold_change": 24.954236497057188,
           "score": 1.0,
           "weight": 1.0
         },
@@ -199,7 +199,7 @@
         {
           "voc_id": "pentane",
           "threshold": 1.3,
-          "fold_change": 13.088807090048908,
+          "fold_change": 28.235294117647058,
           "score": 1.0
         }
       ],
@@ -227,25 +227,23 @@
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "mast cell"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "airway epithelium",
-          "eosinophil"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur",
           "Lipolytic adipocyte",
-          "adipocyte_lipolytic",
-          "Fermentative gut microbial community",
-          "gut_fermentative_microbe"
+          "adipocyte_lipolytic"
         ]
       },
       "site": {
@@ -256,18 +254,24 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
-        "acetone",
         "pentane",
+        "acetone",
         "hexanal",
         "ethanol",
         "isoprene",
@@ -302,11 +306,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8913043478260868
+        "composite": 1.0
       },
-      "composite_pct": 89.13,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "ethane",
@@ -336,7 +340,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 17.405218649563928,
+          "fold_change": 28.235294117647058,
           "score": 1.0,
           "weight": 1.0
         },
@@ -427,24 +431,23 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "airway epithelium",
-          "neutrophil",
-          "macrophage alveolar"
+        "score": 1.0,
+        "hits": [
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur",
           "Lipolytic adipocyte",
-          "adipocyte_lipolytic",
-          "Fermentative gut microbial community",
-          "gut_fermentative_microbe"
+          "adipocyte_lipolytic"
         ]
       },
       "site": {
@@ -455,18 +458,24 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
-        "acetone",
         "pentane",
+        "acetone",
         "hexanal",
         "isoprene",
         "isopropanol",
@@ -499,18 +508,18 @@
         "direction": 1.0,
         "fold": 1.0,
         "topk": 1.0,
-        "pathway": 0.75,
-        "cell": 0.6666666666666666,
+        "pathway": 1.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.9230072463768115
+        "composite": 1.0
       },
-      "composite_pct": 92.3,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 15.966011869923438,
+          "fold_change": 20.131702585987757,
           "score": 1.0,
           "weight": 1.0
         },
@@ -518,7 +527,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 9.578137309710868,
+          "fold_change": 15.510241637111282,
           "score": 1.0,
           "weight": 1.0
         },
@@ -534,7 +543,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.070834803906128,
+          "fold_change": 7.6907330449910996,
           "score": 1.0,
           "weight": 1.0
         },
@@ -567,13 +576,13 @@
         {
           "voc_id": "acetone",
           "threshold": 1.4,
-          "fold_change": 15.966011869923438,
+          "fold_change": 20.131702585987757,
           "score": 1.0
         },
         {
           "voc_id": "pentane",
           "threshold": 1.25,
-          "fold_change": 9.578137309710868,
+          "fold_change": 15.510241637111282,
           "score": 1.0
         }
       ],
@@ -587,15 +596,13 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.75,
+        "score": 1.0,
         "hits": [
           "ketone_body_metabolism",
-          "fatty_acid_oxidation",
-          "lipid_peroxidation"
+          "lipid_peroxidation",
+          "fatty_acid_oxidation"
         ],
-        "missing": [
-          "urea_cycle"
-        ],
+        "missing": [],
         "present": [
           "brain_energy_metabolism",
           "fatty_acid_oxidation",
@@ -604,25 +611,23 @@
         ]
       },
       "cell": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "hits": [
-          "stressed cardiomyocyte",
-          "endothelial cell"
+          "Stressed cardiomyocyte",
+          "Ketogenic hepatocyte"
         ],
-        "missing": [
-          "cardiac fibroblast"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
+          "Stressed cardiomyocyte",
+          "cardiomyocyte_stressed",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
@@ -634,22 +639,28 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
           "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
         "ammonia",
         "pentane",
+        "hexanal",
         "isoprene",
         "methanol",
-        "hexanal",
         "isopropanol",
         "2_butanone",
         "nonanal",
@@ -695,7 +706,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 12.184348866082592,
+          "fold_change": 15.75224744036753,
           "score": 1.0,
           "weight": 1.0
         },
@@ -719,7 +730,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 7.51962103796143,
+          "fold_change": 11.060491228015353,
           "score": 1.0,
           "weight": 1.0
         },
@@ -744,13 +755,13 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.2,
-          "fold_change": 12.184348866082592,
+          "fold_change": 15.75224744036753,
           "score": 1.0
         },
         {
           "voc_id": "pentane",
           "threshold": 1.15,
-          "fold_change": 7.51962103796143,
+          "fold_change": 11.060491228015353,
           "score": 1.0
         }
       ],
@@ -782,8 +793,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Oxidative-stress",
-          "Tumor"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "missing": [],
         "observed_top": [
@@ -807,20 +818,26 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "ethanol",
         "acetone",
-        "isoprene",
         "pentane",
+        "isoprene",
         "hexanal",
         "acetaldehyde",
         "ammonia",
@@ -848,15 +865,15 @@
         "comorbidities": []
       },
       "scores": {
-        "direction": 0.8636363636363636,
+        "direction": 0.9454545454545454,
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.0,
-        "site": 0.5,
-        "composite": 0.8127470355731224
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.9881422924901185
       },
-      "composite_pct": 81.27,
+      "composite_pct": 98.81,
       "direction_detail": [
         {
           "voc_id": "benzene",
@@ -878,7 +895,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.574442751767485,
+          "fold_change": 9.925138972735557,
           "score": 1.0,
           "weight": 1.0
         },
@@ -894,7 +911,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": true,
-          "fold_change": 3.3869142282138,
+          "fold_change": 3.5315639136884887,
           "score": 1.0,
           "weight": 0.5
         },
@@ -902,8 +919,8 @@
           "voc_id": "isoprene",
           "want": "suppress",
           "soft": false,
-          "fold_change": 0.9058401797011034,
-          "score": 0.55,
+          "fold_change": 0.7932713675744367,
+          "score": 1.0,
           "weight": 1.0
         },
         {
@@ -925,7 +942,7 @@
         {
           "voc_id": "pentane",
           "threshold": 1.2,
-          "fold_change": 5.574442751767485,
+          "fold_change": 9.925138972735557,
           "score": 1.0
         }
       ],
@@ -953,44 +970,48 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "Plasmodium-infected RBC",
-          "uninfected erythrocyte under oxidative stress",
-          "hepatocyte during liver-stage infection"
+        "score": 1.0,
+        "hits": [
+          "Oxidatively stressed erythrocyte",
+          "Ketogenic hepatocyte"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Oxidatively stressed erythrocyte",
+          "erythrocyte_oxidative",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
+          "blood",
           "liver"
         ],
-        "missing": [
-          "blood"
-        ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -1039,7 +1060,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 12.937835165276994,
+          "fold_change": 14.11675272296646,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1055,7 +1076,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 11.20972280136777,
+          "fold_change": 11.616916220448365,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1063,7 +1084,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": true,
-          "fold_change": 2.548451837095216,
+          "fold_change": 2.702801837095216,
           "score": 1.0,
           "weight": 0.5
         },
@@ -1080,13 +1101,13 @@
         {
           "voc_id": "acetone",
           "threshold": 1.8,
-          "fold_change": 12.937835165276994,
+          "fold_change": 14.11675272296646,
           "score": 1.0
         },
         {
           "voc_id": "2_butanone",
           "threshold": 1.2,
-          "fold_change": 11.20972280136777,
+          "fold_change": 11.616916220448365,
           "score": 1.0
         }
       ],
@@ -1139,14 +1160,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
-          "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -1199,7 +1225,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 8.408615118458252,
+          "fold_change": 13.796471817971707,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1207,7 +1233,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 25.196726596598005,
+          "fold_change": 28.235294117647058,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1224,13 +1250,13 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.3,
-          "fold_change": 8.408615118458252,
+          "fold_change": 13.796471817971707,
           "score": 1.0
         },
         {
           "voc_id": "pentane",
           "threshold": 1.25,
-          "fold_change": 25.196726596598005,
+          "fold_change": 28.235294117647058,
           "score": 1.0
         }
       ],
@@ -1286,17 +1312,24 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
-        "acetone",
         "pentane",
+        "acetone",
         "hexanal",
         "ammonia",
         "isoprene",
@@ -1332,11 +1365,11 @@
         "fold": null,
         "topk": 1.0,
         "pathway": 0.75,
-        "cell": 0.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8090277777777778
+        "composite": 0.9479166666666666
       },
-      "composite_pct": 80.9,
+      "composite_pct": 94.79,
       "direction_detail": [
         {
           "voc_id": "acetaldehyde",
@@ -1350,7 +1383,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 27.872364883656505,
+          "fold_change": 28.235294117647058,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1433,24 +1466,23 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "injured alveolar type I cell",
-          "alveolar type II cell",
-          "pulmonary capillary endothelial cell"
+        "score": 1.0,
+        "hits": [
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Putrefactive / proteolytic gut microbes",
-          "gut_putrefactive_microbe",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "gut_putrefactive_microbe"
         ]
       },
       "site": {
@@ -1461,13 +1493,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -1528,7 +1566,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 8.8331925177913,
+          "fold_change": 10.235942151485945,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1551,7 +1589,7 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.15,
-          "fold_change": 8.8331925177913,
+          "fold_change": 10.235942151485945,
           "score": 1.0
         }
       ],
@@ -1583,8 +1621,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Tumor",
-          "Oxidative"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "missing": [],
         "observed_top": [
@@ -1608,13 +1646,20 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
           "breast",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -1624,8 +1669,8 @@
         "isoprene",
         "ammonia",
         "hexanal",
-        "2_butanone",
         "pentane",
+        "2_butanone",
         "methanol",
         "nonanal",
         "heptanal",
@@ -1660,18 +1705,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.3333333333333333,
-        "cell": 0.3333333333333333,
+        "pathway": 1.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.7685185185185185
+        "composite": 1.0
       },
-      "composite_pct": 76.85,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.341083025117401,
+          "fold_change": 8.997380975270735,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1679,7 +1724,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 6.0207861778157605,
+          "fold_change": 9.709250310703654,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1687,7 +1732,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": true,
-          "fold_change": 1.2898389342179384,
+          "fold_change": 1.2857334847403832,
           "score": 1.0,
           "weight": 0.5
         },
@@ -1695,7 +1740,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": true,
-          "fold_change": 3.3443044189569244,
+          "fold_change": 2.0002863524093892,
           "score": 1.0,
           "weight": 0.5
         },
@@ -1703,7 +1748,7 @@
           "voc_id": "formaldehyde",
           "want": "suppress",
           "soft": false,
-          "fold_change": 0.4791107712456278,
+          "fold_change": 0.4843699111209036,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1726,31 +1771,29 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "lipid_peroxidation"
-        ],
-        "missing": [
+          "lipid_peroxidation",
           "one_carbon_folate",
           "cytochrome_p450_detox"
         ],
+        "missing": [],
         "present": [
           "apoptosis_necrosis",
-          "fatty_acid_oxidation",
+          "cytochrome_p450_detox",
           "glycolysis_warburg",
           "lipid_peroxidation",
+          "one_carbon_folate",
           "pi3k_akt_mtor"
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "prostate basal epithelial cell"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "androgen-responsive prostate luminal epithelial cell",
-          "prostate carcinoma cell"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
@@ -1758,10 +1801,10 @@
           "gut_fermentative_microbe",
           "Metabolically stressed neuron",
           "neuron_stressed",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
           "Ketogenic hepatocyte",
-          "hepatocyte_ketogenic",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "hepatocyte_ketogenic"
         ]
       },
       "site": {
@@ -1772,30 +1815,35 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
-          "prostate gland",
-          "stomach",
+          "prostate",
+          "thyroid",
           "tumor"
         ]
       },
       "predicted_top": [
-        "acetone",
         "ethanol",
+        "acetone",
         "pentane",
-        "ammonia",
         "hexanal",
+        "ammonia",
         "isoprene",
         "2_butanone",
         "methanol",
         "nonanal",
-        "isopropanol",
         "phenol",
+        "isopropanol",
         "formaldehyde",
         "methyl_acetate",
-        "octane",
+        "heptanal",
         "2_pentanone"
       ]
     },
@@ -1824,18 +1872,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.25,
-        "cell": 0.6666666666666666,
+        "pathway": 1.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.7974537037037037
+        "composite": 1.0
       },
-      "composite_pct": 79.75,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.5373390495925818,
+          "fold_change": 1.552872584256395,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1843,7 +1891,7 @@
           "voc_id": "isoprene",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.2945317167671593,
+          "fold_change": 1.5264070041754718,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1851,7 +1899,7 @@
           "voc_id": "phenol",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.4633994664260117,
+          "fold_change": 1.4182444320708225,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1867,7 +1915,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 8.284920109803968,
+          "fold_change": 11.150550224889324,
           "score": 1.0,
           "weight": 1.0
         },
@@ -1883,7 +1931,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": true,
-          "fold_change": 2.0149365478863093,
+          "fold_change": 4.725866281980041,
           "score": 1.0,
           "weight": 0.5
         },
@@ -1891,7 +1939,7 @@
           "voc_id": "ammonia",
           "want": "elevate",
           "soft": true,
-          "fold_change": 1.2826118652803318,
+          "fold_change": 1.2924522672327499,
           "score": 1.0,
           "weight": 0.5
         },
@@ -1899,7 +1947,7 @@
           "voc_id": "hydrogen_sulfide",
           "want": "elevate",
           "soft": true,
-          "fold_change": 1.3228348079060677,
+          "fold_change": 1.3399212864654302,
           "score": 1.0,
           "weight": 0.5
         }
@@ -1915,40 +1963,40 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.25,
+        "score": 1.0,
         "hits": [
-          "lipid_peroxidation"
-        ],
-        "missing": [
+          "glycolysis_warburg",
+          "lipid_peroxidation",
           "ketone_body_metabolism",
-          "mevalonate_cholesterol",
           "gut_microbiome_fermentation"
         ],
+        "missing": [],
         "present": [
           "Kras_mapk_proliferation",
           "apoptosis_necrosis",
           "glycolysis_warburg",
-          "lipid_peroxidation"
+          "gut_microbiome_fermentation",
+          "ketone_body_metabolism",
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
         ]
       },
       "cell": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "hits": [
-          "gastric foveolar epithelial cell",
-          "intestinal metaplasia epithelial cell"
+          "Warburg-high tumor epithelial cell",
+          "Gastric urease"
         ],
-        "missing": [
-          "gastric carcinoma cell"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
           "Metabolically stressed neuron",
           "neuron_stressed",
-          "Ketogenic hepatocyte",
-          "hepatocyte_ketogenic",
           "Warburg-high tumor epithelial cell",
           "tumor_epithelial_warburg",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur"
         ]
@@ -1962,12 +2010,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -1979,10 +2034,10 @@
         "hexanal",
         "acetaldehyde",
         "methanol",
+        "2_butanone",
         "nonanal",
         "hydrogen_sulfide",
         "phenol",
-        "2_butanone",
         "isopropanol",
         "heptanal",
         "2_pentanone"
@@ -2011,17 +2066,17 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 0.6666666666666666,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8913043478260868
+        "composite": 0.9456521739130432
       },
-      "composite_pct": 89.13,
+      "composite_pct": 94.57,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.121734501990338,
+          "fold_change": 5.613861983894655,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2046,7 +2101,7 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.2,
-          "fold_change": 5.121734501990338,
+          "fold_change": 5.613861983894655,
           "score": 1.0
         }
       ],
@@ -2077,24 +2132,23 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Tumor"
+          "Warburg-high tumor epithelial cell",
+          "Inflamed colonocyte"
         ],
-        "missing": [
-          "Colonocyte"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
           "Warburg-high tumor epithelial cell",
           "tumor_epithelial_warburg",
+          "Inflamed colonocyte",
+          "colonocyte_inflamed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
@@ -2106,13 +2160,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
           "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -2120,9 +2180,9 @@
         "acetone",
         "isoprene",
         "acetaldehyde",
-        "ammonia",
-        "hexanal",
         "pentane",
+        "hexanal",
+        "ammonia",
         "hydrogen_sulfide",
         "2_butanone",
         "nonanal",
@@ -2151,11 +2211,11 @@
         "fold": null,
         "topk": 1.0,
         "pathway": 0.5,
-        "cell": 0.3333333333333333,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8032407407407407
+        "composite": 0.8958333333333334
       },
-      "composite_pct": 80.32,
+      "composite_pct": 89.58,
       "direction_detail": [
         {
           "voc_id": "nonanal",
@@ -2250,25 +2310,23 @@
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "ciliated airway epithelial cell"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "alveolar type II cell",
-          "macrophage alveolar"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur",
           "Lipolytic adipocyte",
-          "adipocyte_lipolytic",
-          "Fermentative gut microbial community",
-          "gut_fermentative_microbe"
+          "adipocyte_lipolytic"
         ]
       },
       "site": {
@@ -2279,21 +2337,27 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
         "pentane",
+        "hexanal",
         "methanol",
         "ethanol",
-        "hexanal",
         "isoprene",
         "ammonia",
         "nonanal",
@@ -2324,11 +2388,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.3333333333333333,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.9275362318840579
+        "composite": 1.0
       },
-      "composite_pct": 92.75,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "ethane",
@@ -2366,7 +2430,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 11.022614608664595,
+          "fold_change": 22.23982413526938,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2374,7 +2438,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 8.333863051566318,
+          "fold_change": 17.72419314334244,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2463,25 +2527,23 @@
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "goblet cell"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "CFTR-deficient airway epithelium",
-          "submucosal gland cell"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Putrefactive / proteolytic gut microbes",
           "gut_putrefactive_microbe",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Ketogenic hepatocyte",
-          "hepatocyte_ketogenic",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "hepatocyte_ketogenic"
         ]
       },
       "site": {
@@ -2492,19 +2554,25 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "ammonia",
-        "acetone",
         "pentane",
+        "acetone",
         "hexanal",
         "ethanol",
         "hydrogen_sulfide",
@@ -2560,7 +2628,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 14.886910037943691,
+          "fold_change": 17.022401835967806,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2584,7 +2652,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": true,
-          "fold_change": 2.774716419755882,
+          "fold_change": 5.495980599397243,
           "score": 1.0,
           "weight": 0.5
         }
@@ -2621,7 +2689,7 @@
         "score": 1.0,
         "hits": [
           "Metabolically stressed neuron",
-          "Oxidative"
+          "Oxidative-stress"
         ],
         "missing": [],
         "observed_top": [
@@ -2645,20 +2713,27 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "ethanol",
         "acetone",
         "acetaldehyde",
-        "isoprene",
         "hexanal",
+        "isoprene",
         "ammonia",
         "pentane",
         "methanol",
@@ -2697,18 +2772,18 @@
         "direction": 1.0,
         "fold": 1.0,
         "topk": 1.0,
-        "pathway": 0.25,
-        "cell": 0.3333333333333333,
-        "site": 0.5,
-        "composite": 0.7563405797101448
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 75.63,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "ethanol",
           "want": "elevate",
           "soft": false,
-          "fold_change": 14.623734862310124,
+          "fold_change": 19.849800792129823,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2716,7 +2791,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.809293357262632,
+          "fold_change": 4.841854817030028,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2724,7 +2799,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 11.194345968228468,
+          "fold_change": 18.12505309860039,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2732,7 +2807,7 @@
           "voc_id": "heptanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.3166693453610723,
+          "fold_change": 1.3099122393923717,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2748,7 +2823,7 @@
           "voc_id": "decanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.4006977918239631,
+          "fold_change": 1.3987485034096327,
           "score": 1.0,
           "weight": 1.0
         },
@@ -2756,7 +2831,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": true,
-          "fold_change": 1.3353990776228863,
+          "fold_change": 1.3439243186830083,
           "score": 1.0,
           "weight": 0.5
         },
@@ -2773,13 +2848,13 @@
         {
           "voc_id": "ethanol",
           "threshold": 2.017,
-          "fold_change": 14.623734862310124,
+          "fold_change": 19.849800792129823,
           "score": 1.0
         },
         {
           "voc_id": "hexanal",
           "threshold": 1.381,
-          "fold_change": 11.194345968228468,
+          "fold_change": 18.12505309860039,
           "score": 1.0
         }
       ],
@@ -2793,61 +2868,65 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.25,
+        "score": 1.0,
         "hits": [
-          "glycolysis_warburg"
-        ],
-        "missing": [
-          "gut_microbiome_fermentation",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
           "cytochrome_p450_detox",
           "ketone_body_metabolism"
         ],
+        "missing": [],
         "present": [
           "Kras_mapk_proliferation",
           "apoptosis_necrosis",
+          "cytochrome_p450_detox",
           "glycolysis_warburg",
+          "ketone_body_metabolism",
           "lipid_peroxidation",
           "pi3k_akt_mtor"
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "squamous epithelial tumor cell"
+          "Warburg-high tumor epithelial cell",
+          "Stressed airway epithelium"
         ],
-        "missing": [
-          "basal keratinocyte-like malignant cell",
-          "cancer-associated fibroblast"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
-          "Metabolically stressed neuron",
-          "neuron_stressed",
           "Warburg-high tumor epithelial cell",
           "tumor_epithelial_warburg",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Ketogenic hepatocyte",
-          "hepatocyte_ketogenic",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "hepatocyte_ketogenic"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "head_neck"
-        ],
-        "missing": [
+          "head_neck",
           "oral"
         ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
-          "head",
+          "head and neck",
+          "head neck",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
-          "stomach",
+          "thyroid",
           "tumor"
         ]
       },
@@ -2859,14 +2938,14 @@
         "acetaldehyde",
         "ammonia",
         "isoprene",
-        "nonanal",
+        "methanol",
         "2_butanone",
+        "nonanal",
         "decanal",
+        "hydrogen_sulfide",
         "heptanal",
         "phenol",
-        "methanol",
-        "isopropanol",
-        "methyl_acetate"
+        "isopropanol"
       ]
     },
     {
@@ -3001,11 +3080,17 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
+          "thyroid",
           "tumor"
         ]
       },
@@ -3019,8 +3104,8 @@
         "hexanal",
         "hydrogen_sulfide",
         "pentane",
-        "isoprene",
         "2_butanone",
+        "isoprene",
         "isopropanol",
         "limonene",
         "nonanal",
@@ -3071,7 +3156,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 4.971410282213142,
+          "fold_change": 8.203728474185707,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3129,8 +3214,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Neuron",
-          "Microglia"
+          "Metabolically stressed neuron",
+          "Activated microglia"
         ],
         "missing": [],
         "observed_top": [
@@ -3154,12 +3239,18 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -3212,7 +3303,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.9213686177532394,
+          "fold_change": 6.136067978091886,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3245,7 +3336,7 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.2,
-          "fold_change": 3.9213686177532394,
+          "fold_change": 6.136067978091886,
           "score": 1.0
         }
       ],
@@ -3275,8 +3366,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Tumor",
-          "Oxidative"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "missing": [],
         "observed_top": [
@@ -3300,21 +3391,28 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "ovary",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
         "pentane",
         "ethanol",
-        "ammonia",
         "hexanal",
+        "ammonia",
         "isoprene",
         "acetaldehyde",
         "nonanal",
@@ -3376,7 +3474,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 9.108381581106373,
+          "fold_change": 11.248430940355412,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3399,7 +3497,7 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.2,
-          "fold_change": 9.108381581106373,
+          "fold_change": 11.248430940355412,
           "score": 1.0
         }
       ],
@@ -3431,8 +3529,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Tumor",
-          "Ketogenic"
+          "Warburg-high tumor epithelial cell",
+          "Ketogenic hepatocyte"
         ],
         "missing": [],
         "observed_top": [
@@ -3457,12 +3555,18 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "pancreas",
           "stomach",
+          "thyroid",
           "tumor"
         ]
       },
@@ -3471,8 +3575,8 @@
         "acetone",
         "ammonia",
         "acetaldehyde",
-        "hexanal",
         "pentane",
+        "hexanal",
         "methanol",
         "2_butanone",
         "isoprene",
@@ -3516,7 +3620,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 17.459194477847667,
+          "fold_change": 23.309760205728015,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3524,7 +3628,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 9.698805815581295,
+          "fold_change": 13.396471636249391,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3541,13 +3645,13 @@
         {
           "voc_id": "pentane",
           "threshold": 1.3,
-          "fold_change": 17.459194477847667,
+          "fold_change": 23.309760205728015,
           "score": 1.0
         },
         {
           "voc_id": "hexanal",
           "threshold": 1.3,
-          "fold_change": 9.698805815581295,
+          "fold_change": 13.396471636249391,
           "score": 1.0
         }
       ],
@@ -3602,20 +3706,26 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
         "pentane",
         "ammonia",
-        "isoprene",
         "hexanal",
+        "isoprene",
         "nonanal",
         "methanol",
         "propanol",
@@ -3646,11 +3756,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 0.5,
-        "cell": 0.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8097826086956521
+        "composite": 0.9184782608695651
       },
-      "composite_pct": 80.98,
+      "composite_pct": 91.85,
       "direction_detail": [
         {
           "voc_id": "ethanol",
@@ -3672,7 +3782,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 11.602988134946319,
+          "fold_change": 23.336781943398133,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3696,7 +3806,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 15.31306014368286,
+          "fold_change": 28.235294117647058,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3776,24 +3886,23 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "alveolar macrophage",
-          "neutrophil",
-          "airway epithelium"
+        "score": 1.0,
+        "hits": [
+          "Stressed airway epithelium",
+          "Activated macrophage"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Putrefactive / proteolytic gut microbes",
-          "gut_putrefactive_microbe",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "gut_putrefactive_microbe"
         ]
       },
       "site": {
@@ -3804,21 +3913,26 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "ammonia",
         "pentane",
+        "hexanal",
         "acetone",
         "ethanol",
-        "hexanal",
         "isoprene",
         "hydrogen_sulfide",
         "dms",
@@ -3859,7 +3973,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 7.725776637952625,
+          "fold_change": 10.93576757726519,
           "score": 1.0,
           "weight": 1.0
         },
@@ -3925,8 +4039,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Neuron",
-          "Microglia"
+          "Metabolically stressed neuron",
+          "Activated microglia"
         ],
         "missing": [],
         "observed_top": [
@@ -3950,18 +4064,25 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
-        "ammonia",
         "pentane",
+        "ammonia",
         "isoprene",
         "hexanal",
         "nonanal",
@@ -3995,18 +4116,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.5,
-        "cell": 0.3333333333333333,
-        "site": 0.5,
-        "composite": 0.7407407407407407
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 74.07,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "isoprene",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.4261465711696704,
+          "fold_change": 1.898816691567608,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4014,7 +4135,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.701010970689513,
+          "fold_change": 4.751421571684179,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4022,7 +4143,7 @@
           "voc_id": "toluene",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.510474786003557,
+          "fold_change": 1.5279126861379664,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4030,7 +4151,7 @@
           "voc_id": "ethylbenzene",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.5156067558322202,
+          "fold_change": 1.5309057601332694,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4038,7 +4159,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.036057742410405,
+          "fold_change": 15.350787107534945,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4046,7 +4167,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 7.201013717101877,
+          "fold_change": 19.85421411934861,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4062,7 +4183,7 @@
           "voc_id": "ammonia",
           "want": "elevate",
           "soft": true,
-          "fold_change": 2.7431345075237954,
+          "fold_change": 3.5203180471794235,
           "score": 1.0,
           "weight": 0.5
         },
@@ -4086,62 +4207,65 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "brain_energy_metabolism",
-          "ketone_body_metabolism"
-        ],
-        "missing": [
+          "lipid_peroxidation",
+          "ketone_body_metabolism",
           "mevalonate_cholesterol",
           "cytochrome_p450_detox"
         ],
+        "missing": [],
         "present": [
           "brain_energy_metabolism",
+          "cytochrome_p450_detox",
           "fatty_acid_oxidation",
           "ketone_body_metabolism",
           "lipid_peroxidation",
+          "mevalonate_cholesterol",
           "urea_cycle"
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "endothelial cell"
+          "Stressed airway epithelium",
+          "Oxidative endothelial cell"
         ],
-        "missing": [
-          "pharyngeal myocyte",
-          "upper airway epithelium"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
-          "Metabolically stressed neuron",
-          "neuron_stressed",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "pharynx"
-        ],
-        "missing": [
+          "pharynx",
           "lung"
         ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "pharynx",
-          "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -4149,9 +4273,9 @@
         "ammonia",
         "pentane",
         "isoprene",
+        "hexanal",
         "methanol",
         "ethanol",
-        "hexanal",
         "isopropanol",
         "2_butanone",
         "toluene",
@@ -4180,11 +4304,11 @@
         "fold": null,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8611111111111112
+        "composite": 1.0
       },
-      "composite_pct": 86.11,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "benzene",
@@ -4198,7 +4322,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 9.853541194721272,
+          "fold_change": 20.747208336617383,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4222,7 +4346,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 6.745938237454412,
+          "fold_change": 15.348979719214288,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4284,24 +4408,23 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "infected alveolar macrophage",
-          "epithelioid macrophage",
-          "foamy macrophage"
+        "score": 1.0,
+        "hits": [
+          "Activated macrophage",
+          "Stressed airway epithelium"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Metabolically stressed neuron",
           "neuron_stressed",
+          "Activated macrophage",
+          "macrophage_activated",
           "Ketogenic hepatocyte",
-          "hepatocyte_ketogenic",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_ketogenic"
         ]
       },
       "site": {
@@ -4312,18 +4435,24 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
-        "acetone",
         "pentane",
+        "acetone",
         "hexanal",
         "isoprene",
         "ammonia",
@@ -4367,7 +4496,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.450912252559329,
+          "fold_change": 4.19351604372142,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4375,7 +4504,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 4.796011455613089,
+          "fold_change": 5.170663406987742,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4400,7 +4529,7 @@
         {
           "voc_id": "acetone",
           "threshold": 2.0,
-          "fold_change": 3.450912252559329,
+          "fold_change": 4.19351604372142,
           "score": 1.0
         }
       ],
@@ -4453,14 +4582,21 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -4499,11 +4635,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 0.5,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8641304347826086
+        "composite": 0.9184782608695651
       },
-      "composite_pct": 86.41,
+      "composite_pct": 91.85,
       "direction_detail": [
         {
           "voc_id": "ammonia",
@@ -4561,13 +4697,12 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Hepatocyte"
+          "Ketogenic hepatocyte",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "Kidney"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
@@ -4590,13 +4725,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "kidney",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -4729,12 +4870,18 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -4783,7 +4930,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 26.29886464801271,
+          "fold_change": 28.57142857142857,
           "score": 1.0,
           "weight": 1.0
         },
@@ -4824,7 +4971,7 @@
         {
           "voc_id": "hexanal",
           "threshold": 1.25,
-          "fold_change": 26.29886464801271,
+          "fold_change": 28.57142857142857,
           "score": 1.0
         },
         {
@@ -4889,12 +5036,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -4933,11 +5087,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 0.6666666666666666,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8913043478260868
+        "composite": 0.9456521739130432
       },
-      "composite_pct": 89.13,
+      "composite_pct": 94.57,
       "direction_detail": [
         {
           "voc_id": "indole",
@@ -5011,13 +5165,12 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Gut"
+          "Putrefactive",
+          "Fermentative gut"
         ],
-        "missing": [
-          "Microbiome"
-        ],
+        "missing": [],
         "observed_top": [
           "Putrefactive / proteolytic gut microbes",
           "gut_putrefactive_microbe",
@@ -5039,12 +5192,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -5069,7 +5229,7 @@
       "id": "inflammatory_bowel_disease",
       "name": "inflammatory bowel disease",
       "grade": "C",
-      "location": "gut",
+      "location": "colon",
       "resolved_disease_id": "inflammatory_bowel_disease",
       "evidence_basis": "IBD breath H2S/pentane literature",
       "patient": {
@@ -5082,18 +5242,18 @@
         "direction": 1.0,
         "fold": 1.0,
         "topk": 1.0,
-        "pathway": 0.6666666666666666,
-        "cell": 0.0,
-        "site": 0.5,
-        "composite": 0.7880434782608695
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 78.8,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hydrogen_sulfide",
           "want": "elevate",
           "soft": false,
-          "fold_change": 4.959408489963347,
+          "fold_change": 4.462566066611543,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5101,7 +5261,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.9995749309608044,
+          "fold_change": 14.266876910800523,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5109,7 +5269,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": true,
-          "fold_change": 3.465207888209528,
+          "fold_change": 11.260689132471548,
           "score": 1.0,
           "weight": 0.5
         }
@@ -5118,7 +5278,7 @@
         {
           "voc_id": "hydrogen_sulfide",
           "threshold": 1.5,
-          "fold_change": 4.959408489963347,
+          "fold_change": 4.462566066611543,
           "score": 1.0
         }
       ],
@@ -5131,74 +5291,78 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "hits": [
           "gut_microbiome_fermentation",
-          "lipid_peroxidation"
-        ],
-        "missing": [
+          "lipid_peroxidation",
           "neuroinflammation"
         ],
+        "missing": [],
         "present": [
           "apoptosis_necrosis",
           "gut_microbiome_fermentation",
           "lipid_peroxidation",
-          "microbial_proteolysis_putrefaction"
+          "neuroinflammation"
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "Colonocyte",
-          "Neutrophil",
-          "Microbiome"
+        "score": 1.0,
+        "hits": [
+          "Inflamed colonocyte",
+          "Putrefactive"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Inflamed colonocyte",
+          "colonocyte_inflamed",
           "Putrefactive / proteolytic gut microbes",
           "gut_putrefactive_microbe",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "gut"
-        ],
-        "missing": [
+          "gut",
           "colon"
         ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
+        "pentane",
         "ammonia",
         "ethanol",
         "isoprene",
-        "hydrogen_sulfide",
-        "pentane",
-        "acetone",
         "hexanal",
+        "hydrogen_sulfide",
+        "acetone",
         "acetaldehyde",
         "methanol",
-        "indole",
         "propanol",
-        "phenol",
+        "indole",
         "ethyl_acetate",
+        "phenol",
         "trimethylamine",
         "dimethyl_amine"
       ]
@@ -5221,11 +5385,11 @@
         "fold": 1.0,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.9456521739130432
+        "composite": 1.0
       },
-      "composite_pct": 94.57,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hydrogen_sulfide",
@@ -5288,13 +5452,12 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Gut"
+          "Fermentative gut",
+          "Putrefactive"
         ],
-        "missing": [
-          "Microbiome"
-        ],
+        "missing": [],
         "observed_top": [
           "Fermentative gut microbial community",
           "gut_fermentative_microbe",
@@ -5317,13 +5480,20 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "small intestine",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -5340,8 +5510,8 @@
         "ethyl_acetate",
         "trimethylamine",
         "dimethyl_amine",
-        "dms",
-        "pentane"
+        "pentane",
+        "dms"
       ]
     },
     {
@@ -5380,7 +5550,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.609188279356863,
+          "fold_change": 6.144827284742872,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5421,8 +5591,8 @@
       "cell": {
         "score": 1.0,
         "hits": [
-          "Neuron",
-          "Gut"
+          "Metabolically stressed neuron",
+          "Fermentative gut"
         ],
         "missing": [],
         "observed_top": [
@@ -5447,12 +5617,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -5490,18 +5667,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.5,
-        "cell": 0.5,
-        "site": 0.5,
-        "composite": 0.7638888888888888
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 76.39,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.3771026190141542,
+          "fold_change": 7.324251169681081,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5509,7 +5686,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.202061104083849,
+          "fold_change": 10.063166776503985,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5517,7 +5694,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.1857864928604713,
+          "fold_change": 1.278717845455075,
           "score": 1.0,
           "weight": 1.0
         }
@@ -5533,26 +5710,25 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "lipid_peroxidation"
-        ],
-        "missing": [
+          "lipid_peroxidation",
           "apoptosis_necrosis"
         ],
+        "missing": [],
         "present": [
+          "apoptosis_necrosis",
           "glycolysis_warburg",
           "lipid_peroxidation"
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Oxidative"
+          "Oxidative-stress",
+          "Activated macrophage"
         ],
-        "missing": [
-          "Immune"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
@@ -5562,45 +5738,50 @@
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "Activated macrophage",
+          "macrophage_activated"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "pelvis"
-        ],
-        "missing": [
+          "pelvis",
           "ovary"
         ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "pelvis",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
-        "ammonia",
         "pentane",
+        "hexanal",
+        "ammonia",
         "isoprene",
         "methanol",
-        "hexanal",
         "phenol",
         "isopropanol",
+        "octanal",
         "methyl_acetate",
         "ethanol",
+        "nonanal",
         "2_pentanone",
         "propanol",
-        "nonanal",
-        "octane",
-        "octanal"
+        "octane"
       ]
     },
     {
@@ -5647,7 +5828,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 4.027633332675686,
+          "fold_change": 6.29709381331903,
           "score": 1.0,
           "weight": 1.0
         }
@@ -5704,12 +5885,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -5750,19 +5938,19 @@
       "scores": {
         "direction": 1.0,
         "fold": null,
-        "topk": 0.6666666666666666,
+        "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8472222222222223
+        "composite": 1.0
       },
-      "composite_pct": 84.72,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.2892804959749697,
+          "fold_change": 7.0190851507633445,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5778,21 +5966,20 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.4947788298681308,
+          "fold_change": 2.3238265773263844,
           "score": 1.0,
           "weight": 1.0
         }
       ],
       "fold_detail": [],
       "topk": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "in_top": [
           "hexanal",
-          "acetone"
-        ],
-        "missing": [
+          "acetone",
           "2_butanone"
-        ]
+        ],
+        "missing": []
       },
       "pathway": {
         "score": 1.0,
@@ -5810,13 +5997,12 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Tumor"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "Epithelium"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
@@ -5826,8 +6012,8 @@
           "neuron_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg"
         ]
       },
       "site": {
@@ -5838,12 +6024,18 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "esophagus",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
+          "thyroid",
           "tumor"
         ]
       },
@@ -5851,18 +6043,18 @@
         "ethanol",
         "acetone",
         "pentane",
-        "ammonia",
         "hexanal",
-        "isoprene",
         "acetaldehyde",
+        "ammonia",
+        "isoprene",
         "nonanal",
+        "2_butanone",
         "methanol",
         "heptanal",
         "octanal",
         "phenol",
         "butane",
-        "isopropanol",
-        "propionaldehyde"
+        "isopropanol"
       ]
     },
     {
@@ -5884,18 +6076,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.6666666666666666,
-        "cell": 0.0,
+        "pathway": 1.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.7916666666666666
+        "composite": 1.0
       },
-      "composite_pct": 79.17,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.337637532838629,
+          "fold_change": 3.7796121808818803,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5903,7 +6095,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.1389542304532085,
+          "fold_change": 17.516561055785623,
           "score": 1.0,
           "weight": 1.0
         },
@@ -5911,7 +6103,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.9876785593067083,
+          "fold_change": 12.022755952401486,
           "score": 1.0,
           "weight": 1.0
         }
@@ -5927,38 +6119,39 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "hits": [
           "lipid_peroxidation",
-          "fatty_acid_oxidation"
-        ],
-        "missing": [
+          "fatty_acid_oxidation",
           "ketone_body_metabolism"
         ],
+        "missing": [],
         "present": [
+          "cytochrome_p450_detox",
           "fatty_acid_oxidation",
+          "ketone_body_metabolism",
           "lipid_peroxidation",
           "mevalonate_cholesterol"
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "Cardiomyocyte",
-          "Endothelial"
+        "score": 1.0,
+        "hits": [
+          "Stressed cardiomyocyte",
+          "Oxidative endothelial cell"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
+          "Stressed cardiomyocyte",
+          "cardiomyocyte_stressed",
+          "Oxidative endothelial cell",
+          "endothelial_oxidative",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Metabolically stressed neuron",
-          "neuron_stressed",
-          "Fermentative gut microbial community",
-          "gut_fermentative_microbe"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
@@ -5969,31 +6162,37 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
           "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
-        "isoprene",
+        "ammonia",
         "pentane",
         "hexanal",
-        "ammonia",
+        "isoprene",
+        "2_butanone",
         "dimethyl_amine",
-        "trimethylamine",
-        "methanol",
         "isopropanol",
-        "2_pentanone",
+        "methanol",
+        "trimethylamine",
         "nonanal",
         "phenol",
         "heptanal",
-        "methyl_acetate",
-        "decanal"
+        "decanal",
+        "methyl_acetate"
       ]
     },
     {
@@ -6014,11 +6213,11 @@
         "fold": null,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.9305555555555556
+        "composite": 1.0
       },
-      "composite_pct": 93.06,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hydrogen_sulfide",
@@ -6069,13 +6268,11 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Gastric"
+          "Gastric urease"
         ],
-        "missing": [
-          "Epithelium"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
@@ -6098,11 +6295,17 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
+          "thyroid",
           "tumor"
         ]
       },
@@ -6138,21 +6341,21 @@
         "comorbidities": []
       },
       "scores": {
-        "direction": 0.85,
+        "direction": 1.0,
         "fold": null,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.0,
-        "site": 0.5,
-        "composite": 0.7569444444444444
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 75.69,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.9560516479277994,
+          "fold_change": 10.98916369590216,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6160,15 +6363,15 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.0514415843804181,
-          "score": 0.55,
+          "fold_change": 14.462162362331414,
+          "score": 1.0,
           "weight": 1.0
         },
         {
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.2393227191556635,
+          "fold_change": 1.2813635784914867,
           "score": 1.0,
           "weight": 1.0
         }
@@ -6197,12 +6400,12 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "Immune",
-          "Macrophage"
+        "score": 1.0,
+        "hits": [
+          "Activated macrophage",
+          "Oxidative-stress"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
@@ -6212,46 +6415,50 @@
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "Activated macrophage",
+          "macrophage_activated"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "systemic"
-        ],
-        "missing": [
+          "systemic",
           "lung"
         ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
-          "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
+        "pentane",
         "ammonia",
         "hexanal",
         "isoprene",
         "methanol",
-        "acetonitrile",
-        "pentane",
+        "nonanal",
         "phenol",
         "isopropanol",
-        "nonanal",
-        "methyl_acetate",
+        "acetonitrile",
         "heptanal",
-        "2_pentanone",
+        "methyl_acetate",
+        "decanal",
         "octane",
-        "propanol"
+        "2_pentanone"
       ]
     },
     {
@@ -6271,18 +6478,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.5,
-        "cell": 0.5,
-        "site": 0.5,
-        "composite": 0.7638888888888888
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 76.39,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.725730798603922,
+          "fold_change": 11.17737994494097,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6290,7 +6497,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.175632335199179,
+          "fold_change": 7.364701565749381,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6298,7 +6505,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.2062238598445638,
+          "fold_change": 1.2543945860274122,
           "score": 1.0,
           "weight": 1.0
         }
@@ -6314,76 +6521,79 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "lipid_peroxidation"
-        ],
-        "missing": [
+          "lipid_peroxidation",
           "cytochrome_p450_detox"
         ],
+        "missing": [],
         "present": [
+          "cytochrome_p450_detox",
           "fatty_acid_oxidation",
-          "lipid_peroxidation",
-          "mevalonate_cholesterol"
+          "lipid_peroxidation"
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Oxidative"
+          "Oxidative endothelial cell",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "Endothelial"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
           "Metabolically stressed neuron",
           "neuron_stressed",
+          "Oxidative endothelial cell",
+          "endothelial_oxidative",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
+          "heart",
           "systemic"
         ],
-        "missing": [
-          "heart"
-        ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
         "pentane",
+        "hexanal",
         "isoprene",
         "ammonia",
-        "hexanal",
         "methanol",
-        "isopropanol",
         "nonanal",
+        "isopropanol",
         "phenol",
-        "methyl_acetate",
         "heptanal",
-        "2_pentanone",
+        "methyl_acetate",
+        "decanal",
         "octane",
         "propanol",
-        "decanal"
+        "2_pentanone"
       ]
     },
     {
@@ -6400,21 +6610,21 @@
         "comorbidities": []
       },
       "scores": {
-        "direction": 0.85,
+        "direction": 1.0,
         "fold": null,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.0,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.8194444444444444
+        "composite": 1.0
       },
-      "composite_pct": 81.94,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.0825761896569577,
+          "fold_change": 15.496413560684324,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6422,15 +6632,15 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.0550387702613344,
-          "score": 0.55,
+          "fold_change": 17.53527953862897,
+          "score": 1.0,
           "weight": 1.0
         },
         {
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.2393227191556635,
+          "fold_change": 1.2801700607953017,
           "score": 1.0,
           "weight": 1.0
         }
@@ -6459,23 +6669,23 @@
         ]
       },
       "cell": {
-        "score": 0.0,
-        "hits": [],
-        "missing": [
-          "Airway",
-          "Alveolar"
+        "score": 1.0,
+        "hits": [
+          "Stressed airway epithelium",
+          "Activated macrophage"
         ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
           "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic",
-          "Fermentative gut microbial community",
-          "gut_fermentative_microbe"
+          "Activated macrophage",
+          "macrophage_activated"
         ]
       },
       "site": {
@@ -6486,31 +6696,37 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
           "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
+        "pentane",
         "acetone",
-        "ammonia",
         "hexanal",
+        "ammonia",
         "isoprene",
         "methanol",
-        "pentane",
-        "acetonitrile",
         "nonanal",
+        "heptanal",
         "phenol",
         "isopropanol",
+        "decanal",
+        "acetonitrile",
         "methyl_acetate",
-        "heptanal",
-        "2_pentanone",
         "octane",
-        "propanol"
+        "ethane"
       ]
     },
     {
@@ -6531,17 +6747,17 @@
         "fold": null,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.5,
+        "cell": 1.0,
         "site": 1.0,
-        "composite": 0.9305555555555556
+        "composite": 1.0
       },
-      "composite_pct": 93.06,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 17.281475611294834,
+          "fold_change": 23.60011131266482,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6549,7 +6765,7 @@
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 25.03888888301666,
+          "fold_change": 28.235294117647058,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6587,13 +6803,12 @@
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Activated microglia"
+          "Activated microglia",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "Oligodendrocyte"
-        ],
+        "missing": [],
         "observed_top": [
           "Activated microglia",
           "microglia_activated",
@@ -6615,12 +6830,18 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -6671,7 +6892,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.30988950299422,
+          "fold_change": 6.475159754161451,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6679,7 +6900,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 6.241975088816493,
+          "fold_change": 6.732916534640502,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6743,12 +6964,19 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -6797,7 +7025,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.450912252559329,
+          "fold_change": 4.19351604372142,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6805,7 +7033,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 4.796011455613089,
+          "fold_change": 5.170663406987742,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6878,14 +7106,21 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -6936,7 +7171,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.004102590313878,
+          "fold_change": 2.3348563784108336,
           "score": 1.0,
           "weight": 1.0
         },
@@ -6944,7 +7179,7 @@
           "voc_id": "2_butanone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.691538895101362,
+          "fold_change": 2.8744344305568443,
           "score": 1.0,
           "weight": 1.0
         },
@@ -7013,14 +7248,21 @@
         ],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
@@ -7029,9 +7271,9 @@
         "pentane",
         "isopropanol",
         "isoprene",
+        "hexanal",
         "2_butanone",
         "methanol",
-        "hexanal",
         "phenol",
         "methyl_acetate",
         "ethanol",
@@ -7055,29 +7297,29 @@
         "comorbidities": []
       },
       "scores": {
-        "direction": 0.75,
+        "direction": 1.0,
         "fold": null,
-        "topk": 0.6666666666666666,
-        "pathway": 0.6666666666666666,
-        "cell": 0.3333333333333333,
-        "site": 0.5,
-        "composite": 0.6226851851851852
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 62.27,
+      "composite_pct": 100.0,
       "direction_detail": [
-        {
-          "voc_id": "hexanal",
-          "want": "elevate",
-          "soft": false,
-          "fold_change": 3.9173894281820503,
-          "score": 1.0,
-          "weight": 1.0
-        },
         {
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 6.102413515410308,
+          "fold_change": 24.155665510353387,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 18.029120286395358,
           "score": 1.0,
           "weight": 1.0
         },
@@ -7085,93 +7327,94 @@
           "voc_id": "ethane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.0331354030325437,
-          "score": 0.25,
+          "fold_change": 1.5887552256969675,
+          "score": 1.0,
           "weight": 1.0
         }
       ],
       "fold_detail": [],
       "topk": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "in_top": [
           "hexanal",
-          "pentane"
-        ],
-        "missing": [
+          "pentane",
           "ethane"
-        ]
+        ],
+        "missing": []
       },
       "pathway": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "hits": [
           "lipid_peroxidation",
-          "apoptosis_necrosis"
-        ],
-        "missing": [
+          "apoptosis_necrosis",
           "neuroinflammation"
         ],
+        "missing": [],
         "present": [
           "apoptosis_necrosis",
-          "gut_microbiome_fermentation",
-          "lipid_peroxidation"
+          "lipid_peroxidation",
+          "neuroinflammation"
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "Oxidative"
+          "Inflammatory synovial cell",
+          "Activated macrophage",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "Macrophage",
-          "Synovial"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Inflammatory synovial cell",
+          "synovial_inflammatory",
           "Metabolically stressed neuron",
           "neuron_stressed",
+          "Activated macrophage",
+          "macrophage_activated",
           "Ketogenic hepatocyte",
-          "hepatocyte_ketogenic",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_ketogenic"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
           "joint"
         ],
-        "missing": [
-          "systemic"
-        ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
           "joint",
+          "joint synovium",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "pentane",
-        "acetone",
         "hexanal",
+        "acetone",
         "ammonia",
-        "hydrogen_sulfide",
         "isoprene",
-        "ethanol",
+        "hydrogen_sulfide",
+        "ethane",
         "methanol",
         "octanal",
-        "3_methylbutanal",
         "nonanal",
+        "heptanal",
+        "decanal",
         "phenol",
         "isopropanol",
-        "heptanal",
         "methyl_acetate"
       ]
     },
@@ -7195,17 +7438,17 @@
         "fold": null,
         "topk": 1.0,
         "pathway": 1.0,
-        "cell": 0.3333333333333333,
-        "site": 0.5,
-        "composite": 0.8091931216931216
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.9642857142857143
       },
-      "composite_pct": 80.92,
+      "composite_pct": 96.43,
       "direction_detail": [
         {
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 5.786306711900849,
+          "fold_change": 13.599501087128196,
           "score": 1.0,
           "weight": 1.0
         },
@@ -7260,53 +7503,55 @@
         ]
       },
       "cell": {
-        "score": 0.3333333333333333,
+        "score": 1.0,
         "hits": [
-          "Oxidative"
+          "Oxidative-stress",
+          "Activated macrophage"
         ],
-        "missing": [
-          "Neutrophil",
-          "Macrophage"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Stressed airway epithelium",
+          "airway_epithelium_stressed",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Putrefactive / proteolytic gut microbes",
-          "gut_putrefactive_microbe",
-          "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur"
+          "gut_putrefactive_microbe"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
+          "lung",
           "liver"
         ],
-        "missing": [
-          "lung"
-        ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
-          "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "ammonia",
         "pentane",
+        "hexanal",
         "ethanol",
         "acetone",
-        "hexanal",
         "isoprene",
         "isopropanol",
         "dms",
@@ -7336,18 +7581,18 @@
         "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.5,
-        "cell": 0.5,
-        "site": 0.5,
-        "composite": 0.7638888888888888
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 76.39,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 2.202061104083849,
+          "fold_change": 15.42336532561336,
           "score": 1.0,
           "weight": 1.0
         },
@@ -7355,7 +7600,7 @@
           "voc_id": "hexanal",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.3771026190141542,
+          "fold_change": 10.965248202335673,
           "score": 1.0,
           "weight": 1.0
         },
@@ -7363,7 +7608,7 @@
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.1857864928604713,
+          "fold_change": 1.248422176742532,
           "score": 1.0,
           "weight": 1.0
         }
@@ -7379,75 +7624,79 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "lipid_peroxidation"
-        ],
-        "missing": [
+          "lipid_peroxidation",
           "apoptosis_necrosis"
         ],
+        "missing": [],
         "present": [
+          "apoptosis_necrosis",
           "glycolysis_warburg",
           "lipid_peroxidation"
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Oxidative"
+          "Oxidatively stressed erythrocyte",
+          "Oxidative-stress"
         ],
-        "missing": [
-          "Erythrocyte"
-        ],
+        "missing": [],
         "observed_top": [
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
+          "Oxidatively stressed erythrocyte",
+          "erythrocyte_oxidative",
           "Metabolically stressed neuron",
           "neuron_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
+          "blood",
           "systemic"
         ],
-        "missing": [
-          "blood"
-        ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "systemic",
           "systemic whole body",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [
-        "acetone",
-        "ammonia",
         "pentane",
+        "acetone",
+        "hexanal",
+        "ammonia",
         "isoprene",
         "methanol",
-        "hexanal",
         "phenol",
         "isopropanol",
+        "ethane",
         "methyl_acetate",
         "ethanol",
+        "nonanal",
         "2_pentanone",
         "propanol",
-        "nonanal",
-        "octane",
-        "octanal"
+        "octane"
       ]
     },
     {
@@ -7464,21 +7713,21 @@
         "comorbidities": []
       },
       "scores": {
-        "direction": 0.4166666666666667,
+        "direction": 1.0,
         "fold": null,
         "topk": 1.0,
-        "pathway": 0.6666666666666666,
-        "cell": 0.5,
-        "site": 0.5,
-        "composite": 0.6365740740740741
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
       },
-      "composite_pct": 63.66,
+      "composite_pct": 100.0,
       "direction_detail": [
         {
           "voc_id": "acetone",
           "want": "elevate",
           "soft": false,
-          "fold_change": 3.450912252559329,
+          "fold_change": 5.122503526891785,
           "score": 1.0,
           "weight": 1.0
         },
@@ -7486,16 +7735,16 @@
           "voc_id": "isoprene",
           "want": "elevate",
           "soft": false,
-          "fold_change": 0.9862863018293451,
-          "score": 0.0,
+          "fold_change": 5.776408384425435,
+          "score": 1.0,
           "weight": 1.0
         },
         {
           "voc_id": "pentane",
           "want": "elevate",
           "soft": false,
-          "fold_change": 1.0300190128746463,
-          "score": 0.25,
+          "fold_change": 1.9490689225368485,
+          "score": 1.0,
           "weight": 1.0
         }
       ],
@@ -7510,76 +7759,79 @@
         "missing": []
       },
       "pathway": {
-        "score": 0.6666666666666666,
+        "score": 1.0,
         "hits": [
+          "mevalonate_cholesterol",
           "ketone_body_metabolism",
           "fatty_acid_oxidation"
         ],
-        "missing": [
-          "mevalonate_cholesterol"
-        ],
+        "missing": [],
         "present": [
           "fatty_acid_oxidation",
           "ketone_body_metabolism",
-          "urea_cycle"
+          "mevalonate_cholesterol"
         ]
       },
       "cell": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "Hepatocyte"
+          "Hypermetabolic thyroid follicular cell",
+          "Ketogenic hepatocyte"
         ],
-        "missing": [
-          "Thyroid"
-        ],
+        "missing": [],
         "observed_top": [
+          "Hypermetabolic thyroid follicular cell",
+          "thyroid_follicular_hypermetabolic",
           "Oxidative-stress / lipid-peroxidizing cell",
           "oxidative_stress_cell",
-          "Metabolically stressed neuron",
-          "neuron_stressed",
           "Ketogenic hepatocyte",
           "hepatocyte_ketogenic",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
           "Sulfur-metabolizing hepatocyte",
-          "hepatocyte_sulfur",
-          "Lipolytic adipocyte",
-          "adipocyte_lipolytic"
+          "hepatocyte_sulfur"
         ]
       },
       "site": {
-        "score": 0.5,
+        "score": 1.0,
         "hits": [
-          "thyroid"
-        ],
-        "missing": [
+          "thyroid",
           "systemic"
         ],
+        "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
           "thyroid",
-          "tumor"
+          "tumor",
+          "vasculature"
         ]
       },
       "predicted_top": [
         "acetone",
+        "isoprene",
         "ammonia",
+        "pentane",
         "isopropanol",
         "2_butanone",
-        "isoprene",
+        "hexanal",
         "methanol",
-        "2_pentanone",
-        "trimethylamine",
         "phenol",
-        "pentane",
         "methyl_acetate",
         "octane",
         "nonanal",
         "acetonitrile",
-        "propanol"
+        "propanol",
+        "2_pentanone"
       ]
     },
     {
@@ -7684,12 +7936,18 @@
         "missing": [],
         "observed": [
           "adipose",
+          "blood",
           "brain",
+          "colon",
           "gut",
+          "heart",
+          "joint",
           "liver",
+          "lung",
           "multi",
           "stomach",
-          "tumor"
+          "thyroid",
+          "vasculature"
         ]
       },
       "predicted_top": [

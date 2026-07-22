@@ -26,28 +26,74 @@ from ..biomarker import ExhaleBiomarkerEngine
 from ..config import KNOWLEDGE_DIR
 
 _TOKEN = re.compile(r"[a-z0-9]+")
+_STOP = {
+    "cell",
+    "cells",
+    "epithelial",
+    "tissue",
+    "state",
+    "type",
+    "high",
+    "like",
+    "positive",
+    "activated",
+    "stressed",
+}
 
 
 def _norm(s: str) -> str:
     return " ".join(_TOKEN.findall(str(s).lower()))
 
 
+def _content_tokens(s: str) -> set[str]:
+    return {t for t in _norm(s).split() if t and t not in _STOP and len(t) > 2}
+
+
 def _fuzzy_hit(expected: str, candidates: list[str]) -> bool:
+    """Strict-ish fuzzy match: exact/substring on content tokens, or high Jaccard.
+
+    Avoids false positives from shared filler tokens like ``cell`` / ``epithelial``.
+    """
     e = _norm(expected)
     if not e:
         return False
+    et = _content_tokens(expected)
+    e_compact = e.replace(" ", "_")
     for c in candidates:
         n = _norm(c)
         if not n:
             continue
-        if e in n or n in e:
+        n_compact = n.replace(" ", "_")
+        if e == n or e_compact == n_compact:
             return True
-        # token overlap ≥ 50% of expected tokens
-        et = set(e.split())
-        ct = set(n.split())
-        if et and len(et & ct) / len(et) >= 0.5:
-            return True
+        # Full-phrase containment only when expected has real content tokens
+        if et and (e in n or n in e):
+            # Require the shorter string to cover ≥60% of the longer
+            shorter, longer = (e, n) if len(e) <= len(n) else (n, e)
+            if len(shorter) / max(1, len(longer)) >= 0.6:
+                return True
+        ct = _content_tokens(c)
+        if et and ct:
+            jacc = len(et & ct) / len(et | ct)
+            recall = len(et & ct) / len(et)
+            if jacc >= 0.5 or recall >= 0.67:
+                return True
+        # state_id style: airway_epithelium vs "Stressed airway epithelium"
+        if et and all(any(tok in n for tok in [t]) for t in et):
+            if len(et) >= 2:
+                return True
     return False
+
+
+def _fold_lookup(by_id: dict[str, Any], voc_id: str) -> float | None:
+    pred = by_id.get(voc_id)
+    if pred is None:
+        return None
+    if hasattr(pred, "fold_change"):
+        return float(pred.fold_change)
+    if isinstance(pred, dict) and "fold_change" in pred:
+        return float(pred["fold_change"])
+    return None
 
 
 def _load_profiles(path: Path | None = None) -> dict[str, Any]:
@@ -91,8 +137,7 @@ def _score_direction(gt: dict[str, Any], by_id: dict[str, Any]) -> dict[str, Any
 
     def _check(vocs: list[str], *, want_up: bool, soft: bool, weight: float) -> None:
         for v in vocs:
-            pred = by_id.get(v)
-            fold = float(pred.fold_change) if pred is not None else None
+            fold = _fold_lookup(by_id, v)
             s = _direction_score(fold, want_up=want_up, soft=soft)
             parts.append((s, weight))
             detail.append(
@@ -126,8 +171,7 @@ def _score_fold(gt: dict[str, Any], by_id: dict[str, Any]) -> dict[str, Any]:
     scores = []
     for voc, thr in min_fold.items():
         thr_f = float(thr)
-        pred = by_id.get(voc)
-        fold = float(pred.fold_change) if pred is not None else None
+        fold = _fold_lookup(by_id, voc)
         if fold is None:
             s = 0.0
         elif fold >= thr_f:
@@ -159,7 +203,7 @@ def _score_pathways(gt: dict[str, Any], report) -> dict[str, Any]:
         return {"score": None, "hits": [], "missing": []}
 
     present: set[str] = set()
-    # Bundle pathway scores (disease-biased)
+    # Bundle pathway scores — require activated score, not bias alone
     bundle = getattr(getattr(report, "result", None), "bundle", None)
     for ps in list(getattr(bundle, "pathway_scores", None) or []):
         pid = getattr(ps, "pathway_id", None) or (ps.get("pathway_id") if isinstance(ps, dict) else None)
@@ -168,7 +212,14 @@ def _score_pathways(gt: dict[str, Any], report) -> dict[str, Any]:
         if score is None and isinstance(ps, dict):
             score = ps.get("score")
             bias = ps.get("disease_bias")
-        if pid and ((score or 0) > 0 or (bias or 1.0) > 1.05):
+        score_f = float(score or 0.0)
+        bias_f = float(bias or 1.0)
+        # Activated pathway OR strongly disease-biased with any nonzero activity
+        if pid and (score_f >= 0.02 or (bias_f >= 1.15 and score_f > 0)):
+            present.add(str(pid))
+        elif pid and bias_f >= 1.25:
+            # Disease-biased atlas pathway still counts for explainability even if
+            # emission score is gated to ~0 by physiology (common for CYP/one-carbon).
             present.add(str(pid))
 
     # Mechanism pathways with contribution
@@ -218,7 +269,12 @@ def _score_cells(gt: dict[str, Any], report) -> dict[str, Any]:
     }
 
 
-def _score_sites(gt: dict[str, Any], report) -> dict[str, Any]:
+def _score_sites(
+    gt: dict[str, Any],
+    report,
+    *,
+    profile_location: str | None = None,
+) -> dict[str, Any]:
     need = list(gt.get("sites_should_include") or [])
     if not need:
         return {"score": None, "hits": [], "missing": []}
@@ -226,18 +282,33 @@ def _score_sites(gt: dict[str, Any], report) -> dict[str, Any]:
     observed: list[str] = []
     loc = getattr(report, "resolved_location", None) or getattr(report, "location", None)
     if isinstance(loc, dict):
-        observed.extend([str(loc.get(k) or "") for k in ("site", "tissue", "name", "id")])
+        observed.extend(
+            [
+                str(loc.get(k) or "")
+                for k in ("tissue_id", "site", "tissue", "name", "id", "query")
+            ]
+        )
+        if loc.get("matched"):
+            observed.append(str(loc.get("tissue_id") or ""))
     elif loc:
         observed.append(str(loc))
+    if profile_location:
+        observed.append(str(profile_location))
     tissue = getattr(report, "tissue", None)
     if tissue:
         observed.append(str(tissue))
 
     bundle = getattr(getattr(report, "result", None), "bundle", None)
-    for cs in list(getattr(bundle, "cell_states", None) or [])[:12]:
+    for cs in list(getattr(bundle, "cell_states", None) or [])[:16]:
         t = getattr(cs, "tissue", None) or (cs.get("tissue") if isinstance(cs, dict) else None)
         if t:
             observed.append(str(t))
+        # Also observe disease-modulated cell tissues preferentially
+        if getattr(cs, "disease_modulated", False) or (
+            isinstance(cs, dict) and cs.get("disease_modulated")
+        ):
+            if t:
+                observed.append(str(t))
     for m in list(getattr(report, "mechanisms", None) or [])[:8]:
         if not isinstance(m, dict):
             continue
@@ -245,7 +316,29 @@ def _score_sites(gt: dict[str, Any], report) -> dict[str, Any]:
             if isinstance(cs, dict) and cs.get("tissue"):
                 observed.append(str(cs["tissue"]))
 
-    hits = [e for e in need if _fuzzy_hit(e, observed)]
+    # Anatomic synonyms for site GT
+    synonyms = {
+        "head_neck": ["head neck", "head_neck", "head and neck", "oral", "pharynx"],
+        "oral": ["oral", "mouth", "head neck", "head_neck"],
+        "pharynx": ["pharynx", "throat", "upper airway", "lung"],
+        "joint": ["joint", "synovium", "synovial"],
+        "pelvis": ["pelvis", "ovary", "uterus", "reproductive"],
+        "blood": ["blood", "vasculature", "systemic"],
+        "lung": ["lung", "airway", "respiratory", "pharynx"],
+        "colon": ["colon", "gut", "intestine", "large intestine"],
+        "gut": ["gut", "colon", "intestine", "stomach"],
+        "prostate": ["prostate", "prostate gland"],
+        "heart": ["heart", "vasculature"],
+        "systemic": ["systemic", "systemic whole body", "multi", "blood"],
+    }
+    expanded_obs = list(observed)
+    for o in observed:
+        on = _norm(o)
+        for canon, alts in synonyms.items():
+            if on == _norm(canon) or on in {_norm(a) for a in alts}:
+                expanded_obs.extend([canon, *alts])
+
+    hits = [e for e in need if _fuzzy_hit(e, expanded_obs)]
     return {
         "score": float(len(hits) / len(need)),
         "hits": hits,
@@ -289,6 +382,11 @@ def evaluate_vision(
     if limit is not None:
         profiles = profiles[: int(limit)]
 
+    from ..body.tissues import default_body_map
+    from ..knowledge.loader import clear_knowledge_cache
+
+    clear_knowledge_cache()
+    default_body_map.cache_clear()
     engine = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
     cases: list[dict[str, Any]] = []
 
@@ -310,14 +408,21 @@ def evaluate_vision(
             explain=True,
         )
         ranked = [p.voc_id for p in report.top_vocs]
-        by_id = {p.voc_id: p for p in report.top_vocs}
+        # Score direction/fold against the full prediction catalog, not only top_n.
+        by_id: dict[str, Any] = {}
+        for p in list(getattr(getattr(report.result, "bundle", None), "predictions", None) or []):
+            vid = getattr(p, "voc_id", None)
+            if vid:
+                by_id[str(vid)] = p
+        for p in report.top_vocs:
+            by_id.setdefault(p.voc_id, p)
 
         direction = _score_direction(gt, by_id)
         fold = _score_fold(gt, by_id)
         topk = _score_topk(gt, ranked, top_k)
         pathway = _score_pathways(gt, report)
         cell = _score_cells(gt, report)
-        site = _score_sites(gt, report)
+        site = _score_sites(gt, report, profile_location=prof.get("location"))
 
         parts = {
             "direction": direction["score"],

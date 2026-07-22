@@ -311,12 +311,12 @@
       ],
       "mondo_id": "MONDO:0005265",
       "category": "inflammatory",
-      "default_site": "intestine",
+      "default_site": "colon",
       "pathway_bias": {
-        "lipid_peroxidation": 1.3,
-        "apoptosis_necrosis": 1.2,
         "gut_microbiome_fermentation": 1.5,
-        "microbial_proteolysis_putrefaction": 1.4
+        "lipid_peroxidation": 1.4,
+        "neuroinflammation": 1.25,
+        "apoptosis_necrosis": 1.2
       },
       "voc_log2fc_prior": {
         "hydrogen_sulfide": 1.0,
@@ -847,32 +847,32 @@
       "name": "Heart disease",
       "aliases": [
         "Heart disease",
-        "atherosclerosis",
-        "dilated cardiomyopathy",
-        "myocardial infarction",
+        "heart disease",
         "coronary artery disease",
-        "heart failure",
+        "CAD",
+        "atherosclerosis",
+        "myocardial infarction",
         "cardiomyopathy",
-        "heart disease"
+        "dilated cardiomyopathy"
       ],
       "mondo_id": null,
       "category": "cardiovascular",
       "default_site": "heart",
       "pathway_bias": {
-        "lipid_peroxidation": 1.3,
-        "fatty_acid_oxidation": 1.2,
+        "lipid_peroxidation": 1.4,
+        "fatty_acid_oxidation": 1.3,
+        "ketone_body_metabolism": 1.25,
         "mevalonate_cholesterol": 1.15
       },
       "voc_log2fc_prior": {
-        "pentane": 0.5,
-        "hexanal": 0.45,
-        "isoprene": -0.2,
-        "acetone": 0.25,
-        "2_pentanone": 0.2125,
-        "trimethylamine": 0.55,
-        "dimethyl_amine": 0.55
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "acetone": 0.4,
+        "trimethylamine": 0.45,
+        "dimethyl_amine": 0.4,
+        "isoprene": -0.2
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "cancer_prostate",
@@ -886,9 +886,10 @@
       "default_site": "prostate",
       "atlas_source": "real_breath_curated",
       "pathway_bias": {
-        "glycolysis_warburg": 1.35,
-        "lipid_peroxidation": 1.3,
-        "fatty_acid_oxidation": 1.25,
+        "glycolysis_warburg": 1.4,
+        "lipid_peroxidation": 1.35,
+        "one_carbon_folate": 1.25,
+        "cytochrome_p450_detox": 1.2,
         "apoptosis_necrosis": 1.2
       },
       "voc_log2fc_prior": {
@@ -922,8 +923,10 @@
       "pathway_bias": {
         "glycolysis_warburg": 1.55,
         "lipid_peroxidation": 1.35,
-        "apoptosis_necrosis": 1.3,
-        "Kras_mapk_proliferation": 1.25
+        "ketone_body_metabolism": 1.25,
+        "gut_microbiome_fermentation": 1.25,
+        "mevalonate_cholesterol": 1.2,
+        "apoptosis_necrosis": 1.3
       },
       "voc_log2fc_prior": {
         "acetone": 0.6,
@@ -1385,27 +1388,29 @@
       "disease_id": "influenza",
       "name": "Influenza / viral pneumonia",
       "aliases": [
-        "Influenza / viral pneumonia",
+        "Influenza",
         "influenza",
-        "pneumonia",
+        "flu",
+        "viral influenza",
+        "Influenza / viral pneumonia",
         "viral pneumonia"
       ],
       "mondo_id": null,
       "category": "infectious",
-      "default_site": "systemic",
+      "default_site": "lung",
       "pathway_bias": {
-        "lipid_peroxidation": 1.25,
-        "apoptosis_necrosis": 1.2,
+        "lipid_peroxidation": 1.4,
+        "apoptosis_necrosis": 1.3,
         "cytochrome_p450_detox": 1.15
       },
       "voc_log2fc_prior": {
-        "acetonitrile": 0.4,
-        "hexanal": 0.45,
-        "acetone": 0.3,
-        "ammonia": 0.35,
-        "crotonaldehyde": 0.2125
+        "hexanal": 0.55,
+        "pentane": 0.5,
+        "acetone": 0.35,
+        "ammonia": 0.3,
+        "acetonitrile": 0.3
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "tuberculosis",
@@ -1581,20 +1586,20 @@
       ],
       "mondo_id": null,
       "category": "inflammatory",
-      "default_site": "systemic",
+      "default_site": "joint",
       "pathway_bias": {
-        "lipid_peroxidation": 1.35,
-        "apoptosis_necrosis": 1.2,
-        "gut_microbiome_fermentation": 1.2
+        "lipid_peroxidation": 1.55,
+        "apoptosis_necrosis": 1.35,
+        "neuroinflammation": 1.3
       },
       "voc_log2fc_prior": {
-        "pentane": 0.55,
-        "hexanal": 0.5,
-        "hydrogen_sulfide": 0.45,
-        "octanal": 0.2975,
-        "3_methylbutanal": 0.255
+        "pentane": 0.7,
+        "hexanal": 0.65,
+        "ethane": 0.55,
+        "octanal": 0.35,
+        "hydrogen_sulfide": 0.25
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "osteoarthritis",
@@ -1680,18 +1685,18 @@
       "category": "infectious",
       "default_site": "systemic",
       "pathway_bias": {
-        "lipid_peroxidation": 1.25,
-        "apoptosis_necrosis": 1.2,
+        "lipid_peroxidation": 1.4,
+        "apoptosis_necrosis": 1.35,
         "cytochrome_p450_detox": 1.15
       },
       "voc_log2fc_prior": {
-        "acetonitrile": 0.4,
-        "hexanal": 0.45,
-        "acetone": 0.3,
+        "hexanal": 0.55,
+        "pentane": 0.5,
+        "acetone": 0.35,
         "ammonia": 0.35,
-        "crotonaldehyde": 0.2125
+        "acetonitrile": 0.3
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "cmv",
@@ -1755,18 +1760,17 @@
       "category": "cardiovascular",
       "default_site": "heart",
       "pathway_bias": {
-        "lipid_peroxidation": 1.3,
-        "fatty_acid_oxidation": 1.2,
-        "mevalonate_cholesterol": 1.15
+        "lipid_peroxidation": 1.4,
+        "cytochrome_p450_detox": 1.25,
+        "fatty_acid_oxidation": 1.15
       },
       "voc_log2fc_prior": {
-        "pentane": 0.5,
-        "hexanal": 0.45,
-        "isoprene": -0.2,
-        "acetone": 0.25,
-        "2_pentanone": 0.2125
+        "pentane": 0.55,
+        "hexanal": 0.5,
+        "acetone": 0.3,
+        "isoprene": -0.2
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "hyperlipidemia",
@@ -1807,21 +1811,21 @@
       ],
       "mondo_id": null,
       "category": "metabolic",
-      "default_site": "systemic",
+      "default_site": "thyroid",
       "pathway_bias": {
-        "ketone_body_metabolism": 1.5,
-        "fatty_acid_oxidation": 1.35,
-        "urea_cycle": 1.2
+        "mevalonate_cholesterol": 1.45,
+        "ketone_body_metabolism": 1.35,
+        "fatty_acid_oxidation": 1.25
       },
       "voc_log2fc_prior": {
-        "acetone": 1.0,
-        "2_butanone": 0.6,
-        "isopropanol": 0.5,
-        "ammonia": 0.35,
-        "2_pentanone": 0.34,
-        "trimethylamine": 0.2125
+        "acetone": 0.7,
+        "isoprene": 0.55,
+        "2_butanone": 0.4,
+        "isopropanol": 0.35,
+        "pentane": 0.35,
+        "ammonia": 0.25
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "endometriosis",
@@ -1832,18 +1836,19 @@
       ],
       "mondo_id": null,
       "category": "unspecified",
-      "default_site": "systemic",
+      "default_site": "pelvis",
       "pathway_bias": {
-        "lipid_peroxidation": 1.15,
-        "glycolysis_warburg": 1.1
+        "lipid_peroxidation": 1.4,
+        "apoptosis_necrosis": 1.3,
+        "glycolysis_warburg": 1.15
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.3,
-        "acetone": 0.2,
-        "pentane": 0.25,
-        "octanal": 0.17
+        "hexanal": 0.5,
+        "pentane": 0.45,
+        "acetone": 0.35,
+        "octanal": 0.25
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "pcos",
@@ -2026,8 +2031,7 @@
       "aliases": [
         "Anemia",
         "anemia",
-        "iron deficiency anemia",
-        "sickle cell anemia"
+        "iron deficiency anemia"
       ],
       "mondo_id": null,
       "category": "unspecified",
@@ -2049,24 +2053,25 @@
       "name": "Sickle cell disease",
       "aliases": [
         "Sickle cell disease",
-        "sickle cell anemia",
         "sickle cell disease",
-        "sickle cell"
+        "sickle cell",
+        "SCD"
       ],
       "mondo_id": null,
       "category": "unspecified",
-      "default_site": "systemic",
+      "default_site": "blood",
       "pathway_bias": {
-        "lipid_peroxidation": 1.15,
-        "glycolysis_warburg": 1.1
+        "lipid_peroxidation": 1.45,
+        "apoptosis_necrosis": 1.35,
+        "glycolysis_warburg": 1.15
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.3,
-        "acetone": 0.2,
-        "pentane": 0.25,
-        "octanal": 0.17
+        "pentane": 0.6,
+        "hexanal": 0.55,
+        "acetone": 0.3,
+        "ethane": 0.35
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "vision_hardened"
     },
     {
       "disease_id": "cystic_fibrosis",
@@ -2478,12 +2483,14 @@
       ],
       "mondo_id": "MONDO:0005290",
       "category": "pulmonary",
-      "default_site": "lung",
+      "default_site": "pharynx",
       "atlas_source": "real_breath_curated",
       "pathway_bias": {
         "lipid_peroxidation": 1.45,
-        "ketone_body_metabolism": 1.25,
-        "brain_energy_metabolism": 1.2
+        "ketone_body_metabolism": 1.3,
+        "mevalonate_cholesterol": 1.25,
+        "brain_energy_metabolism": 1.2,
+        "cytochrome_p450_detox": 1.15
       },
       "voc_log2fc_prior": {
         "isoprene": 0.6,
@@ -2824,10 +2831,11 @@
       "default_site": "head_neck",
       "atlas_source": "real_breath_curated",
       "pathway_bias": {
-        "glycolysis_warburg": 1.5,
+        "glycolysis_warburg": 1.55,
         "lipid_peroxidation": 1.4,
         "apoptosis_necrosis": 1.35,
-        "Kras_mapk_proliferation": 1.2
+        "cytochrome_p450_detox": 1.2,
+        "ketone_body_metabolism": 1.15
       },
       "voc_log2fc_prior": {
         "ethanol": 1.247,

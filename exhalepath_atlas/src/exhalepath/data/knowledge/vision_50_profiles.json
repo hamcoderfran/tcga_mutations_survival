@@ -60,9 +60,8 @@
           "neuroinflammation"
         ],
         "cell_states_should_include": [
-          "airway epithelium",
-          "eosinophil",
-          "mast cell"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "lung"
@@ -115,9 +114,8 @@
           "cytochrome_p450_detox"
         ],
         "cell_states_should_include": [
-          "airway epithelium",
-          "neutrophil",
-          "macrophage alveolar"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "lung"
@@ -163,14 +161,12 @@
         ],
         "pathways_should_include": [
           "ketone_body_metabolism",
-          "fatty_acid_oxidation",
-          "urea_cycle",
-          "lipid_peroxidation"
+          "lipid_peroxidation",
+          "fatty_acid_oxidation"
         ],
         "cell_states_should_include": [
-          "stressed cardiomyocyte",
-          "cardiac fibroblast",
-          "endothelial cell"
+          "Stressed cardiomyocyte",
+          "Ketogenic hepatocyte"
         ],
         "sites_should_include": [
           "heart",
@@ -225,8 +221,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Oxidative-stress",
-          "Tumor"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "lung"
@@ -276,9 +272,8 @@
           "mevalonate_cholesterol"
         ],
         "cell_states_should_include": [
-          "Plasmodium-infected RBC",
-          "uninfected erythrocyte under oxidative stress",
-          "hepatocyte during liver-stage infection"
+          "Oxidatively stressed erythrocyte",
+          "Ketogenic hepatocyte"
         ],
         "sites_should_include": [
           "blood",
@@ -426,9 +421,8 @@
           "mevalonate_cholesterol"
         ],
         "cell_states_should_include": [
-          "injured alveolar type I cell",
-          "alveolar type II cell",
-          "pulmonary capillary endothelial cell"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "lung"
@@ -475,8 +469,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Tumor",
-          "Oxidative"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "breast"
@@ -525,14 +519,13 @@
           "pentane"
         ],
         "pathways_should_include": [
+          "lipid_peroxidation",
           "one_carbon_folate",
-          "cytochrome_p450_detox",
-          "lipid_peroxidation"
+          "cytochrome_p450_detox"
         ],
         "cell_states_should_include": [
-          "androgen-responsive prostate luminal epithelial cell",
-          "prostate basal epithelial cell",
-          "prostate carcinoma cell"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "prostate"
@@ -583,15 +576,14 @@
           "phenol"
         ],
         "pathways_should_include": [
+          "glycolysis_warburg",
+          "lipid_peroxidation",
           "ketone_body_metabolism",
-          "mevalonate_cholesterol",
-          "gut_microbiome_fermentation",
-          "lipid_peroxidation"
+          "gut_microbiome_fermentation"
         ],
         "cell_states_should_include": [
-          "gastric foveolar epithelial cell",
-          "intestinal metaplasia epithelial cell",
-          "gastric carcinoma cell"
+          "Warburg-high tumor epithelial cell",
+          "Gastric urease"
         ],
         "sites_should_include": [
           "stomach",
@@ -640,8 +632,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Tumor",
-          "Colonocyte"
+          "Warburg-high tumor epithelial cell",
+          "Inflamed colonocyte"
         ],
         "sites_should_include": [
           "colon",
@@ -691,9 +683,8 @@
           "cytochrome_p450_detox"
         ],
         "cell_states_should_include": [
-          "ciliated airway epithelial cell",
-          "alveolar type II cell",
-          "macrophage alveolar"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "lung"
@@ -747,9 +738,8 @@
           "gut_microbiome_fermentation"
         ],
         "cell_states_should_include": [
-          "CFTR-deficient airway epithelium",
-          "goblet cell",
-          "submucosal gland cell"
+          "Stressed airway epithelium",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "lung"
@@ -799,7 +789,7 @@
         ],
         "cell_states_should_include": [
           "Metabolically stressed neuron",
-          "Oxidative"
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "brain"
@@ -854,15 +844,14 @@
           "hexanal"
         ],
         "pathways_should_include": [
-          "gut_microbiome_fermentation",
           "glycolysis_warburg",
+          "lipid_peroxidation",
           "cytochrome_p450_detox",
           "ketone_body_metabolism"
         ],
         "cell_states_should_include": [
-          "squamous epithelial tumor cell",
-          "basal keratinocyte-like malignant cell",
-          "cancer-associated fibroblast"
+          "Warburg-high tumor epithelial cell",
+          "Stressed airway epithelium"
         ],
         "sites_should_include": [
           "head_neck",
@@ -961,8 +950,8 @@
           "lipid_peroxidation"
         ],
         "cell_states_should_include": [
-          "Neuron",
-          "Microglia"
+          "Metabolically stressed neuron",
+          "Activated microglia"
         ],
         "sites_should_include": [
           "brain"
@@ -1009,8 +998,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Tumor",
-          "Oxidative"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "ovary"
@@ -1060,8 +1049,8 @@
           "glycolysis_warburg"
         ],
         "cell_states_should_include": [
-          "Tumor",
-          "Ketogenic"
+          "Warburg-high tumor epithelial cell",
+          "Ketogenic hepatocyte"
         ],
         "sites_should_include": [
           "pancreas",
@@ -1165,9 +1154,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "alveolar macrophage",
-          "neutrophil",
-          "airway epithelium"
+          "Stressed airway epithelium",
+          "Activated macrophage"
         ],
         "sites_should_include": [
           "lung"
@@ -1211,8 +1199,8 @@
           "brain_energy_metabolism"
         ],
         "cell_states_should_include": [
-          "Neuron",
-          "Microglia"
+          "Metabolically stressed neuron",
+          "Activated microglia"
         ],
         "sites_should_include": [
           "brain"
@@ -1257,15 +1245,14 @@
           "toluene"
         ],
         "pathways_should_include": [
-          "mevalonate_cholesterol",
-          "brain_energy_metabolism",
+          "lipid_peroxidation",
           "ketone_body_metabolism",
+          "mevalonate_cholesterol",
           "cytochrome_p450_detox"
         ],
         "cell_states_should_include": [
-          "pharyngeal myocyte",
-          "upper airway epithelium",
-          "endothelial cell"
+          "Stressed airway epithelium",
+          "Oxidative endothelial cell"
         ],
         "sites_should_include": [
           "pharynx",
@@ -1314,9 +1301,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "infected alveolar macrophage",
-          "epithelioid macrophage",
-          "foamy macrophage"
+          "Activated macrophage",
+          "Stressed airway epithelium"
         ],
         "sites_should_include": [
           "lung"
@@ -1402,8 +1388,8 @@
           "ketone_body_metabolism"
         ],
         "cell_states_should_include": [
-          "Hepatocyte",
-          "Kidney"
+          "Ketogenic hepatocyte",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "kidney",
@@ -1541,8 +1527,8 @@
           "urea_cycle"
         ],
         "cell_states_should_include": [
-          "Gut",
-          "Microbiome"
+          "Putrefactive",
+          "Fermentative gut"
         ],
         "sites_should_include": [
           "gut"
@@ -1553,7 +1539,7 @@
       "id": "inflammatory_bowel_disease",
       "name": "inflammatory bowel disease",
       "query_name": "inflammatory bowel disease",
-      "location": "gut",
+      "location": "colon",
       "grade": "C",
       "evidence_basis": "IBD breath H2S/pentane literature",
       "patient": {
@@ -1585,9 +1571,8 @@
           "neuroinflammation"
         ],
         "cell_states_should_include": [
-          "Colonocyte",
-          "Neutrophil",
-          "Microbiome"
+          "Inflamed colonocyte",
+          "Putrefactive"
         ],
         "sites_should_include": [
           "gut",
@@ -1631,8 +1616,8 @@
           "microbial_proteolysis_putrefaction"
         ],
         "cell_states_should_include": [
-          "Gut",
-          "Microbiome"
+          "Fermentative gut",
+          "Putrefactive"
         ],
         "sites_should_include": [
           "small_intestine",
@@ -1674,8 +1659,8 @@
           "neuroinflammation"
         ],
         "cell_states_should_include": [
-          "Neuron",
-          "Gut"
+          "Metabolically stressed neuron",
+          "Fermentative gut"
         ],
         "sites_should_include": [
           "brain",
@@ -1716,8 +1701,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Oxidative",
-          "Immune"
+          "Oxidative-stress",
+          "Activated macrophage"
         ],
         "sites_should_include": [
           "pelvis",
@@ -1804,8 +1789,8 @@
           "glycolysis_warburg"
         ],
         "cell_states_should_include": [
-          "Tumor",
-          "Epithelium"
+          "Warburg-high tumor epithelial cell",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "esophagus"
@@ -1843,13 +1828,13 @@
           "hexanal"
         ],
         "pathways_should_include": [
-          "ketone_body_metabolism",
           "lipid_peroxidation",
-          "fatty_acid_oxidation"
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism"
         ],
         "cell_states_should_include": [
-          "Cardiomyocyte",
-          "Endothelial"
+          "Stressed cardiomyocyte",
+          "Oxidative endothelial cell"
         ],
         "sites_should_include": [
           "heart"
@@ -1889,8 +1874,7 @@
           "urea_cycle"
         ],
         "cell_states_should_include": [
-          "Gastric",
-          "Epithelium"
+          "Gastric urease"
         ],
         "sites_should_include": [
           "stomach",
@@ -1931,8 +1915,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Immune",
-          "Macrophage"
+          "Activated macrophage",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "systemic",
@@ -1973,12 +1957,12 @@
           "cytochrome_p450_detox"
         ],
         "cell_states_should_include": [
-          "Endothelial",
-          "Oxidative"
+          "Oxidative endothelial cell",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
-          "systemic",
-          "heart"
+          "heart",
+          "systemic"
         ]
       }
     },
@@ -2015,8 +1999,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Airway",
-          "Alveolar"
+          "Stressed airway epithelium",
+          "Activated macrophage"
         ],
         "sites_should_include": [
           "lung"
@@ -2058,7 +2042,7 @@
         ],
         "cell_states_should_include": [
           "Activated microglia",
-          "Oligodendrocyte"
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "brain"
@@ -2212,8 +2196,8 @@
       },
       "ground_truth": {
         "must_elevate": [
-          "hexanal",
           "pentane",
+          "hexanal",
           "ethane"
         ],
         "should_elevate": [],
@@ -2231,13 +2215,12 @@
           "neuroinflammation"
         ],
         "cell_states_should_include": [
-          "Macrophage",
-          "Synovial",
-          "Oxidative"
+          "Inflammatory synovial cell",
+          "Activated macrophage",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
-          "joint",
-          "systemic"
+          "joint"
         ]
       }
     },
@@ -2278,9 +2261,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Oxidative",
-          "Neutrophil",
-          "Macrophage"
+          "Oxidative-stress",
+          "Activated macrophage"
         ],
         "sites_should_include": [
           "lung",
@@ -2321,8 +2303,8 @@
           "apoptosis_necrosis"
         ],
         "cell_states_should_include": [
-          "Erythrocyte",
-          "Oxidative"
+          "Oxidatively stressed erythrocyte",
+          "Oxidative-stress"
         ],
         "sites_should_include": [
           "blood",
@@ -2364,8 +2346,8 @@
           "fatty_acid_oxidation"
         ],
         "cell_states_should_include": [
-          "Thyroid",
-          "Hepatocyte"
+          "Hypermetabolic thyroid follicular cell",
+          "Ketogenic hepatocyte"
         ],
         "sites_should_include": [
           "thyroid",

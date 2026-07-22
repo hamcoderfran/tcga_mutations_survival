@@ -38,18 +38,53 @@ class WholeBodyMap:
                 "query": location,
             }
         key = _norm(str(location))
+        # Underscore / hyphen variants of the same anatomic token
+        key_compact = key.replace(" ", "")
         if key in self._alias:
             tid = self._alias[key]
             t = self.tissues[tid]
             return {**t, "matched": True, "query": location}
-        # fuzzy containment
-        candidates = []
         for alias, tid in self._alias.items():
-            if key in alias or alias in key:
-                candidates.append((len(alias), tid))
+            if alias.replace(" ", "") == key_compact:
+                t = self.tissues[tid]
+                return {**t, "matched": True, "query": location}
+        # Fuzzy: prefer longest whole-token alias containment so
+        # "left breast upper outer" → breast, while "head neck" prefers
+        # head_neck over the shorter "head" alias.
+        key_tokens = [t for t in key.split() if t]
+        key_token_set = set(key_tokens)
+        candidates: list[tuple[float, int, str]] = []
+        for alias, tid in self._alias.items():
+            if not alias:
+                continue
+            alias_tokens = [t for t in alias.split() if t]
+            alias_token_set = set(alias_tokens)
+            if not alias_token_set:
+                continue
+            subset = alias_token_set <= key_token_set
+            supersets = key_token_set <= alias_token_set
+            contained = key in alias or alias in key
+            if not (subset or supersets or contained):
+                continue
+            # Reject weak short substring-only hits that are not token-aligned
+            # (keeps "head" from beating "head neck", but allows long clinical
+            # stems like "peritoneum" inside "retroperitoneal …").
+            if contained and not (subset or supersets):
+                coverage = min(len(alias), len(key)) / max(len(alias), len(key))
+                long_stem = len(alias) >= 8 and alias in key
+                if coverage < 0.55 and not long_stem:
+                    continue
+            n_overlap = len(alias_token_set & key_token_set)
+            score = (
+                n_overlap * 100.0
+                + len(alias)
+                + (50.0 if subset else 0.0)
+                + (30.0 if (contained and len(alias) >= 8) else 0.0)
+            )
+            candidates.append((score, len(alias), tid))
         if candidates:
             candidates.sort(reverse=True)
-            tid = candidates[0][1]
+            tid = candidates[0][2]
             t = self.tissues[tid]
             return {**t, "matched": True, "query": location}
         # free-text location still usable as primary_site string
