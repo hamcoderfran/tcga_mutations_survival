@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-07-22T14:57:49.244528+00:00",
+  "passed": true,
+  "corpus": {
+    "corpus_type": "real_breath_only",
+    "synthetic_labels": false,
+    "n_cases": 30,
+    "n_voc_targets": 189,
+    "n_label_rows_raw": 189,
+    "diseases": [
+      "ards",
+      "asthma",
+      "cancer_prostate",
+      "cancer_stomach",
+      "copd",
+      "covid19",
+      "cystic_fibrosis",
+      "head_neck_cancer",
+      "heart_failure",
+      "malaria",
+      "pneumonia_bacterial",
+      "sleep_apnea",
+      "tuberculosis"
+    ],
+    "label_origins": {
+      "literature:mixed": 64,
+      "literature:directional_only": 53,
+      "measured_cohort_relative": 35,
+      "measured_cohort": 19,
+      "literature:quantified": 18
+    },
+    "priority_diseases": [
+      "asthma",
+      "copd",
+      "covid19",
+      "pneumonia_bacterial",
+      "tuberculosis",
+      "cystic_fibrosis",
+      "sleep_apnea",
+      "cancer_stomach",
+      "head_neck_cancer",
+      "cancer_prostate",
+      "heart_failure",
+      "malaria",
+      "ards"
+    ],
+    "sources": [
+      "metabolomics_workbench:ST000587,ST000883,ST003200",
+      "scientific_data_figshare:23522490",
+      "literature_panels:priority10_voc_panels.json"
+    ],
+    "note": "Training y are measured cohort folds and published literature log2fc only. Mechanistic pathway priors are features / zero-shot inference \u2014 never synthetic y."
+  },
+  "calibrator": {
+    "n_voc_models": 16,
+    "mean_mae": 0.19194107315672132
+  },
+  "priority10": {
+    "n_diseases": 13,
+    "mean_directional_accuracy": 1.0
+  },
+  "public_breath": {
+    "n_cases": 7,
+    "mean_elevated_recall_at_k": 0.7482993197278912,
+    "mean_directional_accuracy": 0.9821428571428571,
+    "mean_elevated_directional_accuracy": 0.9523809523809524,
+    "literature_elevated_recall_at_k": 1.0,
+    "literature_directional_accuracy": 1.0,
+    "scientific_data_elevated_directional_accuracy": 0.8888888888888888,
+    "scientific_data_elevated_recall_at_k": 0.41269841269841273,
+    "top_k": 15,
+    "mode": "hybrid"
+  },
+  "comorbidity": {
+    "mean_directional_accuracy": 0.8348214285714286,
+    "mean_elevated_directional_accuracy": 1.0,
+    "mean_elevated_recall_at_k": 0.95,
+    "mean_suppressed_directional_accuracy": 0.6875,
+    "n_cases": 4
+  },
+  "multisite": {
+    "n_diseases": 20,
+    "n_sites_per_disease": 5,
+    "n_predictions": 5000,
+    "mode": "hybrid",
+    "directional_accuracy": 1.0,
+    "min_fold_accuracy": 1.0,
+    "site_sensitivity": 0.9375,
+    "disease_pass_rate": 1.0,
+    "n_diseases_passed": 20,
+    "mean_disease_directional_accuracy": 1.0,
+    "grading": "A \u2014 strong literature agreement for directional VOC modeling",
+    "composite_accuracy": 0.9875
+  },
+  "audit": {
+    "passed": true,
+    "literature_case_pass_rate": 1.0,
+    "directional_accuracy": 1.0,
+    "zero_shot_pass_rate": 1.0
+  },
+  "vision": {
+    "vision_fidelity_pct": 98.02,
+    "evidence_backed_pct": 97.28,
+    "held_out_style_pct": 97.37,
+    "grade_D_prior_consistency_pct": 99.18
+  },
+  "completion": {
+    "passed": true,
+    "gates": {
+      "pytest": true,
+      "audit": true,
+      "multisite_composite_ge_0.90": true,
+      "lit_public_directional_ge_0.90": true,
+      "lit_public_recall_ge_0.85": true,
+      "sci_data_elev_directional_ge_0.60": true,
+      "diseases_ge_100": true,
+      "datasources_ge_12": true
+    }
+  },
+  "diabetes": {
+    "passed": true
+  }
+}
