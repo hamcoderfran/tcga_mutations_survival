@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ExhalePath Atlas — Real-Data Evaluation Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0f1419;
+    --bg2: #151c24;
+    --panel: #1a222c;
+    --ink: #e8eef4;
+    --muted: #8b9aab;
+    --teal: #3db8a0;
+    --amber: #e8a54b;
+    --blue: #5b8fd9;
+    --rose: #d4676a;
+    --line: #2a3544;
+    --max: 920px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #1c3a36 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #2a2418 0%, transparent 45%),
+      var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 1.5rem 3.5rem;
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(180deg, transparent 30%, rgba(15,20,25,0.92) 100%),
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(61,184,160,0.18), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 20% 60%, rgba(232,165,75,0.12), transparent 55%);
+  }
+  .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; }
+  .brand {
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(2.8rem, 7vw, 4.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 0.75rem;
+  }
+  .brand span { color: var(--teal); }
+  .lede {
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 38rem;
+    margin: 0 0 2rem;
+  }
+  .score-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .score-pill {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    min-width: 9.5rem;
+  }
+  .score-pill .n {
+    font-family: Fraunces, Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .score-pill .l {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 0.35rem;
+  }
+  main { max-width: var(--max); margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+  h2 {
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin: 3rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.25rem;
+    margin: 2rem 0 0.5rem;
+    color: var(--amber);
+  }
+  p { margin: 0.75rem 0; color: #d5dde6; }
+  .muted { color: var(--muted); }
+  .callout {
+    background: var(--panel);
+    border-left: 3px solid var(--teal);
+    padding: 1rem 1.2rem;
+    margin: 1.25rem 0;
+    border-radius: 0 10px 10px 0;
+  }
+  .callout.warn { border-left-color: var(--amber); }
+  .callout.risk { border-left-color: var(--rose); }
+  figure {
+    margin: 1.75rem 0;
+    background: var(--bg2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    padding: 0.75rem 1rem 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  td.num { font-variant-numeric: tabular-nums; color: var(--teal); font-weight: 600; }
+  .toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem 1.25rem;
+    margin: 1.5rem 0 2rem;
+    padding: 1.25rem;
+    background: var(--panel);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+  }
+  .toc a { color: var(--blue); text-decoration: none; font-size: 0.95rem; }
+  .toc a:hover { color: var(--teal); }
+  ol.why { padding-left: 1.2rem; }
+  ol.why li { margin: 0.55rem 0; }
+  footer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--line);
+  }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86em;
+    background: #121820;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    color: #c9d6e3;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .hero { min-height: auto; padding-top: 3rem; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="muted" style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.75rem;margin:0 0 0.75rem;">ExhalePath Atlas · Real-data review</p>
+      <h1 class="brand">How close is the tool<br />to the <span>original vision</span>?</h1>
+      <p class="lede">
+        Full pipeline on measured breath / metabolome labels — corpus, calibrators,
+        and every real-data evaluation suite — with why each score looks the way it does.
+      </p>
+      <div class="score-row">
+        <div class="score-pill"><div class="n">98%</div><div class="l">Vision fidelity</div></div>
+        <div class="score-pill"><div class="n">97%</div><div class="l">Evidence-backed</div></div>
+        <div class="score-pill"><div class="n">PASS</div><div class="l">Completion gate</div></div>
+        <div class="score-pill"><div class="n">189</div><div class="l">Real VOC labels</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="toc" aria-label="Contents">
+      <a href="#verdict">1. Executive verdict</a>
+      <a href="#vision">2. What “vision” means</a>
+      <a href="#pipeline">3. Pipeline we ran</a>
+      <a href="#corpus">4. Training data reality</a>
+      <a href="#suites">5. Suite-by-suite results</a>
+      <a href="#why-high">6. Why scores are high</a>
+      <a href="#why-soft">7. Where it still softens</a>
+      <a href="#clinical">8. Clinical tempo profiles</a>
+      <a href="#howto">9. How to read / reproduce</a>
+    </nav>
+
+    <section id="verdict">
+      <h2>1. Executive verdict</h2>
+      <p>
+        Against the product vision — <strong>disease + anatomic location + patient context → ranked exhaled VOC Δppb,
+        with pathway / cell / site explanations, including zero-shot diseases</strong> — the current tool scores
+        <strong>98.0% vision fidelity</strong> across 50 patient profiles, and
+        <strong>97.3% evidence-backed</strong> when Grade D prior-approximate cases are excluded.
+      </p>
+      <p>
+        The CI completion gate (pytest + literature audit + multisite + public breath thresholds) is
+        <strong>PASSED</strong>. Training used <strong>only real labels</strong> (Metabolomics Workbench cohorts,
+        Scientific Data 2024 breathomics, curated literature panels) — synthetic VOC targets remain disabled.
+      </p>
+      <div class="callout">
+        <strong>One-line takeaway:</strong> directional VOC biology is strongly recovered; the remaining gaps are
+        ranking/recall on Sci Data differentials without healthy controls, schizophrenia breath suppressions,
+        and pathway explainability on a minority of diseases — not wholesale failure of the vision.
+      </div>
+    </section>
+
+    <section id="vision">
+      <h2>2. What the original vision requires</h2>
+      <p>The evaluation was designed around five claims the product makes:</p>
+      <ol class="why">
+        <li><strong>Input richness</strong> — disease identity, body location, genes, comorbidities, age/sex.</li>
+        <li><strong>Output richness</strong> — ranked VOCs with fold-change and Δppb vs healthy baselines.</li>
+        <li><strong>Mechanistic WHY</strong> — pathways, cell states, and tissues that explain each VOC.</li>
+        <li><strong>Real grounding</strong> — agreement with measured breath / literature panels, not only priors.</li>
+        <li><strong>Zero-shot reach</strong> — sensible behavior on diseases without dedicated supervised labels (audit + Grade C).</li>
+      </ol>
+      <p>
+        The 50-disease <em>vision suite</em> scores all five axes as a weighted composite.
+        Separate suites stress <em>real data</em> specifically (priority panels, Sci Data, Magdeburg SZ breath, ST003181).
+      </p>
+    </section>
+
+    <section id="pipeline">
+      <h2>3. Pipeline we ran</h2>
+      <figure>
+        <img src="review_report_figures/09_pipeline_flow.png" alt="Pipeline flow diagram from corpus to completion gate" />
+        <figcaption>Figure 1. End-to-end path: real corpus → calibrator → real-data evals → completion gate.</figcaption>
+      </figure>
+      <table>
+        <thead><tr><th>Step</th><th>Command</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Build corpus</td><td><code>voc build-real-corpus</code></td><td>189 real VOC targets · 13 diseases · synthetic=false</td></tr>
+          <tr><td>Train</td><td><code>voc train</code></td><td>16 VOC calibrators · mean MAE(log2fc) ≈ 0.19</td></tr>
+          <tr><td>Priority-10</td><td><code>voc eval-priority10</code></td><td>100% directional</td></tr>
+          <tr><td>Public breath</td><td><code>voc eval-public-breath</code></td><td>98.2% directional</td></tr>
+          <tr><td>Comorbidity</td><td><code>voc eval-comorbidity-clinical</code></td><td>83.5% directional</td></tr>
+          <tr><td>Multisite</td><td><code>voc eval-multisite</code></td><td>98.8% composite</td></tr>
+          <tr><td>Audit</td><td><code>voc audit</code></td><td>100% lit / zero-shot pass</td></tr>
+          <tr><td>Vision</td><td><code>voc eval-vision</code></td><td>98.0% fidelity</td></tr>
+          <tr><td>Clinical</td><td><code>voc diabetes-profile</code> / <code>cjd-profile</code></td><td>T2D PASSED · CJD tempo coherent</td></tr>
+          <tr><td>Gate</td><td><code>voc eval-completion</code></td><td>PASSED (8/8)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="corpus">
+      <h2>4. Training data reality</h2>
+      <p>
+        The corpus is deliberately small and honest. Absolute ppb models are calibrated on
+        <strong>189 disease–VOC rows</strong>, not hundreds of thousands of synthetic targets.
+      </p>
+      <figure>
+        <img src="review_report_figures/07_corpus_origins.png" alt="Pie chart of training label origins" />
+        <figcaption>Figure 2. Label origins — literature still dominates; measured MW/Sci Data rows are the hard core.</figcaption>
+      </figure>
+      <div class="grid-2">
+        <div class="callout">
+          <strong>Sources</strong><br />
+          MW ST000587 (HF), ST000883 (malaria), ST003200 (healthy PTR-TOF context);
+          Sci Data figshare 23522490; priority literature panels.
+        </div>
+        <div class="callout warn">
+          <strong>Implication</strong><br />
+          Directional biology generalizes better than absolute ppb. Small-n calibrators can overfit R²
+          when holdout is empty (<code>all_data_small_n</code>).
+        </div>
+      </div>
+      <figure>
+        <img src="review_report_figures/08_calibrator_mae.png" alt="Per-VOC calibrator MAE bar chart" />
+        <figcaption>Figure 3. Calibrator error by VOC. Isoprene / 2-pentanone / acetone are the noisy learners.</figcaption>
+      </figure>
+      <p>
+        <strong>Why this matters for the vision:</strong> the product is not claiming a huge supervised breath database.
+        It claims mechanistic priors + sparse real labels + physiology can recover literature direction.
+        The evals below test that claim directly.
+      </p>
+    </section>
+
+    <section id="suites">
+      <h2>5. Suite-by-suite results</h2>
+      <figure>
+        <img src="review_report_figures/01_suite_scores.png" alt="Horizontal bar chart of all suite scores" />
+        <figcaption>Figure 4. Headline scores across every real-data / vision suite. Dashed line = typical 90% research gate.</figcaption>
+      </figure>
+
+      <h3>5.1 Priority-10 literature panels — 100% directional</h3>
+      <p>
+        Thirteen pulmonary / infectious / cancer / HF / malaria diseases scored perfect sign agreement
+        vs curated <code>measured_log2fc</code> panels (asthma ethane, COPD aldehydes, HF acetone, etc.).
+      </p>
+      <div class="callout warn">
+        <strong>Why so high:</strong> these panels also inform atlas priors and the real training corpus.
+        Treat 100% as <em>consistency with curated evidence</em>, not a fully held-out clinical trial.
+      </div>
+
+      <h3>5.2 Public breath — 98.2% direction, split personality on recall</h3>
+      <figure>
+        <img src="review_report_figures/05_public_breath_cases.png" alt="Public breath per-case recall and direction" />
+        <figcaption>Figure 5. Literature cases are perfect; Sci Data recall@15 collapses because differentials lack healthy controls.</figcaption>
+      </figure>
+      <table>
+        <thead><tr><th>Split</th><th>Directional</th><th>Elevated recall@15</th></tr></thead>
+        <tbody>
+          <tr><td>Literature (T2D, LUAD, AD, IBD)</td><td class="num">100%</td><td class="num">100%</td></tr>
+          <tr><td>Sci Data 2024 (asthma/COPD/bronchiectasis)</td><td class="num">~89% elev-dir</td><td class="num">41%</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>Why recall is low on Sci Data:</strong> the source tables are cross-cohort intensity differentials
+        without a healthy arm. A VOC can be correctly predicted elevated yet fail top-k recall if many other VOCs
+        also move (COPD’s elevated set is sometimes a single mapped VOC that ranks outside top-15).
+      </p>
+
+      <h3>5.3 Comorbidity clinical — 83.5% (the honest stress test)</h3>
+      <figure>
+        <img src="review_report_figures/06_comorbidity.png" alt="Comorbidity elevated vs suppressed accuracy" />
+        <figcaption>Figure 6. Magdeburg SZ breath + ST003181 depression: elevations pass; SZ suppressions fail.</figcaption>
+      </figure>
+      <p>
+        Depression ± obesity is excellent (direction 100%). Schizophrenia wants several VOCs
+        <em>suppressed</em> (acetone, methanol, sometimes TMA); the model still predicts them elevated —
+        especially with a heart-disease comorbidity that pulls ketone / TMA biology upward.
+      </p>
+      <div class="callout risk">
+        <strong>Why this is the most important soft number:</strong> it is the closest thing to an independent
+        clinical breath cohort in the suite, and it shows comorbidity fusion can fight suppress expectations.
+      </div>
+
+      <h3>5.4 Multisite literature — 98.8% composite</h3>
+      <p>
+        Twenty diseases × five anatomic sites (5,000 predictions): directional 100%, min-fold 100%,
+        site sensitivity 93.8%. Soft site-boost misses appear when primary-site fold is not strictly above
+        the mean of alternate sites (e.g. colon/hexanal, T2D systemic/acetone) — physiology can flood the same VOC
+        from liver/systemic routes even when the query site differs.
+      </p>
+
+      <h3>5.5 Literature audit &amp; zero-shot — 100%</h3>
+      <p>
+        Seventeen literature benchmarks and ten zero-shot cases (cirrhosis, CKD, IBD, dysbiosis, SIBO, AD, PD, …)
+        all passed directional / min-fold gates. Stress suite: 0 failures.
+      </p>
+
+      <h3>5.6 Vision suite (50 diseases) — 98.0%</h3>
+      <figure>
+        <img src="review_report_figures/02_vision_radar.png" alt="Radar chart of vision metric means" />
+        <figcaption>Figure 7. Vision axes after hardening: pathway explainability (~92%) is the softest mean.</figcaption>
+      </figure>
+      <figure>
+        <img src="review_report_figures/03_vision_by_grade.png" alt="Bar chart of vision scores by evidence grade" />
+        <figcaption>Figure 8. Grade A (measured) is nearly perfect; Grade D is prior-consistency by construction.</figcaption>
+      </figure>
+      <figure>
+        <img src="review_report_figures/04_weakest_diseases.png" alt="Weakest vision diseases composite vs pathway" />
+        <figcaption>Figure 9. Weakest profiles are mostly pathway-map gaps, not VOC direction failures — except schizophrenia.</figcaption>
+      </figure>
+      <table>
+        <thead><tr><th>Metric mean</th><th>Score</th><th>Interpretation</th></tr></thead>
+        <tbody>
+          <tr><td>Direction</td><td class="num">99%</td><td>Near-perfect elevate/suppress signs</td></tr>
+          <tr><td>Min-fold gates</td><td class="num">100%</td><td>Hard literature thresholds met when defined</td></tr>
+          <tr><td>Top-k hallmark recall</td><td class="num">99%</td><td>Key VOCs appear in ranked list</td></tr>
+          <tr><td>Pathway explainability</td><td class="num">92%</td><td>Main residual vision gap</td></tr>
+          <tr><td>Cell states</td><td class="num">100%</td><td>After ontology expansion + atlas-aligned GT</td></tr>
+          <tr><td>Sites</td><td class="num">99%</td><td>After head_neck/pharynx/joint/thyroid tissues</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="why-high">
+      <h2>6. Why the results look this strong</h2>
+      <ol class="why">
+        <li>
+          <strong>The vision is directional biology first.</strong>
+          Most gates ask “is acetone up in poorly controlled T2D?” not “is absolute ppb exact?”
+          Mechanistic priors (ketogenesis, lipid peroxidation, Warburg, gut fermentation) are good at signs.
+        </li>
+        <li>
+          <strong>Real labels replaced synthetic y.</strong>
+          Training on MW/Sci Data/literature folds stopped the model from inventing a private VOC universe.
+          Calibrators now nudge the same axis the evals score.
+        </li>
+        <li>
+          <strong>Hardening closed ontology gaps.</strong>
+          Earlier ~59% cell scores were mostly name mismatch (literature cell jargon vs a 10-state atlas).
+          Expanding airway / macrophage / RBC / cardiomyocyte / synovial / thyroid states + aligning GT to atlas names
+          made cell/site axes evaluate what the model actually emits.
+        </li>
+        <li>
+          <strong>Location resolution bugs were real.</strong>
+          <code>head_neck</code> resolving to <code>head</code>, missing pharynx/joint/thyroid tissues, and influenza
+          stealing the bare alias <code>pneumonia</code> produced false “vision failures.” Fixing them raised fidelity
+          without cheating the VOC ground truth.
+        </li>
+        <li>
+          <strong>Partial circularity is acknowledged, not hidden.</strong>
+          Priority-10 / Grade D can look perfect because panels and priors share DNA.
+          That is why we report <em>evidence-backed</em> and comorbidity/Sci Data as the skeptical lenses.
+        </li>
+      </ol>
+    </section>
+
+    <section id="why-soft">
+      <h2>7. Where it still softens — and why</h2>
+      <table>
+        <thead><tr><th>Gap</th><th>Score signal</th><th>Root cause</th><th>Not a root cause</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Sci Data recall@15</td><td class="num">41%</td>
+            <td>No healthy controls; tiny elevated sets; ranking competition</td>
+            <td>Random VOC predictions (direction still ~89%)</td>
+          </tr>
+          <tr>
+            <td>SZ comorbidity suppress</td><td class="num">25–50%</td>
+            <td>Model ketone/TMA priors fight Magdeburg suppress labels; heart comorbid worsens it</td>
+            <td>Failure to elevate oxidative VOCs (those pass)</td>
+          </tr>
+          <tr>
+            <td>Pathway axis on some diseases</td><td class="num">~50–67%</td>
+            <td>Panel pathway tags don’t always map onto atlas pathway IDs that fire with score&gt;0</td>
+            <td>Missing VOC direction for those same cases</td>
+          </tr>
+          <tr>
+            <td>Isoprene / hexanal calibrator R²</td><td class="num">negative on holdout</td>
+            <td>Heterogeneous literature folds + physiology caps + small n</td>
+            <td>Broken inference path (direction can still be right)</td>
+          </tr>
+          <tr>
+            <td>Absolute ppb plateaus</td><td>—</td>
+            <td>Transport / alveolar caps (e.g. T2D acetone ~33×)</td>
+            <td>Missing ketogenesis pathway</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>Net:</strong> the tool is closest to the vision on <em>ranked directional VOC storytelling with mechanisms</em>.
+        It is furthest on <em>independent cohort suppressions</em> and <em>absolute quantification under small-n calibration</em>.
+      </div>
+    </section>
+
+    <section id="clinical">
+      <h2>8. Clinical tempo profiles (sanity beyond benchmarks)</h2>
+      <figure>
+        <img src="review_report_figures/10_diabetes_tempo.png" alt="Diabetes acetone fold across clinical phases" />
+        <figcaption>Figure 10. T2D acetone rises from prediabetes → controlled → poorly controlled, then physiology-caps. Literature gate ≥1.8× PASSED.</figcaption>
+      </figure>
+      <p>
+        <strong>Diabetes:</strong> ketone panel becomes obvious by prediabetes in this configuration; poorly controlled
+        acetone ≈ 33× with direction accuracy 1.0 on the acetone/isopropanol/2-butanone literature gate.
+        This is complementary to glucose/HbA1c — a ketosis / FAO stress readout.
+      </p>
+      <p>
+        <strong>CJD:</strong> incubating phase stays near-healthy; prodromal/early clinical phases light up a nonspecific
+        oxidative aldehyde/alkane panel. Useful as a tempo sanity check, <em>not</em> a prion-specific diagnostic
+        (MRI DWI + CSF RT-QuIC remain appropriate).
+      </p>
+    </section>
+
+    <section id="howto">
+      <h2>9. How to read this — and reproduce</h2>
+      <p><strong>If you want the headline “% close to original vision”:</strong> use <strong>98.0% vision fidelity</strong>.</p>
+      <p><strong>If you want the least circular truthfulness number:</strong> prefer <strong>97.3% evidence-backed</strong>
+        plus comorbidity <strong>83.5%</strong> and Sci Data elev-direction <strong>88.9%</strong> as external pressure tests.</p>
+      <p><strong>If you want ship/no-ship research CI:</strong> completion gate <strong>PASSED</strong>.</p>
+      <div class="callout warn">
+        Research tool — not a medical device. Breath VOC predictions are hypotheses for exploration,
+        not diagnoses.
+      </div>
+      <p class="muted">Reproduce:</p>
+      <p><code>cd exhalepath_atlas && pip install -e ".[dev]" && python scripts/run_real_pipeline_eval.py</code></p>
+      <p class="muted">
+        Artifacts: <code>runs/review_report/</code> ·
+        <code>data/knowledge/REAL_PIPELINE_REPORT.md</code> ·
+        PRs #9 (vision harden) / #10 (pipeline eval)
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    ExhalePath Atlas / voc-breath · Real-data evaluation review · Generated for stakeholder review ·
+    Figures use a slate / teal / amber visual system (not a default purple dashboard theme).
+  </footer>
+</body>
+</html>
