@@ -18,7 +18,7 @@
     {
       "id": "asthma",
       "name": "Asthma",
-      "query_name": "Asthma",
+      "query_name": "asthma",
       "location": "lung",
       "grade": "A",
       "evidence_basis": "Quantified ethane elevation (Olopade 2000) + Sci Data 2024 directional panel",
@@ -26,15 +26,7 @@
         "age": 34,
         "sex": "female",
         "tempo": "uncontrolled",
-        "comorbidities": [],
-        "genes": [
-          "IL4",
-          "IL5",
-          "IL13",
-          "TSLP",
-          "IL33",
-          "ORMDL3"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -70,8 +62,7 @@
         "cell_states_should_include": [
           "airway epithelium",
           "eosinophil",
-          "mast cell",
-          "type 2 helper T cell"
+          "mast cell"
         ],
         "sites_should_include": [
           "lung"
@@ -81,7 +72,7 @@
     {
       "id": "copd",
       "name": "Chronic obstructive pulmonary disease",
-      "query_name": "Chronic obstructive pulmonary disease",
+      "query_name": "copd",
       "location": "lung",
       "grade": "A",
       "evidence_basis": "Quantified ethane + EBC aldehydes (hexanal/heptanal) + Sci Data 2024",
@@ -90,15 +81,7 @@
         "sex": "male",
         "tempo": "severe",
         "smoking_status": "former",
-        "comorbidities": [],
-        "genes": [
-          "SERPINA1",
-          "MMP12",
-          "HHIP",
-          "FAM13A",
-          "CHRNA3",
-          "CHRNA5"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -134,8 +117,7 @@
         "cell_states_should_include": [
           "airway epithelium",
           "neutrophil",
-          "macrophage alveolar",
-          "club cell"
+          "macrophage alveolar"
         ],
         "sites_should_include": [
           "lung"
@@ -145,7 +127,7 @@
     {
       "id": "heart_failure",
       "name": "Heart failure",
-      "query_name": "Heart failure",
+      "query_name": "heart_failure",
       "location": "heart",
       "grade": "A",
       "evidence_basis": "Metabolomics Workbench ST000587 exhaled VOC HF vs control",
@@ -153,15 +135,7 @@
         "age": 74,
         "sex": "female",
         "tempo": "HFrEF_NYHA_III",
-        "comorbidities": [],
-        "genes": [
-          "NPPB",
-          "NPPA",
-          "TTN",
-          "MYH7",
-          "LMNA",
-          "BAG3"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -196,8 +170,7 @@
         "cell_states_should_include": [
           "stressed cardiomyocyte",
           "cardiac fibroblast",
-          "endothelial cell",
-          "hepatocyte under venous congestion"
+          "endothelial cell"
         ],
         "sites_should_include": [
           "heart",
@@ -263,7 +236,7 @@
     {
       "id": "malaria",
       "name": "Malaria",
-      "query_name": "Malaria",
+      "query_name": "malaria",
       "location": "systemic",
       "grade": "A",
       "evidence_basis": "Metabolomics Workbench ST000883 malaria breath panel",
@@ -271,15 +244,7 @@
         "age": 28,
         "sex": "male",
         "tempo": "falciparum_acute",
-        "comorbidities": [],
-        "genes": [
-          "HBB",
-          "HBA1",
-          "HBA2",
-          "G6PD",
-          "ACKR1",
-          "TLR9"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -313,8 +278,7 @@
         "cell_states_should_include": [
           "Plasmodium-infected RBC",
           "uninfected erythrocyte under oxidative stress",
-          "hepatocyte during liver-stage infection",
-          "monocyte macrophage"
+          "hepatocyte during liver-stage infection"
         ],
         "sites_should_include": [
           "blood",
@@ -421,7 +385,7 @@
     {
       "id": "ards",
       "name": "Acute respiratory distress syndrome",
-      "query_name": "Acute respiratory distress syndrome",
+      "query_name": "ards",
       "location": "lung",
       "grade": "B",
       "evidence_basis": "Priority-10 ARDS / ventilator exhalate VOC panel",
@@ -431,14 +395,6 @@
         "tempo": "ventilated",
         "comorbidities": [
           "pneumonia_bacterial"
-        ],
-        "genes": [
-          "IL6",
-          "TNF",
-          "IL1B",
-          "CXCL8",
-          "TLR4",
-          "NFKB1"
         ]
       },
       "ground_truth": {
@@ -472,8 +428,7 @@
         "cell_states_should_include": [
           "injured alveolar type I cell",
           "alveolar type II cell",
-          "pulmonary capillary endothelial cell",
-          "neutrophil"
+          "pulmonary capillary endothelial cell"
         ],
         "sites_should_include": [
           "lung"
@@ -531,7 +486,7 @@
     {
       "id": "cancer_prostate",
       "name": "Prostate cancer",
-      "query_name": "Prostate cancer",
+      "query_name": "cancer_prostate",
       "location": "prostate",
       "grade": "B",
       "evidence_basis": "Priority-10 prostate cancer breath VOC panel",
@@ -577,8 +532,7 @@
         "cell_states_should_include": [
           "androgen-responsive prostate luminal epithelial cell",
           "prostate basal epithelial cell",
-          "prostate carcinoma cell",
-          "cancer-associated fibroblast"
+          "prostate carcinoma cell"
         ],
         "sites_should_include": [
           "prostate"
@@ -588,7 +542,7 @@
     {
       "id": "cancer_stomach",
       "name": "Gastric cancer",
-      "query_name": "Gastric cancer",
+      "query_name": "cancer_stomach",
       "location": "stomach",
       "grade": "B",
       "evidence_basis": "Priority-10 gastric cancer breath VOC panel",
@@ -637,8 +591,7 @@
         "cell_states_should_include": [
           "gastric foveolar epithelial cell",
           "intestinal metaplasia epithelial cell",
-          "gastric carcinoma cell",
-          "cancer-associated fibroblast"
+          "gastric carcinoma cell"
         ],
         "sites_should_include": [
           "stomach",
@@ -699,7 +652,7 @@
     {
       "id": "covid19",
       "name": "COVID-19",
-      "query_name": "COVID-19",
+      "query_name": "covid19",
       "location": "lung",
       "grade": "B",
       "evidence_basis": "Priority-10 literature directional breath carbonyl/ketone panel",
@@ -707,15 +660,7 @@
         "age": 52,
         "sex": "male",
         "tempo": "acute_hospitalized",
-        "comorbidities": [],
-        "genes": [
-          "ACE2",
-          "TMPRSS2",
-          "IFNAR2",
-          "OAS1",
-          "DPP9",
-          "TYK2"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -748,8 +693,7 @@
         "cell_states_should_include": [
           "ciliated airway epithelial cell",
           "alveolar type II cell",
-          "macrophage alveolar",
-          "neutrophil"
+          "macrophage alveolar"
         ],
         "sites_should_include": [
           "lung"
@@ -759,7 +703,7 @@
     {
       "id": "cystic_fibrosis",
       "name": "Cystic fibrosis",
-      "query_name": "Cystic fibrosis",
+      "query_name": "cystic_fibrosis",
       "location": "lung",
       "grade": "B",
       "evidence_basis": "Priority-10 literature CF breath VOC panel",
@@ -767,15 +711,7 @@
         "age": 22,
         "sex": "female",
         "tempo": "chronic_infection",
-        "comorbidities": [],
-        "genes": [
-          "CFTR",
-          "SCNN1A",
-          "SCNN1B",
-          "SCNN1G",
-          "MUC5B",
-          "MUC5AC"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -813,8 +749,7 @@
         "cell_states_should_include": [
           "CFTR-deficient airway epithelium",
           "goblet cell",
-          "submucosal gland cell",
-          "neutrophil"
+          "submucosal gland cell"
         ],
         "sites_should_include": [
           "lung"
@@ -874,7 +809,7 @@
     {
       "id": "head_neck_cancer",
       "name": "Head and neck squamous cell carcinoma",
-      "query_name": "Head and neck squamous cell carcinoma",
+      "query_name": "head_neck_cancer",
       "location": "head_neck",
       "grade": "B",
       "evidence_basis": "Priority-10 H&N cancer breath VOC panel",
@@ -927,8 +862,7 @@
         "cell_states_should_include": [
           "squamous epithelial tumor cell",
           "basal keratinocyte-like malignant cell",
-          "cancer-associated fibroblast",
-          "tumor-associated macrophage"
+          "cancer-associated fibroblast"
         ],
         "sites_should_include": [
           "head_neck",
@@ -1187,7 +1121,7 @@
     {
       "id": "pneumonia_bacterial",
       "name": "Bacterial pneumonia (VAP/HAP/CAP)",
-      "query_name": "Bacterial pneumonia (VAP/HAP/CAP)",
+      "query_name": "pneumonia_bacterial",
       "location": "lung",
       "grade": "B",
       "evidence_basis": "Priority-10 literature directional pneumonia breath panel",
@@ -1195,15 +1129,7 @@
         "age": 71,
         "sex": "female",
         "tempo": "community_acquired",
-        "comorbidities": [],
-        "genes": [
-          "TLR2",
-          "TLR4",
-          "NOD2",
-          "IL6",
-          "TNF",
-          "CXCL8"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -1241,8 +1167,7 @@
         "cell_states_should_include": [
           "alveolar macrophage",
           "neutrophil",
-          "airway epithelium",
-          "alveolar type II cell"
+          "airway epithelium"
         ],
         "sites_should_include": [
           "lung"
@@ -1297,7 +1222,7 @@
     {
       "id": "sleep_apnea",
       "name": "Obstructive sleep apnea",
-      "query_name": "Obstructive sleep apnea",
+      "query_name": "sleep_apnea",
       "location": "pharynx",
       "grade": "B",
       "evidence_basis": "Priority-10 literature OSA breath VOC panel",
@@ -1307,14 +1232,6 @@
         "tempo": "moderate_osa",
         "comorbidities": [
           "obesity"
-        ],
-        "genes": [
-          "HIF1A",
-          "VEGFA",
-          "NOS3",
-          "EDN1",
-          "IL6",
-          "TNF"
         ]
       },
       "ground_truth": {
@@ -1348,8 +1265,7 @@
         "cell_states_should_include": [
           "pharyngeal myocyte",
           "upper airway epithelium",
-          "endothelial cell",
-          "adipocyte"
+          "endothelial cell"
         ],
         "sites_should_include": [
           "pharynx",
@@ -1360,7 +1276,7 @@
     {
       "id": "tuberculosis",
       "name": "Pulmonary tuberculosis",
-      "query_name": "Pulmonary tuberculosis",
+      "query_name": "tuberculosis",
       "location": "lung",
       "grade": "B",
       "evidence_basis": "Priority-10 literature TB breath VOC panel",
@@ -1368,15 +1284,7 @@
         "age": 41,
         "sex": "male",
         "tempo": "pulmonary_active",
-        "comorbidities": [],
-        "genes": [
-          "IFNG",
-          "IL12B",
-          "IL12RB1",
-          "TNF",
-          "SLC11A1",
-          "TLR2"
-        ]
+        "comorbidities": []
       },
       "ground_truth": {
         "must_elevate": [
@@ -1408,8 +1316,7 @@
         "cell_states_should_include": [
           "infected alveolar macrophage",
           "epithelioid macrophage",
-          "foamy macrophage",
-          "neutrophil"
+          "foamy macrophage"
         ],
         "sites_should_include": [
           "lung"

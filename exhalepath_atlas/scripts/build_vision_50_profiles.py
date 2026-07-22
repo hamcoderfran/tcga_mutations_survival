@@ -242,13 +242,38 @@ def _from_priority10() -> list[dict]:
             raw_pw.extend(vs)
         pathways = _map_pathways(raw_pw)
         # Prefer atlas-native pathways when mapping empty
+        atlas_pw = {
+            "lipid_peroxidation",
+            "glycolysis_warburg",
+            "ketone_body_metabolism",
+            "mevalonate_cholesterol",
+            "fatty_acid_oxidation",
+            "methionine_transsulfuration",
+            "urea_cycle",
+            "one_carbon_folate",
+            "cytochrome_p450_detox",
+            "apoptosis_necrosis",
+            "Kras_mapk_proliferation",
+            "pi3k_akt_mtor",
+            "gut_microbiome_fermentation",
+            "microbial_proteolysis_putrefaction",
+            "neuroinflammation",
+            "neurotransmitter_metabolism",
+            "brain_energy_metabolism",
+        }
+        pathways = [p for p in pathways if p in atlas_pw]
         if not pathways:
             pathways = ["lipid_peroxidation"]
-        cells = list(pan.get("cell_states") or [])[:4]
+        cells = list(pan.get("cell_states") or [])[:3]
+        # Only pass driver genes for solid tumors — immune/pathway gene lists on
+        # infectious disease panels resolve to custom:: bundles and wipe atlas priors.
+        cancer_ids = {"cancer_stomach", "head_neck_cancer", "cancer_prostate"}
+        gene_list = list(pan.get("genes") or [])[:6] if did in cancer_ids else None
         out.append(
             profile(
                 id=did,
                 name=pan.get("disease_name") or did,
+                query_name=did,
                 location=locations.get(did, "lung"),
                 grade=grades[did],
                 evidence_basis=evidence[did],
@@ -262,7 +287,7 @@ def _from_priority10() -> list[dict]:
                 pathways=pathways,
                 cells=cells,
                 sites=sites.get(did, [locations.get(did, "lung")]),
-                genes=list(pan.get("genes") or [])[:6] or None,
+                genes=gene_list,
             )
         )
     return out

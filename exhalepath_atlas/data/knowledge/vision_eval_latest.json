@@ -1,0 +1,7714 @@
+{
+  "overall": {
+    "n_profiles": 50,
+    "top_k": 15,
+    "mode": "hybrid",
+    "vision_fidelity": 0.8825133895894766,
+    "vision_fidelity_pct": 88.25,
+    "evidence_backed": 0.8965823930497844,
+    "evidence_backed_pct": 89.66,
+    "held_out_style": 0.9000085204399062,
+    "held_out_style_pct": 90.0,
+    "grade_D_prior_consistency": 0.8514109347442681,
+    "grade_D_prior_consistency_pct": 85.14,
+    "metric_means": {
+      "direction": 0.965143722943723,
+      "fold": 1.0,
+      "topk": 0.98,
+      "pathway": 0.8033333333333332,
+      "cell": 0.59,
+      "site": 0.8833333333333333
+    },
+    "by_grade": {
+      "A": {
+        "n": 6,
+        "mean_composite": 0.9257658102766797,
+        "mean_composite_pct": 92.58,
+        "mean_direction": 0.9772727272727272,
+        "mean_fold": 1.0,
+        "mean_topk": 1.0,
+        "mean_pathway": 0.9583333333333334
+      },
+      "B": {
+        "n": 20,
+        "mean_composite": 0.8878273678817157,
+        "mean_composite_pct": 88.78,
+        "mean_direction": 0.9827727272727274,
+        "mean_fold": 1.0,
+        "mean_topk": 0.9833333333333334,
+        "mean_pathway": 0.7208333333333333
+      },
+      "C": {
+        "n": 6,
+        "mean_composite": 0.9148550724637681,
+        "mean_composite_pct": 91.49,
+        "mean_direction": 1.0,
+        "mean_fold": 1.0,
+        "mean_topk": 1.0,
+        "mean_pathway": 0.8055555555555555
+      },
+      "D": {
+        "n": 18,
+        "mean_composite": 0.8514109347442681,
+        "mean_composite_pct": 85.14,
+        "mean_direction": 0.9298941798941799,
+        "mean_fold": null,
+        "mean_topk": 0.9629629629629629,
+        "mean_pathway": 0.8425925925925926
+      }
+    },
+    "weights": {
+      "direction": 1.0,
+      "fold": 1.0,
+      "topk": 0.9,
+      "pathway": 0.75,
+      "cell": 0.5,
+      "site": 0.45
+    },
+    "scoring_notes": {
+      "vision_fidelity_pct": "Mean composite score across all 50 profiles (includes Grade D prior-aligned cases).",
+      "evidence_backed_pct": "Mean composite over Grade A+B only (measured/directional literature).",
+      "held_out_style_pct": "Mean composite over Grade A+B+C (excludes prior-only Grade D).",
+      "grade_D_circularity": "Grade D ground truth is derived from atlas mechanistic priors; high scores there measure prior consistency, not independent clinical accuracy."
+    },
+    "grade_counts": {
+      "A": 6,
+      "B": 20,
+      "C": 6,
+      "D": 18
+    },
+    "verdict": {
+      "vision_fidelity_pct": 88.25,
+      "primary_score_for_original_vision": 88.25,
+      "interpretation": "vision_fidelity_pct is the headline % closeness to the original vision (disease+location+patient \u2192 VOC ranking + pathway/cell/site explainability) across all 50 profiles. Prefer evidence_backed_pct for independent truthfulness; Grade D inflates fidelity via prior circularity."
+    }
+  },
+  "cases": [
+    {
+      "id": "asthma",
+      "name": "Asthma",
+      "grade": "A",
+      "location": "lung",
+      "resolved_disease_id": "asthma",
+      "evidence_basis": "Quantified ethane elevation (Olopade 2000) + Sci Data 2024 directional panel",
+      "patient": {
+        "age": 34,
+        "sex": "female",
+        "tempo": "uncontrolled",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.3333333333333333,
+        "site": 1.0,
+        "composite": 0.9275362318840579
+      },
+      "composite_pct": 92.75,
+      "direction_detail": [
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.595181915192279,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 13.088807090048908,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_pentanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5539477445324763,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 12.026142309235611,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "benzaldehyde",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.5765682239070151,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ethyl_acetate",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.5810452428482125,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "octane",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.6291375418950553,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "butane",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7728077789538584,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexane",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7848531881032086,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7348125702525174,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "ethane",
+          "threshold": 1.8,
+          "fold_change": 2.595181915192279,
+          "score": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "threshold": 1.3,
+          "fold_change": 13.088807090048908,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "ethane",
+          "pentane",
+          "2_pentanone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "mast cell"
+        ],
+        "missing": [
+          "airway epithelium",
+          "eosinophil"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "hexanal",
+        "ethanol",
+        "isoprene",
+        "ammonia",
+        "isopropanol",
+        "propanol",
+        "ethane",
+        "nonanal",
+        "ethyl_acetate",
+        "methanol",
+        "2_pentanone",
+        "octane",
+        "phenol"
+      ]
+    },
+    {
+      "id": "copd",
+      "name": "Chronic obstructive pulmonary disease",
+      "grade": "A",
+      "location": "lung",
+      "resolved_disease_id": "copd",
+      "evidence_basis": "Quantified ethane + EBC aldehydes (hexanal/heptanal) + Sci Data 2024",
+      "patient": {
+        "age": 68,
+        "sex": "male",
+        "tempo": "severe",
+        "smoking_status": "former",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.0,
+        "site": 1.0,
+        "composite": 0.8913043478260868
+      },
+      "composite_pct": 89.13,
+      "direction_detail": [
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.3688843896512273,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 28.57142857142857,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "heptanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.9235930335534783,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 17.405218649563928,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "benzene",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.7193771790193069,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.541259426830833,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.5193212441383763,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "2_pentanone",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7184422785986224,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "decanal",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.8082498618330017,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7583636731260531,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "ethane",
+          "threshold": 2.0,
+          "fold_change": 3.3688843896512273,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "threshold": 2.0,
+          "fold_change": 28.57142857142857,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "ethane",
+          "hexanal",
+          "heptanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "cytochrome_p450_detox"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "cytochrome_p450_detox",
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "airway epithelium",
+          "neutrophil",
+          "macrophage alveolar"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "hexanal",
+        "isoprene",
+        "isopropanol",
+        "ammonia",
+        "ethane",
+        "propanol",
+        "heptanal",
+        "nonanal",
+        "phenol",
+        "ethyl_acetate",
+        "ethanol",
+        "methanol",
+        "decanal"
+      ]
+    },
+    {
+      "id": "heart_failure",
+      "name": "Heart failure",
+      "grade": "A",
+      "location": "heart",
+      "resolved_disease_id": "heart_failure",
+      "evidence_basis": "Metabolomics Workbench ST000587 exhaled VOC HF vs control",
+      "patient": {
+        "age": 74,
+        "sex": "female",
+        "tempo": "HFrEF_NYHA_III",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.75,
+        "cell": 0.6666666666666666,
+        "site": 1.0,
+        "composite": 0.9230072463768115
+      },
+      "composite_pct": 92.3,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 15.966011869923438,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 9.578137309710868,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.368232417717246,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.070834803906128,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.368232417717246,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 2.705662824457839,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7779594426659923,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "acetone",
+          "threshold": 1.4,
+          "fold_change": 15.966011869923438,
+          "score": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "threshold": 1.25,
+          "fold_change": 9.578137309710868,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "pentane",
+          "isopropanol"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.75,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation",
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "urea_cycle"
+        ],
+        "present": [
+          "brain_energy_metabolism",
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "stressed cardiomyocyte",
+          "endothelial cell"
+        ],
+        "missing": [
+          "cardiac fibroblast"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "heart",
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "heart",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "methanol",
+        "hexanal",
+        "isopropanol",
+        "2_butanone",
+        "nonanal",
+        "phenol",
+        "heptanal",
+        "decanal",
+        "methyl_acetate",
+        "octane",
+        "ethane"
+      ]
+    },
+    {
+      "id": "lung_adenocarcinoma",
+      "name": "lung adenocarcinoma",
+      "grade": "A",
+      "location": "lung",
+      "resolved_disease_id": "lung_adenocarcinoma",
+      "evidence_basis": "Lung cancer breath aldehyde/alkane panel (DOI:10.1038/bjc.2011.277)",
+      "patient": {
+        "age": 64,
+        "sex": "male",
+        "tempo": "stage_IV",
+        "smoking_status": "current",
+        "comorbidities": [],
+        "genes": [
+          "TP53",
+          "KRAS",
+          "EGFR"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 12.184348866082592,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "heptanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.402816817211143,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5699176967030763,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 7.51962103796143,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.7765849993811953,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.36796585927590625,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.2,
+          "fold_change": 12.184348866082592,
+          "score": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "threshold": 1.15,
+          "fold_change": 7.51962103796143,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "heptanal",
+          "nonanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "glycolysis_warburg",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "cytochrome_p450_detox",
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Oxidative-stress",
+          "Tumor"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "isoprene",
+        "pentane",
+        "hexanal",
+        "acetaldehyde",
+        "ammonia",
+        "hydrogen_sulfide",
+        "nonanal",
+        "2_butanone",
+        "methanol",
+        "heptanal",
+        "phenol",
+        "octanal",
+        "isopropanol"
+      ]
+    },
+    {
+      "id": "malaria",
+      "name": "Malaria",
+      "grade": "A",
+      "location": "systemic",
+      "resolved_disease_id": "malaria",
+      "evidence_basis": "Metabolomics Workbench ST000883 malaria breath panel",
+      "patient": {
+        "age": 28,
+        "sex": "male",
+        "tempo": "falciparum_acute",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.8636363636363636,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.0,
+        "site": 0.5,
+        "composite": 0.8127470355731224
+      },
+      "composite_pct": 81.27,
+      "direction_detail": [
+        {
+          "voc_id": "benzene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4772213951651882,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.412065413086562,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.574442751767485,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 2.412065413086562,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 3.3869142282138,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.9058401797011034,
+          "score": 0.55,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "suppress",
+          "soft": true,
+          "fold_change": 0.9514759637412359,
+          "score": 0.4,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "acetone",
+          "threshold": 1.3,
+          "fold_change": 2.412065413086562,
+          "score": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "threshold": 1.2,
+          "fold_change": 5.574442751767485,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "benzene",
+          "acetone",
+          "pentane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "ketone_body_metabolism",
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "Plasmodium-infected RBC",
+          "uninfected erythrocyte under oxidative stress",
+          "hepatocyte during liver-stage infection"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "liver"
+        ],
+        "missing": [
+          "blood"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "2_butanone",
+        "methanol",
+        "isopropanol",
+        "nonanal",
+        "benzene",
+        "phenol",
+        "heptanal",
+        "hexanal",
+        "methyl_acetate",
+        "decanal",
+        "octane"
+      ]
+    },
+    {
+      "id": "type_2_diabetes",
+      "name": "type 2 diabetes",
+      "grade": "A",
+      "location": "systemic",
+      "resolved_disease_id": "type_2_diabetes",
+      "evidence_basis": "Breath acetone literature gate (PMID:21903721); ketone panel",
+      "patient": {
+        "age": 55,
+        "sex": "male",
+        "tempo": "poorly_controlled",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 12.937835165276994,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3773592297695234,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 11.20972280136777,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 2.548451837095216,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "2_pentanone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3314507467555936,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "acetone",
+          "threshold": 1.8,
+          "fold_change": 12.937835165276994,
+          "score": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "threshold": 1.2,
+          "fold_change": 11.20972280136777,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "2_butanone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "missing": [],
+        "present": [
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Ketogenic hepatocyte",
+          "Lipolytic adipocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Activated microglia",
+          "microglia_activated",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "liver",
+          "adipose"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "ethanol",
+        "isoprene",
+        "pentane",
+        "2_butanone",
+        "isopropanol",
+        "hexanal",
+        "methanol",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "methyl_acetate",
+        "octane",
+        "acetonitrile"
+      ]
+    },
+    {
+      "id": "alzheimer_disease",
+      "name": "Alzheimer disease",
+      "grade": "B",
+      "location": "brain",
+      "resolved_disease_id": "alzheimer_disease",
+      "evidence_basis": "AD breath oxidative VOC literature",
+      "patient": {
+        "age": 78,
+        "sex": "female",
+        "tempo": "moderate",
+        "comorbidities": [],
+        "genes": [
+          "APP",
+          "PSEN1"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 8.408615118458252,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 25.196726596598005,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.468249400486569,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.3,
+          "fold_change": 8.408615118458252,
+          "score": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "threshold": 1.25,
+          "fold_change": 25.196726596598005,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "brain_energy_metabolism"
+        ],
+        "missing": [],
+        "present": [
+          "brain_energy_metabolism",
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "neurotransmitter_metabolism"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Activated microglia",
+          "Metabolically stressed neuron"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Activated microglia",
+          "microglia_activated",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "hexanal",
+        "ammonia",
+        "isoprene",
+        "nonanal",
+        "propanol",
+        "methanol",
+        "ethane",
+        "octanal",
+        "decanal",
+        "heptanal",
+        "isopropanol",
+        "octane",
+        "methyl_acetate"
+      ]
+    },
+    {
+      "id": "ards",
+      "name": "Acute respiratory distress syndrome",
+      "grade": "B",
+      "location": "lung",
+      "resolved_disease_id": "ards",
+      "evidence_basis": "Priority-10 ARDS / ventilator exhalate VOC panel",
+      "patient": {
+        "age": 58,
+        "sex": "female",
+        "tempo": "ventilated",
+        "comorbidities": [
+          "pneumonia_bacterial"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.75,
+        "cell": 0.0,
+        "site": 1.0,
+        "composite": 0.8090277777777778
+      },
+      "composite_pct": 80.9,
+      "direction_detail": [
+        {
+          "voc_id": "acetaldehyde",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.531714583303156,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 27.872364883656505,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.7605686571223373,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "octanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.6272809091066518,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "heptanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.6025296460615839,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.1751771284897123,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.6905388634172762,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.6417084837588202,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetaldehyde",
+          "pentane",
+          "nonanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.75,
+        "hits": [
+          "apoptosis_necrosis",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "mevalonate_cholesterol"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "microbial_proteolysis_putrefaction",
+          "neuroinflammation"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "injured alveolar type I cell",
+          "alveolar type II cell",
+          "pulmonary capillary endothelial cell"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "pentane",
+        "hexanal",
+        "acetone",
+        "ethanol",
+        "isoprene",
+        "acetaldehyde",
+        "isopropanol",
+        "dms",
+        "nonanal",
+        "hydrogen_sulfide",
+        "propanol",
+        "heptanal",
+        "octanal",
+        "decanal"
+      ]
+    },
+    {
+      "id": "breast_invasive_carcinoma",
+      "name": "breast cancer",
+      "grade": "B",
+      "location": "breast",
+      "resolved_disease_id": "breast_invasive_carcinoma",
+      "evidence_basis": "Breast cancer breath DMTS/hexanal literature (DOI:10.3233/CBM-160587)",
+      "patient": {
+        "age": 58,
+        "sex": "female",
+        "tempo": "stage_IIA",
+        "comorbidities": [],
+        "genes": [
+          "PIK3CA",
+          "TP53"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 0.6666666666666666,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.934782608695652
+      },
+      "composite_pct": 93.48,
+      "direction_detail": [
+        {
+          "voc_id": "dmts",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.6652871383970673,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 8.8331925177913,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 7.579276447246469,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "dmts",
+          "threshold": 1.5,
+          "fold_change": 2.6652871383970673,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.15,
+          "fold_change": 8.8331925177913,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 0.6666666666666666,
+        "in_top": [
+          "hexanal",
+          "2_butanone"
+        ],
+        "missing": [
+          "dmts"
+        ]
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "methionine_transsulfuration",
+          "pi3k_akt_mtor"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Tumor",
+          "Oxidative"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "breast"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "breast",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "acetaldehyde",
+        "isoprene",
+        "ammonia",
+        "hexanal",
+        "2_butanone",
+        "pentane",
+        "methanol",
+        "nonanal",
+        "heptanal",
+        "phenol",
+        "isopropanol",
+        "octanal",
+        "butane"
+      ]
+    },
+    {
+      "id": "cancer_prostate",
+      "name": "Prostate cancer",
+      "grade": "B",
+      "location": "prostate",
+      "resolved_disease_id": "cancer_prostate",
+      "evidence_basis": "Priority-10 prostate cancer breath VOC panel",
+      "patient": {
+        "age": 67,
+        "sex": "male",
+        "tempo": "localized_high_grade",
+        "comorbidities": [],
+        "genes": [
+          "AR",
+          "TMPRSS2",
+          "ERG",
+          "PTEN",
+          "SPOP",
+          "FOXA1"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.3333333333333333,
+        "cell": 0.3333333333333333,
+        "site": 1.0,
+        "composite": 0.7685185185185185
+      },
+      "composite_pct": 76.85,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.341083025117401,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 6.0207861778157605,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.2898389342179384,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 3.3443044189569244,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "formaldehyde",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.4791107712456278,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": true,
+          "fold_change": 0.8407626629510798,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "one_carbon_folate",
+          "cytochrome_p450_detox"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "fatty_acid_oxidation",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "pi3k_akt_mtor"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "prostate basal epithelial cell"
+        ],
+        "missing": [
+          "androgen-responsive prostate luminal epithelial cell",
+          "prostate carcinoma cell"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "prostate"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "prostate gland",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ethanol",
+        "pentane",
+        "ammonia",
+        "hexanal",
+        "isoprene",
+        "2_butanone",
+        "methanol",
+        "nonanal",
+        "isopropanol",
+        "phenol",
+        "formaldehyde",
+        "methyl_acetate",
+        "octane",
+        "2_pentanone"
+      ]
+    },
+    {
+      "id": "cancer_stomach",
+      "name": "Gastric cancer",
+      "grade": "B",
+      "location": "stomach",
+      "resolved_disease_id": "cancer_stomach",
+      "evidence_basis": "Priority-10 gastric cancer breath VOC panel",
+      "patient": {
+        "age": 62,
+        "sex": "male",
+        "tempo": "stage_III",
+        "comorbidities": [],
+        "genes": [
+          "CDH1",
+          "TP53",
+          "ERBB2",
+          "MET",
+          "CLDN18",
+          "ARID1A"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.25,
+        "cell": 0.6666666666666666,
+        "site": 1.0,
+        "composite": 0.7974537037037037
+      },
+      "composite_pct": 79.75,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5373390495925818,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2945317167671593,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "phenol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4633994664260117,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5519982464559932,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 8.284920109803968,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "styrene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5119261239620831,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 2.0149365478863093,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.2826118652803318,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3228348079060677,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "isoprene",
+          "phenol"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.25,
+        "hits": [
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "ketone_body_metabolism",
+          "mevalonate_cholesterol",
+          "gut_microbiome_fermentation"
+        ],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "gastric foveolar epithelial cell",
+          "intestinal metaplasia epithelial cell"
+        ],
+        "missing": [
+          "gastric carcinoma cell"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "stomach",
+          "gut"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "hexanal",
+        "acetaldehyde",
+        "methanol",
+        "nonanal",
+        "hydrogen_sulfide",
+        "phenol",
+        "2_butanone",
+        "isopropanol",
+        "heptanal",
+        "2_pentanone"
+      ]
+    },
+    {
+      "id": "colon_adenocarcinoma",
+      "name": "colon adenocarcinoma",
+      "grade": "B",
+      "location": "colon",
+      "resolved_disease_id": "colon_adenocarcinoma",
+      "evidence_basis": "CRC breath aldehyde + gut sulfur VOC literature",
+      "patient": {
+        "age": 61,
+        "sex": "female",
+        "tempo": "stage_II",
+        "comorbidities": [],
+        "genes": [
+          "APC",
+          "KRAS",
+          "TP53"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.8913043478260868
+      },
+      "composite_pct": 89.13,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.121734501990338,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5028257471811979,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3240854938406994,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.2,
+          "fold_change": 5.121734501990338,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "hydrogen_sulfide",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [
+          "gut_microbiome_fermentation"
+        ],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "one_carbon_folate"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Tumor"
+        ],
+        "missing": [
+          "Colonocyte"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "colon",
+          "gut"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "colon",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "isoprene",
+        "acetaldehyde",
+        "ammonia",
+        "hexanal",
+        "pentane",
+        "hydrogen_sulfide",
+        "2_butanone",
+        "nonanal",
+        "methanol",
+        "phenol",
+        "heptanal",
+        "isopropanol",
+        "octanal"
+      ]
+    },
+    {
+      "id": "covid19",
+      "name": "COVID-19",
+      "grade": "B",
+      "location": "lung",
+      "resolved_disease_id": "covid19",
+      "evidence_basis": "Priority-10 literature directional breath carbonyl/ketone panel",
+      "patient": {
+        "age": 52,
+        "sex": "male",
+        "tempo": "acute_hospitalized",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.3333333333333333,
+        "site": 1.0,
+        "composite": 0.8032407407407407
+      },
+      "composite_pct": 80.32,
+      "direction_detail": [
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.672555389869125,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "octanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5987668496256544,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "heptanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5879578085902915,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5376626497136405,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5237876359893114,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.285811714483367,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "methanol",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7110674536435635,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7080017105436183,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "nonanal",
+          "octanal",
+          "heptanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [
+          "ketone_body_metabolism",
+          "cytochrome_p450_detox"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "ciliated airway epithelial cell"
+        ],
+        "missing": [
+          "alveolar type II cell",
+          "macrophage alveolar"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "methanol",
+        "ethanol",
+        "hexanal",
+        "isoprene",
+        "ammonia",
+        "nonanal",
+        "heptanal",
+        "octanal",
+        "2_butanone",
+        "decanal",
+        "ethane",
+        "phenol",
+        "isopropanol"
+      ]
+    },
+    {
+      "id": "cystic_fibrosis",
+      "name": "Cystic fibrosis",
+      "grade": "B",
+      "location": "lung",
+      "resolved_disease_id": "cystic_fibrosis",
+      "evidence_basis": "Priority-10 literature CF breath VOC panel",
+      "patient": {
+        "age": 22,
+        "sex": "female",
+        "tempo": "chronic_infection",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.3333333333333333,
+        "site": 1.0,
+        "composite": 0.9275362318840579
+      },
+      "composite_pct": 92.75,
+      "direction_detail": [
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.54987871953241,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.863657662554462,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "dms",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.224348714410441,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "indole",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.1537994975763035,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 11.022614608664595,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 8.333863051566318,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "phenol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.4809960258592423,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.2745611194546302,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.2471468157242627,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 6.686520251853806,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": true,
+          "fold_change": 0.813001513796473,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "ethane",
+          "threshold": 2.063,
+          "fold_change": 2.54987871953241,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "threshold": 1.48,
+          "fold_change": 3.863657662554462,
+          "score": 1.0
+        },
+        {
+          "voc_id": "dms",
+          "threshold": 1.381,
+          "fold_change": 2.224348714410441,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "ethane",
+          "hydrogen_sulfide",
+          "dms"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "gut_microbiome_fermentation"
+        ],
+        "missing": [],
+        "present": [
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "methionine_transsulfuration",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "goblet cell"
+        ],
+        "missing": [
+          "CFTR-deficient airway epithelium",
+          "submucosal gland cell"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "acetone",
+        "pentane",
+        "hexanal",
+        "ethanol",
+        "hydrogen_sulfide",
+        "isoprene",
+        "dms",
+        "indole",
+        "ethane",
+        "phenol",
+        "methanol",
+        "nonanal",
+        "heptanal",
+        "isopropanol"
+      ]
+    },
+    {
+      "id": "glioblastoma",
+      "name": "glioblastoma",
+      "grade": "B",
+      "location": "brain",
+      "resolved_disease_id": "glioblastoma",
+      "evidence_basis": "GBM breath ketone/aldehyde literature",
+      "patient": {
+        "age": 54,
+        "sex": "male",
+        "tempo": "newly_diagnosed",
+        "comorbidities": [],
+        "genes": [
+          "EGFR",
+          "PTEN",
+          "TP53"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5618109221766667,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 14.886910037943691,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 9.201727504628039,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 33.333333333333336,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 2.774716419755882,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "hexanal",
+          "2_butanone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "glycolysis_warburg",
+          "brain_energy_metabolism"
+        ],
+        "missing": [],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "brain_energy_metabolism",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "pi3k_akt_mtor"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Metabolically stressed neuron",
+          "Oxidative"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Activated microglia",
+          "microglia_activated",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "acetaldehyde",
+        "isoprene",
+        "hexanal",
+        "ammonia",
+        "pentane",
+        "methanol",
+        "2_butanone",
+        "nonanal",
+        "phenol",
+        "isopropanol",
+        "heptanal",
+        "octanal",
+        "butane"
+      ]
+    },
+    {
+      "id": "head_neck_cancer",
+      "name": "Head and neck squamous cell carcinoma",
+      "grade": "B",
+      "location": "head_neck",
+      "resolved_disease_id": "head_neck_cancer",
+      "evidence_basis": "Priority-10 H&N cancer breath VOC panel",
+      "patient": {
+        "age": 59,
+        "sex": "male",
+        "tempo": "stage_III",
+        "smoking_status": "former",
+        "comorbidities": [],
+        "genes": [
+          "TP53",
+          "CDKN2A",
+          "PIK3CA",
+          "NOTCH1",
+          "EGFR",
+          "FAT1"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.25,
+        "cell": 0.3333333333333333,
+        "site": 0.5,
+        "composite": 0.7563405797101448
+      },
+      "composite_pct": 75.63,
+      "direction_detail": [
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 14.623734862310124,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.809293357262632,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 11.194345968228468,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "heptanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3166693453610723,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4546270699193788,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "decanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4006977918239631,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3353990776228863,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": true,
+          "fold_change": 0.8174009663911159,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "ethanol",
+          "threshold": 2.017,
+          "fold_change": 14.623734862310124,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.381,
+          "fold_change": 11.194345968228468,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "ethanol",
+          "2_butanone",
+          "hexanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.25,
+        "hits": [
+          "glycolysis_warburg"
+        ],
+        "missing": [
+          "gut_microbiome_fermentation",
+          "cytochrome_p450_detox",
+          "ketone_body_metabolism"
+        ],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "pi3k_akt_mtor"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "squamous epithelial tumor cell"
+        ],
+        "missing": [
+          "basal keratinocyte-like malignant cell",
+          "cancer-associated fibroblast"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "head_neck"
+        ],
+        "missing": [
+          "oral"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "head",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "pentane",
+        "hexanal",
+        "acetaldehyde",
+        "ammonia",
+        "isoprene",
+        "nonanal",
+        "2_butanone",
+        "decanal",
+        "heptanal",
+        "phenol",
+        "methanol",
+        "isopropanol",
+        "methyl_acetate"
+      ]
+    },
+    {
+      "id": "hepatocellular_carcinoma",
+      "name": "hepatocellular carcinoma",
+      "grade": "B",
+      "location": "liver",
+      "resolved_disease_id": "hepatocellular_carcinoma",
+      "evidence_basis": "HCC sulfur/ammonia/limonene breath literature",
+      "patient": {
+        "age": 63,
+        "sex": "male",
+        "tempo": "stage_III",
+        "comorbidities": [
+          "chronic_liver_disease"
+        ],
+        "genes": [
+          "TP53",
+          "CTNNB1"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.9456521739130432
+      },
+      "composite_pct": 94.57,
+      "direction_detail": [
+        {
+          "voc_id": "dms",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 18.789137205513804,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 11.937507852679792,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "limonene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.746665863467863,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.789352316200585,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "dms",
+          "threshold": 1.5,
+          "fold_change": 18.789137205513804,
+          "score": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "threshold": 1.3,
+          "fold_change": 11.937507852679792,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "dms",
+          "ammonia",
+          "limonene"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "methionine_transsulfuration",
+          "urea_cycle"
+        ],
+        "missing": [
+          "ketone_body_metabolism"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "cytochrome_p450_detox",
+          "fatty_acid_oxidation",
+          "glycolysis_warburg",
+          "methionine_transsulfuration",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Sulfur-metabolizing hepatocyte",
+          "Ketogenic hepatocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "acetone",
+        "dms",
+        "ethanol",
+        "acetaldehyde",
+        "methanol",
+        "hexanal",
+        "hydrogen_sulfide",
+        "pentane",
+        "isoprene",
+        "2_butanone",
+        "isopropanol",
+        "limonene",
+        "nonanal",
+        "phenol"
+      ]
+    },
+    {
+      "id": "major_depressive_disorder",
+      "name": "depression",
+      "grade": "B",
+      "location": "brain",
+      "resolved_disease_id": "major_depressive_disorder",
+      "evidence_basis": "MDD breath + ST003181 clinical comorbidity benchmarks",
+      "patient": {
+        "age": 24,
+        "sex": "male",
+        "tempo": "moderate",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.9454545454545454,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.9154040404040404
+      },
+      "composite_pct": 91.54,
+      "direction_detail": [
+        {
+          "voc_id": "indole",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3976858146162192,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.268430764167341,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.971410282213142,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4793127923776255,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "trimethylamine",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.0025096642453377,
+          "score": 0.4,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.758981371857097,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "indole",
+          "ammonia",
+          "pentane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "neurotransmitter_metabolism",
+          "neuroinflammation"
+        ],
+        "missing": [
+          "lipid_peroxidation"
+        ],
+        "present": [
+          "gut_microbiome_fermentation",
+          "neuroinflammation",
+          "neurotransmitter_metabolism",
+          "one_carbon_folate"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Neuron",
+          "Microglia"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "hexanal",
+        "methanol",
+        "propanol",
+        "nonanal",
+        "ethane",
+        "indole",
+        "ethanol",
+        "octanal",
+        "phenol",
+        "acetaldehyde",
+        "methyl_acetate"
+      ]
+    },
+    {
+      "id": "ovarian_cancer",
+      "name": "ovarian cancer",
+      "grade": "B",
+      "location": "ovary",
+      "resolved_disease_id": "ovarian_cancer",
+      "evidence_basis": "Ovarian cancer breath aldehyde panel literature",
+      "patient": {
+        "age": 57,
+        "sex": "female",
+        "tempo": "stage_III",
+        "comorbidities": [],
+        "genes": [
+          "TP53",
+          "BRCA1"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.9213686177532394,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5501198106627974,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "decanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4363082875154527,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3085855409955194,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.2,
+          "fold_change": 3.9213686177532394,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "nonanal",
+          "decanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "pi3k_akt_mtor"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Tumor",
+          "Oxidative"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "ovary"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "ovary",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "ethanol",
+        "ammonia",
+        "hexanal",
+        "isoprene",
+        "acetaldehyde",
+        "nonanal",
+        "methanol",
+        "decanal",
+        "heptanal",
+        "phenol",
+        "isopropanol",
+        "octanal",
+        "butane"
+      ]
+    },
+    {
+      "id": "pancreatic_adenocarcinoma",
+      "name": "pancreatic adenocarcinoma",
+      "grade": "B",
+      "location": "pancreas",
+      "resolved_disease_id": "pancreatic_adenocarcinoma",
+      "evidence_basis": "PAAD breath ketone/aldehyde literature",
+      "patient": {
+        "age": 66,
+        "sex": "male",
+        "tempo": "stage_III",
+        "comorbidities": [],
+        "genes": [
+          "KRAS",
+          "TP53",
+          "CDKN2A"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.9456521739130432
+      },
+      "composite_pct": 94.57,
+      "direction_detail": [
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 8.03713334324398,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.3865654968911114,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 9.108381581106373,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetaldehyde",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.5811797808061945,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "2_butanone",
+          "threshold": 1.3,
+          "fold_change": 8.03713334324398,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.2,
+          "fold_change": 9.108381581106373,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "2_butanone",
+          "acetone",
+          "hexanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "lipid_peroxidation",
+          "glycolysis_warburg"
+        ],
+        "missing": [
+          "ketone_body_metabolism"
+        ],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Tumor",
+          "Ketogenic"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Warburg-high tumor epithelial cell",
+          "tumor_epithelial_warburg",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe",
+          "Metabolically stressed neuron",
+          "neuron_stressed"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "pancreas",
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "pancreas",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "ammonia",
+        "acetaldehyde",
+        "hexanal",
+        "pentane",
+        "methanol",
+        "2_butanone",
+        "isoprene",
+        "nonanal",
+        "phenol",
+        "heptanal",
+        "octanal",
+        "butane",
+        "isopropanol"
+      ]
+    },
+    {
+      "id": "parkinson_disease",
+      "name": "Parkinson disease",
+      "grade": "B",
+      "location": "brain",
+      "resolved_disease_id": "parkinson_disease",
+      "evidence_basis": "PD breath oxidative VOC literature",
+      "patient": {
+        "age": 69,
+        "sex": "male",
+        "tempo": "mid_stage",
+        "comorbidities": [],
+        "genes": [
+          "SNCA",
+          "PRKN"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 17.459194477847667,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 9.698805815581295,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3985940016194098,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "pentane",
+          "threshold": 1.3,
+          "fold_change": 17.459194477847667,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.3,
+          "fold_change": 9.698805815581295,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "pentane",
+          "hexanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "brain_energy_metabolism"
+        ],
+        "missing": [],
+        "present": [
+          "brain_energy_metabolism",
+          "lipid_peroxidation",
+          "neuroinflammation",
+          "neurotransmitter_metabolism"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Metabolically stressed neuron",
+          "Activated microglia"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Activated microglia",
+          "microglia_activated",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "ammonia",
+        "isoprene",
+        "hexanal",
+        "nonanal",
+        "methanol",
+        "propanol",
+        "ethane",
+        "octanal",
+        "2_butanone",
+        "phenol",
+        "isopropanol",
+        "heptanal",
+        "acetaldehyde"
+      ]
+    },
+    {
+      "id": "pneumonia_bacterial",
+      "name": "Bacterial pneumonia (VAP/HAP/CAP)",
+      "grade": "B",
+      "location": "lung",
+      "resolved_disease_id": "pneumonia_bacterial",
+      "evidence_basis": "Priority-10 literature directional pneumonia breath panel",
+      "patient": {
+        "age": 71,
+        "sex": "female",
+        "tempo": "community_acquired",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.0,
+        "site": 1.0,
+        "composite": 0.8097826086956521
+      },
+      "composite_pct": 80.98,
+      "direction_detail": [
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5426943809880247,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5156067558322202,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 11.602988134946319,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.0612550759932695,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "dms",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4845700580786052,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 15.31306014368286,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 4.964158784672032,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "acetone",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.811565755266908,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7578609125050728,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "propanol",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7708590466532105,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7583636731260531,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "threshold": 1.381,
+          "fold_change": 2.0612550759932695,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "ethanol",
+          "ethylbenzene",
+          "hexanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "gut_microbiome_fermentation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [
+          "glycolysis_warburg",
+          "ketone_body_metabolism"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "alveolar macrophage",
+          "neutrophil",
+          "airway epithelium"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "pentane",
+        "acetone",
+        "ethanol",
+        "hexanal",
+        "isoprene",
+        "hydrogen_sulfide",
+        "dms",
+        "isopropanol",
+        "propanol",
+        "nonanal",
+        "phenol",
+        "methanol",
+        "heptanal",
+        "ethylbenzene"
+      ]
+    },
+    {
+      "id": "schizophrenia",
+      "name": "schizophrenia",
+      "grade": "B",
+      "location": "brain",
+      "resolved_disease_id": "schizophrenia",
+      "evidence_basis": "Magdeburg PTR-MS schizophrenia breath cohort",
+      "patient": {
+        "age": 18,
+        "sex": "male",
+        "tempo": "first_episode",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.71,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.85
+      },
+      "composite_pct": 85.0,
+      "direction_detail": [
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 7.725776637952625,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.387645667469123,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3175571946327664,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 1.2079895349883147,
+          "score": 0.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.8747066344389894,
+          "score": 0.55,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "pentane",
+          "ethane",
+          "ammonia"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "neuroinflammation",
+          "brain_energy_metabolism"
+        ],
+        "missing": [
+          "lipid_peroxidation"
+        ],
+        "present": [
+          "brain_energy_metabolism",
+          "neuroinflammation",
+          "neurotransmitter_metabolism",
+          "one_carbon_folate"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Neuron",
+          "Microglia"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Activated microglia",
+          "microglia_activated",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "hexanal",
+        "nonanal",
+        "propanol",
+        "ethane",
+        "methanol",
+        "octanal",
+        "formaldehyde",
+        "phenol",
+        "acetaldehyde",
+        "methyl_acetate",
+        "isopropanol"
+      ]
+    },
+    {
+      "id": "sleep_apnea",
+      "name": "Obstructive sleep apnea",
+      "grade": "B",
+      "location": "pharynx",
+      "resolved_disease_id": "sleep_apnea",
+      "evidence_basis": "Priority-10 literature OSA breath VOC panel",
+      "patient": {
+        "age": 55,
+        "sex": "male",
+        "tempo": "moderate_osa",
+        "comorbidities": [
+          "obesity"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.3333333333333333,
+        "site": 0.5,
+        "composite": 0.7407407407407407
+      },
+      "composite_pct": 74.07,
+      "direction_detail": [
+        {
+          "voc_id": "isoprene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4261465711696704,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.701010970689513,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "toluene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.510474786003557,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.5156067558322202,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.036057742410405,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 7.201013717101877,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.231079491119484,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 2.7431345075237954,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "methanol",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.1933157175390143,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "isoprene",
+          "acetone",
+          "toluene"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "brain_energy_metabolism",
+          "ketone_body_metabolism"
+        ],
+        "missing": [
+          "mevalonate_cholesterol",
+          "cytochrome_p450_detox"
+        ],
+        "present": [
+          "brain_energy_metabolism",
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism",
+          "lipid_peroxidation",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "endothelial cell"
+        ],
+        "missing": [
+          "pharyngeal myocyte",
+          "upper airway epithelium"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "pharynx"
+        ],
+        "missing": [
+          "lung"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "pharynx",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "methanol",
+        "ethanol",
+        "hexanal",
+        "isopropanol",
+        "2_butanone",
+        "toluene",
+        "nonanal",
+        "ethylbenzene",
+        "phenol",
+        "heptanal",
+        "decanal"
+      ]
+    },
+    {
+      "id": "tuberculosis",
+      "name": "Pulmonary tuberculosis",
+      "grade": "B",
+      "location": "lung",
+      "resolved_disease_id": "tuberculosis",
+      "evidence_basis": "Priority-10 literature TB breath VOC panel",
+      "patient": {
+        "age": 41,
+        "sex": "male",
+        "tempo": "pulmonary_active",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.0,
+        "site": 1.0,
+        "composite": 0.8611111111111112
+      },
+      "composite_pct": 86.11,
+      "direction_detail": [
+        {
+          "voc_id": "benzene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4772213951651882,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 9.853541194721272,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.6168341522690166,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3761162939645586,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 6.745938237454412,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "toluene",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.2720619667970139,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3315678601143843,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "dms",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3345378929503011,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "suppress",
+          "soft": false,
+          "fold_change": 0.7858375451731298,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "benzene",
+          "pentane",
+          "ethane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "infected alveolar macrophage",
+          "epithelioid macrophage",
+          "foamy macrophage"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "hexanal",
+        "isoprene",
+        "ammonia",
+        "dms",
+        "ethane",
+        "ethanol",
+        "methanol",
+        "nonanal",
+        "phenol",
+        "2_butanone",
+        "toluene",
+        "benzene",
+        "heptanal"
+      ]
+    },
+    {
+      "id": "type1_diabetes",
+      "name": "type 1 diabetes",
+      "grade": "B",
+      "location": "systemic",
+      "resolved_disease_id": "type1_diabetes",
+      "evidence_basis": "Ketotic breath acetone axis (stronger than T2D when uncontrolled)",
+      "patient": {
+        "age": 19,
+        "sex": "female",
+        "tempo": "ketotic",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.450912252559329,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.796011455613089,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4343023739921048,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_pentanone",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.3103209891749428,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "acetone",
+          "threshold": 2.0,
+          "fold_change": 3.450912252559329,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "missing": [],
+        "present": [
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Ketogenic hepatocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Activated microglia",
+          "microglia_activated",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "isopropanol",
+        "2_butanone",
+        "isoprene",
+        "methanol",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "pentane",
+        "methyl_acetate",
+        "octane",
+        "nonanal",
+        "acetonitrile",
+        "propanol"
+      ]
+    },
+    {
+      "id": "chronic_kidney_disease",
+      "name": "chronic kidney disease",
+      "grade": "C",
+      "location": "kidney",
+      "resolved_disease_id": "chronic_kidney_disease",
+      "evidence_basis": "CKD breath ammonia literature (zero-shot style)",
+      "patient": {
+        "age": 70,
+        "sex": "female",
+        "tempo": "stage_4",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.8641304347826086
+      },
+      "composite_pct": 86.41,
+      "direction_detail": [
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 9.434037521196451,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.317823571729744,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "dms",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4142685059631597,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "ammonia",
+          "threshold": 1.4,
+          "fold_change": 9.434037521196451,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "ammonia",
+          "acetone",
+          "dms"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "urea_cycle"
+        ],
+        "missing": [
+          "ketone_body_metabolism"
+        ],
+        "present": [
+          "one_carbon_folate",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Hepatocyte"
+        ],
+        "missing": [
+          "Kidney"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "kidney",
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "kidney",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "acetone",
+        "isopropanol",
+        "pentane",
+        "dms",
+        "hexanal",
+        "isoprene",
+        "dimethyl_amine",
+        "2_butanone",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "methyl_acetate",
+        "octane",
+        "nonanal"
+      ]
+    },
+    {
+      "id": "chronic_liver_disease",
+      "name": "cirrhosis",
+      "grade": "C",
+      "location": "liver",
+      "resolved_disease_id": "chronic_liver_disease",
+      "evidence_basis": "Zero-shot cirrhosis sulfur/ammonia/limonene literature",
+      "patient": {
+        "age": 58,
+        "sex": "male",
+        "tempo": "decompensated",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "dms",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 10.105695153441978,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 11.231430992255584,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "limonene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.9608121563978815,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "dms",
+          "threshold": 1.5,
+          "fold_change": 10.105695153441978,
+          "score": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "threshold": 1.4,
+          "fold_change": 11.231430992255584,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "dms",
+          "ammonia",
+          "limonene"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "methionine_transsulfuration",
+          "urea_cycle"
+        ],
+        "missing": [],
+        "present": [
+          "cytochrome_p450_detox",
+          "methionine_transsulfuration",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Sulfur-metabolizing hepatocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "dms",
+        "acetone",
+        "hydrogen_sulfide",
+        "isopropanol",
+        "limonene",
+        "isoprene",
+        "methanol",
+        "2_butanone",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "pentane",
+        "methyl_acetate",
+        "octane"
+      ]
+    },
+    {
+      "id": "creutzfeldt_jakob",
+      "name": "Creutzfeldt-Jakob disease",
+      "grade": "C",
+      "location": "brain",
+      "resolved_disease_id": "creutzfeldt_jakob",
+      "evidence_basis": "CJD clinical oxidative tempo profile (no large breath gold standard)",
+      "patient": {
+        "age": 62,
+        "sex": "female",
+        "tempo": "early_clinical",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 26.29886464801271,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 28.235294117647058,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "nonanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.921672503631536,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "heptanal",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.5595880940282647,
+          "score": 1.0,
+          "weight": 0.5
+        },
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.7563590747491744,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hexanal",
+          "threshold": 1.25,
+          "fold_change": 26.29886464801271,
+          "score": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "threshold": 1.2,
+          "fold_change": 28.235294117647058,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "nonanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "neuroinflammation",
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "brain_energy_metabolism"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "brain_energy_metabolism",
+          "lipid_peroxidation",
+          "methionine_transsulfuration",
+          "neuroinflammation",
+          "neurotransmitter_metabolism"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Activated microglia",
+          "Metabolically stressed neuron"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Activated microglia",
+          "microglia_activated",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "pentane",
+        "acetone",
+        "hexanal",
+        "ammonia",
+        "isoprene",
+        "nonanal",
+        "acetaldehyde",
+        "ethane",
+        "heptanal",
+        "propanol",
+        "hydrogen_sulfide",
+        "methanol",
+        "octanal",
+        "decanal",
+        "butane"
+      ]
+    },
+    {
+      "id": "gut_dysbiosis",
+      "name": "gut dysbiosis",
+      "grade": "C",
+      "location": "gut",
+      "resolved_disease_id": "gut_dysbiosis",
+      "evidence_basis": "Dysbiosis putrefaction VOC literature",
+      "patient": {
+        "age": 42,
+        "sex": "male",
+        "tempo": "chronic",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.8913043478260868
+      },
+      "composite_pct": 89.13,
+      "direction_detail": [
+        {
+          "voc_id": "indole",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 22.896537811528436,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "phenol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.3375044139410113,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 22.16449043349717,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 16.21822311968677,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "indole",
+          "threshold": 1.5,
+          "fold_change": 22.896537811528436,
+          "score": 1.0
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "threshold": 1.4,
+          "fold_change": 22.16449043349717,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "indole",
+          "phenol",
+          "hydrogen_sulfide"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "microbial_proteolysis_putrefaction",
+          "gut_microbiome_fermentation"
+        ],
+        "missing": [
+          "urea_cycle"
+        ],
+        "present": [
+          "gut_microbiome_fermentation",
+          "methionine_transsulfuration",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Gut"
+        ],
+        "missing": [
+          "Microbiome"
+        ],
+        "observed_top": [
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "gut"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "ethanol",
+        "hydrogen_sulfide",
+        "indole",
+        "methanol",
+        "acetone",
+        "acetaldehyde",
+        "dms",
+        "phenol",
+        "propanol",
+        "isoprene",
+        "dimethyl_amine",
+        "trimethylamine",
+        "ethyl_acetate",
+        "dimethyl_disulfide"
+      ]
+    },
+    {
+      "id": "inflammatory_bowel_disease",
+      "name": "inflammatory bowel disease",
+      "grade": "C",
+      "location": "gut",
+      "resolved_disease_id": "inflammatory_bowel_disease",
+      "evidence_basis": "IBD breath H2S/pentane literature",
+      "patient": {
+        "age": 36,
+        "sex": "female",
+        "tempo": "active_flare",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 0.0,
+        "site": 0.5,
+        "composite": 0.7880434782608695
+      },
+      "composite_pct": 78.8,
+      "direction_detail": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.959408489963347,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.9995749309608044,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 3.465207888209528,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "threshold": 1.5,
+          "fold_change": 4.959408489963347,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hydrogen_sulfide",
+          "pentane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "neuroinflammation"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "Colonocyte",
+          "Neutrophil",
+          "Microbiome"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "gut"
+        ],
+        "missing": [
+          "colon"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "ethanol",
+        "isoprene",
+        "hydrogen_sulfide",
+        "pentane",
+        "acetone",
+        "hexanal",
+        "acetaldehyde",
+        "methanol",
+        "indole",
+        "propanol",
+        "phenol",
+        "ethyl_acetate",
+        "trimethylamine",
+        "dimethyl_amine"
+      ]
+    },
+    {
+      "id": "sibo",
+      "name": "SIBO",
+      "grade": "C",
+      "location": "small_intestine",
+      "resolved_disease_id": "sibo",
+      "evidence_basis": "SIBO fermentation VOC literature",
+      "patient": {
+        "age": 45,
+        "sex": "female",
+        "tempo": "symptomatic",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": 1.0,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.9456521739130432
+      },
+      "composite_pct": 94.57,
+      "direction_detail": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 33.85921752313573,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 18.035903862922677,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "indole",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 21.540049704053892,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "threshold": 1.8,
+          "fold_change": 33.85921752313573,
+          "score": 1.0
+        },
+        {
+          "voc_id": "ethanol",
+          "threshold": 1.4,
+          "fold_change": 18.035903862922677,
+          "score": 1.0
+        }
+      ],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hydrogen_sulfide",
+          "ethanol",
+          "indole"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "gut_microbiome_fermentation",
+          "microbial_proteolysis_putrefaction"
+        ],
+        "missing": [],
+        "present": [
+          "gut_microbiome_fermentation",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Gut"
+        ],
+        "missing": [
+          "Microbiome"
+        ],
+        "observed_top": [
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "small_intestine",
+          "gut"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "small intestine",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "ammonia",
+        "hydrogen_sulfide",
+        "methanol",
+        "indole",
+        "acetaldehyde",
+        "acetone",
+        "propanol",
+        "phenol",
+        "isoprene",
+        "ethyl_acetate",
+        "trimethylamine",
+        "dimethyl_amine",
+        "dms",
+        "pentane"
+      ]
+    },
+    {
+      "id": "autism_spectrum_disorder",
+      "name": "autism spectrum disorder",
+      "grade": "D",
+      "location": "brain",
+      "resolved_disease_id": "autism_spectrum_disorder",
+      "evidence_basis": "Atlas prior\u2013aligned neuro/gut VOC direction (approximate GT)",
+      "patient": {
+        "age": 12,
+        "sex": "male",
+        "tempo": "school_age",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "indole",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.3529886004617095,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.609188279356863,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4740068949997291,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "indole",
+          "pentane",
+          "hexanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "neurotransmitter_metabolism",
+          "gut_microbiome_fermentation",
+          "neuroinflammation"
+        ],
+        "missing": [],
+        "present": [
+          "gut_microbiome_fermentation",
+          "microbial_proteolysis_putrefaction",
+          "neuroinflammation",
+          "neurotransmitter_metabolism"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Neuron",
+          "Gut"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain",
+          "gut"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "acetone",
+        "pentane",
+        "isoprene",
+        "hydrogen_sulfide",
+        "ethanol",
+        "methanol",
+        "indole",
+        "hexanal",
+        "phenol",
+        "propanol",
+        "nonanal",
+        "ethane",
+        "octanal",
+        "acetaldehyde"
+      ]
+    },
+    {
+      "id": "endometriosis",
+      "name": "endometriosis",
+      "grade": "D",
+      "location": "pelvis",
+      "resolved_disease_id": "endometriosis",
+      "evidence_basis": "Atlas prior\u2013aligned inflammatory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 33,
+        "sex": "female",
+        "tempo": "moderate",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.5,
+        "site": 0.5,
+        "composite": 0.7638888888888888
+      },
+      "composite_pct": 76.39,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3771026190141542,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.202061104083849,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.1857864928604713,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "apoptosis_necrosis"
+        ],
+        "present": [
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Oxidative"
+        ],
+        "missing": [
+          "Immune"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "pelvis"
+        ],
+        "missing": [
+          "ovary"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "pelvis",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "methanol",
+        "hexanal",
+        "phenol",
+        "isopropanol",
+        "methyl_acetate",
+        "ethanol",
+        "2_pentanone",
+        "propanol",
+        "nonanal",
+        "octane",
+        "octanal"
+      ]
+    },
+    {
+      "id": "epilepsy",
+      "name": "epilepsy",
+      "grade": "D",
+      "location": "brain",
+      "resolved_disease_id": "epilepsy",
+      "evidence_basis": "Atlas prior\u2013aligned brain energy / oxidative panel (approximate GT)",
+      "patient": {
+        "age": 31,
+        "sex": "male",
+        "tempo": "drug_resistant",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 0.9305555555555556
+      },
+      "composite_pct": 93.06,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.493786196741011,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.7965478692356442,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.027633332675686,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "hexanal",
+          "pentane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "brain_energy_metabolism",
+          "neuroinflammation"
+        ],
+        "missing": [
+          "lipid_peroxidation"
+        ],
+        "present": [
+          "brain_energy_metabolism",
+          "neuroinflammation",
+          "neurotransmitter_metabolism"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Metabolically stressed neuron"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Activated microglia",
+          "microglia_activated",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "isoprene",
+        "ammonia",
+        "hexanal",
+        "propanol",
+        "nonanal",
+        "methanol",
+        "ethane",
+        "octanal",
+        "phenol",
+        "isopropanol",
+        "methyl_acetate",
+        "2_pentanone",
+        "octane"
+      ]
+    },
+    {
+      "id": "esophageal_cancer",
+      "name": "esophageal cancer",
+      "grade": "D",
+      "location": "esophagus",
+      "resolved_disease_id": "esophageal_cancer",
+      "evidence_basis": "Atlas prior\u2013aligned GI tumor aldehyde panel (approximate GT)",
+      "patient": {
+        "age": 64,
+        "sex": "male",
+        "tempo": "stage_III",
+        "smoking_status": "former",
+        "comorbidities": [],
+        "genes": [
+          "TP53"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 0.6666666666666666,
+        "pathway": 1.0,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.8472222222222223
+      },
+      "composite_pct": 84.72,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.2892804959749697,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.226739100086655,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4947788298681308,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 0.6666666666666666,
+        "in_top": [
+          "hexanal",
+          "acetone"
+        ],
+        "missing": [
+          "2_butanone"
+        ]
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg"
+        ],
+        "missing": [],
+        "present": [
+          "Kras_mapk_proliferation",
+          "apoptosis_necrosis",
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Tumor"
+        ],
+        "missing": [
+          "Epithelium"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "esophagus"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "esophagus",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ethanol",
+        "acetone",
+        "pentane",
+        "ammonia",
+        "hexanal",
+        "isoprene",
+        "acetaldehyde",
+        "nonanal",
+        "methanol",
+        "heptanal",
+        "octanal",
+        "phenol",
+        "butane",
+        "isopropanol",
+        "propionaldehyde"
+      ]
+    },
+    {
+      "id": "heart_disease",
+      "name": "heart disease",
+      "grade": "D",
+      "location": "heart",
+      "resolved_disease_id": "heart_disease",
+      "evidence_basis": "Atlas prior\u2013aligned cardiac ischemia / ketone axis (approximate GT)",
+      "patient": {
+        "age": 65,
+        "sex": "male",
+        "tempo": "CAD",
+        "comorbidities": [
+          "hypertension"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 0.0,
+        "site": 1.0,
+        "composite": 0.7916666666666666
+      },
+      "composite_pct": 79.17,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.337637532838629,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.1389542304532085,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.9876785593067083,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "pentane",
+          "hexanal"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "lipid_peroxidation",
+          "fatty_acid_oxidation"
+        ],
+        "missing": [
+          "ketone_body_metabolism"
+        ],
+        "present": [
+          "fatty_acid_oxidation",
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "Cardiomyocyte",
+          "Endothelial"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "heart"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "heart",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "isoprene",
+        "pentane",
+        "hexanal",
+        "ammonia",
+        "dimethyl_amine",
+        "trimethylamine",
+        "methanol",
+        "isopropanol",
+        "2_pentanone",
+        "nonanal",
+        "phenol",
+        "heptanal",
+        "methyl_acetate",
+        "decanal"
+      ]
+    },
+    {
+      "id": "helicobacter_pylori_infection",
+      "name": "Helicobacter pylori infection",
+      "grade": "D",
+      "location": "stomach",
+      "resolved_disease_id": "helicobacter_pylori_infection",
+      "evidence_basis": "Atlas prior\u2013aligned gastric microbiome VOC direction (approximate GT)",
+      "patient": {
+        "age": 47,
+        "sex": "female",
+        "tempo": "chronic_gastritis",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.9305555555555556
+      },
+      "composite_pct": 93.06,
+      "direction_detail": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.521567359416553,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 13.30673827609263,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2343587526355566,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hydrogen_sulfide",
+          "ammonia",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "gut_microbiome_fermentation",
+          "urea_cycle"
+        ],
+        "missing": [],
+        "present": [
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Gastric"
+        ],
+        "missing": [
+          "Epithelium"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Gastric urease-positive niche (H. pylori)",
+          "gastric_urease_niche"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "stomach",
+          "gut"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "acetone",
+        "ethanol",
+        "hydrogen_sulfide",
+        "propanol",
+        "phenol",
+        "isoprene",
+        "indole",
+        "methanol",
+        "trimethylamine",
+        "dimethyl_amine",
+        "ethyl_acetate",
+        "pentane",
+        "nonanal",
+        "methyl_acetate"
+      ]
+    },
+    {
+      "id": "hiv",
+      "name": "HIV",
+      "grade": "D",
+      "location": "systemic",
+      "resolved_disease_id": "hiv",
+      "evidence_basis": "Atlas prior\u2013aligned chronic infection VOC direction (approximate GT)",
+      "patient": {
+        "age": 44,
+        "sex": "male",
+        "tempo": "untreated",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.85,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.0,
+        "site": 0.5,
+        "composite": 0.7569444444444444
+      },
+      "composite_pct": 75.69,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.9560516479277994,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.0514415843804181,
+          "score": 0.55,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2393227191556635,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "cytochrome_p450_detox",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "Immune",
+          "Macrophage"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "systemic"
+        ],
+        "missing": [
+          "lung"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "hexanal",
+        "isoprene",
+        "methanol",
+        "acetonitrile",
+        "pentane",
+        "phenol",
+        "isopropanol",
+        "nonanal",
+        "methyl_acetate",
+        "heptanal",
+        "2_pentanone",
+        "octane",
+        "propanol"
+      ]
+    },
+    {
+      "id": "hypertension",
+      "name": "hypertension",
+      "grade": "D",
+      "location": "systemic",
+      "resolved_disease_id": "hypertension",
+      "evidence_basis": "Atlas prior\u2013aligned vascular oxidative panel (approximate GT)",
+      "patient": {
+        "age": 60,
+        "sex": "female",
+        "tempo": "uncontrolled",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.5,
+        "site": 0.5,
+        "composite": 0.7638888888888888
+      },
+      "composite_pct": 76.39,
+      "direction_detail": [
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.725730798603922,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.175632335199179,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2062238598445638,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "pentane",
+          "hexanal",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "cytochrome_p450_detox"
+        ],
+        "present": [
+          "fatty_acid_oxidation",
+          "lipid_peroxidation",
+          "mevalonate_cholesterol"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Oxidative"
+        ],
+        "missing": [
+          "Endothelial"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "systemic"
+        ],
+        "missing": [
+          "heart"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "pentane",
+        "isoprene",
+        "ammonia",
+        "hexanal",
+        "methanol",
+        "isopropanol",
+        "nonanal",
+        "phenol",
+        "methyl_acetate",
+        "heptanal",
+        "2_pentanone",
+        "octane",
+        "propanol",
+        "decanal"
+      ]
+    },
+    {
+      "id": "influenza",
+      "name": "influenza",
+      "grade": "D",
+      "location": "lung",
+      "resolved_disease_id": "influenza",
+      "evidence_basis": "Atlas prior\u2013aligned viral respiratory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 39,
+        "sex": "female",
+        "tempo": "acute",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.85,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.0,
+        "site": 1.0,
+        "composite": 0.8194444444444444
+      },
+      "composite_pct": 81.94,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.0825761896569577,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.0550387702613344,
+          "score": 0.55,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2393227191556635,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "cytochrome_p450_detox",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.0,
+        "hits": [],
+        "missing": [
+          "Airway",
+          "Alveolar"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic",
+          "Fermentative gut microbial community",
+          "gut_fermentative_microbe"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "lung"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "lung",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "hexanal",
+        "isoprene",
+        "methanol",
+        "pentane",
+        "acetonitrile",
+        "nonanal",
+        "phenol",
+        "isopropanol",
+        "methyl_acetate",
+        "heptanal",
+        "2_pentanone",
+        "octane",
+        "propanol"
+      ]
+    },
+    {
+      "id": "multiple_sclerosis",
+      "name": "multiple sclerosis",
+      "grade": "D",
+      "location": "brain",
+      "resolved_disease_id": "multiple_sclerosis",
+      "evidence_basis": "Atlas prior\u2013aligned neuroinflammatory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 38,
+        "sex": "female",
+        "tempo": "relapsing",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.5,
+        "site": 1.0,
+        "composite": 0.9305555555555556
+      },
+      "composite_pct": 93.06,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 17.281475611294834,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 25.03888888301666,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2059501397031058,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "neuroinflammation",
+          "lipid_peroxidation",
+          "brain_energy_metabolism"
+        ],
+        "missing": [],
+        "present": [
+          "brain_energy_metabolism",
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Activated microglia"
+        ],
+        "missing": [
+          "Oligodendrocyte"
+        ],
+        "observed_top": [
+          "Activated microglia",
+          "microglia_activated",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "pentane",
+        "acetone",
+        "hexanal",
+        "isoprene",
+        "ammonia",
+        "nonanal",
+        "propanol",
+        "methanol",
+        "ethane",
+        "octanal",
+        "decanal",
+        "heptanal",
+        "octane",
+        "isopropanol",
+        "hexane"
+      ]
+    },
+    {
+      "id": "nafld",
+      "name": "NAFLD",
+      "grade": "D",
+      "location": "liver",
+      "resolved_disease_id": "nafld",
+      "evidence_basis": "Atlas prior\u2013aligned hepatic ketone/ammonia axis (approximate GT)",
+      "patient": {
+        "age": 51,
+        "sex": "male",
+        "tempo": "NASH_suspect",
+        "comorbidities": [
+          "obesity"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.30988950299422,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 6.241975088816493,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.258179012814565,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "2_butanone",
+          "ammonia"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation",
+          "urea_cycle"
+        ],
+        "missing": [],
+        "present": [
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Ketogenic hepatocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "isopropanol",
+        "2_butanone",
+        "isoprene",
+        "methanol",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "pentane",
+        "methyl_acetate",
+        "octane",
+        "nonanal",
+        "acetonitrile",
+        "propanol"
+      ]
+    },
+    {
+      "id": "obesity",
+      "name": "obesity",
+      "grade": "D",
+      "location": "systemic",
+      "resolved_disease_id": "obesity",
+      "evidence_basis": "Atlas prior\u2013aligned metabolic ketone axis (approximate GT)",
+      "patient": {
+        "age": 48,
+        "sex": "female",
+        "tempo": "class_II",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.450912252559329,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.796011455613089,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.4343023739921048,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 3.2658340812358473,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "missing": [],
+        "present": [
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Lipolytic adipocyte",
+          "Ketogenic hepatocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "adipose",
+          "liver"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "isopropanol",
+        "2_butanone",
+        "isoprene",
+        "methanol",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "pentane",
+        "methyl_acetate",
+        "octane",
+        "nonanal",
+        "acetonitrile",
+        "propanol"
+      ]
+    },
+    {
+      "id": "pcos",
+      "name": "PCOS",
+      "grade": "D",
+      "location": "systemic",
+      "resolved_disease_id": "pcos",
+      "evidence_basis": "Atlas prior\u2013aligned metabolic ketone axis (approximate GT)",
+      "patient": {
+        "age": 29,
+        "sex": "female",
+        "tempo": "insulin_resistant",
+        "comorbidities": [
+          "obesity"
+        ]
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 0.6666666666666666,
+        "composite": 0.9583333333333333
+      },
+      "composite_pct": 95.83,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.004102590313878,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "2_butanone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.691538895101362,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isopropanol",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.2438798227353658,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "2_butanone",
+          "isopropanol"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "missing": [],
+        "present": [
+          "fatty_acid_oxidation",
+          "glycolysis_warburg",
+          "ketone_body_metabolism",
+          "lipid_peroxidation",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Lipolytic adipocyte",
+          "Ketogenic hepatocyte"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "adipose",
+          "liver"
+        ],
+        "missing": [
+          "ovary"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isopropanol",
+        "isoprene",
+        "2_butanone",
+        "methanol",
+        "hexanal",
+        "phenol",
+        "methyl_acetate",
+        "ethanol",
+        "propanol",
+        "nonanal",
+        "octane",
+        "2_pentanone"
+      ]
+    },
+    {
+      "id": "rheumatoid_arthritis",
+      "name": "rheumatoid arthritis",
+      "grade": "D",
+      "location": "joint",
+      "resolved_disease_id": "rheumatoid_arthritis",
+      "evidence_basis": "Atlas prior\u2013aligned inflammatory oxidative panel (approximate GT)",
+      "patient": {
+        "age": 56,
+        "sex": "female",
+        "tempo": "active",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.75,
+        "fold": null,
+        "topk": 0.6666666666666666,
+        "pathway": 0.6666666666666666,
+        "cell": 0.3333333333333333,
+        "site": 0.5,
+        "composite": 0.6226851851851852
+      },
+      "composite_pct": 62.27,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.9173894281820503,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 6.102413515410308,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ethane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.0331354030325437,
+          "score": 0.25,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 0.6666666666666666,
+        "in_top": [
+          "hexanal",
+          "pentane"
+        ],
+        "missing": [
+          "ethane"
+        ]
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [
+          "neuroinflammation"
+        ],
+        "present": [
+          "apoptosis_necrosis",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "Oxidative"
+        ],
+        "missing": [
+          "Macrophage",
+          "Synovial"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "joint"
+        ],
+        "missing": [
+          "systemic"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "joint",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "pentane",
+        "acetone",
+        "hexanal",
+        "ammonia",
+        "hydrogen_sulfide",
+        "isoprene",
+        "ethanol",
+        "methanol",
+        "octanal",
+        "3_methylbutanal",
+        "nonanal",
+        "phenol",
+        "isopropanol",
+        "heptanal",
+        "methyl_acetate"
+      ]
+    },
+    {
+      "id": "sepsis",
+      "name": "sepsis",
+      "grade": "D",
+      "location": "systemic",
+      "resolved_disease_id": "sepsis",
+      "evidence_basis": "Atlas prior\u2013aligned oxidative/inflammatory VOC direction (approximate GT)",
+      "patient": {
+        "age": 72,
+        "sex": "male",
+        "tempo": "ICU",
+        "comorbidities": [
+          "pneumonia_bacterial"
+        ]
+      },
+      "scores": {
+        "direction": 0.8714285714285713,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 0.3333333333333333,
+        "site": 0.5,
+        "composite": 0.8091931216931216
+      },
+      "composite_pct": 80.92,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 5.786306711900849,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "ammonia",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 4.518443613046333,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.058274221456124,
+          "score": 0.55,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetonitrile",
+          "want": "elevate",
+          "soft": true,
+          "fold_change": 1.4547905121714053,
+          "score": 1.0,
+          "weight": 0.5
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "ammonia",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "cytochrome_p450_detox",
+          "gut_microbiome_fermentation",
+          "lipid_peroxidation",
+          "microbial_proteolysis_putrefaction"
+        ]
+      },
+      "cell": {
+        "score": 0.3333333333333333,
+        "hits": [
+          "Oxidative"
+        ],
+        "missing": [
+          "Neutrophil",
+          "Macrophage"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Putrefactive / proteolytic gut microbes",
+          "gut_putrefactive_microbe",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "liver"
+        ],
+        "missing": [
+          "lung"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "ammonia",
+        "pentane",
+        "ethanol",
+        "acetone",
+        "hexanal",
+        "isoprene",
+        "isopropanol",
+        "dms",
+        "hydrogen_sulfide",
+        "propanol",
+        "acetonitrile",
+        "phenol",
+        "nonanal",
+        "ethylbenzene",
+        "heptanal"
+      ]
+    },
+    {
+      "id": "sickle_cell",
+      "name": "sickle cell disease",
+      "grade": "D",
+      "location": "systemic",
+      "resolved_disease_id": "sickle_cell",
+      "evidence_basis": "Atlas prior\u2013aligned hemolytic / oxidative panel (approximate GT)",
+      "patient": {
+        "age": 27,
+        "sex": "male",
+        "tempo": "steady_state",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.5,
+        "cell": 0.5,
+        "site": 0.5,
+        "composite": 0.7638888888888888
+      },
+      "composite_pct": 76.39,
+      "direction_detail": [
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 2.202061104083849,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3771026190141542,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.1857864928604713,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "pentane",
+          "hexanal",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.5,
+        "hits": [
+          "lipid_peroxidation"
+        ],
+        "missing": [
+          "apoptosis_necrosis"
+        ],
+        "present": [
+          "glycolysis_warburg",
+          "lipid_peroxidation"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Oxidative"
+        ],
+        "missing": [
+          "Erythrocyte"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "systemic"
+        ],
+        "missing": [
+          "blood"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "systemic",
+          "systemic whole body",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "pentane",
+        "isoprene",
+        "methanol",
+        "hexanal",
+        "phenol",
+        "isopropanol",
+        "methyl_acetate",
+        "ethanol",
+        "2_pentanone",
+        "propanol",
+        "nonanal",
+        "octane",
+        "octanal"
+      ]
+    },
+    {
+      "id": "thyroid",
+      "name": "thyroid disease",
+      "grade": "D",
+      "location": "thyroid",
+      "resolved_disease_id": "thyroid",
+      "evidence_basis": "Atlas prior\u2013aligned thyroid metabolic VOC direction (approximate GT)",
+      "patient": {
+        "age": 46,
+        "sex": "female",
+        "tempo": "hyperthyroid",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 0.4166666666666667,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 0.6666666666666666,
+        "cell": 0.5,
+        "site": 0.5,
+        "composite": 0.6365740740740741
+      },
+      "composite_pct": 63.66,
+      "direction_detail": [
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 3.450912252559329,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "isoprene",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 0.9862863018293451,
+          "score": 0.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.0300190128746463,
+          "score": 0.25,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "acetone",
+          "isoprene",
+          "pentane"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 0.6666666666666666,
+        "hits": [
+          "ketone_body_metabolism",
+          "fatty_acid_oxidation"
+        ],
+        "missing": [
+          "mevalonate_cholesterol"
+        ],
+        "present": [
+          "fatty_acid_oxidation",
+          "ketone_body_metabolism",
+          "urea_cycle"
+        ]
+      },
+      "cell": {
+        "score": 0.5,
+        "hits": [
+          "Hepatocyte"
+        ],
+        "missing": [
+          "Thyroid"
+        ],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur",
+          "Lipolytic adipocyte",
+          "adipocyte_lipolytic"
+        ]
+      },
+      "site": {
+        "score": 0.5,
+        "hits": [
+          "thyroid"
+        ],
+        "missing": [
+          "systemic"
+        ],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "thyroid",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "acetone",
+        "ammonia",
+        "isopropanol",
+        "2_butanone",
+        "isoprene",
+        "methanol",
+        "2_pentanone",
+        "trimethylamine",
+        "phenol",
+        "pentane",
+        "methyl_acetate",
+        "octane",
+        "nonanal",
+        "acetonitrile",
+        "propanol"
+      ]
+    },
+    {
+      "id": "traumatic_brain_injury",
+      "name": "traumatic brain injury",
+      "grade": "D",
+      "location": "brain",
+      "resolved_disease_id": "traumatic_brain_injury",
+      "evidence_basis": "Atlas prior\u2013aligned acute brain oxidative panel (approximate GT)",
+      "patient": {
+        "age": 35,
+        "sex": "male",
+        "tempo": "acute",
+        "comorbidities": []
+      },
+      "scores": {
+        "direction": 1.0,
+        "fold": null,
+        "topk": 1.0,
+        "pathway": 1.0,
+        "cell": 1.0,
+        "site": 1.0,
+        "composite": 1.0
+      },
+      "composite_pct": 100.0,
+      "direction_detail": [
+        {
+          "voc_id": "hexanal",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 28.57142857142857,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "pentane",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 28.235294117647058,
+          "score": 1.0,
+          "weight": 1.0
+        },
+        {
+          "voc_id": "acetone",
+          "want": "elevate",
+          "soft": false,
+          "fold_change": 1.3353456451685954,
+          "score": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "fold_detail": [],
+      "topk": {
+        "score": 1.0,
+        "in_top": [
+          "hexanal",
+          "pentane",
+          "acetone"
+        ],
+        "missing": []
+      },
+      "pathway": {
+        "score": 1.0,
+        "hits": [
+          "lipid_peroxidation",
+          "apoptosis_necrosis",
+          "brain_energy_metabolism"
+        ],
+        "missing": [],
+        "present": [
+          "apoptosis_necrosis",
+          "brain_energy_metabolism",
+          "lipid_peroxidation",
+          "neuroinflammation"
+        ]
+      },
+      "cell": {
+        "score": 1.0,
+        "hits": [
+          "Metabolically stressed neuron",
+          "Activated microglia"
+        ],
+        "missing": [],
+        "observed_top": [
+          "Oxidative-stress / lipid-peroxidizing cell",
+          "oxidative_stress_cell",
+          "Activated microglia",
+          "microglia_activated",
+          "Metabolically stressed neuron",
+          "neuron_stressed",
+          "Ketogenic hepatocyte",
+          "hepatocyte_ketogenic",
+          "Sulfur-metabolizing hepatocyte",
+          "hepatocyte_sulfur"
+        ]
+      },
+      "site": {
+        "score": 1.0,
+        "hits": [
+          "brain"
+        ],
+        "missing": [],
+        "observed": [
+          "adipose",
+          "brain",
+          "gut",
+          "liver",
+          "multi",
+          "stomach",
+          "tumor"
+        ]
+      },
+      "predicted_top": [
+        "pentane",
+        "acetone",
+        "hexanal",
+        "isoprene",
+        "ammonia",
+        "nonanal",
+        "ethane",
+        "propanol",
+        "methanol",
+        "octanal",
+        "heptanal",
+        "decanal",
+        "butane",
+        "hexane",
+        "propionaldehyde"
+      ]
+    }
+  ]
+}

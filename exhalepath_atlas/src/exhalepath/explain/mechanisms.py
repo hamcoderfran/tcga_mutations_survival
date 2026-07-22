@@ -107,8 +107,13 @@ class MechanismExplainer:
         if sub.empty:
             return []
         labels: list[str] = []
-        for raw in sub["census_diseases"].astype(str):
-            for part in raw.split("|"):
+        for raw in sub["census_diseases"].tolist():
+            if raw is None or (isinstance(raw, float) and pd.isna(raw)) or pd.isna(raw):
+                continue
+            text = str(raw).strip()
+            if not text or text.lower() in {"nan", "none"}:
+                continue
+            for part in text.split("|"):
                 p = part.strip()
                 if not p or p.lower() == "nan":
                     continue

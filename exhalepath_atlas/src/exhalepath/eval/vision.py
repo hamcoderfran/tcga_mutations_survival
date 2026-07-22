@@ -295,6 +295,8 @@ def evaluate_vision(
     for prof in profiles:
         patient = dict(prof.get("patient") or {})
         gt = dict(prof.get("ground_truth") or {})
+        genes = list(patient.get("genes") or []) or None
+        comorbidities = list(patient.get("comorbidities") or []) or None
         report = engine.predict(
             prof.get("query_name") or prof.get("name") or prof["id"],
             location=prof.get("location"),
@@ -303,8 +305,8 @@ def evaluate_vision(
             sex=patient.get("sex"),
             age_years=patient.get("age"),
             smoking_status=patient.get("smoking_status"),
-            genes=list(patient.get("genes") or []),
-            comorbidities=list(patient.get("comorbidities") or []),
+            genes=genes,
+            comorbidities=comorbidities,
             explain=True,
         )
         ranked = [p.voc_id for p in report.top_vocs]
