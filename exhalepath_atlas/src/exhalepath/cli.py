@@ -581,6 +581,27 @@ def eval_vision_cmd(
     rprint(f"  json: {out_dir / 'vision_eval.json'}")
 
 
+@app.command("eval-stress-hard")
+def eval_stress_hard_cmd(
+    out_dir: Path = typer.Option(Path("runs/stress_hard")),
+    profiles: Optional[Path] = typer.Option(
+        None, help="Override path to stress_hard_50.json"
+    ),
+):
+    """Adversarial 50-case stress suite — empty inputs, gene traps, alias collisions, SZ suppress."""
+    from .eval.stress_hard import evaluate_stress_hard
+
+    report = evaluate_stress_hard(out_dir=out_dir, profiles_path=profiles)
+    o = report["overall"]
+    rprint("[bold]Stress-hard evaluation (50 adversarial cases)[/bold]")
+    rprint(f"  pass rate: [green]{o['pass_pct']}%[/green] ({o['n_passed']}/{o['n_cases']})")
+    for cat, row in (o.get("by_category") or {}).items():
+        rprint(f"  {cat}: {row['passed']}/{row['n']} ({100*row['pass_rate']:.0f}%)")
+    if o.get("failed_ids"):
+        rprint(f"  failed: {', '.join(o['failed_ids'][:12])}{'…' if len(o['failed_ids'])>12 else ''}")
+    rprint(f"  report: {out_dir / 'STRESS_HARD.md'}")
+
+
 def _fmt_pct(v) -> str:
     if v is None:
         return "—"
@@ -1197,6 +1218,7 @@ def main(argv: Optional[list[str]] = None):
         "harvest-clinical-comorbidity",
         "eval-comorbidity-clinical",
         "eval-vision",
+        "eval-stress-hard",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

@@ -1,0 +1,945 @@
+{
+  "version": "1.0.0",
+  "description": "50 adversarial / difficult stress cases designed to break ExhalePath: empty inputs, gene-as-disease traps, alias collisions, bogus locations, comorbidity extremes, Magdeburg SZ suppressions, and zero-shot near-healthy.",
+  "n_cases": 50,
+  "category_counts": {
+    "robustness": 7,
+    "gene_trap": 4,
+    "alias": 6,
+    "location": 5,
+    "clinical_hard": 9,
+    "zero_shot": 4,
+    "conflict": 9,
+    "metastatic": 6
+  },
+  "cases": [
+    {
+      "id": "empty_disease",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "",
+        "location": "lung"
+      },
+      "expect": {
+        "no_exception": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.4,
+        "unresolved": true
+      },
+      "notes": "Empty disease must not crash; stay near-healthy custom::"
+    },
+    {
+      "id": "whitespace_disease",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "   ",
+        "location": "brain"
+      },
+      "expect": {
+        "no_exception": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.4,
+        "unresolved": true
+      },
+      "notes": ""
+    },
+    {
+      "id": "nonsense_disease",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "zxqy_not_a_real_disease_999",
+        "location": "liver"
+      },
+      "expect": {
+        "no_exception": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.45,
+        "unresolved": true
+      },
+      "notes": ""
+    },
+    {
+      "id": "symbol_location",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "asthma",
+        "location": "???"
+      },
+      "expect": {
+        "no_exception": true,
+        "location_unmatched": true,
+        "must_elevate": [
+          "pentane",
+          "ethane"
+        ]
+      },
+      "notes": "??? must not fuzzy-match a real tissue"
+    },
+    {
+      "id": "comorbidity_weight_overflow",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "depression",
+        "location": "brain",
+        "comorbidities": [
+          "obesity"
+        ],
+        "comorbidity_weight": 3.5
+      },
+      "expect": {
+        "no_exception": true,
+        "must_elevate": [
+          "indole",
+          "acetone"
+        ]
+      },
+      "notes": "Weight >1.5 must clamp, not ValidationError"
+    },
+    {
+      "id": "comorbidity_weight_negative",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "depression",
+        "location": "brain",
+        "comorbidities": [
+          "obesity"
+        ],
+        "comorbidity_weight": -1.0
+      },
+      "expect": {
+        "no_exception": true
+      },
+      "notes": ""
+    },
+    {
+      "id": "twenty_comorbidities",
+      "category": "robustness",
+      "difficulty": "hard",
+      "query": {
+        "disease": "depression",
+        "location": "brain",
+        "comorbidities": [
+          "obesity",
+          "hypertension",
+          "type_2_diabetes",
+          "heart_disease",
+          "copd",
+          "asthma",
+          "chronic_kidney_disease",
+          "nafld",
+          "thyroid",
+          "rheumatoid_arthritis",
+          "obesity",
+          "hypertension",
+          "type_2_diabetes",
+          "heart_disease",
+          "copd",
+          "asthma",
+          "chronic_kidney_disease",
+          "nafld",
+          "thyroid",
+          "rheumatoid_arthritis"
+        ]
+      },
+      "expect": {
+        "no_exception": true,
+        "finite": true
+      },
+      "notes": ""
+    },
+    {
+      "id": "gene_BRCA1_as_disease",
+      "category": "gene_trap",
+      "difficulty": "hard",
+      "query": {
+        "disease": "BRCA1",
+        "location": "breast"
+      },
+      "expect": {
+        "no_exception": true,
+        "unresolved_or_not_breast": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.5
+      },
+      "notes": "BRCA1 is a gene, not breast cancer"
+    },
+    {
+      "id": "gene_KRAS_as_disease",
+      "category": "gene_trap",
+      "difficulty": "hard",
+      "query": {
+        "disease": "KRAS",
+        "location": "lung"
+      },
+      "expect": {
+        "no_exception": true,
+        "unresolved": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.5
+      },
+      "notes": ""
+    },
+    {
+      "id": "gene_TP53_as_disease",
+      "category": "gene_trap",
+      "difficulty": "hard",
+      "query": {
+        "disease": "TP53",
+        "location": "lung"
+      },
+      "expect": {
+        "no_exception": true,
+        "unresolved": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.5
+      },
+      "notes": ""
+    },
+    {
+      "id": "luad_with_driver_genes",
+      "category": "gene_trap",
+      "difficulty": "medium",
+      "query": {
+        "disease": "lung adenocarcinoma",
+        "location": "lung",
+        "genes": [
+          "KRAS",
+          "TP53",
+          "EGFR"
+        ],
+        "smoking_status": "current",
+        "stage": "IV",
+        "metastatic": true
+      },
+      "expect": {
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ],
+        "min_fold": {
+          "hexanal": 1.15
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "bare_pneumonia",
+      "category": "alias",
+      "difficulty": "hard",
+      "query": {
+        "disease": "pneumonia",
+        "location": "lung"
+      },
+      "expect": {
+        "resolved_disease_id": "pneumonia_bacterial",
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "bare_diabetes",
+      "category": "alias",
+      "difficulty": "medium",
+      "query": {
+        "disease": "diabetes",
+        "location": "systemic"
+      },
+      "expect": {
+        "resolved_in": [
+          "type_2_diabetes",
+          "type1_diabetes"
+        ],
+        "must_elevate": [
+          "acetone"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "heart_failure_not_cad",
+      "category": "alias",
+      "difficulty": "hard",
+      "query": {
+        "disease": "heart failure",
+        "location": "heart"
+      },
+      "expect": {
+        "resolved_disease_id": "heart_failure",
+        "must_elevate": [
+          "acetone",
+          "pentane"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "nafld_not_cirrhosis",
+      "category": "alias",
+      "difficulty": "hard",
+      "query": {
+        "disease": "nafld",
+        "location": "liver"
+      },
+      "expect": {
+        "resolved_disease_id": "nafld",
+        "must_elevate": [
+          "acetone"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "autism_not_heart_failure",
+      "category": "alias",
+      "difficulty": "hard",
+      "query": {
+        "disease": "autism",
+        "location": "brain"
+      },
+      "expect": {
+        "resolved_disease_id": "autism_spectrum_disorder"
+      },
+      "notes": "MONDO collision must not map autism\u2192HF"
+    },
+    {
+      "id": "bare_cancer_unresolved",
+      "category": "alias",
+      "difficulty": "hard",
+      "query": {
+        "disease": "cancer",
+        "location": "lung"
+      },
+      "expect": {
+        "unresolved": true,
+        "near_healthy": true,
+        "max_abs_log2fc": 0.45
+      },
+      "notes": ""
+    },
+    {
+      "id": "head_neck_exact",
+      "category": "location",
+      "difficulty": "hard",
+      "query": {
+        "disease": "head_neck_cancer",
+        "location": "head_neck"
+      },
+      "expect": {
+        "location_tissue_id": "head_neck",
+        "must_elevate": [
+          "ethanol",
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "pharynx_osa",
+      "category": "location",
+      "difficulty": "medium",
+      "query": {
+        "disease": "sleep_apnea",
+        "location": "pharynx"
+      },
+      "expect": {
+        "location_tissue_id": "pharynx",
+        "must_elevate": [
+          "acetone",
+          "isoprene"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "joint_ra",
+      "category": "location",
+      "difficulty": "medium",
+      "query": {
+        "disease": "rheumatoid_arthritis",
+        "location": "joint"
+      },
+      "expect": {
+        "location_tissue_id": "joint",
+        "must_elevate": [
+          "pentane",
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "left_breast_free_text",
+      "category": "location",
+      "difficulty": "medium",
+      "query": {
+        "disease": "breast cancer",
+        "location": "left breast upper outer"
+      },
+      "expect": {
+        "location_contains": "breast",
+        "must_elevate": [
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "retroperitoneal_mass",
+      "category": "location",
+      "difficulty": "hard",
+      "query": {
+        "disease": "ovarian cancer",
+        "location": "retroperitoneal soft tissue mass"
+      },
+      "expect": {
+        "location_matched": true,
+        "must_elevate": [
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "sz_suppress_acetone",
+      "category": "clinical_hard",
+      "difficulty": "extreme",
+      "query": {
+        "disease": "schizophrenia",
+        "location": "brain",
+        "age_years": 18,
+        "sex": "male"
+      },
+      "expect": {
+        "must_elevate": [
+          "pentane",
+          "ethane"
+        ],
+        "must_suppress": [
+          "acetone",
+          "isoprene"
+        ]
+      },
+      "notes": "Magdeburg PTR-MS suppress panel"
+    },
+    {
+      "id": "sz_heart_suppress_tma",
+      "category": "clinical_hard",
+      "difficulty": "extreme",
+      "query": {
+        "disease": "schizophrenia",
+        "location": "brain",
+        "comorbidities": [
+          "heart_disease"
+        ],
+        "age_years": 18,
+        "sex": "male"
+      },
+      "expect": {
+        "must_elevate": [
+          "pentane"
+        ],
+        "must_suppress": [
+          "acetone",
+          "trimethylamine"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "mdd_obesity_ketones",
+      "category": "clinical_hard",
+      "difficulty": "medium",
+      "query": {
+        "disease": "depression",
+        "location": "brain",
+        "comorbidities": [
+          "obesity"
+        ],
+        "age_years": 24,
+        "sex": "male"
+      },
+      "expect": {
+        "must_elevate": [
+          "acetone",
+          "ammonia",
+          "indole"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "t2d_acetone_gate",
+      "category": "clinical_hard",
+      "difficulty": "medium",
+      "query": {
+        "disease": "type 2 diabetes",
+        "location": "systemic",
+        "age_years": 55,
+        "sex": "male"
+      },
+      "expect": {
+        "must_elevate": [
+          "acetone",
+          "2_butanone"
+        ],
+        "min_fold": {
+          "acetone": 1.8
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "copd_ethane_hexanal",
+      "category": "clinical_hard",
+      "difficulty": "medium",
+      "query": {
+        "disease": "copd",
+        "location": "lung",
+        "age_years": 68,
+        "smoking_status": "former"
+      },
+      "expect": {
+        "must_elevate": [
+          "ethane",
+          "hexanal"
+        ],
+        "min_fold": {
+          "ethane": 1.5
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "malaria_benzene_acetone",
+      "category": "clinical_hard",
+      "difficulty": "medium",
+      "query": {
+        "disease": "malaria",
+        "location": "systemic"
+      },
+      "expect": {
+        "must_elevate": [
+          "benzene",
+          "acetone",
+          "pentane"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "cirrhosis_sulfur",
+      "category": "clinical_hard",
+      "difficulty": "hard",
+      "query": {
+        "disease": "cirrhosis",
+        "location": "liver"
+      },
+      "expect": {
+        "must_elevate": [
+          "dms",
+          "ammonia"
+        ],
+        "min_fold": {
+          "dms": 1.4
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "ibd_h2s",
+      "category": "clinical_hard",
+      "difficulty": "hard",
+      "query": {
+        "disease": "inflammatory bowel disease",
+        "location": "colon"
+      },
+      "expect": {
+        "must_elevate": [
+          "hydrogen_sulfide",
+          "pentane"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "sibo_fermentation",
+      "category": "clinical_hard",
+      "difficulty": "hard",
+      "query": {
+        "disease": "SIBO",
+        "location": "small_intestine"
+      },
+      "expect": {
+        "must_elevate": [
+          "hydrogen_sulfide",
+          "ethanol"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "zero_shot_freckling",
+      "category": "zero_shot",
+      "difficulty": "hard",
+      "query": {
+        "disease": "benign essential freckling syndrome ZX-0",
+        "location": "skin"
+      },
+      "expect": {
+        "near_healthy": true,
+        "max_abs_log2fc": 0.4,
+        "unresolved": true
+      },
+      "notes": ""
+    },
+    {
+      "id": "zero_shot_madeup_syndrome",
+      "category": "zero_shot",
+      "difficulty": "hard",
+      "query": {
+        "disease": "Quigley-Hart metabolic vapor syndrome",
+        "location": "systemic"
+      },
+      "expect": {
+        "near_healthy": true,
+        "max_abs_log2fc": 0.45,
+        "unresolved": true
+      },
+      "notes": ""
+    },
+    {
+      "id": "cjd_oxidative",
+      "category": "zero_shot",
+      "difficulty": "hard",
+      "query": {
+        "disease": "Creutzfeldt-Jakob disease",
+        "location": "brain",
+        "age_years": 62,
+        "sex": "female"
+      },
+      "expect": {
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "epilepsy_brain_energy",
+      "category": "zero_shot",
+      "difficulty": "medium",
+      "query": {
+        "disease": "epilepsy",
+        "location": "brain"
+      },
+      "expect": {
+        "must_elevate": [
+          "acetone",
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "obesity_alone_ketones",
+      "category": "conflict",
+      "difficulty": "medium",
+      "query": {
+        "disease": "obesity",
+        "location": "systemic"
+      },
+      "expect": {
+        "must_elevate": [
+          "acetone",
+          "2_butanone"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "paad_kras_tp53",
+      "category": "conflict",
+      "difficulty": "hard",
+      "query": {
+        "disease": "pancreatic adenocarcinoma",
+        "location": "pancreas",
+        "genes": [
+          "KRAS",
+          "TP53",
+          "CDKN2A"
+        ],
+        "stage": "III"
+      },
+      "expect": {
+        "must_elevate": [
+          "2_butanone",
+          "acetone",
+          "hexanal"
+        ],
+        "min_fold": {
+          "2_butanone": 1.2
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "hcc_sulfur_not_only_ketone",
+      "category": "conflict",
+      "difficulty": "hard",
+      "query": {
+        "disease": "hepatocellular carcinoma",
+        "location": "liver",
+        "genes": [
+          "TP53",
+          "CTNNB1"
+        ]
+      },
+      "expect": {
+        "must_elevate": [
+          "dms",
+          "ammonia"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "covid_aldehydes",
+      "category": "conflict",
+      "difficulty": "hard",
+      "query": {
+        "disease": "covid19",
+        "location": "lung"
+      },
+      "expect": {
+        "must_elevate": [
+          "nonanal",
+          "octanal",
+          "heptanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "tb_oxidative",
+      "category": "conflict",
+      "difficulty": "medium",
+      "query": {
+        "disease": "tuberculosis",
+        "location": "lung"
+      },
+      "expect": {
+        "must_elevate": [
+          "pentane",
+          "ethane",
+          "benzene"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "ards_ventilator",
+      "category": "conflict",
+      "difficulty": "hard",
+      "query": {
+        "disease": "ards",
+        "location": "lung",
+        "comorbidities": [
+          "pneumonia_bacterial"
+        ]
+      },
+      "expect": {
+        "must_elevate": [
+          "acetaldehyde",
+          "pentane"
+        ],
+        "must_suppress": [
+          "isoprene"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "thyroid_isoprene",
+      "category": "conflict",
+      "difficulty": "hard",
+      "query": {
+        "disease": "thyroid",
+        "location": "thyroid"
+      },
+      "expect": {
+        "must_elevate": [
+          "acetone",
+          "isoprene"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "sickle_oxidative",
+      "category": "conflict",
+      "difficulty": "hard",
+      "query": {
+        "disease": "sickle cell",
+        "location": "blood"
+      },
+      "expect": {
+        "must_elevate": [
+          "pentane",
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "parkinson_oxidative",
+      "category": "conflict",
+      "difficulty": "medium",
+      "query": {
+        "disease": "Parkinson disease",
+        "location": "brain",
+        "genes": [
+          "SNCA",
+          "PRKN"
+        ]
+      },
+      "expect": {
+        "must_elevate": [
+          "pentane",
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "luad_brain_met",
+      "category": "metastatic",
+      "difficulty": "hard",
+      "query": {
+        "disease": "lung adenocarcinoma",
+        "location": "brain",
+        "genes": [
+          "TP53",
+          "KRAS"
+        ],
+        "stage": "IV",
+        "metastatic": true
+      },
+      "expect": {
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ]
+      },
+      "notes": "Primary lung biology queried at brain met site"
+    },
+    {
+      "id": "breast_male",
+      "category": "metastatic",
+      "difficulty": "hard",
+      "query": {
+        "disease": "breast cancer",
+        "location": "breast",
+        "genes": [
+          "BRCA2"
+        ],
+        "sex": "male"
+      },
+      "expect": {
+        "must_elevate": [
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "prostate_stage_high",
+      "category": "metastatic",
+      "difficulty": "medium",
+      "query": {
+        "disease": "cancer_prostate",
+        "location": "prostate",
+        "age_years": 72,
+        "sex": "male",
+        "stage": "IV"
+      },
+      "expect": {
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "glioblastoma_warburg",
+      "category": "metastatic",
+      "difficulty": "medium",
+      "query": {
+        "disease": "glioblastoma",
+        "location": "brain",
+        "genes": [
+          "EGFR",
+          "PTEN",
+          "TP53"
+        ]
+      },
+      "expect": {
+        "must_elevate": [
+          "acetone",
+          "hexanal"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "sepsis_icu",
+      "category": "metastatic",
+      "difficulty": "hard",
+      "query": {
+        "disease": "sepsis",
+        "location": "systemic",
+        "comorbidities": [
+          "pneumonia_bacterial"
+        ],
+        "age_years": 72
+      },
+      "expect": {
+        "must_elevate": [
+          "hexanal",
+          "ammonia"
+        ]
+      },
+      "notes": ""
+    },
+    {
+      "id": "influenza_not_bacterial",
+      "category": "metastatic",
+      "difficulty": "hard",
+      "query": {
+        "disease": "influenza",
+        "location": "lung"
+      },
+      "expect": {
+        "resolved_disease_id": "influenza",
+        "must_elevate": [
+          "hexanal",
+          "pentane"
+        ]
+      },
+      "notes": ""
+    }
+  ]
+}

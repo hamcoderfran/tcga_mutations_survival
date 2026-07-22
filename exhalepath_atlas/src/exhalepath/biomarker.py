@@ -197,7 +197,8 @@ class ExhaleBiomarkerEngine:
             if smoking_status in {"never", "former", "current"}
             else None,
             comorbidities=list(comorbidities or []),
-            comorbidity_weight=float(comorbidity_weight),
+            # Clamp out-of-range weights so CLI/NL typos never ValidationError.
+            comorbidity_weight=max(0.0, min(1.5, float(comorbidity_weight))),
         )
         result = self.predictor.predict(query)
         # Rank by absolute delta ppb (quantity change), then |log2fc|

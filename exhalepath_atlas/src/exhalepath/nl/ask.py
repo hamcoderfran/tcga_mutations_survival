@@ -117,7 +117,7 @@ def fill_slots_interactively(
             default=str(s.comorbidity_weight),
         )
         try:
-            s.comorbidity_weight = float(w_raw)
+            s.comorbidity_weight = max(0.0, min(1.5, float(w_raw)))
         except ValueError:
             pass
 

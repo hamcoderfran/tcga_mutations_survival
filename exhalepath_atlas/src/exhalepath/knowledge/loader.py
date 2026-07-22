@@ -69,6 +69,16 @@ class KnowledgeBase:
         stop = {"cancer", "carcinoma", "disease", "syndrome", "the", "of", "and"}
         return {t for t in s.split() if t and t not in stop}
 
+    def _looks_like_gene_symbol(self, raw: str) -> bool:
+        """True for HGNC-like tokens (BRCA1, TP53, KRAS) that are not disease names."""
+        s = str(raw).strip()
+        if not re.fullmatch(r"[A-Za-z][A-Za-z0-9-]{1,14}", s):
+            return False
+        # Digits strongly indicate a gene symbol (BRCA1, CDKN2A), not a disease phrase.
+        if re.search(r"\d", s):
+            return True
+        return s.upper() in self.all_seed_genes()
+
     def resolve_disease(self, query: str) -> dict[str, Any]:
         if query is None or not str(query).strip():
             return self._unresolved("unknown")
@@ -80,6 +90,10 @@ class KnowledgeBase:
         if key in self._alias_index:
             return dict(self.diseases[self._alias_index[key]])
 
+        # Gene symbols must not fuzzy-match disease aliases (BRCA1 ↛ breast via "BRCA").
+        if self._looks_like_gene_symbol(str(query)):
+            return self._unresolved(str(query))
+
         # Prefer longest alias containment / token overlap over first substring hit
         q_tokens = self._token_set(key)
         candidates: list[tuple[float, int, str]] = []
@@ -89,9 +103,11 @@ class KnowledgeBase:
             score = 0.0
             if key == alias:
                 score = 100.0
-            elif key in alias:
+            elif re.search(rf"(?:^|\s){re.escape(key)}(?:\s|$)", alias):
+                # whole-token containment only (avoids "brca" ⊂ "brca1"-style traps
+                # when the shorter string is the query)
                 score = 40.0 * (len(key) / max(len(alias), 1))
-            elif alias in key:
+            elif re.search(rf"(?:^|\s){re.escape(alias)}(?:\s|$)", key):
                 score = 55.0 * (len(alias) / max(len(key), 1))
             else:
                 a_tokens = self._token_set(alias)

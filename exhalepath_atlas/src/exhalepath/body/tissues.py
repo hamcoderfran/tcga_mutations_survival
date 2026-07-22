@@ -38,6 +38,18 @@ class WholeBodyMap:
                 "query": location,
             }
         key = _norm(str(location))
+        # Punctuation-only / garbage queries normalize to "" and must not
+        # fuzzy-match every alias via empty-string containment ("" in alias).
+        if not key:
+            return {
+                "tissue_id": f"custom_unmatched_{abs(hash(str(location))) % 10_000_000}",
+                "name": str(location).strip(),
+                "aliases": [str(location).strip()],
+                "n_census_healthy_cells": 0,
+                "compartment": "custom",
+                "matched": False,
+                "query": location,
+            }
         # Underscore / hyphen variants of the same anatomic token
         key_compact = key.replace(" ", "")
         if key in self._alias:

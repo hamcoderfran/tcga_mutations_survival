@@ -670,17 +670,18 @@
         "one_carbon_folate": 1.2
       },
       "voc_log2fc_prior": {
-        "pentane": 0.5,
-        "ethane": 0.45,
-        "ammonia": 0.35,
-        "formaldehyde": 0.3,
-        "isoprene": -0.2,
-        "hexanal": 0.5525,
-        "nonanal": 0.34,
-        "octanal": 0.2975,
-        "acetone": 0.255,
-        "propanol": 0.17
-      }
+        "pentane": 0.7,
+        "ethane": 0.6,
+        "ammonia": 0.25,
+        "formaldehyde": 0.2,
+        "hexanal": 0.35,
+        "acetone": -0.85,
+        "isoprene": -0.55,
+        "trimethylamine": -0.75,
+        "methanol": -0.4,
+        "propanol": 0.1
+      },
+      "atlas_source": "stress_hardened_magdeburg"
     },
     {
       "disease_id": "epilepsy",
@@ -818,7 +819,7 @@
         "autism spectrum disorder",
         "autistic disorder"
       ],
-      "mondo_id": "MONDO:0005258",
+      "mondo_id": "MONDO:0005260",
       "category": "neurological",
       "default_site": "brain",
       "pathway_bias": {
