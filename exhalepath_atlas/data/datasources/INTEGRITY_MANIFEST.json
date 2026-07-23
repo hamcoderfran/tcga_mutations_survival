@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-07-23T03:28:49.285795+00:00",
+  "n_files": 8,
+  "files": [
+    {
+      "path": "/workspace/exhalepath_atlas/data/datasources/hbdb/volatilome_compounds.json",
+      "sha256": "e89913bea7081f6055ee70ddddd7018217067cbc974cd1d141d1cbe1c5f66792",
+      "n_bytes": 254655
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_catalog.json",
+      "sha256": "80de8de3b8a64fcc206e5ffe22ce74ccdae9559a53db1f16bc594f5837023e03",
+      "n_bytes": 43413
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_extended_catalog.json",
+      "sha256": "71f4431c464e746816e83a89c71a8abf088adba406a4532640f7b65735500c7a",
+      "n_bytes": 384052
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog.json",
+      "sha256": "3d2b1721abc819894c5445a64d8a6c4e8c2aa3524e877147aa4004baf0f43b6b",
+      "n_bytes": 2820
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog_expanded.json",
+      "sha256": "85a393f7d69d3c35d7a22259ac0d700de7b25fbda913805a90ebde5c1973d5b8",
+      "n_bytes": 9472
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/datasources/literature/europepmc_breath_voc_metadata.json",
+      "sha256": "a9aa254d29ef574f7f6115b8554dee389ade1910c7ea0821fc3ecd5a842b08f0",
+      "n_bytes": 41698
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/real_breath/literature_panels/priority10_voc_panels.json",
+      "sha256": "4955672496c01563a370c7e040606a4a14617f8f9c822e523977cdca2dca550b",
+      "n_bytes": 45710
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/datasources/INTEGRATION_MANIFEST.json",
+      "sha256": "c2ecc6f9a1576c9086fc85fad46ebc90ff20a59c910f820105c208a255705182",
+      "n_bytes": 8409
+    }
+  ],
+  "policy": {
+    "no_execution_of_downloads": true,
+    "allowlisted_hosts_only": true,
+    "sha256_required": true
+  }
+}

@@ -637,6 +637,46 @@ def eval_patient_cohort_cmd(
     rprint(f"  figures: {out_dir / 'figures'}")
 
 
+@app.command("eval-coverage")
+def eval_coverage_cmd(
+    out_dir: Path = typer.Option(Path("runs/coverage_audit")),
+    offline: bool = typer.Option(False, help="Skip live network expansion"),
+    no_expand: bool = typer.Option(False, help="Audit only; do not expand catalogs"),
+):
+    """Secure open-VOC coverage audit (VOLATILOME 99% target) + anti-poisoning checks."""
+    from .eval.coverage_audit import run_coverage_audit
+
+    report = run_coverage_audit(expand=not no_expand, offline=offline)
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "COVERAGE_AUDIT.json").write_text(
+        __import__("json").dumps(report, indent=2) + "\n"
+    )
+    (out_dir / "COVERAGE_AUDIT.md").write_text(
+        (Path("data/knowledge/COVERAGE_AUDIT.md").read_text()
+         if Path("data/knowledge/COVERAGE_AUDIT.md").exists()
+         else "")
+    )
+    m = report["metrics"]
+    rprint("[bold]VOC coverage audit[/bold]")
+    rprint(
+        f"  open-compound coverage: [green]{m['open_compound_coverage_pct']}%[/green] "
+        f"({m['open_compound_secured_n']}/{m['open_compound_universe_n']}) "
+        f"≥99%={m['meets_99pct_open_compound_target']}"
+    )
+    rprint(
+        f"  studies curated={m.get('curated_public_studies')} "
+        f"expanded={m.get('expanded_public_studies')} "
+        f"(+{m.get('mw_discovered_additional')})"
+    )
+    rprint(
+        f"  Europe PMC metadata records={m.get('europepmc_breath_records')} "
+        f"(DOIs={m.get('europepmc_with_doi')})"
+    )
+    rprint(f"  integrity files hashed: {report['security'].get('n_hashed_files')}")
+    rprint(f"  report: data/knowledge/COVERAGE_AUDIT.md")
+
+
 def _fmt_pct(v) -> str:
     if v is None:
         return "—"
@@ -1255,6 +1295,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-vision",
         "eval-stress-hard",
         "eval-patient-cohort",
+        "eval-coverage",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

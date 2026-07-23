@@ -14,11 +14,9 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-import requests
 
+from ..ingest.secure_fetch import secure_fetch
 from .base import DataSource
-
-UA = {"User-Agent": "ExhalePathAtlas/1.0"}
 
 VOLATILOME_BLOB = (
     "https://clowder.edap-cluster.com/api/files/6165e731e4b0b85abf3ae0f5/blob"
@@ -76,9 +74,14 @@ class HBDBSource(DataSource):
             compounds = json.loads(compounds_path.read_text()).get("compounds") or []
         elif not offline:
             xls_path = self.out_dir / "Volatilome_subset_Sept_2_2019.xls"
-            r = requests.get(VOLATILOME_BLOB, timeout=180, headers=UA)
-            r.raise_for_status()
-            xls_path.write_bytes(r.content)
+            # Allowlisted quarantine→promote fetch; never execute blob contents.
+            secure_fetch(
+                VOLATILOME_BLOB,
+                dest=xls_path,
+                quarantine_dir=self.out_dir / ".quarantine",
+                max_bytes=30 * 1024 * 1024,
+                timeout=180,
+            )
             df = pd.read_excel(xls_path, engine="xlrd")
             for _, row in df.iterrows():
                 compounds.append(

@@ -18,6 +18,11 @@ data/datasources/hbdb/*.xls
 data/datasources/**/*.sdf
 data/datasources/**/*.sqlite
 data/datasources/**/*.xml
+data/datasources/**/.quarantine/
+data/public_breath/.quarantine/
+data/clinical_comorbidity/.quarantine/
+data/datasources/**/*.provenance.json
+data/public_breath/**/*.provenance.json
 data/processed/
 data/public_breath/*
 !data/public_breath/.gitkeep
