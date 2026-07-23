@@ -677,6 +677,48 @@ def eval_coverage_cmd(
     rprint(f"  report: data/knowledge/COVERAGE_AUDIT.md")
 
 
+@app.command("eval-lit-compare")
+def eval_lit_compare_cmd(
+    out_dir: Path = typer.Option(Path("runs/lit_compare")),
+    demo_max_patients: Optional[int] = typer.Option(
+        400, help="Patients for demographics PCA (default 400 for speed)"
+    ),
+    n_diseases: int = typer.Option(100, help="Diseases in connection suite"),
+):
+    """Literature concordance + demographics PCA + 100-disease VOC connections."""
+    from .eval.lit_compare import run_lit_demo_disease100
+
+    report = run_lit_demo_disease100(
+        out_dir=out_dir,
+        demo_max_patients=demo_max_patients,
+        n_diseases=n_diseases,
+    )
+    lit = report["literature"]
+    demo = report["demographics_pca"]
+    d100 = report["disease100"]
+    rprint("[bold]Literature / demographics / 100-disease suite[/bold]")
+    rprint(
+        f"  lit concordance: [green]{lit.get('mean_concordance_pct')}%[/green] "
+        f"({lit.get('n_diseases')} diseases)"
+    )
+    sil = (demo.get("silhouette") or {})
+    rprint(
+        f"  demo PCA sil smoking={sil.get('demo_by_smoking')} "
+        f"category={sil.get('demo_by_category')}"
+    )
+    rprint(
+        f"  VOC PCA sil smoking={sil.get('voc_by_smoking')} "
+        f"category={sil.get('voc_by_category')}"
+    )
+    rprint(f"  disease100: {d100.get('n_diseases')} diseases")
+    for row in (d100.get("interesting_connections") or [])[:6]:
+        rprint(
+            f"  · {row.get('disease_a')} ↔ {row.get('disease_b')} "
+            f"(cos={row.get('cosine', float('nan')):.3f})"
+        )
+    rprint(f"  report: {out_dir / 'LITERATURE_COMPARE.md'}")
+
+
 def _fmt_pct(v) -> str:
     if v is None:
         return "—"
@@ -1296,6 +1338,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-stress-hard",
         "eval-patient-cohort",
         "eval-coverage",
+        "eval-lit-compare",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

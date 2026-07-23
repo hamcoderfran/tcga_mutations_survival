@@ -1,0 +1,148 @@
+{
+  "version": "1.0.0",
+  "description": "Public exhaled-breath validation cases: Scientific Data 2024 clinical breathomics cross-cohort differentials + curated open literature panels.",
+  "cases": [
+    {
+      "case_id": "sci_data_2024_asthma",
+      "source": "scientific_data_2024_figshare_23522490",
+      "doi": "10.1038/s41597-024-03052-2",
+      "cohort": "asthma",
+      "disease": "Asthma",
+      "disease_id": "asthma",
+      "location": "lung",
+      "expect_elevated": [
+        "2_pentanone",
+        "benzaldehyde",
+        "ethyl_acetate",
+        "ethylbenzene",
+        "furan",
+        "octane",
+        "propanol"
+      ],
+      "expect_suppressed": [
+        "butane",
+        "dodecane",
+        "hexane",
+        "isopropanol",
+        "phenol"
+      ],
+      "n_mapped_vocs": 17,
+      "notes": "Cross-cohort differential from GC-MS peak intensities (no healthy controls in source tables)."
+    },
+    {
+      "case_id": "sci_data_2024_copd",
+      "source": "scientific_data_2024_figshare_23522490",
+      "doi": "10.1038/s41597-024-03052-2",
+      "cohort": "copd",
+      "disease": "COPD",
+      "disease_id": "copd",
+      "location": "lung",
+      "expect_elevated": [
+        "benzene"
+      ],
+      "expect_suppressed": [
+        "2_pentanone",
+        "decanal",
+        "dodecane",
+        "ethyl_acetate",
+        "ethylbenzene",
+        "furan",
+        "octane"
+      ],
+      "n_mapped_vocs": 18,
+      "notes": "Cross-cohort differential from GC-MS peak intensities (no healthy controls in source tables)."
+    },
+    {
+      "case_id": "sci_data_2024_bronchiectasis",
+      "source": "scientific_data_2024_figshare_23522490",
+      "doi": "10.1038/s41597-024-03052-2",
+      "cohort": "bronchiectasis",
+      "disease": "COPD",
+      "disease_id": "copd",
+      "location": "lung",
+      "expect_elevated": [
+        "dodecane",
+        "isopropanol",
+        "phenol"
+      ],
+      "expect_suppressed": [
+        "benzaldehyde",
+        "ethylbenzene",
+        "furan",
+        "octane",
+        "propanol"
+      ],
+      "n_mapped_vocs": 18,
+      "notes": "Cross-cohort differential from GC-MS peak intensities (no healthy controls in source tables)."
+    },
+    {
+      "case_id": "lit_t2d_acetone",
+      "source": "literature_public",
+      "doi": "10.1016/j.jchromb.2012.12.008",
+      "disease": "type 2 diabetes",
+      "disease_id": "type_2_diabetes",
+      "location": "systemic",
+      "expect_elevated": [
+        "acetone",
+        "isopropanol",
+        "2_butanone"
+      ],
+      "expect_suppressed": [],
+      "notes": "Classic ketosis / breath acetone axis",
+      "n_mapped_vocs": 3
+    },
+    {
+      "case_id": "lit_luad_aldehydes",
+      "source": "literature_public",
+      "doi": "10.1038/bjc.2011.277",
+      "disease": "lung adenocarcinoma",
+      "disease_id": "lung_adenocarcinoma",
+      "location": "lung",
+      "expect_elevated": [
+        "hexanal",
+        "heptanal",
+        "nonanal",
+        "pentane",
+        "2_butanone"
+      ],
+      "expect_suppressed": [
+        "isoprene"
+      ],
+      "notes": "Lung cancer breath aldehyde / alkane panel",
+      "n_mapped_vocs": 6
+    },
+    {
+      "case_id": "lit_ad_oxidative",
+      "source": "literature_public",
+      "doi": "10.1016/j.neurobiolaging.2014.06.015",
+      "disease": "Alzheimer disease",
+      "disease_id": "alzheimer_disease",
+      "location": "brain",
+      "expect_elevated": [
+        "hexanal",
+        "pentane",
+        "ethane"
+      ],
+      "expect_suppressed": [],
+      "notes": "Neurodegeneration oxidative-stress VOCs",
+      "n_mapped_vocs": 3
+    },
+    {
+      "case_id": "lit_ibd_microbiome",
+      "source": "literature_public",
+      "doi": "10.1136/gutjnl-2013-305799",
+      "disease": "inflammatory bowel disease",
+      "disease_id": "inflammatory_bowel_disease",
+      "location": "gut",
+      "expect_elevated": [
+        "indole",
+        "phenol",
+        "hydrogen_sulfide",
+        "trimethylamine"
+      ],
+      "expect_suppressed": [],
+      "notes": "Gut dysbiosis volatiles in IBD",
+      "n_mapped_vocs": 4
+    }
+  ]
+}

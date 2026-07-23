@@ -26,9 +26,9 @@
         "cytochrome_p450_detox": 1.2
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.9,
-        "heptanal": 0.7,
-        "nonanal": 0.6,
+        "hexanal": 1.05,
+        "heptanal": 0.85,
+        "nonanal": 0.75,
         "pentane": 0.5,
         "2_butanone": 0.8,
         "acetaldehyde": 0.55,
@@ -41,7 +41,8 @@
         "propionaldehyde": 0.2975,
         "furan": 0.2125,
         "styrene": 0.17,
-        "ethylbenzene": 0.17
+        "ethylbenzene": 0.17,
+        "ethane": 0.15
       },
       "driver_genes": [
         "KRAS",
@@ -537,14 +538,15 @@
         "neurotransmitter_metabolism": 1.2
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.8,
-        "pentane": 0.6,
-        "acetone": 0.5,
-        "ethane": 0.4,
-        "nonanal": 0.5,
-        "isoprene": -0.25,
+        "hexanal": 0.9,
+        "pentane": 0.55,
+        "acetone": 0.65,
+        "ethane": 0.35,
+        "nonanal": 0.65,
+        "isoprene": -0.35,
         "octanal": 0.2975,
-        "propanol": 0.17
+        "propanol": 0.17,
+        "ammonia": 0.15
       }
     },
     {
@@ -612,16 +614,16 @@
         "lipid_peroxidation": 1.3
       },
       "voc_log2fc_prior": {
-        "pentane": 0.7,
-        "hexanal": 0.7,
-        "acetone": 0.4,
-        "ammonia": 0.35,
-        "2_butanone": 0.3,
-        "ethane": 0.34,
+        "pentane": 0.85,
+        "hexanal": 0.55,
+        "acetone": 0.25,
+        "ammonia": 0.55,
+        "2_butanone": 0.45,
+        "ethane": 0.45,
         "nonanal": 0.34,
         "octanal": 0.2975,
         "propanol": 0.17,
-        "isoprene": -0.1275
+        "isoprene": -0.15
       }
     },
     {
@@ -3362,26 +3364,29 @@
       "mondo_id": "MONDO:0005097",
       "category": "cancer",
       "default_site": "lung",
-      "atlas_source": "cohort_diversity_curated",
+      "atlas_source": "lit_aligned_lusc",
       "pathway_bias": {
-        "lipid_peroxidation": 1.55,
-        "glycolysis_warburg": 1.35,
-        "apoptosis_necrosis": 1.3,
-        "cytochrome_p450_detox": 1.25,
-        "Kras_mapk_proliferation": 1.2
+        "lipid_peroxidation": 1.45,
+        "glycolysis_warburg": 1.45,
+        "apoptosis_necrosis": 1.35,
+        "cytochrome_p450_detox": 1.3,
+        "Kras_mapk_proliferation": 1.15
       },
       "voc_log2fc_prior": {
-        "hexanal": 1.0,
-        "heptanal": 0.8,
-        "nonanal": 0.65,
-        "pentane": 0.6,
-        "ethane": 0.45,
-        "acetaldehyde": 0.5,
-        "2_butanone": 0.55,
-        "benzene": 0.4,
-        "isoprene": -0.35,
-        "octanal": 0.4,
-        "acetone": 0.25
+        "hexanal": 1.15,
+        "heptanal": 0.95,
+        "nonanal": 0.85,
+        "octanal": 0.55,
+        "acetaldehyde": 0.7,
+        "2_butanone": 0.7,
+        "styrene": 0.45,
+        "ethylbenzene": 0.35,
+        "pentane": 0.45,
+        "ethane": 0.2,
+        "benzene": 0.35,
+        "isoprene": -0.4,
+        "acetone": 0.3,
+        "propanol": 0.25
       },
       "driver_genes": [
         "TP53",

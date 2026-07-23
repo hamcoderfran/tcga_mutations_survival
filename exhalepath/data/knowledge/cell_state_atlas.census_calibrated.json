@@ -1,0 +1,362 @@
+{
+  "version": "1.0.0+census",
+  "description": "Affected cell-state atlas for VOC source modeling. Densities and disease activity shifts are literature/scRNA-seq meta priors (relative units), not patient-level counts. Users may override fractions via DiseaseQuery.cell_state_fractions.",
+  "cell_states": [
+    {
+      "state_id": "hepatocyte_ketogenic",
+      "name": "Ketogenic hepatocyte",
+      "tissue": "liver",
+      "markers": [
+        "HMGCS2",
+        "HMGCL",
+        "CPT1A",
+        "PCK1",
+        "ALB"
+      ],
+      "baseline_density": 0.19479922302901564,
+      "baseline_activity": 0.35,
+      "produces_chains": [
+        "acetone_ketogenesis",
+        "2_butanone_fao",
+        "ammonia_urea"
+      ],
+      "disease_density_mult": {
+        "type_2_diabetes": 1.15,
+        "pancreatic_adenocarcinoma": 1.05,
+        "hepatocellular_carcinoma": 0.7,
+        "chronic_liver_disease": 0.55,
+        "breast_invasive_carcinoma": 5.2
+      },
+      "disease_activity_mult": {
+        "type_2_diabetes": 2.4,
+        "pancreatic_adenocarcinoma": 1.4,
+        "chronic_liver_disease": 0.8
+      },
+      "census_healthy_fraction": 0.0035372661984856,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "tumor_epithelial_warburg",
+      "name": "Warburg-high tumor epithelial cell",
+      "tissue": "tumor",
+      "markers": [
+        "HK2",
+        "PKM",
+        "LDHA",
+        "SLC2A1",
+        "HIF1A",
+        "MYC",
+        "EGFR",
+        "KRAS"
+      ],
+      "baseline_density": 0.0420198117410037,
+      "baseline_activity": 0.35,
+      "produces_chains": [
+        "acetaldehyde_warburg",
+        "ethanol_fermentation",
+        "2_butanone_fao",
+        "hexanal_lipid_peroxidation"
+      ],
+      "disease_density_mult": {
+        "lung_adenocarcinoma": 6.2,
+        "pancreatic_adenocarcinoma": 4.0,
+        "breast_invasive_carcinoma": 6.0,
+        "colon_adenocarcinoma": 6.08,
+        "glioblastoma": 6.48,
+        "ovarian_cancer": 6.0,
+        "hepatocellular_carcinoma": 6.0
+      },
+      "disease_activity_mult": {
+        "lung_adenocarcinoma": 2.2,
+        "pancreatic_adenocarcinoma": 2.5,
+        "breast_invasive_carcinoma": 1.8,
+        "colon_adenocarcinoma": 2.0,
+        "glioblastoma": 2.6
+      },
+      "census_healthy_fraction": 3.047960154415678e-05,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "oxidative_stress_cell",
+      "name": "Oxidative-stress / lipid-peroxidizing cell",
+      "tissue": "multi",
+      "markers": [
+        "CYBB",
+        "NOS2",
+        "ALOX15",
+        "PTGS2",
+        "NFE2L2",
+        "HMOX1"
+      ],
+      "baseline_density": 0.42569662945978726,
+      "baseline_activity": 0.25,
+      "produces_chains": [
+        "hexanal_lipid_peroxidation",
+        "pentane_peroxidation"
+      ],
+      "disease_density_mult": {
+        "lung_adenocarcinoma": 1.7009482597597831,
+        "alzheimer_disease": 1.03,
+        "parkinson_disease": 0.9500000000000001,
+        "traumatic_brain_injury": 2.8,
+        "multiple_sclerosis": 1.1099999999999999,
+        "inflammatory_bowel_disease": 1.6935638905366646,
+        "schizophrenia": 0.55,
+        "breast_invasive_carcinoma": 0.8868242846307384,
+        "glioblastoma": 0.7776550378473122,
+        "ovarian_cancer": 1.3683157620606794,
+        "type_2_diabetes": 0.55,
+        "chronic_kidney_disease": 1.3806469834299526,
+        "colon_adenocarcinoma": 1.2456896252637715,
+        "epilepsy": 0.55,
+        "pancreatic_adenocarcinoma": 1.1038358530894805,
+        "hepatocellular_carcinoma": 1.1894287428806873
+      },
+      "disease_activity_mult": {
+        "lung_adenocarcinoma": 1.8,
+        "alzheimer_disease": 2.0,
+        "parkinson_disease": 1.9,
+        "traumatic_brain_injury": 2.5,
+        "multiple_sclerosis": 2.1
+      },
+      "census_healthy_fraction": 0.6118409683996726,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "microglia_activated",
+      "name": "Activated microglia",
+      "tissue": "brain",
+      "markers": [
+        "TREM2",
+        "CX3CR1",
+        "AIF1",
+        "CSF1R",
+        "NLRP3",
+        "TNF",
+        "IL1B"
+      ],
+      "baseline_density": 0.09832321569917288,
+      "baseline_activity": 0.2,
+      "produces_chains": [
+        "hexanal_lipid_peroxidation",
+        "pentane_peroxidation"
+      ],
+      "disease_density_mult": {
+        "alzheimer_disease": 2.7043026792280003,
+        "parkinson_disease": 4.495145271887543,
+        "multiple_sclerosis": 4.012869757279577,
+        "traumatic_brain_injury": 2.3,
+        "glioblastoma": 2.0494427528465824,
+        "schizophrenia": 2.184019946464181,
+        "breast_invasive_carcinoma": 0.55,
+        "lung_adenocarcinoma": 0.55,
+        "type_2_diabetes": 2.878126986379893,
+        "epilepsy": 4.784291193014333
+      },
+      "disease_activity_mult": {
+        "alzheimer_disease": 2.3,
+        "parkinson_disease": 2.0,
+        "multiple_sclerosis": 2.5,
+        "traumatic_brain_injury": 2.2
+      },
+      "census_healthy_fraction": 0.1135741779987275,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "neuron_stressed",
+      "name": "Metabolically stressed neuron",
+      "tissue": "brain",
+      "markers": [
+        "MAPT",
+        "SNCA",
+        "APP",
+        "PSEN1",
+        "GAD1",
+        "SLC6A4",
+        "MAOA"
+      ],
+      "baseline_density": 0.31307311083954903,
+      "baseline_activity": 0.3,
+      "produces_chains": [
+        "isoprene_mevalonate",
+        "pentane_peroxidation"
+      ],
+      "disease_density_mult": {
+        "alzheimer_disease": 1.803816029172283,
+        "parkinson_disease": 0.8170207375774838,
+        "major_depressive_disorder": 0.95,
+        "epilepsy": 0.717495562751598,
+        "schizophrenia": 1.8769476960313871,
+        "breast_invasive_carcinoma": 0.55,
+        "glioblastoma": 0.55,
+        "lung_adenocarcinoma": 0.55,
+        "type_2_diabetes": 1.2847367558314102,
+        "colon_adenocarcinoma": 0.55,
+        "inflammatory_bowel_disease": 0.55,
+        "multiple_sclerosis": 1.0924193146135357
+      },
+      "disease_activity_mult": {
+        "alzheimer_disease": 1.5,
+        "parkinson_disease": 1.6,
+        "major_depressive_disorder": 1.3,
+        "epilepsy": 1.4,
+        "schizophrenia": 1.35
+      },
+      "census_healthy_fraction": 0.266266324368537,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "gut_fermentative_microbe",
+      "name": "Fermentative gut microbial community",
+      "tissue": "gut",
+      "markers": [
+        "FFAR2",
+        "FFAR3",
+        "MUC2",
+        "TJP1",
+        "NOD2",
+        "TLR4"
+      ],
+      "baseline_density": 0.08787681719174521,
+      "baseline_activity": 0.35,
+      "produces_chains": [
+        "ethanol_fermentation",
+        "h2s_cysteine",
+        "indole_tryptophan"
+      ],
+      "disease_density_mult": {
+        "gut_dysbiosis": 1.6,
+        "sibo": 2.4,
+        "inflammatory_bowel_disease": 4.93096255896222,
+        "autism_spectrum_disorder": 1.35,
+        "clostridioides_difficile_infection": 1.7,
+        "lung_adenocarcinoma": 0.771506410867,
+        "colon_adenocarcinoma": 4.46579734645228,
+        "pancreatic_adenocarcinoma": 5.2
+      },
+      "disease_activity_mult": {
+        "gut_dysbiosis": 2.0,
+        "sibo": 2.6,
+        "inflammatory_bowel_disease": 1.8,
+        "autism_spectrum_disorder": 1.5,
+        "clostridioides_difficile_infection": 2.1
+      },
+      "census_healthy_fraction": 0.0005797187565311,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "gut_putrefactive_microbe",
+      "name": "Putrefactive / proteolytic gut microbes",
+      "tissue": "gut",
+      "markers": [
+        "IDO1",
+        "AHR",
+        "IL17A",
+        "FMO3"
+      ],
+      "baseline_density": 0.12,
+      "baseline_activity": 0.25,
+      "produces_chains": [
+        "indole_tryptophan",
+        "h2s_cysteine",
+        "ammonia_urea"
+      ],
+      "disease_density_mult": {
+        "gut_dysbiosis": 2.2,
+        "sibo": 1.8,
+        "inflammatory_bowel_disease": 2.0,
+        "clostridioides_difficile_infection": 2.5,
+        "autism_spectrum_disorder": 1.7
+      },
+      "disease_activity_mult": {
+        "gut_dysbiosis": 2.3,
+        "sibo": 1.9,
+        "inflammatory_bowel_disease": 2.1,
+        "clostridioides_difficile_infection": 2.4
+      },
+      "census_calibrated": true
+    },
+    {
+      "state_id": "hepatocyte_sulfur",
+      "name": "Sulfur-metabolizing hepatocyte",
+      "tissue": "liver",
+      "markers": [
+        "MAT1A",
+        "CBS",
+        "CTH",
+        "FMO3",
+        "CYP3A4"
+      ],
+      "baseline_density": 0.15774574441098083,
+      "baseline_activity": 0.4,
+      "produces_chains": [
+        "dms_methionine",
+        "ammonia_urea"
+      ],
+      "disease_density_mult": {
+        "hepatocellular_carcinoma": 0.65,
+        "chronic_liver_disease": 0.5,
+        "glioblastoma": 1.30333552462342
+      },
+      "disease_activity_mult": {
+        "hepatocellular_carcinoma": 1.8,
+        "chronic_liver_disease": 2.2
+      },
+      "census_healthy_fraction": 0.0003780683245859,
+      "census_calibrated": true
+    },
+    {
+      "state_id": "gastric_urease_niche",
+      "name": "Gastric urease-positive niche (H. pylori)",
+      "tissue": "stomach",
+      "markers": [
+        "IL1B",
+        "TNF",
+        "NOS2"
+      ],
+      "baseline_density": 0.02,
+      "baseline_activity": 0.1,
+      "produces_chains": [
+        "ammonia_urea"
+      ],
+      "disease_density_mult": {
+        "helicobacter_pylori_infection": 8.0
+      },
+      "disease_activity_mult": {
+        "helicobacter_pylori_infection": 3.5
+      },
+      "census_calibrated": true
+    },
+    {
+      "state_id": "adipocyte_lipolytic",
+      "name": "Lipolytic adipocyte",
+      "tissue": "adipose",
+      "markers": [
+        "LIPE",
+        "PNPLA2",
+        "PPARG",
+        "LEP"
+      ],
+      "baseline_density": 0.10746544762874527,
+      "baseline_activity": 0.3,
+      "produces_chains": [
+        "acetone_ketogenesis",
+        "2_butanone_fao"
+      ],
+      "disease_density_mult": {
+        "type_2_diabetes": 1.2,
+        "breast_invasive_carcinoma": 0.55
+      },
+      "disease_activity_mult": {
+        "type_2_diabetes": 1.9
+      },
+      "census_healthy_fraction": 0.0037929963519158,
+      "census_calibrated": true
+    }
+  ],
+  "census_calibration": {
+    "source": "/workspace/exhalepath/data/census/census_manifest.json",
+    "n_states_with_healthy": 8,
+    "n_diseases_mapped": 15
+  }
+}

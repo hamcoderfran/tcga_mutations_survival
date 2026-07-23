@@ -1,0 +1,266 @@
+{
+  "census_version": "2025-11-08",
+  "n_primary_cells": 96591226,
+  "n_normal_cells": 62464283,
+  "n_diseases_in_census": 259,
+  "n_tissues": 70,
+  "n_cell_types": 872,
+  "n_top100_matched_with_cells": 54,
+  "n_diseases_harvested": 71,
+  "min_disease_cells": 5000,
+  "top_harvested": [
+    {
+      "us_disease_id": "normal_baseline",
+      "us_disease_name": "Normal / healthy baseline",
+      "n_cells": 62476003
+    },
+    {
+      "us_disease_id": "cmv",
+      "us_disease_name": "Cytomegalovirus infection",
+      "n_cells": 6415859
+    },
+    {
+      "us_disease_id": "alzheimer",
+      "us_disease_name": "Alzheimer disease",
+      "n_cells": 5220168
+    },
+    {
+      "us_disease_id": "covid19",
+      "us_disease_name": "COVID-19",
+      "n_cells": 4788116
+    },
+    {
+      "us_disease_id": "lewy_body",
+      "us_disease_name": "Lewy body dementia",
+      "n_cells": 4027204
+    },
+    {
+      "us_disease_id": "schizophrenia",
+      "us_disease_name": "Schizophrenia",
+      "n_cells": 2107428
+    },
+    {
+      "us_disease_id": "parkinson",
+      "us_disease_name": "Parkinson disease",
+      "n_cells": 1955857
+    },
+    {
+      "us_disease_id": "cancer_breast",
+      "us_disease_name": "Breast cancer",
+      "n_cells": 1634857
+    },
+    {
+      "us_disease_id": "frontotemporal",
+      "us_disease_name": "Frontotemporal dementia",
+      "n_cells": 1627290
+    },
+    {
+      "us_disease_id": "glioblastoma",
+      "us_disease_name": "Glioblastoma",
+      "n_cells": 1421428
+    },
+    {
+      "us_disease_id": "cancer_lung",
+      "us_disease_name": "Lung cancer",
+      "n_cells": 1292899
+    },
+    {
+      "us_disease_id": "heart_disease",
+      "us_disease_name": "Heart disease",
+      "n_cells": 1292338
+    },
+    {
+      "us_disease_id": "cancer_blood",
+      "us_disease_name": "Hematologic cancer",
+      "n_cells": 1001906
+    },
+    {
+      "us_disease_id": "cancer_ovary",
+      "us_disease_name": "Ovarian cancer",
+      "n_cells": 984988
+    },
+    {
+      "us_disease_id": "lupus",
+      "us_disease_name": "Systemic lupus erythematosus",
+      "n_cells": 777258
+    },
+    {
+      "us_disease_id": "ild",
+      "us_disease_name": "Interstitial lung disease",
+      "n_cells": 585733
+    },
+    {
+      "us_disease_id": "type2_diabetes",
+      "us_disease_name": "Type 2 diabetes",
+      "n_cells": 443012
+    },
+    {
+      "us_disease_id": "neuroblastoma",
+      "us_disease_name": "Neuroblastoma",
+      "n_cells": 430064
+    },
+    {
+      "us_disease_id": "cancer_kidney",
+      "us_disease_name": "Kidney cancer",
+      "n_cells": 397864
+    },
+    {
+      "us_disease_id": "ckd",
+      "us_disease_name": "Chronic kidney disease",
+      "n_cells": 391833
+    },
+    {
+      "us_disease_id": "als",
+      "us_disease_name": "ALS",
+      "n_cells": 391716
+    },
+    {
+      "us_disease_id": "cancer_colorectal",
+      "us_disease_name": "Colorectal cancer",
+      "n_cells": 345421
+    },
+    {
+      "us_disease_id": "bipolar",
+      "us_disease_name": "Bipolar disorder",
+      "n_cells": 332284
+    },
+    {
+      "us_disease_id": "ibd",
+      "us_disease_name": "Inflammatory bowel disease",
+      "n_cells": 252782
+    },
+    {
+      "us_disease_id": "cancer_stomach",
+      "us_disease_name": "Gastric cancer",
+      "n_cells": 229406
+    },
+    {
+      "us_disease_id": "type1_diabetes",
+      "us_disease_name": "Type 1 diabetes",
+      "n_cells": 181857
+    },
+    {
+      "us_disease_id": "epilepsy",
+      "us_disease_name": "Epilepsy",
+      "n_cells": 144334
+    },
+    {
+      "us_disease_id": "copd",
+      "us_disease_name": "COPD",
+      "n_cells": 142422
+    },
+    {
+      "us_disease_id": "glaucoma",
+      "us_disease_name": "Glaucoma",
+      "n_cells": 139633
+    },
+    {
+      "us_disease_id": "acute_kidney_injury",
+      "us_disease_name": "Acute kidney injury",
+      "n_cells": 136814
+    }
+  ],
+  "largest_healthy_tissues": [
+    {
+      "tissue_general": "brain",
+      "n_cells": 18539831
+    },
+    {
+      "tissue_general": "blood",
+      "n_cells": 13822662
+    },
+    {
+      "tissue_general": "eye",
+      "n_cells": 7806560
+    },
+    {
+      "tissue_general": "lung",
+      "n_cells": 3148828
+    },
+    {
+      "tissue_general": "breast",
+      "n_cells": 2354408
+    },
+    {
+      "tissue_general": "heart",
+      "n_cells": 1963037
+    },
+    {
+      "tissue_general": "small intestine",
+      "n_cells": 1187391
+    },
+    {
+      "tissue_general": "liver",
+      "n_cells": 956026
+    },
+    {
+      "tissue_general": "lymph node",
+      "n_cells": 919426
+    },
+    {
+      "tissue_general": "bone marrow",
+      "n_cells": 759562
+    },
+    {
+      "tissue_general": "central nervous system",
+      "n_cells": 742873
+    },
+    {
+      "tissue_general": "endocrine gland",
+      "n_cells": 701254
+    },
+    {
+      "tissue_general": "skin of body",
+      "n_cells": 674205
+    },
+    {
+      "tissue_general": "colon",
+      "n_cells": 670843
+    },
+    {
+      "tissue_general": "kidney",
+      "n_cells": 658049
+    },
+    {
+      "tissue_general": "musculature",
+      "n_cells": 582873
+    },
+    {
+      "tissue_general": "spleen",
+      "n_cells": 577677
+    },
+    {
+      "tissue_general": "placenta",
+      "n_cells": 520897
+    },
+    {
+      "tissue_general": "respiratory system",
+      "n_cells": 517196
+    },
+    {
+      "tissue_general": "adipose tissue",
+      "n_cells": 458002
+    },
+    {
+      "tissue_general": "adrenal gland",
+      "n_cells": 437889
+    },
+    {
+      "tissue_general": "pancreas",
+      "n_cells": 425161
+    },
+    {
+      "tissue_general": "embryo",
+      "n_cells": 400545
+    },
+    {
+      "tissue_general": "reproductive system",
+      "n_cells": 364425
+    },
+    {
+      "tissue_general": "uterus",
+      "n_cells": 307790
+    }
+  ],
+  "note": "Summaries are cell-type compositions from CELLxGENE Census primary human cells. Raw count matrices are not downloaded; fractions calibrate ExhalePath cell-state densities."
+}
