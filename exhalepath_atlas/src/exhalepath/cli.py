@@ -602,6 +602,41 @@ def eval_stress_hard_cmd(
     rprint(f"  report: {out_dir / 'STRESS_HARD.md'}")
 
 
+@app.command("eval-patient-cohort")
+def eval_patient_cohort_cmd(
+    out_dir: Path = typer.Option(Path("runs/patient_cohort_1000")),
+    cohort: Optional[Path] = typer.Option(
+        None, help="Override path to patient_cohort_1000.json"
+    ),
+    max_patients: Optional[int] = typer.Option(
+        None, help="Optional limit for smoke tests"
+    ),
+):
+    """
+    1000-patient diversity cohort: dense VOC CSVs, breakdown flags,
+    PCA/UMAP of VOC profiles and genetic-shift vectors (COPD / bronchitis / lung cancer).
+    """
+    from .eval.patient_cohort import run_cohort
+
+    report = run_cohort(out_dir=out_dir, cohort_path=cohort, max_patients=max_patients)
+    o = report["overall"]
+    rprint("[bold]Patient cohort evaluation[/bold]")
+    rprint(f"  ok: [green]{o['ok_pct']}%[/green] ({o['n_ok']}/{o['n_patients']})")
+    rprint(f"  unresolved: {o.get('n_unresolved')}")
+    flags = o.get("breakdown_flag_counts") or {}
+    if flags:
+        top = ", ".join(f"{k}={v}" for k, v in list(flags.items())[:6])
+        rprint(f"  breakdown: {top}")
+    dist = o.get("focus_centroid_distances") or {}
+    if dist:
+        rprint("  focus centroid L2:")
+        for k, v in sorted(dist.items()):
+            rprint(f"    {k}: {v:.3f}")
+    rprint(f"  report: {out_dir / 'COHORT_1000.md'}")
+    rprint(f"  dense csv: {out_dir / 'patients_dense.csv'}")
+    rprint(f"  figures: {out_dir / 'figures'}")
+
+
 def _fmt_pct(v) -> str:
     if v is None:
         return "—"
@@ -1219,6 +1254,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-comorbidity-clinical",
         "eval-vision",
         "eval-stress-hard",
+        "eval-patient-cohort",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

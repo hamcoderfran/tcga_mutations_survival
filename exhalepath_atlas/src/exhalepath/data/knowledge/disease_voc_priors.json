@@ -42,7 +42,14 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17
-      }
+      },
+      "driver_genes": [
+        "KRAS",
+        "TP53",
+        "STK11",
+        "KEAP1",
+        "EGFR"
+      ]
     },
     {
       "disease_id": "breast_invasive_carcinoma",
@@ -3300,6 +3307,89 @@
         "TNF",
         "VEGFA",
         "ANGPT2"
+      ]
+    },
+    {
+      "disease_id": "chronic_bronchitis",
+      "name": "Chronic bronchitis",
+      "aliases": [
+        "chronic bronchitis",
+        "bronchitis",
+        "chronic bronchial inflammation",
+        "simple chronic bronchitis"
+      ],
+      "mondo_id": "MONDO:0005608",
+      "category": "pulmonary",
+      "default_site": "lung",
+      "atlas_source": "cohort_diversity_curated",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.45,
+        "neuroinflammation": 1.4,
+        "apoptosis_necrosis": 1.25,
+        "microbial_proteolysis_putrefaction": 1.2,
+        "cytochrome_p450_detox": 1.15
+      },
+      "voc_log2fc_prior": {
+        "pentane": 0.85,
+        "ethane": 0.7,
+        "hexanal": 0.75,
+        "nonanal": 0.45,
+        "ammonia": 0.4,
+        "hydrogen_sulfide": 0.35,
+        "acetone": 0.25,
+        "isoprene": -0.25,
+        "toluene": 0.2,
+        "phenol": 0.3,
+        "propanol": 0.2
+      },
+      "driver_genes": [
+        "SERPINA1",
+        "TGFB1",
+        "TNF",
+        "IL6",
+        "MUC5AC"
+      ]
+    },
+    {
+      "disease_id": "lung_squamous_cell_carcinoma",
+      "name": "Lung squamous cell carcinoma",
+      "aliases": [
+        "LUSC",
+        "lung squamous cell carcinoma",
+        "squamous lung cancer",
+        "TCGA-LUSC"
+      ],
+      "mondo_id": "MONDO:0005097",
+      "category": "cancer",
+      "default_site": "lung",
+      "atlas_source": "cohort_diversity_curated",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.55,
+        "glycolysis_warburg": 1.35,
+        "apoptosis_necrosis": 1.3,
+        "cytochrome_p450_detox": 1.25,
+        "Kras_mapk_proliferation": 1.2
+      },
+      "voc_log2fc_prior": {
+        "hexanal": 1.0,
+        "heptanal": 0.8,
+        "nonanal": 0.65,
+        "pentane": 0.6,
+        "ethane": 0.45,
+        "acetaldehyde": 0.5,
+        "2_butanone": 0.55,
+        "benzene": 0.4,
+        "isoprene": -0.35,
+        "octanal": 0.4,
+        "acetone": 0.25
+      },
+      "driver_genes": [
+        "TP53",
+        "CDKN2A",
+        "PIK3CA",
+        "NFE2L2",
+        "SOX2",
+        "FAT1"
       ]
     }
   ]

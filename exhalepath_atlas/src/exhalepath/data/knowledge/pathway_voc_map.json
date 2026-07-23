@@ -21,7 +21,11 @@
         "NFE2L2",
         "KEAP1",
         "HMOX1",
-        "PTGS2"
+        "PTGS2",
+        "SERPINA1",
+        "HHIP",
+        "FAM13A",
+        "TGFB1"
       ],
       "voc_effects": {
         "pentane": 0.55,
@@ -59,7 +63,9 @@
         "SLC2A1",
         "MYC",
         "HIF1A",
-        "TP53"
+        "TP53",
+        "PIK3CA",
+        "STK11"
       ],
       "voc_effects": {
         "ethanol": 0.35,
@@ -443,7 +449,11 @@
         "CYP2D6",
         "GSTM1",
         "GSTT1",
-        "NAT2"
+        "NAT2",
+        "CYP2A6",
+        "CHRNA3",
+        "NFE2L2",
+        "KEAP1"
       ],
       "voc_effects": {
         "toluene": 0.4,
@@ -520,7 +530,10 @@
         "BCL2",
         "TP53",
         "RIPK1",
-        "MLKL"
+        "MLKL",
+        "TNF",
+        "CDKN2A",
+        "FAT1"
       ],
       "voc_effects": {
         "hexanal": 0.25,
@@ -606,7 +619,9 @@
         "BRAF",
         "MAP2K1",
         "EGFR",
-        "ERBB2"
+        "ERBB2",
+        "SOX2",
+        "PIK3CA"
       ],
       "voc_effects": {
         "ethanol": 0.2,
@@ -947,7 +962,8 @@
         "AIF1",
         "GFAP",
         "CSF1R",
-        "NLRP3"
+        "NLRP3",
+        "TGFB1"
       ],
       "voc_effects": {
         "hexanal": 0.35,

@@ -25,6 +25,7 @@ dependencies = [
   "scikit-learn>=1.4",
   "scipy>=1.11",
   "matplotlib>=3.8",
+  "umap-learn>=0.5",
   "pydantic>=2.6",
   "typer>=0.12",
   "rich>=13.7",
@@ -58,6 +59,7 @@ where = ["src"]
 [tool.setuptools.package-data]
 exhalepath = [
   "data/knowledge/*.json",
+  "data/knowledge/cohort_1000/**/*",
   "data/census/*",
   "data/models/*",
   "data/clinical_comorbidity/*.json",

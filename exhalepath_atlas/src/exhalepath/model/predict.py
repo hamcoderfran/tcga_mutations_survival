@@ -82,6 +82,32 @@ class ExhalePathPredictor:
         except Exception:  # noqa: BLE001
             return {}
 
+    def _offline_associated_genes(self, disease: dict) -> dict[str, float]:
+        """Use fused Open Targets / GDC fragments when live OT is disabled."""
+        out: dict[str, float] = {}
+        did = disease.get("disease_id")
+        ot = (self.kb.datasources.get("opentargets") or {}) if self.kb.datasources else {}
+        for row in ot.get("disease_genes") or []:
+            if row.get("disease_id") != did:
+                continue
+            for g in row.get("genes") or []:
+                gene = str(g.get("gene") or "").upper()
+                if not gene:
+                    continue
+                out[gene] = max(float(out.get(gene, 0.0)), float(g.get("score") or 0.55))
+        gdc = (self.kb.datasources.get("gdc") or {}) if self.kb.datasources else {}
+        for row in gdc.get("projects") or []:
+            if row.get("disease_id") != did:
+                continue
+            for gene in row.get("driver_genes") or []:
+                gu = str(gene).upper()
+                out[gu] = max(float(out.get(gu, 0.0)), 0.7)
+        # Curated disease driver_genes as soft associations
+        for gene in disease.get("driver_genes") or []:
+            gu = str(gene).upper()
+            out[gu] = max(float(out.get(gu, 0.0)), 0.65)
+        return out
+
     def _predict_log2fc(
         self,
         *,
@@ -151,6 +177,9 @@ class ExhalePathPredictor:
                 weight=float(query.comorbidity_weight),
             )
         assoc = self._associated_genes(disease.get("name") or query.disease)
+        # Offline OT/GDC/driver priors always available (even when live OT is off)
+        for g, s in self._offline_associated_genes(disease).items():
+            assoc[g] = max(float(assoc.get(g, 0.0)), float(s))
         # Also pull OT associations for comorbidities (soft)
         if query.comorbidities and self.use_opentargets:
             for c in disease.get("_comorbidities") or []:
@@ -160,6 +189,15 @@ class ExhalePathPredictor:
                 extra = self._associated_genes(cname)
                 for g, s in extra.items():
                     assoc[g] = max(float(assoc.get(g, 0.0)), 0.55 * float(s))
+        # Offline comorbidity gene priors
+        if query.comorbidities:
+            for c in disease.get("_comorbidities") or []:
+                cid = c.get("disease_id")
+                if not cid:
+                    continue
+                cdis = self.kb.diseases.get(cid) or {"disease_id": cid}
+                for g, s in self._offline_associated_genes(cdis).items():
+                    assoc[g] = max(float(assoc.get(g, 0.0)), 0.5 * float(s))
         pathway_scores = score_pathways(
             kb=self.kb,
             disease=disease,
