@@ -719,6 +719,58 @@ def eval_lit_compare_cmd(
     rprint(f"  report: {out_dir / 'LITERATURE_COMPARE.md'}")
 
 
+@app.command("improve-external")
+def improve_external_cmd(
+    dry_run: bool = typer.Option(False, help="Collect evidence stats without writing priors"),
+):
+    """Soft-fuse secured external VOC evidence into disease priors (no calibrator retrain)."""
+    from .knowledge.external_evidence import fuse_external_into_priors
+
+    report = fuse_external_into_priors(dry_run=dry_run)
+    rprint("[bold]External evidence fuse[/bold]")
+    rprint(f"  diseases updated: {report.get('n_diseases_updated')}")
+    rprint(f"  VOC prior updates: {report.get('n_voc_prior_updates')}")
+    rprint(f"  edges: {(report.get('stats') or {}).get('n_voc_edges')}")
+    rprint(f"  dry_run={dry_run}")
+
+
+@app.command("eval-disease100-external")
+def eval_disease100_external_cmd(
+    out_dir: Path = typer.Option(Path("runs/model_external_100")),
+    n_diseases: int = typer.Option(100, help="Diseases in connection + validation suite"),
+    demo_max_patients: Optional[int] = typer.Option(200),
+    skip_fuse: bool = typer.Option(False, help="Skip prior fusion (eval only)"),
+):
+    """Fuse open external evidence into priors, then validate + re-run 100-disease suite."""
+    from .eval.model_external_100 import run_model_improve_and_disease100
+
+    report = run_model_improve_and_disease100(
+        out_dir=out_dir,
+        n_diseases=n_diseases,
+        demo_max_patients=demo_max_patients,
+        skip_fuse=skip_fuse,
+    )
+    ext = report["external_validation"]
+    lit = report["literature_concordance"]
+    d100 = report.get("disease100") or {}
+    fuse = report.get("fuse") or {}
+    rprint("[bold]Model improve + external-validated 100-disease[/bold]")
+    rprint(
+        f"  fuse: diseases={fuse.get('n_diseases_updated')} "
+        f"voc_updates={fuse.get('n_voc_prior_updates')}"
+    )
+    rprint(
+        f"  external GT concordance: [green]{ext.get('mean_concordance_pct')}%[/green] "
+        f"({ext.get('n_diseases_with_external_gt')} diseases)"
+    )
+    rprint(
+        f"  lit concordance: [green]{lit.get('mean_concordance_pct')}%[/green] "
+        f"({lit.get('n_diseases')} diseases)"
+    )
+    rprint(f"  disease100: {d100.get('n_diseases')} diseases")
+    rprint(f"  report: {out_dir / 'MODEL_EXTERNAL_100DISEASE.md'}")
+
+
 def _fmt_pct(v) -> str:
     if v is None:
         return "—"
@@ -1339,6 +1391,8 @@ def main(argv: Optional[list[str]] = None):
         "eval-patient-cohort",
         "eval-coverage",
         "eval-lit-compare",
+        "improve-external",
+        "eval-disease100-external",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",
