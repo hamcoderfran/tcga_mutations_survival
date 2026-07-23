@@ -96,7 +96,7 @@ def _norm_name(s: str) -> str:
 
 def download_scientific_data_breathomics(out_dir: Path | None = None) -> dict[str, Path]:
     """Fetch Figshare peak tables for the Scientific Data clinical breathomics set."""
-    import requests
+    from .secure_fetch import secure_fetch
 
     out_dir = Path(out_dir or PUBLIC_BREATH_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -106,9 +106,13 @@ def download_scientific_data_breathomics(out_dir: Path | None = None) -> dict[st
         if dest.exists() and dest.stat().st_size > 1000:
             paths[name] = dest
             continue
-        r = requests.get(url, timeout=120)
-        r.raise_for_status()
-        dest.write_bytes(r.content)
+        secure_fetch(
+            url,
+            dest=dest,
+            quarantine_dir=out_dir / ".quarantine",
+            max_bytes=80 * 1024 * 1024,
+            timeout=120,
+        )
         paths[name] = dest
     return paths
 
