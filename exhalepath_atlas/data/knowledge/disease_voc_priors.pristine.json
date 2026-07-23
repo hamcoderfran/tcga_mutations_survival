@@ -26,14 +26,14 @@
         "cytochrome_p450_detox": 1.2
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.85,
-        "heptanal": 0.7889,
-        "nonanal": 0.7129,
-        "pentane": 0.5341,
-        "2_butanone": 0.7208,
+        "hexanal": 1.05,
+        "heptanal": 0.85,
+        "nonanal": 0.75,
+        "pentane": 0.5,
+        "2_butanone": 0.8,
         "acetaldehyde": 0.55,
-        "ethanol": 0.385,
-        "isoprene": -0.3229,
+        "ethanol": 0.35,
+        "isoprene": -0.3,
         "octanal": 0.3825,
         "butane": 0.255,
         "hexane": 0.2975,
@@ -42,8 +42,7 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17,
-        "ethane": 0.15,
-        "benzene": 0.0763
+        "ethane": 0.15
       },
       "driver_genes": [
         "KRAS",
@@ -51,11 +50,7 @@
         "STK11",
         "KEAP1",
         "EGFR"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 9,
-      "external_evidence_delta_n": 9,
-      "histology_guard_applied": true
+      ]
     },
     {
       "disease_id": "breast_invasive_carcinoma",
@@ -77,7 +72,7 @@
         "methionine_transsulfuration": 1.1
       },
       "voc_log2fc_prior": {
-        "dmts": 1.3719,
+        "dmts": 1.5,
         "hexanal": 0.6,
         "2_butanone": 0.5,
         "acetone": 0.3,
@@ -93,10 +88,7 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 2,
-      "external_evidence_delta_n": 1
+      }
     },
     {
       "disease_id": "pancreatic_adenocarcinoma",
@@ -120,9 +112,9 @@
         "apoptosis_necrosis": 1.2
       },
       "voc_log2fc_prior": {
-        "acetone": 0.686,
-        "2_butanone": 0.7719,
-        "hexanal": 0.6843,
+        "acetone": 0.7,
+        "2_butanone": 0.9,
+        "hexanal": 0.8,
         "ethanol": 0.4,
         "heptanal": 0.425,
         "nonanal": 0.425,
@@ -135,10 +127,7 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 3,
-      "external_evidence_delta_n": 3
+      }
     },
     {
       "disease_id": "colon_adenocarcinoma",
@@ -163,9 +152,9 @@
         "lipid_peroxidation": 1.1
       },
       "voc_log2fc_prior": {
-        "acetone": 0.428,
+        "acetone": 0.4,
         "pentane": 0.5,
-        "hexanal": 0.6388,
+        "hexanal": 0.7,
         "hydrogen_sulfide": 0.6,
         "heptanal": 0.425,
         "nonanal": 0.425,
@@ -179,10 +168,7 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 3,
-      "external_evidence_delta_n": 2
+      }
     },
     {
       "disease_id": "hepatocellular_carcinoma",
@@ -206,9 +192,9 @@
         "fatty_acid_oxidation": 1.3
       },
       "voc_log2fc_prior": {
-        "dms": 1.1139,
-        "limonene": 0.944,
-        "ammonia": 0.741,
+        "dms": 1.2,
+        "limonene": 1.0,
+        "ammonia": 0.8,
         "acetone": 0.5,
         "hexanal": 0.595,
         "heptanal": 0.425,
@@ -224,10 +210,7 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 3,
-      "external_evidence_delta_n": 3
+      }
     },
     {
       "disease_id": "type_2_diabetes",
@@ -249,19 +232,15 @@
         "glycolysis_warburg": 0.8
       },
       "voc_log2fc_prior": {
-        "acetone": 1.1307,
+        "acetone": 1.4,
         "isoprene": -0.2,
-        "ethanol": 0.345,
-        "2_butanone": 0.531,
-        "isopropanol": 0.4659,
+        "ethanol": 0.3,
+        "2_butanone": 0.51,
+        "isopropanol": 0.425,
         "2_pentanone": 0.34,
         "ammonia": 0.2975,
-        "trimethylamine": 0.2125,
-        "acetaldehyde": 0.132
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 5,
-      "external_evidence_delta_n": 5
+        "trimethylamine": 0.2125
+      }
     },
     {
       "disease_id": "chronic_liver_disease",
@@ -286,19 +265,15 @@
         "cytochrome_p450_detox": 1.4
       },
       "voc_log2fc_prior": {
-        "dms": 1.3115,
-        "ammonia": 1.1999,
-        "limonene": 0.8245,
+        "dms": 1.5,
+        "ammonia": 1.3,
+        "limonene": 0.9,
         "acetone": 0.85,
-        "2_butanone": 0.5136,
+        "2_butanone": 0.51,
         "isopropanol": 0.425,
         "2_pentanone": 0.34,
-        "trimethylamine": 0.2125,
-        "methanol": 0.132
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 5,
-      "external_evidence_delta_n": 5
+        "trimethylamine": 0.2125
+      }
     },
     {
       "disease_id": "chronic_kidney_disease",
@@ -320,19 +295,15 @@
         "one_carbon_folate": 1.1
       },
       "voc_log2fc_prior": {
-        "ammonia": 0.977,
+        "ammonia": 1.1,
         "acetone": 0.4,
         "dms": 0.5,
         "2_butanone": 0.51,
         "isopropanol": 0.425,
         "2_pentanone": 0.34,
-        "trimethylamine": 0.2429,
-        "dimethyl_amine": 0.55,
-        "isoprene": 0.132
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 4,
-      "external_evidence_delta_n": 3
+        "trimethylamine": 0.2125,
+        "dimethyl_amine": 0.55
+      }
     },
     {
       "disease_id": "inflammatory_bowel_disease",
@@ -356,11 +327,11 @@
         "apoptosis_necrosis": 1.2
       },
       "voc_log2fc_prior": {
-        "hydrogen_sulfide": 0.8425,
+        "hydrogen_sulfide": 1.0,
         "pentane": 0.6,
         "hexanal": 0.5,
-        "indole": 0.7889,
-        "phenol": 0.6369,
+        "indole": 0.85,
+        "phenol": 0.65,
         "octanal": 0.2975,
         "3_methylbutanal": 0.255,
         "methyl_mercaptan": 0.55,
@@ -370,12 +341,9 @@
         "acetaldehyde": 0.55,
         "ethyl_acetate": 0.55,
         "carbon_disulfide": 0.55,
-        "trimethylamine": 0.735,
+        "trimethylamine": 0.75,
         "dimethyl_amine": 0.45
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 6,
-      "external_evidence_delta_n": 4
+      }
     },
     {
       "disease_id": "ovarian_cancer",
@@ -466,10 +434,10 @@
         "microbial_proteolysis_putrefaction": 1.5
       },
       "voc_log2fc_prior": {
-        "hydrogen_sulfide": 1.344,
-        "ethanol": 0.8559,
+        "hydrogen_sulfide": 1.4,
+        "ethanol": 0.9,
         "acetaldehyde": 0.7,
-        "indole": 0.772,
+        "indole": 0.8,
         "methanol": 0.5,
         "phenol": 0.68,
         "trimethylamine": 0.595,
@@ -478,10 +446,7 @@
         "propanol": 0.34,
         "ethyl_acetate": 0.2975,
         "pyrrole": 0.255
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 3,
-      "external_evidence_delta_n": 3
+      }
     },
     {
       "disease_id": "clostridioides_difficile_infection",
@@ -573,19 +538,16 @@
         "neurotransmitter_metabolism": 1.2
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.7964,
-        "pentane": 0.532,
-        "acetone": 0.632,
-        "ethane": 0.4089,
+        "hexanal": 0.9,
+        "pentane": 0.55,
+        "acetone": 0.65,
+        "ethane": 0.35,
         "nonanal": 0.65,
         "isoprene": -0.35,
         "octanal": 0.2975,
         "propanol": 0.17,
         "ammonia": 0.15
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 4,
-      "external_evidence_delta_n": 4
+      }
     },
     {
       "disease_id": "creutzfeldt_jakob",
@@ -652,8 +614,8 @@
         "lipid_peroxidation": 1.3
       },
       "voc_log2fc_prior": {
-        "pentane": 0.7745,
-        "hexanal": 0.541,
+        "pentane": 0.85,
+        "hexanal": 0.55,
         "acetone": 0.25,
         "ammonia": 0.55,
         "2_butanone": 0.45,
@@ -661,14 +623,8 @@
         "nonanal": 0.34,
         "octanal": 0.2975,
         "propanol": 0.17,
-        "isoprene": -0.15,
-        "hexane": 0.132,
-        "styrene": 0.132,
-        "ethylbenzene": 0.132
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 5,
-      "external_evidence_delta_n": 5
+        "isoprene": -0.15
+      }
     },
     {
       "disease_id": "major_depressive_disorder",
@@ -756,18 +712,14 @@
       },
       "voc_log2fc_prior": {
         "acetone": 0.55,
-        "isoprene": 0.3225,
+        "isoprene": 0.3,
         "pentane": 0.35,
         "hexanal": 0.5525,
         "ethane": 0.34,
         "nonanal": 0.34,
         "octanal": 0.2975,
-        "propanol": 0.17,
-        "dms": 0.132
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 3,
-      "external_evidence_delta_n": 2
+        "propanol": 0.17
+      }
     },
     {
       "disease_id": "multiple_sclerosis",
@@ -821,9 +773,9 @@
         "lipid_peroxidation": 1.25
       },
       "voc_log2fc_prior": {
-        "acetone": 0.569,
-        "hexanal": 0.655,
-        "2_butanone": 0.557,
+        "acetone": 0.6,
+        "hexanal": 0.7,
+        "2_butanone": 0.55,
         "ethanol": 0.4,
         "pentane": 0.45,
         "heptanal": 0.425,
@@ -836,10 +788,7 @@
         "furan": 0.2125,
         "styrene": 0.17,
         "ethylbenzene": 0.17
-      },
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 3,
-      "external_evidence_delta_n": 3
+      }
     },
     {
       "disease_id": "traumatic_brain_injury",
@@ -1304,13 +1253,13 @@
         "cytochrome_p450_detox": 1.25
       },
       "voc_log2fc_prior": {
-        "ethane": 1.4946,
-        "hexanal": 1.05,
-        "heptanal": 0.8546,
+        "ethane": 1.654,
+        "hexanal": 1.843,
+        "heptanal": 0.906,
         "benzene": 0.65,
         "2_pentanone": -0.45,
         "decanal": -0.45,
-        "dodecane": -0.1992,
+        "dodecane": -0.45,
         "ethyl_acetate": -0.45,
         "ethylbenzene": -0.45,
         "furan": -0.45,
@@ -1319,23 +1268,19 @@
         "phenol": 0.65,
         "benzaldehyde": -0.45,
         "propanol": -0.45,
-        "pentane": 0.7,
+        "pentane": 0.65,
         "nonanal": 0.45,
-        "acetone": 0.4202,
-        "isoprene": -0.3933,
+        "acetone": 0.4,
+        "isoprene": -0.4,
         "toluene": 0.35,
-        "2_butanone": 0.25
+        "2_butanone": 0.4
       },
       "driver_genes": [
         "SERPINA1",
         "HHIP",
         "CHRNA3",
         "FAM13A"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 21,
-      "external_evidence_delta_n": 7,
-      "histology_guard_applied": true
+      ]
     },
     {
       "disease_id": "asthma",
@@ -1355,7 +1300,7 @@
         "apoptosis_necrosis": 1.2
       },
       "voc_log2fc_prior": {
-        "ethane": 1.1292,
+        "ethane": 1.227,
         "2_pentanone": 0.65,
         "benzaldehyde": 0.65,
         "ethyl_acetate": 0.65,
@@ -1368,10 +1313,10 @@
         "hexane": -0.45,
         "isopropanol": -0.45,
         "phenol": -0.45,
-        "pentane": 0.6798,
-        "hexanal": 0.6366,
+        "pentane": 0.7,
+        "hexanal": 0.65,
         "nonanal": 0.5,
-        "acetone": 0.3769,
+        "acetone": 0.35,
         "isoprene": -0.35,
         "ethanol": 0.3
       },
@@ -1381,10 +1326,7 @@
         "IL13",
         "TSLP",
         "ORMDL3"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 19,
-      "external_evidence_delta_n": 4
+      ]
     },
     {
       "disease_id": "ild",
@@ -2160,24 +2102,20 @@
       },
       "voc_log2fc_prior": {
         "ethane": 1.279,
-        "hydrogen_sulfide": 0.7664,
-        "dms": 0.6798,
+        "hydrogen_sulfide": 0.8,
+        "dms": 0.7,
         "indole": 0.55,
         "phenol": 0.4,
-        "acetone": 0.3769,
+        "acetone": 0.35,
         "isoprene": -0.3,
         "pentane": 0.5,
         "hexanal": 0.55,
         "ethanol": 0.3,
-        "ammonia": 0.35,
-        "2_pentanone": 0.132
+        "ammonia": 0.35
       },
       "driver_genes": [
         "CFTR"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 12,
-      "external_evidence_delta_n": 4
+      ]
     },
     {
       "disease_id": "down_syndrome",
@@ -2367,27 +2305,23 @@
       },
       "voc_log2fc_prior": {
         "ethanol": 0.6,
-        "acetone": -0.2724,
+        "acetone": -0.4,
         "isopropanol": -0.4,
         "ethylbenzene": 0.6,
         "propanol": -0.4,
-        "hexanal": 0.5933,
+        "hexanal": 0.6,
         "hydrogen_sulfide": 0.7,
         "dms": 0.55,
-        "isoprene": -0.3933,
+        "isoprene": -0.4,
         "pentane": 0.6,
-        "ammonia": 0.4,
-        "heptanal": 0.132
+        "ammonia": 0.4
       },
       "driver_genes": [
         "TLR4",
         "IL6",
         "TNF",
         "CRP"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 12,
-      "external_evidence_delta_n": 4
+      ]
     },
     {
       "disease_id": "nafld",
@@ -3292,12 +3226,12 @@
         "brain_energy_metabolism": 1.15
       },
       "voc_log2fc_prior": {
-        "acetone": 1.8907,
-        "pentane": 0.8169,
+        "acetone": 2.117,
+        "pentane": 0.862,
         "isopropanol": 0.4,
         "methanol": 0.2,
         "hexanal": 0.5,
-        "isoprene": -0.2291,
+        "isoprene": -0.35,
         "ammonia": 0.3
       },
       "driver_genes": [
@@ -3305,10 +3239,7 @@
         "MYH7",
         "LMNA",
         "BAG3"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 7,
-      "external_evidence_delta_n": 3
+      ]
     },
     {
       "disease_id": "malaria",
@@ -3330,9 +3261,9 @@
       },
       "voc_log2fc_prior": {
         "nonanal": -0.4,
-        "isoprene": -0.2724,
+        "isoprene": -0.4,
         "benzene": 0.6,
-        "acetone": 0.3769,
+        "acetone": 0.35,
         "pentane": 0.45,
         "hexanal": -0.3,
         "2_butanone": 0.25
@@ -3341,10 +3272,7 @@
         "HBB",
         "ACKR1",
         "G6PD"
-      ],
-      "external_evidence_fused": true,
-      "external_evidence_n_vocs": 7,
-      "external_evidence_delta_n": 2
+      ]
     },
     {
       "disease_id": "ards",
@@ -3450,14 +3378,14 @@
         "nonanal": 0.85,
         "octanal": 0.55,
         "acetaldehyde": 0.7,
-        "2_butanone": 0.75,
+        "2_butanone": 0.7,
         "styrene": 0.45,
         "ethylbenzene": 0.35,
         "pentane": 0.45,
         "ethane": 0.2,
         "benzene": 0.35,
         "isoprene": -0.4,
-        "acetone": 0.45,
+        "acetone": 0.3,
         "propanol": 0.25
       },
       "driver_genes": [
@@ -3467,8 +3395,7 @@
         "NFE2L2",
         "SOX2",
         "FAT1"
-      ],
-      "histology_guard_applied": true
+      ]
     }
   ]
 }

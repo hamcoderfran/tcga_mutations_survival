@@ -1,0 +1,276 @@
+{
+  "version": "2.1.0",
+  "n_curated_studies": 9,
+  "n_discovered_additional": 16,
+  "n_studies_total": 25,
+  "studies": [
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST003200",
+      "title": "9 common breath VOCs in 504 healthy subjects (ppbv)",
+      "disease_hints": [
+        "healthy_baseline",
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST003200"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002449",
+      "title": "Valley fever / pneumonia breath VOCs",
+      "disease_hints": [
+        "pneumonia_bacterial",
+        "infectious"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002449"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000883",
+      "title": "Breathprinting malaria-associated biomarkers",
+      "disease_hints": [
+        "infectious",
+        "malaria"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000883"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000587",
+      "title": "Exhaled breath condensate in decompensated heart failure",
+      "disease_hints": [
+        "heart_failure",
+        "cardiovascular"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000587"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001164",
+      "title": "Cystic fibrosis acute pulmonary exacerbations (breath)",
+      "disease_hints": [
+        "cystic_fibrosis",
+        "pulmonary"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001164"
+    },
+    {
+      "repo": "metabolights",
+      "accession": "MTBLS2400",
+      "title": "Epilepsy breath metabolomics (SESI-HRMS)",
+      "disease_hints": [
+        "epilepsy"
+      ],
+      "url": "https://www.ebi.ac.uk/metabolights/MTBLS2400"
+    },
+    {
+      "repo": "metabolights",
+      "accession": "MTBLS2436",
+      "title": "Breath / VOC MetaboLights study (GC-MS)",
+      "disease_hints": [
+        "pulmonary"
+      ],
+      "url": "https://www.ebi.ac.uk/metabolights/MTBLS2436"
+    },
+    {
+      "repo": "massive",
+      "accession": "MSV000095340",
+      "title": "Breath metabolites healthy vs asthmatic children",
+      "disease_hints": [
+        "asthma",
+        "copd"
+      ],
+      "url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000095340"
+    },
+    {
+      "repo": "figshare_scientific_data",
+      "accession": "23522490",
+      "title": "Clinical breathomics asthma/COPD/bronchiectasis",
+      "disease_hints": [
+        "asthma",
+        "copd"
+      ],
+      "url": "https://doi.org/10.6084/m9.figshare.23522490.v6"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001251",
+      "title": "The effects of a training program encompassing cold exposure, breathing exercises, and meditation on plasma metabomics during experimental human endotoxemia",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001251",
+      "discovery": "mw_rest_title_search",
+      "query": "breath"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000406",
+      "title": "Noninvasive Recognition and Biomarkers of Early Allergic Asthma in Cats using Multivariate Statistics of NMR Spectra of Exhaled Breath Condensate",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000406",
+      "discovery": "mw_rest_title_search",
+      "query": "breath"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002867",
+      "title": "Root VOCs of Arabidopsis thaliana and its mutants",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002867",
+      "discovery": "mw_rest_title_search",
+      "query": "VOC"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002282",
+      "title": "Detection of Methyl jasmonate (MeJA) in Plant root VOCs",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002282",
+      "discovery": "mw_rest_title_search",
+      "query": "VOC"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST004123",
+      "title": "Targeted volatile metabolomics of Artemisia argyi leaves under cadmium stress with synthetic microbial community inoculation",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST004123",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST004056",
+      "title": "Analysis of volatile oxidized lipids released during ferroptosis",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST004056",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST003753",
+      "title": "Effects of UV-C treatment on volatile organic compounds in fresh tomato",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST003753",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002793",
+      "title": "Interspecies metabolite transfer fuels methionine metabolism of Fusobacterium nucleatum to stimulate volatile methyl mercaptan production",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002793",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002543",
+      "title": "GC/MS analysis of hypoxic volatile metabolic markers in the MDA-MB-231 breast cancer cell line",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002543",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST002350",
+      "title": "Identify putative volatile biomarkers of Valley fever using a murine lung infection model",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST002350",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001659",
+      "title": "Identify putative volatile biomarkers of Coccidioides spp. grown in vitro",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001659",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001414",
+      "title": "Pseudomonas aeruginosa cystic fibrosis clinical isolates volatile metabolomics",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001414",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000603",
+      "title": "Urinary Volatile Compound, Associated with Chronic Inflammation In Interstitial Cystitis",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000603",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST000239",
+      "title": "Sexual antagonism in exuded non-volatile metabolites in C. purpureus",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST000239",
+      "discovery": "mw_rest_title_search",
+      "query": "volatile"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST003322",
+      "title": "EBC metabolomics in non-small cell lung cancer patients and control individuals",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST003322",
+      "discovery": "mw_rest_title_search",
+      "query": "EBC"
+    },
+    {
+      "repo": "metabolomics_workbench",
+      "accession": "ST001437",
+      "title": "Sub-nanoliter metabolomics via mass spectrometry to characterize volume-limited samples - EBC",
+      "disease_hints": [
+        "unspecified"
+      ],
+      "url": "https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?StudyID=ST001437",
+      "discovery": "mw_rest_title_search",
+      "query": "EBC"
+    }
+  ],
+  "security": {
+    "allowlisted_api": true,
+    "executed_code": false
+  }
+}
