@@ -81,14 +81,16 @@ def _predict_pair(engine: ExhaleBiomarkerEngine, q: dict[str, Any]) -> tuple[Any
         return None, None, f"{type(e).__name__}: {e}"
 
     no_genes = None
+    nogene_err = None
     if kw.get("genes"):
         try:
             kw2 = dict(kw)
             kw2["genes"] = None
             no_genes = engine.predict(**kw2)
         except Exception as e:  # noqa: BLE001
-            return with_genes, None, f"nogene:{type(e).__name__}: {e}"
-    return with_genes, no_genes, None
+            # Primary prediction still usable; gene-shift just unavailable.
+            nogene_err = f"nogene:{type(e).__name__}: {e}"
+    return with_genes, no_genes, nogene_err
 
 
 def _resource_inventory(engine: ExhaleBiomarkerEngine) -> dict[str, Any]:
@@ -151,8 +153,9 @@ def run_cohort(
         pid = pat["patient_id"]
         q = dict(pat.get("query") or {})
         meta = dict(pat.get("meta") or {})
-        report, report_ng, err = _predict_pair(engine, q)
+        report, report_ng, warn = _predict_pair(engine, q)
 
+        primary_err = None if report is not None else warn
         row: dict[str, Any] = {
             "patient_id": pid,
             "stratum": pat.get("stratum"),
@@ -170,14 +173,15 @@ def run_cohort(
             "stage": q.get("stage"),
             "metastatic": bool(q.get("metastatic") or False),
             "category": meta.get("category"),
-            "error": err,
-            "ok": err is None and report is not None,
+            "error": primary_err,
+            "warning": warn if report is not None and warn else None,
+            "ok": report is not None,
         }
 
         if report is None:
             patient_rows.append(row)
             breakdown_flags.append(
-                {"patient_id": pid, "flag": "exception", "detail": err, "disease": q.get("disease")}
+                {"patient_id": pid, "flag": "exception", "detail": primary_err, "disease": q.get("disease")}
             )
             continue
 
