@@ -77,6 +77,9 @@ def score_pathways(
     Score metabolic pathway dysregulation from mutated / associated genes.
 
     Score ≈ disease_bias * site_mult * stage_mult * (mutation hits + soft OT associations)
+
+    Orphan driver/GWAS genes that are not in any pathway seed set still modulate
+    disease-biased pathways so genetic context moves VOC predictions.
     """
     mutated = {g.upper() for g in mutated_genes if g}
     associated_genes = associated_genes or {}
@@ -91,6 +94,26 @@ def score_pathways(
     # When no molecular evidence is available, apply a mild disease-level baseline
     # so curated disease priors (e.g. T2D acetone) are not wiped out by zero pathway scores.
     has_molecular = bool(mutated) or bool(associated_genes) or bool(overrides)
+
+    all_seeds: set[str] = set()
+    for p in kb.pathways.values():
+        all_seeds |= {g.upper() for g in p.get("seed_genes", []) if g}
+    orphans = sorted(mutated - all_seeds)
+    # Disease-listed drivers that missed seeds also count as orphans
+    for g in disease.get("driver_genes") or []:
+        gu = str(g).upper()
+        if gu in mutated and gu not in all_seeds and gu not in orphans:
+            orphans.append(gu)
+
+    biased_pids = [
+        pid
+        for pid, bias in (disease.get("pathway_bias") or {}).items()
+        if float(bias) > 1.05 and pid in kb.pathways
+    ]
+    orphan_boost = 0.0
+    if orphans and biased_pids:
+        # Up to ~0.45 total mass spread across biased pathways
+        orphan_boost = 0.12 * min(len(orphans), 5) / len(biased_pids)
 
     scores: list[PathwayScore] = []
     for pid, p in kb.pathways.items():
@@ -122,6 +145,12 @@ def score_pathways(
             else:
                 base = base + prior_floor
 
+        # Orphan GWAS/driver genes → disease-biased pathway modulation
+        orphan_hits: list[str] = []
+        if orphan_boost > 0 and pid in biased_pids and pid not in overrides:
+            base = base + orphan_boost
+            orphan_hits = list(orphans)
+
         site_m = _site_multiplier(pid, tumor, disease.get("default_site"))
         score = base * bias * stage_m * site_m * burden
 
@@ -137,7 +166,7 @@ def score_pathways(
                 pathway_id=pid,
                 name=p["name"],
                 score=float(score),
-                hit_genes=sorted(set(hits) | set(soft_hits)),
+                hit_genes=sorted(set(hits) | set(soft_hits) | set(orphan_hits)),
                 disease_bias=bias,
             )
         )

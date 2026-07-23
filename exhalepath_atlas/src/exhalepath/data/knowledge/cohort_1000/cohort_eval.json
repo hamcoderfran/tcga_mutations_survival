@@ -1,0 +1,298 @@
+{
+  "overall": {
+    "n_patients": 1000,
+    "n_ok": 1000,
+    "n_failed": 0,
+    "ok_pct": 100.0,
+    "n_unresolved": 0,
+    "breakdown_flag_counts": {},
+    "n_resources_datasources": 14,
+    "voc_silhouette": 0.024194189341762696,
+    "gene_shift_silhouette": 0.14465866607079625,
+    "focus_centroid_distances": {
+      "chronic_bronchitis__vs__copd": 2.4710974530758096,
+      "chronic_bronchitis__vs__lung_adenocarcinoma": 4.395216827124597,
+      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.462520863379093,
+      "copd__vs__lung_adenocarcinoma": 4.46177810029417,
+      "copd__vs__lung_squamous_cell_carcinoma": 2.4496553688622,
+      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.623369359865227
+    },
+    "smoking_effect_mean_abs": {
+      "copd": 0.06307170718430313,
+      "lung_adenocarcinoma": 0.039641774333837775,
+      "chronic_bronchitis": 0.04449676569597619
+    }
+  },
+  "resources": {
+    "n_diseases": 110,
+    "n_vocs": 50,
+    "n_pathways": 17,
+    "n_tissues": 73,
+    "n_cell_states": 18,
+    "n_pathway_chains": 19,
+    "datasources": [
+      "bindingdb",
+      "blood_proxy",
+      "gdc",
+      "gtex",
+      "hbdb",
+      "hmdb",
+      "kegg",
+      "metabolomics",
+      "mvoc",
+      "nist",
+      "opentargets",
+      "partition",
+      "pubchem",
+      "reactome"
+    ],
+    "chembl_loaded": true,
+    "atlas_capability": true,
+    "mode": "hybrid",
+    "opentargets_live": false,
+    "opentargets_offline_priors": true,
+    "gdc_offline_priors": true
+  },
+  "alignment": {
+    "centroid_l2_distances": {
+      "chronic_bronchitis__vs__copd": 2.4710974530758096,
+      "chronic_bronchitis__vs__lung_adenocarcinoma": 4.395216827124597,
+      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.462520863379093,
+      "copd__vs__lung_adenocarcinoma": 4.46177810029417,
+      "copd__vs__lung_squamous_cell_carcinoma": 2.4496553688622,
+      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.623369359865227
+    },
+    "within_disease_mean_pairwise_l2": {
+      "chronic_bronchitis": 2.4723524923387825,
+      "copd": 2.6162083382816395,
+      "lung_adenocarcinoma": 3.1179965284112394,
+      "lung_squamous_cell_carcinoma": 2.9550016077778447
+    },
+    "n_per_focus": {
+      "chronic_bronchitis": 100,
+      "copd": 120,
+      "lung_adenocarcinoma": 120,
+      "lung_squamous_cell_carcinoma": 60
+    },
+    "interpretation": "Smaller centroid distances \u21d2 more similar VOC profiles. COPD vs chronic_bronchitis should be closer than either vs lung cancer if the atlas separates obstructive inflammation from malignancy."
+  },
+  "smoking_effect": {
+    "copd": {
+      "n_never": 24,
+      "n_current": 68,
+      "mean_abs_delta": 0.06307170718430313,
+      "top_voc_deltas": [
+        {
+          "voc_id": "ammonia",
+          "delta_log2fc": -0.4815368162987803
+        },
+        {
+          "voc_id": "toluene",
+          "delta_log2fc": 0.4503847657239218
+        },
+        {
+          "voc_id": "benzene",
+          "delta_log2fc": 0.450174253347849
+        },
+        {
+          "voc_id": "acetone",
+          "delta_log2fc": -0.4168891212303749
+        },
+        {
+          "voc_id": "2_butanone",
+          "delta_log2fc": -0.40993137252941425
+        },
+        {
+          "voc_id": "isopropanol",
+          "delta_log2fc": -0.11704286729269409
+        },
+        {
+          "voc_id": "isoprene",
+          "delta_log2fc": 0.08459250122155249
+        },
+        {
+          "voc_id": "dimethyl_amine",
+          "delta_log2fc": -0.08056225193466084
+        }
+      ]
+    },
+    "lung_adenocarcinoma": {
+      "n_never": 32,
+      "n_current": 47,
+      "mean_abs_delta": 0.039641774333837775,
+      "top_voc_deltas": [
+        {
+          "voc_id": "toluene",
+          "delta_log2fc": 0.4178019032327967
+        },
+        {
+          "voc_id": "benzene",
+          "delta_log2fc": 0.4019557454536278
+        },
+        {
+          "voc_id": "ethane",
+          "delta_log2fc": -0.13052058262586652
+        },
+        {
+          "voc_id": "acetone",
+          "delta_log2fc": -0.10766341690805481
+        },
+        {
+          "voc_id": "ammonia",
+          "delta_log2fc": 0.07597679817499159
+        },
+        {
+          "voc_id": "acetaldehyde",
+          "delta_log2fc": -0.06761329383032777
+        },
+        {
+          "voc_id": "hexanal",
+          "delta_log2fc": -0.06494777437332466
+        },
+        {
+          "voc_id": "pentane",
+          "delta_log2fc": -0.060396556314068484
+        }
+      ]
+    },
+    "chronic_bronchitis": {
+      "n_never": 27,
+      "n_current": 39,
+      "mean_abs_delta": 0.04449676569597619,
+      "top_voc_deltas": [
+        {
+          "voc_id": "toluene",
+          "delta_log2fc": 0.41230267441216334
+        },
+        {
+          "voc_id": "benzene",
+          "delta_log2fc": 0.40046960361965467
+        },
+        {
+          "voc_id": "2_pentanone",
+          "delta_log2fc": 0.09955699799697683
+        },
+        {
+          "voc_id": "2_butanone",
+          "delta_log2fc": -0.09469969100054554
+        },
+        {
+          "voc_id": "furan",
+          "delta_log2fc": 0.09307664943157512
+        },
+        {
+          "voc_id": "hexanal",
+          "delta_log2fc": -0.0866149206731377
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "delta_log2fc": 0.07382468928127485
+        },
+        {
+          "voc_id": "phenol",
+          "delta_log2fc": -0.07105613811491579
+        }
+      ]
+    }
+  },
+  "embed": {
+    "voc": {
+      "n": 1000,
+      "pca_var_pc1": 0.20397223050873947,
+      "pca_var_pc2": 0.13848151457392027,
+      "pca_var_top5": [
+        0.20397223050873947,
+        0.13848151457392027,
+        0.1262235658804031,
+        0.11871328150782881,
+        0.07660823458207303
+      ],
+      "silhouette": 0.024194189341762696,
+      "umap_error": null,
+      "loadings_pc1_top": [
+        {
+          "feature_index": 26,
+          "loading": 0.28023387864940524
+        },
+        {
+          "feature_index": 22,
+          "loading": -0.22959306946116928
+        },
+        {
+          "feature_index": 42,
+          "loading": -0.22284542289240208
+        },
+        {
+          "feature_index": 28,
+          "loading": 0.2191889218257988
+        },
+        {
+          "feature_index": 48,
+          "loading": 0.2186918358831692
+        },
+        {
+          "feature_index": 9,
+          "loading": 0.2143398131228642
+        },
+        {
+          "feature_index": 10,
+          "loading": 0.20922851192327932
+        },
+        {
+          "feature_index": 43,
+          "loading": 0.20754950600073066
+        }
+      ]
+    },
+    "gene_shift": {
+      "n": 871,
+      "pca_var_pc1": 0.25589652594193946,
+      "pca_var_pc2": 0.15721077942899792,
+      "pca_var_top5": [
+        0.25589652594193946,
+        0.15721077942899792,
+        0.12229506537126826,
+        0.06068828905430707,
+        0.052178198353004225
+      ],
+      "silhouette": 0.14465866607079625,
+      "umap_error": null,
+      "loadings_pc1_top": [
+        {
+          "feature_index": 18,
+          "loading": 0.24813176125139308
+        },
+        {
+          "feature_index": 11,
+          "loading": 0.24708607619374123
+        },
+        {
+          "feature_index": 22,
+          "loading": 0.23507021963151617
+        },
+        {
+          "feature_index": 6,
+          "loading": 0.22315831370049233
+        },
+        {
+          "feature_index": 35,
+          "loading": 0.21787403913025652
+        },
+        {
+          "feature_index": 5,
+          "loading": 0.2177704675105028
+        },
+        {
+          "feature_index": 16,
+          "loading": 0.2166176733365692
+        },
+        {
+          "feature_index": 36,
+          "loading": 0.2087237553487921
+        }
+      ]
+    }
+  },
+  "cohort_version": "1.0.0",
+  "n_patients_run": 1000
+}
