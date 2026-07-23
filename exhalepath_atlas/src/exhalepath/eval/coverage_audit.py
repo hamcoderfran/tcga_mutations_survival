@@ -300,9 +300,14 @@ def discover_mw_breath_studies(*, offline: bool = False) -> dict[str, Any]:
                 acc = str(acc).upper()
                 if not acc.startswith("ST"):
                     continue
-                # breath-ish filter
+                # Human breath / EBC filter — require breath/exhal/EBC; "voc/volatile" alone is too broad
                 blob = f"{acc} {title}".lower()
-                if not any(k in blob for k in ("breath", "exhal", "voc", "volatile", "ebc")):
+                has_breath = any(k in blob for k in ("breath", "exhal", "ebc", "exhaled"))
+                has_voc = any(k in blob for k in ("voc", "volatile", "odorant"))
+                if not (has_breath or (has_voc and "human" in blob)):
+                    continue
+                # Exclude obvious non-human matrices
+                if any(k in blob for k in ("plant", "arabidopsis", "food", "wine", "beer", "soil")):
                     continue
                 if acc in known or any(d.get("accession") == acc for d in discovered):
                     continue
@@ -320,14 +325,28 @@ def discover_mw_breath_studies(*, offline: bool = False) -> dict[str, Any]:
         except SecureFetchError:
             continue
 
-    # Merge into expanded catalog (do not drop curated)
-    merged = list(catalog.get("studies") or [])
-    for d in discovered:
-        merged.append(d)
+    # Merge curated + previously expanded + newly discovered (no data loss)
+    prev = _load(DS / "metabolomics" / "breath_study_catalog_expanded.json") or {}
+    merged_by_acc: dict[str, dict[str, Any]] = {}
+    for s in list(catalog.get("studies") or []) + list(prev.get("studies") or []) + discovered:
+        acc = str(s.get("accession") or "").upper()
+        if not acc:
+            continue
+        if acc not in merged_by_acc:
+            merged_by_acc[acc] = s
+        else:
+            # Prefer richer title / disease hints
+            cur = merged_by_acc[acc]
+            if (s.get("title") or "") and len(str(s.get("title") or "")) > len(str(cur.get("title") or "")):
+                cur["title"] = s["title"]
+            if s.get("disease_hints") and s["disease_hints"] != ["unspecified"]:
+                cur["disease_hints"] = s["disease_hints"]
+    merged = list(merged_by_acc.values())
+    n_discovered_additional = sum(1 for s in merged if s.get("accession") not in known)
     out = {
-        "version": "2.1.0",
+        "version": "2.2.0",
         "n_curated_studies": sum(1 for s in merged if s.get("accession") in known),
-        "n_discovered_additional": len(discovered),
+        "n_discovered_additional": n_discovered_additional,
         "n_studies_total": len(merged),
         "studies": merged,
         "security": {"allowlisted_api": True, "executed_code": False},
@@ -432,15 +451,45 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
     n_secured = int(extended.get("n_compounds") or 0)
     if n_secured == 0 and vol.get("compounds"):
         n_secured = len(vol["compounds"])
+    # Secured = local inventory with SHA-256 provenance (not tautological remote re-fetch success)
+    prov = (extended.get("source_provenance") or {}) if isinstance(extended, dict) else {}
+    has_local_sha = bool(prov.get("sha256"))
+    if not has_local_sha and (DS / "hbdb" / "volatilome_compounds.json").exists():
+        from ..ingest.secure_fetch import sha256_file
 
-    # Atlas prediction panel enrichment
+        has_local_sha = True
+        prov = {**prov, "sha256": sha256_file(DS / "hbdb" / "volatilome_compounds.json")}
+    remote_ok = str(prov.get("remote_fetch") or "").startswith("ok")
+    n_secured_verified = n_secured if has_local_sha else 0
+
+    # Atlas prediction panel enrichment — count real property fill, not file-level n_vocs
     clear_knowledge_cache()
     kb = default_knowledge()
     n_atlas = len(kb.vocs)
     pubchem = _load(KNOW / "datasource_pubchem.json") or {}
     hmdb = _load(KNOW / "datasource_hmdb.json") or {}
-    n_pubchem = int(pubchem.get("n_vocs_enriched") or pubchem.get("n_vocs") or 0)
-    n_hmdb = int(hmdb.get("n_vocs") or hmdb.get("n_catalog_enriched") or 0)
+    pc_props = pubchem.get("properties") or pubchem.get("vocs") or []
+    if isinstance(pc_props, dict):
+        pc_props = list(pc_props.values())
+    n_pubchem_cid = sum(1 for p in pc_props if isinstance(p, dict) and p.get("cid"))
+    n_pubchem_physchem = sum(
+        1
+        for p in pc_props
+        if isinstance(p, dict) and (p.get("mw") is not None or p.get("xlogp") is not None)
+    )
+    hmdb_rows = hmdb.get("vocs") or hmdb.get("compounds") or hmdb.get("properties") or []
+    if isinstance(hmdb_rows, dict):
+        hmdb_rows = list(hmdb_rows.values())
+    n_hmdb_linked = sum(
+        1
+        for p in hmdb_rows
+        if isinstance(p, dict) and (p.get("hmdb_id") or p.get("accession") or p.get("voc_id"))
+    )
+    # Fallback to declared counts only when structured rows absent
+    if not pc_props:
+        n_pubchem_cid = int(pubchem.get("n_vocs_enriched") or pubchem.get("n_vocs") or 0)
+    if not hmdb_rows:
+        n_hmdb_linked = int(hmdb.get("n_vocs") or hmdb.get("n_catalog_enriched") or 0)
 
     panels = _load(ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json") or {}
     n_panels = len(panels.get("panels") or [])
@@ -455,11 +504,12 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
     catalog = _load(DS / "metabolomics" / "breath_study_catalog.json") or {}
     n_curated_studies = len(catalog.get("studies") or [])
 
-    compound_cov = (n_secured / n_universe) if n_universe else 0.0
-    # Secondary: fraction of atlas VOCs with chemical enrichment
-    chem_cov = min(n_atlas, max(n_pubchem, n_hmdb)) / n_atlas if n_atlas else 0.0
+    compound_cov = (n_secured_verified / n_universe) if n_universe else 0.0
+    # Secondary: fraction of atlas VOCs with chemical identity link (CID/HMDB), not physchem fill
+    chem_id_cov = min(n_atlas, max(n_pubchem_cid, n_hmdb_linked)) / n_atlas if n_atlas else 0.0
+    chem_phys_cov = (n_pubchem_physchem / n_atlas) if n_atlas else 0.0
 
-    # Integrity manifest over key artifacts
+    # Integrity manifest over key artifacts (relative paths)
     key_files = [
         DS / "hbdb" / "volatilome_compounds.json",
         KNOW / "voc_catalog.json",
@@ -473,6 +523,7 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
     integrity = write_integrity_manifest(
         [p for p in key_files if p.exists()],
         DS / "INTEGRITY_MANIFEST.json",
+        root=ROOT,
     )
 
     audit = {
@@ -487,14 +538,25 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
         "universe": universe,
         "metrics": {
             "open_compound_universe_n": n_universe,
-            "open_compound_secured_n": n_secured,
+            "open_compound_secured_n": n_secured_verified,
             "open_compound_coverage": compound_cov,
             "open_compound_coverage_pct": round(100 * compound_cov, 3),
             "meets_99pct_open_compound_target": compound_cov >= 0.99,
+            "local_sha256_bound": has_local_sha,
+            "remote_reverify_ok": remote_ok,
+            "coverage_note": (
+                "Coverage = local SHA-256-bound VOLATILOME inventory / universe size. "
+                "Remote re-verify is reported separately (remote_reverify_ok)."
+            ),
             "atlas_prediction_vocs": n_atlas,
             "extended_mapped_to_atlas_voc": extended.get("n_mapped_to_atlas_voc"),
-            "atlas_chem_enrichment_coverage": chem_cov,
-            "atlas_chem_enrichment_pct": round(100 * chem_cov, 2),
+            "atlas_chem_identity_coverage": chem_id_cov,
+            "atlas_chem_identity_pct": round(100 * chem_id_cov, 2),
+            "atlas_chem_physchem_coverage": chem_phys_cov,
+            "atlas_chem_physchem_pct": round(100 * chem_phys_cov, 2),
+            # Backward-compat alias (identity, not physchem)
+            "atlas_chem_enrichment_coverage": chem_id_cov,
+            "atlas_chem_enrichment_pct": round(100 * chem_id_cov, 2),
             "curated_public_studies": n_curated_studies,
             "expanded_public_studies": mw_exp.get("n_studies_total"),
             "mw_discovered_additional": mw_exp.get("n_discovered_additional"),
@@ -578,7 +640,9 @@ def _md(audit: dict[str, Any]) -> str:
         "",
         f"- Atlas prediction VOCs: {m.get('atlas_prediction_vocs')}",
         f"- Extended catalog mapped to atlas IDs: {m.get('extended_mapped_to_atlas_voc')}",
-        f"- Atlas chem enrichment (PubChem/HMDB): {m.get('atlas_chem_enrichment_pct')}%",
+        f"- Atlas chem identity (PubChem CID / HMDB link): {m.get('atlas_chem_identity_pct')}%",
+        f"- Atlas chem physchem fill (mw/xlogp): {m.get('atlas_chem_physchem_pct')}%",
+        f"- Local SHA-256 bound: {m.get('local_sha256_bound')} · remote re-verify: {m.get('remote_reverify_ok')}",
         f"- Curated public studies: {m.get('curated_public_studies')}",
         f"- Expanded MW study catalog size: {m.get('expanded_public_studies')} "
         f"(+{m.get('mw_discovered_additional')} discovered)",

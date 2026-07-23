@@ -12,6 +12,8 @@ from .secure_fetch import SecureFetchError, host_allowed
 _session = requests.Session()
 _session.headers.update({"User-Agent": USER_AGENT})
 
+MAX_JSON_BYTES = 32 * 1024 * 1024
+
 
 def request_json(
     method: str,
@@ -35,7 +37,6 @@ def request_json(
                 json=json_body,
                 timeout=timeout,
             )
-            # Reject redirects off allowlist (storage CDNs OK as redirect targets)
             if not host_allowed(r.url, allow_storage_cdn=True):
                 raise SecureFetchError(f"Redirected to non-allowlisted host: {r.url}")
             r.raise_for_status()
@@ -43,6 +44,8 @@ def request_json(
             if any(x in ct for x in ("javascript", "wasm", "x-msdownload", "x-sh")):
                 raise SecureFetchError(f"Dangerous content-type from API: {ct}")
             raw = r.content
+            if len(raw) > MAX_JSON_BYTES:
+                raise SecureFetchError(f"JSON payload exceeds max bytes ({MAX_JSON_BYTES})")
             if raw[:4] == b"\x7fELF" or raw[:2] == b"MZ":
                 raise SecureFetchError("Executable payload disguised as JSON API response")
             return r.json()

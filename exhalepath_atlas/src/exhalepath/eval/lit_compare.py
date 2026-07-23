@@ -597,7 +597,7 @@ def _pick_interesting(pairs_df: pd.DataFrame, bridges: pd.DataFrame) -> list[dic
         ("malaria", "sepsis"),
         ("alzheimer_disease", "parkinson_disease"),
         ("asthma", "copd"),
-        ("cirrhosis", "hepatocellular_carcinoma"),
+        ("chronic_liver_disease", "hepatocellular_carcinoma"),
         ("obesity", "type_2_diabetes"),
         ("tuberculosis", "lung_adenocarcinoma"),
     ]
@@ -645,7 +645,7 @@ def _connection_note(a: str, b: str) -> str:
         frozenset({"malaria", "sepsis"}): "Systemic oxidative / infectious breath stress",
         frozenset({"alzheimer_disease", "parkinson_disease"}): "Neurodegeneration oxidative alkanes/aldehydes",
         frozenset({"asthma", "copd"}): "Airway oxidative alkane overlap with distinct ketone/ester accents",
-        frozenset({"cirrhosis", "hepatocellular_carcinoma"}): "Hepatic sulfur / ammonia axis toward malignancy",
+        frozenset({"chronic_liver_disease", "hepatocellular_carcinoma"}): "Hepatic sulfur / ammonia axis toward malignancy",
         frozenset({"obesity", "type_2_diabetes"}): "Ketone-body / insulin-resistance breath continuum",
         frozenset({"tuberculosis", "lung_adenocarcinoma"}): "Pulmonary oxidative VOCs — infection vs malignancy confounder",
     }

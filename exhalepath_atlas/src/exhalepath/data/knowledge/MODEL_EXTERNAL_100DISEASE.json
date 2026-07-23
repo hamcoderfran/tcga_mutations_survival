@@ -1,17 +1,20 @@
 {
-  "version": "1.1.0",
-  "generated_at": "2026-07-23T06:16:40.884031+00:00",
-  "honesty": "In-sample external concordance uses open corpora that also inform prior fusion (panels / public breath / HBDB proxies) and can look near-perfect. Held-out literature_benchmarks concordance is the less circular check. HBDB SQL / Owlstone still blocked until user dumps arrive. Calibrator *.joblib untouched.",
+  "version": "1.2.0",
+  "generated_at": "2026-07-23T17:05:58.361567+00:00",
+  "honesty": "Held-out literature_benchmarks concordance is the primary non-circular metric. In-sample external concordance overlaps fuse sources (panels/public/HBDB) and can look near-perfect by construction \u2014 treat as coverage of open GT, not independent accuracy. Fuse always restarts from disease_voc_priors.pristine.json (idempotent). HBDB SQL / Owlstone still blocked until user dumps arrive. Calibrator *.joblib untouched.",
   "fuse_holdout_stage": {
-    "version": "1.0.0",
-    "generated_at": "2026-07-23T06:16:21.032647+00:00",
+    "version": "1.2.0",
+    "generated_at": "2026-07-23T17:05:38.113185+00:00",
     "policy": {
       "calibrator_untouched": true,
       "prior_cap": 2.5,
+      "blend_from_pristine": true,
+      "idempotent": true,
       "include_lit_bench": false,
       "include_public_breath": true,
       "include_panels": true,
       "include_hbdb": true,
+      "apply_histology_guard": true,
       "weights": {
         "quantified_panel": 0.55,
         "directional_panel": 0.35,
@@ -26,24 +29,27 @@
       "n_panel_folds": 135,
       "n_public_breath_edges": 44,
       "n_lit_bench_edges": 0,
-      "n_hbdb_edges": 59,
+      "n_hbdb_edges": 57,
+      "n_hbdb_skipped_unmapped": 2,
       "europepmc_records": 100,
       "europepmc_dois": 97,
       "expanded_mw_studies": 25
     },
     "n_diseases_updated": 14,
     "n_voc_prior_updates": 56,
+    "n_histology_guard_edits": 5,
     "voc_identity_enrichment": {
       "updated": 0,
-      "n_extended_mapped": 44
+      "n_extended_mapped": 44,
+      "dry_run": false
     },
-    "n_changelog_rows": 56,
+    "n_changelog_rows": 61,
     "changelog_sample": [
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "hexanal",
-        "before": 0.9,
-        "after": 0.8269,
+        "before": 1.05,
+        "after": 0.9409,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -54,8 +60,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "heptanal",
-        "before": 0.7,
-        "after": 0.6749,
+        "before": 0.85,
+        "after": 0.7889,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -66,8 +72,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "nonanal",
-        "before": 0.6,
-        "after": 0.5989,
+        "before": 0.75,
+        "after": 0.7129,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -294,8 +300,8 @@
       {
         "disease_id": "alzheimer_disease",
         "voc_id": "hexanal",
-        "before": 0.8,
-        "after": 0.7775,
+        "before": 0.9,
+        "after": 0.8625,
         "target": 0.65,
         "weight": 0.15,
         "sources": [
@@ -305,8 +311,8 @@
       {
         "disease_id": "alzheimer_disease",
         "voc_id": "pentane",
-        "before": 0.6,
-        "after": 0.5989,
+        "before": 0.55,
+        "after": 0.5609,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -317,8 +323,8 @@
       {
         "disease_id": "alzheimer_disease",
         "voc_id": "ethane",
-        "before": 0.4,
-        "after": 0.4469,
+        "before": 0.35,
+        "after": 0.4089,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -329,8 +335,8 @@
       {
         "disease_id": "alzheimer_disease",
         "voc_id": "acetone",
-        "before": 0.5,
-        "after": 0.5045,
+        "before": 0.65,
+        "after": 0.641,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -340,8 +346,8 @@
       {
         "disease_id": "parkinson_disease",
         "voc_id": "pentane",
-        "before": 0.7,
-        "after": 0.6865,
+        "before": 0.85,
+        "after": 0.823,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -503,15 +509,18 @@
     ]
   },
   "fuse": {
-    "version": "1.0.0",
-    "generated_at": "2026-07-23T06:16:21.839837+00:00",
+    "version": "1.2.0",
+    "generated_at": "2026-07-23T17:05:39.039303+00:00",
     "policy": {
       "calibrator_untouched": true,
       "prior_cap": 2.5,
+      "blend_from_pristine": true,
+      "idempotent": true,
       "include_lit_bench": true,
       "include_public_breath": true,
       "include_panels": true,
       "include_hbdb": true,
+      "apply_histology_guard": true,
       "weights": {
         "quantified_panel": 0.55,
         "directional_panel": 0.35,
@@ -526,24 +535,27 @@
       "n_panel_folds": 135,
       "n_public_breath_edges": 44,
       "n_lit_bench_edges": 37,
-      "n_hbdb_edges": 59,
+      "n_hbdb_edges": 57,
+      "n_hbdb_skipped_unmapped": 2,
       "europepmc_records": 100,
       "europepmc_dois": 97,
       "expanded_mw_studies": 25
     },
     "n_diseases_updated": 20,
-    "n_voc_prior_updates": 77,
+    "n_voc_prior_updates": 76,
+    "n_histology_guard_edits": 7,
     "voc_identity_enrichment": {
       "updated": 0,
-      "n_extended_mapped": 44
+      "n_extended_mapped": 44,
+      "dry_run": false
     },
-    "n_changelog_rows": 77,
+    "n_changelog_rows": 83,
     "changelog_sample": [
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "hexanal",
-        "before": 0.85,
-        "after": 0.7004,
+        "before": 1.05,
+        "after": 0.8244,
         "target": 0.4562,
         "weight": 0.38,
         "sources": [
@@ -555,8 +567,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "heptanal",
-        "before": 0.6749,
-        "after": 0.6558,
+        "before": 0.85,
+        "after": 0.7889,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -567,8 +579,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "nonanal",
-        "before": 0.5989,
-        "after": 0.5981,
+        "before": 0.75,
+        "after": 0.7129,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -579,8 +591,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "pentane",
-        "before": 0.5225,
-        "after": 0.55,
+        "before": 0.5,
+        "after": 0.5341,
         "target": 0.6174,
         "weight": 0.29,
         "sources": [
@@ -591,8 +603,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "2_butanone",
-        "before": 0.7509,
-        "after": 0.6904,
+        "before": 0.8,
+        "after": 0.7208,
         "target": 0.5916,
         "weight": 0.38,
         "sources": [
@@ -604,8 +616,8 @@
       {
         "disease_id": "lung_adenocarcinoma",
         "voc_id": "isoprene",
-        "before": -0.3229,
-        "after": -0.3403,
+        "before": -0.3,
+        "after": -0.3229,
         "target": -0.3955,
         "weight": 0.24,
         "sources": [
@@ -749,8 +761,8 @@
       {
         "disease_id": "type_2_diabetes",
         "voc_id": "acetone",
-        "before": 1.2069,
-        "after": 1.011,
+        "before": 1.4,
+        "after": 1.1307,
         "target": 0.6913,
         "weight": 0.38,
         "sources": [
@@ -762,8 +774,8 @@
       {
         "disease_id": "type_2_diabetes",
         "voc_id": "isopropanol",
-        "before": 0.4659,
-        "after": 0.497,
+        "before": 0.425,
+        "after": 0.4659,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -774,8 +786,8 @@
       {
         "disease_id": "type_2_diabetes",
         "voc_id": "2_butanone",
-        "before": 0.531,
-        "after": 0.5489,
+        "before": 0.51,
+        "after": 0.531,
         "target": 0.65,
         "weight": 0.15,
         "sources": [
@@ -785,8 +797,8 @@
       {
         "disease_id": "type_2_diabetes",
         "voc_id": "ethanol",
-        "before": 0.345,
-        "after": 0.3819,
+        "before": 0.3,
+        "after": 0.345,
         "target": 0.55,
         "weight": 0.18,
         "sources": [
@@ -796,8 +808,8 @@
       {
         "disease_id": "type_2_diabetes",
         "voc_id": "acetaldehyde",
-        "before": 0.132,
-        "after": 0.1696,
+        "before": null,
+        "after": 0.132,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -807,8 +819,8 @@
       {
         "disease_id": "chronic_liver_disease",
         "voc_id": "dms",
-        "before": 1.4145,
-        "after": 1.2457,
+        "before": 1.5,
+        "after": 1.3115,
         "target": 0.6804,
         "weight": 0.23,
         "sources": [
@@ -830,8 +842,8 @@
       {
         "disease_id": "chronic_liver_disease",
         "voc_id": "limonene",
-        "before": 0.8685,
-        "after": 0.8003,
+        "before": 0.9,
+        "after": 0.8245,
         "target": 0.5719,
         "weight": 0.23,
         "sources": [
@@ -842,8 +854,8 @@
       {
         "disease_id": "chronic_liver_disease",
         "voc_id": "methanol",
-        "before": 0.132,
-        "after": 0.1696,
+        "before": null,
+        "after": 0.132,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -853,8 +865,8 @@
       {
         "disease_id": "chronic_liver_disease",
         "voc_id": "2_butanone",
-        "before": 0.5136,
-        "after": 0.5169,
+        "before": 0.51,
+        "after": 0.5136,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -864,8 +876,8 @@
       {
         "disease_id": "chronic_kidney_disease",
         "voc_id": "ammonia",
-        "before": 1.0505,
-        "after": 0.9389,
+        "before": 1.1,
+        "after": 0.977,
         "target": 0.5653,
         "weight": 0.23,
         "sources": [
@@ -876,8 +888,8 @@
       {
         "disease_id": "chronic_kidney_disease",
         "voc_id": "trimethylamine",
-        "before": 0.2429,
-        "after": 0.2705,
+        "before": 0.2125,
+        "after": 0.2429,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -887,8 +899,8 @@
       {
         "disease_id": "chronic_kidney_disease",
         "voc_id": "isoprene",
-        "before": 0.132,
-        "after": 0.1696,
+        "before": null,
+        "after": 0.132,
         "target": 0.55,
         "weight": 0.09,
         "sources": [
@@ -898,8 +910,8 @@
       {
         "disease_id": "inflammatory_bowel_disease",
         "voc_id": "indole",
-        "before": 0.7889,
-        "after": 0.7425,
+        "before": 0.85,
+        "after": 0.7889,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -910,8 +922,8 @@
       {
         "disease_id": "inflammatory_bowel_disease",
         "voc_id": "phenol",
-        "before": 0.6369,
-        "after": 0.627,
+        "before": 0.65,
+        "after": 0.6369,
         "target": 0.5955,
         "weight": 0.24,
         "sources": [
@@ -922,8 +934,8 @@
       {
         "disease_id": "inflammatory_bowel_disease",
         "voc_id": "hydrogen_sulfide",
-        "before": 0.9029,
-        "after": 0.7823,
+        "before": 1.0,
+        "after": 0.8425,
         "target": 0.5856,
         "weight": 0.38,
         "sources": [
@@ -935,8 +947,8 @@
       {
         "disease_id": "inflammatory_bowel_disease",
         "voc_id": "trimethylamine",
-        "before": 0.735,
-        "after": 0.7223,
+        "before": 0.75,
+        "after": 0.735,
         "target": 0.65,
         "weight": 0.15,
         "sources": [
@@ -979,8 +991,8 @@
       {
         "disease_id": "alzheimer_disease",
         "voc_id": "hexanal",
-        "before": 0.7775,
-        "after": 0.7094,
+        "before": 0.9,
+        "after": 0.7964,
         "target": 0.5428,
         "weight": 0.29,
         "sources": [
@@ -991,8 +1003,8 @@
       {
         "disease_id": "alzheimer_disease",
         "voc_id": "pentane",
-        "before": 0.5989,
-        "after": 0.5623,
+        "before": 0.55,
+        "after": 0.532,
         "target": 0.5026,
         "weight": 0.38,
         "sources": [
@@ -1004,12 +1016,12 @@
     ]
   },
   "held_out_literature_benchmarks": {
-    "n_diseases_with_external_gt": 12,
+    "n_diseases_with_external_gt": 13,
     "n_external_expect_diseases_available": 13,
     "mean_concordance": 1.0,
     "mean_concordance_pct": 100.0,
-    "n_voc_checks": 33,
-    "n_voc_hits": 33,
+    "n_voc_checks": 34,
+    "n_voc_hits": 34,
     "by_disease": [
       {
         "disease_id": "alzheimer_disease",
@@ -1143,8 +1155,20 @@
         "refs": [
           "lit_bench:sibo"
         ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "concordance": 1.0,
+        "n_hit": 1,
+        "n_checked": 1,
+        "n_elevate": 1,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:t2d_zero_shot_metabolic"
+        ]
       }
     ],
+    "circular_with_fuse": false,
     "gt_sources": {
       "include_lit_bench": true,
       "include_public_breath": false,
@@ -1155,16 +1179,17 @@
   "literature_benchmarks_audit": {
     "n_cases": 17,
     "directional_accuracy": 1.0,
+    "min_fold_accuracy": 1.0,
     "min_fold_pass_rate": 1.0,
     "case_pass_rate": 1.0
   },
   "external_validation": {
-    "n_diseases_with_external_gt": 25,
+    "n_diseases_with_external_gt": 27,
     "n_external_expect_diseases_available": 27,
-    "mean_concordance": 0.9966666666666666,
-    "mean_concordance_pct": 99.67,
-    "n_voc_checks": 175,
-    "n_voc_hits": 174,
+    "mean_concordance": 0.9969135802469135,
+    "mean_concordance_pct": 99.69,
+    "n_voc_checks": 189,
+    "n_voc_hits": 188,
     "by_disease": [
       {
         "disease_id": "alzheimer_disease",
@@ -1459,8 +1484,33 @@
         "refs": [
           "priority10:sleep_apnea"
         ]
+      },
+      {
+        "disease_id": "tuberculosis",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "n_elevate": 8,
+        "n_suppress": 1,
+        "refs": [
+          "priority10:tuberculosis"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "n_elevate": 5,
+        "n_suppress": 0,
+        "refs": [
+          "public_breath:lit_t2d_acetone",
+          "lit_bench:t2d_zero_shot_metabolic",
+          "hbdb_proxy"
+        ]
       }
     ],
+    "circular_with_fuse": true,
     "gt_sources": {
       "include_lit_bench": true,
       "include_public_breath": true,
@@ -1470,8 +1520,8 @@
   },
   "literature_concordance": {
     "n_diseases": 19,
-    "mean_concordance": 0.9974937343358397,
-    "mean_concordance_pct": 99.75,
+    "mean_concordance": 1.0,
+    "mean_concordance_pct": 100.0,
     "by_disease": [
       {
         "disease_id": "ards",
@@ -1552,7 +1602,7 @@
           {
             "voc": "ethane",
             "expect": "elevate",
-            "log2fc": 1.2976101781978744,
+            "log2fc": 1.3441851781978744,
             "ok": true
           },
           {
@@ -1618,7 +1668,7 @@
           {
             "voc": "acetone",
             "expect": "elevate",
-            "log2fc": 0.4000187781823111,
+            "log2fc": 0.3825435214358842,
             "ok": true
           },
           {
@@ -1827,8 +1877,8 @@
       },
       {
         "disease_id": "copd",
-        "concordance": 0.9523809523809523,
-        "n_hit": 20,
+        "concordance": 1.0,
+        "n_hit": 21,
         "n_checked": 21,
         "refs": [
           "PMC7796324 VOC fingerprints lung disease",
@@ -1839,7 +1889,7 @@
           {
             "voc": "ethane",
             "expect": "elevate",
-            "log2fc": 1.5732072353645612,
+            "log2fc": 1.707823779512387,
             "ok": true
           },
           {
@@ -1851,7 +1901,7 @@
           {
             "voc": "heptanal",
             "expect": "elevate",
-            "log2fc": 0.9913260582026515,
+            "log2fc": 1.015776058202652,
             "ok": true
           },
           {
@@ -1887,7 +1937,7 @@
           {
             "voc": "acetone",
             "expect": "elevate",
-            "log2fc": 0.4393262415453777,
+            "log2fc": 0.42619850995629804,
             "ok": true
           },
           {
@@ -1899,7 +1949,7 @@
           {
             "voc": "2_butanone",
             "expect": "elevate",
-            "log2fc": 0.28981768363114585,
+            "log2fc": 0.26665792708026487,
             "ok": true
           },
           {
@@ -1917,8 +1967,8 @@
           {
             "voc": "dodecane",
             "expect": "suppress",
-            "log2fc": 0.08403437595844714,
-            "ok": false
+            "log2fc": -0.05822400258638739,
+            "ok": true
           },
           {
             "voc": "ethyl_acetate",
@@ -1959,7 +2009,7 @@
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.33877412035952154,
+            "log2fc": -0.34312291638406894,
             "ok": true
           }
         ]
@@ -2041,13 +2091,13 @@
           {
             "voc": "hydrogen_sulfide",
             "expect": "elevate",
-            "log2fc": 1.890028689347006,
+            "log2fc": 1.9179198290316564,
             "ok": true
           },
           {
             "voc": "dms",
             "expect": "elevate",
-            "log2fc": 1.1199028491144067,
+            "log2fc": 1.13335389598441,
             "ok": true
           },
           {
@@ -2065,7 +2115,7 @@
           {
             "voc": "acetone",
             "expect": "elevate",
-            "log2fc": 0.3944472616251535,
+            "log2fc": 0.3769615468247352,
             "ok": true
           },
           {
@@ -2171,13 +2221,13 @@
           {
             "voc": "acetone",
             "expect": "elevate",
-            "log2fc": 4.014066434993915,
+            "log2fc": 4.154527895483706,
             "ok": true
           },
           {
             "voc": "pentane",
             "expect": "elevate",
-            "log2fc": 3.9540452117754192,
+            "log2fc": 3.982245171169648,
             "ok": true
           },
           {
@@ -2207,7 +2257,7 @@
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.10013563204888339,
+            "log2fc": -0.1790765307779173,
             "ok": true
           }
         ]
@@ -2224,7 +2274,7 @@
           {
             "voc": "hydrogen_sulfide",
             "expect": "elevate",
-            "log2fc": 2.2032976689091455,
+            "log2fc": 2.263001584229306,
             "ok": true
           },
           {
@@ -2254,25 +2304,25 @@
           {
             "voc": "heptanal",
             "expect": "elevate",
-            "log2fc": 0.5219375351506309,
+            "log2fc": 0.5965276665520836,
             "ok": true
           },
           {
             "voc": "nonanal",
             "expect": "elevate",
-            "log2fc": 0.6587329118545046,
+            "log2fc": 0.6989129118545048,
             "ok": true
           },
           {
             "voc": "pentane",
             "expect": "elevate",
-            "log2fc": 3.6704383874298636,
+            "log2fc": 3.6550988115553324,
             "ok": true
           },
           {
             "voc": "2_butanone",
             "expect": "elevate",
-            "log2fc": 1.3673112538144263,
+            "log2fc": 1.3843042592909263,
             "ok": true
           },
           {
@@ -2284,7 +2334,7 @@
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -1.4288634782687377,
+            "log2fc": -1.4004668442927888,
             "ok": true
           }
         ]
@@ -2301,37 +2351,37 @@
           {
             "voc": "hexanal",
             "expect": "elevate",
-            "log2fc": 3.7356225232111253,
+            "log2fc": 3.565159556718095,
             "ok": true
           },
           {
             "voc": "heptanal",
             "expect": "elevate",
-            "log2fc": 0.6602082524895836,
+            "log2fc": 0.6603750493645835,
             "ok": true
           },
           {
             "voc": "nonanal",
             "expect": "elevate",
-            "log2fc": 0.7562597966201295,
+            "log2fc": 0.75498215990138,
             "ok": true
           },
           {
             "voc": "acetaldehyde",
             "expect": "elevate",
-            "log2fc": 0.473370813315667,
+            "log2fc": 0.6323543703822023,
             "ok": true
           },
           {
             "voc": "2_butanone",
             "expect": "elevate",
-            "log2fc": 0.7221232025833627,
+            "log2fc": 0.7232085936732878,
             "ok": true
           },
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.29012872236309517,
+            "log2fc": -0.3457117635192584,
             "ok": true
           }
         ]
@@ -2354,7 +2404,7 @@
           {
             "voc": "acetone",
             "expect": "elevate",
-            "log2fc": 1.3145074345893353,
+            "log2fc": 1.2960519640653678,
             "ok": true
           },
           {
@@ -2378,7 +2428,7 @@
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.1100846728925615,
+            "log2fc": -0.1581228466916184,
             "ok": true
           },
           {
@@ -2413,7 +2463,7 @@
           {
             "voc": "hexanal",
             "expect": "elevate",
-            "log2fc": 4.601784465275047,
+            "log2fc": 4.606643213745264,
             "ok": true
           },
           {
@@ -2443,7 +2493,7 @@
           {
             "voc": "acetone",
             "expect": "suppress",
-            "log2fc": -0.10156359800133298,
+            "log2fc": -0.1840928986356417,
             "ok": true
           },
           {
@@ -2461,7 +2511,7 @@
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.33876173356397016,
+            "log2fc": -0.3431105238020647,
             "ok": true
           }
         ]
@@ -2650,19 +2700,19 @@
           {
             "voc": "acetone",
             "expect": "elevate",
-            "log2fc": 3.4608888248048832,
+            "log2fc": 3.578781268751535,
             "ok": true
           },
           {
             "voc": "isopropanol",
             "expect": "elevate",
-            "log2fc": 0.5282109545288355,
+            "log2fc": 0.49956445540615213,
             "ok": true
           },
           {
             "voc": "2_butanone",
             "expect": "elevate",
-            "log2fc": 3.602443987424469,
+            "log2fc": 3.5847271079689778,
             "ok": true
           }
         ]
@@ -2672,8 +2722,8 @@
   "disease100": {
     "n_diseases": 100,
     "pca_var": [
-      0.2099494519694387,
-      0.14442230241211562
+      0.20884117021682944,
+      0.1424344646965745
     ],
     "top_cross_category": [
       {
@@ -2690,14 +2740,6 @@
         "category_a": "cardiovascular",
         "category_b": "unspecified",
         "cosine": 0.9924683985361112,
-        "cross_category": true
-      },
-      {
-        "disease_a": "hypertension",
-        "disease_b": "parkinson_disease",
-        "category_a": "cardiovascular",
-        "category_b": "neurological",
-        "cosine": 0.9915582936094652,
         "cross_category": true
       },
       {
@@ -2725,7 +2767,15 @@
         "cross_category": true
       },
       {
-        "disease_a": "ptsd",
+        "disease_a": "migraine",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "anxiety",
         "disease_b": "rheumatoid_arthritis",
         "category_a": "neurological",
         "category_b": "inflammatory",
@@ -2749,7 +2799,7 @@
         "cross_category": true
       },
       {
-        "disease_a": "migraine",
+        "disease_a": "ptsd",
         "disease_b": "rheumatoid_arthritis",
         "category_a": "neurological",
         "category_b": "inflammatory",
@@ -2765,17 +2815,25 @@
         "cross_category": true
       },
       {
-        "disease_a": "anxiety",
+        "disease_a": "bipolar",
         "disease_b": "rheumatoid_arthritis",
         "category_a": "neurological",
         "category_b": "inflammatory",
-        "cosine": 0.9906794833952624,
+        "cosine": 0.990089355218653,
         "cross_category": true
       }
     ],
     "top_same_category": [
       {
-        "disease_a": "ptsd",
+        "disease_a": "anxiety",
+        "disease_b": "ptsd",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "anxiety",
         "disease_b": "stroke",
         "category_a": "neurological",
         "category_b": "neurological",
@@ -2783,7 +2841,15 @@
         "cross_category": false
       },
       {
-        "disease_a": "adhd",
+        "disease_a": "migraine",
+        "disease_b": "ptsd",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "anxiety",
         "disease_b": "huntington",
         "category_a": "neurological",
         "category_b": "neurological",
@@ -2791,32 +2857,16 @@
         "cross_category": false
       },
       {
-        "disease_a": "gout_ckd_overlap",
-        "disease_b": "hyperlipidemia",
-        "category_a": "metabolic",
-        "category_b": "metabolic",
+        "disease_a": "down_syndrome",
+        "disease_b": "glaucoma",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
         "cosine": 1.0000000000000002,
         "cross_category": false
       },
       {
-        "disease_a": "adhd",
-        "disease_b": "ptsd",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
-        "cross_category": false
-      },
-      {
-        "disease_a": "adhd",
-        "disease_b": "stroke",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
-        "cross_category": false
-      },
-      {
-        "disease_a": "migraine",
-        "disease_b": "ptsd",
+        "disease_a": "anxiety",
+        "disease_b": "migraine",
         "category_a": "neurological",
         "category_b": "neurological",
         "cosine": 1.0000000000000002,
@@ -2831,10 +2881,10 @@
         "cross_category": false
       },
       {
-        "disease_a": "gout",
-        "disease_b": "gout_ckd_overlap",
-        "category_a": "metabolic",
-        "category_b": "metabolic",
+        "disease_a": "adhd",
+        "disease_b": "stroke",
+        "category_a": "neurological",
+        "category_b": "neurological",
         "cosine": 1.0000000000000002,
         "cross_category": false
       }
@@ -2847,7 +2897,7 @@
         "category_b": "cancer",
         "n_shared_elevated": 5,
         "shared_vocs": "heptanal|hexanal|nonanal|pentane|propionaldehyde",
-        "cosine": 0.791704227352276,
+        "cosine": 0.7912867034762374,
         "note": "Oxidative aldehydes overlap; cancer should still separate on ketone/aldehyde mix"
       },
       {
@@ -2855,7 +2905,7 @@
         "disease_b": "copd",
         "category_a": "pulmonary",
         "category_b": "pulmonary",
-        "cosine": 0.933004582511767,
+        "cosine": 0.9308977648014678,
         "cross_category": false,
         "note": "Obstructive airway inflammation continuum (literature-expected)"
       },
@@ -2866,7 +2916,7 @@
         "category_b": "inflammatory",
         "n_shared_elevated": 13,
         "shared_vocs": "acetaldehyde|ammonia|carbon_disulfide|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol",
-        "cosine": 0.5223323917723902,
+        "cosine": 0.52830693220115,
         "note": "Microbial sulfur / putrefaction VOCs"
       },
       {
@@ -2883,7 +2933,7 @@
         "disease_b": "sepsis",
         "category_a": "infectious",
         "category_b": "infectious",
-        "cosine": 0.165563688486151,
+        "cosine": 0.1652721812781815,
         "cross_category": false,
         "note": "Systemic oxidative / infectious breath stress"
       },
@@ -2892,7 +2942,7 @@
         "disease_b": "parkinson_disease",
         "category_a": "neurological",
         "category_b": "neurological",
-        "cosine": 0.9941797066563457,
+        "cosine": 0.9907024313282815,
         "cross_category": false,
         "note": "Neurodegeneration oxidative alkanes/aldehydes"
       },
@@ -2901,9 +2951,19 @@
         "disease_b": "copd",
         "category_a": "pulmonary",
         "category_b": "pulmonary",
-        "cosine": 0.8734400072305678,
+        "cosine": 0.8740896619225684,
         "cross_category": false,
         "note": "Airway oxidative alkane overlap with distinct ketone/ester accents"
+      },
+      {
+        "disease_a": "chronic_liver_disease",
+        "disease_b": "hepatocellular_carcinoma",
+        "category_a": "metabolic",
+        "category_b": "cancer",
+        "n_shared_elevated": 5,
+        "shared_vocs": "2_butanone|ammonia|dms|hydrogen_sulfide|limonene",
+        "cosine": 0.7570582446350954,
+        "note": "Hepatic sulfur / ammonia axis toward malignancy"
       },
       {
         "disease_a": "inflammatory_bowel_disease",
@@ -2912,7 +2972,7 @@
         "category_b": "microbiome",
         "n_shared_elevated": 11,
         "shared_vocs": "acetaldehyde|ammonia|dimethyl_amine|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine",
-        "cosine": 0.5241065384125133,
+        "cosine": 0.5303704495551694,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
@@ -2922,7 +2982,7 @@
         "category_b": "inflammatory",
         "n_shared_elevated": 11,
         "shared_vocs": "ammonia|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine",
-        "cosine": 0.5050584042451912,
+        "cosine": 0.5113307467534796,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
@@ -2932,7 +2992,7 @@
         "category_b": "cancer",
         "n_shared_elevated": 8,
         "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.9668525634817837,
+        "cosine": 0.9481072315615691,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
@@ -2942,7 +3002,7 @@
         "category_b": "cancer",
         "n_shared_elevated": 8,
         "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.9651373590370024,
+        "cosine": 0.9450888012104312,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
@@ -2996,13 +3056,13 @@
         "note": "High shared elevated-VOC bridge across categories"
       }
     ],
-    "mean_cross_cosine": 0.6406580466892715
+    "mean_cross_cosine": 0.6399884099962249
   },
   "demographics_pca": {
     "silhouette": {
-      "demo_by_smoking": 0.275982531027021,
+      "demo_by_smoking": 0.27728892995946436,
       "demo_by_category": null,
-      "voc_by_smoking": 0.034986633450586634,
+      "voc_by_smoking": 0.039513092777246656,
       "voc_by_category": null
     }
   },
@@ -3046,12 +3106,12 @@
       }
     },
     "focus_centroid_l2_after_fix": {
-      "copd__vs__chronic_bronchitis": 2.867777128946773,
-      "copd__vs__lung_adenocarcinoma": 4.092483635193303,
-      "copd__vs__lung_squamous_cell_carcinoma": 2.673921791135633,
-      "chronic_bronchitis__vs__lung_adenocarcinoma": 3.9829960586090816,
-      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.166702321096802,
-      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.893437593828117
+      "copd__vs__chronic_bronchitis": 2.9086007733656785,
+      "copd__vs__lung_adenocarcinoma": 4.105286724305107,
+      "copd__vs__lung_squamous_cell_carcinoma": 3.2420671620628143,
+      "chronic_bronchitis__vs__lung_adenocarcinoma": 3.968797243562585,
+      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.475964489459237,
+      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.646438853607103
     }
   }
 }

@@ -19,6 +19,7 @@ Trained calibrators (`data/models/*.joblib`) are **not** modified by eval merges
 | Integrity / anti-poisoning | [`../datasources/INTEGRITY_MANIFEST.json`](../datasources/INTEGRITY_MANIFEST.json) | SHA-256 of secured artifacts |
 | Literature compare + demographics PCA + 100-disease bridges | [`lit_compare/LITERATURE_COMPARE.md`](lit_compare/LITERATURE_COMPARE.md) | `voc eval-lit-compare` |
 | Model improve + external-validated 100-disease | [`MODEL_EXTERNAL_100DISEASE.md`](MODEL_EXTERNAL_100DISEASE.md) | `voc eval-disease100-external` |
+| Readiness audit (bugs fixed) | [`AUDIT_READINESS.md`](AUDIT_READINESS.md) | gates + fix list |
 
 ## Clinical profiles
 

@@ -17,7 +17,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 
@@ -58,8 +58,21 @@ ALLOWED_HOSTS: frozenset[str] = frozenset(
     }
 )
 
-ALLOWED_SCHEMES = frozenset({"https", "http"})  # prefer https; http only for legacy redirects
+ALLOWED_SCHEMES = frozenset({"https"})  # HTTPS only — no cleartext downgrade
 MAX_BYTES_DEFAULT = 80 * 1024 * 1024  # 80 MiB
+
+# Origins allowed to redirect onto storage CDNs (Figshare/Zenodo/Clowder blobs).
+# doi.org is intentionally excluded — open redirects → attacker S3 would pass otherwise.
+_STORAGE_REDIRECT_ORIGINS = frozenset(
+    {
+        "ndownloader.figshare.com",
+        "figshare.com",
+        "api.figshare.com",
+        "zenodo.org",
+        "www.zenodo.org",
+        "clowder.edap-cluster.com",
+    }
+)
 FORBIDDEN_EXTENSIONS = frozenset(
     {
         ".exe",
@@ -153,6 +166,13 @@ def host_allowed(url: str, *, allow_storage_cdn: bool = False) -> bool:
     return False
 
 
+def _origin_may_use_storage_cdn(url: str) -> bool:
+    host = (urlparse(url).hostname or "").lower()
+    if host in _STORAGE_REDIRECT_ORIGINS:
+        return True
+    return any(host.endswith("." + h) for h in ("figshare.com", "zenodo.org"))
+
+
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -204,38 +224,56 @@ def secure_fetch(
     qdir.mkdir(parents=True, exist_ok=True)
     qpath = qdir / f"{dest.name}.{int(time.time())}.part"
 
-    session = requests.Session()
-    session.headers.update({"User-Agent": USER_AGENT, "Accept": "*/*"})
     last_err: Exception | None = None
     content_type = ""
     data = b""
 
     for attempt in range(retries):
         try:
-            with session.get(url, timeout=timeout, stream=True, allow_redirects=True) as r:
-                # Re-check final URL after redirects (storage CDNs OK only as redirect targets)
-                if not host_allowed(r.url, allow_storage_cdn=True):
-                    raise SecureFetchError(f"Redirected to non-allowlisted host: {r.url}")
-                r.raise_for_status()
-                content_type = (r.headers.get("Content-Type") or "").lower()
-                if "html" in content_type and not allow_html:
-                    raise SecureFetchError(f"Refusing HTML payload from {url} ({content_type})")
-                if content_type and not any(s in content_type for s in ALLOWED_CONTENT_SNIPPETS):
-                    # still allow if scientific servers omit types
-                    if content_type not in {"", "application/force-download", "binary/octet-stream"}:
-                        if "json" not in content_type and "xml" not in content_type and "csv" not in content_type:
-                            # soft fail only for clearly dangerous types
-                            if any(x in content_type for x in ("javascript", "wasm", "x-msdownload", "x-sh")):
-                                raise SecureFetchError(f"Dangerous content-type: {content_type}")
+            # Manual redirect follow so every hop is allowlist-checked.
+            current = url
+            allow_cdn = False
+            hist: list[str] = []
+            with requests.Session() as hop_session:
+                hop_session.headers.update({"User-Agent": USER_AGENT, "Accept": "*/*"})
+                for _ in range(8):
+                    if not host_allowed(current, allow_storage_cdn=allow_cdn):
+                        raise SecureFetchError(f"URL host not in allowlist: {current}")
+                    with hop_session.get(
+                        current, timeout=timeout, stream=True, allow_redirects=False
+                    ) as r:
+                        if r.is_redirect or r.status_code in {301, 302, 303, 307, 308}:
+                            loc = r.headers.get("Location")
+                            if not loc:
+                                raise SecureFetchError(f"Redirect without Location from {current}")
+                            nxt = urljoin(current, loc)
+                            hist.append(nxt)
+                            # Storage CDN only if the *original* fetch origin is trusted for blobs
+                            if _origin_may_use_storage_cdn(url):
+                                allow_cdn = True
+                            current = nxt
+                            continue
+                        r.raise_for_status()
+                        content_type = (r.headers.get("Content-Type") or "").lower()
+                        if "html" in content_type and not allow_html:
+                            raise SecureFetchError(f"Refusing HTML payload from {url} ({content_type})")
+                        if content_type and not any(s in content_type for s in ALLOWED_CONTENT_SNIPPETS):
+                            if content_type not in {"", "application/force-download", "binary/octet-stream"}:
+                                if "json" not in content_type and "xml" not in content_type and "csv" not in content_type:
+                                    if any(x in content_type for x in ("javascript", "wasm", "x-msdownload", "x-sh")):
+                                        raise SecureFetchError(f"Dangerous content-type: {content_type}")
 
-                buf = bytearray()
-                for chunk in r.iter_content(chunk_size=1024 * 256):
-                    if not chunk:
-                        continue
-                    buf.extend(chunk)
-                    if len(buf) > max_bytes:
-                        raise SecureFetchError(f"Payload exceeds max_bytes={max_bytes}")
-                data = bytes(buf)
+                        buf = bytearray()
+                        for chunk in r.iter_content(chunk_size=1024 * 256):
+                            if not chunk:
+                                continue
+                            buf.extend(chunk)
+                            if len(buf) > max_bytes:
+                                raise SecureFetchError(f"Payload exceeds max_bytes={max_bytes}")
+                        data = bytes(buf)
+                    break
+                else:
+                    raise SecureFetchError(f"Too many redirects for {url}: {hist}")
             break
         except (requests.RequestException, SecureFetchError) as e:
             last_err = e
@@ -318,28 +356,35 @@ def validate_json_artifact(
     return doc if isinstance(doc, dict) else {"_value": doc}
 
 
-def write_integrity_manifest(paths: list[Path], out: Path) -> dict[str, Any]:
+def write_integrity_manifest(paths: list[Path], out: Path, *, root: Path | None = None) -> dict[str, Any]:
+    root = Path(root) if root else Path.cwd()
     files = []
     for p in paths:
         p = Path(p)
         if not p.exists() or not p.is_file():
             continue
+        try:
+            rel = str(p.resolve().relative_to(root.resolve()))
+        except ValueError:
+            rel = str(p)
         files.append(
             {
-                "path": str(p),
+                "path": rel,
                 "sha256": sha256_file(p),
                 "n_bytes": p.stat().st_size,
             }
         )
     doc = {
-        "version": "1.0.0",
+        "version": "1.1.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "root": str(root),
         "n_files": len(files),
         "files": files,
         "policy": {
             "no_execution_of_downloads": True,
             "allowlisted_hosts_only": True,
             "sha256_required": True,
+            "paths_are_relative": True,
         },
     }
     out = Path(out)

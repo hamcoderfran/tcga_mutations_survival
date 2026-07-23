@@ -644,6 +644,7 @@ def eval_coverage_cmd(
     no_expand: bool = typer.Option(False, help="Audit only; do not expand catalogs"),
 ):
     """Secure open-VOC coverage audit (VOLATILOME 99% target) + anti-poisoning checks."""
+    from .config import KNOWLEDGE_DIR
     from .eval.coverage_audit import run_coverage_audit
 
     report = run_coverage_audit(expand=not no_expand, offline=offline)
@@ -652,10 +653,11 @@ def eval_coverage_cmd(
     (out_dir / "COVERAGE_AUDIT.json").write_text(
         __import__("json").dumps(report, indent=2) + "\n"
     )
+    cov_md = KNOWLEDGE_DIR / "COVERAGE_AUDIT.md"
+    repo_md = Path("data/knowledge/COVERAGE_AUDIT.md")
+    md_src = cov_md if cov_md.exists() else repo_md
     (out_dir / "COVERAGE_AUDIT.md").write_text(
-        (Path("data/knowledge/COVERAGE_AUDIT.md").read_text()
-         if Path("data/knowledge/COVERAGE_AUDIT.md").exists()
-         else "")
+        md_src.read_text() if md_src.exists() else ""
     )
     m = report["metrics"]
     rprint("[bold]VOC coverage audit[/bold]")

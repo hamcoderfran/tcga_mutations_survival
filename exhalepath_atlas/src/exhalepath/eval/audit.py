@@ -115,6 +115,7 @@ def evaluate_literature_benchmarks(
         "case_pass_rate": n_pass / n if n else 0.0,
         "directional_accuracy": elev_h / elev_t if elev_t else None,
         "min_fold_accuracy": fold_h / fold_t if fold_t else None,
+        "min_fold_pass_rate": fold_h / fold_t if fold_t else None,  # alias
         "cases": rows,
     }
 

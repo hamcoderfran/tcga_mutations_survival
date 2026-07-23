@@ -1,13 +1,16 @@
 {
-  "version": "1.0.0",
-  "generated_at": "2026-07-23T06:17:01.607500+00:00",
+  "version": "1.2.0",
+  "generated_at": "2026-07-23T17:06:29.522362+00:00",
   "policy": {
     "calibrator_untouched": true,
     "prior_cap": 2.5,
+    "blend_from_pristine": true,
+    "idempotent": true,
     "include_lit_bench": true,
     "include_public_breath": true,
     "include_panels": true,
     "include_hbdb": true,
+    "apply_histology_guard": true,
     "weights": {
       "quantified_panel": 0.55,
       "directional_panel": 0.35,
@@ -22,24 +25,27 @@
     "n_panel_folds": 135,
     "n_public_breath_edges": 44,
     "n_lit_bench_edges": 37,
-    "n_hbdb_edges": 59,
+    "n_hbdb_edges": 57,
+    "n_hbdb_skipped_unmapped": 2,
     "europepmc_records": 100,
     "europepmc_dois": 97,
     "expanded_mw_studies": 25
   },
   "n_diseases_updated": 20,
-  "n_voc_prior_updates": 77,
+  "n_voc_prior_updates": 76,
+  "n_histology_guard_edits": 7,
   "voc_identity_enrichment": {
     "updated": 0,
-    "n_extended_mapped": 44
+    "n_extended_mapped": 44,
+    "dry_run": false
   },
-  "n_changelog_rows": 77,
+  "n_changelog_rows": 83,
   "changelog_sample": [
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "hexanal",
-      "before": 0.85,
-      "after": 0.7004,
+      "before": 1.05,
+      "after": 0.8244,
       "target": 0.4562,
       "weight": 0.38,
       "sources": [
@@ -51,8 +57,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "heptanal",
-      "before": 0.6558,
-      "after": 0.6413,
+      "before": 0.85,
+      "after": 0.7889,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -63,8 +69,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "nonanal",
-      "before": 0.5981,
-      "after": 0.5975,
+      "before": 0.75,
+      "after": 0.7129,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -75,8 +81,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "pentane",
-      "before": 0.55,
-      "after": 0.5696,
+      "before": 0.5,
+      "after": 0.5341,
       "target": 0.6174,
       "weight": 0.29,
       "sources": [
@@ -87,8 +93,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "2_butanone",
-      "before": 0.7,
-      "after": 0.6588,
+      "before": 0.8,
+      "after": 0.7208,
       "target": 0.5916,
       "weight": 0.38,
       "sources": [
@@ -100,8 +106,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "isoprene",
-      "before": -0.3403,
-      "after": -0.3535,
+      "before": -0.3,
+      "after": -0.3229,
       "target": -0.3955,
       "weight": 0.24,
       "sources": [
@@ -112,8 +118,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "benzene",
-      "before": 0.0763,
-      "after": 0.1024,
+      "before": null,
+      "after": 0.0763,
       "target": 0.263,
       "weight": 0.14,
       "sources": [
@@ -135,8 +141,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "ethanol",
-      "before": 0.385,
-      "after": 0.4151,
+      "before": 0.35,
+      "after": 0.385,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -146,8 +152,8 @@
     {
       "disease_id": "breast_invasive_carcinoma",
       "voc_id": "dmts",
-      "before": 1.3719,
-      "after": 1.2617,
+      "before": 1.5,
+      "after": 1.3719,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -157,8 +163,8 @@
     {
       "disease_id": "pancreatic_adenocarcinoma",
       "voc_id": "2_butanone",
-      "before": 0.7719,
-      "after": 0.6743,
+      "before": 0.9,
+      "after": 0.7719,
       "target": 0.3619,
       "weight": 0.238,
       "sources": [
@@ -168,8 +174,8 @@
     {
       "disease_id": "pancreatic_adenocarcinoma",
       "voc_id": "acetone",
-      "before": 0.686,
-      "after": 0.674,
+      "before": 0.7,
+      "after": 0.686,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -179,8 +185,8 @@
     {
       "disease_id": "pancreatic_adenocarcinoma",
       "voc_id": "hexanal",
-      "before": 0.6843,
-      "after": 0.5961,
+      "before": 0.8,
+      "after": 0.6843,
       "target": 0.3138,
       "weight": 0.238,
       "sources": [
@@ -190,8 +196,8 @@
     {
       "disease_id": "colon_adenocarcinoma",
       "voc_id": "hexanal",
-      "before": 0.6388,
-      "after": 0.5862,
+      "before": 0.7,
+      "after": 0.6388,
       "target": 0.263,
       "weight": 0.14,
       "sources": [
@@ -201,8 +207,8 @@
     {
       "disease_id": "colon_adenocarcinoma",
       "voc_id": "acetone",
-      "before": 0.428,
-      "after": 0.4521,
+      "before": 0.4,
+      "after": 0.428,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -212,8 +218,8 @@
     {
       "disease_id": "hepatocellular_carcinoma",
       "voc_id": "dms",
-      "before": 1.1139,
-      "after": 1.0398,
+      "before": 1.2,
+      "after": 1.1139,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -223,8 +229,8 @@
     {
       "disease_id": "hepatocellular_carcinoma",
       "voc_id": "ammonia",
-      "before": 0.741,
-      "after": 0.6903,
+      "before": 0.8,
+      "after": 0.741,
       "target": 0.3785,
       "weight": 0.14,
       "sources": [
@@ -234,8 +240,8 @@
     {
       "disease_id": "hepatocellular_carcinoma",
       "voc_id": "limonene",
-      "before": 0.944,
-      "after": 0.8958,
+      "before": 1.0,
+      "after": 0.944,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -245,8 +251,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "acetone",
-      "before": 1.011,
-      "after": 0.8895,
+      "before": 1.4,
+      "after": 1.1307,
       "target": 0.6913,
       "weight": 0.38,
       "sources": [
@@ -258,8 +264,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "isopropanol",
-      "before": 0.497,
-      "after": 0.5206,
+      "before": 0.425,
+      "after": 0.4659,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -270,8 +276,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "2_butanone",
-      "before": 0.5489,
-      "after": 0.5641,
+      "before": 0.51,
+      "after": 0.531,
       "target": 0.65,
       "weight": 0.15,
       "sources": [
@@ -281,8 +287,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "ethanol",
-      "before": 0.3819,
-      "after": 0.4122,
+      "before": 0.3,
+      "after": 0.345,
       "target": 0.55,
       "weight": 0.18,
       "sources": [
@@ -292,8 +298,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "acetaldehyde",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -303,8 +309,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "dms",
-      "before": 1.2457,
-      "after": 1.1157,
+      "before": 1.5,
+      "after": 1.3115,
       "target": 0.6804,
       "weight": 0.23,
       "sources": [
@@ -315,8 +321,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "ammonia",
-      "before": 1.1999,
-      "after": 1.1138,
+      "before": 1.3,
+      "after": 1.1999,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -326,8 +332,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "limonene",
-      "before": 0.8003,
-      "after": 0.7478,
+      "before": 0.9,
+      "after": 0.8245,
       "target": 0.5719,
       "weight": 0.23,
       "sources": [
@@ -338,8 +344,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "methanol",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -349,8 +355,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "2_butanone",
-      "before": 0.5169,
-      "after": 0.5199,
+      "before": 0.51,
+      "after": 0.5136,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -360,8 +366,8 @@
     {
       "disease_id": "chronic_kidney_disease",
       "voc_id": "ammonia",
-      "before": 0.9389,
-      "after": 0.853,
+      "before": 1.1,
+      "after": 0.977,
       "target": 0.5653,
       "weight": 0.23,
       "sources": [
@@ -372,8 +378,8 @@
     {
       "disease_id": "chronic_kidney_disease",
       "voc_id": "trimethylamine",
-      "before": 0.2705,
-      "after": 0.2957,
+      "before": 0.2125,
+      "after": 0.2429,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -383,8 +389,8 @@
     {
       "disease_id": "chronic_kidney_disease",
       "voc_id": "isoprene",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -394,8 +400,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "indole",
-      "before": 0.7425,
-      "after": 0.7072,
+      "before": 0.85,
+      "after": 0.7889,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -406,8 +412,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "phenol",
-      "before": 0.627,
-      "after": 0.6194,
+      "before": 0.65,
+      "after": 0.6369,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -418,8 +424,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "hydrogen_sulfide",
-      "before": 0.7823,
-      "after": 0.7075,
+      "before": 1.0,
+      "after": 0.8425,
       "target": 0.5856,
       "weight": 0.38,
       "sources": [
@@ -431,8 +437,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "trimethylamine",
-      "before": 0.7223,
-      "after": 0.7115,
+      "before": 0.75,
+      "after": 0.735,
       "target": 0.65,
       "weight": 0.15,
       "sources": [
@@ -442,8 +448,8 @@
     {
       "disease_id": "sibo",
       "voc_id": "hydrogen_sulfide",
-      "before": 1.344,
-      "after": 1.2958,
+      "before": 1.4,
+      "after": 1.344,
       "target": 1.0,
       "weight": 0.14,
       "sources": [
@@ -453,8 +459,8 @@
     {
       "disease_id": "sibo",
       "voc_id": "ethanol",
-      "before": 0.8559,
-      "after": 0.818,
+      "before": 0.9,
+      "after": 0.8559,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -464,8 +470,8 @@
     {
       "disease_id": "sibo",
       "voc_id": "indole",
-      "before": 0.772,
-      "after": 0.7479,
+      "before": 0.8,
+      "after": 0.772,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -475,8 +481,8 @@
     {
       "disease_id": "alzheimer_disease",
       "voc_id": "hexanal",
-      "before": 0.7094,
-      "after": 0.6611,
+      "before": 0.9,
+      "after": 0.7964,
       "target": 0.5428,
       "weight": 0.29,
       "sources": [
@@ -487,8 +493,8 @@
     {
       "disease_id": "alzheimer_disease",
       "voc_id": "pentane",
-      "before": 0.5623,
-      "after": 0.5396,
+      "before": 0.55,
+      "after": 0.532,
       "target": 0.5026,
       "weight": 0.38,
       "sources": [
@@ -502,8 +508,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "hexanal",
-      "before": 0.85,
-      "after": 0.7004,
+      "before": 1.05,
+      "after": 0.8244,
       "target": 0.4562,
       "weight": 0.38,
       "sources": [
@@ -515,8 +521,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "heptanal",
-      "before": 0.6558,
-      "after": 0.6413,
+      "before": 0.85,
+      "after": 0.7889,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -527,8 +533,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "nonanal",
-      "before": 0.5981,
-      "after": 0.5975,
+      "before": 0.75,
+      "after": 0.7129,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -539,8 +545,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "pentane",
-      "before": 0.55,
-      "after": 0.5696,
+      "before": 0.5,
+      "after": 0.5341,
       "target": 0.6174,
       "weight": 0.29,
       "sources": [
@@ -551,8 +557,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "2_butanone",
-      "before": 0.7,
-      "after": 0.6588,
+      "before": 0.8,
+      "after": 0.7208,
       "target": 0.5916,
       "weight": 0.38,
       "sources": [
@@ -564,8 +570,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "isoprene",
-      "before": -0.3403,
-      "after": -0.3535,
+      "before": -0.3,
+      "after": -0.3229,
       "target": -0.3955,
       "weight": 0.24,
       "sources": [
@@ -576,8 +582,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "benzene",
-      "before": 0.0763,
-      "after": 0.1024,
+      "before": null,
+      "after": 0.0763,
       "target": 0.263,
       "weight": 0.14,
       "sources": [
@@ -599,8 +605,8 @@
     {
       "disease_id": "lung_adenocarcinoma",
       "voc_id": "ethanol",
-      "before": 0.385,
-      "after": 0.4151,
+      "before": 0.35,
+      "after": 0.385,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -610,8 +616,8 @@
     {
       "disease_id": "breast_invasive_carcinoma",
       "voc_id": "dmts",
-      "before": 1.3719,
-      "after": 1.2617,
+      "before": 1.5,
+      "after": 1.3719,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -621,8 +627,8 @@
     {
       "disease_id": "pancreatic_adenocarcinoma",
       "voc_id": "2_butanone",
-      "before": 0.7719,
-      "after": 0.6743,
+      "before": 0.9,
+      "after": 0.7719,
       "target": 0.3619,
       "weight": 0.238,
       "sources": [
@@ -632,8 +638,8 @@
     {
       "disease_id": "pancreatic_adenocarcinoma",
       "voc_id": "acetone",
-      "before": 0.686,
-      "after": 0.674,
+      "before": 0.7,
+      "after": 0.686,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -643,8 +649,8 @@
     {
       "disease_id": "pancreatic_adenocarcinoma",
       "voc_id": "hexanal",
-      "before": 0.6843,
-      "after": 0.5961,
+      "before": 0.8,
+      "after": 0.6843,
       "target": 0.3138,
       "weight": 0.238,
       "sources": [
@@ -654,8 +660,8 @@
     {
       "disease_id": "colon_adenocarcinoma",
       "voc_id": "hexanal",
-      "before": 0.6388,
-      "after": 0.5862,
+      "before": 0.7,
+      "after": 0.6388,
       "target": 0.263,
       "weight": 0.14,
       "sources": [
@@ -665,8 +671,8 @@
     {
       "disease_id": "colon_adenocarcinoma",
       "voc_id": "acetone",
-      "before": 0.428,
-      "after": 0.4521,
+      "before": 0.4,
+      "after": 0.428,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -676,8 +682,8 @@
     {
       "disease_id": "hepatocellular_carcinoma",
       "voc_id": "dms",
-      "before": 1.1139,
-      "after": 1.0398,
+      "before": 1.2,
+      "after": 1.1139,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -687,8 +693,8 @@
     {
       "disease_id": "hepatocellular_carcinoma",
       "voc_id": "ammonia",
-      "before": 0.741,
-      "after": 0.6903,
+      "before": 0.8,
+      "after": 0.741,
       "target": 0.3785,
       "weight": 0.14,
       "sources": [
@@ -698,8 +704,8 @@
     {
       "disease_id": "hepatocellular_carcinoma",
       "voc_id": "limonene",
-      "before": 0.944,
-      "after": 0.8958,
+      "before": 1.0,
+      "after": 0.944,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -709,8 +715,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "acetone",
-      "before": 1.011,
-      "after": 0.8895,
+      "before": 1.4,
+      "after": 1.1307,
       "target": 0.6913,
       "weight": 0.38,
       "sources": [
@@ -722,8 +728,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "isopropanol",
-      "before": 0.497,
-      "after": 0.5206,
+      "before": 0.425,
+      "after": 0.4659,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -734,8 +740,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "2_butanone",
-      "before": 0.5489,
-      "after": 0.5641,
+      "before": 0.51,
+      "after": 0.531,
       "target": 0.65,
       "weight": 0.15,
       "sources": [
@@ -745,8 +751,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "ethanol",
-      "before": 0.3819,
-      "after": 0.4122,
+      "before": 0.3,
+      "after": 0.345,
       "target": 0.55,
       "weight": 0.18,
       "sources": [
@@ -756,8 +762,8 @@
     {
       "disease_id": "type_2_diabetes",
       "voc_id": "acetaldehyde",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -767,8 +773,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "dms",
-      "before": 1.2457,
-      "after": 1.1157,
+      "before": 1.5,
+      "after": 1.3115,
       "target": 0.6804,
       "weight": 0.23,
       "sources": [
@@ -779,8 +785,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "ammonia",
-      "before": 1.1999,
-      "after": 1.1138,
+      "before": 1.3,
+      "after": 1.1999,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -790,8 +796,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "limonene",
-      "before": 0.8003,
-      "after": 0.7478,
+      "before": 0.9,
+      "after": 0.8245,
       "target": 0.5719,
       "weight": 0.23,
       "sources": [
@@ -802,8 +808,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "methanol",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -813,8 +819,8 @@
     {
       "disease_id": "chronic_liver_disease",
       "voc_id": "2_butanone",
-      "before": 0.5169,
-      "after": 0.5199,
+      "before": 0.51,
+      "after": 0.5136,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -824,8 +830,8 @@
     {
       "disease_id": "chronic_kidney_disease",
       "voc_id": "ammonia",
-      "before": 0.9389,
-      "after": 0.853,
+      "before": 1.1,
+      "after": 0.977,
       "target": 0.5653,
       "weight": 0.23,
       "sources": [
@@ -836,8 +842,8 @@
     {
       "disease_id": "chronic_kidney_disease",
       "voc_id": "trimethylamine",
-      "before": 0.2705,
-      "after": 0.2957,
+      "before": 0.2125,
+      "after": 0.2429,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -847,8 +853,8 @@
     {
       "disease_id": "chronic_kidney_disease",
       "voc_id": "isoprene",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -858,8 +864,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "indole",
-      "before": 0.7425,
-      "after": 0.7072,
+      "before": 0.85,
+      "after": 0.7889,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -870,8 +876,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "phenol",
-      "before": 0.627,
-      "after": 0.6194,
+      "before": 0.65,
+      "after": 0.6369,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -882,8 +888,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "hydrogen_sulfide",
-      "before": 0.7823,
-      "after": 0.7075,
+      "before": 1.0,
+      "after": 0.8425,
       "target": 0.5856,
       "weight": 0.38,
       "sources": [
@@ -895,8 +901,8 @@
     {
       "disease_id": "inflammatory_bowel_disease",
       "voc_id": "trimethylamine",
-      "before": 0.7223,
-      "after": 0.7115,
+      "before": 0.75,
+      "after": 0.735,
       "target": 0.65,
       "weight": 0.15,
       "sources": [
@@ -906,8 +912,8 @@
     {
       "disease_id": "sibo",
       "voc_id": "hydrogen_sulfide",
-      "before": 1.344,
-      "after": 1.2958,
+      "before": 1.4,
+      "after": 1.344,
       "target": 1.0,
       "weight": 0.14,
       "sources": [
@@ -917,8 +923,8 @@
     {
       "disease_id": "sibo",
       "voc_id": "ethanol",
-      "before": 0.8559,
-      "after": 0.818,
+      "before": 0.9,
+      "after": 0.8559,
       "target": 0.585,
       "weight": 0.14,
       "sources": [
@@ -928,8 +934,8 @@
     {
       "disease_id": "sibo",
       "voc_id": "indole",
-      "before": 0.772,
-      "after": 0.7479,
+      "before": 0.8,
+      "after": 0.772,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -939,8 +945,8 @@
     {
       "disease_id": "alzheimer_disease",
       "voc_id": "hexanal",
-      "before": 0.7094,
-      "after": 0.6611,
+      "before": 0.9,
+      "after": 0.7964,
       "target": 0.5428,
       "weight": 0.29,
       "sources": [
@@ -951,8 +957,8 @@
     {
       "disease_id": "alzheimer_disease",
       "voc_id": "pentane",
-      "before": 0.5623,
-      "after": 0.5396,
+      "before": 0.55,
+      "after": 0.532,
       "target": 0.5026,
       "weight": 0.38,
       "sources": [
@@ -964,8 +970,8 @@
     {
       "disease_id": "alzheimer_disease",
       "voc_id": "ethane",
-      "before": 0.4826,
-      "after": 0.5097,
+      "before": 0.35,
+      "after": 0.4089,
       "target": 0.5955,
       "weight": 0.24,
       "sources": [
@@ -976,8 +982,8 @@
     {
       "disease_id": "alzheimer_disease",
       "voc_id": "acetone",
-      "before": 0.52,
-      "after": 0.5319,
+      "before": 0.65,
+      "after": 0.632,
       "target": 0.5719,
       "weight": 0.23,
       "sources": [
@@ -988,8 +994,8 @@
     {
       "disease_id": "parkinson_disease",
       "voc_id": "pentane",
-      "before": 0.6486,
-      "after": 0.6194,
+      "before": 0.85,
+      "after": 0.7745,
       "target": 0.5217,
       "weight": 0.23,
       "sources": [
@@ -1000,8 +1006,8 @@
     {
       "disease_id": "parkinson_disease",
       "voc_id": "hexanal",
-      "before": 0.67,
-      "after": 0.6442,
+      "before": 0.55,
+      "after": 0.541,
       "target": 0.4854,
       "weight": 0.14,
       "sources": [
@@ -1011,8 +1017,8 @@
     {
       "disease_id": "parkinson_disease",
       "voc_id": "hexane",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1022,8 +1028,8 @@
     {
       "disease_id": "parkinson_disease",
       "voc_id": "styrene",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1033,8 +1039,8 @@
     {
       "disease_id": "parkinson_disease",
       "voc_id": "ethylbenzene",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1044,8 +1050,8 @@
     {
       "disease_id": "epilepsy",
       "voc_id": "isoprene",
-      "before": 0.343,
-      "after": 0.3616,
+      "before": 0.3,
+      "after": 0.3225,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1055,8 +1061,8 @@
     {
       "disease_id": "epilepsy",
       "voc_id": "dms",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1066,8 +1072,8 @@
     {
       "disease_id": "glioblastoma",
       "voc_id": "acetone",
-      "before": 0.569,
-      "after": 0.5423,
+      "before": 0.6,
+      "after": 0.569,
       "target": 0.3785,
       "weight": 0.14,
       "sources": [
@@ -1077,8 +1083,8 @@
     {
       "disease_id": "glioblastoma",
       "voc_id": "hexanal",
-      "before": 0.655,
-      "after": 0.6163,
+      "before": 0.7,
+      "after": 0.655,
       "target": 0.3785,
       "weight": 0.14,
       "sources": [
@@ -1088,8 +1094,8 @@
     {
       "disease_id": "glioblastoma",
       "voc_id": "2_butanone",
-      "before": 0.557,
-      "after": 0.563,
+      "before": 0.55,
+      "after": 0.557,
       "target": 0.6,
       "weight": 0.14,
       "sources": [
@@ -1099,8 +1105,8 @@
     {
       "disease_id": "copd",
       "voc_id": "ethane",
-      "before": 1.3934,
-      "after": 1.3291,
+      "before": 1.654,
+      "after": 1.4946,
       "target": 1.2173,
       "weight": 0.365,
       "sources": [
@@ -1111,8 +1117,8 @@
     {
       "disease_id": "copd",
       "voc_id": "hexanal",
-      "before": 1.05,
-      "after": 1.1527,
+      "before": 1.843,
+      "after": 1.6563,
       "target": 1.3315,
       "weight": 0.365,
       "sources": [
@@ -1123,8 +1129,8 @@
     {
       "disease_id": "copd",
       "voc_id": "heptanal",
-      "before": 0.822,
-      "after": 0.8013,
+      "before": 0.906,
+      "after": 0.8546,
       "target": 0.7652,
       "weight": 0.365,
       "sources": [
@@ -1135,8 +1141,8 @@
     {
       "disease_id": "copd",
       "voc_id": "dodecane",
-      "before": -0.0675,
-      "after": 0.0016,
+      "before": -0.45,
+      "after": -0.1992,
       "target": 0.078,
       "weight": 0.475,
       "sources": [
@@ -1148,8 +1154,8 @@
     {
       "disease_id": "copd",
       "voc_id": "pentane",
-      "before": 0.7,
-      "after": 0.6733,
+      "before": 0.65,
+      "after": 0.6366,
       "target": 0.5993,
       "weight": 0.265,
       "sources": [
@@ -1160,8 +1166,8 @@
     {
       "disease_id": "copd",
       "voc_id": "acetone",
-      "before": 0.435,
-      "after": 0.4459,
+      "before": 0.4,
+      "after": 0.4202,
       "target": 0.4761,
       "weight": 0.265,
       "sources": [
@@ -1172,8 +1178,8 @@
     {
       "disease_id": "copd",
       "voc_id": "isoprene",
-      "before": -0.3884,
-      "after": -0.3848,
+      "before": -0.4,
+      "after": -0.3933,
       "target": -0.3746,
       "weight": 0.265,
       "sources": [
@@ -1182,21 +1188,10 @@
       ]
     },
     {
-      "disease_id": "copd",
-      "voc_id": "2_butanone",
-      "before": 0.2762,
-      "after": 0.2979,
-      "target": 0.4,
-      "weight": 0.175,
-      "sources": [
-        "priority10:copd"
-      ]
-    },
-    {
       "disease_id": "asthma",
       "voc_id": "ethane",
-      "before": 1.0671,
-      "after": 1.0277,
+      "before": 1.227,
+      "after": 1.1292,
       "target": 0.9592,
       "weight": 0.365,
       "sources": [
@@ -1207,8 +1202,8 @@
     {
       "disease_id": "asthma",
       "voc_id": "pentane",
-      "before": 0.665,
-      "after": 0.6541,
+      "before": 0.7,
+      "after": 0.6798,
       "target": 0.6239,
       "weight": 0.265,
       "sources": [
@@ -1219,8 +1214,8 @@
     {
       "disease_id": "asthma",
       "voc_id": "hexanal",
-      "before": 0.6267,
-      "after": 0.6194,
+      "before": 0.65,
+      "after": 0.6366,
       "target": 0.5993,
       "weight": 0.265,
       "sources": [
@@ -1231,8 +1226,8 @@
     {
       "disease_id": "asthma",
       "voc_id": "acetone",
-      "before": 0.3966,
-      "after": 0.4111,
+      "before": 0.35,
+      "after": 0.3769,
       "target": 0.4514,
       "weight": 0.265,
       "sources": [
@@ -1243,8 +1238,8 @@
     {
       "disease_id": "cystic_fibrosis",
       "voc_id": "hydrogen_sulfide",
-      "before": 0.7417,
-      "after": 0.7236,
+      "before": 0.8,
+      "after": 0.7664,
       "target": 0.6732,
       "weight": 0.265,
       "sources": [
@@ -1255,8 +1250,8 @@
     {
       "disease_id": "cystic_fibrosis",
       "voc_id": "dms",
-      "before": 0.665,
-      "after": 0.6541,
+      "before": 0.7,
+      "after": 0.6798,
       "target": 0.6239,
       "weight": 0.265,
       "sources": [
@@ -1267,8 +1262,8 @@
     {
       "disease_id": "cystic_fibrosis",
       "voc_id": "acetone",
-      "before": 0.3966,
-      "after": 0.4111,
+      "before": 0.35,
+      "after": 0.3769,
       "target": 0.4514,
       "weight": 0.265,
       "sources": [
@@ -1279,8 +1274,8 @@
     {
       "disease_id": "cystic_fibrosis",
       "voc_id": "2_pentanone",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1290,8 +1285,8 @@
     {
       "disease_id": "pneumonia_bacterial",
       "voc_id": "acetone",
-      "before": -0.1786,
-      "after": -0.1096,
+      "before": -0.4,
+      "after": -0.2724,
       "target": 0.0817,
       "weight": 0.265,
       "sources": [
@@ -1302,8 +1297,8 @@
     {
       "disease_id": "pneumonia_bacterial",
       "voc_id": "hexanal",
-      "before": 0.5884,
-      "after": 0.5848,
+      "before": 0.6,
+      "after": 0.5933,
       "target": 0.5746,
       "weight": 0.265,
       "sources": [
@@ -1314,8 +1309,8 @@
     {
       "disease_id": "pneumonia_bacterial",
       "voc_id": "isoprene",
-      "before": -0.3884,
-      "after": -0.3848,
+      "before": -0.4,
+      "after": -0.3933,
       "target": -0.3746,
       "weight": 0.265,
       "sources": [
@@ -1326,8 +1321,8 @@
     {
       "disease_id": "pneumonia_bacterial",
       "voc_id": "heptanal",
-      "before": 0.1696,
-      "after": 0.2038,
+      "before": null,
+      "after": 0.132,
       "target": 0.55,
       "weight": 0.09,
       "sources": [
@@ -1337,8 +1332,8 @@
     {
       "disease_id": "heart_failure",
       "voc_id": "acetone",
-      "before": 1.747,
-      "after": 1.6558,
+      "before": 2.117,
+      "after": 1.8907,
       "target": 1.4971,
       "weight": 0.365,
       "sources": [
@@ -1349,8 +1344,8 @@
     {
       "disease_id": "heart_failure",
       "voc_id": "pentane",
-      "before": 0.7883,
-      "after": 0.7701,
+      "before": 0.862,
+      "after": 0.8169,
       "target": 0.7386,
       "weight": 0.365,
       "sources": [
@@ -1361,8 +1356,8 @@
     {
       "disease_id": "heart_failure",
       "voc_id": "isoprene",
-      "before": -0.1402,
-      "after": -0.0749,
+      "before": -0.35,
+      "after": -0.2291,
       "target": 0.1063,
       "weight": 0.265,
       "sources": [
@@ -1373,8 +1368,8 @@
     {
       "disease_id": "malaria",
       "voc_id": "isoprene",
-      "before": -0.1786,
-      "after": -0.1096,
+      "before": -0.4,
+      "after": -0.2724,
       "target": 0.0817,
       "weight": 0.265,
       "sources": [
@@ -1385,13 +1380,90 @@
     {
       "disease_id": "malaria",
       "voc_id": "acetone",
-      "before": 0.3966,
-      "after": 0.4111,
+      "before": 0.35,
+      "after": 0.3769,
       "target": 0.4514,
       "weight": 0.265,
       "sources": [
         "priority10:malaria",
         "hbdb_proxy"
+      ]
+    },
+    {
+      "disease_id": "lung_squamous_cell_carcinoma",
+      "voc_id": "2_butanone",
+      "before": 0.7,
+      "after": 0.75,
+      "target": 0.75,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:lusc_cancer_floor"
+      ]
+    },
+    {
+      "disease_id": "lung_squamous_cell_carcinoma",
+      "voc_id": "acetone",
+      "before": 0.3,
+      "after": 0.45,
+      "target": 0.45,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:lusc_cancer_floor"
+      ]
+    },
+    {
+      "disease_id": "copd",
+      "voc_id": "pentane",
+      "before": 0.6366,
+      "after": 0.7,
+      "target": 0.7,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:copd_pentane_floor"
+      ]
+    },
+    {
+      "disease_id": "copd",
+      "voc_id": "hexanal",
+      "before": 1.6563,
+      "after": 1.05,
+      "target": 1.05,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:copd_hexanal_cap"
+      ]
+    },
+    {
+      "disease_id": "copd",
+      "voc_id": "2_butanone",
+      "before": 0.4,
+      "after": 0.25,
+      "target": 0.25,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:copd_ketone_dampen"
+      ]
+    },
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "voc_id": "acetaldehyde",
+      "before": 0.5149,
+      "after": 0.55,
+      "target": 0.55,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:luad_cancer_floor"
+      ]
+    },
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "voc_id": "hexanal",
+      "before": 0.8244,
+      "after": 0.85,
+      "target": 0.85,
+      "weight": 1.0,
+      "sources": [
+        "histology_guard:luad_cancer_floor"
       ]
     }
   ]

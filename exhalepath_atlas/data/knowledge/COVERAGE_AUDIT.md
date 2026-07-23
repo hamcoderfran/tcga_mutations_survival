@@ -12,7 +12,9 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 
 - Atlas prediction VOCs: 50
 - Extended catalog mapped to atlas IDs: 44
-- Atlas chem enrichment (PubChem/HMDB): 100.0%
+- Atlas chem identity (PubChem CID / HMDB link): 100.0%
+- Atlas chem physchem fill (mw/xlogp): 0.0%
+- Local SHA-256 bound: True · remote re-verify: False
 - Curated public studies: 9
 - Expanded MW study catalog size: 25 (+16 discovered)
 - Literature panels: 13 · panel DOIs: 34
@@ -44,4 +46,4 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 - `data/datasources/literature/europepmc_breath_voc_metadata.json`
 - `data/datasources/metabolomics/breath_study_catalog_expanded.json`
 
-Generated: 2026-07-23T03:28:49.285943+00:00
+Generated: 2026-07-23T17:06:26.491774+00:00

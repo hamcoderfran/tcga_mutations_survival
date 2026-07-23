@@ -19,6 +19,7 @@ Trained calibrators (`data/models/*.joblib`) are **not** modified by eval merges
 | Integrity / anti-poisoning | [`../datasources/INTEGRITY_MANIFEST.json`](../datasources/INTEGRITY_MANIFEST.json) | SHA-256 of secured artifacts |
 | Literature compare + demographics PCA + 100-disease bridges | [`lit_compare/LITERATURE_COMPARE.md`](lit_compare/LITERATURE_COMPARE.md) | `voc eval-lit-compare` |
 | Model improve + external-validated 100-disease | [`MODEL_EXTERNAL_100DISEASE.md`](MODEL_EXTERNAL_100DISEASE.md) | `voc eval-disease100-external` |
+| Readiness audit (bugs fixed) | [`AUDIT_READINESS.md`](AUDIT_READINESS.md) | gates + fix list |
 
 ## Clinical profiles
 
@@ -44,6 +45,7 @@ cd exhalepath_atlas
 pip install -e ".[dev]"
 pytest -q
 voc eval-coverage --offline
+voc eval-disease100-external --out-dir runs/model_external_100 --demo-max-patients 100
 voc eval-stress-hard --out-dir runs/stress_hard
 voc eval-patient-cohort --out-dir runs/patient_cohort_1000 --max-patients 12   # smoke
 voc eval-lit-compare --out-dir runs/lit_compare --demo-max-patients 200 --n-diseases 100

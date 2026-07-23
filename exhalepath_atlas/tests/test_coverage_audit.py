@@ -36,12 +36,22 @@ def test_host_allowed_core_apis():
     assert host_allowed("https://reactome.org/ContentService/data/query/abc")
     assert not host_allowed("https://evil.example/x")
     assert not host_allowed("file:///etc/passwd")
+    assert not host_allowed("http://www.ebi.ac.uk/x")  # https-only
     # S3 only as redirect target, not as initial fetch origin
     assert not host_allowed("https://s3-eu-west-1.amazonaws.com/bucket/file.csv")
     assert host_allowed(
         "https://s3-eu-west-1.amazonaws.com/bucket/file.csv",
         allow_storage_cdn=True,
     )
+
+
+def test_doi_origin_cannot_enable_storage_cdn():
+    from exhalepath.ingest.secure_fetch import _origin_may_use_storage_cdn
+
+    assert _origin_may_use_storage_cdn("https://ndownloader.figshare.com/files/1")
+    assert not _origin_may_use_storage_cdn("https://doi.org/10.1234/foo")
+    assert not _origin_may_use_storage_cdn("https://evil.example/x")
+
 
 
 def test_request_json_blocks_non_allowlisted():
