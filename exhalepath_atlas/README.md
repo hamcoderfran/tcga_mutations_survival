@@ -15,6 +15,8 @@ This folder is the GitHub deliverable that packages the complete stack (predicti
 
 > Research / hypothesis-generation tool. Not a medical device.
 
+**Past results (vision, pipeline, stress, 1000-patient cohort):** see [`data/knowledge/RESULTS_INDEX.md`](data/knowledge/RESULTS_INDEX.md).
+
 ## Install
 
 ```bash
