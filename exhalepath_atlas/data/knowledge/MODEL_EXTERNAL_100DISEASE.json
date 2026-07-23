@@ -1,5 +1,1474 @@
 {
-  "literature": {
+  "version": "1.1.0",
+  "generated_at": "2026-07-23T06:16:40.884031+00:00",
+  "honesty": "In-sample external concordance uses open corpora that also inform prior fusion (panels / public breath / HBDB proxies) and can look near-perfect. Held-out literature_benchmarks concordance is the less circular check. HBDB SQL / Owlstone still blocked until user dumps arrive. Calibrator *.joblib untouched.",
+  "fuse_holdout_stage": {
+    "version": "1.0.0",
+    "generated_at": "2026-07-23T06:16:21.032647+00:00",
+    "policy": {
+      "calibrator_untouched": true,
+      "prior_cap": 2.5,
+      "include_lit_bench": false,
+      "include_public_breath": true,
+      "include_panels": true,
+      "include_hbdb": true,
+      "weights": {
+        "quantified_panel": 0.55,
+        "directional_panel": 0.35,
+        "public_breath": 0.3,
+        "literature_benchmarks": 0.28,
+        "hbdb_proxy": 0.18
+      }
+    },
+    "stats": {
+      "n_diseases": 21,
+      "n_voc_edges": 173,
+      "n_panel_folds": 135,
+      "n_public_breath_edges": 44,
+      "n_lit_bench_edges": 0,
+      "n_hbdb_edges": 59,
+      "europepmc_records": 100,
+      "europepmc_dois": 97,
+      "expanded_mw_studies": 25
+    },
+    "n_diseases_updated": 14,
+    "n_voc_prior_updates": 56,
+    "voc_identity_enrichment": {
+      "updated": 0,
+      "n_extended_mapped": 44
+    },
+    "n_changelog_rows": 56,
+    "changelog_sample": [
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "hexanal",
+        "before": 0.9,
+        "after": 0.8269,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "heptanal",
+        "before": 0.7,
+        "after": 0.6749,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "nonanal",
+        "before": 0.6,
+        "after": 0.5989,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "pentane",
+        "before": 0.5,
+        "after": 0.5225,
+        "target": 0.65,
+        "weight": 0.15,
+        "sources": [
+          "public_breath:lit_luad_aldehydes"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "2_butanone",
+        "before": 0.8,
+        "after": 0.7509,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "isoprene",
+        "before": -0.3,
+        "after": -0.3229,
+        "target": -0.3955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "acetone",
+        "before": 1.4,
+        "after": 1.2069,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_t2d_acetone",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "isopropanol",
+        "before": 0.425,
+        "after": 0.4659,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_t2d_acetone",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "2_butanone",
+        "before": 0.51,
+        "after": 0.531,
+        "target": 0.65,
+        "weight": 0.15,
+        "sources": [
+          "public_breath:lit_t2d_acetone"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "ethanol",
+        "before": 0.3,
+        "after": 0.345,
+        "target": 0.55,
+        "weight": 0.18,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "acetaldehyde",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "limonene",
+        "before": 0.9,
+        "after": 0.8685,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "methanol",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "2_butanone",
+        "before": 0.51,
+        "after": 0.5136,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "dms",
+        "before": 1.5,
+        "after": 1.4145,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "voc_id": "trimethylamine",
+        "before": 0.2125,
+        "after": 0.2429,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "voc_id": "ammonia",
+        "before": 1.1,
+        "after": 1.0505,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "voc_id": "isoprene",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "indole",
+        "before": 0.85,
+        "after": 0.7889,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ibd_microbiome",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "phenol",
+        "before": 0.65,
+        "after": 0.6369,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ibd_microbiome",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "hydrogen_sulfide",
+        "before": 1.0,
+        "after": 0.9029,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ibd_microbiome",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "trimethylamine",
+        "before": 0.75,
+        "after": 0.735,
+        "target": 0.65,
+        "weight": 0.15,
+        "sources": [
+          "public_breath:lit_ibd_microbiome"
+        ]
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "voc_id": "hexanal",
+        "before": 0.8,
+        "after": 0.7775,
+        "target": 0.65,
+        "weight": 0.15,
+        "sources": [
+          "public_breath:lit_ad_oxidative"
+        ]
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "voc_id": "pentane",
+        "before": 0.6,
+        "after": 0.5989,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ad_oxidative",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "voc_id": "ethane",
+        "before": 0.4,
+        "after": 0.4469,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ad_oxidative",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "voc_id": "acetone",
+        "before": 0.5,
+        "after": 0.5045,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "voc_id": "pentane",
+        "before": 0.7,
+        "after": 0.6865,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "voc_id": "hexane",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "voc_id": "styrene",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "voc_id": "ethylbenzene",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "epilepsy",
+        "voc_id": "isoprene",
+        "before": 0.3,
+        "after": 0.3225,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "epilepsy",
+        "voc_id": "dms",
+        "before": null,
+        "after": 0.132,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "ethane",
+        "before": 1.654,
+        "after": 1.4946,
+        "target": 1.2173,
+        "weight": 0.365,
+        "sources": [
+          "priority10:copd",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "hexanal",
+        "before": 1.843,
+        "after": 1.6563,
+        "target": 1.3315,
+        "weight": 0.365,
+        "sources": [
+          "priority10:copd",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "heptanal",
+        "before": 0.906,
+        "after": 0.8546,
+        "target": 0.7652,
+        "weight": 0.365,
+        "sources": [
+          "priority10:copd",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "dodecane",
+        "before": -0.45,
+        "after": -0.1992,
+        "target": 0.078,
+        "weight": 0.475,
+        "sources": [
+          "priority10:copd",
+          "public_breath:sci_data_2024_copd",
+          "public_breath:sci_data_2024_bronchiectasis"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "pentane",
+        "before": 0.65,
+        "after": 0.6366,
+        "target": 0.5993,
+        "weight": 0.265,
+        "sources": [
+          "priority10:copd",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "acetone",
+        "before": 0.4,
+        "after": 0.4202,
+        "target": 0.4761,
+        "weight": 0.265,
+        "sources": [
+          "priority10:copd",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "voc_id": "isoprene",
+        "before": -0.4,
+        "after": -0.3933,
+        "target": -0.3746,
+        "weight": 0.265,
+        "sources": [
+          "priority10:copd",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "asthma",
+        "voc_id": "ethane",
+        "before": 1.227,
+        "after": 1.1292,
+        "target": 0.9592,
+        "weight": 0.365,
+        "sources": [
+          "priority10:asthma",
+          "hbdb_proxy"
+        ]
+      }
+    ]
+  },
+  "fuse": {
+    "version": "1.0.0",
+    "generated_at": "2026-07-23T06:16:21.839837+00:00",
+    "policy": {
+      "calibrator_untouched": true,
+      "prior_cap": 2.5,
+      "include_lit_bench": true,
+      "include_public_breath": true,
+      "include_panels": true,
+      "include_hbdb": true,
+      "weights": {
+        "quantified_panel": 0.55,
+        "directional_panel": 0.35,
+        "public_breath": 0.3,
+        "literature_benchmarks": 0.28,
+        "hbdb_proxy": 0.18
+      }
+    },
+    "stats": {
+      "n_diseases": 27,
+      "n_voc_edges": 195,
+      "n_panel_folds": 135,
+      "n_public_breath_edges": 44,
+      "n_lit_bench_edges": 37,
+      "n_hbdb_edges": 59,
+      "europepmc_records": 100,
+      "europepmc_dois": 97,
+      "expanded_mw_studies": 25
+    },
+    "n_diseases_updated": 20,
+    "n_voc_prior_updates": 77,
+    "voc_identity_enrichment": {
+      "updated": 0,
+      "n_extended_mapped": 44
+    },
+    "n_changelog_rows": 77,
+    "changelog_sample": [
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "hexanal",
+        "before": 0.85,
+        "after": 0.7004,
+        "target": 0.4562,
+        "weight": 0.38,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "lit_bench:luad_tp53_stage4_smoker",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "heptanal",
+        "before": 0.6749,
+        "after": 0.6558,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "nonanal",
+        "before": 0.5989,
+        "after": 0.5981,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "pentane",
+        "before": 0.5225,
+        "after": 0.55,
+        "target": 0.6174,
+        "weight": 0.29,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "lit_bench:luad_tp53_stage4_smoker"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "2_butanone",
+        "before": 0.7509,
+        "after": 0.6904,
+        "target": 0.5916,
+        "weight": 0.38,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "lit_bench:luad_tp53_stage4_smoker",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "isoprene",
+        "before": -0.3229,
+        "after": -0.3403,
+        "target": -0.3955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_luad_aldehydes",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "benzene",
+        "before": null,
+        "after": 0.0763,
+        "target": 0.263,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:luad_tp53_stage4_smoker"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "acetaldehyde",
+        "before": 0.55,
+        "after": 0.5149,
+        "target": 0.3976,
+        "weight": 0.23,
+        "sources": [
+          "lit_bench:luad_acetaldehyde_warburg",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "voc_id": "ethanol",
+        "before": 0.35,
+        "after": 0.385,
+        "target": 0.6,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:luad_acetaldehyde_warburg"
+        ]
+      },
+      {
+        "disease_id": "breast_invasive_carcinoma",
+        "voc_id": "dmts",
+        "before": 1.5,
+        "after": 1.3719,
+        "target": 0.585,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:brca_pik3ca"
+        ]
+      },
+      {
+        "disease_id": "pancreatic_adenocarcinoma",
+        "voc_id": "2_butanone",
+        "before": 0.9,
+        "after": 0.7719,
+        "target": 0.3619,
+        "weight": 0.238,
+        "sources": [
+          "lit_bench:paad_kras_tp53_stage3"
+        ]
+      },
+      {
+        "disease_id": "pancreatic_adenocarcinoma",
+        "voc_id": "acetone",
+        "before": 0.7,
+        "after": 0.686,
+        "target": 0.6,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:paad_kras_tp53_stage3"
+        ]
+      },
+      {
+        "disease_id": "pancreatic_adenocarcinoma",
+        "voc_id": "hexanal",
+        "before": 0.8,
+        "after": 0.6843,
+        "target": 0.3138,
+        "weight": 0.238,
+        "sources": [
+          "lit_bench:paad_kras_tp53_stage3"
+        ]
+      },
+      {
+        "disease_id": "colon_adenocarcinoma",
+        "voc_id": "hexanal",
+        "before": 0.7,
+        "after": 0.6388,
+        "target": 0.263,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:coad_apc_kras"
+        ]
+      },
+      {
+        "disease_id": "colon_adenocarcinoma",
+        "voc_id": "acetone",
+        "before": 0.4,
+        "after": 0.428,
+        "target": 0.6,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:coad_apc_kras"
+        ]
+      },
+      {
+        "disease_id": "hepatocellular_carcinoma",
+        "voc_id": "dms",
+        "before": 1.2,
+        "after": 1.1139,
+        "target": 0.585,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:lihc_liver"
+        ]
+      },
+      {
+        "disease_id": "hepatocellular_carcinoma",
+        "voc_id": "ammonia",
+        "before": 0.8,
+        "after": 0.741,
+        "target": 0.3785,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:lihc_liver"
+        ]
+      },
+      {
+        "disease_id": "hepatocellular_carcinoma",
+        "voc_id": "limonene",
+        "before": 1.0,
+        "after": 0.944,
+        "target": 0.6,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:lihc_liver"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "acetone",
+        "before": 1.2069,
+        "after": 1.011,
+        "target": 0.6913,
+        "weight": 0.38,
+        "sources": [
+          "public_breath:lit_t2d_acetone",
+          "lit_bench:t2d_zero_shot_metabolic",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "isopropanol",
+        "before": 0.4659,
+        "after": 0.497,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_t2d_acetone",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "2_butanone",
+        "before": 0.531,
+        "after": 0.5489,
+        "target": 0.65,
+        "weight": 0.15,
+        "sources": [
+          "public_breath:lit_t2d_acetone"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "ethanol",
+        "before": 0.345,
+        "after": 0.3819,
+        "target": 0.55,
+        "weight": 0.18,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "voc_id": "acetaldehyde",
+        "before": 0.132,
+        "after": 0.1696,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "dms",
+        "before": 1.4145,
+        "after": 1.2457,
+        "target": 0.6804,
+        "weight": 0.23,
+        "sources": [
+          "lit_bench:cld_zero_shot",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "ammonia",
+        "before": 1.3,
+        "after": 1.1999,
+        "target": 0.585,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:cld_zero_shot"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "limonene",
+        "before": 0.8685,
+        "after": 0.8003,
+        "target": 0.5719,
+        "weight": 0.23,
+        "sources": [
+          "lit_bench:cld_zero_shot",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "methanol",
+        "before": 0.132,
+        "after": 0.1696,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "voc_id": "2_butanone",
+        "before": 0.5136,
+        "after": 0.5169,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "voc_id": "ammonia",
+        "before": 1.0505,
+        "after": 0.9389,
+        "target": 0.5653,
+        "weight": 0.23,
+        "sources": [
+          "lit_bench:ckd_zero_shot",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "voc_id": "trimethylamine",
+        "before": 0.2429,
+        "after": 0.2705,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "voc_id": "isoprene",
+        "before": 0.132,
+        "after": 0.1696,
+        "target": 0.55,
+        "weight": 0.09,
+        "sources": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "indole",
+        "before": 0.7889,
+        "after": 0.7425,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ibd_microbiome",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "phenol",
+        "before": 0.6369,
+        "after": 0.627,
+        "target": 0.5955,
+        "weight": 0.24,
+        "sources": [
+          "public_breath:lit_ibd_microbiome",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "hydrogen_sulfide",
+        "before": 0.9029,
+        "after": 0.7823,
+        "target": 0.5856,
+        "weight": 0.38,
+        "sources": [
+          "public_breath:lit_ibd_microbiome",
+          "lit_bench:ibd_zero_shot",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "voc_id": "trimethylamine",
+        "before": 0.735,
+        "after": 0.7223,
+        "target": 0.65,
+        "weight": 0.15,
+        "sources": [
+          "public_breath:lit_ibd_microbiome"
+        ]
+      },
+      {
+        "disease_id": "sibo",
+        "voc_id": "hydrogen_sulfide",
+        "before": 1.4,
+        "after": 1.344,
+        "target": 1.0,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:sibo"
+        ]
+      },
+      {
+        "disease_id": "sibo",
+        "voc_id": "ethanol",
+        "before": 0.9,
+        "after": 0.8559,
+        "target": 0.585,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:sibo"
+        ]
+      },
+      {
+        "disease_id": "sibo",
+        "voc_id": "indole",
+        "before": 0.8,
+        "after": 0.772,
+        "target": 0.6,
+        "weight": 0.14,
+        "sources": [
+          "lit_bench:sibo"
+        ]
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "voc_id": "hexanal",
+        "before": 0.7775,
+        "after": 0.7094,
+        "target": 0.5428,
+        "weight": 0.29,
+        "sources": [
+          "public_breath:lit_ad_oxidative",
+          "lit_bench:alzheimer"
+        ]
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "voc_id": "pentane",
+        "before": 0.5989,
+        "after": 0.5623,
+        "target": 0.5026,
+        "weight": 0.38,
+        "sources": [
+          "public_breath:lit_ad_oxidative",
+          "lit_bench:alzheimer",
+          "hbdb_proxy"
+        ]
+      }
+    ]
+  },
+  "held_out_literature_benchmarks": {
+    "n_diseases_with_external_gt": 12,
+    "n_external_expect_diseases_available": 13,
+    "mean_concordance": 1.0,
+    "mean_concordance_pct": 100.0,
+    "n_voc_checks": 33,
+    "n_voc_hits": 33,
+    "by_disease": [
+      {
+        "disease_id": "alzheimer_disease",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:alzheimer"
+        ]
+      },
+      {
+        "disease_id": "breast_invasive_carcinoma",
+        "concordance": 1.0,
+        "n_hit": 2,
+        "n_checked": 2,
+        "n_elevate": 2,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:brca_pik3ca"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "concordance": 1.0,
+        "n_hit": 1,
+        "n_checked": 1,
+        "n_elevate": 1,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:ckd_zero_shot"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:cld_zero_shot"
+        ]
+      },
+      {
+        "disease_id": "colon_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:coad_apc_kras"
+        ]
+      },
+      {
+        "disease_id": "glioblastoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:glioblastoma"
+        ]
+      },
+      {
+        "disease_id": "hepatocellular_carcinoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:lihc_liver"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "concordance": 1.0,
+        "n_hit": 2,
+        "n_checked": 2,
+        "n_elevate": 2,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:ibd_zero_shot"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "n_elevate": 5,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:luad_tp53_stage4_smoker",
+          "lit_bench:luad_acetaldehyde_warburg"
+        ]
+      },
+      {
+        "disease_id": "pancreatic_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:paad_kras_tp53_stage3"
+        ]
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "concordance": 1.0,
+        "n_hit": 2,
+        "n_checked": 2,
+        "n_elevate": 2,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:parkinson"
+        ]
+      },
+      {
+        "disease_id": "sibo",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:sibo"
+        ]
+      }
+    ],
+    "gt_sources": {
+      "include_lit_bench": true,
+      "include_public_breath": false,
+      "include_panels": false,
+      "include_hbdb": false
+    }
+  },
+  "literature_benchmarks_audit": {
+    "n_cases": 17,
+    "directional_accuracy": 1.0,
+    "min_fold_pass_rate": 1.0,
+    "case_pass_rate": 1.0
+  },
+  "external_validation": {
+    "n_diseases_with_external_gt": 25,
+    "n_external_expect_diseases_available": 27,
+    "mean_concordance": 0.9966666666666666,
+    "mean_concordance_pct": 99.67,
+    "n_voc_checks": 175,
+    "n_voc_hits": 174,
+    "by_disease": [
+      {
+        "disease_id": "alzheimer_disease",
+        "concordance": 1.0,
+        "n_hit": 4,
+        "n_checked": 4,
+        "n_elevate": 4,
+        "n_suppress": 0,
+        "refs": [
+          "public_breath:lit_ad_oxidative",
+          "lit_bench:alzheimer",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "ards",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "n_elevate": 8,
+        "n_suppress": 1,
+        "refs": [
+          "priority10:ards"
+        ]
+      },
+      {
+        "disease_id": "asthma",
+        "concordance": 1.0,
+        "n_hit": 19,
+        "n_checked": 19,
+        "n_elevate": 13,
+        "n_suppress": 6,
+        "refs": [
+          "priority10:asthma",
+          "hbdb_proxy",
+          "public_breath:sci_data_2024_asthma"
+        ]
+      },
+      {
+        "disease_id": "breast_invasive_carcinoma",
+        "concordance": 1.0,
+        "n_hit": 2,
+        "n_checked": 2,
+        "n_elevate": 2,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:brca_pik3ca"
+        ]
+      },
+      {
+        "disease_id": "cancer_prostate",
+        "concordance": 1.0,
+        "n_hit": 6,
+        "n_checked": 6,
+        "n_elevate": 4,
+        "n_suppress": 2,
+        "refs": [
+          "priority10:cancer_prostate"
+        ]
+      },
+      {
+        "disease_id": "cancer_stomach",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "n_elevate": 9,
+        "n_suppress": 0,
+        "refs": [
+          "priority10:cancer_stomach"
+        ]
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "concordance": 1.0,
+        "n_hit": 4,
+        "n_checked": 4,
+        "n_elevate": 4,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:ckd_zero_shot",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "n_elevate": 5,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:cld_zero_shot",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "colon_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:coad_apc_kras"
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "concordance": 1.0,
+        "n_hit": 20,
+        "n_checked": 20,
+        "n_elevate": 11,
+        "n_suppress": 9,
+        "refs": [
+          "priority10:copd",
+          "hbdb_proxy",
+          "public_breath:sci_data_2024_copd",
+          "public_breath:sci_data_2024_bronchiectasis"
+        ]
+      },
+      {
+        "disease_id": "covid19",
+        "concordance": 1.0,
+        "n_hit": 8,
+        "n_checked": 8,
+        "n_elevate": 6,
+        "n_suppress": 2,
+        "refs": [
+          "priority10:covid19"
+        ]
+      },
+      {
+        "disease_id": "cystic_fibrosis",
+        "concordance": 0.9166666666666666,
+        "n_hit": 11,
+        "n_checked": 12,
+        "n_elevate": 11,
+        "n_suppress": 1,
+        "refs": [
+          "priority10:cystic_fibrosis",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "epilepsy",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "glioblastoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:glioblastoma"
+        ]
+      },
+      {
+        "disease_id": "head_neck_cancer",
+        "concordance": 1.0,
+        "n_hit": 8,
+        "n_checked": 8,
+        "n_elevate": 7,
+        "n_suppress": 1,
+        "refs": [
+          "priority10:head_neck_cancer"
+        ]
+      },
+      {
+        "disease_id": "heart_failure",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "n_elevate": 5,
+        "n_suppress": 0,
+        "refs": [
+          "priority10:heart_failure",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "hepatocellular_carcinoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:lihc_liver"
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "concordance": 1.0,
+        "n_hit": 6,
+        "n_checked": 6,
+        "n_elevate": 6,
+        "n_suppress": 0,
+        "refs": [
+          "public_breath:lit_ibd_microbiome",
+          "hbdb_proxy",
+          "lit_bench:ibd_zero_shot"
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "n_elevate": 8,
+        "n_suppress": 1,
+        "refs": [
+          "public_breath:lit_luad_aldehydes",
+          "lit_bench:luad_tp53_stage4_smoker",
+          "hbdb_proxy",
+          "lit_bench:luad_acetaldehyde_warburg"
+        ]
+      },
+      {
+        "disease_id": "malaria",
+        "concordance": 1.0,
+        "n_hit": 6,
+        "n_checked": 6,
+        "n_elevate": 4,
+        "n_suppress": 2,
+        "refs": [
+          "priority10:malaria",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "pancreatic_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:paad_kras_tp53_stage3"
+        ]
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "n_elevate": 5,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:parkinson",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "pneumonia_bacterial",
+        "concordance": 1.0,
+        "n_hit": 11,
+        "n_checked": 11,
+        "n_elevate": 8,
+        "n_suppress": 3,
+        "refs": [
+          "priority10:pneumonia_bacterial",
+          "hbdb_proxy"
+        ]
+      },
+      {
+        "disease_id": "sibo",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "n_elevate": 3,
+        "n_suppress": 0,
+        "refs": [
+          "lit_bench:sibo"
+        ]
+      },
+      {
+        "disease_id": "sleep_apnea",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "n_elevate": 9,
+        "n_suppress": 0,
+        "refs": [
+          "priority10:sleep_apnea"
+        ]
+      }
+    ],
+    "gt_sources": {
+      "include_lit_bench": true,
+      "include_public_breath": true,
+      "include_panels": true,
+      "include_hbdb": true
+    }
+  },
+  "literature_concordance": {
     "n_diseases": 19,
     "mean_concordance": 0.9974937343358397,
     "mean_concordance_pct": 99.75,
@@ -1200,24 +2669,6 @@
       }
     ]
   },
-  "demographics_pca": {
-    "n": 120,
-    "demo_pca_var": [
-      0.20066252130724838,
-      0.1760047065671261
-    ],
-    "voc_pca_var": [
-      0.2986632740159497,
-      0.20733683636162345
-    ],
-    "silhouette": {
-      "demo_by_smoking": 0.275982531027021,
-      "demo_by_category": null,
-      "voc_by_smoking": 0.034986633450586634,
-      "voc_by_category": null
-    },
-    "interpretation": "Demographics PCA should cluster by smoking/sex (identity axes), not by disease. VOC PCA should show both disease-category structure and a smoking axis (benzene/toluene literature)."
-  },
   "disease100": {
     "n_diseases": 100,
     "pca_var": [
@@ -1547,7 +2998,15 @@
     ],
     "mean_cross_cosine": 0.6406580466892715
   },
-  "bugs": {
+  "demographics_pca": {
+    "silhouette": {
+      "demo_by_smoking": 0.275982531027021,
+      "demo_by_category": null,
+      "voc_by_smoking": 0.034986633450586634,
+      "voc_by_category": null
+    }
+  },
+  "bugs_smoke": {
     "fixed": [
       {
         "id": "ppb_ceiling_erases_exogenous",

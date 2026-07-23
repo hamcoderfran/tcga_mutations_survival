@@ -28,20 +28,24 @@ from .lit_compare import (
 def _md(report: dict[str, Any]) -> str:
     fuse = report.get("fuse") or {}
     ext = report.get("external_validation") or {}
+    held = report.get("held_out_literature_benchmarks") or {}
     lit = report.get("literature_concordance") or {}
     d100 = report.get("disease100") or {}
+    audit = report.get("literature_benchmarks_audit") or {}
     lines = [
         "# Model improve + external-validated 100-disease suite",
         "",
-        "Priors soft-blended from secured open corpora (priority literature panels, "
-        "public breath benchmarks, literature_benchmarks, HBDB proxies, VOLATILOME identity). "
-        "Calibrator joblibs were **not** retrained.",
+        report.get("honesty") or "",
         "",
-        f"**External validation mean concordance: {ext.get('mean_concordance_pct')}%** "
+        f"**Held-out literature_benchmarks concordance: {held.get('mean_concordance_pct')}%** "
+        f"({held.get('n_diseases_with_external_gt')} diseases)",
+        f"**In-sample external concordance: {ext.get('mean_concordance_pct')}%** "
         f"({ext.get('n_diseases_with_external_gt')} diseases with external GT)",
-        f"**Literature concordance (expanded panels): {lit.get('mean_concordance_pct')}%** "
+        f"**Literature panel concordance: {lit.get('mean_concordance_pct')}%** "
         f"({lit.get('n_diseases')} diseases)",
         f"**Disease connection suite: {d100.get('n_diseases')} diseases**",
+        f"**Audit directional accuracy: {audit.get('directional_accuracy')}** "
+        f"(min-fold pass {audit.get('min_fold_pass_rate')})",
         "",
         "## Fuse summary",
         "",
@@ -54,11 +58,12 @@ def _md(report: dict[str, Any]) -> str:
         "",
         "## External validation (vs open data)",
         "",
-        f"- Mean concordance: {ext.get('mean_concordance_pct')}%",
-        f"- Diseases with external GT: {ext.get('n_diseases_with_external_gt')}",
+        f"- Held-out lit-bench mean concordance: {held.get('mean_concordance_pct')}%",
+        f"- In-sample mean concordance: {ext.get('mean_concordance_pct')}%",
+        f"- Diseases with external GT (in-sample): {ext.get('n_diseases_with_external_gt')}",
         f"- VOC checks: {ext.get('n_voc_checks')} (hits {ext.get('n_voc_hits')})",
         "",
-        "Top disease concordances:",
+        "Top disease concordances (in-sample):",
         "",
     ]
     by = sorted(
@@ -96,15 +101,28 @@ def _md(report: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def external_validation(*, n_diseases: int = 100) -> dict[str, Any]:
+def external_validation(
+    *,
+    n_diseases: int = 100,
+    include_lit_bench: bool = True,
+    include_public_breath: bool = True,
+    include_panels: bool = True,
+    include_hbdb: bool = True,
+) -> dict[str, Any]:
     """Score predictions against fused external elevate/suppress GT for up to N diseases."""
     clear_knowledge_cache()
     eng = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
     atlas_ids = set(eng.kb.diseases.keys())
     atlas_vocs = set(eng.kb.vocs.keys())
-    expect = build_external_expect_map(atlas_ids, atlas_vocs)
+    expect = build_external_expect_map(
+        atlas_ids,
+        atlas_vocs,
+        include_lit_bench=include_lit_bench,
+        include_public_breath=include_public_breath,
+        include_panels=include_panels,
+        include_hbdb=include_hbdb,
+    )
 
-    # Prefer atlas order; take first n_diseases that have external GT, else pad with all
     ordered = sorted(eng.kb.diseases.keys())[:n_diseases]
     results = []
     for did in ordered:
@@ -144,6 +162,12 @@ def external_validation(*, n_diseases: int = 100) -> dict[str, Any]:
         "n_voc_checks": int(sum(r.get("n_checked") or 0 for r in results)),
         "n_voc_hits": int(sum(r.get("n_hit") or 0 for r in results)),
         "by_disease": results,
+        "gt_sources": {
+            "include_lit_bench": include_lit_bench,
+            "include_public_breath": include_public_breath,
+            "include_panels": include_panels,
+            "include_hbdb": include_hbdb,
+        },
     }
 
 
@@ -155,19 +179,37 @@ def run_model_improve_and_disease100(
     skip_fuse: bool = False,
 ) -> dict[str, Any]:
     """
-    1) Fuse secured external evidence into priors
-    2) External validation vs open GT
-    3) Literature concordance + 100-disease connection suite
+    1) Fuse secured external evidence into priors (panels/public/HBDB; lit_bench held out of fuse)
+    2) Held-out validation vs literature_benchmarks
+    3) In-sample external validation vs all open GT
+    4) Final fuse including lit_bench for production priors
+    5) Literature concordance + 100-disease connection suite
     """
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    fuse_holdout = {"skipped": True}
     fuse = {"skipped": True}
+    held_out = None
     if not skip_fuse:
-        fuse = fuse_external_into_priors(dry_run=False)
+        # Stage A: fuse without literature_benchmarks so they stay held-out
+        fuse_holdout = fuse_external_into_priors(dry_run=False, include_lit_bench=False)
+        held_out = external_validation(
+            n_diseases=n_diseases,
+            include_lit_bench=True,
+            include_public_breath=False,
+            include_panels=False,
+            include_hbdb=False,
+        )
+        # Stage B: full fuse for production priors
+        fuse = fuse_external_into_priors(dry_run=False, include_lit_bench=True)
 
     ext = external_validation(n_diseases=n_diseases)
-    # Full lit-demo suite (includes literature concordance + demographics PCA + disease100)
+    # audit literature benchmarks (case-level)
+    from .audit import evaluate_literature_benchmarks
+
+    lit_audit = evaluate_literature_benchmarks()
+
     full = run_lit_demo_disease100(
         out_dir=out_dir / "lit_compare",
         demo_max_patients=demo_max_patients,
@@ -176,14 +218,24 @@ def run_model_improve_and_disease100(
     lit = full.get("literature") or literature_concordance()
 
     report = {
-        "version": "1.0.0",
+        "version": "1.1.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "honesty": (
-            "Validation uses open secured corpora already in-repo (panels, public breath, "
-            "literature benchmarks, HBDB proxies). HBDB SQL / Owlstone Atlas still blocked "
-            "until user-supplied dumps arrive. Calibrator *.joblib untouched."
+            "In-sample external concordance uses open corpora that also inform prior fusion "
+            "(panels / public breath / HBDB proxies) and can look near-perfect. "
+            "Held-out literature_benchmarks concordance is the less circular check. "
+            "HBDB SQL / Owlstone still blocked until user dumps arrive. "
+            "Calibrator *.joblib untouched."
         ),
+        "fuse_holdout_stage": fuse_holdout,
         "fuse": fuse,
+        "held_out_literature_benchmarks": held_out,
+        "literature_benchmarks_audit": {
+            "n_cases": lit_audit.get("n_cases"),
+            "directional_accuracy": lit_audit.get("directional_accuracy"),
+            "min_fold_pass_rate": lit_audit.get("min_fold_accuracy"),
+            "case_pass_rate": lit_audit.get("case_pass_rate"),
+        },
         "external_validation": ext,
         "literature_concordance": lit,
         "disease100": full.get("disease100"),

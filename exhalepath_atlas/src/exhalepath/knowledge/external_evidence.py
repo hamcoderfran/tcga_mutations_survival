@@ -30,9 +30,11 @@ from .loader import clear_knowledge_cache
 
 REPO_KNOW = PACKAGE_ROOT / "data" / "knowledge"
 PKG_KNOW = KNOWLEDGE_DIR
-DS = DATA_DIR / "datasources"
-if not DS.exists():
-    DS = PACKAGE_ROOT / "data" / "datasources"
+_REPO_DS = PACKAGE_ROOT / "data" / "datasources"
+_PKG_DS = DATA_DIR / "datasources"
+DS = _REPO_DS if (_REPO_DS / "literature").exists() or (_REPO_DS / "metabolomics").exists() else (
+    _PKG_DS if _PKG_DS.exists() else _REPO_DS
+)
 
 PRIOR_CAP = 2.5
 W_QUANT = 0.55  # weight toward quantified literature fold
@@ -125,129 +127,165 @@ def _blend(old: float | None, target: float, w: float) -> float:
     return _clip((1.0 - w) * float(old) + w * float(target))
 
 
-def collect_external_evidence(atlas_vocs: set[str], atlas_ids: set[str]) -> dict[str, Any]:
-    """Build disease → {voc_id: {target_log2fc, weight, sources}} from secured corpora."""
-    evidence: dict[str, dict[str, dict[str, Any]]] = {}
+def fuse_external_into_priors(
+    *,
+    dry_run: bool = False,
+    include_lit_bench: bool = True,
+    include_public_breath: bool = True,
+    include_panels: bool = True,
+    include_hbdb: bool = True,
+) -> dict[str, Any]:
+    """Blend external evidence into disease_voc_priors.json (both knowledge trees)."""
+    clear_knowledge_cache()
+    priors_path = PKG_KNOW / "disease_voc_priors.json"
+    if not priors_path.exists():
+        priors_path = REPO_KNOW / "disease_voc_priors.json"
+    doc = json.loads(priors_path.read_text())
+    diseases = list(doc.get("diseases") or [])
+    atlas_ids = {d["disease_id"] for d in diseases}
+    voc_cat = _load(PKG_KNOW / "voc_catalog.json") or _load(REPO_KNOW / "voc_catalog.json") or {}
+    atlas_vocs = {v["voc_id"] for v in voc_cat.get("vocs") or []}
 
-    def _add(did: str, voc: str, target: float, weight: float, source: str) -> None:
-        voc = _voc_norm(voc)
-        if voc not in atlas_vocs:
-            return
-        did = _resolve_disease(did, atlas_ids) or did
-        if did not in atlas_ids:
-            return
-        slot = evidence.setdefault(did, {}).setdefault(
-            voc, {"target": 0.0, "weight": 0.0, "sources": []}
-        )
-        # Keep stronger absolute target when weights compete; accumulate weight
-        if abs(target) >= abs(float(slot["target"])) or weight > float(slot["weight"]):
-            # weighted average of targets by weight
-            w0, t0 = float(slot["weight"]), float(slot["target"])
-            w1 = float(weight)
-            if w0 + w1 > 0:
-                slot["target"] = (t0 * w0 + target * w1) / (w0 + w1)
-            else:
-                slot["target"] = target
-        slot["weight"] = min(0.85, float(slot["weight"]) + float(weight) * 0.5)
-        if source not in slot["sources"]:
-            slot["sources"].append(source)
-
-    # --- priority10 panels ---
-    panel_paths = [
-        PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json",
-        Path("data/real_breath/literature_panels/priority10_voc_panels.json"),
-    ]
-    panels = None
-    for p in panel_paths:
-        panels = _load(p)
-        if panels:
-            break
-    n_panel = 0
-    for pan in (panels or {}).get("panels") or []:
-        did = pan.get("disease_id")
-        folds = pan.get("measured_log2fc") or {}
-        voc_ev = pan.get("voc_evidence") or {}
-        for voc, fc in folds.items():
-            ev = (voc_ev.get(voc) or {}).get("evidence") or "directional_only"
-            w = W_QUANT if ev == "quantified" else W_DIR
-            _add(did, voc, float(fc), w, f"priority10:{did}")
-            n_panel += 1
-
-    # --- public breath benchmarks ---
-    pb = _load(PKG_KNOW / "public_breath_benchmarks.json") or _load(
-        REPO_KNOW / "public_breath_benchmarks.json"
+    packed = collect_external_evidence(
+        atlas_vocs,
+        atlas_ids,
+        include_lit_bench=include_lit_bench,
+        include_public_breath=include_public_breath,
+        include_panels=include_panels,
+        include_hbdb=include_hbdb,
     )
-    n_pb = 0
-    for case in (pb or {}).get("cases") or []:
-        did = case.get("disease_id") or case.get("disease")
-        for voc in case.get("expect_elevated") or []:
-            _add(did, voc, 0.65, W_PUBLIC, f"public_breath:{case.get('case_id')}")
-            n_pb += 1
-        for voc in case.get("expect_suppressed") or []:
-            _add(did, voc, -0.45, W_PUBLIC, f"public_breath:{case.get('case_id')}")
-            n_pb += 1
+    evidence = packed["evidence"]
 
-    # --- literature_benchmarks ---
-    litb = _load(PKG_KNOW / "literature_benchmarks.json") or _load(
-        REPO_KNOW / "literature_benchmarks.json"
-    )
-    n_lit = 0
-    for b in (litb or {}).get("benchmarks") or []:
-        did = _resolve_disease(str(b.get("disease") or ""), atlas_ids)
-        if not did:
+    n_touched_diseases = 0
+    n_voc_updates = 0
+    changelog: list[dict[str, Any]] = []
+
+    for d in diseases:
+        did = d["disease_id"]
+        ev = evidence.get(did)
+        if not ev:
             continue
-        for voc in b.get("expect_elevated") or []:
-            mf = (b.get("min_fold") or {}).get(voc)
-            # convert min fold-change to approx log2fc if present
-            target = math.log2(float(mf)) if mf and float(mf) > 0 else 0.6
-            _add(did, voc, target, W_LIT_BENCH, f"lit_bench:{b.get('case_id')}")
-            n_lit += 1
-        for voc in b.get("expect_not_suppressed") or []:
-            _add(did, voc, 0.35, W_LIT_BENCH * 0.7, f"lit_bench:{b.get('case_id')}")
-            n_lit += 1
-
-    # --- HBDB name proxies ---
-    from ..datasources.ds13_hbdb import HBDB_DISEASE_VOC_NAMES
-
-    n_hbdb = 0
-    for did, names in HBDB_DISEASE_VOC_NAMES.items():
-        for name in names:
-            voc = _voc_norm(name)
-            # isoprene often suppressed in lung disease literature — skip as elevate
-            if voc == "isoprene" and did in {
-                "asthma",
-                "copd",
-                "lung_adenocarcinoma",
-                "pneumonia_bacterial",
-            }:
-                _add(did, voc, -0.35, W_HBDB, "hbdb_proxy")
-            else:
-                _add(did, voc, 0.55, W_HBDB, "hbdb_proxy")
-            n_hbdb += 1
-
-    # Europe PMC DOI count as provenance metadata
-    epmc = _load(DS / "literature" / "europepmc_breath_voc_metadata.json") or {}
-    n_epmc = int(epmc.get("n_records") or 0)
-    n_dois = int(epmc.get("n_with_doi") or 0)
-
-    return {
-        "evidence": evidence,
-        "stats": {
-            "n_diseases": len(evidence),
-            "n_voc_edges": sum(len(v) for v in evidence.values()),
-            "n_panel_folds": n_panel,
-            "n_public_breath_edges": n_pb,
-            "n_lit_bench_edges": n_lit,
-            "n_hbdb_edges": n_hbdb,
-            "europepmc_records": n_epmc,
-            "europepmc_dois": n_dois,
-            "expanded_mw_studies": (
-                (_load(DS / "metabolomics" / "breath_study_catalog_expanded.json") or {}).get(
-                    "n_studies_total"
+        priors = dict(d.get("voc_log2fc_prior") or {})
+        before = dict(priors)
+        touched = False
+        for voc, slot in ev.items():
+            old = priors.get(voc)
+            new = _blend(
+                float(old) if old is not None else None,
+                float(slot["target"]),
+                float(slot["weight"]),
+            )
+            if old is None or abs(float(old) - new) > 1e-6:
+                priors[voc] = round(new, 4)
+                n_voc_updates += 1
+                touched = True
+                changelog.append(
+                    {
+                        "disease_id": did,
+                        "voc_id": voc,
+                        "before": old,
+                        "after": priors[voc],
+                        "target": round(float(slot["target"]), 4),
+                        "weight": round(float(slot["weight"]), 4),
+                        "sources": slot["sources"],
+                    }
                 )
-            ),
+        if touched:
+            d["voc_log2fc_prior"] = priors
+            d["external_evidence_fused"] = True
+            d["external_evidence_n_vocs"] = len(ev)
+            n_touched_diseases += 1
+            d["external_evidence_delta_n"] = sum(
+                1 for k, v in priors.items() if before.get(k) != v
+            )
+
+    identity = enrich_voc_catalog_identity()
+    _preserve_lung_histology_separation(diseases)
+
+    report = {
+        "version": "1.0.0",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "policy": {
+            "calibrator_untouched": True,
+            "prior_cap": PRIOR_CAP,
+            "include_lit_bench": include_lit_bench,
+            "include_public_breath": include_public_breath,
+            "include_panels": include_panels,
+            "include_hbdb": include_hbdb,
+            "weights": {
+                "quantified_panel": W_QUANT,
+                "directional_panel": W_DIR,
+                "public_breath": W_PUBLIC,
+                "literature_benchmarks": W_LIT_BENCH,
+                "hbdb_proxy": W_HBDB,
+            },
         },
+        "stats": packed["stats"],
+        "n_diseases_updated": n_touched_diseases,
+        "n_voc_prior_updates": n_voc_updates,
+        "voc_identity_enrichment": identity,
+        "n_changelog_rows": len(changelog),
+        "changelog_sample": changelog[:40],
     }
+
+    if not dry_run:
+        text = json.dumps(doc, indent=2) + "\n"
+        for know in {PKG_KNOW, REPO_KNOW}:
+            if know.exists():
+                (know / "disease_voc_priors.json").write_text(text)
+        out_payload = {**report, "changelog": changelog}
+        for know in {PKG_KNOW, REPO_KNOW}:
+            if know.exists():
+                (know / "EXTERNAL_EVIDENCE_FUSE.json").write_text(
+                    json.dumps(out_payload, indent=2) + "\n"
+                )
+        clear_knowledge_cache()
+
+    return report
+
+
+def _preserve_lung_histology_separation(diseases: list[dict[str, Any]]) -> None:
+    """Keep LUSC/LUAD from collapsing onto COPD after shared aldehyde fusion."""
+    by_id = {d["disease_id"]: d for d in diseases}
+    lusc = by_id.get("lung_squamous_cell_carcinoma")
+    if lusc:
+        pri = dict(lusc.get("voc_log2fc_prior") or {})
+        # Cancer ketones/aldehydes up; ethane (COPD oxidative) demoted
+        for voc, floor in (
+            ("acetaldehyde", 0.7),
+            ("2_butanone", 0.75),
+            ("hexanal", 1.05),
+            ("heptanal", 0.9),
+            ("nonanal", 0.8),
+            ("acetone", 0.45),
+        ):
+            pri[voc] = _clip(max(float(pri.get(voc) or 0.0), floor))
+        pri["ethane"] = _clip(min(float(pri.get("ethane") or 0.45), 0.2))
+        pri["pentane"] = _clip(min(float(pri.get("pentane") or 0.6), 0.45))
+        lusc["voc_log2fc_prior"] = pri
+
+    copd = by_id.get("copd")
+    if copd:
+        pri = dict(copd.get("voc_log2fc_prior") or {})
+        # Keep COPD ethane/pentane signature; damp panel-inflated cancer-like ketones
+        pri["ethane"] = _clip(max(float(pri.get("ethane") or 0.0), 1.05))
+        pri["pentane"] = _clip(max(float(pri.get("pentane") or 0.0), 0.7))
+        if float(pri.get("hexanal") or 0) > 1.1:
+            pri["hexanal"] = 1.05
+        for voc in ("acetaldehyde", "2_butanone"):
+            if voc in pri and float(pri[voc]) > 0.35:
+                pri[voc] = 0.25
+        copd["voc_log2fc_prior"] = pri
+
+    # Mild LUAD cancer ketone floor so it stays farther from COPD than bronchitis
+    luad = by_id.get("lung_adenocarcinoma")
+    if luad:
+        pri = dict(luad.get("voc_log2fc_prior") or {})
+        for voc, floor in (("acetaldehyde", 0.55), ("2_butanone", 0.7), ("hexanal", 0.85)):
+            pri[voc] = _clip(max(float(pri.get(voc) or 0.0), floor))
+        if "ethane" in pri:
+            pri["ethane"] = _clip(min(float(pri["ethane"]), 0.25))
+        luad["voc_log2fc_prior"] = pri
 
 
 def enrich_voc_catalog_identity() -> dict[str, Any]:
@@ -291,108 +329,151 @@ def enrich_voc_catalog_identity() -> dict[str, Any]:
     return {"updated": updated, "n_extended_mapped": len(by_atlas)}
 
 
-def fuse_external_into_priors(*, dry_run: bool = False) -> dict[str, Any]:
-    """Blend external evidence into disease_voc_priors.json (both knowledge trees)."""
-    clear_knowledge_cache()
-    priors_path = PKG_KNOW / "disease_voc_priors.json"
-    if not priors_path.exists():
-        priors_path = REPO_KNOW / "disease_voc_priors.json"
-    doc = json.loads(priors_path.read_text())
-    diseases = list(doc.get("diseases") or [])
-    atlas_ids = {d["disease_id"] for d in diseases}
-    voc_cat = _load(PKG_KNOW / "voc_catalog.json") or _load(REPO_KNOW / "voc_catalog.json") or {}
-    atlas_vocs = {v["voc_id"] for v in voc_cat.get("vocs") or []}
+def collect_external_evidence(
+    atlas_vocs: set[str],
+    atlas_ids: set[str],
+    *,
+    include_lit_bench: bool = True,
+    include_public_breath: bool = True,
+    include_panels: bool = True,
+    include_hbdb: bool = True,
+) -> dict[str, Any]:
+    """Build disease → {voc_id: {target_log2fc, weight, sources}} from secured corpora."""
+    evidence: dict[str, dict[str, dict[str, Any]]] = {}
 
-    packed = collect_external_evidence(atlas_vocs, atlas_ids)
-    evidence = packed["evidence"]
+    def _add(did: str, voc: str, target: float, weight: float, source: str) -> None:
+        voc = _voc_norm(voc)
+        if voc not in atlas_vocs:
+            return
+        did = _resolve_disease(did, atlas_ids) or did
+        if did not in atlas_ids:
+            return
+        slot = evidence.setdefault(did, {}).setdefault(
+            voc, {"target": 0.0, "weight": 0.0, "sources": []}
+        )
+        w0, t0 = float(slot["weight"]), float(slot["target"])
+        w1 = float(weight)
+        if w0 + w1 > 0:
+            slot["target"] = (t0 * w0 + target * w1) / (w0 + w1)
+        else:
+            slot["target"] = target
+        slot["weight"] = min(0.85, float(slot["weight"]) + float(weight) * 0.5)
+        if source not in slot["sources"]:
+            slot["sources"].append(source)
 
-    n_touched_diseases = 0
-    n_voc_updates = 0
-    changelog: list[dict[str, Any]] = []
+    n_panel = 0
+    if include_panels:
+        panel_paths = [
+            PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json",
+            Path("data/real_breath/literature_panels/priority10_voc_panels.json"),
+        ]
+        panels = None
+        for p in panel_paths:
+            panels = _load(p)
+            if panels:
+                break
+        for pan in (panels or {}).get("panels") or []:
+            did = pan.get("disease_id")
+            folds = pan.get("measured_log2fc") or {}
+            voc_ev = pan.get("voc_evidence") or {}
+            for voc, fc in folds.items():
+                ev = (voc_ev.get(voc) or {}).get("evidence") or "directional_only"
+                w = W_QUANT if ev == "quantified" else W_DIR
+                _add(did, voc, float(fc), w, f"priority10:{did}")
+                n_panel += 1
 
-    for d in diseases:
-        did = d["disease_id"]
-        ev = evidence.get(did)
-        if not ev:
-            continue
-        priors = dict(d.get("voc_log2fc_prior") or {})
-        before = dict(priors)
-        touched = False
-        for voc, slot in ev.items():
-            old = priors.get(voc)
-            new = _blend(
-                float(old) if old is not None else None,
-                float(slot["target"]),
-                float(slot["weight"]),
-            )
-            if old is None or abs(float(old) - new) > 1e-6:
-                priors[voc] = round(new, 4)
-                n_voc_updates += 1
-                touched = True
-                changelog.append(
-                    {
-                        "disease_id": did,
-                        "voc_id": voc,
-                        "before": old,
-                        "after": priors[voc],
-                        "target": round(float(slot["target"]), 4),
-                        "weight": round(float(slot["weight"]), 4),
-                        "sources": slot["sources"],
-                    }
+    n_pb = 0
+    if include_public_breath:
+        pb = _load(PKG_KNOW / "public_breath_benchmarks.json") or _load(
+            REPO_KNOW / "public_breath_benchmarks.json"
+        )
+        for case in (pb or {}).get("cases") or []:
+            did = case.get("disease_id") or case.get("disease")
+            for voc in case.get("expect_elevated") or []:
+                _add(did, voc, 0.65, W_PUBLIC, f"public_breath:{case.get('case_id')}")
+                n_pb += 1
+            for voc in case.get("expect_suppressed") or []:
+                _add(did, voc, -0.45, W_PUBLIC, f"public_breath:{case.get('case_id')}")
+                n_pb += 1
+
+    n_lit = 0
+    if include_lit_bench:
+        litb = _load(PKG_KNOW / "literature_benchmarks.json") or _load(
+            REPO_KNOW / "literature_benchmarks.json"
+        )
+        for b in (litb or {}).get("benchmarks") or []:
+            did = _resolve_disease(str(b.get("disease") or ""), atlas_ids)
+            if not did:
+                continue
+            for voc in b.get("expect_elevated") or []:
+                mf = (b.get("min_fold") or {}).get(voc)
+                target = math.log2(float(mf)) if mf and float(mf) > 0 else 0.6
+                _add(did, voc, target, W_LIT_BENCH, f"lit_bench:{b.get('case_id')}")
+                n_lit += 1
+            for voc in b.get("expect_not_suppressed") or []:
+                _add(did, voc, 0.35, W_LIT_BENCH * 0.7, f"lit_bench:{b.get('case_id')}")
+                n_lit += 1
+
+    n_hbdb = 0
+    if include_hbdb:
+        from ..datasources.ds13_hbdb import HBDB_DISEASE_VOC_NAMES
+
+        for did, names in HBDB_DISEASE_VOC_NAMES.items():
+            for name in names:
+                voc = _voc_norm(name)
+                if voc == "isoprene" and did in {
+                    "asthma",
+                    "copd",
+                    "lung_adenocarcinoma",
+                    "pneumonia_bacterial",
+                }:
+                    _add(did, voc, -0.35, W_HBDB, "hbdb_proxy")
+                else:
+                    _add(did, voc, 0.55, W_HBDB, "hbdb_proxy")
+                n_hbdb += 1
+
+    epmc = _load(DS / "literature" / "europepmc_breath_voc_metadata.json") or {}
+    n_epmc = int(epmc.get("n_records") or 0)
+    n_dois = int(epmc.get("n_with_doi") or 0)
+
+    return {
+        "evidence": evidence,
+        "stats": {
+            "n_diseases": len(evidence),
+            "n_voc_edges": sum(len(v) for v in evidence.values()),
+            "n_panel_folds": n_panel,
+            "n_public_breath_edges": n_pb,
+            "n_lit_bench_edges": n_lit,
+            "n_hbdb_edges": n_hbdb,
+            "europepmc_records": n_epmc,
+            "europepmc_dois": n_dois,
+            "expanded_mw_studies": (
+                (_load(DS / "metabolomics" / "breath_study_catalog_expanded.json") or {}).get(
+                    "n_studies_total"
                 )
-        if touched:
-            d["voc_log2fc_prior"] = priors
-            d["external_evidence_fused"] = True
-            d["external_evidence_n_vocs"] = len(ev)
-            n_touched_diseases += 1
-            # keep before snapshot small
-            d["external_evidence_delta_n"] = sum(
-                1 for k, v in priors.items() if before.get(k) != v
-            )
-
-    identity = enrich_voc_catalog_identity()
-
-    report = {
-        "version": "1.0.0",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "policy": {
-            "calibrator_untouched": True,
-            "prior_cap": PRIOR_CAP,
-            "weights": {
-                "quantified_panel": W_QUANT,
-                "directional_panel": W_DIR,
-                "public_breath": W_PUBLIC,
-                "literature_benchmarks": W_LIT_BENCH,
-                "hbdb_proxy": W_HBDB,
-            },
+            ),
         },
-        "stats": packed["stats"],
-        "n_diseases_updated": n_touched_diseases,
-        "n_voc_prior_updates": n_voc_updates,
-        "voc_identity_enrichment": identity,
-        "n_changelog_rows": len(changelog),
-        "changelog_sample": changelog[:40],
     }
 
-    if not dry_run:
-        text = json.dumps(doc, indent=2) + "\n"
-        for know in {PKG_KNOW, REPO_KNOW}:
-            if know.exists():
-                (know / "disease_voc_priors.json").write_text(text)
-        out = REPO_KNOW / "EXTERNAL_EVIDENCE_FUSE.json"
-        if REPO_KNOW.exists():
-            out.write_text(json.dumps({**report, "changelog": changelog}, indent=2) + "\n")
-        twin = PKG_KNOW / "EXTERNAL_EVIDENCE_FUSE.json"
-        if PKG_KNOW.exists() and PKG_KNOW != REPO_KNOW:
-            twin.write_text(json.dumps({**report, "changelog": changelog}, indent=2) + "\n")
-        clear_knowledge_cache()
 
-    return report
-
-
-def build_external_expect_map(atlas_ids: set[str], atlas_vocs: set[str]) -> dict[str, dict[str, Any]]:
+def build_external_expect_map(
+    atlas_ids: set[str],
+    atlas_vocs: set[str],
+    *,
+    include_lit_bench: bool = True,
+    include_public_breath: bool = True,
+    include_panels: bool = True,
+    include_hbdb: bool = True,
+) -> dict[str, dict[str, Any]]:
     """Directional elevate/suppress map for external validation (broader than LIT_EXPECT)."""
-    packed = collect_external_evidence(atlas_vocs, atlas_ids)
+    packed = collect_external_evidence(
+        atlas_vocs,
+        atlas_ids,
+        include_lit_bench=include_lit_bench,
+        include_public_breath=include_public_breath,
+        include_panels=include_panels,
+        include_hbdb=include_hbdb,
+    )
     expect: dict[str, dict[str, Any]] = {}
     for did, vocs in packed["evidence"].items():
         elev, supp, refs = [], [], []
