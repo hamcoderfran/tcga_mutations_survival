@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "product": "exhalepath_atlas",
-  "n_datasources": 14,
+  "n_datasources": 15,
   "offline": true,
   "datasources": [
     {
@@ -113,7 +113,7 @@
       },
       "fuse": {
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_opentargets.json",
-        "n_diseases": 104
+        "n_diseases": 110
       }
     },
     {
@@ -181,7 +181,7 @@
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_hbdb.json",
         "n_compounds": 777,
         "n_atlas_enriched": 44,
-        "n_diseases": 108
+        "n_diseases": 112
       }
     },
     {
@@ -198,12 +198,32 @@
         "n_voc_catalog_enriched": 28,
         "n_pathways_enriched": 16
       }
+    },
+    {
+      "priority": 15,
+      "key": "alt_breath_sources",
+      "title": "Open alternatives to VOC Atlas / live HBDB (access audit + Zenodo harvest)",
+      "harvest": {
+        "access_matrix": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/ACCESS_MATRIX.json",
+        "physionet": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/physionet_respir_catalog.json",
+        "common78": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/common78_features.json",
+        "hbdb_eval_index": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/hbdb_eval_index.json",
+        "zenodo": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/zenodo_harvest.json",
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/manifest.json"
+      },
+      "fuse": {
+        "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_alt_breath_sources.json",
+        "n_sources": 8,
+        "n_common78": 78,
+        "n_common78_mapped": 3,
+        "n_physionet": 19
+      }
     }
   ],
   "note": "ChEMBL chemogenomic harvest remains available via `python -m exhalepath harvest-chembl` (already bundled in this atlas tree).",
   "capability": {
-    "n_diseases": 104,
-    "n_datasources_integrated": 14,
+    "n_diseases": 110,
+    "n_datasources_integrated": 15,
     "priorities": [
       1,
       2,
@@ -218,9 +238,11 @@
       11,
       12,
       13,
-      14
+      14,
+      15
     ],
     "knowledge_fragments": [
+      "datasource_alt_breath_sources.json",
       "datasource_bindingdb.json",
       "datasource_blood_proxy.json",
       "datasource_gdc.json",
