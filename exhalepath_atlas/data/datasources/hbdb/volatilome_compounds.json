@@ -1,12 +1,14 @@
 {
-  "version": "1.0.0",
-  "description": "EPA CompTox VOLATILOME breath chemicals (de Lacy Costello backbone used by HBDB). HBDB website/SQL not redistributable here.",
+  "version": "1.1.0",
+  "description": "EPA CompTox VOLATILOME breath chemicals (de Lacy Costello backbone). HBDB disease associations are in hbdb_disease_vocs_60.json.",
   "references": {
     "volatilome_doi": "10.23645/epacomptox.9762410.v2",
     "de_lacy_costello": "https://doi.org/10.1088/1752-7155/8/1/014001",
     "hbdb_paper": "https://doi.org/10.1093/database/baz139",
-    "hbdb_site": "https://hbdb.cmdm.tw/",
-    "hbdb_access_note": "Live HBDB HTML blocked (Cloudflare); Zenodo hbdb2.sql restricted. VOLATILOME is the open compound-layer substitute."
+    "hbdb_site": "https://hbdb.cmdm.tw/?disease_page=1&tab=disease",
+    "zenodo_doi": "10.5281/zenodo.14958797",
+    "zenodo_sql": "https://zenodo.org/records/14958797/files/hbdb2_wo_sentences.sql?download=1",
+    "hbdb_access_note": "Live HBDB HTML blocked (Cloudflare). Open Zenodo dump hbdb2_wo_sentences.sql provides all 60 disease\u2194compound links."
   },
   "n_compounds": 777,
   "n_mapped_to_atlas": 44,

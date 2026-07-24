@@ -236,7 +236,7 @@ def run_model_improve_and_disease100(
             "In-sample external concordance overlaps fuse sources (panels/public/HBDB) and "
             "can look near-perfect by construction — treat as coverage of open GT, not "
             "independent accuracy. Fuse always restarts from disease_voc_priors.pristine.json "
-            "(idempotent). HBDB SQL / Owlstone still blocked until user dumps arrive. "
+            "(idempotent). HBDB all-60 associations from Zenodo SQL (live site blocked). "
             "Calibrator *.joblib untouched."
         ),
         "fuse_holdout_stage": fuse_holdout,

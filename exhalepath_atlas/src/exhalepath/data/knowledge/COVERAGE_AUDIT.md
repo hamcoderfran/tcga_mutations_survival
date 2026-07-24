@@ -1,6 +1,6 @@
 # VOC data coverage audit (secure open corpus)
 
-This audit does NOT claim 99% of all VOC content on the internet. It targets 99% of the defined open machine-readable breath-VOC compound universe (EPA VOLATILOME / HBDB backbone). HBDB live HTML, restricted SQL, Owlstone gated Atlas, and exhaustive PDF scraping remain out of scope.
+This audit does NOT claim 99% of all VOC content on the internet. It targets 99% of the defined open machine-readable breath-VOC compound universe (EPA VOLATILOME / HBDB backbone). HBDB disease associations are now in-scope via Zenodo hbdb2_wo_sentences.sql (live HTML still Cloudflare-blocked). Owlstone gated Atlas and exhaustive PDF scraping remain out of scope.
 
 **Open-compound coverage: 100.0%** (777/777) · meets ≥99% target: **True**
 
@@ -46,4 +46,4 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 - `data/datasources/literature/europepmc_breath_voc_metadata.json`
 - `data/datasources/metabolomics/breath_study_catalog_expanded.json`
 
-Generated: 2026-07-23T17:06:26.491774+00:00
+Generated: 2026-07-24T00:22:37.103285+00:00

@@ -1,1927 +1,759 @@
 {
-  "version": "1.0.0",
-  "n_diseases": 108,
+  "version": "2.1.0",
+  "n_diseases": 26,
+  "source": "hbdb_zenodo_sql",
+  "n_hbdb_diseases_raw": 60,
+  "n_disease_compound_links": 764,
   "diseases": [
     {
-      "disease_id": "lung_adenocarcinoma",
-      "disease_name": "Lung adenocarcinoma",
+      "disease_id": "asthma",
       "hbdb_style_voc_names": [
-        "hexanal",
-        "heptanal",
-        "nonanal",
-        "2-butanone",
-        "acetaldehyde",
-        "isoprene"
-      ],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 16,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "breast_invasive_carcinoma",
-      "disease_name": "Breast invasive carcinoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "dmts",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 16,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "pancreatic_adenocarcinoma",
-      "disease_name": "Pancreatic adenocarcinoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "colon_adenocarcinoma",
-      "disease_name": "Colon adenocarcinoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "hydrogen_sulfide",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 16,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "hepatocellular_carcinoma",
-      "disease_name": "Hepatocellular carcinoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
+        "2_pentanone",
         "ammonia",
-        "butane",
-        "dms",
-        "ethanol",
+        "benzaldehyde",
+        "decanal",
         "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "limonene",
         "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
+        "undecane"
       ],
-      "n_atlas_voc_priors": 18,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [
+        "2_pentanone",
+        "ammonia",
+        "benzaldehyde",
+        "decanal",
+        "ethylbenzene",
+        "nonanal",
+        "undecane"
+      ],
+      "n_atlas_voc_priors": 7,
+      "n_hbdb_panel_vocs": 7,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "ethylbenzene": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 253,
+              "compound_name": "Ethylbenzene",
+              "pubchem_cid": "7500",
+              "references_count": 143
+            }
+          ]
+        },
+        "ammonia": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 29,
+              "compound_name": "ammonia",
+              "pubchem_cid": "222",
+              "references_count": 74
+            }
+          ]
+        },
+        "nonanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 7,
+              "compound_name": "Nonanal",
+              "pubchem_cid": "31289",
+              "references_count": 22
+            }
+          ]
+        },
+        "benzaldehyde": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 134,
+              "compound_name": "Benzaldehyde",
+              "pubchem_cid": "240",
+              "references_count": 8
+            }
+          ]
+        },
+        "decanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 198,
+              "compound_name": "Decanal",
+              "pubchem_cid": "8175",
+              "references_count": 6
+            }
+          ]
+        },
+        "2_pentanone": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 806,
+              "compound_name": "Pentan-2-one",
+              "pubchem_cid": "7895",
+              "references_count": 5
+            }
+          ]
+        },
+        "undecane": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 5,
+              "hbdb_disease_name": "asthma",
+              "compound_id": 911,
+              "compound_name": "Undecane",
+              "pubchem_cid": "14257",
+              "references_count": 1
+            }
+          ]
+        }
+      }
     },
     {
-      "disease_id": "type_2_diabetes",
-      "disease_name": "Type 2 diabetes mellitus",
+      "disease_id": "chronic_bronchitis",
       "hbdb_style_voc_names": [
-        "acetone",
-        "isopropanol",
-        "ethanol",
-        "ethanol",
-        "acetaldehyde"
+        "benzaldehyde",
+        "decanal",
+        "ethylbenzene",
+        "undecane",
+        "xylene"
       ],
       "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "ethanol",
-        "isoprene",
-        "isopropanol",
-        "trimethylamine"
+        "benzaldehyde",
+        "decanal",
+        "ethylbenzene",
+        "undecane",
+        "xylene"
       ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "chronic_liver_disease",
-      "disease_name": "Chronic liver disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "dms",
-        "isopropanol",
-        "limonene",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "n_atlas_voc_priors": 5,
+      "n_hbdb_panel_vocs": 5,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "ethylbenzene": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 7,
+              "hbdb_disease_name": "bronchiectasis",
+              "compound_id": 253,
+              "compound_name": "Ethylbenzene",
+              "pubchem_cid": "7500",
+              "references_count": 143
+            }
+          ]
+        },
+        "xylene": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 7,
+              "hbdb_disease_name": "bronchiectasis",
+              "compound_id": 920,
+              "compound_name": "1,2-xylene",
+              "pubchem_cid": "7237",
+              "references_count": 10
+            }
+          ]
+        },
+        "benzaldehyde": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 7,
+              "hbdb_disease_name": "bronchiectasis",
+              "compound_id": 134,
+              "compound_name": "Benzaldehyde",
+              "pubchem_cid": "240",
+              "references_count": 8
+            }
+          ]
+        },
+        "decanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 7,
+              "hbdb_disease_name": "bronchiectasis",
+              "compound_id": 198,
+              "compound_name": "Decanal",
+              "pubchem_cid": "8175",
+              "references_count": 6
+            }
+          ]
+        },
+        "undecane": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 7,
+              "hbdb_disease_name": "bronchiectasis",
+              "compound_id": 911,
+              "compound_name": "Undecane",
+              "pubchem_cid": "14257",
+              "references_count": 1
+            }
+          ]
+        }
+      }
     },
     {
       "disease_id": "chronic_kidney_disease",
-      "disease_name": "Chronic kidney disease",
       "hbdb_style_voc_names": [
-        "trimethylamine",
-        "ammonia",
-        "dimethylamine",
-        "isoprene"
+        "ammonia"
       ],
       "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "dimethyl_amine",
-        "dms",
-        "isopropanol",
-        "trimethylamine"
+        "ammonia"
       ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "inflammatory_bowel_disease",
-      "disease_name": "Inflammatory bowel disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "acetaldehyde",
-        "carbon_disulfide",
-        "dimethyl_amine",
-        "dimethyl_disulfide",
-        "ethanol",
-        "ethyl_acetate",
-        "hexanal",
-        "hydrogen_sulfide",
-        "indole",
-        "methyl_mercaptan",
-        "octanal",
-        "pentane",
-        "phenol",
-        "propanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 16,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "ovarian_cancer",
-      "disease_name": "Ovarian cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "decanal",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 16,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "gut_dysbiosis",
-      "disease_name": "Gut dysbiosis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetaldehyde",
-        "ammonia",
-        "carbon_disulfide",
-        "dimethyl_amine",
-        "dimethyl_disulfide",
-        "dms",
-        "ethanol",
-        "ethyl_acetate",
-        "hydrogen_sulfide",
-        "indole",
-        "methyl_mercaptan",
-        "phenol",
-        "propanol",
-        "pyrrole",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "sibo",
-      "disease_name": "Small intestinal bacterial overgrowth",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetaldehyde",
-        "dimethyl_amine",
-        "ethanol",
-        "ethyl_acetate",
-        "hydrogen_sulfide",
-        "indole",
-        "methanol",
-        "methyl_mercaptan",
-        "phenol",
-        "propanol",
-        "pyrrole",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 12,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "clostridioides_difficile_infection",
-      "disease_name": "Clostridioides difficile infection",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "ammonia",
-        "dimethyl_amine",
-        "dimethyl_disulfide",
-        "ethanol",
-        "ethyl_acetate",
-        "hydrogen_sulfide",
-        "indole",
-        "methyl_mercaptan",
-        "phenol",
-        "propanol",
-        "pyrrole",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 12,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "helicobacter_pylori_infection",
-      "disease_name": "Helicobacter pylori infection",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ammonia",
-        "dimethyl_amine",
-        "ethanol",
-        "ethyl_acetate",
-        "hydrogen_sulfide",
-        "indole",
-        "methyl_mercaptan",
-        "phenol",
-        "propanol",
-        "pyrrole",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 12,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "alzheimer_disease",
-      "disease_name": "Alzheimer disease",
-      "hbdb_style_voc_names": [
-        "ethane",
-        "pentane",
-        "acetone"
-      ],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "parkinson_disease",
-      "disease_name": "Parkinson disease",
-      "hbdb_style_voc_names": [
-        "pentane",
-        "hexane",
-        "styrene",
-        "ethylbenzene"
-      ],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetone",
-        "ammonia",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 10,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "major_depressive_disorder",
-      "disease_name": "Major depressive disorder",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ammonia",
-        "ethane",
-        "hexanal",
-        "indole",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 10,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "schizophrenia",
-      "disease_name": "Schizophrenia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ammonia",
-        "ethane",
-        "formaldehyde",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 10,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "epilepsy",
-      "disease_name": "Epilepsy",
-      "hbdb_style_voc_names": [
-        "acetone",
-        "isoprene",
-        "dimethyl sulfide"
-      ],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "multiple_sclerosis",
-      "disease_name": "Multiple sclerosis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "glioblastoma",
-      "disease_name": "Glioblastoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "traumatic_brain_injury",
-      "disease_name": "Traumatic brain injury",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "autism_spectrum_disorder",
-      "disease_name": "Autism spectrum disorder",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ammonia",
-        "ethane",
-        "hexanal",
-        "hydrogen_sulfide",
-        "indole",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "phenol",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 12,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "heart_disease",
-      "disease_name": "Heart disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_pentanone",
-        "acetone",
-        "dimethyl_amine",
-        "hexanal",
-        "isoprene",
-        "pentane",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 7,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cancer_prostate",
-      "disease_name": "Prostate cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cancer_stomach",
-      "disease_name": "Gastric cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cancer_kidney",
-      "disease_name": "Kidney cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cancer_bladder",
-      "disease_name": "Bladder cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cancer_skin_melanoma",
-      "disease_name": "Melanoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cancer_blood",
-      "disease_name": "Hematologic cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "neuroblastoma",
-      "disease_name": "Neuroblastoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "bipolar",
-      "disease_name": "Bipolar disorder",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "als",
-      "disease_name": "ALS",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "stroke",
-      "disease_name": "Stroke / cerebrovascular",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "n_atlas_voc_priors": 1,
+      "n_hbdb_panel_vocs": 1,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "ammonia": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 27,
+              "hbdb_disease_name": "end-stage renal disease",
+              "compound_id": 29,
+              "compound_name": "ammonia",
+              "pubchem_cid": "222",
+              "references_count": 74
+            }
+          ]
+        }
+      }
     },
     {
       "disease_id": "copd",
-      "disease_name": "COPD",
       "hbdb_style_voc_names": [
-        "pentane",
-        "ethane",
-        "hexanal",
-        "heptanal",
-        "acetone",
-        "isoprene"
-      ],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "benzene",
-        "dodecane",
-        "furan",
-        "hexanal",
-        "isopropanol",
-        "octane",
-        "pentane",
-        "phenol",
-        "styrene",
-        "toluene",
-        "xylene"
-      ],
-      "n_atlas_voc_priors": 12,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "asthma",
-      "disease_name": "Asthma",
-      "hbdb_style_voc_names": [
-        "pentane",
-        "ethane",
-        "isoprene",
-        "acetone",
-        "nitric oxide",
-        "hexanal"
-      ],
-      "atlas_voc_ids": [
-        "2_butanone",
         "2_pentanone",
         "benzaldehyde",
-        "benzene",
-        "ethyl_acetate",
+        "decanal",
+        "ethanol",
         "ethylbenzene",
-        "furan",
+        "heptanal",
         "hexanal",
-        "octane",
-        "pentane",
-        "propanol",
-        "styrene",
-        "toluene",
+        "isopropanol",
+        "methanol",
+        "undecane",
         "xylene"
       ],
-      "n_atlas_voc_priors": 14,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "ild",
-      "disease_name": "Interstitial lung disease",
-      "hbdb_style_voc_names": [],
       "atlas_voc_ids": [
-        "2_butanone",
-        "benzene",
-        "furan",
+        "2_pentanone",
+        "benzaldehyde",
+        "decanal",
+        "ethanol",
+        "ethylbenzene",
+        "heptanal",
         "hexanal",
-        "pentane",
-        "styrene",
-        "toluene",
+        "isopropanol",
+        "methanol",
+        "undecane",
         "xylene"
       ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "covid19",
-      "disease_name": "COVID-19",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "influenza",
-      "disease_name": "Influenza / viral pneumonia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "tuberculosis",
-      "disease_name": "Tuberculosis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "type1_diabetes",
-      "disease_name": "Type 1 diabetes",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "obesity",
-      "disease_name": "Obesity",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "gerd",
-      "disease_name": "GERD",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "celiac",
-      "disease_name": "Celiac disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "lupus",
-      "disease_name": "Systemic lupus erythematosus",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "rheumatoid_arthritis",
-      "disease_name": "Rheumatoid arthritis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "osteoarthritis",
-      "disease_name": "Osteoarthritis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "psoriasis",
-      "disease_name": "Psoriasis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "atopic_dermatitis",
-      "disease_name": "Atopic dermatitis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "hiv",
-      "disease_name": "HIV infection",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cmv",
-      "disease_name": "Cytomegalovirus infection",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "sepsis",
-      "disease_name": "Sepsis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "hypertension",
-      "disease_name": "Hypertension",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_pentanone",
-        "acetone",
-        "hexanal",
-        "isoprene",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "hyperlipidemia",
-      "disease_name": "Hyperlipidemia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "thyroid",
-      "disease_name": "Thyroid disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "endometriosis",
-      "disease_name": "Endometriosis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "pcos",
-      "disease_name": "PCOS",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "infertility",
-      "disease_name": "Infertility",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "adhd",
-      "disease_name": "ADHD",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "migraine",
-      "disease_name": "Migraine",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "chronic_pain",
-      "disease_name": "Chronic pain",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "osteoporosis",
-      "disease_name": "Osteoporosis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "gout",
-      "disease_name": "Gout",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "anemia",
-      "disease_name": "Anemia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "sickle_cell",
-      "disease_name": "Sickle cell disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "n_atlas_voc_priors": 11,
+      "n_hbdb_panel_vocs": 11,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "ethylbenzene": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 253,
+              "compound_name": "Ethylbenzene",
+              "pubchem_cid": "7500",
+              "references_count": 143
+            }
+          ]
+        },
+        "isopropanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 51,
+              "compound_name": "isopropanol",
+              "pubchem_cid": "3776",
+              "references_count": 66
+            }
+          ]
+        },
+        "hexanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 2,
+              "compound_name": "Hexaldehyde",
+              "pubchem_cid": "6184",
+              "references_count": 47
+            }
+          ]
+        },
+        "xylene": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 920,
+              "compound_name": "1,2-xylene",
+              "pubchem_cid": "7237",
+              "references_count": 10
+            }
+          ]
+        },
+        "benzaldehyde": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 134,
+              "compound_name": "Benzaldehyde",
+              "pubchem_cid": "240",
+              "references_count": 8
+            }
+          ]
+        },
+        "heptanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 58,
+              "compound_name": "Heptanal",
+              "pubchem_cid": "8130",
+              "references_count": 7
+            }
+          ]
+        },
+        "decanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 198,
+              "compound_name": "Decanal",
+              "pubchem_cid": "8175",
+              "references_count": 6
+            }
+          ]
+        },
+        "2_pentanone": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 806,
+              "compound_name": "Pentan-2-one",
+              "pubchem_cid": "7895",
+              "references_count": 5
+            }
+          ]
+        },
+        "ethanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 34,
+              "compound_name": "ethanol",
+              "pubchem_cid": "702",
+              "references_count": 3
+            }
+          ]
+        },
+        "methanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 98,
+              "compound_name": "methanol",
+              "pubchem_cid": "101954077",
+              "references_count": 2
+            }
+          ]
+        },
+        "undecane": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 57,
+              "hbdb_disease_name": "chronic obstructive pulmonary disease (COPD)",
+              "compound_id": 911,
+              "compound_name": "Undecane",
+              "pubchem_cid": "14257",
+              "references_count": 1
+            }
+          ]
+        }
+      }
     },
     {
       "disease_id": "cystic_fibrosis",
-      "disease_name": "Cystic fibrosis",
       "hbdb_style_voc_names": [
-        "hydrogen sulfide",
-        "dimethyl sulfide",
-        "2-pentanone",
-        "acetone"
-      ],
-      "atlas_voc_ids": [
         "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "down_syndrome",
-      "disease_name": "Down syndrome",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "hearing_loss",
-      "disease_name": "Hearing loss",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "macular_degeneration",
-      "disease_name": "Age-related macular degeneration",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "glaucoma",
-      "disease_name": "Glaucoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "diabetic_retinopathy",
-      "disease_name": "Diabetic retinopathy",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "periodontitis",
-      "disease_name": "Periodontitis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "indole",
-        "methyl_mercaptan",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 7,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "uti",
-      "disease_name": "Urinary tract infection",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "pneumonia_bacterial",
-      "disease_name": "Bacterial pneumonia",
-      "hbdb_style_voc_names": [
-        "hexanal",
-        "heptanal",
-        "acetone",
-        "isoprene"
-      ],
-      "atlas_voc_ids": [
-        "acetone",
-        "acetonitrile",
-        "ammonia",
-        "crotonaldehyde",
-        "hexanal"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "nafld",
-      "disease_name": "NAFLD/NASH",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
+        "ethanol",
         "isopropanol",
-        "trimethylamine"
+        "methanol"
       ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [
+        "acetone",
+        "ethanol",
+        "isopropanol",
+        "methanol"
+      ],
+      "n_atlas_voc_priors": 4,
+      "n_hbdb_panel_vocs": 4,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "acetone": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 13,
+              "hbdb_disease_name": "cystic fibrosis",
+              "compound_id": 28,
+              "compound_name": "acetone",
+              "pubchem_cid": "180",
+              "references_count": 275
+            }
+          ]
+        },
+        "isopropanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 13,
+              "hbdb_disease_name": "cystic fibrosis",
+              "compound_id": 51,
+              "compound_name": "isopropanol",
+              "pubchem_cid": "3776",
+              "references_count": 66
+            }
+          ]
+        },
+        "ethanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 13,
+              "hbdb_disease_name": "cystic fibrosis",
+              "compound_id": 34,
+              "compound_name": "ethanol",
+              "pubchem_cid": "702",
+              "references_count": 3
+            }
+          ]
+        },
+        "methanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 13,
+              "hbdb_disease_name": "cystic fibrosis",
+              "compound_id": 98,
+              "compound_name": "methanol",
+              "pubchem_cid": "101954077",
+              "references_count": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "disease_id": "ild",
+      "hbdb_style_voc_names": [
+        "ethanol",
+        "isopropanol",
+        "methanol"
+      ],
+      "atlas_voc_ids": [
+        "ethanol",
+        "isopropanol",
+        "methanol"
+      ],
+      "n_atlas_voc_priors": 3,
+      "n_hbdb_panel_vocs": 3,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "isopropanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 23,
+              "hbdb_disease_name": "pulmonary Langerhans cell histiocytosis",
+              "compound_id": 51,
+              "compound_name": "isopropanol",
+              "pubchem_cid": "3776",
+              "references_count": 66
+            }
+          ]
+        },
+        "ethanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 23,
+              "hbdb_disease_name": "pulmonary Langerhans cell histiocytosis",
+              "compound_id": 34,
+              "compound_name": "ethanol",
+              "pubchem_cid": "702",
+              "references_count": 3
+            }
+          ]
+        },
+        "methanol": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 23,
+              "hbdb_disease_name": "pulmonary Langerhans cell histiocytosis",
+              "compound_id": 98,
+              "compound_name": "methanol",
+              "pubchem_cid": "101954077",
+              "references_count": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "disease_id": "lung_adenocarcinoma",
+      "hbdb_style_voc_names": [
+        "heptanal",
+        "nonanal"
+      ],
+      "atlas_voc_ids": [
+        "heptanal",
+        "nonanal"
+      ],
+      "n_atlas_voc_priors": 2,
+      "n_hbdb_panel_vocs": 2,
+      "source": "hbdb_zenodo_sql",
+      "voc_evidence": {
+        "nonanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 29,
+              "hbdb_disease_name": "non-small cell lung cancer, lung neoplasms",
+              "compound_id": 7,
+              "compound_name": "Nonanal",
+              "pubchem_cid": "31289",
+              "references_count": 22
+            }
+          ]
+        },
+        "heptanal": {
+          "n_hbdb_links": 1,
+          "sources": [
+            {
+              "hbdb_disease_id": 29,
+              "hbdb_disease_name": "non-small cell lung cancer, lung neoplasms",
+              "compound_id": 58,
+              "compound_name": "Heptanal",
+              "pubchem_cid": "8130",
+              "references_count": 7
+            }
+          ]
+        }
+      }
     },
     {
       "disease_id": "alcohol_use",
-      "disease_name": "Alcohol use disorder",
+      "hbdb_disease_id": 1,
+      "hbdb_disease_name": "alcohol abuse",
       "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 3,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "opioid_use",
-      "disease_name": "Opioid use disorder",
+      "disease_id": "breast_invasive_carcinoma",
+      "hbdb_disease_id": 6,
+      "hbdb_disease_name": "primary breast cancer",
       "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 1,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "tobacco_use",
-      "disease_name": "Tobacco use disorder",
+      "disease_id": "atopic_dermatitis",
+      "hbdb_disease_id": 14,
+      "hbdb_disease_name": "upper and lower airway inflammation in Atopic dermatitis (AD)",
       "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 4,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "anxiety",
-      "disease_name": "Anxiety disorders",
+      "disease_id": "type1_diabetes",
+      "hbdb_disease_id": 15,
+      "hbdb_disease_name": "cystic fibrosis-related diabetes (CFRD)",
       "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 1,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "ptsd",
-      "disease_name": "PTSD",
+      "disease_id": "atopic_dermatitis",
+      "hbdb_disease_id": 17,
+      "hbdb_disease_name": "eczema",
       "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 0,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "sleep_apnea",
-      "disease_name": "Sleep apnea",
+      "disease_id": "gerd",
+      "hbdb_disease_id": 19,
+      "hbdb_disease_name": "gastroesophageal reflux disease",
       "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "benzene",
-        "furan",
-        "hexanal",
-        "pentane",
-        "styrene",
-        "toluene",
-        "xylene"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "gout_ckd_overlap",
-      "disease_name": "Hyperuricemia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "vasculitis",
-      "disease_name": "Vasculitis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "sjogren",
-      "disease_name": "Sjogren syndrome",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "scleroderma",
-      "disease_name": "Systemic sclerosis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "myasthenia",
-      "disease_name": "Myasthenia gravis",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "3_methylbutanal",
-        "hexanal",
-        "hydrogen_sulfide",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "huntington",
-      "disease_name": "Huntington disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "lewy_body",
-      "disease_name": "Lewy body dementia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "frontotemporal",
-      "disease_name": "Frontotemporal dementia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "ethane",
-        "hexanal",
-        "isoprene",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propanol"
-      ],
-      "n_atlas_voc_priors": 8,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "breast_benign",
-      "disease_name": "Benign breast disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "acetone",
-        "hexanal",
-        "octanal",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 4,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "endometrial_cancer",
-      "disease_name": "Endometrial cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "cervical_cancer",
-      "disease_name": "Cervical cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "head_neck_cancer",
-      "disease_name": "Head and neck cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "thyroid_cancer",
-      "disease_name": "Thyroid cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "esophageal_cancer",
-      "disease_name": "Esophageal cancer",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "mesothelioma",
-      "disease_name": "Mesothelioma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "sarcoma",
-      "disease_name": "Sarcoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "wilms",
-      "disease_name": "Wilms tumor",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "retinoblastoma",
-      "disease_name": "Retinoblastoma",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "acetaldehyde",
-        "acetone",
-        "butane",
-        "ethanol",
-        "ethylbenzene",
-        "furan",
-        "heptanal",
-        "hexanal",
-        "hexane",
-        "nonanal",
-        "octanal",
-        "pentane",
-        "propionaldehyde",
-        "styrene"
-      ],
-      "n_atlas_voc_priors": 15,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "acute_kidney_injury",
-      "disease_name": "Acute kidney injury",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_butanone",
-        "2_pentanone",
-        "acetone",
-        "ammonia",
-        "isopropanol",
-        "trimethylamine"
-      ],
-      "n_atlas_voc_priors": 6,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "pulmonary_hypertension",
-      "disease_name": "Pulmonary hypertension",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_pentanone",
-        "acetone",
-        "hexanal",
-        "isoprene",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "arrhythmia",
-      "disease_name": "Cardiac arrhythmia",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_pentanone",
-        "acetone",
-        "hexanal",
-        "isoprene",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "peripheral_artery",
-      "disease_name": "Peripheral artery disease",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_pentanone",
-        "acetone",
-        "hexanal",
-        "isoprene",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
-    },
-    {
-      "disease_id": "venous_thromboembolism",
-      "disease_name": "Venous thromboembolism",
-      "hbdb_style_voc_names": [],
-      "atlas_voc_ids": [
-        "2_pentanone",
-        "acetone",
-        "hexanal",
-        "isoprene",
-        "pentane"
-      ],
-      "n_atlas_voc_priors": 5,
-      "source": "atlas_priors+hbdb_literature_proxy"
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 0,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
       "disease_id": "heart_failure",
-      "hbdb_style_voc_names": [
-        "acetone",
-        "pentane",
-        "isoprene"
-      ],
+      "hbdb_disease_id": 21,
+      "hbdb_disease_name": "Heart Failure",
+      "hbdb_style_voc_names": [],
       "atlas_voc_ids": [],
-      "source": "hbdb_literature_proxy"
+      "n_hbdb_compounds": 1,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "liver_cirrhosis",
-      "hbdb_style_voc_names": [
-        "limonene",
-        "methanol",
-        "2-butanone",
-        "dimethyl sulfide"
-      ],
+      "disease_id": "pulmonary_hypertension",
+      "hbdb_disease_id": 24,
+      "hbdb_disease_name": "idiopathic pulmonary arterial hypertenion",
+      "hbdb_style_voc_names": [],
       "atlas_voc_ids": [],
-      "source": "hbdb_literature_proxy"
+      "n_hbdb_compounds": 7,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "ulcerative_colitis",
-      "hbdb_style_voc_names": [
-        "indole",
-        "phenol",
-        "hydrogen sulfide",
-        "dimethyl disulfide"
-      ],
+      "disease_id": "sleep_apnea",
+      "hbdb_disease_id": 30,
+      "hbdb_disease_name": "obese patients with obstructive sleep apnea syndrome",
+      "hbdb_style_voc_names": [],
       "atlas_voc_ids": [],
-      "source": "hbdb_literature_proxy"
+      "n_hbdb_compounds": 1,
+      "source": "hbdb_zenodo_sql_inventory"
     },
     {
-      "disease_id": "malaria",
-      "hbdb_style_voc_names": [
-        "terpenes",
-        "isoprene",
-        "acetone"
-      ],
+      "disease_id": "pneumonia_bacterial",
+      "hbdb_disease_id": 33,
+      "hbdb_disease_name": "community-acquired pneumonia",
+      "hbdb_style_voc_names": [],
       "atlas_voc_ids": [],
-      "source": "hbdb_literature_proxy"
+      "n_hbdb_compounds": 2,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "ards",
+      "hbdb_disease_id": 36,
+      "hbdb_disease_name": "acute respiratory distress syndrome (ARDS) with Lung recruitment maneuvers(LRMs)",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 0,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "scleroderma",
+      "hbdb_disease_id": 41,
+      "hbdb_disease_name": "systemic sclerosis",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 1,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "sleep_apnea",
+      "hbdb_disease_id": 43,
+      "hbdb_disease_name": "sleep-disordered breathing (SDB) ",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 2,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "tobacco_use",
+      "hbdb_disease_id": 44,
+      "hbdb_disease_name": "Smoke",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 2,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "tuberculosis",
+      "hbdb_disease_id": 47,
+      "hbdb_disease_name": "Pulmonary Tuberculosis",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 0,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "inflammatory_bowel_disease",
+      "hbdb_disease_id": 49,
+      "hbdb_disease_name": "Inflammatory Bowel Disease",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 0,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "vasculitis",
+      "hbdb_disease_id": 50,
+      "hbdb_disease_name": "Churg-Strauss syndrome",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 1,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "pneumonia_bacterial",
+      "hbdb_disease_id": 55,
+      "hbdb_disease_name": "community-acquired pneumonia",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 2,
+      "source": "hbdb_zenodo_sql_inventory"
+    },
+    {
+      "disease_id": "sleep_apnea",
+      "hbdb_disease_id": 56,
+      "hbdb_disease_name": "obstructive sleep apnea",
+      "hbdb_style_voc_names": [],
+      "atlas_voc_ids": [],
+      "n_hbdb_compounds": 4,
+      "source": "hbdb_zenodo_sql_inventory"
     }
   ]
 }

@@ -501,25 +501,52 @@ def collect_external_evidence(
 
     n_hbdb = 0
     if include_hbdb:
-        from ..datasources.ds13_hbdb import HBDB_DISEASE_VOC_NAMES
+        mapped = _load(DS / "hbdb" / "hbdb_atlas_mapped.json")
+        assoc = list((mapped or {}).get("atlas_associations") or [])
+        if assoc:
+            resp = {
+                "asthma",
+                "copd",
+                "lung_adenocarcinoma",
+                "pneumonia_bacterial",
+                "chronic_bronchitis",
+                "ild",
+            }
+            for a in assoc:
+                did = a.get("disease_id")
+                for voc in (a.get("vocs") or {}):
+                    voc_n = _voc_norm(voc)
+                    if voc_n not in atlas_vocs:
+                        n_hbdb_skipped += 1
+                        continue
+                    # HBDB links are presence associations, not signed fold-changes.
+                    # Keep the established isoprene-down heuristic for airway diseases.
+                    if voc_n == "isoprene" and did in resp:
+                        target = -0.35
+                    else:
+                        target = 0.55
+                    if _add(did, voc_n, target, W_HBDB, "hbdb_zenodo_sql"):
+                        n_hbdb += 1
+        else:
+            from ..datasources.ds13_hbdb import HBDB_DISEASE_VOC_NAMES
 
-        for did, names in HBDB_DISEASE_VOC_NAMES.items():
-            for name in names:
-                voc = _voc_norm(name)
-                if voc not in atlas_vocs:
-                    n_hbdb_skipped += 1
-                    continue
-                if voc == "isoprene" and did in {
-                    "asthma",
-                    "copd",
-                    "lung_adenocarcinoma",
-                    "pneumonia_bacterial",
-                }:
-                    ok = _add(did, voc, -0.35, W_HBDB, "hbdb_proxy")
-                else:
-                    ok = _add(did, voc, 0.55, W_HBDB, "hbdb_proxy")
-                if ok:
-                    n_hbdb += 1
+            for did, names in HBDB_DISEASE_VOC_NAMES.items():
+                for name in names:
+                    voc = _voc_norm(name)
+                    if voc not in atlas_vocs:
+                        n_hbdb_skipped += 1
+                        continue
+                    if voc == "isoprene" and did in {
+                        "asthma",
+                        "copd",
+                        "lung_adenocarcinoma",
+                        "pneumonia_bacterial",
+                    }:
+                        ok = _add(did, voc, -0.35, W_HBDB, "hbdb_proxy")
+                    else:
+                        ok = _add(did, voc, 0.55, W_HBDB, "hbdb_proxy")
+                    if ok:
+                        n_hbdb += 1
 
     epmc = _load(DS / "literature" / "europepmc_breath_voc_metadata.json") or {}
     n_epmc = int(epmc.get("n_records") or 0)

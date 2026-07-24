@@ -113,7 +113,7 @@
       },
       "fuse": {
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_opentargets.json",
-        "n_diseases": 104
+        "n_diseases": 110
       }
     },
     {
@@ -171,17 +171,20 @@
     {
       "priority": 13,
       "key": "hbdb",
-      "title": "HBDB / EPA VOLATILOME breath compound catalog",
+      "title": "HBDB disease\u2013VOC associations + EPA VOLATILOME catalog",
       "harvest": {
         "compounds": "/workspace/exhalepath_atlas/data/datasources/hbdb/volatilome_compounds.json",
         "disease_associations": "/workspace/exhalepath_atlas/data/datasources/hbdb/hbdb_disease_associations.json",
-        "manifest": "/workspace/exhalepath_atlas/data/datasources/hbdb/manifest.json"
+        "manifest": "/workspace/exhalepath_atlas/data/datasources/hbdb/manifest.json",
+        "disease_vocs_60": "/workspace/exhalepath_atlas/data/datasources/hbdb/hbdb_disease_vocs_60.json",
+        "atlas_mapped": "/workspace/exhalepath_atlas/data/datasources/hbdb/hbdb_atlas_mapped.json"
       },
       "fuse": {
         "path": "/workspace/exhalepath_atlas/data/knowledge/datasource_hbdb.json",
         "n_compounds": 777,
         "n_atlas_enriched": 44,
-        "n_diseases": 108
+        "n_diseases": 26,
+        "n_hbdb_links": 764
       }
     },
     {
@@ -202,7 +205,7 @@
   ],
   "note": "ChEMBL chemogenomic harvest remains available via `python -m exhalepath harvest-chembl` (already bundled in this atlas tree).",
   "capability": {
-    "n_diseases": 104,
+    "n_diseases": 110,
     "n_datasources_integrated": 14,
     "priorities": [
       1,

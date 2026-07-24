@@ -1,22 +1,22 @@
 {
   "version": "1.1.0",
-  "generated_at": "2026-07-23T17:06:26.491592+00:00",
+  "generated_at": "2026-07-24T00:22:37.103115+00:00",
   "root": "/workspace/exhalepath_atlas",
   "n_files": 8,
   "files": [
     {
       "path": "data/datasources/hbdb/volatilome_compounds.json",
-      "sha256": "e89913bea7081f6055ee70ddddd7018217067cbc974cd1d141d1cbe1c5f66792",
-      "n_bytes": 254655
+      "sha256": "c672f3dd8c3d78e3b8fb34d6a5c923f006b9b57c536e37bd04b3678396ffeb74",
+      "n_bytes": 254834
     },
     {
       "path": "src/exhalepath/data/knowledge/voc_catalog.json",
-      "sha256": "eef018ae88bf18e86df8bdc432696428edffed0df06cef2493661d9f89b264f6",
-      "n_bytes": 43414
+      "sha256": "80de8de3b8a64fcc206e5ffe22ce74ccdae9559a53db1f16bc594f5837023e03",
+      "n_bytes": 43413
     },
     {
       "path": "src/exhalepath/data/knowledge/voc_extended_catalog.json",
-      "sha256": "593630915d670ab8d19912675b8f3cc3284017c7c373c45b79954c6210b0d59d",
+      "sha256": "83e53ba3e91165b52360178ab67e2ef6ad47f60529c645e6c4e09fa408ab3a27",
       "n_bytes": 384052
     },
     {
@@ -41,8 +41,8 @@
     },
     {
       "path": "data/datasources/INTEGRATION_MANIFEST.json",
-      "sha256": "c2ecc6f9a1576c9086fc85fad46ebc90ff20a59c910f820105c208a255705182",
-      "n_bytes": 8409
+      "sha256": "970102ecfacd7d74187d267afe51508af7f3b1b3a9df162f1e3d03f194957cef",
+      "n_bytes": 8655
     }
   ],
   "policy": {
