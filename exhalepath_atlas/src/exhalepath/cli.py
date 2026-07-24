@@ -422,18 +422,18 @@ def eval_completion_cmd(
 @app.command("integrate-datasources")
 def integrate_datasources_cmd(
     offline: bool = typer.Option(
-        False, help="Skip live HTTP; still write curated priority 1–14 tables"
+        False, help="Skip live HTTP; still write curated priority tables"
     ),
     priorities: Optional[str] = typer.Option(
-        None, help="Comma-separated priorities to run, e.g. 1,2,13,14 (default: all 1–14)"
+        None, help="Comma-separated priorities to run, e.g. 1,2,13,15 (default: all 1–15)"
     ),
 ):
     """
-    Harvest + fuse priority datasources 1–14 into exhalepath_atlas knowledge/.
+    Harvest + fuse priority datasources 1–15 into exhalepath_atlas knowledge/.
 
     1 metabolomics repos · 2 HMDB · 3 λ partition · 4 mVOC · 5 PubChem · 6 Reactome
     7 GTEx priors · 8 Open Targets/GWAS · 9 GDC/TCGA · 10 BindingDB · 11 blood proxy · 12 NIST RI
-    13 HBDB/VOLATILOME · 14 KEGG VOC pathways
+    13 HBDB/VOLATILOME · 14 KEGG VOC pathways · 15 alt breath-source access audit
     """
     from pathlib import Path as P
 
@@ -450,6 +450,30 @@ def integrate_datasources_cmd(
     )
     for d in manifest["datasources"]:
         rprint(f"  [{d['priority']:02d}] {d['key']}: {d['title']}")
+
+
+@app.command("harvest-alt-breath-sources")
+def harvest_alt_breath_sources_cmd(
+    offline: bool = typer.Option(
+        False, help="Reuse committed Zenodo/PhysioNet artifacts without HTTP"
+    ),
+):
+    """Audit Owlstone/HBDB alternatives; download open Zenodo adjuncts + PhysioNet catalog."""
+    from pathlib import Path as P
+
+    from .datasources.ds15_alt_breath_sources import AltBreathSources
+
+    root = P(__file__).resolve().parents[2]
+    src = AltBreathSources(root)
+    paths = src.harvest(offline=offline)
+    info = src.fuse(root / "data" / "knowledge")
+    rprint("[green]Alt breath-source audit complete[/green]")
+    rprint(f"  access matrix: {paths['access_matrix']}")
+    rprint(
+        f"  open Zenodo common-78: {info.get('n_common78')} "
+        f"(panel-mapped {info.get('n_common78_mapped')})"
+    )
+    rprint(f"  PhysioNet respir catalogs: {info.get('n_physionet')}")
 
 
 @app.command("harvest-public-breath")
@@ -1249,6 +1273,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-priority10",
         "integrate-datasources",
         "harvest-public-breath",
+        "harvest-alt-breath-sources",
         "eval-public-breath",
         "harvest-clinical-comorbidity",
         "eval-comorbidity-clinical",
