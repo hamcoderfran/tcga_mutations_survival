@@ -64,9 +64,15 @@ def harvest_magdeburg_schizophrenia_breath(out_dir: Path | None = None) -> dict[
     out_dir = Path(out_dir or CLINICAL_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
     docx_path = out_dir / "magdeburg_sz_breath_supplement.docx"
-    r = requests.get(FIGSHARE_SZ["download_url"], timeout=120, headers=UA)
-    r.raise_for_status()
-    docx_path.write_bytes(r.content)
+    from .secure_fetch import secure_fetch
+
+    secure_fetch(
+        FIGSHARE_SZ["download_url"],
+        dest=docx_path,
+        quarantine_dir=out_dir / ".quarantine",
+        max_bytes=40 * 1024 * 1024,
+        timeout=120,
+    )
 
     try:
         from docx import Document

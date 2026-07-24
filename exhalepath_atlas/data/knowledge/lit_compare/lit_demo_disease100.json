@@ -1,0 +1,1608 @@
+{
+  "literature": {
+    "n_diseases": 19,
+    "mean_concordance": 1.0,
+    "mean_concordance_pct": 100.0,
+    "by_disease": [
+      {
+        "disease_id": "ards",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "acetaldehyde",
+            "expect": "elevate",
+            "log2fc": 0.6098660725018727,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.859427754358179,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.8364283972081248,
+            "ok": true
+          },
+          {
+            "voc": "octanal",
+            "expect": "elevate",
+            "log2fc": 0.7031116103562547,
+            "ok": true
+          },
+          {
+            "voc": "heptanal",
+            "expect": "elevate",
+            "log2fc": 0.6839538501559129,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.46649861995320646,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.876501267717121,
+            "ok": true
+          },
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 0.36512095823609336,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.349056412143441,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "asthma",
+        "concordance": 1.0,
+        "n_hit": 19,
+        "n_checked": 19,
+        "refs": [
+          "PMC7796324",
+          "priority10 asthma",
+          "Sci Data breath"
+        ],
+        "details": [
+          {
+            "voc": "ethane",
+            "expect": "elevate",
+            "log2fc": 1.3441851781978744,
+            "ok": true
+          },
+          {
+            "voc": "2_pentanone",
+            "expect": "elevate",
+            "log2fc": 0.6359379902505068,
+            "ok": true
+          },
+          {
+            "voc": "benzaldehyde",
+            "expect": "elevate",
+            "log2fc": 0.6647400912782734,
+            "ok": true
+          },
+          {
+            "voc": "ethyl_acetate",
+            "expect": "elevate",
+            "log2fc": 0.6575735112934014,
+            "ok": true
+          },
+          {
+            "voc": "ethylbenzene",
+            "expect": "elevate",
+            "log2fc": 0.6606461013062912,
+            "ok": true
+          },
+          {
+            "voc": "furan",
+            "expect": "elevate",
+            "log2fc": 0.6860383483177093,
+            "ok": true
+          },
+          {
+            "voc": "octane",
+            "expect": "elevate",
+            "log2fc": 0.7041084102681494,
+            "ok": true
+          },
+          {
+            "voc": "propanol",
+            "expect": "elevate",
+            "log2fc": 0.5978613951417723,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.859427754358179,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.876501267717121,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.6470572603147539,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.3825435214358842,
+            "ok": true
+          },
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 0.30646201522850236,
+            "ok": true
+          },
+          {
+            "voc": "butane",
+            "expect": "suppress",
+            "log2fc": -0.3712344973155948,
+            "ok": true
+          },
+          {
+            "voc": "dodecane",
+            "expect": "suppress",
+            "log2fc": -0.3837269671869069,
+            "ok": true
+          },
+          {
+            "voc": "hexane",
+            "expect": "suppress",
+            "log2fc": -0.3486553141571605,
+            "ok": true
+          },
+          {
+            "voc": "isopropanol",
+            "expect": "suppress",
+            "log2fc": -0.44455178840835985,
+            "ok": true
+          },
+          {
+            "voc": "phenol",
+            "expect": "suppress",
+            "log2fc": -0.3435855256528259,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.29691821814184666,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "cancer_prostate",
+        "concordance": 1.0,
+        "n_hit": 7,
+        "n_checked": 7,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 3.299433687376831,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.3195702069634785,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.36320287017266645,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 1.2262359263933928,
+            "ok": true
+          },
+          {
+            "voc": "formaldehyde",
+            "expect": "suppress",
+            "log2fc": -1.0326340053209295,
+            "ok": true
+          },
+          {
+            "voc": "acetaldehyde",
+            "expect": "suppress",
+            "log2fc": -0.011471061754278486,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.20395981766919694,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "cancer_stomach",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.6327793092686849,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "elevate",
+            "log2fc": 0.6614280576053179,
+            "ok": true
+          },
+          {
+            "voc": "phenol",
+            "expect": "elevate",
+            "log2fc": 0.48944005743772234,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.6341269274795046,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 3.6011733841887827,
+            "ok": true
+          },
+          {
+            "voc": "styrene",
+            "expect": "elevate",
+            "log2fc": 0.5818789243653214,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 2.3756081722289455,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 0.36163145454545453,
+            "ok": true
+          },
+          {
+            "voc": "hydrogen_sulfide",
+            "expect": "elevate",
+            "log2fc": 0.4191734748417451,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "chronic_bronchitis",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "refs": [
+          "Airway inflammation oxidative alkanes (overlap COPD literature)",
+          "Atlas chronic_bronchitis prior (limited dedicated breath panels)"
+        ],
+        "details": [
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.911513347136324,
+            "ok": true
+          },
+          {
+            "voc": "ethane",
+            "expect": "elevate",
+            "log2fc": 0.9186252857909393,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 3.6944771881705627,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 1.5899167510752372,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.2022805739060934,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "copd",
+        "concordance": 1.0,
+        "n_hit": 21,
+        "n_checked": 21,
+        "refs": [
+          "PMC7796324 VOC fingerprints lung disease",
+          "PMC8405872 hexanal/nonanal COPD",
+          "priority10_voc_panels COPD"
+        ],
+        "details": [
+          {
+            "voc": "ethane",
+            "expect": "elevate",
+            "log2fc": 1.707823779512387,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.876501267717121,
+            "ok": true
+          },
+          {
+            "voc": "heptanal",
+            "expect": "elevate",
+            "log2fc": 1.015776058202652,
+            "ok": true
+          },
+          {
+            "voc": "benzene",
+            "expect": "elevate",
+            "log2fc": 0.6523938754142118,
+            "ok": true
+          },
+          {
+            "voc": "isopropanol",
+            "expect": "elevate",
+            "log2fc": 0.6058741167239567,
+            "ok": true
+          },
+          {
+            "voc": "phenol",
+            "expect": "elevate",
+            "log2fc": 0.5823501213289064,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.859427754358179,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.6948889582588812,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.42619850995629804,
+            "ok": true
+          },
+          {
+            "voc": "toluene",
+            "expect": "elevate",
+            "log2fc": 0.4152090149096966,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 0.26665792708026487,
+            "ok": true
+          },
+          {
+            "voc": "2_pentanone",
+            "expect": "suppress",
+            "log2fc": -0.47705584317992694,
+            "ok": true
+          },
+          {
+            "voc": "decanal",
+            "expect": "suppress",
+            "log2fc": -0.20646268146149951,
+            "ok": true
+          },
+          {
+            "voc": "dodecane",
+            "expect": "suppress",
+            "log2fc": -0.05822400258638739,
+            "ok": true
+          },
+          {
+            "voc": "ethyl_acetate",
+            "expect": "suppress",
+            "log2fc": -0.4422300956613278,
+            "ok": true
+          },
+          {
+            "voc": "ethylbenzene",
+            "expect": "suppress",
+            "log2fc": -0.3491160691397423,
+            "ok": true
+          },
+          {
+            "voc": "furan",
+            "expect": "suppress",
+            "log2fc": -0.4795047068581317,
+            "ok": true
+          },
+          {
+            "voc": "octane",
+            "expect": "suppress",
+            "log2fc": -0.1328225085264121,
+            "ok": true
+          },
+          {
+            "voc": "benzaldehyde",
+            "expect": "suppress",
+            "log2fc": -0.3551388190449936,
+            "ok": true
+          },
+          {
+            "voc": "propanol",
+            "expect": "suppress",
+            "log2fc": -0.4270858178099187,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.34312291638406894,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "covid19",
+        "concordance": 1.0,
+        "n_hit": 8,
+        "n_checked": 8,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.748222147208125,
+            "ok": true
+          },
+          {
+            "voc": "octanal",
+            "expect": "elevate",
+            "log2fc": 0.6783583254898433,
+            "ok": true
+          },
+          {
+            "voc": "heptanal",
+            "expect": "elevate",
+            "log2fc": 0.671454315382919,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.6236248053641175,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 0.609442945398554,
+            "ok": true
+          },
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 0.38885821125142556,
+            "ok": true
+          },
+          {
+            "voc": "methanol",
+            "expect": "suppress",
+            "log2fc": -0.48798013730365913,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.44805131340247023,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "cystic_fibrosis",
+        "concordance": 1.0,
+        "n_hit": 11,
+        "n_checked": 11,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "ethane",
+            "expect": "elevate",
+            "log2fc": 1.3924189765268158,
+            "ok": true
+          },
+          {
+            "voc": "hydrogen_sulfide",
+            "expect": "elevate",
+            "log2fc": 1.9179198290316564,
+            "ok": true
+          },
+          {
+            "voc": "dms",
+            "expect": "elevate",
+            "log2fc": 1.13335389598441,
+            "ok": true
+          },
+          {
+            "voc": "indole",
+            "expect": "elevate",
+            "log2fc": 1.6575831913916996,
+            "ok": true
+          },
+          {
+            "voc": "phenol",
+            "expect": "elevate",
+            "log2fc": 0.560926945168355,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.3769615468247352,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.5151930414008765,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.1878765980112505,
+            "ok": true
+          },
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 0.32063258249393234,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 2.741505178525469,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.24868315376163988,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "head_neck_cancer",
+        "concordance": 1.0,
+        "n_hit": 8,
+        "n_checked": 8,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 4.395916417300085,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 2.3603182524970725,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.271746547084995,
+            "ok": true
+          },
+          {
+            "voc": "heptanal",
+            "expect": "elevate",
+            "log2fc": 0.4358253395359147,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.5406493295321644,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.41585347507536863,
+            "ok": true
+          },
+          {
+            "voc": "decanal",
+            "expect": "elevate",
+            "log2fc": 0.46944609746057964,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.24459704510291974,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "heart_failure",
+        "concordance": 1.0,
+        "n_hit": 7,
+        "n_checked": 7,
+        "refs": [
+          "Acetone elevated in decompensated HF breath studies"
+        ],
+        "details": [
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 4.154527895483706,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.982245171169648,
+            "ok": true
+          },
+          {
+            "voc": "isopropanol",
+            "expect": "elevate",
+            "log2fc": 0.45231331751005216,
+            "ok": true
+          },
+          {
+            "voc": "methanol",
+            "expect": "elevate",
+            "log2fc": 0.17604618835896124,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 2.9870399399172283,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 1.4358666078823497,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.1790765307779173,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "concordance": 1.0,
+        "n_hit": 2,
+        "n_checked": 2,
+        "refs": [
+          "Gut inflammation / microbial sulfur VOCs"
+        ],
+        "details": [
+          {
+            "voc": "hydrogen_sulfide",
+            "expect": "elevate",
+            "log2fc": 2.263001584229306,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.00431087629516,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "concordance": 1.0,
+        "n_hit": 7,
+        "n_checked": 7,
+        "refs": [
+          "JTO breath VOC lung cancer aldehydes/ketones",
+          "lit_luad_aldehydes / literature_benchmarks"
+        ],
+        "details": [
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.132029206383365,
+            "ok": true
+          },
+          {
+            "voc": "heptanal",
+            "expect": "elevate",
+            "log2fc": 0.5965276665520836,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.6989129118545048,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.6550988115553324,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 1.3843042592909263,
+            "ok": true
+          },
+          {
+            "voc": "acetaldehyde",
+            "expect": "elevate",
+            "log2fc": 1.621561043628422,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -1.4004668442927888,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "lung_squamous_cell_carcinoma",
+        "concordance": 1.0,
+        "n_hit": 6,
+        "n_checked": 6,
+        "refs": [
+          "Lung cancer aldehyde pattern (histology-agnostic panels)"
+        ],
+        "details": [
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 3.565159556718095,
+            "ok": true
+          },
+          {
+            "voc": "heptanal",
+            "expect": "elevate",
+            "log2fc": 0.6603750493645835,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "elevate",
+            "log2fc": 0.75498215990138,
+            "ok": true
+          },
+          {
+            "voc": "acetaldehyde",
+            "expect": "elevate",
+            "log2fc": 0.6323543703822023,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 0.7232085936732878,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.3457117635192584,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "malaria",
+        "concordance": 1.0,
+        "n_hit": 7,
+        "n_checked": 7,
+        "refs": [
+          "Public breath / malaria VOC panels in atlas"
+        ],
+        "details": [
+          {
+            "voc": "benzene",
+            "expect": "elevate",
+            "log2fc": 0.5628860629142117,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 1.2960519640653678,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.393973348651508,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 1.820996309280349,
+            "ok": true
+          },
+          {
+            "voc": "nonanal",
+            "expect": "suppress",
+            "log2fc": -0.20177061527895526,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.1581228466916184,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "suppress",
+            "log2fc": -0.04672964297854467,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "pneumonia_bacterial",
+        "concordance": 1.0,
+        "n_hit": 11,
+        "n_checked": 11,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 0.698426667551325,
+            "ok": true
+          },
+          {
+            "voc": "ethylbenzene",
+            "expect": "elevate",
+            "log2fc": 0.5998954758011159,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.606643213745264,
+            "ok": true
+          },
+          {
+            "voc": "hydrogen_sulfide",
+            "expect": "elevate",
+            "log2fc": 1.091014654517272,
+            "ok": true
+          },
+          {
+            "voc": "dms",
+            "expect": "elevate",
+            "log2fc": 0.5709879002179008,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.859427754358179,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 2.3155826865807985,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "suppress",
+            "log2fc": -0.1840928986356417,
+            "ok": true
+          },
+          {
+            "voc": "isopropanol",
+            "expect": "suppress",
+            "log2fc": -0.39999499484368245,
+            "ok": true
+          },
+          {
+            "voc": "propanol",
+            "expect": "suppress",
+            "log2fc": -0.3707705835586175,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.3431105238020647,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "schizophrenia",
+        "concordance": 1.0,
+        "n_hit": 5,
+        "n_checked": 5,
+        "refs": [
+          "Magdeburg PTR-MS schizophrenia breath"
+        ],
+        "details": [
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.6917648125293456,
+            "ok": true
+          },
+          {
+            "voc": "ethane",
+            "expect": "elevate",
+            "log2fc": 0.6570420677402591,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "suppress",
+            "log2fc": -0.7413964503301613,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.4587981543197251,
+            "ok": true
+          },
+          {
+            "voc": "trimethylamine",
+            "expect": "suppress",
+            "log2fc": -0.7333633877799146,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "sleep_apnea",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "isoprene",
+            "expect": "elevate",
+            "log2fc": 0.9750781378475794,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 1.508241085600183,
+            "ok": true
+          },
+          {
+            "voc": "toluene",
+            "expect": "elevate",
+            "log2fc": 0.6176427154033309,
+            "ok": true
+          },
+          {
+            "voc": "ethylbenzene",
+            "expect": "elevate",
+            "log2fc": 0.620045632051116,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.11528770084211,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.461822282497842,
+            "ok": true
+          },
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 0.1542309229299074,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 1.0203262167596188,
+            "ok": true
+          },
+          {
+            "voc": "methanol",
+            "expect": "elevate",
+            "log2fc": 0.3483535720073776,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "tuberculosis",
+        "concordance": 1.0,
+        "n_hit": 9,
+        "n_checked": 9,
+        "refs": [
+          "priority10_voc_panels"
+        ],
+        "details": [
+          {
+            "voc": "benzene",
+            "expect": "elevate",
+            "log2fc": 0.5628860629142117,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 4.447230486099874,
+            "ok": true
+          },
+          {
+            "voc": "ethane",
+            "expect": "elevate",
+            "log2fc": 0.7349688768442768,
+            "ok": true
+          },
+          {
+            "voc": "toluene",
+            "expect": "elevate",
+            "log2fc": 0.34791501256246105,
+            "ok": true
+          },
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 0.416137170439637,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 0.46305181768784803,
+            "ok": true
+          },
+          {
+            "voc": "hexanal",
+            "expect": "elevate",
+            "log2fc": 4.016613875011756,
+            "ok": true
+          },
+          {
+            "voc": "dms",
+            "expect": "elevate",
+            "log2fc": 0.4164268591642396,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.29691821814184666,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "concordance": 1.0,
+        "n_hit": 3,
+        "n_checked": 3,
+        "refs": [
+          "lit_t2d_acetone",
+          "ketone-body breath literature"
+        ],
+        "details": [
+          {
+            "voc": "acetone",
+            "expect": "elevate",
+            "log2fc": 3.578781268751535,
+            "ok": true
+          },
+          {
+            "voc": "isopropanol",
+            "expect": "elevate",
+            "log2fc": 0.49956445540615213,
+            "ok": true
+          },
+          {
+            "voc": "2_butanone",
+            "expect": "elevate",
+            "log2fc": 3.5847271079689778,
+            "ok": true
+          }
+        ]
+      }
+    ]
+  },
+  "demographics_pca": {
+    "n": 100,
+    "demo_pca_var": [
+      0.20497991485569836,
+      0.17494992897026504
+    ],
+    "voc_pca_var": [
+      0.29029514839029064,
+      0.21153170237741162
+    ],
+    "silhouette": {
+      "demo_by_smoking": 0.27728892995946436,
+      "demo_by_category": null,
+      "voc_by_smoking": 0.039513092777246656,
+      "voc_by_category": null
+    },
+    "interpretation": "Demographics PCA should cluster by smoking/sex (identity axes), not by disease. VOC PCA should show both disease-category structure and a smoking axis (benzene/toluene literature)."
+  },
+  "disease100": {
+    "n_diseases": 100,
+    "pca_var": [
+      0.20884117021682944,
+      0.1424344646965745
+    ],
+    "top_cross_category": [
+      {
+        "disease_a": "multiple_sclerosis",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9945501942756052,
+        "cross_category": true
+      },
+      {
+        "disease_a": "hypertension",
+        "disease_b": "sickle_cell",
+        "category_a": "cardiovascular",
+        "category_b": "unspecified",
+        "cosine": 0.9924683985361112,
+        "cross_category": true
+      },
+      {
+        "disease_a": "hiv",
+        "disease_b": "hypertension",
+        "category_a": "infectious",
+        "category_b": "cardiovascular",
+        "cosine": 0.9913340145673525,
+        "cross_category": true
+      },
+      {
+        "disease_a": "hypertension",
+        "disease_b": "influenza",
+        "category_a": "cardiovascular",
+        "category_b": "infectious",
+        "cosine": 0.9912537647933712,
+        "cross_category": true
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "creutzfeldt_jakob",
+        "category_a": "pulmonary",
+        "category_b": "neurological",
+        "cosine": 0.9909760235840019,
+        "cross_category": true
+      },
+      {
+        "disease_a": "migraine",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "anxiety",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "adhd",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "rheumatoid_arthritis",
+        "disease_b": "stroke",
+        "category_a": "inflammatory",
+        "category_b": "neurological",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "ptsd",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "huntington",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9906794833952624,
+        "cross_category": true
+      },
+      {
+        "disease_a": "bipolar",
+        "disease_b": "rheumatoid_arthritis",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.990089355218653,
+        "cross_category": true
+      }
+    ],
+    "top_same_category": [
+      {
+        "disease_a": "anxiety",
+        "disease_b": "ptsd",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "anxiety",
+        "disease_b": "stroke",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "migraine",
+        "disease_b": "ptsd",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "anxiety",
+        "disease_b": "huntington",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "down_syndrome",
+        "disease_b": "glaucoma",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "anxiety",
+        "disease_b": "migraine",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "migraine",
+        "disease_b": "stroke",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      },
+      {
+        "disease_a": "adhd",
+        "disease_b": "stroke",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 1.0000000000000002,
+        "cross_category": false
+      }
+    ],
+    "interesting_connections": [
+      {
+        "disease_a": "copd",
+        "disease_b": "lung_adenocarcinoma",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 5,
+        "shared_vocs": "heptanal|hexanal|nonanal|pentane|propionaldehyde",
+        "cosine": 0.7912867034762374,
+        "note": "Oxidative aldehydes overlap; cancer should still separate on ketone/aldehyde mix"
+      },
+      {
+        "disease_a": "chronic_bronchitis",
+        "disease_b": "copd",
+        "category_a": "pulmonary",
+        "category_b": "pulmonary",
+        "cosine": 0.9308977648014678,
+        "cross_category": false,
+        "note": "Obstructive airway inflammation continuum (literature-expected)"
+      },
+      {
+        "disease_a": "gut_dysbiosis",
+        "disease_b": "inflammatory_bowel_disease",
+        "category_a": "microbiome",
+        "category_b": "inflammatory",
+        "n_shared_elevated": 13,
+        "shared_vocs": "acetaldehyde|ammonia|carbon_disulfide|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol",
+        "cosine": 0.52830693220115,
+        "note": "Microbial sulfur / putrefaction VOCs"
+      },
+      {
+        "disease_a": "major_depressive_disorder",
+        "disease_b": "schizophrenia",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 0.9154687740577014,
+        "cross_category": false,
+        "note": "Neuro-oxidative + microbiome-adjacent breath features"
+      },
+      {
+        "disease_a": "malaria",
+        "disease_b": "sepsis",
+        "category_a": "infectious",
+        "category_b": "infectious",
+        "cosine": 0.1652721812781815,
+        "cross_category": false,
+        "note": "Systemic oxidative / infectious breath stress"
+      },
+      {
+        "disease_a": "alzheimer_disease",
+        "disease_b": "parkinson_disease",
+        "category_a": "neurological",
+        "category_b": "neurological",
+        "cosine": 0.9907024313282815,
+        "cross_category": false,
+        "note": "Neurodegeneration oxidative alkanes/aldehydes"
+      },
+      {
+        "disease_a": "asthma",
+        "disease_b": "copd",
+        "category_a": "pulmonary",
+        "category_b": "pulmonary",
+        "cosine": 0.8740896619225684,
+        "cross_category": false,
+        "note": "Airway oxidative alkane overlap with distinct ketone/ester accents"
+      },
+      {
+        "disease_a": "chronic_liver_disease",
+        "disease_b": "hepatocellular_carcinoma",
+        "category_a": "metabolic",
+        "category_b": "cancer",
+        "n_shared_elevated": 5,
+        "shared_vocs": "2_butanone|ammonia|dms|hydrogen_sulfide|limonene",
+        "cosine": 0.7570582446350954,
+        "note": "Hepatic sulfur / ammonia axis toward malignancy"
+      },
+      {
+        "disease_a": "inflammatory_bowel_disease",
+        "disease_b": "sibo",
+        "category_a": "inflammatory",
+        "category_b": "microbiome",
+        "n_shared_elevated": 11,
+        "shared_vocs": "acetaldehyde|ammonia|dimethyl_amine|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine",
+        "cosine": 0.5303704495551694,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "clostridioides_difficile_infection",
+        "disease_b": "inflammatory_bowel_disease",
+        "category_a": "microbiome",
+        "category_b": "inflammatory",
+        "n_shared_elevated": 11,
+        "shared_vocs": "ammonia|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine",
+        "cosine": 0.5113307467534796,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "lung_squamous_cell_carcinoma",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 8,
+        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9481072315615691,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "covid19",
+        "disease_b": "lung_squamous_cell_carcinoma",
+        "category_a": "infectious",
+        "category_b": "cancer",
+        "n_shared_elevated": 8,
+        "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9450888012104312,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "colon_adenocarcinoma",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 8,
+        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.7287851177620167,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "colon_adenocarcinoma",
+        "disease_b": "covid19",
+        "category_a": "cancer",
+        "category_b": "infectious",
+        "n_shared_elevated": 8,
+        "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.728495893174514,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "covid19",
+        "disease_b": "pancreatic_adenocarcinoma",
+        "category_a": "infectious",
+        "category_b": "cancer",
+        "n_shared_elevated": 8,
+        "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.6894705828666886,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "pancreatic_adenocarcinoma",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 8,
+        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.6864800243237305,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "glioblastoma",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 8,
+        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.6418620215791245,
+        "note": "High shared elevated-VOC bridge across categories"
+      }
+    ],
+    "mean_cross_cosine": 0.6399884099962249
+  },
+  "bugs": {
+    "fixed": [
+      {
+        "id": "ppb_ceiling_erases_exogenous",
+        "detail": "ppb upper clip now includes headroom for smoking/age multipliers so saturated priors cannot nullify BTEX/age effects"
+      },
+      {
+        "id": "smoking_hybrid_attenuation",
+        "detail": "Smoking BTEX boost applied after physio/legacy blend (benzene/toluene/pentane/ethylbenzene)"
+      },
+      {
+        "id": "demographics_ignored_mechanistically",
+        "detail": "Mild age (oxidative VOCs) and sex modulators applied post-blend with clip headroom"
+      },
+      {
+        "id": "lusc_copd_collapse",
+        "detail": "LUSC priors shifted toward cancer aldehydes/ketones; ethane demoted to separate from COPD"
+      },
+      {
+        "id": "cohort_nogene_error_marks_fail",
+        "detail": "Gene-shift secondary failure no longer marks primary patient prediction as not-ok"
+      }
+    ],
+    "smoke_delta_after_fix": {
+      "copd": {
+        "benzene": 0.44999999999999996,
+        "toluene": 0.4499999999999999,
+        "pentane": 0.4500000000000002,
+        "ethylbenzene": 0.45,
+        "hexanal": 0.0
+      },
+      "lung_adenocarcinoma": {
+        "benzene": 0.4499999999999998,
+        "toluene": 0.44999999999999996,
+        "pentane": 0.4500000000000006,
+        "ethylbenzene": 0.44999999999999973,
+        "hexanal": 0.0
+      }
+    },
+    "focus_centroid_l2_after_fix": {
+      "copd__vs__chronic_bronchitis": 2.9086007733656785,
+      "copd__vs__lung_adenocarcinoma": 4.105286724305107,
+      "copd__vs__lung_squamous_cell_carcinoma": 3.2420671620628143,
+      "chronic_bronchitis__vs__lung_adenocarcinoma": 3.968797243562585,
+      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.475964489459237,
+      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.646438853607103
+    }
+  }
+}

@@ -14,6 +14,12 @@ Trained calibrators (`data/models/*.joblib`) are **not** modified by eval merges
 | Stress baseline / after | [`STRESS_HARD_BASELINE.md`](STRESS_HARD_BASELINE.md) · [`STRESS_HARD_AFTER.md`](STRESS_HARD_AFTER.md) | — |
 | 1000-patient cohort | [`cohort_1000/COHORT_1000.md`](cohort_1000/COHORT_1000.md) | `voc eval-patient-cohort` |
 | Cohort embeddings / patients | [`cohort_1000/`](cohort_1000/) | PCA/UMAP PNGs + CSVs |
+| VOC coverage audit (open corpus ≥99%) | [`COVERAGE_AUDIT.md`](COVERAGE_AUDIT.md) | `voc eval-coverage` |
+| Extended VOC catalog | [`voc_extended_catalog.json`](voc_extended_catalog.json) | (from `eval-coverage`) |
+| Integrity / anti-poisoning | [`../datasources/INTEGRITY_MANIFEST.json`](../datasources/INTEGRITY_MANIFEST.json) | SHA-256 of secured artifacts |
+| Literature compare + demographics PCA + 100-disease bridges | [`lit_compare/LITERATURE_COMPARE.md`](lit_compare/LITERATURE_COMPARE.md) | `voc eval-lit-compare` |
+| Model improve + external-validated 100-disease | [`MODEL_EXTERNAL_100DISEASE.md`](MODEL_EXTERNAL_100DISEASE.md) | `voc eval-disease100-external` |
+| Readiness audit (bugs fixed) | [`AUDIT_READINESS.md`](AUDIT_READINESS.md) | gates + fix list |
 
 ## Clinical profiles
 
@@ -30,6 +36,7 @@ Reproducible under `exhalepath_atlas/runs/` after CLI evals:
 - `runs/stress_hard/` · `runs/patient_cohort_1000/`
 - `runs/diabetes_clinical_profile/` · `runs/cjd_clinical_profile/`
 - `runs/comorbidity_clinical_eval/` · `runs/multisite_eval*` · `runs/completion/`
+- `runs/coverage_audit/` · `runs/lit_compare/`
 
 ## Quick regression commands
 
@@ -37,8 +44,11 @@ Reproducible under `exhalepath_atlas/runs/` after CLI evals:
 cd exhalepath_atlas
 pip install -e ".[dev]"
 pytest -q
+voc eval-coverage --offline
+voc eval-disease100-external --out-dir runs/model_external_100 --demo-max-patients 100
 voc eval-stress-hard --out-dir runs/stress_hard
 voc eval-patient-cohort --out-dir runs/patient_cohort_1000 --max-patients 12   # smoke
+voc eval-lit-compare --out-dir runs/lit_compare --demo-max-patients 200 --n-diseases 100
 voc eval-vision --out-dir runs/vision_eval
 ```
 

@@ -637,6 +637,142 @@ def eval_patient_cohort_cmd(
     rprint(f"  figures: {out_dir / 'figures'}")
 
 
+@app.command("eval-coverage")
+def eval_coverage_cmd(
+    out_dir: Path = typer.Option(Path("runs/coverage_audit")),
+    offline: bool = typer.Option(False, help="Skip live network expansion"),
+    no_expand: bool = typer.Option(False, help="Audit only; do not expand catalogs"),
+):
+    """Secure open-VOC coverage audit (VOLATILOME 99% target) + anti-poisoning checks."""
+    from .config import KNOWLEDGE_DIR
+    from .eval.coverage_audit import run_coverage_audit
+
+    report = run_coverage_audit(expand=not no_expand, offline=offline)
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "COVERAGE_AUDIT.json").write_text(
+        __import__("json").dumps(report, indent=2) + "\n"
+    )
+    cov_md = KNOWLEDGE_DIR / "COVERAGE_AUDIT.md"
+    repo_md = Path("data/knowledge/COVERAGE_AUDIT.md")
+    md_src = cov_md if cov_md.exists() else repo_md
+    (out_dir / "COVERAGE_AUDIT.md").write_text(
+        md_src.read_text() if md_src.exists() else ""
+    )
+    m = report["metrics"]
+    rprint("[bold]VOC coverage audit[/bold]")
+    rprint(
+        f"  open-compound coverage: [green]{m['open_compound_coverage_pct']}%[/green] "
+        f"({m['open_compound_secured_n']}/{m['open_compound_universe_n']}) "
+        f"≥99%={m['meets_99pct_open_compound_target']}"
+    )
+    rprint(
+        f"  studies curated={m.get('curated_public_studies')} "
+        f"expanded={m.get('expanded_public_studies')} "
+        f"(+{m.get('mw_discovered_additional')})"
+    )
+    rprint(
+        f"  Europe PMC metadata records={m.get('europepmc_breath_records')} "
+        f"(DOIs={m.get('europepmc_with_doi')})"
+    )
+    rprint(f"  integrity files hashed: {report['security'].get('n_hashed_files')}")
+    rprint(f"  report: data/knowledge/COVERAGE_AUDIT.md")
+
+
+@app.command("eval-lit-compare")
+def eval_lit_compare_cmd(
+    out_dir: Path = typer.Option(Path("runs/lit_compare")),
+    demo_max_patients: Optional[int] = typer.Option(
+        400, help="Patients for demographics PCA (default 400 for speed)"
+    ),
+    n_diseases: int = typer.Option(100, help="Diseases in connection suite"),
+):
+    """Literature concordance + demographics PCA + 100-disease VOC connections."""
+    from .eval.lit_compare import run_lit_demo_disease100
+
+    report = run_lit_demo_disease100(
+        out_dir=out_dir,
+        demo_max_patients=demo_max_patients,
+        n_diseases=n_diseases,
+    )
+    lit = report["literature"]
+    demo = report["demographics_pca"]
+    d100 = report["disease100"]
+    rprint("[bold]Literature / demographics / 100-disease suite[/bold]")
+    rprint(
+        f"  lit concordance: [green]{lit.get('mean_concordance_pct')}%[/green] "
+        f"({lit.get('n_diseases')} diseases)"
+    )
+    sil = (demo.get("silhouette") or {})
+    rprint(
+        f"  demo PCA sil smoking={sil.get('demo_by_smoking')} "
+        f"category={sil.get('demo_by_category')}"
+    )
+    rprint(
+        f"  VOC PCA sil smoking={sil.get('voc_by_smoking')} "
+        f"category={sil.get('voc_by_category')}"
+    )
+    rprint(f"  disease100: {d100.get('n_diseases')} diseases")
+    for row in (d100.get("interesting_connections") or [])[:6]:
+        rprint(
+            f"  · {row.get('disease_a')} ↔ {row.get('disease_b')} "
+            f"(cos={row.get('cosine', float('nan')):.3f})"
+        )
+    rprint(f"  report: {out_dir / 'LITERATURE_COMPARE.md'}")
+
+
+@app.command("improve-external")
+def improve_external_cmd(
+    dry_run: bool = typer.Option(False, help="Collect evidence stats without writing priors"),
+):
+    """Soft-fuse secured external VOC evidence into disease priors (no calibrator retrain)."""
+    from .knowledge.external_evidence import fuse_external_into_priors
+
+    report = fuse_external_into_priors(dry_run=dry_run)
+    rprint("[bold]External evidence fuse[/bold]")
+    rprint(f"  diseases updated: {report.get('n_diseases_updated')}")
+    rprint(f"  VOC prior updates: {report.get('n_voc_prior_updates')}")
+    rprint(f"  edges: {(report.get('stats') or {}).get('n_voc_edges')}")
+    rprint(f"  dry_run={dry_run}")
+
+
+@app.command("eval-disease100-external")
+def eval_disease100_external_cmd(
+    out_dir: Path = typer.Option(Path("runs/model_external_100")),
+    n_diseases: int = typer.Option(100, help="Diseases in connection + validation suite"),
+    demo_max_patients: Optional[int] = typer.Option(200),
+    skip_fuse: bool = typer.Option(False, help="Skip prior fusion (eval only)"),
+):
+    """Fuse open external evidence into priors, then validate + re-run 100-disease suite."""
+    from .eval.model_external_100 import run_model_improve_and_disease100
+
+    report = run_model_improve_and_disease100(
+        out_dir=out_dir,
+        n_diseases=n_diseases,
+        demo_max_patients=demo_max_patients,
+        skip_fuse=skip_fuse,
+    )
+    ext = report["external_validation"]
+    lit = report["literature_concordance"]
+    d100 = report.get("disease100") or {}
+    fuse = report.get("fuse") or {}
+    rprint("[bold]Model improve + external-validated 100-disease[/bold]")
+    rprint(
+        f"  fuse: diseases={fuse.get('n_diseases_updated')} "
+        f"voc_updates={fuse.get('n_voc_prior_updates')}"
+    )
+    rprint(
+        f"  external GT concordance: [green]{ext.get('mean_concordance_pct')}%[/green] "
+        f"({ext.get('n_diseases_with_external_gt')} diseases)"
+    )
+    rprint(
+        f"  lit concordance: [green]{lit.get('mean_concordance_pct')}%[/green] "
+        f"({lit.get('n_diseases')} diseases)"
+    )
+    rprint(f"  disease100: {d100.get('n_diseases')} diseases")
+    rprint(f"  report: {out_dir / 'MODEL_EXTERNAL_100DISEASE.md'}")
+
+
 def _fmt_pct(v) -> str:
     if v is None:
         return "—"
@@ -1255,6 +1391,10 @@ def main(argv: Optional[list[str]] = None):
         "eval-vision",
         "eval-stress-hard",
         "eval-patient-cohort",
+        "eval-coverage",
+        "eval-lit-compare",
+        "improve-external",
+        "eval-disease100-external",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

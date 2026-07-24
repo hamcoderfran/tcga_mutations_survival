@@ -230,10 +230,6 @@ class ExhalePathPredictor:
                 query=query,
                 voc_id=voc_id,
             )
-            if query.smoking_status == "current" and voc_id in {"benzene", "toluene", "pentane"}:
-                log2fc += 0.45
-            if query.smoking_status == "former" and voc_id in {"benzene", "toluene"}:
-                log2fc += 0.15
 
             healthy = float(voc["healthy_ppb_median"])
             log2fc = float(np.clip(log2fc, -3.5, 4.5))
@@ -263,9 +259,37 @@ class ExhalePathPredictor:
                 conf = min(0.93, conf + 0.1)
                 drivers = list(dict.fromkeys(drivers + trace.contributing_chains[:3]))
 
+            # Exogenous / demographic log2 multipliers applied AFTER blend.
+            # ppb upper clip must include headroom or saturated disease priors
+            # (e.g. COPD pentane) silently erase smoking/age effects.
+            exo_log2 = 0.0
+            if query.smoking_status == "current" and voc_id in {
+                "benzene",
+                "toluene",
+                "pentane",
+                "ethylbenzene",
+            }:
+                exo_log2 += 0.45
+            elif query.smoking_status == "former" and voc_id in {"benzene", "toluene"}:
+                exo_log2 += 0.15
+            if query.age_years is not None and voc_id in {"pentane", "ethane", "hexanal"}:
+                exo_log2 += 0.004 * (float(query.age_years) - 50.0)
+            if query.sex == "male" and voc_id == "isoprene":
+                exo_log2 += 0.05
+            if query.sex == "female" and voc_id in {"acetone", "isopropanol"}:
+                exo_log2 += 0.04
+            if abs(exo_log2) > 1e-12:
+                pred_ppb = float(pred_ppb) * (2.0**exo_log2)
+                if exo_log2 > 0 and query.smoking_status in {"current", "former"}:
+                    drivers = list(dict.fromkeys([*drivers, "smoking_exposure"]))
+                if query.age_years is not None and voc_id in {"pentane", "ethane", "hexanal"}:
+                    drivers = list(dict.fromkeys([*drivers, "age_oxidative"]))
+
             low = float(voc.get("healthy_ppb_low", healthy * 0.1))
             high = float(voc.get("healthy_ppb_high", healthy * 10))
-            pred_ppb = float(np.clip(pred_ppb, max(low * 0.2, 1e-9), high * 8))
+            # Headroom so exogenous multipliers are not clipped away
+            upper = high * 8.0 * (2.0 ** max(0.0, exo_log2))
+            pred_ppb = float(np.clip(pred_ppb, max(low * 0.2, 1e-9), upper))
             if healthy > 0:
                 log2fc = float(np.log2(pred_ppb / healthy))
             fold_change = float(pred_ppb / healthy) if healthy > 0 else float("nan")

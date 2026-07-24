@@ -1,8 +1,11 @@
 {
   "priority": 13,
   "key": "hbdb",
-  "title": "HBDB / EPA VOLATILOME breath compound catalog",
+  "title": "HBDB disease\u2013VOC associations + EPA VOLATILOME catalog",
   "n_compounds": 777,
   "n_mapped_to_atlas": 44,
-  "n_diseases": 108
+  "n_diseases": 26,
+  "n_hbdb_diseases": 60,
+  "n_hbdb_links": 764,
+  "zenodo_doi": "10.5281/zenodo.14958797"
 }

@@ -1,0 +1,54 @@
+{
+  "version": "1.1.0",
+  "generated_at": "2026-07-24T00:22:37.103115+00:00",
+  "root": "/workspace/exhalepath_atlas",
+  "n_files": 8,
+  "files": [
+    {
+      "path": "data/datasources/hbdb/volatilome_compounds.json",
+      "sha256": "c672f3dd8c3d78e3b8fb34d6a5c923f006b9b57c536e37bd04b3678396ffeb74",
+      "n_bytes": 254834
+    },
+    {
+      "path": "src/exhalepath/data/knowledge/voc_catalog.json",
+      "sha256": "80de8de3b8a64fcc206e5ffe22ce74ccdae9559a53db1f16bc594f5837023e03",
+      "n_bytes": 43413
+    },
+    {
+      "path": "src/exhalepath/data/knowledge/voc_extended_catalog.json",
+      "sha256": "83e53ba3e91165b52360178ab67e2ef6ad47f60529c645e6c4e09fa408ab3a27",
+      "n_bytes": 384052
+    },
+    {
+      "path": "data/datasources/metabolomics/breath_study_catalog.json",
+      "sha256": "3d2b1721abc819894c5445a64d8a6c4e8c2aa3524e877147aa4004baf0f43b6b",
+      "n_bytes": 2820
+    },
+    {
+      "path": "data/datasources/metabolomics/breath_study_catalog_expanded.json",
+      "sha256": "85a393f7d69d3c35d7a22259ac0d700de7b25fbda913805a90ebde5c1973d5b8",
+      "n_bytes": 9472
+    },
+    {
+      "path": "data/datasources/literature/europepmc_breath_voc_metadata.json",
+      "sha256": "a9aa254d29ef574f7f6115b8554dee389ade1910c7ea0821fc3ecd5a842b08f0",
+      "n_bytes": 41698
+    },
+    {
+      "path": "data/real_breath/literature_panels/priority10_voc_panels.json",
+      "sha256": "4955672496c01563a370c7e040606a4a14617f8f9c822e523977cdca2dca550b",
+      "n_bytes": 45710
+    },
+    {
+      "path": "data/datasources/INTEGRATION_MANIFEST.json",
+      "sha256": "970102ecfacd7d74187d267afe51508af7f3b1b3a9df162f1e3d03f194957cef",
+      "n_bytes": 8655
+    }
+  ],
+  "policy": {
+    "no_execution_of_downloads": true,
+    "allowlisted_hosts_only": true,
+    "sha256_required": true,
+    "paths_are_relative": true
+  }
+}
