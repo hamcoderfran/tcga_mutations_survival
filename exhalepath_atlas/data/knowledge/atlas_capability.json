@@ -1,6 +1,6 @@
 {
-  "n_diseases": 108,
-  "n_datasources_integrated": 14,
+  "n_diseases": 110,
+  "n_datasources_integrated": 15,
   "priorities": [
     1,
     2,
@@ -15,9 +15,11 @@
     11,
     12,
     13,
-    14
+    14,
+    15
   ],
   "knowledge_fragments": [
+    "datasource_alt_breath_sources.json",
     "datasource_bindingdb.json",
     "datasource_blood_proxy.json",
     "datasource_gdc.json",

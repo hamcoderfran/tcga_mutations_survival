@@ -20,6 +20,7 @@ from .ds11_blood_proxy import BloodProxySource
 from .ds12_nist import NISTSource
 from .ds13_hbdb import HBDBSource
 from .ds14_kegg import KEGGSource
+from .ds15_alt_breath_sources import AltBreathSources
 
 SOURCE_CLASSES = [
     MetabolomicsReposSource,
@@ -36,6 +37,7 @@ SOURCE_CLASSES = [
     NISTSource,
     HBDBSource,
     KEGGSource,
+    AltBreathSources,
 ]
 
 
@@ -50,7 +52,7 @@ def integrate_all_datasources(
     priorities: list[int] | None = None,
 ) -> dict[str, Any]:
     """
-    Harvest + fuse priority 1–14 datasources into exhalepath_atlas knowledge/.
+    Harvest + fuse priority 1–15 datasources into exhalepath_atlas knowledge/.
 
     offline=True skips live HTTP where possible (still writes curated tables).
     """
