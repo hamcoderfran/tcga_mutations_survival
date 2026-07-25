@@ -626,6 +626,43 @@ def eval_stress_hard_cmd(
     rprint(f"  report: {out_dir / 'STRESS_HARD.md'}")
 
 
+@app.command("eval-novel-diseases")
+def eval_novel_diseases_cmd(
+    out_dir: Path = typer.Option(Path("runs/novel_diseases")),
+    mode: str = typer.Option("hybrid"),
+):
+    """
+    Probe invented / non-atlas diseases with no VOC prior background.
+
+    Expect unresolved custom::* IDs, near-healthy panels, and clear separation
+    from known VOC-backed diseases (e.g. T2D acetone).
+    """
+    from .eval.novel_diseases import run_novel_disease_eval
+
+    report = run_novel_disease_eval(out_dir=out_dir, mode=mode)
+    rprint("[bold]Novel disease probe (no VOC background)[/bold]")
+    rprint(f"  passed: {'[green]yes[/green]' if report['passed'] else '[red]no[/red]'}")
+    rprint(
+        f"  unresolved: {report['n_unresolved']}/{report['n_novel']}  "
+        f"near-healthy: {report['n_near_healthy']}/{report['n_novel']}"
+    )
+    rprint(f"  mean peak |log2fc|: {report['mean_peak_abs_log2fc']:.3f}")
+    rprint(
+        f"  acetone Δppb novel={report['novel_mean_acetone_delta_ppb']:.1f} "
+        f"vs T2D={report['t2d_acetone_delta_ppb']} "
+        f"(sep={report['acetone_sep_t2d_minus_novel_ppb']:.1f})"
+    )
+    for r in report.get("novel_cases") or []:
+        tops = ", ".join(
+            f"{t['voc_id']}({t['log2fc']:+.2f})" for t in (r.get("top_vocs") or [])[:3]
+        )
+        rprint(
+            f"  · {r['query']['disease'][:40]:40s} "
+            f"peak={r['peak_abs_log2fc']:.2f} near={r['near_healthy']}  {tops}"
+        )
+    rprint(f"  report: {out_dir / 'NOVEL_DISEASES.md'}")
+
+
 @app.command("eval-patient-cohort")
 def eval_patient_cohort_cmd(
     out_dir: Path = typer.Option(Path("runs/patient_cohort_1000")),
@@ -1280,6 +1317,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-vision",
         "eval-stress-hard",
         "eval-patient-cohort",
+        "eval-novel-diseases",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

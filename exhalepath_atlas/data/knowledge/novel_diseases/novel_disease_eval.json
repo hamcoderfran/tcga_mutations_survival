@@ -1,0 +1,1190 @@
+{
+  "version": "1.0.0",
+  "description": "Novel disease probe: queries with no curated VOC priors / pathway bias. Should stay near-healthy vs atlas diseases with VOC background.",
+  "n_novel": 10,
+  "n_unresolved": 10,
+  "n_near_healthy": 10,
+  "mean_peak_abs_log2fc": 0.16727054877775335,
+  "mean_confidence": 0.6080000000000002,
+  "novel_mean_acetone_delta_ppb": 13.421694940228065,
+  "t2d_acetone_delta_ppb": 6374.0965545601575,
+  "acetone_sep_t2d_minus_novel_ppb": 6360.6748596199295,
+  "gates": {
+    "all_novel_unresolved": true,
+    "most_near_healthy": true,
+    "mean_peak_abs_log2fc_lt_0_6": true,
+    "acetone_sep_vs_t2d_gt_50ppb": true,
+    "known_not_unresolved": true
+  },
+  "passed": true,
+  "novel_cases": [
+    {
+      "query": {
+        "disease": "completely novel ailment QZZ-42",
+        "location": null
+      },
+      "resolved_disease_id": "custom::completely_novel_ailment_qzz_42",
+      "resolved_disease_name": "completely novel ailment QZZ-42",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'completely novel ailment QZZ-42' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "Xylophage syndrome type Zeta",
+        "location": "lung"
+      },
+      "resolved_disease_id": "custom::xylophage_syndrome_type_zeta",
+      "resolved_disease_name": "Xylophage syndrome type Zeta",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'Xylophage syndrome type Zeta' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "hyperblue mitochondrial spark disease",
+        "location": "brain"
+      },
+      "resolved_disease_id": "custom::hyperblue_mitochondrial_spark_disease",
+      "resolved_disease_name": "hyperblue mitochondrial spark disease",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'hyperblue mitochondrial spark disease' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "quantum itch disorder",
+        "location": "skin"
+      },
+      "resolved_disease_id": "custom::quantum_itch_disorder",
+      "resolved_disease_name": "quantum itch disorder",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'quantum itch disorder' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "fibroquartz encephalopathy",
+        "location": "brain"
+      },
+      "resolved_disease_id": "custom::fibroquartz_encephalopathy",
+      "resolved_disease_name": "fibroquartz encephalopathy",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'fibroquartz encephalopathy' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "neon teal cholangioflux",
+        "location": "liver"
+      },
+      "resolved_disease_id": "custom::neon_teal_cholangioflux",
+      "resolved_disease_name": "neon teal cholangioflux",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'neon teal cholangioflux' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "sporadic purple glomerulopathy XYZ",
+        "location": "kidney"
+      },
+      "resolved_disease_id": "custom::sporadic_purple_glomerulopathy_xyz",
+      "resolved_disease_name": "sporadic purple glomerulopathy XYZ",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'sporadic purple glomerulopathy XYZ' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "astral cartilage liquefaction",
+        "location": "bone"
+      },
+      "resolved_disease_id": "custom::astral_cartilage_liquefaction",
+      "resolved_disease_name": "astral cartilage liquefaction",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'astral cartilage liquefaction' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "cryptic umbra pancreatitis variant 9",
+        "location": "pancreas"
+      },
+      "resolved_disease_id": "custom::cryptic_umbra_pancreatitis_variant_9",
+      "resolved_disease_name": "cryptic umbra pancreatitis variant 9",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'cryptic umbra pancreatitis variant 9' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    },
+    {
+      "query": {
+        "disease": "nonexistent pathogen Omega-7 breath plague",
+        "location": "lung"
+      },
+      "resolved_disease_id": "custom::nonexistent_pathogen_omega_7_breath_plague",
+      "resolved_disease_name": "nonexistent pathogen Omega-7 breath plague",
+      "unresolved": true,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mean_abs_log2fc": 0.03015824153366426,
+      "median_abs_log2fc": 0.0073594747629911715,
+      "mean_confidence": 0.6080000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.040033535168162965,
+          "delta_ppb": 13.421694940228065,
+          "predicted_ppb": 490.42169494022806,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.037874345691895066,
+          "delta_ppb": 6.650032026797021,
+          "predicted_ppb": 256.650032026797,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.030016761792365097,
+          "delta_ppb": -2.1620635714752154,
+          "predicted_ppb": 102.83793642852478,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "methanol",
+          "log2fc": -0.009955933154756604,
+          "delta_ppb": -1.1003472445701732,
+          "predicted_ppb": 158.89965275542983,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464,
+          "delta_ppb": 0.3206812694072845,
+          "predicted_ppb": 8.820681269407284,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.016141800865748054,
+          "delta_ppb": 0.2812867682851561,
+          "predicted_ppb": 25.281286768285156,
+          "confidence": 0.67
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488,
+          "delta_ppb": 0.27069867798242164,
+          "predicted_ppb": 3.7706986779824216,
+          "confidence": 0.5700000000000001
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575,
+          "delta_ppb": -0.21719020282037294,
+          "predicted_ppb": 1.782809797179627,
+          "confidence": 0.5700000000000001
+        }
+      ],
+      "acetone_log2fc": 0.040033535168162965,
+      "acetone_delta_ppb": 13.421694940228065,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+        "Disease 'nonexistent pathogen Omega-7 breath plague' was not in the curated atlas; used Open Targets associations (if available) + generic pathway scoring."
+      ],
+      "near_healthy": true
+    }
+  ],
+  "known_contrast": [
+    {
+      "query": {
+        "disease": "type 2 diabetes",
+        "location": null,
+        "expect_voc": "acetone"
+      },
+      "resolved_disease_id": "type_2_diabetes",
+      "resolved_disease_name": "Type 2 diabetes mellitus",
+      "unresolved": false,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 3.8442737462503196,
+      "mean_abs_log2fc": 0.2757083458932997,
+      "median_abs_log2fc": 0.008039461291856726,
+      "mean_confidence": 0.7780000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 3.8442737462503196,
+          "delta_ppb": 6374.0965545601575,
+          "predicted_ppb": 6851.0965545601575,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.660443572251944,
+          "delta_ppb": 540.2842559872379,
+          "predicted_ppb": 790.2842559872379,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "ethanol",
+          "log2fc": 0.2999492804591231,
+          "delta_ppb": 27.732135823355378,
+          "predicted_ppb": 147.73213582335538,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.21757284669161872,
+          "delta_ppb": -14.698836523609629,
+          "predicted_ppb": 90.30116347639037,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 1.4346079914279752,
+          "delta_ppb": 14.476240217576464,
+          "predicted_ppb": 22.976240217576464,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 3.562739025748316,
+          "delta_ppb": 12.979880129285426,
+          "predicted_ppb": 14.179880129285426,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.4619048785850453,
+          "delta_ppb": 9.433980744238085,
+          "predicted_ppb": 34.433980744238085,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 0.6485094065832774,
+          "delta_ppb": 2.383700623466858,
+          "predicted_ppb": 6.583700623466858,
+          "confidence": 0.84
+        }
+      ],
+      "acetone_log2fc": 3.8442737462503196,
+      "acetone_delta_ppb": 6374.0965545601575,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions."
+      ],
+      "near_healthy": false,
+      "expect_voc": "acetone"
+    },
+    {
+      "query": {
+        "disease": "asthma",
+        "location": "lung",
+        "expect_voc": "pentane"
+      },
+      "resolved_disease_id": "asthma",
+      "resolved_disease_name": "Asthma",
+      "unresolved": false,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 4.836501267717121,
+      "mean_abs_log2fc": 0.41834756349577273,
+      "median_abs_log2fc": 0.11471917777540709,
+      "mean_confidence": 0.7780000000000001,
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.819427754358179,
+          "delta_ppb": 231.5,
+          "predicted_ppb": 240.0,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.3576391268924697,
+          "delta_ppb": 134.1931579595705,
+          "predicted_ppb": 611.1931579595705,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 4.836501267717121,
+          "delta_ppb": 115.8,
+          "predicted_ppb": 120.0,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "ethanol",
+          "log2fc": 0.30646201522850236,
+          "delta_ppb": 28.400548168815646,
+          "predicted_ppb": 148.40054816881565,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.34691821814184687,
+          "delta_ppb": -22.44250453235705,
+          "predicted_ppb": 82.55749546764295,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.05423348741632809,
+          "delta_ppb": 9.576824446765897,
+          "predicted_ppb": 259.5768244467659,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": -0.44455178840835985,
+          "delta_ppb": -6.629685743687062,
+          "predicted_ppb": 18.370314256312938,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "propanol",
+          "log2fc": 0.5978613951417723,
+          "delta_ppb": 6.161656576690671,
+          "predicted_ppb": 18.16165657669067,
+          "confidence": 0.84
+        }
+      ],
+      "acetone_log2fc": 0.3576391268924697,
+      "acetone_delta_ppb": 134.1931579595705,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions."
+      ],
+      "near_healthy": false,
+      "expect_voc": "pentane"
+    },
+    {
+      "query": {
+        "disease": "COPD",
+        "location": "lung",
+        "expect_voc": "hexanal"
+      },
+      "resolved_disease_id": "copd",
+      "resolved_disease_name": "COPD",
+      "unresolved": false,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 4.836501267717121,
+      "mean_abs_log2fc": 0.4352376815610187,
+      "median_abs_log2fc": 0.15812957716904963,
+      "mean_confidence": 0.7780000000000002,
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.819427754358179,
+          "delta_ppb": 231.5,
+          "predicted_ppb": 240.0,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.4082847241510388,
+          "delta_ppb": 156.03005185354914,
+          "predicted_ppb": 633.0300518535491,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 4.836501267717121,
+          "delta_ppb": 115.8,
+          "predicted_ppb": 120.0,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.3990688126383279,
+          "delta_ppb": -25.373501926290828,
+          "predicted_ppb": 79.62649807370917,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.6058741167239567,
+          "delta_ppb": 13.047514515993058,
+          "predicted_ppb": 38.04751451599306,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.04844791436798638,
+          "delta_ppb": 8.537940027317234,
+          "predicted_ppb": 258.53794002731723,
+          "confidence": 0.84
+        },
+        {
+          "voc_id": "ethane",
+          "log2fc": 1.7863689377864016,
+          "delta_ppb": 6.123640476159828,
+          "predicted_ppb": 8.623640476159828,
+          "confidence": 0.74
+        },
+        {
+          "voc_id": "heptanal",
+          "log2fc": 1.0543260582026517,
+          "delta_ppb": 3.3379183232121625,
+          "predicted_ppb": 6.437918323212163,
+          "confidence": 0.74
+        }
+      ],
+      "acetone_log2fc": 0.4082847241510388,
+      "acetone_delta_ppb": 156.03005185354914,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions."
+      ],
+      "near_healthy": false,
+      "expect_voc": "hexanal"
+    },
+    {
+      "query": {
+        "disease": "lung adenocarcinoma",
+        "location": "lung",
+        "expect_voc": "hexanal"
+      },
+      "resolved_disease_id": "lung_adenocarcinoma",
+      "resolved_disease_name": "Lung adenocarcinoma",
+      "unresolved": false,
+      "n_vocs": 50,
+      "peak_abs_log2fc": 4.140505035976732,
+      "mean_abs_log2fc": 0.4368431744790535,
+      "median_abs_log2fc": 0.08234160949289684,
+      "mean_confidence": 0.8927999999999998,
+      "top_vocs": [
+        {
+          "voc_id": "ethanol",
+          "log2fc": 1.8295156739130136,
+          "delta_ppb": 306.50128249312024,
+          "predicted_ppb": 426.50128249312024,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.2611751685005714,
+          "delta_ppb": 94.66280886427307,
+          "predicted_ppb": 571.6628088642731,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.5813071452844993,
+          "delta_ppb": 93.24188979479005,
+          "predicted_ppb": 101.74188979479005,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 4.140505035976732,
+          "delta_ppb": 69.87394989144454,
+          "predicted_ppb": 74.07394989144454,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -1.442431665448113,
+          "delta_ppb": -66.36560630526097,
+          "predicted_ppb": 38.63439369473903,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "acetaldehyde",
+          "log2fc": 1.621561043628422,
+          "delta_ppb": 31.156170928293008,
+          "predicted_ppb": 46.15617092829301,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.10225454906110013,
+          "delta_ppb": 18.362417276653105,
+          "predicted_ppb": 268.3624172766531,
+          "confidence": 0.93
+        },
+        {
+          "voc_id": "hydrogen_sulfide",
+          "log2fc": -1.1558802976375664,
+          "delta_ppb": -4.409661914473036,
+          "predicted_ppb": 3.5903380855269647,
+          "confidence": 0.93
+        }
+      ],
+      "acetone_log2fc": 0.2611751685005714,
+      "acetone_delta_ppb": 94.66280886427307,
+      "notes": [
+        "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+        "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+        "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+        "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+        "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions."
+      ],
+      "near_healthy": false,
+      "expect_voc": "hexanal"
+    }
+  ]
+}
