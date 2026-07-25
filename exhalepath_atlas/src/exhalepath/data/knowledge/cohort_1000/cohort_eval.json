@@ -7,8 +7,8 @@
     "n_unresolved": 0,
     "breakdown_flag_counts": {},
     "n_resources_datasources": 14,
-    "voc_silhouette": 0.024194189341762696,
-    "gene_shift_silhouette": 0.14465866607079625,
+    "voc_silhouette": 0.023995908193099467,
+    "gene_shift_silhouette": 0.1446603139794847,
     "focus_centroid_distances": {
       "chronic_bronchitis__vs__copd": 2.4710974530758096,
       "chronic_bronchitis__vs__lung_adenocarcinoma": 4.395216827124597,
@@ -17,6 +17,36 @@
       "copd__vs__lung_squamous_cell_carcinoma": 2.4496553688622,
       "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.623369359865227
     },
+    "multidisease_n": 18,
+    "multidisease_silhouette": 0.20357939994625404,
+    "disease_relatability_silhouette": 0.20357939994625404,
+    "closest_disease_pairs": [
+      {
+        "disease_a": "adhd",
+        "disease_b": "als",
+        "centroid_l2": 1.841623944087179
+      },
+      {
+        "disease_a": "type_2_diabetes",
+        "disease_b": "acute_kidney_injury",
+        "centroid_l2": 1.9832722108817264
+      },
+      {
+        "disease_a": "chronic_bronchitis",
+        "disease_b": "tuberculosis",
+        "centroid_l2": 3.377294937532333
+      },
+      {
+        "disease_a": "tuberculosis",
+        "disease_b": "adhd",
+        "centroid_l2": 3.8637074715298043
+      },
+      {
+        "disease_a": "chronic_bronchitis",
+        "disease_b": "adhd",
+        "centroid_l2": 3.9640700521811714
+      }
+    ],
     "smoking_effect_mean_abs": {
       "copd": 0.06307170718430313,
       "lung_adenocarcinoma": 0.039641774333837775,
@@ -198,97 +228,409 @@
   "embed": {
     "voc": {
       "n": 1000,
-      "pca_var_pc1": 0.20397223050873947,
-      "pca_var_pc2": 0.13848151457392027,
+      "pca_var_pc1": 0.20398928288069684,
+      "pca_var_pc2": 0.1389700514234166,
       "pca_var_top5": [
-        0.20397223050873947,
-        0.13848151457392027,
-        0.1262235658804031,
-        0.11871328150782881,
-        0.07660823458207303
+        0.20398928288069684,
+        0.1389700514234166,
+        0.12582562647388218,
+        0.11856293413939459,
+        0.0762586439847645
       ],
-      "silhouette": 0.024194189341762696,
+      "silhouette": 0.023995908193099467,
       "umap_error": null,
       "loadings_pc1_top": [
         {
+          "feature": "heptanal",
           "feature_index": 26,
-          "loading": 0.28023387864940524
+          "loading": 0.2802515371392994
         },
         {
+          "feature": "ethyl_acetate",
           "feature_index": 22,
-          "loading": -0.22959306946116928
+          "loading": -0.22867900659933044
         },
         {
+          "feature": "propanol",
           "feature_index": 42,
-          "loading": -0.22284542289240208
+          "loading": -0.2221291455427991
         },
         {
+          "feature": "hexane",
           "feature_index": 28,
-          "loading": 0.2191889218257988
+          "loading": 0.2196616416951229
         },
         {
+          "feature": "undecane",
           "feature_index": 48,
-          "loading": 0.2186918358831692
+          "loading": 0.2192717546137451
         },
         {
+          "feature": "benzene",
           "feature_index": 9,
-          "loading": 0.2143398131228642
+          "loading": 0.21407835494033914
         },
         {
+          "feature": "butane",
           "feature_index": 10,
-          "loading": 0.20922851192327932
+          "loading": 0.2097114978963132
         },
         {
+          "feature": "propionaldehyde",
           "feature_index": 43,
-          "loading": 0.20754950600073066
+          "loading": 0.2082647391535915
         }
       ]
     },
+    "voc_multidisease": {
+      "n": 1000,
+      "n_diseases_plotted": 18,
+      "diseases_plotted": [
+        "copd",
+        "lung_adenocarcinoma",
+        "chronic_bronchitis",
+        "lung_squamous_cell_carcinoma",
+        "asthma",
+        "type_2_diabetes",
+        "ild",
+        "pneumonia_bacterial",
+        "ards",
+        "cystic_fibrosis",
+        "tuberculosis",
+        "mesothelioma",
+        "sleep_apnea",
+        "acute_kidney_injury",
+        "adhd",
+        "alcohol_use",
+        "als",
+        "alzheimer_disease"
+      ],
+      "n_per_disease": {
+        "copd": 120,
+        "lung_adenocarcinoma": 120,
+        "chronic_bronchitis": 100,
+        "lung_squamous_cell_carcinoma": 60,
+        "asthma": 40,
+        "type_2_diabetes": 32,
+        "ild": 25,
+        "pneumonia_bacterial": 25,
+        "ards": 20,
+        "cystic_fibrosis": 20,
+        "tuberculosis": 20,
+        "mesothelioma": 15,
+        "sleep_apnea": 15,
+        "acute_kidney_injury": 4,
+        "adhd": 4,
+        "alcohol_use": 4,
+        "als": 4,
+        "alzheimer_disease": 4
+      },
+      "pca_var_pc1": 0.20398928288069684,
+      "pca_var_pc2": 0.1389700514234166,
+      "silhouette_top_diseases": 0.20357939994625404,
+      "figure": "runs/patient_cohort_1000/figures/voc_pca_multidisease.png"
+    },
+    "disease_relatability": {
+      "n_diseases": 18,
+      "diseases": [
+        "copd",
+        "lung_adenocarcinoma",
+        "chronic_bronchitis",
+        "lung_squamous_cell_carcinoma",
+        "asthma",
+        "type_2_diabetes",
+        "ild",
+        "pneumonia_bacterial",
+        "ards",
+        "cystic_fibrosis",
+        "tuberculosis",
+        "mesothelioma",
+        "sleep_apnea",
+        "acute_kidney_injury",
+        "adhd",
+        "alcohol_use",
+        "als",
+        "alzheimer_disease"
+      ],
+      "n_per_disease": {
+        "copd": 120,
+        "lung_adenocarcinoma": 120,
+        "chronic_bronchitis": 100,
+        "lung_squamous_cell_carcinoma": 60,
+        "asthma": 40,
+        "type_2_diabetes": 32,
+        "ild": 25,
+        "pneumonia_bacterial": 25,
+        "ards": 20,
+        "cystic_fibrosis": 20,
+        "tuberculosis": 20,
+        "mesothelioma": 15,
+        "sleep_apnea": 15,
+        "acute_kidney_injury": 4,
+        "adhd": 4,
+        "alcohol_use": 4,
+        "als": 4,
+        "alzheimer_disease": 4
+      },
+      "silhouette_disease_labels": 0.20357939994625404,
+      "closest_pairs": [
+        {
+          "disease_a": "adhd",
+          "disease_b": "als",
+          "centroid_l2": 1.841623944087179
+        },
+        {
+          "disease_a": "type_2_diabetes",
+          "disease_b": "acute_kidney_injury",
+          "centroid_l2": 1.9832722108817264
+        },
+        {
+          "disease_a": "chronic_bronchitis",
+          "disease_b": "tuberculosis",
+          "centroid_l2": 3.377294937532333
+        },
+        {
+          "disease_a": "tuberculosis",
+          "disease_b": "adhd",
+          "centroid_l2": 3.8637074715298043
+        },
+        {
+          "disease_a": "chronic_bronchitis",
+          "disease_b": "adhd",
+          "centroid_l2": 3.9640700521811714
+        },
+        {
+          "disease_a": "lung_adenocarcinoma",
+          "disease_b": "mesothelioma",
+          "centroid_l2": 4.075155399483105
+        },
+        {
+          "disease_a": "pneumonia_bacterial",
+          "disease_b": "tuberculosis",
+          "centroid_l2": 4.152442720740279
+        },
+        {
+          "disease_a": "tuberculosis",
+          "disease_b": "als",
+          "centroid_l2": 4.25477210625068
+        },
+        {
+          "disease_a": "chronic_bronchitis",
+          "disease_b": "ards",
+          "centroid_l2": 4.320412869282834
+        },
+        {
+          "disease_a": "chronic_bronchitis",
+          "disease_b": "als",
+          "centroid_l2": 4.466079124501845
+        },
+        {
+          "disease_a": "adhd",
+          "disease_b": "alzheimer_disease",
+          "centroid_l2": 4.577081727530791
+        },
+        {
+          "disease_a": "lung_adenocarcinoma",
+          "disease_b": "lung_squamous_cell_carcinoma",
+          "centroid_l2": 4.641327783407804
+        },
+        {
+          "disease_a": "tuberculosis",
+          "disease_b": "alzheimer_disease",
+          "centroid_l2": 4.821943038934004
+        },
+        {
+          "disease_a": "chronic_bronchitis",
+          "disease_b": "alzheimer_disease",
+          "centroid_l2": 4.854305316489173
+        },
+        {
+          "disease_a": "chronic_bronchitis",
+          "disease_b": "pneumonia_bacterial",
+          "centroid_l2": 4.92706910523187
+        }
+      ],
+      "farthest_pairs": [
+        {
+          "disease_a": "copd",
+          "disease_b": "asthma",
+          "centroid_l2": 11.979216551626896
+        },
+        {
+          "disease_a": "asthma",
+          "disease_b": "alcohol_use",
+          "centroid_l2": 10.610907095267542
+        },
+        {
+          "disease_a": "copd",
+          "disease_b": "alcohol_use",
+          "centroid_l2": 10.45204062885218
+        },
+        {
+          "disease_a": "asthma",
+          "disease_b": "cystic_fibrosis",
+          "centroid_l2": 10.41976599398508
+        },
+        {
+          "disease_a": "lung_adenocarcinoma",
+          "disease_b": "asthma",
+          "centroid_l2": 10.376320116734405
+        },
+        {
+          "disease_a": "asthma",
+          "disease_b": "alzheimer_disease",
+          "centroid_l2": 9.977674815841798
+        },
+        {
+          "disease_a": "copd",
+          "disease_b": "type_2_diabetes",
+          "centroid_l2": 9.671332800092866
+        },
+        {
+          "disease_a": "lung_adenocarcinoma",
+          "disease_b": "cystic_fibrosis",
+          "centroid_l2": 9.480935220675109
+        },
+        {
+          "disease_a": "asthma",
+          "disease_b": "mesothelioma",
+          "centroid_l2": 9.404024112806134
+        },
+        {
+          "disease_a": "lung_squamous_cell_carcinoma",
+          "disease_b": "asthma",
+          "centroid_l2": 9.248975740323344
+        }
+      ],
+      "nearest_neighbor": {
+        "copd": {
+          "nearest_disease": "alzheimer_disease",
+          "centroid_l2": 5.117947216354074
+        },
+        "lung_adenocarcinoma": {
+          "nearest_disease": "mesothelioma",
+          "centroid_l2": 4.075155399483105
+        },
+        "chronic_bronchitis": {
+          "nearest_disease": "tuberculosis",
+          "centroid_l2": 3.377294937532333
+        },
+        "lung_squamous_cell_carcinoma": {
+          "nearest_disease": "lung_adenocarcinoma",
+          "centroid_l2": 4.641327783407804
+        },
+        "asthma": {
+          "nearest_disease": "adhd",
+          "centroid_l2": 7.19043769560498
+        },
+        "type_2_diabetes": {
+          "nearest_disease": "acute_kidney_injury",
+          "centroid_l2": 1.9832722108817264
+        },
+        "ild": {
+          "nearest_disease": "tuberculosis",
+          "centroid_l2": 5.827267733014754
+        },
+        "pneumonia_bacterial": {
+          "nearest_disease": "tuberculosis",
+          "centroid_l2": 4.152442720740279
+        },
+        "ards": {
+          "nearest_disease": "chronic_bronchitis",
+          "centroid_l2": 4.320412869282834
+        },
+        "cystic_fibrosis": {
+          "nearest_disease": "pneumonia_bacterial",
+          "centroid_l2": 5.430754527608473
+        },
+        "tuberculosis": {
+          "nearest_disease": "chronic_bronchitis",
+          "centroid_l2": 3.377294937532333
+        },
+        "mesothelioma": {
+          "nearest_disease": "lung_adenocarcinoma",
+          "centroid_l2": 4.075155399483105
+        },
+        "sleep_apnea": {
+          "nearest_disease": "adhd",
+          "centroid_l2": 5.688120483818304
+        },
+        "acute_kidney_injury": {
+          "nearest_disease": "type_2_diabetes",
+          "centroid_l2": 1.9832722108817264
+        },
+        "adhd": {
+          "nearest_disease": "als",
+          "centroid_l2": 1.841623944087179
+        },
+        "alcohol_use": {
+          "nearest_disease": "als",
+          "centroid_l2": 5.6953680703046246
+        },
+        "als": {
+          "nearest_disease": "adhd",
+          "centroid_l2": 1.841623944087179
+        },
+        "alzheimer_disease": {
+          "nearest_disease": "adhd",
+          "centroid_l2": 4.577081727530791
+        }
+      },
+      "interpretation": "Centroid L2 is computed on standardized VOC log2FC profiles. Smaller distance \u21d2 more related breath VOC signatures across diseases."
+    },
     "gene_shift": {
       "n": 871,
-      "pca_var_pc1": 0.25589652594193946,
-      "pca_var_pc2": 0.15721077942899792,
+      "pca_var_pc1": 0.25589735952472104,
+      "pca_var_pc2": 0.15721070242107668,
       "pca_var_top5": [
-        0.25589652594193946,
-        0.15721077942899792,
-        0.12229506537126826,
-        0.06068828905430707,
-        0.052178198353004225
+        0.25589735952472104,
+        0.15721070242107668,
+        0.12229592472660133,
+        0.060688479240289236,
+        0.052178397233754975
       ],
-      "silhouette": 0.14465866607079625,
+      "silhouette": 0.1446603139794847,
       "umap_error": null,
       "loadings_pc1_top": [
         {
+          "feature": "v18",
           "feature_index": 18,
-          "loading": 0.24813176125139308
+          "loading": 0.24813181525241093
         },
         {
+          "feature": "v11",
           "feature_index": 11,
-          "loading": 0.24708607619374123
+          "loading": 0.24708617646973927
         },
         {
+          "feature": "v22",
           "feature_index": 22,
-          "loading": 0.23507021963151617
+          "loading": 0.23507015708821408
         },
         {
+          "feature": "v6",
           "feature_index": 6,
-          "loading": 0.22315831370049233
+          "loading": 0.22315911863183702
         },
         {
+          "feature": "v35",
           "feature_index": 35,
-          "loading": 0.21787403913025652
+          "loading": 0.21787486866322042
         },
         {
+          "feature": "v5",
           "feature_index": 5,
-          "loading": 0.2177704675105028
+          "loading": 0.2177712969700486
         },
         {
+          "feature": "v16",
           "feature_index": 16,
-          "loading": 0.2166176733365692
+          "loading": 0.21661709950445723
         },
         {
+          "feature": "v36",
           "feature_index": 36,
-          "loading": 0.2087237553487921
+          "loading": 0.20872313687691652
         }
       ]
     }
