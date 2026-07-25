@@ -24,6 +24,22 @@ voc "ARDS" -l lung
 
 `voc build-corpus --offline-demo` is **blocked** unless `VOC_ALLOW_SYNTHETIC=1`.
 
+## Other bulk breath databases (access audit)
+
+```bash
+voc harvest-alt-breath-sources   # ACCESS_MATRIX + Zenodo adjuncts + PhysioNet catalog
+```
+
+| Source | Bulk status here |
+|--------|------------------|
+| Clinical Breathomics (Figshare) | **Open** — already in `data/public_breath/` |
+| HBDB live HTML | Cloudflare 403; use Zenodo SQL (separate scrape PR) |
+| Owlstone VOC Atlas | Registration + **AI train/validate license ban** — not ingested |
+| HMDB downloads | **Open via Wishart mirror** `hmdbfix.wishartlab.com` (hmdb.ca Cloudflare 403); 60 Breath-tagged + 50/50 panel enrichment |
+| Breathomix BreathBase / Shirley Atlas | Gated / no public dump |
+| PhysioNet | Open catalog (waveforms ≠ VOC chemistry) |
+| Zenodo breathomics adjuncts | **Open** — common-78 features, Tedlar variability, HBDB eval index |
+
 ## Honesty note
 
 `eval-priority10` directional accuracy can look very high because literature panel directions also inform `voc_log2fc_prior`. Treat it as consistency with published direction, not a fully held-out GC-MS challenge. External cohort holdouts are the next step for true generalization scores.

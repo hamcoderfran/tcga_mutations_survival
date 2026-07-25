@@ -129,4 +129,6 @@ def test_cohort_smoke(tmp_path: Path):
     assert (out / "patient_voc_matrix.csv").exists()
     assert (out / "patient_gene_shift_matrix.csv").exists()
     assert (out / "figures" / "voc_pca.png").exists()
+    assert (out / "figures" / "voc_pca_multidisease.png").exists()
+    assert (out / "disease_relatability.json").exists()
     assert (out / "COHORT_1000.md").exists()

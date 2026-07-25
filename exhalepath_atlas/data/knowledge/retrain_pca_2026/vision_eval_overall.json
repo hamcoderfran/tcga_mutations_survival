@@ -1,0 +1,86 @@
+{
+  "overall": {
+    "n_profiles": 50,
+    "top_k": 15,
+    "mode": "hybrid",
+    "vision_fidelity": 0.9825301697095175,
+    "vision_fidelity_pct": 98.25,
+    "evidence_backed": 0.9772770556737947,
+    "evidence_backed_pct": 97.73,
+    "held_out_style": 0.9772916838219148,
+    "held_out_style_pct": 97.73,
+    "grade_D_prior_consistency": 0.9918430335097003,
+    "grade_D_prior_consistency_pct": 99.18,
+    "metric_means": {
+      "direction": 0.9953922077922078,
+      "fold": 1.0,
+      "topk": 0.9933333333333333,
+      "pathway": 0.9233333333333333,
+      "cell": 1.0,
+      "site": 0.9933333333333333
+    },
+    "by_grade": {
+      "A": {
+        "n": 6,
+        "mean_composite": 0.9990118577075099,
+        "mean_composite_pct": 99.9,
+        "mean_direction": 0.9954545454545455,
+        "mean_fold": 1.0,
+        "mean_topk": 1.0,
+        "mean_pathway": 1.0
+      },
+      "B": {
+        "n": 20,
+        "mean_composite": 0.9707566150636803,
+        "mean_composite_pct": 97.08,
+        "mean_direction": 0.9962727272727273,
+        "mean_fold": 1.0,
+        "mean_topk": 0.9833333333333334,
+        "mean_pathway": 0.8666666666666666
+      },
+      "C": {
+        "n": 6,
+        "mean_composite": 0.9773550724637681,
+        "mean_composite_pct": 97.74,
+        "mean_direction": 1.0,
+        "mean_fold": 1.0,
+        "mean_topk": 1.0,
+        "mean_pathway": 0.8611111111111112
+      },
+      "D": {
+        "n": 18,
+        "mean_composite": 0.9918430335097003,
+        "mean_composite_pct": 99.18,
+        "mean_direction": 0.9928571428571428,
+        "mean_fold": null,
+        "mean_topk": 1.0,
+        "mean_pathway": 0.9814814814814815
+      }
+    },
+    "weights": {
+      "direction": 1.0,
+      "fold": 1.0,
+      "topk": 0.9,
+      "pathway": 0.75,
+      "cell": 0.5,
+      "site": 0.45
+    },
+    "scoring_notes": {
+      "vision_fidelity_pct": "Mean composite score across all 50 profiles (includes Grade D prior-aligned cases).",
+      "evidence_backed_pct": "Mean composite over Grade A+B only (measured/directional literature).",
+      "held_out_style_pct": "Mean composite over Grade A+B+C (excludes prior-only Grade D).",
+      "grade_D_circularity": "Grade D ground truth is derived from atlas mechanistic priors; high scores there measure prior consistency, not independent clinical accuracy."
+    },
+    "grade_counts": {
+      "A": 6,
+      "B": 20,
+      "C": 6,
+      "D": 18
+    },
+    "verdict": {
+      "vision_fidelity_pct": 98.25,
+      "primary_score_for_original_vision": 98.25,
+      "interpretation": "vision_fidelity_pct is the headline % closeness to the original vision (disease+location+patient \u2192 VOC ranking + pathway/cell/site explainability) across all 50 profiles. Prefer evidence_backed_pct for independent truthfulness; Grade D inflates fidelity via prior circularity."
+    }
+  }
+}

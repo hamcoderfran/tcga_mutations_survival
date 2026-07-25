@@ -422,18 +422,18 @@ def eval_completion_cmd(
 @app.command("integrate-datasources")
 def integrate_datasources_cmd(
     offline: bool = typer.Option(
-        False, help="Skip live HTTP; still write curated priority 1–14 tables"
+        False, help="Skip live HTTP; still write curated priority tables"
     ),
     priorities: Optional[str] = typer.Option(
-        None, help="Comma-separated priorities to run, e.g. 1,2,13,14 (default: all 1–14)"
+        None, help="Comma-separated priorities to run, e.g. 1,2,13,15 (default: all 1–15)"
     ),
 ):
     """
-    Harvest + fuse priority datasources 1–14 into exhalepath_atlas knowledge/.
+    Harvest + fuse priority datasources 1–15 into exhalepath_atlas knowledge/.
 
     1 metabolomics repos · 2 HMDB · 3 λ partition · 4 mVOC · 5 PubChem · 6 Reactome
     7 GTEx priors · 8 Open Targets/GWAS · 9 GDC/TCGA · 10 BindingDB · 11 blood proxy · 12 NIST RI
-    13 HBDB/VOLATILOME · 14 KEGG VOC pathways
+    13 HBDB/VOLATILOME · 14 KEGG VOC pathways · 15 alt breath-source access audit
     """
     from pathlib import Path as P
 
@@ -450,6 +450,30 @@ def integrate_datasources_cmd(
     )
     for d in manifest["datasources"]:
         rprint(f"  [{d['priority']:02d}] {d['key']}: {d['title']}")
+
+
+@app.command("harvest-alt-breath-sources")
+def harvest_alt_breath_sources_cmd(
+    offline: bool = typer.Option(
+        False, help="Reuse committed Zenodo/PhysioNet artifacts without HTTP"
+    ),
+):
+    """Audit Owlstone/HBDB alternatives; download open Zenodo adjuncts + PhysioNet catalog."""
+    from pathlib import Path as P
+
+    from .datasources.ds15_alt_breath_sources import AltBreathSources
+
+    root = P(__file__).resolve().parents[2]
+    src = AltBreathSources(root)
+    paths = src.harvest(offline=offline)
+    info = src.fuse(root / "data" / "knowledge")
+    rprint("[green]Alt breath-source audit complete[/green]")
+    rprint(f"  access matrix: {paths['access_matrix']}")
+    rprint(
+        f"  open Zenodo common-78: {info.get('n_common78')} "
+        f"(panel-mapped {info.get('n_common78_mapped')})"
+    )
+    rprint(f"  PhysioNet respir catalogs: {info.get('n_physionet')}")
 
 
 @app.command("harvest-public-breath")
@@ -600,6 +624,43 @@ def eval_stress_hard_cmd(
     if o.get("failed_ids"):
         rprint(f"  failed: {', '.join(o['failed_ids'][:12])}{'…' if len(o['failed_ids'])>12 else ''}")
     rprint(f"  report: {out_dir / 'STRESS_HARD.md'}")
+
+
+@app.command("eval-novel-diseases")
+def eval_novel_diseases_cmd(
+    out_dir: Path = typer.Option(Path("runs/novel_diseases")),
+    mode: str = typer.Option("hybrid"),
+):
+    """
+    Probe invented / non-atlas diseases with no VOC prior background.
+
+    Expect unresolved custom::* IDs, near-healthy panels, and clear separation
+    from known VOC-backed diseases (e.g. T2D acetone).
+    """
+    from .eval.novel_diseases import run_novel_disease_eval
+
+    report = run_novel_disease_eval(out_dir=out_dir, mode=mode)
+    rprint("[bold]Novel disease probe (no VOC background)[/bold]")
+    rprint(f"  passed: {'[green]yes[/green]' if report['passed'] else '[red]no[/red]'}")
+    rprint(
+        f"  unresolved: {report['n_unresolved']}/{report['n_novel']}  "
+        f"near-healthy: {report['n_near_healthy']}/{report['n_novel']}"
+    )
+    rprint(f"  mean peak |log2fc|: {report['mean_peak_abs_log2fc']:.3f}")
+    rprint(
+        f"  acetone Δppb novel={report['novel_mean_acetone_delta_ppb']:.1f} "
+        f"vs T2D={report['t2d_acetone_delta_ppb']} "
+        f"(sep={report['acetone_sep_t2d_minus_novel_ppb']:.1f})"
+    )
+    for r in report.get("novel_cases") or []:
+        tops = ", ".join(
+            f"{t['voc_id']}({t['log2fc']:+.2f})" for t in (r.get("top_vocs") or [])[:3]
+        )
+        rprint(
+            f"  · {r['query']['disease'][:40]:40s} "
+            f"peak={r['peak_abs_log2fc']:.2f} near={r['near_healthy']}  {tops}"
+        )
+    rprint(f"  report: {out_dir / 'NOVEL_DISEASES.md'}")
 
 
 @app.command("eval-patient-cohort")
@@ -1249,12 +1310,14 @@ def main(argv: Optional[list[str]] = None):
         "eval-priority10",
         "integrate-datasources",
         "harvest-public-breath",
+        "harvest-alt-breath-sources",
         "eval-public-breath",
         "harvest-clinical-comorbidity",
         "eval-comorbidity-clinical",
         "eval-vision",
         "eval-stress-hard",
         "eval-patient-cohort",
+        "eval-novel-diseases",
         "build-mechanism-packs",
         "explain",
         "harvest-chembl",

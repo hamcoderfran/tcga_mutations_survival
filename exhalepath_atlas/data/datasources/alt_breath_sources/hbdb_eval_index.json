@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "doi": "10.5281/zenodo.14958797",
+  "description": "Index of HBDB manually curated evaluation JSON snippets (full zip kept under raw/ when harvested online).",
+  "n_json_records": 110,
+  "compounds": [
+    {
+      "name": "Ethylbenzene",
+      "n_records": 27
+    },
+    {
+      "name": "Hydrogen peroxide",
+      "n_records": 6
+    },
+    {
+      "name": "acetone",
+      "n_records": 6
+    },
+    {
+      "name": "urea",
+      "n_records": 71
+    }
+  ]
+}

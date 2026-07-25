@@ -1,0 +1,248 @@
+{
+  "n_diseases": 18,
+  "diseases": [
+    "copd",
+    "lung_adenocarcinoma",
+    "chronic_bronchitis",
+    "lung_squamous_cell_carcinoma",
+    "asthma",
+    "type_2_diabetes",
+    "ild",
+    "pneumonia_bacterial",
+    "ards",
+    "cystic_fibrosis",
+    "tuberculosis",
+    "mesothelioma",
+    "sleep_apnea",
+    "acute_kidney_injury",
+    "adhd",
+    "alcohol_use",
+    "als",
+    "alzheimer_disease"
+  ],
+  "n_per_disease": {
+    "copd": 120,
+    "lung_adenocarcinoma": 120,
+    "chronic_bronchitis": 100,
+    "lung_squamous_cell_carcinoma": 60,
+    "asthma": 40,
+    "type_2_diabetes": 32,
+    "ild": 25,
+    "pneumonia_bacterial": 25,
+    "ards": 20,
+    "cystic_fibrosis": 20,
+    "tuberculosis": 20,
+    "mesothelioma": 15,
+    "sleep_apnea": 15,
+    "acute_kidney_injury": 4,
+    "adhd": 4,
+    "alcohol_use": 4,
+    "als": 4,
+    "alzheimer_disease": 4
+  },
+  "silhouette_disease_labels": 0.20357939994625404,
+  "closest_pairs": [
+    {
+      "disease_a": "adhd",
+      "disease_b": "als",
+      "centroid_l2": 1.841623944087179
+    },
+    {
+      "disease_a": "type_2_diabetes",
+      "disease_b": "acute_kidney_injury",
+      "centroid_l2": 1.9832722108817264
+    },
+    {
+      "disease_a": "chronic_bronchitis",
+      "disease_b": "tuberculosis",
+      "centroid_l2": 3.377294937532333
+    },
+    {
+      "disease_a": "tuberculosis",
+      "disease_b": "adhd",
+      "centroid_l2": 3.8637074715298043
+    },
+    {
+      "disease_a": "chronic_bronchitis",
+      "disease_b": "adhd",
+      "centroid_l2": 3.9640700521811714
+    },
+    {
+      "disease_a": "lung_adenocarcinoma",
+      "disease_b": "mesothelioma",
+      "centroid_l2": 4.075155399483105
+    },
+    {
+      "disease_a": "pneumonia_bacterial",
+      "disease_b": "tuberculosis",
+      "centroid_l2": 4.152442720740279
+    },
+    {
+      "disease_a": "tuberculosis",
+      "disease_b": "als",
+      "centroid_l2": 4.25477210625068
+    },
+    {
+      "disease_a": "chronic_bronchitis",
+      "disease_b": "ards",
+      "centroid_l2": 4.320412869282834
+    },
+    {
+      "disease_a": "chronic_bronchitis",
+      "disease_b": "als",
+      "centroid_l2": 4.466079124501845
+    },
+    {
+      "disease_a": "adhd",
+      "disease_b": "alzheimer_disease",
+      "centroid_l2": 4.577081727530791
+    },
+    {
+      "disease_a": "lung_adenocarcinoma",
+      "disease_b": "lung_squamous_cell_carcinoma",
+      "centroid_l2": 4.641327783407804
+    },
+    {
+      "disease_a": "tuberculosis",
+      "disease_b": "alzheimer_disease",
+      "centroid_l2": 4.821943038934004
+    },
+    {
+      "disease_a": "chronic_bronchitis",
+      "disease_b": "alzheimer_disease",
+      "centroid_l2": 4.854305316489173
+    },
+    {
+      "disease_a": "chronic_bronchitis",
+      "disease_b": "pneumonia_bacterial",
+      "centroid_l2": 4.92706910523187
+    }
+  ],
+  "farthest_pairs": [
+    {
+      "disease_a": "copd",
+      "disease_b": "asthma",
+      "centroid_l2": 11.979216551626896
+    },
+    {
+      "disease_a": "asthma",
+      "disease_b": "alcohol_use",
+      "centroid_l2": 10.610907095267542
+    },
+    {
+      "disease_a": "copd",
+      "disease_b": "alcohol_use",
+      "centroid_l2": 10.45204062885218
+    },
+    {
+      "disease_a": "asthma",
+      "disease_b": "cystic_fibrosis",
+      "centroid_l2": 10.41976599398508
+    },
+    {
+      "disease_a": "lung_adenocarcinoma",
+      "disease_b": "asthma",
+      "centroid_l2": 10.376320116734405
+    },
+    {
+      "disease_a": "asthma",
+      "disease_b": "alzheimer_disease",
+      "centroid_l2": 9.977674815841798
+    },
+    {
+      "disease_a": "copd",
+      "disease_b": "type_2_diabetes",
+      "centroid_l2": 9.671332800092866
+    },
+    {
+      "disease_a": "lung_adenocarcinoma",
+      "disease_b": "cystic_fibrosis",
+      "centroid_l2": 9.480935220675109
+    },
+    {
+      "disease_a": "asthma",
+      "disease_b": "mesothelioma",
+      "centroid_l2": 9.404024112806134
+    },
+    {
+      "disease_a": "lung_squamous_cell_carcinoma",
+      "disease_b": "asthma",
+      "centroid_l2": 9.248975740323344
+    }
+  ],
+  "nearest_neighbor": {
+    "copd": {
+      "nearest_disease": "alzheimer_disease",
+      "centroid_l2": 5.117947216354074
+    },
+    "lung_adenocarcinoma": {
+      "nearest_disease": "mesothelioma",
+      "centroid_l2": 4.075155399483105
+    },
+    "chronic_bronchitis": {
+      "nearest_disease": "tuberculosis",
+      "centroid_l2": 3.377294937532333
+    },
+    "lung_squamous_cell_carcinoma": {
+      "nearest_disease": "lung_adenocarcinoma",
+      "centroid_l2": 4.641327783407804
+    },
+    "asthma": {
+      "nearest_disease": "adhd",
+      "centroid_l2": 7.19043769560498
+    },
+    "type_2_diabetes": {
+      "nearest_disease": "acute_kidney_injury",
+      "centroid_l2": 1.9832722108817264
+    },
+    "ild": {
+      "nearest_disease": "tuberculosis",
+      "centroid_l2": 5.827267733014754
+    },
+    "pneumonia_bacterial": {
+      "nearest_disease": "tuberculosis",
+      "centroid_l2": 4.152442720740279
+    },
+    "ards": {
+      "nearest_disease": "chronic_bronchitis",
+      "centroid_l2": 4.320412869282834
+    },
+    "cystic_fibrosis": {
+      "nearest_disease": "pneumonia_bacterial",
+      "centroid_l2": 5.430754527608473
+    },
+    "tuberculosis": {
+      "nearest_disease": "chronic_bronchitis",
+      "centroid_l2": 3.377294937532333
+    },
+    "mesothelioma": {
+      "nearest_disease": "lung_adenocarcinoma",
+      "centroid_l2": 4.075155399483105
+    },
+    "sleep_apnea": {
+      "nearest_disease": "adhd",
+      "centroid_l2": 5.688120483818304
+    },
+    "acute_kidney_injury": {
+      "nearest_disease": "type_2_diabetes",
+      "centroid_l2": 1.9832722108817264
+    },
+    "adhd": {
+      "nearest_disease": "als",
+      "centroid_l2": 1.841623944087179
+    },
+    "alcohol_use": {
+      "nearest_disease": "als",
+      "centroid_l2": 5.6953680703046246
+    },
+    "als": {
+      "nearest_disease": "adhd",
+      "centroid_l2": 1.841623944087179
+    },
+    "alzheimer_disease": {
+      "nearest_disease": "adhd",
+      "centroid_l2": 4.577081727530791
+    }
+  },
+  "interpretation": "Centroid L2 is computed on standardized VOC log2FC profiles. Smaller distance \u21d2 more related breath VOC signatures across diseases."
+}

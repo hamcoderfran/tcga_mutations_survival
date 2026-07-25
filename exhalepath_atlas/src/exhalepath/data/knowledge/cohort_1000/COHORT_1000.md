@@ -29,8 +29,28 @@
 
 ## Embeddings
 
-- **voc**: n=1000 PC1=0.20397223050873947 PC2=0.13848151457392027 silhouette=0.024194189341762696 umap_error=None
-- **gene_shift**: n=871 PC1=0.25589652594193946 PC2=0.15721077942899792 silhouette=0.14465866607079625 umap_error=None
+- **voc**: n=1000 PC1=0.20398928288069684 PC2=0.1389700514234166 silhouette=0.023995908193099467 umap_error=None
+- **voc_multidisease**: n=1000 PC1=0.20398928288069684 PC2=0.1389700514234166 silhouette=0.20357939994625404 umap_error=None
+- **gene_shift**: n=871 PC1=0.25589735952472104 PC2=0.15721070242107668 silhouette=0.1446603139794847 umap_error=None
+
+## Disease relatability (VOC centroid L2)
+
+- diseases compared: 18 · silhouette=0.20357939994625404
+- closest pairs:
+  - `adhd` ↔ `als`: 1.842
+  - `type_2_diabetes` ↔ `acute_kidney_injury`: 1.983
+  - `chronic_bronchitis` ↔ `tuberculosis`: 3.377
+  - `tuberculosis` ↔ `adhd`: 3.864
+  - `chronic_bronchitis` ↔ `adhd`: 3.964
+  - `lung_adenocarcinoma` ↔ `mesothelioma`: 4.075
+  - `pneumonia_bacterial` ↔ `tuberculosis`: 4.152
+  - `tuberculosis` ↔ `als`: 4.255
+- farthest pairs:
+  - `copd` ↔ `asthma`: 11.979
+  - `asthma` ↔ `alcohol_use`: 10.611
+  - `copd` ↔ `alcohol_use`: 10.452
+  - `asthma` ↔ `cystic_fibrosis`: 10.420
+  - `lung_adenocarcinoma` ↔ `asthma`: 10.376
 
 ## Outputs
 
@@ -41,4 +61,5 @@
 - `patient_pathway_matrix.csv`
 - `breakdown_flags.csv`
 - `embeddings_voc.csv` / `embeddings_gene_shift.csv`
-- `figures/voc_pca.png`, `voc_umap.png`, `gene_shift_*.png`, `*_focus_pulmonary.png`
+- `disease_relatability.json`
+- `figures/voc_pca.png`, `voc_pca_multidisease.png`, `voc_umap.png`, `gene_shift_*.png`, `*_focus_pulmonary.png`

@@ -345,6 +345,20 @@ def run_cohort(
             prefix="voc",
             title="VOC log2FC profiles (PCA / UMAP)",
             focus=focus | {"lung_squamous_cell_carcinoma"},
+            feature_names=voc_ids,
+        )
+        # Multi-disease PCA (host of diseases, not collapsed to focus/other)
+        embed_summary["voc_multidisease"] = _multi_disease_pca(
+            X,
+            disease_ids=labels_disease,
+            out_dir=fig_dir,
+            prefix="voc",
+            title="VOC log2FC — multi-disease PCA",
+            top_n=18,
+            min_per_disease=4,
+        )
+        embed_summary["disease_relatability"] = _disease_relatability(
+            X, labels_disease, top_n=18, min_per_disease=4
         )
         # Write embedding coords CSV
         coords = pd.DataFrame(
@@ -360,6 +374,9 @@ def run_cohort(
             coords["umap1"] = embed_summary["voc"]["umap_coords"][:, 0]
             coords["umap2"] = embed_summary["voc"]["umap_coords"][:, 1]
         coords.to_csv(out_dir / "embeddings_voc.csv", index=False)
+        (out_dir / "disease_relatability.json").write_text(
+            json.dumps(embed_summary["disease_relatability"], indent=2) + "\n"
+        )
 
     Xs = np.asarray(gene_shift_matrix, dtype=float)
     mask = np.array(has_gene_shift, dtype=bool)
@@ -428,6 +445,7 @@ def _embed_and_plot(
     prefix: str,
     title: str,
     focus: set[str],
+    feature_names: list[str] | None = None,
 ) -> dict[str, Any]:
     scaler = StandardScaler()
     Xs = scaler.fit_transform(X)
@@ -504,6 +522,7 @@ def _embed_and_plot(
                 focus=focus,
             )
 
+    feat_names = feature_names or [f"v{i}" for i in range(X.shape[1])]
     return {
         "n": int(len(X)),
         "pca_var_pc1": float(pca.explained_variance_ratio_[0]),
@@ -513,16 +532,187 @@ def _embed_and_plot(
         "umap_error": umap_error,
         "pca_coords": pca_coords,
         "umap_coords": umap_coords,
-        "loadings_pc1_top": _top_loadings(pca, [f"v{i}" for i in range(X.shape[1])], 0, 8),
+        "loadings_pc1_top": _top_loadings(pca, feat_names, 0, 8),
     }
 
 
-def _top_loadings(pca: PCA, names: list[str], comp: int, k: int) -> list[dict[str, float]]:
+def _top_loadings(pca: PCA, names: list[str], comp: int, k: int) -> list[dict[str, Any]]:
     if comp >= pca.components_.shape[0]:
         return []
     vec = pca.components_[comp]
     idx = np.argsort(np.abs(vec))[::-1][:k]
-    return [{"feature_index": int(i), "loading": float(vec[i])} for i in idx]
+    out = []
+    for i in idx:
+        name = names[i] if i < len(names) else f"v{i}"
+        out.append({"feature": name, "feature_index": int(i), "loading": float(vec[i])})
+    return out
+
+
+def _multi_disease_pca(
+    X: np.ndarray,
+    *,
+    disease_ids: list[str],
+    out_dir: Path,
+    prefix: str,
+    title: str,
+    top_n: int = 18,
+    min_per_disease: int = 4,
+) -> dict[str, Any]:
+    """PCA colored by many diseases (relatability across a host of conditions)."""
+    counts: dict[str, int] = {}
+    for d in disease_ids:
+        counts[d] = counts.get(d, 0) + 1
+    keep = sorted(
+        [d for d, n in counts.items() if n >= min_per_disease],
+        key=lambda d: (-counts[d], d),
+    )[:top_n]
+    keep_set = set(keep)
+    labels = [d if d in keep_set else "other" for d in disease_ids]
+
+    scaler = StandardScaler()
+    Xs = scaler.fit_transform(X)
+    pca = PCA(n_components=min(10, Xs.shape[0], Xs.shape[1]), random_state=42)
+    pcs = pca.fit_transform(Xs)
+    coords = pcs[:, :2]
+
+    sil = None
+    uniq, cts = np.unique([l for l in labels if l != "other"], return_counts=True)
+    if len(uniq) >= 2 and (cts >= 2).sum() >= 2:
+        mask = np.array([l != "other" for l in labels])
+        try:
+            sil = float(silhouette_score(Xs[mask], np.array(labels)[mask], metric="euclidean"))
+        except Exception:  # noqa: BLE001
+            sil = None
+
+    _scatter_multidisease(
+        coords,
+        labels,
+        out_path=out_dir / f"{prefix}_pca_multidisease.png",
+        title=f"{title} (top {len(keep)} diseases)",
+        xlab=f"PC1 ({100 * pca.explained_variance_ratio_[0]:.1f}%)",
+        ylab=f"PC2 ({100 * pca.explained_variance_ratio_[1]:.1f}%)",
+        legend_order=keep + (["other"] if "other" in labels else []),
+    )
+    return {
+        "n": int(len(X)),
+        "n_diseases_plotted": len(keep),
+        "diseases_plotted": keep,
+        "n_per_disease": {d: counts[d] for d in keep},
+        "pca_var_pc1": float(pca.explained_variance_ratio_[0]),
+        "pca_var_pc2": float(pca.explained_variance_ratio_[1]),
+        "silhouette_top_diseases": sil,
+        "figure": str(out_dir / f"{prefix}_pca_multidisease.png"),
+    }
+
+
+def _disease_relatability(
+    X: np.ndarray,
+    disease_ids: list[str],
+    *,
+    top_n: int = 18,
+    min_per_disease: int = 4,
+) -> dict[str, Any]:
+    """Centroid L2 distances among disease VOC profiles (lower ⇒ more related)."""
+    counts: dict[str, int] = {}
+    for d in disease_ids:
+        counts[d] = counts.get(d, 0) + 1
+    keep = sorted(
+        [d for d, n in counts.items() if n >= min_per_disease],
+        key=lambda d: (-counts[d], d),
+    )[:top_n]
+    scaler = StandardScaler()
+    Xs = scaler.fit_transform(X)
+    centroids: dict[str, np.ndarray] = {}
+    for did in keep:
+        idx = [i for i, d in enumerate(disease_ids) if d == did]
+        centroids[did] = Xs[idx].mean(axis=0)
+
+    pairs: list[dict[str, Any]] = []
+    keys = list(centroids.keys())
+    for i, a in enumerate(keys):
+        for b in keys[i + 1 :]:
+            pairs.append(
+                {
+                    "disease_a": a,
+                    "disease_b": b,
+                    "centroid_l2": float(np.linalg.norm(centroids[a] - centroids[b])),
+                }
+            )
+    pairs.sort(key=lambda r: r["centroid_l2"])
+
+    # Nearest neighbor per disease
+    nearest: dict[str, dict[str, Any]] = {}
+    for a in keys:
+        others = [p for p in pairs if a in (p["disease_a"], p["disease_b"])]
+        if not others:
+            continue
+        best = min(others, key=lambda p: p["centroid_l2"])
+        other = best["disease_b"] if best["disease_a"] == a else best["disease_a"]
+        nearest[a] = {"nearest_disease": other, "centroid_l2": best["centroid_l2"]}
+
+    sil = None
+    mask = np.array([d in set(keep) for d in disease_ids])
+    if mask.sum() >= 10 and len(keep) >= 2:
+        try:
+            sil = float(
+                silhouette_score(Xs[mask], np.array(disease_ids)[mask], metric="euclidean")
+            )
+        except Exception:  # noqa: BLE001
+            sil = None
+
+    return {
+        "n_diseases": len(keep),
+        "diseases": keep,
+        "n_per_disease": {d: counts[d] for d in keep},
+        "silhouette_disease_labels": sil,
+        "closest_pairs": pairs[:15],
+        "farthest_pairs": list(reversed(pairs[-10:])),
+        "nearest_neighbor": nearest,
+        "interpretation": (
+            "Centroid L2 is computed on standardized VOC log2FC profiles. "
+            "Smaller distance ⇒ more related breath VOC signatures across diseases."
+        ),
+    }
+
+
+def _scatter_multidisease(
+    coords: np.ndarray,
+    labels: list[str],
+    *,
+    out_path: Path,
+    title: str,
+    xlab: str,
+    ylab: str,
+    legend_order: list[str],
+) -> None:
+    cmap = plt.get_cmap("tab20")
+    color_map: dict[str, Any] = {}
+    for i, lab in enumerate([x for x in legend_order if x != "other"]):
+        color_map[lab] = cmap(i % 20)
+    color_map["other"] = "#d0d0d0"
+
+    fig, ax = plt.subplots(figsize=(11.5, 8.0), dpi=140)
+    for lab in legend_order:
+        mask = np.array([l == lab for l in labels])
+        if not mask.any():
+            continue
+        ax.scatter(
+            coords[mask, 0],
+            coords[mask, 1],
+            s=22 if lab != "other" else 10,
+            alpha=0.8 if lab != "other" else 0.2,
+            c=[color_map.get(lab, "#888888")],
+            label=f"{lab} (n={int(mask.sum())})",
+            edgecolors="none",
+        )
+    ax.set_title(title)
+    ax.set_xlabel(xlab)
+    ax.set_ylabel(ylab)
+    ax.legend(frameon=False, fontsize=7, loc="best", ncol=2)
+    ax.grid(True, alpha=0.2)
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.close(fig)
 
 
 _COLOR = {
@@ -663,6 +853,16 @@ def _summarize(
         "voc_silhouette": (embed_summary.get("voc") or {}).get("silhouette"),
         "gene_shift_silhouette": (embed_summary.get("gene_shift") or {}).get("silhouette"),
         "focus_centroid_distances": alignment.get("centroid_l2_distances"),
+        "multidisease_n": (embed_summary.get("voc_multidisease") or {}).get("n_diseases_plotted"),
+        "multidisease_silhouette": (embed_summary.get("voc_multidisease") or {}).get(
+            "silhouette_top_diseases"
+        ),
+        "disease_relatability_silhouette": (embed_summary.get("disease_relatability") or {}).get(
+            "silhouette_disease_labels"
+        ),
+        "closest_disease_pairs": (embed_summary.get("disease_relatability") or {}).get(
+            "closest_pairs", []
+        )[:5],
         "smoking_effect_mean_abs": {
             k: (v or {}).get("mean_abs_delta") for k, v in smoking_effect.items()
         },
@@ -704,11 +904,30 @@ def _md(report: dict[str, Any], break_df: pd.DataFrame, patients_df: pd.DataFram
         )
     lines += ["", "## Embeddings", ""]
     for name, emb in (report.get("embed") or {}).items():
+        if name == "disease_relatability":
+            continue
         lines.append(
             f"- **{name}**: n={emb.get('n')} PC1={emb.get('pca_var_pc1')} "
-            f"PC2={emb.get('pca_var_pc2')} silhouette={emb.get('silhouette')} "
+            f"PC2={emb.get('pca_var_pc2')} silhouette={emb.get('silhouette') or emb.get('silhouette_top_diseases')} "
             f"umap_error={emb.get('umap_error')}"
         )
+    rel = (report.get("embed") or {}).get("disease_relatability") or {}
+    if rel:
+        lines += ["", "## Disease relatability (VOC centroid L2)", ""]
+        lines.append(
+            f"- diseases compared: {rel.get('n_diseases')} · "
+            f"silhouette={rel.get('silhouette_disease_labels')}"
+        )
+        lines.append("- closest pairs:")
+        for p in (rel.get("closest_pairs") or [])[:8]:
+            lines.append(
+                f"  - `{p['disease_a']}` ↔ `{p['disease_b']}`: {p['centroid_l2']:.3f}"
+            )
+        lines.append("- farthest pairs:")
+        for p in (rel.get("farthest_pairs") or [])[:5]:
+            lines.append(
+                f"  - `{p['disease_a']}` ↔ `{p['disease_b']}`: {p['centroid_l2']:.3f}"
+            )
     lines += ["", "## Outputs", ""]
     lines += [
         "- `patients.csv` — covariates + summary metrics",
@@ -718,7 +937,8 @@ def _md(report: dict[str, Any], break_df: pd.DataFrame, patients_df: pd.DataFram
         "- `patient_pathway_matrix.csv`",
         "- `breakdown_flags.csv`",
         "- `embeddings_voc.csv` / `embeddings_gene_shift.csv`",
-        "- `figures/voc_pca.png`, `voc_umap.png`, `gene_shift_*.png`, `*_focus_pulmonary.png`",
+        "- `disease_relatability.json`",
+        "- `figures/voc_pca.png`, `voc_pca_multidisease.png`, `voc_umap.png`, `gene_shift_*.png`, `*_focus_pulmonary.png`",
         "",
     ]
     return "\n".join(lines)

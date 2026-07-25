@@ -1,0 +1,84 @@
+{
+  "n_diseases": 13,
+  "mean_directional_accuracy": 1.0,
+  "cases": [
+    {
+      "disease_id": "asthma",
+      "n_vocs_scored": 19,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 19
+    },
+    {
+      "disease_id": "copd",
+      "n_vocs_scored": 21,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 21
+    },
+    {
+      "disease_id": "covid19",
+      "n_vocs_scored": 8,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 8
+    },
+    {
+      "disease_id": "pneumonia_bacterial",
+      "n_vocs_scored": 11,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 11
+    },
+    {
+      "disease_id": "tuberculosis",
+      "n_vocs_scored": 9,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 9
+    },
+    {
+      "disease_id": "cystic_fibrosis",
+      "n_vocs_scored": 11,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 11
+    },
+    {
+      "disease_id": "sleep_apnea",
+      "n_vocs_scored": 9,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 9
+    },
+    {
+      "disease_id": "cancer_stomach",
+      "n_vocs_scored": 9,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 9
+    },
+    {
+      "disease_id": "head_neck_cancer",
+      "n_vocs_scored": 8,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 8
+    },
+    {
+      "disease_id": "cancer_prostate",
+      "n_vocs_scored": 7,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 7
+    },
+    {
+      "disease_id": "heart_failure",
+      "n_vocs_scored": 7,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 7
+    },
+    {
+      "disease_id": "malaria",
+      "n_vocs_scored": 7,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 7
+    },
+    {
+      "disease_id": "ards",
+      "n_vocs_scored": 9,
+      "directional_accuracy": 1.0,
+      "n_panel_vocs": 9
+    }
+  ]
+}

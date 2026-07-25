@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "description": "Access audit for bulk VOC / breath databases suggested as alternatives to Owlstone VOC Atlas en-masse download.",
+  "sources": [
+    {
+      "key": "hbdb",
+      "name": "Human Breathomics Database",
+      "url": "https://hbdb.cmdm.tw/?disease_page=1&tab=disease",
+      "modality": "VOC / disease associations",
+      "status": "partial_open",
+      "access": "Live site Cloudflare-blocked for automated scrape. Open Zenodo SQL dump hbdb2_wo_sentences.sql (10.5281/zenodo.14958797) is the bulk path; see HBDB scrape PR.",
+      "bulk_download": "zenodo_sql",
+      "in_atlas": true,
+      "notes": "Google-style BeautifulSoup scrape of hbdb.cmdm.tw fails with 403 here."
+    },
+    {
+      "key": "clinical_breathomics_figshare",
+      "name": "Clinical Breathomics Dataset (Scientific Data / Figshare)",
+      "url": "https://doi.org/10.6084/m9.figshare.23522490",
+      "paper": "10.1038/s41597-024-03052-2",
+      "modality": "GC-MS peak tables + clinical metadata",
+      "status": "open_downloaded",
+      "access": "Anonymous Figshare file download (peak CSVs + metadata xlsx).",
+      "bulk_download": "figshare",
+      "in_atlas": true,
+      "local_dir": "data/public_breath/",
+      "harvest_cmd": "voc harvest-public-breath"
+    },
+    {
+      "key": "owlstone_voc_atlas",
+      "name": "Breath Biopsy VOC Atlas (Owlstone)",
+      "url": "https://www.owlstonemedical.com/",
+      "modality": "VOC catalog / OMNI feature tables",
+      "status": "gated_license_restricted",
+      "access": "Registration required. License bars AI training / fine-tuning / validation \u2014 do not ingest into ExhalePath ML calibrator.",
+      "bulk_download": "manual_registration_only",
+      "in_atlas": false
+    },
+    {
+      "key": "physionet",
+      "name": "PhysioNet respiratory / vital-sign databases",
+      "url": "https://physionet.org/about/database/",
+      "modality": "waveforms / ventilation (not VOC chemistry)",
+      "status": "open_cataloged",
+      "access": "Public database listing; waveform dumps are large and out of VOC scope.",
+      "bulk_download": "physionet_per_project",
+      "in_atlas": false,
+      "n_respir_related_cataloged": 19,
+      "notes": "Useful for breathing-pattern models, not breath VOC panels."
+    },
+    {
+      "key": "breathomix_breathbase",
+      "name": "BreathBase\u00ae Data (Breathomix)",
+      "url": "https://www.breathomix.com/breathbase-data/",
+      "modality": "eNose breath profiles + clinical data",
+      "status": "gated_contact",
+      "access": "No public CSV/ZIP; access via vendor contact / partnership.",
+      "bulk_download": null,
+      "in_atlas": false
+    },
+    {
+      "key": "hmdb",
+      "name": "Human Metabolome Database",
+      "url": "https://hmdb.ca/downloads",
+      "modality": "metabolite structures / biofluids (incl. breath subset)",
+      "status": "open_via_wishart_mirror",
+      "access": "Live hmdb.ca is Cloudflare-blocked; bulk XML is available from the Wishart fix mirror https://hmdbfix.wishartlab.com/system/downloads/current/hmdb_metabolites.zip (217920 metabolites; 60 Breath-tagged). See ds02 + scripts/extract_hmdb_wishart.py.",
+      "bulk_download": "hmdbfix.wishartlab.com",
+      "in_atlas": true,
+      "local_artifact": "data/datasources/hmdb/hmdb_breath_metabolites.json"
+    },
+    {
+      "key": "shirley_human_breath_atlas",
+      "name": "Human Breath Atlas (Shirley Diagnostics)",
+      "url": "https://www.shirleydiagnostics.com/",
+      "modality": "end-tidal VOC reference (vendor)",
+      "status": "gated_marketing",
+      "access": "No public bulk export found on the marketing site.",
+      "bulk_download": null,
+      "in_atlas": false
+    },
+    {
+      "key": "zenodo_breathomics_adjuncts",
+      "name": "Zenodo open breathomics adjunct datasets",
+      "url": "https://zenodo.org/",
+      "modality": "feature lists / sampling variability / HBDB eval texts",
+      "status": "open_downloaded",
+      "access": "Anonymous Zenodo file API.",
+      "bulk_download": "zenodo",
+      "in_atlas": true,
+      "files": [
+        "common78_features.csv",
+        "table3_metrics.csv",
+        "Tedlar_temp_raw.xlsx",
+        "hbdb_eval_dataset.zip"
+      ]
+    }
+  ]
+}
