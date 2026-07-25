@@ -3,6 +3,8 @@
   "key": "hmdb",
   "title": "HMDB + breath VOC annotation layer",
   "n_vocs": 50,
-  "offline": true,
-  "reused": true
+  "n_breath_metabolites": 60,
+  "mirror": "https://hmdbfix.wishartlab.com",
+  "source": "hmdbfix_wishart_bulk_xml",
+  "offline": true
 }

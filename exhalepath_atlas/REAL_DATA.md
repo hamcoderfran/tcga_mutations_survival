@@ -35,7 +35,7 @@ voc harvest-alt-breath-sources   # ACCESS_MATRIX + Zenodo adjuncts + PhysioNet c
 | Clinical Breathomics (Figshare) | **Open** — already in `data/public_breath/` |
 | HBDB live HTML | Cloudflare 403; use Zenodo SQL (separate scrape PR) |
 | Owlstone VOC Atlas | Registration + **AI train/validate license ban** — not ingested |
-| HMDB downloads | Cloudflare 403; PubChem-bridged seed annotations kept |
+| HMDB downloads | **Open via Wishart mirror** `hmdbfix.wishartlab.com` (hmdb.ca Cloudflare 403); 60 Breath-tagged + 50/50 panel enrichment |
 | Breathomix BreathBase / Shirley Atlas | Gated / no public dump |
 | PhysioNet | Open catalog (waveforms ≠ VOC chemistry) |
 | Zenodo breathomics adjuncts | **Open** — common-78 features, Tedlar variability, HBDB eval index |

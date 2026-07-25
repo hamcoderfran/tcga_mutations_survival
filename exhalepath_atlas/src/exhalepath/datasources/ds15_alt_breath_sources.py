@@ -204,14 +204,17 @@ def build_access_matrix(
                 "name": "Human Metabolome Database",
                 "url": "https://hmdb.ca/downloads",
                 "modality": "metabolite structures / biofluids (incl. breath subset)",
-                "status": "cloudflare_blocked_bulk",
+                "status": "open_via_wishart_mirror",
                 "access": (
-                    "hmdb.ca downloads return Cloudflare 403 here. Atlas keeps "
-                    "PubChem-bridged VOC↔HMDB seed annotations (ds02)."
+                    "Live hmdb.ca is Cloudflare-blocked; bulk XML is available from the "
+                    "Wishart fix mirror "
+                    "https://hmdbfix.wishartlab.com/system/downloads/current/hmdb_metabolites.zip "
+                    "(217920 metabolites; 60 Breath-tagged). See ds02 + "
+                    "scripts/extract_hmdb_wishart.py."
                 ),
-                "bulk_download": "blocked_here",
+                "bulk_download": "hmdbfix.wishartlab.com",
                 "in_atlas": hmdb_annotations_present,
-                "local_artifact": "data/datasources/hmdb/hmdb_voc_annotations.json",
+                "local_artifact": "data/datasources/hmdb/hmdb_breath_metabolites.json",
             },
             {
                 "key": "shirley_human_breath_atlas",
