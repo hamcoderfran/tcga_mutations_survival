@@ -392,6 +392,382 @@
         "hexanal": 1,
         "pentane": 1
       }
+    },
+    {
+      "disease_id": "krabbe_disease",
+      "name": "Krabbe disease",
+      "aliases": [
+        "globoid cell leukodystrophy",
+        "galactosylceramide lipidosis"
+      ],
+      "mondo_id": "MONDO:0009648",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.5,
+        "lipid_peroxidation": 1.4,
+        "brain_energy_metabolism": 1.25,
+        "fatty_acid_oxidation": 1.2
+      },
+      "genes": [
+        {
+          "gene": "GALC",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "multiple_sclerosis",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    },
+    {
+      "disease_id": "metachromatic_leukodystrophy",
+      "name": "Metachromatic leukodystrophy",
+      "aliases": [
+        "MLD",
+        "arylsulfatase A deficiency"
+      ],
+      "mondo_id": "MONDO:0011610",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neuroinflammation": 1.45,
+        "lipid_peroxidation": 1.35,
+        "brain_energy_metabolism": 1.25
+      },
+      "genes": [
+        {
+          "gene": "ARSA",
+          "score": 0.95
+        },
+        {
+          "gene": "PSAP",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "multiple_sclerosis",
+      "confidence": 0.83,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    },
+    {
+      "disease_id": "rett_syndrome",
+      "name": "Rett syndrome",
+      "aliases": [
+        "RTT",
+        "MECP2 disorder"
+      ],
+      "mondo_id": "MONDO:0010722",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.4,
+        "brain_energy_metabolism": 1.35,
+        "neuroinflammation": 1.25,
+        "lipid_peroxidation": 1.2
+      },
+      "genes": [
+        {
+          "gene": "MECP2",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "autism",
+      "confidence": 0.85,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "acetone": 1
+      }
+    },
+    {
+      "disease_id": "tangier_disease",
+      "name": "Tangier disease",
+      "aliases": [
+        "familial HDL deficiency",
+        "ABCA1 deficiency"
+      ],
+      "mondo_id": "MONDO:0009955",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "mevalonate_cholesterol": 1.45,
+        "fatty_acid_oxidation": 1.3,
+        "lipid_peroxidation": 1.25
+      },
+      "genes": [
+        {
+          "gene": "ABCA1",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "heart_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "acetone": 1,
+        "hexanal": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "primary_sclerosing_cholangitis",
+      "name": "Primary sclerosing cholangitis",
+      "aliases": [
+        "PSC"
+      ],
+      "mondo_id": "MONDO:0018786",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "cytochrome_p450_detox": 1.5,
+        "methionine_transsulfuration": 1.35,
+        "urea_cycle": 1.25,
+        "lipid_peroxidation": 1.25
+      },
+      "genes": [
+        {
+          "gene": "HLA-B",
+          "score": 0.7
+        },
+        {
+          "gene": "MST1",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "chronic_liver_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "ammonia": 1
+      }
+    },
+    {
+      "disease_id": "addison_disease",
+      "name": "Addison disease",
+      "aliases": [
+        "primary adrenal insufficiency",
+        "Addison's disease"
+      ],
+      "mondo_id": "MONDO:0009410",
+      "category": "metabolic",
+      "default_site": "adrenal gland",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.45,
+        "fatty_acid_oxidation": 1.3,
+        "lipid_peroxidation": 1.15
+      },
+      "genes": [
+        {
+          "gene": "CYP21A2",
+          "score": 0.75
+        },
+        {
+          "gene": "AIRE",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "type_2_diabetes",
+      "confidence": 0.8,
+      "expected_voc_direction": {
+        "acetone": 1
+      }
+    },
+    {
+      "disease_id": "cushing_syndrome",
+      "name": "Cushing syndrome",
+      "aliases": [
+        "hypercortisolism",
+        "Cushing's syndrome"
+      ],
+      "mondo_id": "MONDO:0005635",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.4,
+        "fatty_acid_oxidation": 1.3,
+        "glycolysis_warburg": 1.2
+      },
+      "genes": [
+        {
+          "gene": "NR3C1",
+          "score": 0.7
+        },
+        {
+          "gene": "PRKAR1A",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "obesity",
+      "confidence": 0.8,
+      "expected_voc_direction": {
+        "acetone": 1
+      }
+    },
+    {
+      "disease_id": "behcet_disease",
+      "name": "Beh\u00e7et disease",
+      "aliases": [
+        "Behcet disease",
+        "Behcet's disease",
+        "Adamantiades-Behcet"
+      ],
+      "mondo_id": "MONDO:0007191",
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "apoptosis_necrosis": 1.3,
+        "gut_microbiome_fermentation": 1.15
+      },
+      "genes": [
+        {
+          "gene": "HLA-B",
+          "score": 0.8
+        },
+        {
+          "gene": "IL10",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "rheumatoid_arthritis",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    },
+    {
+      "disease_id": "granulomatosis_with_polyangiitis",
+      "name": "Granulomatosis with polyangiitis",
+      "aliases": [
+        "Wegener granulomatosis",
+        "Wegener's granulomatosis",
+        "GPA"
+      ],
+      "mondo_id": "MONDO:0008521",
+      "category": "inflammatory",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.45,
+        "apoptosis_necrosis": 1.3,
+        "cytochrome_p450_detox": 1.2
+      },
+      "genes": [
+        {
+          "gene": "PRTN3",
+          "score": 0.8
+        },
+        {
+          "gene": "HLA-DPB1",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "copd",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    },
+    {
+      "disease_id": "acute_intermittent_porphyria",
+      "name": "Acute intermittent porphyria",
+      "aliases": [
+        "AIP",
+        "porphobilinogen deaminase deficiency"
+      ],
+      "mondo_id": "MONDO:0008292",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "cytochrome_p450_detox": 1.45,
+        "one_carbon_folate": 1.25,
+        "urea_cycle": 1.2,
+        "lipid_peroxidation": 1.2
+      },
+      "genes": [
+        {
+          "gene": "HMBS",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "chronic_liver_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "ammonia": 1
+      }
+    },
+    {
+      "disease_id": "carcinoid_syndrome",
+      "name": "Carcinoid syndrome",
+      "aliases": [
+        "carcinoid",
+        "serotonin-secreting neuroendocrine tumor"
+      ],
+      "mondo_id": "MONDO:0005522",
+      "category": "microbiome",
+      "default_site": "intestine",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.5,
+        "gut_microbiome_fermentation": 1.4,
+        "microbial_proteolysis_putrefaction": 1.25
+      },
+      "genes": [
+        {
+          "gene": "TPH1",
+          "score": 0.75
+        },
+        {
+          "gene": "DDC",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "inflammatory_bowel_disease",
+      "confidence": 0.8,
+      "expected_voc_direction": {
+        "indole": 1,
+        "phenol": 1
+      }
+    },
+    {
+      "disease_id": "pheochromocytoma",
+      "name": "Pheochromocytoma",
+      "aliases": [
+        "PHEO",
+        "adrenal pheochromocytoma"
+      ],
+      "mondo_id": "MONDO:0008233",
+      "category": "neurological",
+      "default_site": "adrenal gland",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.55,
+        "lipid_peroxidation": 1.25,
+        "glycolysis_warburg": 1.2
+      },
+      "genes": [
+        {
+          "gene": "RET",
+          "score": 0.75
+        },
+        {
+          "gene": "VHL",
+          "score": 0.7
+        },
+        {
+          "gene": "SDHB",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "heart_disease",
+      "confidence": 0.8,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "acetone": 1
+      }
     }
   ]
 }

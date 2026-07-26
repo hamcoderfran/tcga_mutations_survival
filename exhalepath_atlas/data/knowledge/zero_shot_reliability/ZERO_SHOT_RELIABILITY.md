@@ -19,4 +19,4 @@
 - ✓ **user_mechanism_hmgcs2** `unknown custom metabolic phenotype X` peak|log2fc|=3.367 mech=0.60 mode=mechanism
 
 ## Leave-disease-out prior direction
-- diseases: 108/110 (mean dir=0.854)
+- diseases: 108/110 (mean dir=0.819)

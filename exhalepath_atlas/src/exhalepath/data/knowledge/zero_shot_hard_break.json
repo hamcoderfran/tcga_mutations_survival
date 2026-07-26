@@ -1,0 +1,721 @@
+{
+  "version": "1.0.0",
+  "description": "Adversarial / hard zero-shot cases designed to break mechanism transfer: ambiguous names, conflicting sites, rare unlisted diseases, category traps, and near-healthy controls.",
+  "profiles": [
+    {
+      "id": "hard_ambiguous_lupus_nephritis",
+      "difficulty": "hard",
+      "trap": "multi_system_name",
+      "disease": "lupus nephritis",
+      "location": "kidney",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "urea_cycle"
+      ],
+      "min_mechanism_confidence": 0.4,
+      "min_peak_abs_log2fc": 0.25,
+      "notes": "Inflammatory + renal; easy to over-weight gut/microbiome or miss kidney."
+    },
+    {
+      "id": "hard_misleading_metabolic_myopathy",
+      "difficulty": "hard",
+      "trap": "category_word_vs_site",
+      "disease": "metabolic myopathy of unknown type",
+      "location": "musculature",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "fatty_acid_oxidation",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.25,
+      "notes": "Metabolic cue should fire; location muscle should not zero the panel."
+    },
+    {
+      "id": "hard_location_conflict_nash_brain",
+      "difficulty": "hard",
+      "trap": "wrong_location",
+      "disease": "nonalcoholic steatohepatitis",
+      "location": "brain",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "acetone",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "fatty_acid_oxidation",
+        "cytochrome_p450_detox",
+        "ketone_body_metabolism"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "User forces brain location for a liver disease \u2014 still need liver-like chemistry."
+    },
+    {
+      "id": "hard_unlisted_krabbe",
+      "difficulty": "hard",
+      "trap": "unlisted_rare",
+      "disease": "Krabbe disease",
+      "location": "brain",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "neuroinflammation",
+        "lipid_peroxidation",
+        "brain_energy_metabolism",
+        "fatty_acid_oxidation"
+      ],
+      "min_mechanism_confidence": 0.35,
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "Not in zero_shot catalog; must rely on token/ontology only."
+    },
+    {
+      "id": "hard_unlisted_mld",
+      "difficulty": "hard",
+      "trap": "unlisted_rare",
+      "disease": "metachromatic leukodystrophy",
+      "location": "brain",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal"
+      ],
+      "pathway_any": [
+        "neuroinflammation",
+        "lipid_peroxidation",
+        "brain_energy_metabolism",
+        "fatty_acid_oxidation"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_unlisted_rett",
+      "difficulty": "hard",
+      "trap": "unlisted_rare_no_token",
+      "disease": "Rett syndrome",
+      "location": "brain",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "neuroinflammation",
+        "neurotransmitter_metabolism",
+        "brain_energy_metabolism",
+        "lipid_peroxidation"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "Proper noun eponym \u2014 little lexical cue; ontology/gene needed. [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_unlisted_tangier",
+      "difficulty": "hard",
+      "trap": "unlisted_rare_no_token",
+      "disease": "Tangier disease",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "fatty_acid_oxidation",
+        "mevalonate_cholesterol",
+        "lipid_peroxidation",
+        "ketone_body_metabolism"
+      ],
+      "min_peak_abs_log2fc": 0.15,
+      "notes": "HDL deficiency eponym; easy to stay near-healthy incorrectly."
+    },
+    {
+      "id": "hard_scurvy_ascorbate",
+      "difficulty": "hard",
+      "trap": "historical_deficiency",
+      "disease": "scurvy",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_beriberi",
+      "difficulty": "hard",
+      "trap": "historical_deficiency",
+      "disease": "beriberi",
+      "location": "heart",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "brain_energy_metabolism",
+        "glycolysis_warburg",
+        "lipid_peroxidation",
+        "fatty_acid_oxidation"
+      ],
+      "min_peak_abs_log2fc": 0.15,
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_carcinoid_syndrome",
+      "difficulty": "hard",
+      "trap": "neuroendocrine",
+      "disease": "carcinoid syndrome",
+      "location": "intestine",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "indole",
+        "phenol"
+      ],
+      "pathway_any": [
+        "gut_microbiome_fermentation",
+        "microbial_proteolysis_putrefaction",
+        "neurotransmitter_metabolism"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "Serotonin/tryptophan VOC signature; cancer keyword may dominate wrongly."
+    },
+    {
+      "id": "hard_pheochromocytoma",
+      "difficulty": "hard",
+      "trap": "neuroendocrine",
+      "disease": "pheochromocytoma",
+      "location": "adrenal gland",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "acetone"
+      ],
+      "pathway_any": [
+        "neurotransmitter_metabolism",
+        "lipid_peroxidation",
+        "glycolysis_warburg",
+        "apoptosis_necrosis"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_porphyria_acute",
+      "difficulty": "hard",
+      "trap": "heme_pathway_gap",
+      "disease": "acute intermittent porphyria",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "ammonia",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "urea_cycle",
+        "lipid_peroxidation",
+        "one_carbon_folate"
+      ],
+      "min_peak_abs_log2fc": 0.15,
+      "notes": "Heme biosynthesis not in pathway map \u2014 transfer must approximate. [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_g6pd_hemolysis",
+      "difficulty": "hard",
+      "trap": "hematologic",
+      "disease": "G6PD deficiency acute hemolysis",
+      "location": "blood",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "pentane",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "one_carbon_folate"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_sickle_cell",
+      "difficulty": "hard",
+      "trap": "hematologic",
+      "disease": "sickle cell disease",
+      "location": "blood",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "pentane",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_preeclampsia",
+      "difficulty": "hard",
+      "trap": "obstetric",
+      "disease": "preeclampsia",
+      "location": "placenta",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_endometriosis",
+      "difficulty": "hard",
+      "trap": "inflammatory_gyne",
+      "disease": "endometriosis",
+      "location": "uterus",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_sarcoidosis",
+      "difficulty": "hard",
+      "trap": "granulomatous",
+      "disease": "pulmonary sarcoidosis",
+      "location": "lung",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "cytochrome_p450_detox",
+        "apoptosis_necrosis"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_ipf",
+      "difficulty": "hard",
+      "trap": "fibrotic_lung",
+      "disease": "idiopathic pulmonary fibrosis",
+      "location": "lung",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "cytochrome_p450_detox",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_psc",
+      "difficulty": "hard",
+      "trap": "cholestatic_overlap",
+      "disease": "primary sclerosing cholangitis",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "ammonia",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "methionine_transsulfuration",
+        "urea_cycle",
+        "lipid_peroxidation"
+      ],
+      "min_peak_abs_log2fc": 0.25,
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_autoimmune_hepatitis",
+      "difficulty": "hard",
+      "trap": "liver_immune",
+      "disease": "autoimmune hepatitis",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "ammonia"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "lipid_peroxidation",
+        "urea_cycle",
+        "apoptosis_necrosis"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "hard_hashimoto",
+      "difficulty": "hard",
+      "trap": "endocrine",
+      "disease": "Hashimoto thyroiditis",
+      "location": "endocrine gland",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "acetone",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "fatty_acid_oxidation"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_addison",
+      "difficulty": "hard",
+      "trap": "endocrine",
+      "disease": "Addison disease",
+      "location": "adrenal gland",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "fatty_acid_oxidation",
+        "lipid_peroxidation"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_cushing",
+      "difficulty": "hard",
+      "trap": "endocrine",
+      "disease": "Cushing syndrome",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "fatty_acid_oxidation",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_alcohol_use_disorder",
+      "difficulty": "hard",
+      "trap": "toxic_metabolic",
+      "disease": "alcohol use disorder with hepatic steatosis",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "pentane",
+        "2_butanone",
+        "acetone"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "lipid_peroxidation",
+        "fatty_acid_oxidation"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_uremia_ckd_stage5",
+      "difficulty": "hard",
+      "trap": "atlas_adjacent",
+      "disease": "uremic syndrome stage 5 CKD",
+      "location": "kidney",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "ammonia",
+        "phenol"
+      ],
+      "pathway_any": [
+        "urea_cycle",
+        "microbial_proteolysis_putrefaction",
+        "gut_microbiome_fermentation"
+      ],
+      "min_peak_abs_log2fc": 0.25,
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_septic_shock",
+      "difficulty": "hard",
+      "trap": "acute_systemic",
+      "disease": "septic shock",
+      "location": "systemic",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "acetone",
+        "ammonia"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "glycolysis_warburg",
+        "urea_cycle"
+      ],
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "hard_covid_long",
+      "difficulty": "hard",
+      "trap": "post_infectious",
+      "disease": "long COVID with dysautonomia",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "acetone"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "neuroinflammation",
+        "brain_energy_metabolism",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_conflicting_comorbidity",
+      "difficulty": "hard",
+      "trap": "comorbidity_conflict",
+      "disease": "type 2 diabetes",
+      "location": "systemic",
+      "comorbidities": [
+        "major depressive disorder",
+        "COPD"
+      ],
+      "expect_unresolved": false,
+      "must_elevate": [
+        "acetone"
+      ],
+      "min_peak_abs_log2fc": 0.5,
+      "notes": "Atlas disease with heavy comorbidity fusion \u2014 acetone should survive."
+    },
+    {
+      "id": "hard_gene_trap_egfr",
+      "difficulty": "hard",
+      "trap": "gene_as_disease",
+      "disease": "EGFR",
+      "location": "lung",
+      "expect_unresolved": true,
+      "near_healthy": true,
+      "max_abs_log2fc": 0.5,
+      "expect_mechanism": false
+    },
+    {
+      "id": "hard_drug_name_trap",
+      "difficulty": "hard",
+      "trap": "drug_as_disease",
+      "disease": "metformin toxicity",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "ammonia"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "urea_cycle",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "Lactic acidosis / metabolic crisis cue via toxicity+metformin context."
+    },
+    {
+      "id": "hard_empty_description_noise",
+      "difficulty": "hard",
+      "trap": "noise_tokens",
+      "disease": "patient presents with malaise and fatigue syndrome Z9",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "near_healthy": true,
+      "max_abs_log2fc": 0.5,
+      "expect_mechanism": false,
+      "notes": "Non-specific symptoms should not invent a strong VOC panel."
+    },
+    {
+      "id": "hard_opposite_direction_risk",
+      "difficulty": "hard",
+      "trap": "suppress_not_elevate",
+      "disease": "hypothyroidism severe untreated",
+      "location": "endocrine gland",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "pathway_any": [
+        "mevalonate_cholesterol",
+        "fatty_acid_oxidation",
+        "lipid_peroxidation",
+        "ketone_body_metabolism"
+      ],
+      "min_peak_abs_log2fc": 0.1,
+      "notes": "Low metabolic rate \u2192 isoprene often down; easy to only elevate aldehydes.",
+      "must_elevate": [
+        "acetone"
+      ]
+    },
+    {
+      "id": "hard_mixed_cancer_infection",
+      "difficulty": "hard",
+      "trap": "mixed_categories",
+      "disease": "lung cancer with concurrent bacterial pneumonia",
+      "location": "lung",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "glycolysis_warburg",
+        "apoptosis_necrosis",
+        "cytochrome_p450_detox"
+      ],
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "hard_eponym_only_behcet",
+      "difficulty": "hard",
+      "trap": "eponym_no_token",
+      "disease": "Beh\u00e7et disease",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "gut_microbiome_fermentation"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_eponym_only_wegeners",
+      "difficulty": "hard",
+      "trap": "eponym_no_token",
+      "disease": "Wegener granulomatosis",
+      "location": "lung",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "apoptosis_necrosis",
+        "cytochrome_p450_detox"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "hard_user_wrong_genes",
+      "difficulty": "hard",
+      "trap": "misleading_user_genes",
+      "disease": "suspected mitochondrial disease",
+      "location": "brain",
+      "description": "possible OXPHOS defect",
+      "genes": [
+        "BRCA1",
+        "EGFR"
+      ],
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "brain_energy_metabolism",
+        "ketone_body_metabolism",
+        "lipid_peroxidation",
+        "fatty_acid_oxidation"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "Wrong cancer genes supplied; description should still dominate mitochondrial chemistry."
+    },
+    {
+      "id": "hard_tiny_signal_control",
+      "difficulty": "medium",
+      "trap": "near_healthy_control",
+      "disease": "benign essential freckling syndrome ZX-0",
+      "location": "skin",
+      "expect_unresolved": true,
+      "near_healthy": true,
+      "max_abs_log2fc": 0.45,
+      "expect_mechanism": false
+    },
+    {
+      "id": "hard_atlas_t2d_sanity",
+      "difficulty": "easy",
+      "trap": "sanity",
+      "disease": "type 2 diabetes",
+      "location": "systemic",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "acetone"
+      ],
+      "min_peak_abs_log2fc": 1.0
+    }
+  ]
+}

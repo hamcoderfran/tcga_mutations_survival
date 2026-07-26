@@ -1179,6 +1179,35 @@ def eval_zero_shot_reliability_cmd(
         raise typer.Exit(code=1)
 
 
+@app.command("eval-zero-shot-hard")
+def eval_zero_shot_hard_cmd(
+    out_dir: Path = typer.Option(Path("runs/zero_shot_hard_break")),
+    mode: str = typer.Option("hybrid"),
+    profiles: Optional[Path] = typer.Option(
+        None, help="Override zero_shot_hard_break.json"
+    ),
+):
+    """Adversarial hard-break suite for zero-shot (ambiguous, eponym, conflict, traps)."""
+    from .eval.zero_shot_hard import evaluate_zero_shot_hard
+
+    report = evaluate_zero_shot_hard(
+        out_dir=out_dir, profiles_path=profiles, mode=mode
+    )
+    rprint("[bold]Zero-shot hard-break[/bold]")
+    rprint(
+        f"  pass rate: {100 * report['pass_rate']:.0f}% "
+        f"({report['n_passed']}/{report['n_profiles']})"
+    )
+    rprint(f"  failed: {', '.join(report.get('failed_ids') or []) or '—'}")
+    for t, row in (report.get('by_trap') or {}).items():
+        rprint(
+            f"  {t}: {row['n'] - row['failed']}/{row['n']} ({100 * row['pass_rate']:.0f}%)"
+        )
+    rprint(f"  report: {out_dir / 'ZERO_SHOT_HARD_BREAK.md'}")
+    if not report["pass"]:
+        raise typer.Exit(code=1)
+
+
 @app.command("cjd-profile")
 def cjd_profile_cmd(
     age: float = typer.Option(62, help="Patient age"),
@@ -1439,6 +1468,7 @@ def main(argv: Optional[list[str]] = None):
         "biomarker",
         "predict-novel",
         "eval-zero-shot-reliability",
+        "eval-zero-shot-hard",
         "ask",
         "nl",
         "cjd-profile",

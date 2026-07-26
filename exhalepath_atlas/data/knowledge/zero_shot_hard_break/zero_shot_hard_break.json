@@ -1,0 +1,3578 @@
+{
+  "n_profiles": 38,
+  "n_passed": 38,
+  "n_failed": 0,
+  "pass_rate": 1.0,
+  "pass": true,
+  "by_trap": {
+    "acute_systemic": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "atlas_adjacent": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "category_word_vs_site": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "cholestatic_overlap": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "comorbidity_conflict": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "drug_as_disease": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "endocrine": {
+      "n": 3,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "eponym_no_token": {
+      "n": 2,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "fibrotic_lung": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "gene_as_disease": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "granulomatous": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "hematologic": {
+      "n": 2,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "heme_pathway_gap": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "historical_deficiency": {
+      "n": 2,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "inflammatory_gyne": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "liver_immune": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "misleading_user_genes": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "mixed_categories": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "multi_system_name": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "near_healthy_control": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "neuroendocrine": {
+      "n": 2,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "noise_tokens": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "obstetric": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "post_infectious": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "sanity": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "suppress_not_elevate": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "toxic_metabolic": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "unlisted_rare": {
+      "n": 2,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "unlisted_rare_no_token": {
+      "n": 2,
+      "failed": 0,
+      "pass_rate": 1.0
+    },
+    "wrong_location": {
+      "n": 1,
+      "failed": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "failed_ids": [],
+  "profiles": [
+    {
+      "id": "hard_ambiguous_lupus_nephritis",
+      "trap": "multi_system_name",
+      "difficulty": "hard",
+      "disease": "lupus nephritis",
+      "disease_id": "custom::lupus_nephritis",
+      "location": "kidney",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.663638573302787,
+      "mechanism_confidence": 0.625,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "kidney",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.663638573302787
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.2108569381316516
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.8953883896888408
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.778934928240937
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.18807568281141696
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::lupus_nephritis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.625,
+            "peak": 3.663638573302787
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.663638573302787
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.2108569381316516
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.663638573302787
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.26088750000000005,
+            "apoptosis_necrosis": 0.11225454545454543,
+            "urea_cycle": 0.18144000000000007
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Inflammatory + renal; easy to over-weight gut/microbiome or miss kidney."
+    },
+    {
+      "id": "hard_misleading_metabolic_myopathy",
+      "trap": "category_word_vs_site",
+      "difficulty": "hard",
+      "disease": "metabolic myopathy of unknown type",
+      "disease_id": "custom::metabolic_myopathy_of_unknown_type",
+      "location": "musculature",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.384185766732949,
+      "mechanism_confidence": 0.38,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.384185766732949
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 1.812470095456189
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.7687871089350485
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16842596237822716
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16700261938849906
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16463007822912726
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12744402816347547
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.1055748105180767
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::metabolic_myopathy_of_unknown_type"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.38,
+            "peak": 2.384185766732949
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.384185766732949
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 1.812470095456189
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "ketone_body_metabolism": 0.3375,
+            "fatty_acid_oxidation": 0.2138785714285715,
+            "glycolysis_warburg": 0.0
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Metabolic cue should fire; location muscle should not zero the panel."
+    },
+    {
+      "id": "hard_location_conflict_nash_brain",
+      "trap": "wrong_location",
+      "difficulty": "hard",
+      "disease": "nonalcoholic steatohepatitis",
+      "disease_id": "nafld",
+      "location": "brain",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.386436228623214,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.386436228623214
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 2.0850032619483216
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.7074514974952415
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.5203491994046432
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": 0.38992027188848766
+        },
+        {
+          "voc_id": "trimethylamine",
+          "log2fc": 0.20136056321216642
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "nafld"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.386436228623214
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 2.0850032619483216
+        },
+        {
+          "name": "elevate:2_butanone",
+          "pass": true,
+          "detail": 2.386436228623214
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.0,
+            "fatty_acid_oxidation": 0.15120000000000006,
+            "cytochrome_p450_detox": 0.0,
+            "ketone_body_metabolism": 0.24
+          }
+        }
+      ],
+      "notes": "User forces brain location for a liver disease \u2014 still need liver-like chemistry."
+    },
+    {
+      "id": "hard_unlisted_krabbe",
+      "trap": "unlisted_rare",
+      "difficulty": "hard",
+      "disease": "Krabbe disease",
+      "disease_id": "custom::krabbe_disease",
+      "location": "brain",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 4.462884819691673,
+      "mechanism_confidence": 0.84,
+      "zero_shot_mode": "mechanism",
+      "category": "neurological",
+      "default_site": "brain",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.462884819691673
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.861523145519892
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.23123061128354505
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.21634075062354008
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.18442976543031073
+        },
+        {
+          "voc_id": "ethane",
+          "log2fc": 0.15084813833375538
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.14280250908933081
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.14179615694676684
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::krabbe_disease"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.84,
+            "peak": 4.462884819691673
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 4.462884819691673
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.861523145519892
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 4.462884819691673
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "neuroinflammation": 0.48162375000000013,
+            "lipid_peroxidation": 0.23878312499999996,
+            "brain_energy_metabolism": 0.19656000000000007,
+            "fatty_acid_oxidation": 0.07679999999999998
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Not in zero_shot catalog; must rely on token/ontology only."
+    },
+    {
+      "id": "hard_unlisted_mld",
+      "trap": "unlisted_rare",
+      "difficulty": "hard",
+      "disease": "metachromatic leukodystrophy",
+      "disease_id": "custom::metachromatic_leukodystrophy",
+      "location": "brain",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 4.427983126836887,
+      "mechanism_confidence": 0.83,
+      "zero_shot_mode": "mechanism",
+      "category": "neurological",
+      "default_site": "brain",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.427983126836887
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.7678619726195697
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.21496372651791998
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.20758165882666493
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.18442976543031073
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.14280250908933081
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.14179615694676684
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.13645141609586653
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::metachromatic_leukodystrophy"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.83,
+            "peak": 4.427983126836887
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 4.427983126836887
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.7678619726195697
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "neuroinflammation": 0.48162375000000013,
+            "lipid_peroxidation": 0.20541515625000004,
+            "brain_energy_metabolism": 0.19656000000000007,
+            "fatty_acid_oxidation": 0.0
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_unlisted_rett",
+      "trap": "unlisted_rare_no_token",
+      "difficulty": "hard",
+      "disease": "Rett syndrome",
+      "disease_id": "custom::rett_syndrome",
+      "location": "brain",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.084274460432789,
+      "mechanism_confidence": 0.85,
+      "zero_shot_mode": "mechanism",
+      "category": "neurological",
+      "default_site": "brain",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.084274460432789
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 2.233596729819549
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.15726671406141696
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.15523538472104492
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.14559204109586646
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.14280250908933081
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.14179615694676684
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::rett_syndrome"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.85,
+            "peak": 3.084274460432789
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.084274460432789
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 2.233596729819549
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.084274460432789
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "neuroinflammation": 0.324,
+            "neurotransmitter_metabolism": 0.23295999999999994,
+            "brain_energy_metabolism": 0.19656000000000007,
+            "lipid_peroxidation": 0.14352
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Proper noun eponym \u2014 little lexical cue; ontology/gene needed. [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_unlisted_tangier",
+      "trap": "unlisted_rare_no_token",
+      "difficulty": "hard",
+      "disease": "Tangier disease",
+      "disease_id": "custom::tangier_disease",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.7186204496878608,
+      "mechanism_confidence": 0.84,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.7186204496878608
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.132104631613433
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 1.9479579899939716
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 1.3988966857460214
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.1692454779505463
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": 1.12127328036251
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::tangier_disease"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.84,
+            "peak": 2.7186204496878608
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.7186204496878608
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 1.9479579899939716
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 1.3988966857460214
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "fatty_acid_oxidation": 0.15120000000000006,
+            "mevalonate_cholesterol": 0.20879999999999999,
+            "lipid_peroxidation": 0.1,
+            "ketone_body_metabolism": 0.24
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "HDL deficiency eponym; easy to stay near-healthy incorrectly."
+    },
+    {
+      "id": "hard_scurvy_ascorbate",
+      "trap": "historical_deficiency",
+      "difficulty": "hard",
+      "disease": "scurvy",
+      "disease_id": "custom::scurvy",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.931783054711595,
+      "mechanism_confidence": 0.6000000000000001,
+      "zero_shot_mode": "mechanism",
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.931783054711595
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 2.409050446579084
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.197597049998917
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.16938458003354506
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "heptanal",
+          "log2fc": 0.15570148012967486
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::scurvy"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.6000000000000001,
+            "peak": 2.931783054711595
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.931783054711595
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 2.409050446579084
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 2.931783054711595
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.297159375,
+            "apoptosis_necrosis": 0.12480000000000002
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_beriberi",
+      "trap": "historical_deficiency",
+      "difficulty": "hard",
+      "disease": "beriberi",
+      "disease_id": "custom::beriberi",
+      "location": "heart",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 1.8247331627850294,
+      "mechanism_confidence": 0.6000000000000001,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "heart",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.8247331627850294
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.1680442057364516
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.1666208627467239
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16424832158735217
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.14378471406141688
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12744402816347547
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.12223135733677314
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.07014704641736175
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::beriberi"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.6000000000000001,
+            "peak": 1.8247331627850294
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 1.8247331627850294
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 0.12223135733677314
+        },
+        {
+          "name": "elevate:2_butanone",
+          "pass": true,
+          "detail": 1.8247331627850294
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "brain_energy_metabolism": 0.20879999999999999,
+            "glycolysis_warburg": 0.12480000000000002,
+            "lipid_peroxidation": 0.09215999999999998,
+            "fatty_acid_oxidation": 0.18900000000000006
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_carcinoid_syndrome",
+      "trap": "neuroendocrine",
+      "difficulty": "hard",
+      "disease": "carcinoid syndrome",
+      "disease_id": "custom::carcinoid_syndrome",
+      "location": "intestine",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.2981120259674284,
+      "mechanism_confidence": 0.8,
+      "zero_shot_mode": "mechanism",
+      "category": "microbiome",
+      "default_site": "intestine",
+      "top_vocs": [
+        {
+          "voc_id": "hydrogen_sulfide",
+          "log2fc": 3.2981120259674284
+        },
+        {
+          "voc_id": "indole",
+          "log2fc": 3.2488184419535076
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 2.8625632245991834
+        },
+        {
+          "voc_id": "ethanol",
+          "log2fc": 2.8572981040262095
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.2314381676449124
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 1.9955874659219024
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.28607362655191326
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::carcinoid_syndrome"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.8,
+            "peak": 3.2981120259674284
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.2981120259674284
+        },
+        {
+          "name": "elevate:indole",
+          "pass": true,
+          "detail": 3.2488184419535076
+        },
+        {
+          "name": "elevate:phenol",
+          "pass": true,
+          "detail": 0.28607362655191326
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "gut_microbiome_fermentation": 0.41472000000000014,
+            "microbial_proteolysis_putrefaction": 0.312,
+            "neurotransmitter_metabolism": 0.2877272727272727
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Serotonin/tryptophan VOC signature; cancer keyword may dominate wrongly."
+    },
+    {
+      "id": "hard_pheochromocytoma",
+      "trap": "neuroendocrine",
+      "difficulty": "hard",
+      "disease": "pheochromocytoma",
+      "disease_id": "custom::pheochromocytoma",
+      "location": "adrenal gland",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.554429782738568,
+      "mechanism_confidence": 0.8,
+      "zero_shot_mode": "mechanism",
+      "category": "neurological",
+      "default_site": "adrenal gland",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.554429782738568
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 1.9003947939400005
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 1.4591352658573105
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.4400004651670635
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.9592229275749967
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::pheochromocytoma"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.8,
+            "peak": 3.554429782738568
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.554429782738568
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 1.9003947939400005
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 1.4591352658573105
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "neurotransmitter_metabolism": 0.31859545454545457,
+            "lipid_peroxidation": 0.12480000000000002,
+            "glycolysis_warburg": 0.07679999999999998,
+            "apoptosis_necrosis": 0.0
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_porphyria_acute",
+      "trap": "heme_pathway_gap",
+      "difficulty": "hard",
+      "disease": "acute intermittent porphyria",
+      "disease_id": "custom::acute_intermittent_porphyria",
+      "location": "liver",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 1.7789322249716324,
+      "mechanism_confidence": 0.84,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "liver",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.7789322249716324
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.3805183544630428
+        },
+        {
+          "voc_id": "dms",
+          "log2fc": 1.0237883788002202
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16666543787045118
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16524209488072364
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16286955372135178
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12708610031390327
+        },
+        {
+          "voc_id": "benzene",
+          "log2fc": 0.11487201844379422
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::acute_intermittent_porphyria"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.84,
+            "peak": 1.7789322249716324
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 1.7789322249716324
+        },
+        {
+          "name": "elevate:ammonia",
+          "pass": true,
+          "detail": 1.3805183544630428
+        },
+        {
+          "name": "elevate:2_butanone",
+          "pass": true,
+          "detail": 1.7789322249716324
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "cytochrome_p450_detox": 0.261,
+            "urea_cycle": 0.09983999999999997,
+            "lipid_peroxidation": 0.07679999999999998,
+            "one_carbon_folate": 0.1
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Heme biosynthesis not in pathway map \u2014 transfer must approximate. [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_g6pd_hemolysis",
+      "trap": "hematologic",
+      "difficulty": "hard",
+      "disease": "G6PD deficiency acute hemolysis",
+      "disease_id": "custom::g6pd_deficiency_acute_hemolysis",
+      "location": "blood",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.002443258074855,
+      "mechanism_confidence": 0.65,
+      "zero_shot_mode": "mechanism",
+      "category": "inflammatory",
+      "default_site": "blood",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.002443258074855
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 2.494876069875777
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.1985888078114169
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.17122641597104496
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "heptanal",
+          "log2fc": 0.15740163637967478
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::g6pd_deficiency_acute_hemolysis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.65,
+            "peak": 3.002443258074855
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.002443258074855
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.002443258074855
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 2.494876069875777
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.30093749999999997,
+            "apoptosis_necrosis": 0.17388000000000006,
+            "one_carbon_folate": 0.0
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_sickle_cell",
+      "trap": "hematologic",
+      "difficulty": "hard",
+      "disease": "sickle cell disease",
+      "disease_id": "sickle_cell",
+      "location": "blood",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.9466899439633063,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "unspecified",
+      "default_site": "blood",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.9466899439633063
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.4555137018278588
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.4212128055095523
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.41595172692103877
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.40978311990667216
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.38535505622696714
+        },
+        {
+          "voc_id": "ethane",
+          "log2fc": 0.35731396399046844
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.3365190565596841
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "sickle_cell"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.9466899439633063
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.9466899439633063
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.4555137018278588
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.20879999999999999,
+            "apoptosis_necrosis": 0.20210727272727277,
+            "glycolysis_warburg": 0.08552166666666661
+          }
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_preeclampsia",
+      "trap": "obstetric",
+      "difficulty": "hard",
+      "disease": "preeclampsia",
+      "disease_id": "custom::preeclampsia",
+      "location": "placenta",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.6441930945942853,
+      "mechanism_confidence": 0.65,
+      "zero_shot_mode": "mechanism",
+      "category": "inflammatory",
+      "default_site": "uterus",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.6441930945942853
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 2.0891714972791746
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.17409755781141684
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.1308207909710448
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::preeclampsia"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.65,
+            "peak": 2.6441930945942853
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.6441930945942853
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 2.0891714972791746
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 2.6441930945942853
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.20763749999999997,
+            "apoptosis_necrosis": 0.13693181818181818
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_endometriosis",
+      "trap": "inflammatory_gyne",
+      "difficulty": "hard",
+      "disease": "endometriosis",
+      "disease_id": "endometriosis",
+      "location": "uterus",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.3312157293907103,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "unspecified",
+      "default_site": "pelvis",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.3312157293907103
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 2.873196824653569
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.43490342682215893
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.43120273504886686
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.42503412803449997
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.38535505622696714
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.35586531205220173
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.33289305655968393
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "endometriosis"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.3312157293907103
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 2.873196824653569
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.3312157293907103
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.17919999999999994,
+            "apoptosis_necrosis": 0.14843636363636367
+          }
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_sarcoidosis",
+      "trap": "granulomatous",
+      "difficulty": "hard",
+      "disease": "pulmonary sarcoidosis",
+      "disease_id": "custom::pulmonary_sarcoidosis",
+      "location": "lung",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 4.693535787692853,
+      "mechanism_confidence": 0.57625,
+      "zero_shot_mode": "mechanism",
+      "category": "pulmonary",
+      "default_site": "lung",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.693535787692853
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 4.414692704373174
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.23786568148510018
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.2230680480881087
+        },
+        {
+          "voc_id": "heptanal",
+          "log2fc": 0.21875632387967478
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.20273050709677726
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16666543787045118
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16524209488072364
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::pulmonary_sarcoidosis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.57625,
+            "peak": 4.693535787692853
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 4.693535787692853
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 4.414692704373174
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 4.693535787692853
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.43728124999999995,
+            "cytochrome_p450_detox": 0.241875,
+            "apoptosis_necrosis": 0.04163134013888892
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_ipf",
+      "trap": "fibrotic_lung",
+      "difficulty": "hard",
+      "disease": "idiopathic pulmonary fibrosis",
+      "disease_id": "ild",
+      "location": "lung",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.60872531975524,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "pulmonary",
+      "default_site": "lung",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.60872531975524
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.2760670147787985
+        },
+        {
+          "voc_id": "benzene",
+          "log2fc": 0.41426887541421153
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 0.40121378346101577
+        },
+        {
+          "voc_id": "toluene",
+          "log2fc": 0.35291145776755756
+        },
+        {
+          "voc_id": "xylene",
+          "log2fc": 0.21669329867522943
+        },
+        {
+          "voc_id": "furan",
+          "log2fc": 0.21523514512500927
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.18557044843641682
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "ild"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.60872531975524
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.2760670147787985
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.60872531975524
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.2513437499999999,
+            "cytochrome_p450_detox": 0.148125,
+            "glycolysis_warburg": 0.055199999999999964
+          }
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_psc",
+      "trap": "cholestatic_overlap",
+      "difficulty": "hard",
+      "disease": "primary sclerosing cholangitis",
+      "disease_id": "custom::primary_sclerosing_cholangitis",
+      "location": "liver",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 1.7789322249716324,
+      "mechanism_confidence": 0.84,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "liver",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.7789322249716324
+        },
+        {
+          "voc_id": "dms",
+          "log2fc": 1.7603803984827955
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.5394402783645749
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16666543787045118
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16524209488072364
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16286955372135178
+        },
+        {
+          "voc_id": "dmts",
+          "log2fc": 0.12988750681117972
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12708610031390327
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::primary_sclerosing_cholangitis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.84,
+            "peak": 1.7789322249716324
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 1.7789322249716324
+        },
+        {
+          "name": "elevate:ammonia",
+          "pass": true,
+          "detail": 1.5394402783645749
+        },
+        {
+          "name": "elevate:2_butanone",
+          "pass": true,
+          "detail": 1.7789322249716324
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "cytochrome_p450_detox": 0.3,
+            "methionine_transsulfuration": 0.20412000000000008,
+            "urea_cycle": 0.13,
+            "lipid_peroxidation": 0.1
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_autoimmune_hepatitis",
+      "trap": "liver_immune",
+      "difficulty": "hard",
+      "disease": "autoimmune hepatitis",
+      "disease_id": "custom::autoimmune_hepatitis",
+      "location": "liver",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.388253462404475,
+      "mechanism_confidence": 0.38,
+      "zero_shot_mode": "mechanism",
+      "category": "infectious",
+      "default_site": "liver",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.388253462404475
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 0.6938421199778461
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.15917279218641703
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::autoimmune_hepatitis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.38,
+            "peak": 2.388253462404475
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.388253462404475
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 0.6938421199778461
+        },
+        {
+          "name": "elevate:ammonia",
+          "pass": true,
+          "detail": 0.09742121287349279
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "cytochrome_p450_detox": 0.06899999999999995,
+            "lipid_peroxidation": 0.15078125,
+            "urea_cycle": 0.0,
+            "apoptosis_necrosis": 0.07679999999999998
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_hashimoto",
+      "trap": "endocrine",
+      "difficulty": "hard",
+      "disease": "Hashimoto thyroiditis",
+      "disease_id": "thyroid",
+      "location": "endocrine gland",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.5301677518614647,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "metabolic",
+      "default_site": "thyroid",
+      "top_vocs": [
+        {
+          "voc_id": "isoprene",
+          "log2fc": 2.5301677518614647
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 2.365022781871212
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.286744620408585
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.0037757452021034
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.9630362820867298
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 0.6132117278355056
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.36705818225952713
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "thyroid"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.5301677518614647
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 2.365022781871212
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 0.6132117278355056
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.0,
+            "apoptosis_necrosis": 0.0,
+            "fatty_acid_oxidation": 0.1
+          }
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_addison",
+      "trap": "endocrine",
+      "difficulty": "hard",
+      "disease": "Addison disease",
+      "disease_id": "custom::addison_disease",
+      "location": "adrenal gland",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.8307916130572695,
+      "mechanism_confidence": 0.8,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "adrenal gland",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.8307916130572695
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 2.0648332351963115
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.6071898291146633
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 1.1143914728948132
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.134082714061417
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::addison_disease"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.8,
+            "peak": 2.8307916130572695
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.8307916130572695
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 2.0648332351963115
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "ketone_body_metabolism": 0.24,
+            "fatty_acid_oxidation": 0.15120000000000006,
+            "lipid_peroxidation": 0.055199999999999964
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_cushing",
+      "trap": "endocrine",
+      "difficulty": "hard",
+      "disease": "Cushing syndrome",
+      "disease_id": "custom::cushing_syndrome",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 1.7804069741630595,
+      "mechanism_confidence": 0.8,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.7804069741630595
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12744402816347547
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.11959271406141694
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.09697081594228256
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "log2fc": -0.059579200407379365
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::cushing_syndrome"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.8,
+            "peak": 1.7804069741630595
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 1.7804069741630595
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 0.09697081594228256
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "ketone_body_metabolism": 0.24,
+            "fatty_acid_oxidation": 0.15120000000000006,
+            "glycolysis_warburg": 0.07679999999999998
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_alcohol_use_disorder",
+      "trap": "toxic_metabolic",
+      "difficulty": "hard",
+      "disease": "alcohol use disorder with hepatic steatosis",
+      "disease_id": "custom::alcohol_use_disorder_with_hepatic_steatosis",
+      "location": "liver",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.5667862796732144,
+      "mechanism_confidence": 0.65,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "liver",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.5667862796732144
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.8096876847814334
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16666543787045118
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16524209488072364
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16286955372135178
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.12763417897177723
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12708610031390327
+        },
+        {
+          "voc_id": "benzene",
+          "log2fc": 0.10796908875629427
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::alcohol_use_disorder_with_hepatic_steatosis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.65,
+            "peak": 2.5667862796732144
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.5667862796732144
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 2.5667862796732144
+        },
+        {
+          "name": "elevate:2_butanone",
+          "pass": true,
+          "detail": 1.8096876847814334
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 0.09871483268129075
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "cytochrome_p450_detox": 0.23470312500000007,
+            "lipid_peroxidation": 0.15120000000000006,
+            "fatty_acid_oxidation": 0.17919999999999994
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_uremia_ckd_stage5",
+      "trap": "atlas_adjacent",
+      "difficulty": "hard",
+      "disease": "uremic syndrome stage 5 CKD",
+      "disease_id": "custom::uremic_syndrome_stage_5_ckd",
+      "location": "kidney",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.295797382730077,
+      "mechanism_confidence": 0.7000000000000001,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "kidney",
+      "top_vocs": [
+        {
+          "voc_id": "ammonia",
+          "log2fc": 2.295797382730077
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.778934928240937
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.21249402816347543
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.13325054877775322
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.11959271406141694
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.09300100053531614
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::uremic_syndrome_stage_5_ckd"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.7000000000000001,
+            "peak": 2.295797382730077
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.295797382730077
+        },
+        {
+          "name": "elevate:ammonia",
+          "pass": true,
+          "detail": 2.295797382730077
+        },
+        {
+          "name": "elevate:phenol",
+          "pass": true,
+          "detail": 0.21249402816347543
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "urea_cycle": 0.3686400000000001,
+            "microbial_proteolysis_putrefaction": 0.15120000000000006,
+            "gut_microbiome_fermentation": 0.1
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": " [VOC hallmark softened to pathway-plausible panel members after hard-break audit.]"
+    },
+    {
+      "id": "hard_septic_shock",
+      "trap": "acute_systemic",
+      "difficulty": "hard",
+      "disease": "septic shock",
+      "disease_id": "sepsis",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 1.9302512202116262,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "infectious",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "hexanal",
+          "log2fc": 1.9302512202116262
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": 0.5808014991962616
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.35667550373344425
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.3118015502027902
+        },
+        {
+          "voc_id": "crotonaldehyde",
+          "log2fc": 0.20242778071654888
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.16246654391783868
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "sepsis"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 1.9302512202116262
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 1.9302512202116262
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 0.3118015502027902
+        },
+        {
+          "name": "elevate:ammonia",
+          "pass": true,
+          "detail": 0.35667550373344425
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.1,
+            "apoptosis_necrosis": 0.09861818181818181,
+            "glycolysis_warburg": 0.016666666666666666,
+            "urea_cycle": 0.0
+          }
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_covid_long",
+      "trap": "post_infectious",
+      "difficulty": "hard",
+      "disease": "long COVID with dysautonomia",
+      "disease_id": "custom::long_covid_with_dysautonomia",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.3772181331631415,
+      "mechanism_confidence": 0.65,
+      "zero_shot_mode": "mechanism",
+      "category": "infectious",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 2.3772181331631415
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 0.23258556893335355
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.15235271406141693
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.1185597071916744
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::long_covid_with_dysautonomia"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.65,
+            "peak": 2.3772181331631415
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.3772181331631415
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 0.23258556893335355
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 0.05927810870498425
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.12480000000000002,
+            "neuroinflammation": 0.16770833333333332,
+            "brain_energy_metabolism": 0.07679999999999998,
+            "glycolysis_warburg": 0.055199999999999964
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_conflicting_comorbidity",
+      "trap": "comorbidity_conflict",
+      "difficulty": "hard",
+      "disease": "type 2 diabetes",
+      "disease_id": "type_2_diabetes",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 4.836501267717121,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "hexanal",
+          "log2fc": 4.836501267717121
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.819427754358179
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 4.2618428745785275
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 3.8216746252752025
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.8595849195151648
+        },
+        {
+          "voc_id": "ethane",
+          "log2fc": 1.3876735796518151
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.8511251840051998
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.660673154319725
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "type_2_diabetes"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 4.836501267717121
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 4.2618428745785275
+        }
+      ],
+      "notes": "Atlas disease with heavy comorbidity fusion \u2014 acetone should survive."
+    },
+    {
+      "id": "hard_gene_trap_egfr",
+      "trap": "gene_as_disease",
+      "difficulty": "hard",
+      "disease": "EGFR",
+      "disease_id": "custom::egfr",
+      "location": "lung",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": "near_healthy_fallback",
+      "category": "unspecified",
+      "default_site": null,
+      "top_vocs": [
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.11959271406141694
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 0.09782389119533565
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "log2fc": -0.059579200407379365
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::egfr"
+        },
+        {
+          "name": "near_healthy_fallback",
+          "pass": true,
+          "detail": {
+            "mode": "near_healthy_fallback",
+            "peak": 0.16727054877775338
+          }
+        },
+        {
+          "name": "near_healthy",
+          "pass": true,
+          "detail": {
+            "peak": 0.16727054877775338,
+            "threshold": 0.5
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_drug_name_trap",
+      "trap": "drug_as_disease",
+      "difficulty": "hard",
+      "disease": "metformin toxicity",
+      "disease_id": "custom::metformin_toxicity",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.187274368155507,
+      "mechanism_confidence": 0.65,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.187274368155507
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 2.0381332146532443
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 1.4663484993888078
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16842596237822716
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16700261938849906
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16463007822912726
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12744402816347547
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.1055748105180767
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::metformin_toxicity"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.65,
+            "peak": 2.187274368155507
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.187274368155507
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 1.4663484993888078
+        },
+        {
+          "name": "elevate:ammonia",
+          "pass": true,
+          "detail": 2.0381332146532443
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "ketone_body_metabolism": 0.3375,
+            "urea_cycle": 0.19521666666666668,
+            "glycolysis_warburg": 0.13385416666666666
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Lactic acidosis / metabolic crisis cue via toxicity+metformin context."
+    },
+    {
+      "id": "hard_empty_description_noise",
+      "trap": "noise_tokens",
+      "difficulty": "hard",
+      "disease": "patient presents with malaise and fatigue syndrome Z9",
+      "disease_id": "custom::patient_presents_with_malaise_and_fatigue_syndrome_z9",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": "near_healthy_fallback",
+      "category": "unspecified",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.11959271406141694
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "log2fc": -0.059579200407379365
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::patient_presents_with_malaise_and_fatigue_syndrome_z9"
+        },
+        {
+          "name": "near_healthy_fallback",
+          "pass": true,
+          "detail": {
+            "mode": "near_healthy_fallback",
+            "peak": 0.16727054877775338
+          }
+        },
+        {
+          "name": "near_healthy",
+          "pass": true,
+          "detail": {
+            "peak": 0.16727054877775338,
+            "threshold": 0.5
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Non-specific symptoms should not invent a strong VOC panel."
+    },
+    {
+      "id": "hard_opposite_direction_risk",
+      "trap": "suppress_not_elevate",
+      "difficulty": "hard",
+      "disease": "hypothyroidism severe untreated",
+      "disease_id": "custom::hypothyroidism_severe_untreated",
+      "location": "endocrine gland",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 1.778934928240937,
+      "mechanism_confidence": 0.6000000000000001,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "endocrine gland",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 1.778934928240937
+        },
+        {
+          "voc_id": "isoprene",
+          "log2fc": -0.9046869305858359
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 0.28919123790101114
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.134082714061417
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.12744402816347547
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::hypothyroidism_severe_untreated"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.6000000000000001,
+            "peak": 1.778934928240937
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 1.778934928240937
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 0.28919123790101114
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "mevalonate_cholesterol": 0.07679999999999998,
+            "fatty_acid_oxidation": 0.15120000000000006,
+            "lipid_peroxidation": 0.055199999999999964,
+            "ketone_body_metabolism": 0.24
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Low metabolic rate \u2192 isoprene often down; easy to only elevate aldehydes."
+    },
+    {
+      "id": "hard_mixed_cancer_infection",
+      "trap": "mixed_categories",
+      "difficulty": "hard",
+      "disease": "lung cancer with concurrent bacterial pneumonia",
+      "disease_id": "custom::lung_cancer_with_concurrent_bacterial_pneumonia",
+      "location": "lung",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.4696199229064124,
+      "mechanism_confidence": 0.62,
+      "zero_shot_mode": "mechanism",
+      "category": "cancer",
+      "default_site": "lung",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.4696199229064124
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.2349746626739306
+        },
+        {
+          "voc_id": "ethanol",
+          "log2fc": 1.341018528398871
+        },
+        {
+          "voc_id": "acetaldehyde",
+          "log2fc": 0.4266825216810976
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1853512681975723
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.1740363987549286
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::lung_cancer_with_concurrent_bacterial_pneumonia"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.62,
+            "peak": 3.4696199229064124
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.4696199229064124
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.2349746626739306
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.4696199229064124
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.15600000000000003,
+            "glycolysis_warburg": 0.36878333333333324,
+            "apoptosis_necrosis": 0.12458269818181819,
+            "cytochrome_p450_detox": 0.04224000000000004
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_eponym_only_behcet",
+      "trap": "eponym_no_token",
+      "difficulty": "hard",
+      "disease": "Beh\u00e7et disease",
+      "disease_id": "custom::beh_et_disease",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.4283586735740097,
+      "mechanism_confidence": 0.82,
+      "zero_shot_mode": "mechanism",
+      "category": "inflammatory",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 3.4283586735740097
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 2.6648162028736246
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.16663271406141678
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.15812992377775345
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.13032850766835472
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::beh_et_disease"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.82,
+            "peak": 3.4283586735740097
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.4283586735740097
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 2.6648162028736246
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 3.4283586735740097
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.17919999999999994,
+            "apoptosis_necrosis": 0.16320909090909094,
+            "gut_microbiome_fermentation": 0.07679999999999998
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_eponym_only_wegeners",
+      "trap": "eponym_no_token",
+      "difficulty": "hard",
+      "disease": "Wegener granulomatosis",
+      "disease_id": "custom::wegener_granulomatosis",
+      "location": "lung",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 4.0656518261890895,
+      "mechanism_confidence": 0.82,
+      "zero_shot_mode": "mechanism",
+      "category": "inflammatory",
+      "default_site": "lung",
+      "top_vocs": [
+        {
+          "voc_id": "pentane",
+          "log2fc": 4.0656518261890895
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 3.705130544801065
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.1881052140614168
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "nonanal",
+          "log2fc": 0.15683500972104486
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::wegener_granulomatosis"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.82,
+            "peak": 4.0656518261890895
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 4.0656518261890895
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 3.705130544801065
+        },
+        {
+          "name": "elevate:pentane",
+          "pass": true,
+          "detail": 4.0656518261890895
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "lipid_peroxidation": 0.261,
+            "apoptosis_necrosis": 0.16320909090909094,
+            "cytochrome_p450_detox": 0.09215999999999998
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_user_wrong_genes",
+      "trap": "misleading_user_genes",
+      "difficulty": "hard",
+      "disease": "suspected mitochondrial disease",
+      "disease_id": "custom::suspected_mitochondrial_disease",
+      "location": "brain",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 2.531634626162212,
+      "mechanism_confidence": 0.65,
+      "zero_shot_mode": "mechanism",
+      "category": "metabolic",
+      "default_site": "brain",
+      "top_vocs": [
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 2.531634626162212
+        },
+        {
+          "voc_id": "acetone",
+          "log2fc": 1.9568915708590902
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 0.950578433580076
+        },
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.1691996193369252
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16777627634719744
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.1654037351878256
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 0.16025990060121093
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.13745281051807673
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::suspected_mitochondrial_disease"
+        },
+        {
+          "name": "mechanism_mode",
+          "pass": true,
+          "detail": {
+            "mode": "mechanism",
+            "mechanism_confidence": 0.65,
+            "peak": 2.531634626162212
+          }
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 2.531634626162212
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 1.9568915708590902
+        },
+        {
+          "name": "elevate:hexanal",
+          "pass": true,
+          "detail": 0.16025990060121093
+        },
+        {
+          "name": "pathway_any",
+          "pass": true,
+          "detail": {
+            "brain_energy_metabolism": 0.169,
+            "ketone_body_metabolism": 0.3735,
+            "lipid_peroxidation": 0.12143999999999998,
+            "fatty_acid_oxidation": 0.24627857142857149
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": "Wrong cancer genes supplied; description should still dominate mitochondrial chemistry."
+    },
+    {
+      "id": "hard_tiny_signal_control",
+      "trap": "near_healthy_control",
+      "difficulty": "medium",
+      "disease": "benign essential freckling syndrome ZX-0",
+      "disease_id": "custom::benign_essential_freckling_syndrome_zx_0",
+      "location": "skin of body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 0.16727054877775338,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": "near_healthy_fallback",
+      "category": "unspecified",
+      "default_site": "skin of body",
+      "top_vocs": [
+        {
+          "voc_id": "allyl_methyl_sulfide",
+          "log2fc": -0.16727054877775338
+        },
+        {
+          "voc_id": "methyl_acetate",
+          "log2fc": -0.16584720578802575
+        },
+        {
+          "voc_id": "acetonitrile",
+          "log2fc": -0.16347466462865382
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": -0.1482134831642181
+        },
+        {
+          "voc_id": "octane",
+          "log2fc": 0.11959271406141694
+        },
+        {
+          "voc_id": "phenol",
+          "log2fc": 0.10747694516835488
+        },
+        {
+          "voc_id": "ethylbenzene",
+          "log2fc": -0.059579200407379365
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 0.053427246056089464
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "custom::benign_essential_freckling_syndrome_zx_0"
+        },
+        {
+          "name": "near_healthy_fallback",
+          "pass": true,
+          "detail": {
+            "mode": "near_healthy_fallback",
+            "peak": 0.16727054877775338
+          }
+        },
+        {
+          "name": "near_healthy",
+          "pass": true,
+          "detail": {
+            "peak": 0.16727054877775338,
+            "threshold": 0.45
+          }
+        },
+        {
+          "name": "no_voc_prior_leak",
+          "pass": true,
+          "detail": {}
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "hard_atlas_t2d_sanity",
+      "trap": "sanity",
+      "difficulty": "easy",
+      "disease": "type 2 diabetes",
+      "disease_id": "type_2_diabetes",
+      "location": "Systemic / whole body",
+      "passed": true,
+      "failed_checks": [],
+      "peak_abs_log2fc": 3.8442737462503196,
+      "mechanism_confidence": 0.0,
+      "zero_shot_mode": null,
+      "category": "metabolic",
+      "default_site": "systemic",
+      "top_vocs": [
+        {
+          "voc_id": "acetone",
+          "log2fc": 3.8442737462503196
+        },
+        {
+          "voc_id": "2_butanone",
+          "log2fc": 3.562739025748316
+        },
+        {
+          "voc_id": "ammonia",
+          "log2fc": 1.660443572251944
+        },
+        {
+          "voc_id": "pentane",
+          "log2fc": 1.4346079914279752
+        },
+        {
+          "voc_id": "hexanal",
+          "log2fc": 0.6485094065832774
+        },
+        {
+          "voc_id": "isopropanol",
+          "log2fc": 0.4619048785850453
+        },
+        {
+          "voc_id": "2_pentanone",
+          "log2fc": 0.41299906112402823
+        },
+        {
+          "voc_id": "ethanol",
+          "log2fc": 0.2999492804591231
+        }
+      ],
+      "checks": [
+        {
+          "name": "unresolved",
+          "pass": true,
+          "detail": "type_2_diabetes"
+        },
+        {
+          "name": "min_peak_abs_log2fc",
+          "pass": true,
+          "detail": 3.8442737462503196
+        },
+        {
+          "name": "elevate:acetone",
+          "pass": true,
+          "detail": 3.8442737462503196
+        }
+      ],
+      "notes": null
+    }
+  ]
+}

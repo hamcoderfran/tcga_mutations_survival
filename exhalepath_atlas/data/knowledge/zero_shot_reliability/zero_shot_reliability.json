@@ -1076,21 +1076,21 @@
     "n_diseases": 110,
     "n_passed": 108,
     "pass_rate": 0.9818181818181818,
-    "mean_directional_accuracy": 0.8540758317971237,
+    "mean_directional_accuracy": 0.818894127536472,
     "pass": true,
     "diseases": [
       {
         "disease_id": "lung_adenocarcinoma",
         "category": "cancer",
         "n_signed_priors": 16,
-        "directional_accuracy": 0.875,
+        "directional_accuracy": 0.9375,
         "pass": true
       },
       {
         "disease_id": "breast_invasive_carcinoma",
         "category": "cancer",
         "n_signed_priors": 16,
-        "directional_accuracy": 0.6875,
+        "directional_accuracy": 0.625,
         "pass": true
       },
       {
@@ -1328,21 +1328,21 @@
         "disease_id": "copd",
         "category": "pulmonary",
         "n_signed_priors": 21,
-        "directional_accuracy": 0.7619047619047619,
+        "directional_accuracy": 0.7142857142857143,
         "pass": true
       },
       {
         "disease_id": "asthma",
         "category": "pulmonary",
         "n_signed_priors": 19,
-        "directional_accuracy": 0.47368421052631576,
+        "directional_accuracy": 0.5263157894736842,
         "pass": false
       },
       {
         "disease_id": "ild",
         "category": "pulmonary",
         "n_signed_priors": 8,
-        "directional_accuracy": 0.875,
+        "directional_accuracy": 1.0,
         "pass": true
       },
       {
@@ -1412,7 +1412,7 @@
         "disease_id": "osteoarthritis",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
@@ -1482,14 +1482,14 @@
         "disease_id": "pcos",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "infertility",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
@@ -1510,14 +1510,14 @@
         "disease_id": "chronic_pain",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "osteoporosis",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
@@ -1531,14 +1531,14 @@
         "disease_id": "anemia",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "sickle_cell",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
@@ -1552,35 +1552,35 @@
         "disease_id": "down_syndrome",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "hearing_loss",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "macular_degeneration",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "glaucoma",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "diabetic_retinopathy",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
@@ -1615,21 +1615,21 @@
         "disease_id": "alcohol_use",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "opioid_use",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
         "disease_id": "tobacco_use",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
@@ -1713,7 +1713,7 @@
         "disease_id": "breast_benign",
         "category": "unspecified",
         "n_signed_priors": 4,
-        "directional_accuracy": 1.0,
+        "directional_accuracy": 0.75,
         "pass": true
       },
       {
