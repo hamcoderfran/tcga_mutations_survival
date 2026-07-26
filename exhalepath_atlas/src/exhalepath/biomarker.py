@@ -149,6 +149,10 @@ class ExhaleBiomarkerEngine:
         top_n: int = 50,
         stage: str | None = None,
         genes: list[str] | None = None,
+        pathway_overrides: dict[str, float] | None = None,
+        cell_state_fractions: dict[str, float] | None = None,
+        cell_state_activity: dict[str, float] | None = None,
+        description: str | None = None,
         affected_fraction: float | None = None,
         affected_activity: float | None = None,
         mode: str = "hybrid",
@@ -159,15 +163,21 @@ class ExhaleBiomarkerEngine:
         explain: bool = True,
         comorbidities: list[str] | None = None,
         comorbidity_weight: float = 0.65,
+        copy_voc_priors_from_neighbor: bool = False,
     ) -> BiomarkerReport:
-        loc = resolve_location(location) if location else resolve_location(
-            self.kb.resolve_disease(disease).get("default_site") or "systemic"
+        disease_obj = self.kb.resolve_disease(
+            disease,
+            location_hint=location,
+            description=description,
+            copy_voc_priors=copy_voc_priors_from_neighbor,
         )
-        disease_obj = self.kb.resolve_disease(disease)
+        loc = resolve_location(location) if location else resolve_location(
+            disease_obj.get("default_site") or "systemic"
+        )
 
         # Place affected cells at the requested location
-        cell_activity = {}
-        cell_fractions = {}
+        cell_activity = dict(cell_state_activity or {})
+        cell_fractions = dict(cell_state_fractions or {})
         if affected_fraction is not None or affected_activity is not None:
             # Bias dominant tissue-linked states
             tissue = (loc.get("tissue_id") or "").lower()
@@ -175,8 +185,8 @@ class ExhaleBiomarkerEngine:
             frac = float(affected_fraction) if affected_fraction is not None else 0.35
             act = float(affected_activity) if affected_activity is not None else 1.0
             for sid in state_hints:
-                cell_fractions[sid] = max(frac, 0.05)
-                cell_activity[sid] = act
+                cell_fractions[sid] = max(frac, cell_fractions.get(sid, 0.0), 0.05)
+                cell_activity[sid] = max(act, cell_activity.get(sid, 0.0))
 
         tumor = TumorContext(
             primary_site=loc.get("name") or loc.get("tissue_id"),
@@ -186,8 +196,10 @@ class ExhaleBiomarkerEngine:
         )
         query = DiseaseQuery(
             disease=disease,
+            description=description,
             tumor=tumor,
             mutated_genes=genes or [],
+            pathway_overrides=dict(pathway_overrides or {}),
             cell_state_fractions=cell_fractions,
             cell_state_activity=cell_activity,
             mode=mode,  # type: ignore[arg-type]
@@ -199,6 +211,7 @@ class ExhaleBiomarkerEngine:
             comorbidities=list(comorbidities or []),
             # Clamp out-of-range weights so CLI/NL typos never ValidationError.
             comorbidity_weight=max(0.0, min(1.5, float(comorbidity_weight))),
+            copy_voc_priors_from_neighbor=copy_voc_priors_from_neighbor,
         )
         result = self.predictor.predict(query)
         # Rank by absolute delta ppb (quantity change), then |log2fc|

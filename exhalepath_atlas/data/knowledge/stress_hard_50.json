@@ -613,11 +613,13 @@
         "location": "systemic"
       },
       "expect": {
-        "near_healthy": true,
-        "max_abs_log2fc": 0.45,
-        "unresolved": true
+        "unresolved": true,
+        "must_elevate": [
+          "acetone"
+        ],
+        "notes_contains_optional": "metabolic zero-shot via category keyword"
       },
-      "notes": ""
+      "notes": "Contains metabolic cue \u2014 zero-shot should activate ketone pathways (not near-healthy)."
     },
     {
       "id": "cjd_oxidative",

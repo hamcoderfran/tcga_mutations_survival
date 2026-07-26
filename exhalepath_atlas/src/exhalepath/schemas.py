@@ -39,11 +39,19 @@ class DiseaseQuery(BaseModel):
     """User-facing query for exhaled VOC prediction."""
 
     disease: str = Field(..., description="Disease name, alias, MONDO id, or TCGA project")
+    description: Optional[str] = Field(
+        default=None,
+        description="Optional free-text phenotype / mechanism description for zero-shot",
+    )
     tumor: Optional[TumorContext] = None
     mutated_genes: list[str] = Field(default_factory=list)
     pathway_overrides: dict[str, float] = Field(
         default_factory=dict,
         description="Optional pathway_id → activity score overrides",
+    )
+    copy_voc_priors_from_neighbor: bool = Field(
+        default=False,
+        description="If true, ontology NN may copy VOC priors (default: mechanism only)",
     )
     # Optional single-cell informed overrides (fractions 0–1, activity ≥0)
     cell_state_fractions: dict[str, float] = Field(

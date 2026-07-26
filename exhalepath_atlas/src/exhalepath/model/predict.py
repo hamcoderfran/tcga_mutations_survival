@@ -14,6 +14,7 @@ from ..knowledge.comorbidity import (
     merge_disease_with_comorbidities,
     resolve_comorbid_diseases,
 )
+from ..knowledge.disease_gene_index import lookup_disease_genes
 from ..knowledge.loader import KnowledgeBase, default_knowledge
 from ..pathways.score import score_pathways
 from ..physio.census_fractions import census_cell_state_fractions_for_disease
@@ -123,7 +124,12 @@ class ExhalePathPredictor:
             voc_id=voc_id,
             tumor=query.tumor,
         )
-        confidence = 0.45 if disease.get("_unresolved") else 0.62
+        mech_conf = float(disease.get("_mechanism_confidence") or 0.0)
+        if disease.get("_unresolved"):
+            # Zero-shot: scale confidence by mechanism evidence strength
+            confidence = 0.28 + 0.45 * min(max(mech_conf, 0.0), 1.0)
+        else:
+            confidence = 0.62
 
         if self._bundle and voc_id in self._bundle.get("models", {}):
             model = self._bundle["models"][voc_id]
@@ -168,7 +174,15 @@ class ExhalePathPredictor:
         if isinstance(query, dict):
             query = DiseaseQuery.model_validate(query)
 
-        disease = self.kb.resolve_disease(query.disease)
+        loc_hint = None
+        if query.tumor and query.tumor.primary_site:
+            loc_hint = query.tumor.primary_site
+        disease = self.kb.resolve_disease(
+            query.disease,
+            location_hint=loc_hint,
+            description=query.description,
+            copy_voc_priors=bool(query.copy_voc_priors_from_neighbor),
+        )
         if query.comorbidities:
             comorbid = resolve_comorbid_diseases(self.kb, list(query.comorbidities))
             disease = merge_disease_with_comorbidities(
@@ -180,6 +194,19 @@ class ExhalePathPredictor:
         # Offline OT/GDC/driver priors always available (even when live OT is off)
         for g, s in self._offline_associated_genes(disease).items():
             assoc[g] = max(float(assoc.get(g, 0.0)), float(s))
+        # Free-text / rare-disease gene index (beyond atlas disease_id keys)
+        for g, s in lookup_disease_genes(
+            disease.get("name") or query.disease,
+            kb_datasources=self.kb.datasources,
+            atlas_disease_id=None
+            if disease.get("_unresolved")
+            else disease.get("disease_id"),
+        ).items():
+            assoc[g] = max(float(assoc.get(g, 0.0)), float(s))
+        for g, s in (disease.get("_associated_gene_scores") or {}).items():
+            assoc[str(g).upper()] = max(
+                float(assoc.get(str(g).upper(), 0.0)), float(s)
+            )
         # Also pull OT associations for comorbidities (soft)
         if query.comorbidities and self.use_opentargets:
             for c in disease.get("_comorbidities") or []:
@@ -316,9 +343,35 @@ class ExhalePathPredictor:
                 f"(weight={query.comorbidity_weight})."
             )
         if disease.get("_unresolved"):
+            mode = disease.get("_zero_shot_mode") or "near_healthy_fallback"
+            mech_c = float(disease.get("_mechanism_confidence") or 0.0)
             notes.append(
-                f"Disease '{query.disease}' was not in the curated atlas; "
-                "used Open Targets associations (if available) + generic pathway scoring."
+                f"Disease '{query.disease}' was not in the curated atlas "
+                f"(zero-shot mode={mode}, mechanism_confidence={mech_c:.2f}). "
+                "Used token/category cues, ontology nearest-neighbor pathway transfer "
+                "(no VOC prior copy by default), and disease→gene index when available."
+            )
+            if mode == "near_healthy_fallback":
+                notes.append(
+                    "Uncertainty flag: no usable mechanism evidence — panel stays near-healthy. "
+                    "Supply genes, pathway overrides, tissue/cell fractions, or a phenotype description."
+                )
+            elif mech_c < 0.55:
+                notes.append(
+                    "Uncertainty flag: weak zero-shot mechanism evidence — interpret directional "
+                    "shifts cautiously."
+                )
+            if disease.get("_cell_state_donor_ids"):
+                notes.append(
+                    "Cell-state priors transferred from ontology neighbors: "
+                    + ", ".join(disease["_cell_state_donor_ids"])
+                )
+        if query.mutated_genes or query.pathway_overrides or query.cell_state_fractions:
+            notes.append(
+                "User mechanism inputs applied "
+                f"(genes={len(query.mutated_genes)}, "
+                f"pathway_overrides={len(query.pathway_overrides)}, "
+                f"cell_fractions={len(query.cell_state_fractions)})."
             )
         if self._bundle is None:
             notes.append("No trained calibrator found; using mechanistic/physiology models only.")
@@ -346,6 +399,14 @@ class ExhalePathPredictor:
                 "n_chains": len(physio_result.chain_fluxes) if physio_result else 0,
                 "comorbidities": disease.get("_comorbidities") or [],
                 "comorbidity_ids": disease.get("_comorbid_ids") or [],
+                "zero_shot": bool(disease.get("_zero_shot")),
+                "zero_shot_mode": disease.get("_zero_shot_mode"),
+                "mechanism_confidence": float(disease.get("_mechanism_confidence") or 0.0),
+                "zero_shot_evidence": disease.get("_zero_shot_evidence") or [],
+                "cell_state_donor_ids": disease.get("_cell_state_donor_ids") or [],
+                "category": disease.get("category"),
+                "default_site": disease.get("default_site"),
+                "unresolved": bool(disease.get("_unresolved")),
             },
         )
         return PredictionResult(bundle=bundle)

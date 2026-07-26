@@ -59,8 +59,10 @@ def estimate_cell_states(
 
         dens_mult = float(st.get("disease_density_mult", {}).get(did, 1.0))
         act_mult = float(st.get("disease_activity_mult", {}).get(did, 1.0))
-        # Soft-max with comorbidity disease_ids when fused
-        for cid in disease.get("_comorbid_ids") or []:
+        # Soft-max with comorbidity / zero-shot cell-state donor ids
+        donor_ids = list(disease.get("_comorbid_ids") or [])
+        donor_ids.extend(list(disease.get("_cell_state_donor_ids") or []))
+        for cid in donor_ids:
             dens_mult = max(
                 dens_mult, float(st.get("disease_density_mult", {}).get(cid, 1.0))
             )

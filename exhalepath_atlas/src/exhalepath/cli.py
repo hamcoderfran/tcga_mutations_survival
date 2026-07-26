@@ -878,6 +878,21 @@ def predict_cmd(
         rprint("[green]Wrote report:[/green]", json.dumps({k: str(v) for k, v in paths.items()}, indent=2))
 
 
+def _parse_kv_floats(spec: Optional[str]) -> dict[str, float]:
+    out: dict[str, float] = {}
+    if not spec:
+        return out
+    for part in spec.split(","):
+        if "=" not in part:
+            continue
+        k, v = part.split("=", 1)
+        try:
+            out[k.strip()] = float(v)
+        except ValueError:
+            continue
+    return out
+
+
 @app.command("biomarker")
 def biomarker_cmd(
     disease: str = typer.Argument(..., help="Disease name / atlas id / alias"),
@@ -891,6 +906,20 @@ def biomarker_cmd(
     stage: Optional[str] = typer.Option(None, help="Tumor stage, e.g. II, IIIA, IV"),
     genes: Optional[str] = typer.Option(
         None, help="Comma-separated mutated genes, e.g. KRAS,TP53"
+    ),
+    description: Optional[str] = typer.Option(
+        None,
+        "--description",
+        "-d",
+        help="Phenotype/mechanism text for zero-shot (e.g. 'ketotic mitochondrial stress')",
+    ),
+    pathway_overrides: Optional[str] = typer.Option(
+        None,
+        help="pathway=score pairs, e.g. ketone_body_metabolism=1.8,lipid_peroxidation=1.4",
+    ),
+    cell_fractions: Optional[str] = typer.Option(
+        None,
+        help="cell_state=fraction pairs, e.g. hepatocyte_ketogenic=0.5,oxidative_stress_cell=0.3",
     ),
     affected_fraction: Optional[float] = typer.Option(
         None, help="Density of affected cells at location (0–1)"
@@ -912,6 +941,10 @@ def biomarker_cmd(
         0.65, help="Relative weight of comorbidity priors (0–1.5)"
     ),
     metastatic: bool = typer.Option(False),
+    copy_voc_priors: bool = typer.Option(
+        False,
+        help="Allow ontology NN to copy VOC priors (default: mechanism-only transfer)",
+    ),
     out_dir: Optional[Path] = typer.Option(
         None, help="Write top-50 biomarker CSV/JSON/plots here"
     ),
@@ -925,6 +958,7 @@ def biomarker_cmd(
 
     Models ~100 atlas diseases × full-body tissue map × 50-VOC panel.
     Comorbidities fuse pathway bias, VOC priors, and cell-state modulation.
+    Unseen diseases use zero-shot mechanism transfer (no VOC prior copy by default).
     """
     from .biomarker import ExhaleBiomarkerEngine
     from .viz.report import save_biomarker_report
@@ -944,6 +978,9 @@ def biomarker_cmd(
         top_n=top,
         stage=stage,
         genes=[g.strip().upper() for g in genes.split(",")] if genes else None,
+        pathway_overrides=_parse_kv_floats(pathway_overrides) or None,
+        cell_state_fractions=_parse_kv_floats(cell_fractions) or None,
+        description=description,
         affected_fraction=affected_fraction,
         affected_activity=affected_activity,
         mode=mode_norm,
@@ -954,6 +991,7 @@ def biomarker_cmd(
         explain=not no_explain,
         comorbidities=comorb,
         comorbidity_weight=comorbidity_weight,
+        copy_voc_priors_from_neighbor=copy_voc_priors,
     )
     comorb_label = ""
     meta = report.result.bundle.metadata or {}
@@ -989,7 +1027,13 @@ def biomarker_cmd(
         f"[dim]Modeled {report.n_vocs_modeled} VOCs · showing top {len(report.top_vocs)} "
         f"by |Δppb| · {report.model_version}[/dim]"
     )
-    for note in report.notes[:6]:
+    zs = meta.get("zero_shot")
+    if zs:
+        rprint(
+            f"[yellow]Zero-shot[/yellow] mode={meta.get('zero_shot_mode')} "
+            f"mechanism_confidence={meta.get('mechanism_confidence')}"
+        )
+    for note in report.notes[:8]:
         rprint(f"[dim]• {note}[/dim]")
     if report.mechanisms:
         rprint("[cyan]Why (mechanisms)[/cyan]")
@@ -1001,6 +1045,138 @@ def biomarker_cmd(
             "[green]Wrote biomarker report:[/green]",
             json.dumps({k: str(v) for k, v in paths.items()}, indent=2),
         )
+
+
+@app.command("predict-novel")
+def predict_novel_cmd(
+    disease: str = typer.Argument(..., help="Novel / unseen disease name"),
+    location: Optional[str] = typer.Option(
+        None, "--location", "-l", help="Affected tissue / organ"
+    ),
+    description: Optional[str] = typer.Option(
+        None, "--description", "-d", help="Phenotype / mechanism description"
+    ),
+    genes: Optional[str] = typer.Option(
+        None, help="Comma-separated mechanism genes, e.g. HMGCS2,CPT1A"
+    ),
+    pathway_overrides: Optional[str] = typer.Option(
+        None, help="pathway=score pairs for first-class mechanism input"
+    ),
+    cell_fractions: Optional[str] = typer.Option(
+        None, help="cell_state=fraction pairs"
+    ),
+    affected_fraction: Optional[float] = typer.Option(
+        0.35, help="Default affected-cell density at location for novel diseases"
+    ),
+    top: int = typer.Option(15, help="Top-N VOCs to display"),
+    mode: str = typer.Option("hybrid"),
+    out_dir: Optional[Path] = typer.Option(None, help="Write report directory"),
+    copy_voc_priors: bool = typer.Option(
+        False, help="Allow VOC prior copy from ontology neighbor (off by default)"
+    ),
+):
+    """
+    Zero-shot novel-disease path: mechanism-first prediction with uncertainty flags.
+
+    Prefer genes / pathway overrides / tissue / description over bare names.
+    VOC priors are not copied from atlas neighbors unless --copy-voc-priors.
+    """
+    from .biomarker import ExhaleBiomarkerEngine
+    from .viz.report import save_biomarker_report
+
+    engine = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
+    mode_norm = mode if mode in {"physiology", "hybrid", "legacy"} else "hybrid"
+    report = engine.predict(
+        disease,
+        location=location,
+        top_n=top,
+        genes=[g.strip().upper() for g in genes.split(",")] if genes else None,
+        pathway_overrides=_parse_kv_floats(pathway_overrides) or None,
+        cell_state_fractions=_parse_kv_floats(cell_fractions) or None,
+        description=description,
+        affected_fraction=affected_fraction,
+        mode=mode_norm,
+        explain=True,
+        copy_voc_priors_from_neighbor=copy_voc_priors,
+    )
+    meta = report.result.bundle.metadata or {}
+    table = Table(
+        title=(
+            f"Zero-shot · {report.disease_name} @ "
+            f"{report.location.get('name') or location or 'systemic'}"
+        )
+    )
+    table.add_column("#", justify="right")
+    table.add_column("VOC")
+    table.add_column("Δ ppb", justify="right")
+    table.add_column("Fold", justify="right")
+    table.add_column("Conf", justify="right")
+    table.add_column("Drivers")
+    for i, p in enumerate(report.top_vocs, 1):
+        table.add_row(
+            str(i),
+            p.name,
+            f"{p.delta_ppb:+.2f}",
+            f"{p.fold_change:.2f}x",
+            f"{p.confidence:.2f}",
+            ", ".join(p.top_pathway_drivers[:3]) or "—",
+        )
+    rprint(table)
+    rprint(
+        f"[yellow]zero_shot[/yellow] mode={meta.get('zero_shot_mode')} "
+        f"mechanism_confidence={meta.get('mechanism_confidence')} "
+        f"category={meta.get('category')} site={meta.get('default_site')}"
+    )
+    if meta.get("zero_shot_evidence"):
+        rprint("[cyan]Evidence[/cyan]")
+        for ev in meta["zero_shot_evidence"][:6]:
+            rprint(f"  • {ev}")
+    for note in report.notes[:8]:
+        rprint(f"[dim]• {note}[/dim]")
+    if out_dir:
+        paths = save_biomarker_report(report, out_dir)
+        rprint("[green]Wrote:[/green]", json.dumps({k: str(v) for k, v in paths.items()}))
+
+
+@app.command("eval-zero-shot-reliability")
+def eval_zero_shot_reliability_cmd(
+    out_dir: Path = typer.Option(Path("runs/zero_shot_reliability")),
+    mode: str = typer.Option("hybrid"),
+    profiles: Optional[Path] = typer.Option(
+        None, help="Override zero_shot_holdout_profiles.json"
+    ),
+    max_ldo: Optional[int] = typer.Option(
+        None, help="Optional cap on leave-disease-out atlas diseases"
+    ),
+):
+    """Held-out rare-disease zero-shot eval + leave-disease-out prior-direction audit."""
+    from .eval.zero_shot_reliability import evaluate_zero_shot_reliability
+
+    report = evaluate_zero_shot_reliability(
+        out_dir=out_dir,
+        profiles_path=profiles,
+        mode=mode,
+        max_ldo_diseases=max_ldo,
+    )
+    h = report["holdout"]
+    ldo = report["leave_disease_out"]
+    rprint("[bold]Zero-shot reliability[/bold]")
+    rprint(
+        f"  holdout: [green]{100 * h['pass_rate']:.0f}%[/green] "
+        f"({h['n_passed']}/{h['n_profiles']})"
+    )
+    if ldo.get("skipped"):
+        rprint(f"  leave-disease-out: skipped ({ldo.get('reason')})")
+    else:
+        rprint(
+            f"  leave-disease-out: [green]{100 * ldo['pass_rate']:.0f}%[/green] "
+            f"mean_dir={ldo['mean_directional_accuracy']:.3f} "
+            f"({ldo['n_passed']}/{ldo['n_diseases']})"
+        )
+    rprint(f"  overall pass: {report['pass']}")
+    rprint(f"  report: {out_dir / 'ZERO_SHOT_RELIABILITY.md'}")
+    if not report["pass"]:
+        raise typer.Exit(code=1)
 
 
 @app.command("cjd-profile")
@@ -1261,6 +1437,8 @@ def main(argv: Optional[list[str]] = None):
         "train-chembl",
         "predict",
         "biomarker",
+        "predict-novel",
+        "eval-zero-shot-reliability",
         "ask",
         "nl",
         "cjd-profile",

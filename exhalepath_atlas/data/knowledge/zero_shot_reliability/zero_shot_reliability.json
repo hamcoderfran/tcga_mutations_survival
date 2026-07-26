@@ -1,0 +1,1856 @@
+{
+  "holdout": {
+    "n_profiles": 12,
+    "n_passed": 12,
+    "pass_rate": 1.0,
+    "pass": true,
+    "profiles": [
+      {
+        "id": "msud",
+        "disease": "Maple syrup urine disease",
+        "disease_id": "custom::maple_syrup_urine_disease",
+        "location": "Systemic / whole body",
+        "passed": true,
+        "peak_abs_log2fc": 3.5563112435317668,
+        "mechanism_confidence": 0.86,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 3.5563112435317668
+          },
+          {
+            "voc_id": "acetone",
+            "log2fc": 2.9585281574084648
+          },
+          {
+            "voc_id": "ammonia",
+            "log2fc": 1.8332055989781975
+          },
+          {
+            "voc_id": "pentane",
+            "log2fc": 1.1115289240808297
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16912369832046678
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.1677003553307391
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::maple_syrup_urine_disease"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.86
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.86
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 3.5563112435317668
+          },
+          {
+            "name": "elevate:acetone",
+            "pass": true,
+            "detail": 2.9585281574084648
+          },
+          {
+            "name": "elevate:2_butanone",
+            "pass": true,
+            "detail": 3.5563112435317668
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "ketone_body_metabolism": 0.49129999999999996,
+              "fatty_acid_oxidation": 0.17919999999999994
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Maple syrup urine disease' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.86). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "wilson",
+        "disease": "Wilson disease",
+        "disease_id": "custom::wilson_disease",
+        "location": "liver",
+        "passed": true,
+        "peak_abs_log2fc": 2.5665414182212656,
+        "mechanism_confidence": 0.88,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "pentane",
+            "log2fc": 2.5665414182212656
+          },
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.7789322249716324
+          },
+          {
+            "voc_id": "ammonia",
+            "log2fc": 1.3805183544630428
+          },
+          {
+            "voc_id": "dms",
+            "log2fc": 1.3555216435367896
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16666543787045118
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16524209488072364
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::wilson_disease"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.88
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.88
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 2.5665414182212656
+          },
+          {
+            "name": "elevate:pentane",
+            "pass": true,
+            "detail": 2.5665414182212656
+          },
+          {
+            "name": "elevate:ammonia",
+            "pass": true,
+            "detail": 1.3805183544630428
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "cytochrome_p450_detox": 0.261,
+              "lipid_peroxidation": 0.15120000000000006,
+              "urea_cycle": 0.09983999999999997
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Wilson disease' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.88). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "pbc",
+        "disease": "Primary biliary cholangitis",
+        "disease_id": "custom::primary_biliary_cholangitis",
+        "location": "liver",
+        "passed": true,
+        "peak_abs_log2fc": 1.7789322249716324,
+        "mechanism_confidence": 0.82,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.7789322249716324
+          },
+          {
+            "voc_id": "dms",
+            "log2fc": 1.7603803984827955
+          },
+          {
+            "voc_id": "ammonia",
+            "log2fc": 1.5394402783645749
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16666543787045118
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16524209488072364
+          },
+          {
+            "voc_id": "acetonitrile",
+            "log2fc": -0.16286955372135178
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::primary_biliary_cholangitis"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.82
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.82
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 1.7789322249716324
+          },
+          {
+            "name": "elevate:ammonia",
+            "pass": true,
+            "detail": 1.5394402783645749
+          },
+          {
+            "name": "elevate:2_butanone",
+            "pass": true,
+            "detail": 1.7789322249716324
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "cytochrome_p450_detox": 0.3,
+              "methionine_transsulfuration": 0.20412000000000008
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Primary biliary cholangitis' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.82). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "lhon",
+        "disease": "Leber hereditary optic neuropathy",
+        "disease_id": "custom::leber_hereditary_optic_neuropathy",
+        "location": "eye",
+        "passed": true,
+        "peak_abs_log2fc": 4.0479143170067715,
+        "mechanism_confidence": 0.85,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "pentane",
+            "log2fc": 4.0479143170067715
+          },
+          {
+            "voc_id": "hexanal",
+            "log2fc": 2.12469426171964
+          },
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.784166094995736
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.1680442057364516
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.1666208627467239
+          },
+          {
+            "voc_id": "acetonitrile",
+            "log2fc": -0.16424832158735217
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::leber_hereditary_optic_neuropathy"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.85
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.85
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 4.0479143170067715
+          },
+          {
+            "name": "elevate:hexanal",
+            "pass": true,
+            "detail": 2.12469426171964
+          },
+          {
+            "name": "elevate:acetone",
+            "pass": true,
+            "detail": 0.12405154399672164
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "brain_energy_metabolism": 0.3373227272727273,
+              "lipid_peroxidation": 0.12480000000000002,
+              "ketone_body_metabolism": 0.24
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Leber hereditary optic neuropathy' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.85). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "otc",
+        "disease": "Ornithine transcarbamylase deficiency",
+        "disease_id": "custom::ornithine_transcarbamylase_deficiency",
+        "location": "liver",
+        "passed": true,
+        "peak_abs_log2fc": 3.1410667019217646,
+        "mechanism_confidence": 0.87,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "ammonia",
+            "log2fc": 3.1410667019217646
+          },
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.778934928240937
+          },
+          {
+            "voc_id": "dms",
+            "log2fc": 1.0237883788002202
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16727054877775338
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16584720578802575
+          },
+          {
+            "voc_id": "acetonitrile",
+            "log2fc": -0.16347466462865382
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::ornithine_transcarbamylase_deficiency"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.87
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.87
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 3.1410667019217646
+          },
+          {
+            "name": "elevate:ammonia",
+            "pass": true,
+            "detail": 3.1410667019217646
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "urea_cycle": 1.1645400000000001
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Ornithine transcarbamylase deficiency' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.87). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "aatd",
+        "disease": "Alpha-1 antitrypsin deficiency",
+        "disease_id": "custom::alpha_1_antitrypsin_deficiency",
+        "location": "lung",
+        "passed": true,
+        "peak_abs_log2fc": 4.232725862154384,
+        "mechanism_confidence": 0.86,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "pentane",
+            "log2fc": 4.232725862154384
+          },
+          {
+            "voc_id": "hexanal",
+            "log2fc": 3.8960353555992784
+          },
+          {
+            "voc_id": "octane",
+            "log2fc": 0.20222996992079176
+          },
+          {
+            "voc_id": "nonanal",
+            "log2fc": 0.17798857417417
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16727054877775338
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16584720578802575
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::alpha_1_antitrypsin_deficiency"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.86
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.86
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 4.232725862154384
+          },
+          {
+            "name": "elevate:hexanal",
+            "pass": true,
+            "detail": 3.8960353555992784
+          },
+          {
+            "name": "elevate:pentane",
+            "pass": true,
+            "detail": 4.232725862154384
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "lipid_peroxidation": 0.31480859375,
+              "cytochrome_p450_detox": 0.12
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Alpha-1 antitrypsin deficiency' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.86). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "fabry",
+        "disease": "Fabry disease",
+        "disease_id": "custom::fabry_disease",
+        "location": "Systemic / whole body",
+        "passed": true,
+        "peak_abs_log2fc": 1.778934928240937,
+        "mechanism_confidence": 0.83,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.778934928240937
+          },
+          {
+            "voc_id": "pentane",
+            "log2fc": 0.853135592152865
+          },
+          {
+            "voc_id": "hexanal",
+            "log2fc": 0.5425564293669051
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16727054877775338
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16584720578802575
+          },
+          {
+            "voc_id": "acetonitrile",
+            "log2fc": -0.16347466462865382
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::fabry_disease"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.83
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.83
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 1.778934928240937
+          },
+          {
+            "name": "elevate:hexanal",
+            "pass": true,
+            "detail": 0.5425564293669051
+          },
+          {
+            "name": "elevate:pentane",
+            "pass": true,
+            "detail": 0.853135592152865
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "fatty_acid_oxidation": 0.15120000000000006,
+              "lipid_peroxidation": 0.12480000000000002
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Fabry disease' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.83). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "pku",
+        "disease": "Phenylketonuria",
+        "disease_id": "custom::phenylketonuria",
+        "location": "Systemic / whole body",
+        "passed": true,
+        "peak_abs_log2fc": 2.3983878199361506,
+        "mechanism_confidence": 0.84,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "pentane",
+            "log2fc": 2.3983878199361506
+          },
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.7801115088647865
+          },
+          {
+            "voc_id": "hexanal",
+            "log2fc": 1.5110375253708073
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16727054877775338
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16584720578802575
+          },
+          {
+            "voc_id": "acetonitrile",
+            "log2fc": -0.16347466462865382
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::phenylketonuria"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.84
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.84
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 2.3983878199361506
+          },
+          {
+            "name": "elevate:acetone",
+            "pass": true,
+            "detail": 0.09996182552572555
+          },
+          {
+            "name": "elevate:hexanal",
+            "pass": true,
+            "detail": 1.5110375253708073
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "neurotransmitter_metabolism": 0.17919999999999994,
+              "one_carbon_folate": 0.12480000000000002,
+              "brain_energy_metabolism": 0.07679999999999998
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Phenylketonuria' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.84). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "hemochromatosis",
+        "disease": "Hereditary hemochromatosis",
+        "disease_id": "custom::hereditary_hemochromatosis",
+        "location": "liver",
+        "passed": true,
+        "peak_abs_log2fc": 2.849323255119138,
+        "mechanism_confidence": 0.84,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "pentane",
+            "log2fc": 2.849323255119138
+          },
+          {
+            "voc_id": "hexanal",
+            "log2fc": 2.2433895236235544
+          },
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 1.778934928240937
+          },
+          {
+            "voc_id": "ammonia",
+            "log2fc": 1.3805183544630428
+          },
+          {
+            "voc_id": "dms",
+            "log2fc": 1.1111867140403775
+          },
+          {
+            "voc_id": "octane",
+            "log2fc": 0.174402714061417
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::hereditary_hemochromatosis"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.84
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.84
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 2.849323255119138
+          },
+          {
+            "name": "elevate:hexanal",
+            "pass": true,
+            "detail": 2.2433895236235544
+          },
+          {
+            "name": "elevate:pentane",
+            "pass": true,
+            "detail": 2.849323255119138
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "lipid_peroxidation": 0.20879999999999999,
+              "cytochrome_p450_detox": 0.15600000000000003
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Hereditary hemochromatosis' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.84). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "pompe",
+        "disease": "Pompe disease",
+        "disease_id": "custom::pompe_disease",
+        "location": "musculature",
+        "passed": true,
+        "peak_abs_log2fc": 2.831686846541341,
+        "mechanism_confidence": 0.82,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 2.831686846541341
+          },
+          {
+            "voc_id": "acetone",
+            "log2fc": 2.0666613391718336
+          },
+          {
+            "voc_id": "ammonia",
+            "log2fc": 1.6080854647408926
+          },
+          {
+            "voc_id": "pentane",
+            "log2fc": 1.5235497449583328
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16727054877775338
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16584720578802575
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::pompe_disease"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.82
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.82
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 2.831686846541341
+          },
+          {
+            "name": "elevate:acetone",
+            "pass": true,
+            "detail": 2.0666613391718336
+          },
+          {
+            "name": "pathway_any",
+            "pass": true,
+            "detail": {
+              "glycolysis_warburg": 0.15120000000000006,
+              "fatty_acid_oxidation": 0.15120000000000006,
+              "ketone_body_metabolism": 0.24
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'Pompe disease' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.82). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "nonsense_control",
+        "disease": "completely novel ailment QZZ-42",
+        "disease_id": "custom::completely_novel_ailment_qzz_42",
+        "location": "Systemic / whole body",
+        "passed": true,
+        "peak_abs_log2fc": 0.16727054877775338,
+        "mechanism_confidence": 0.0,
+        "zero_shot_mode": "near_healthy_fallback",
+        "top_vocs": [
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16727054877775338
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.16584720578802575
+          },
+          {
+            "voc_id": "acetonitrile",
+            "log2fc": -0.16347466462865382
+          },
+          {
+            "voc_id": "2_pentanone",
+            "log2fc": -0.1482134831642181
+          },
+          {
+            "voc_id": "octane",
+            "log2fc": 0.11959271406141694
+          },
+          {
+            "voc_id": "phenol",
+            "log2fc": 0.10747694516835488
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::completely_novel_ailment_qzz_42"
+          },
+          {
+            "name": "near_healthy_fallback",
+            "pass": true,
+            "detail": {
+              "mode": "near_healthy_fallback",
+              "peak": 0.16727054877775338
+            }
+          },
+          {
+            "name": "near_healthy",
+            "pass": true,
+            "detail": {
+              "peak": 0.16727054877775338,
+              "threshold": 0.45
+            }
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'completely novel ailment QZZ-42' was not in the curated atlas (zero-shot mode=near_healthy_fallback, mechanism_confidence=0.00). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      },
+      {
+        "id": "user_mechanism_hmgcs2",
+        "disease": "unknown custom metabolic phenotype X",
+        "disease_id": "custom::unknown_custom_metabolic_phenotype_x",
+        "location": "liver",
+        "passed": true,
+        "peak_abs_log2fc": 3.3672647520700876,
+        "mechanism_confidence": 0.6000000000000001,
+        "zero_shot_mode": "mechanism",
+        "top_vocs": [
+          {
+            "voc_id": "2_butanone",
+            "log2fc": 3.3672647520700876
+          },
+          {
+            "voc_id": "acetone",
+            "log2fc": 3.3294577163798293
+          },
+          {
+            "voc_id": "ammonia",
+            "log2fc": 1.1086273581625927
+          },
+          {
+            "voc_id": "isopropanol",
+            "log2fc": 0.17263089063754536
+          },
+          {
+            "voc_id": "allyl_methyl_sulfide",
+            "log2fc": -0.16959489092265212
+          },
+          {
+            "voc_id": "methyl_acetate",
+            "log2fc": -0.1681715479329243
+          }
+        ],
+        "checks": [
+          {
+            "name": "unresolved",
+            "pass": true,
+            "detail": "custom::unknown_custom_metabolic_phenotype_x"
+          },
+          {
+            "name": "mechanism_mode",
+            "pass": true,
+            "detail": {
+              "mode": "mechanism",
+              "mechanism_confidence": 0.6000000000000001
+            }
+          },
+          {
+            "name": "min_mechanism_confidence",
+            "pass": true,
+            "detail": 0.6000000000000001
+          },
+          {
+            "name": "min_peak_abs_log2fc",
+            "pass": true,
+            "detail": 3.3672647520700876
+          },
+          {
+            "name": "elevate:acetone",
+            "pass": true,
+            "detail": 3.3294577163798293
+          },
+          {
+            "name": "no_voc_prior_leak",
+            "pass": true,
+            "detail": {}
+          }
+        ],
+        "notes": [
+          "ExhalePath Biomarker Engine: whole-body location-aware exhaled VOC panel (50 VOCs modeled).",
+          "Predictions fuse pathway chains, affected cell-state density/activity, blood transfer, Farhi alveolar release, literature priors, and optional ML calibrators.",
+          "ppb values are model estimates for research / hypothesis generation \u2014 not clinical diagnoses. Validate against breath GC-MS / PTR-MS cohorts.",
+          "Physiology mode: cell-state density\u00d7activity \u00d7 pathway-chain flux \u2192 blood transfer (perfusion, first-pass) \u2192 Farhi alveolar release \u2192 ppb.",
+          "Cell-state densities are atlas priors / optional single-cell fraction overrides, not raw patient scRNA-seq counts unless you supply cell_state_fractions.",
+          "Disease 'unknown custom metabolic phenotype X' was not in the curated atlas (zero-shot mode=mechanism, mechanism_confidence=0.60). Used token/category cues, ontology nearest-neighbor pathway transfer (no VOC prior copy by default), and disease\u2192gene index when available."
+        ]
+      }
+    ]
+  },
+  "leave_disease_out": {
+    "skipped": false,
+    "n_diseases": 110,
+    "n_passed": 108,
+    "pass_rate": 0.9818181818181818,
+    "mean_directional_accuracy": 0.8540758317971237,
+    "pass": true,
+    "diseases": [
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "category": "cancer",
+        "n_signed_priors": 16,
+        "directional_accuracy": 0.875,
+        "pass": true
+      },
+      {
+        "disease_id": "breast_invasive_carcinoma",
+        "category": "cancer",
+        "n_signed_priors": 16,
+        "directional_accuracy": 0.6875,
+        "pass": true
+      },
+      {
+        "disease_id": "pancreatic_adenocarcinoma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "colon_adenocarcinoma",
+        "category": "cancer",
+        "n_signed_priors": 16,
+        "directional_accuracy": 0.5,
+        "pass": false
+      },
+      {
+        "disease_id": "hepatocellular_carcinoma",
+        "category": "cancer",
+        "n_signed_priors": 18,
+        "directional_accuracy": 0.6111111111111112,
+        "pass": true
+      },
+      {
+        "disease_id": "type_2_diabetes",
+        "category": "metabolic",
+        "n_signed_priors": 8,
+        "directional_accuracy": 0.875,
+        "pass": true
+      },
+      {
+        "disease_id": "chronic_liver_disease",
+        "category": "metabolic",
+        "n_signed_priors": 8,
+        "directional_accuracy": 0.75,
+        "pass": true
+      },
+      {
+        "disease_id": "chronic_kidney_disease",
+        "category": "metabolic",
+        "n_signed_priors": 8,
+        "directional_accuracy": 0.625,
+        "pass": true
+      },
+      {
+        "disease_id": "inflammatory_bowel_disease",
+        "category": "inflammatory",
+        "n_signed_priors": 16,
+        "directional_accuracy": 0.9375,
+        "pass": true
+      },
+      {
+        "disease_id": "ovarian_cancer",
+        "category": "cancer",
+        "n_signed_priors": 16,
+        "directional_accuracy": 0.8125,
+        "pass": true
+      },
+      {
+        "disease_id": "gut_dysbiosis",
+        "category": "microbiome",
+        "n_signed_priors": 15,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "sibo",
+        "category": "microbiome",
+        "n_signed_priors": 12,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "clostridioides_difficile_infection",
+        "category": "microbiome",
+        "n_signed_priors": 12,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "helicobacter_pylori_infection",
+        "category": "microbiome",
+        "n_signed_priors": 12,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "alzheimer_disease",
+        "category": "neurological",
+        "n_signed_priors": 8,
+        "directional_accuracy": 0.875,
+        "pass": true
+      },
+      {
+        "disease_id": "creutzfeldt_jakob",
+        "category": "neurological",
+        "n_signed_priors": 13,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "parkinson_disease",
+        "category": "neurological",
+        "n_signed_priors": 9,
+        "directional_accuracy": 0.8888888888888888,
+        "pass": true
+      },
+      {
+        "disease_id": "major_depressive_disorder",
+        "category": "neurological",
+        "n_signed_priors": 10,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "schizophrenia",
+        "category": "neurological",
+        "n_signed_priors": 9,
+        "directional_accuracy": 0.7777777777777778,
+        "pass": true
+      },
+      {
+        "disease_id": "epilepsy",
+        "category": "neurological",
+        "n_signed_priors": 8,
+        "directional_accuracy": 0.625,
+        "pass": true
+      },
+      {
+        "disease_id": "multiple_sclerosis",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "glioblastoma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "traumatic_brain_injury",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "autism_spectrum_disorder",
+        "category": "neurological",
+        "n_signed_priors": 12,
+        "directional_accuracy": 0.9166666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "heart_disease",
+        "category": "cardiovascular",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "cancer_prostate",
+        "category": "cancer",
+        "n_signed_priors": 6,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "cancer_stomach",
+        "category": "cancer",
+        "n_signed_priors": 9,
+        "directional_accuracy": 0.7777777777777778,
+        "pass": true
+      },
+      {
+        "disease_id": "cancer_kidney",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "cancer_bladder",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "cancer_skin_melanoma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "cancer_blood",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "neuroblastoma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "bipolar",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "als",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "stroke",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "copd",
+        "category": "pulmonary",
+        "n_signed_priors": 21,
+        "directional_accuracy": 0.7619047619047619,
+        "pass": true
+      },
+      {
+        "disease_id": "asthma",
+        "category": "pulmonary",
+        "n_signed_priors": 19,
+        "directional_accuracy": 0.47368421052631576,
+        "pass": false
+      },
+      {
+        "disease_id": "ild",
+        "category": "pulmonary",
+        "n_signed_priors": 8,
+        "directional_accuracy": 0.875,
+        "pass": true
+      },
+      {
+        "disease_id": "covid19",
+        "category": "infectious",
+        "n_signed_priors": 8,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "influenza",
+        "category": "infectious",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "tuberculosis",
+        "category": "infectious",
+        "n_signed_priors": 9,
+        "directional_accuracy": 0.8888888888888888,
+        "pass": true
+      },
+      {
+        "disease_id": "type1_diabetes",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "obesity",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "gerd",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "celiac",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "lupus",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "rheumatoid_arthritis",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "osteoarthritis",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "psoriasis",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "atopic_dermatitis",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "hiv",
+        "category": "infectious",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "cmv",
+        "category": "infectious",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "sepsis",
+        "category": "infectious",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "hypertension",
+        "category": "cardiovascular",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "hyperlipidemia",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "thyroid",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "endometriosis",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "pcos",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "infertility",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "adhd",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "migraine",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "chronic_pain",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "osteoporosis",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "gout",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "anemia",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "sickle_cell",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "cystic_fibrosis",
+        "category": "pulmonary",
+        "n_signed_priors": 11,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "down_syndrome",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "hearing_loss",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "macular_degeneration",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "glaucoma",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "diabetic_retinopathy",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "periodontitis",
+        "category": "inflammatory",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "uti",
+        "category": "infectious",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "pneumonia_bacterial",
+        "category": "infectious",
+        "n_signed_priors": 11,
+        "directional_accuracy": 0.7272727272727273,
+        "pass": true
+      },
+      {
+        "disease_id": "nafld",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "alcohol_use",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "opioid_use",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "tobacco_use",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "anxiety",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "ptsd",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "sleep_apnea",
+        "category": "pulmonary",
+        "n_signed_priors": 9,
+        "directional_accuracy": 0.7777777777777778,
+        "pass": true
+      },
+      {
+        "disease_id": "gout_ckd_overlap",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "vasculitis",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "sjogren",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "scleroderma",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "myasthenia",
+        "category": "inflammatory",
+        "n_signed_priors": 5,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "huntington",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "lewy_body",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "frontotemporal",
+        "category": "neurological",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "breast_benign",
+        "category": "unspecified",
+        "n_signed_priors": 4,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "endometrial_cancer",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "cervical_cancer",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "head_neck_cancer",
+        "category": "cancer",
+        "n_signed_priors": 8,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "thyroid_cancer",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "esophageal_cancer",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "mesothelioma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "sarcoma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "wilms",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "retinoblastoma",
+        "category": "cancer",
+        "n_signed_priors": 15,
+        "directional_accuracy": 0.7333333333333333,
+        "pass": true
+      },
+      {
+        "disease_id": "acute_kidney_injury",
+        "category": "metabolic",
+        "n_signed_priors": 6,
+        "directional_accuracy": 0.6666666666666666,
+        "pass": true
+      },
+      {
+        "disease_id": "pulmonary_hypertension",
+        "category": "cardiovascular",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "arrhythmia",
+        "category": "cardiovascular",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "peripheral_artery",
+        "category": "cardiovascular",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "venous_thromboembolism",
+        "category": "cardiovascular",
+        "n_signed_priors": 5,
+        "directional_accuracy": 0.8,
+        "pass": true
+      },
+      {
+        "disease_id": "heart_failure",
+        "category": "cardiovascular",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.8571428571428571,
+        "pass": true
+      },
+      {
+        "disease_id": "malaria",
+        "category": "infectious",
+        "n_signed_priors": 7,
+        "directional_accuracy": 0.7142857142857143,
+        "pass": true
+      },
+      {
+        "disease_id": "ards",
+        "category": "pulmonary",
+        "n_signed_priors": 9,
+        "directional_accuracy": 1.0,
+        "pass": true
+      },
+      {
+        "disease_id": "chronic_bronchitis",
+        "category": "pulmonary",
+        "n_signed_priors": 11,
+        "directional_accuracy": 0.9090909090909091,
+        "pass": true
+      },
+      {
+        "disease_id": "lung_squamous_cell_carcinoma",
+        "category": "cancer",
+        "n_signed_priors": 11,
+        "directional_accuracy": 1.0,
+        "pass": true
+      }
+    ],
+    "voc_targets_path": "/workspace/exhalepath_atlas/src/exhalepath/data/processed/voc_training_targets.csv"
+  },
+  "pass": true
+}

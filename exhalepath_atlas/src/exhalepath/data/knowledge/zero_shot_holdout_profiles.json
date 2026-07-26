@@ -1,0 +1,204 @@
+{
+  "version": "1.0.0",
+  "description": "Real rare/unseen diseases with known mechanisms but no atlas VOC labels. Score directional agreement vs pathway/literature truth \u2014 not invented nonsense names.",
+  "profiles": [
+    {
+      "id": "msud",
+      "disease": "Maple syrup urine disease",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "fatty_acid_oxidation"
+      ],
+      "min_mechanism_confidence": 0.6,
+      "min_peak_abs_log2fc": 0.35
+    },
+    {
+      "id": "wilson",
+      "disease": "Wilson disease",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "pentane",
+        "ammonia"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "lipid_peroxidation",
+        "urea_cycle"
+      ],
+      "min_mechanism_confidence": 0.6,
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "pbc",
+      "disease": "Primary biliary cholangitis",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "ammonia",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "methionine_transsulfuration"
+      ],
+      "min_mechanism_confidence": 0.55,
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "lhon",
+      "disease": "Leber hereditary optic neuropathy",
+      "location": "eye",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "acetone"
+      ],
+      "pathway_any": [
+        "brain_energy_metabolism",
+        "lipid_peroxidation",
+        "ketone_body_metabolism"
+      ],
+      "min_mechanism_confidence": 0.55,
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "otc",
+      "disease": "Ornithine transcarbamylase deficiency",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "ammonia"
+      ],
+      "pathway_any": [
+        "urea_cycle"
+      ],
+      "min_mechanism_confidence": 0.6,
+      "min_peak_abs_log2fc": 0.35
+    },
+    {
+      "id": "aatd",
+      "disease": "Alpha-1 antitrypsin deficiency",
+      "location": "lung",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "cytochrome_p450_detox"
+      ],
+      "min_mechanism_confidence": 0.6,
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "fabry",
+      "disease": "Fabry disease",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "fatty_acid_oxidation",
+        "lipid_peroxidation"
+      ],
+      "min_mechanism_confidence": 0.55,
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "pku",
+      "disease": "Phenylketonuria",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "neurotransmitter_metabolism",
+        "one_carbon_folate",
+        "brain_energy_metabolism"
+      ],
+      "min_mechanism_confidence": 0.55,
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "hemochromatosis",
+      "disease": "Hereditary hemochromatosis",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "pathway_any": [
+        "lipid_peroxidation",
+        "cytochrome_p450_detox"
+      ],
+      "min_mechanism_confidence": 0.55,
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "pompe",
+      "disease": "Pompe disease",
+      "location": "musculature",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "pathway_any": [
+        "glycolysis_warburg",
+        "fatty_acid_oxidation",
+        "ketone_body_metabolism"
+      ],
+      "min_mechanism_confidence": 0.55,
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "nonsense_control",
+      "disease": "completely novel ailment QZZ-42",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": false,
+      "near_healthy": true,
+      "max_abs_log2fc": 0.45,
+      "min_mechanism_confidence": 0.0
+    },
+    {
+      "id": "user_mechanism_hmgcs2",
+      "disease": "unknown custom metabolic phenotype X",
+      "location": "liver",
+      "description": "ketotic mitochondrial stress",
+      "genes": [
+        "HMGCS2",
+        "CPT1A"
+      ],
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "min_peak_abs_log2fc": 0.4,
+      "min_mechanism_confidence": 0.5
+    }
+  ]
+}

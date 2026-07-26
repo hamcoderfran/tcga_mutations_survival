@@ -79,56 +79,76 @@ class KnowledgeBase:
             return True
         return s.upper() in self.all_seed_genes()
 
-    def resolve_disease(self, query: str) -> dict[str, Any]:
+    def resolve_disease(
+        self,
+        query: str,
+        *,
+        location_hint: str | None = None,
+        description: str | None = None,
+        copy_voc_priors: bool = False,
+        zero_shot: bool = True,
+    ) -> dict[str, Any]:
+        """Resolve atlas disease or build a zero-shot custom mechanism prior."""
         if query is None or not str(query).strip():
-            return self._unresolved("unknown")
-
-        key = self._norm(str(query))
-        if not key:
-            return self._unresolved(str(query))
-
-        if key in self._alias_index:
-            return dict(self.diseases[self._alias_index[key]])
-
-        # Gene symbols must not fuzzy-match disease aliases (BRCA1 ↛ breast via "BRCA").
-        if self._looks_like_gene_symbol(str(query)):
-            return self._unresolved(str(query))
-
-        # Prefer longest alias containment / token overlap over first substring hit
-        q_tokens = self._token_set(key)
-        candidates: list[tuple[float, int, str]] = []
-        for alias, did in self._alias_index.items():
-            if len(alias) < _MIN_FUZZY_ALIAS_LEN:
-                continue
-            score = 0.0
-            if key == alias:
-                score = 100.0
-            elif re.search(rf"(?:^|\s){re.escape(key)}(?:\s|$)", alias):
-                # whole-token containment only (avoids "brca" ⊂ "brca1"-style traps
-                # when the shorter string is the query)
-                score = 40.0 * (len(key) / max(len(alias), 1))
-            elif re.search(rf"(?:^|\s){re.escape(alias)}(?:\s|$)", key):
-                score = 55.0 * (len(alias) / max(len(key), 1))
+            base = self._unresolved_base("unknown")
+        else:
+            key = self._norm(str(query))
+            if not key:
+                base = self._unresolved_base(str(query))
+            elif key in self._alias_index:
+                return dict(self.diseases[self._alias_index[key]])
+            elif self._looks_like_gene_symbol(str(query)):
+                base = self._unresolved_base(str(query))
             else:
-                a_tokens = self._token_set(alias)
-                if not a_tokens or not q_tokens:
-                    continue
-                overlap = len(a_tokens & q_tokens) / len(a_tokens | q_tokens)
-                if overlap < 0.5:
-                    continue
-                score = 50.0 * overlap
-            if score > 0:
-                candidates.append((score, len(alias), did))
+                q_tokens = self._token_set(key)
+                candidates: list[tuple[float, int, str]] = []
+                for alias, did in self._alias_index.items():
+                    if len(alias) < _MIN_FUZZY_ALIAS_LEN:
+                        continue
+                    score = 0.0
+                    if key == alias:
+                        score = 100.0
+                    elif re.search(rf"(?:^|\s){re.escape(key)}(?:\s|$)", alias):
+                        # whole-token containment only (avoids "brca" ⊂ "brca1"-style traps)
+                        score = 40.0 * (len(key) / max(len(alias), 1))
+                    elif re.search(rf"(?:^|\s){re.escape(alias)}(?:\s|$)", key):
+                        score = 55.0 * (len(alias) / max(len(key), 1))
+                    else:
+                        a_tokens = self._token_set(alias)
+                        if not a_tokens or not q_tokens:
+                            continue
+                        overlap = len(a_tokens & q_tokens) / len(a_tokens | q_tokens)
+                        if overlap < 0.5:
+                            continue
+                        score = 50.0 * overlap
+                    if score > 0:
+                        candidates.append((score, len(alias), did))
 
-        if candidates:
-            candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
-            best_score, _, did = candidates[0]
-            if best_score >= 35.0:
-                return dict(self.diseases[did])
+                if candidates:
+                    candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
+                    best_score, _, did = candidates[0]
+                    if best_score >= 35.0:
+                        return dict(self.diseases[did])
+                base = self._unresolved_base(str(query))
 
-        return self._unresolved(str(query))
+        if not zero_shot:
+            return base
+        from .custom_resolver import enrich_unresolved_disease
+
+        return enrich_unresolved_disease(
+            base,
+            diseases=self.diseases,
+            datasources=self.datasources,
+            location_hint=location_hint,
+            description=description,
+            copy_voc_priors=copy_voc_priors,
+        )
 
     def _unresolved(self, query: str) -> dict[str, Any]:
+        """Backward-compatible unresolved + zero-shot enrichment."""
+        return self.resolve_disease(query, zero_shot=True)
+
+    def _unresolved_base(self, query: str) -> dict[str, Any]:
         return {
             "disease_id": f"custom::{self._norm(query).replace(' ', '_') or 'unknown'}",
             "name": query,

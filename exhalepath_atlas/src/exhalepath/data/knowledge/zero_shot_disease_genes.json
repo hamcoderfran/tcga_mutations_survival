@@ -1,0 +1,397 @@
+{
+  "version": "1.0.0",
+  "description": "Offline disease\u2192gene / mechanism priors for real diseases outside the atlas VOC panel. Used for zero-shot pathway scoring; does not supply voc_log2fc_prior.",
+  "diseases": [
+    {
+      "disease_id": "maple_syrup_urine_disease",
+      "name": "Maple syrup urine disease",
+      "aliases": [
+        "MSUD",
+        "branched-chain ketoaciduria",
+        "maple syrup urine"
+      ],
+      "mondo_id": "MONDO:0009569",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "ketone_body_metabolism": 1.7,
+        "fatty_acid_oxidation": 1.35,
+        "urea_cycle": 1.15
+      },
+      "genes": [
+        {
+          "gene": "BCKDHA",
+          "score": 0.95
+        },
+        {
+          "gene": "BCKDHB",
+          "score": 0.9
+        },
+        {
+          "gene": "DBT",
+          "score": 0.85
+        },
+        {
+          "gene": "DLD",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "type_2_diabetes",
+      "confidence": 0.86,
+      "expected_voc_direction": {
+        "acetone": 1,
+        "2_butanone": 1,
+        "ammonia": 1
+      }
+    },
+    {
+      "disease_id": "phenylketonuria",
+      "name": "Phenylketonuria",
+      "aliases": [
+        "PKU",
+        "phenylalanine hydroxylase deficiency"
+      ],
+      "mondo_id": "MONDO:0009861",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.4,
+        "one_carbon_folate": 1.25,
+        "brain_energy_metabolism": 1.2
+      },
+      "genes": [
+        {
+          "gene": "PAH",
+          "score": 0.95
+        },
+        {
+          "gene": "QDPR",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "alzheimer_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "acetone": 1,
+        "hexanal": 1
+      }
+    },
+    {
+      "disease_id": "wilson_disease",
+      "name": "Wilson disease",
+      "aliases": [
+        "hepatolenticular degeneration",
+        "Wilson's disease"
+      ],
+      "mondo_id": "MONDO:0010200",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "cytochrome_p450_detox": 1.45,
+        "lipid_peroxidation": 1.35,
+        "methionine_transsulfuration": 1.25,
+        "urea_cycle": 1.2
+      },
+      "genes": [
+        {
+          "gene": "ATP7B",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "chronic_liver_disease",
+      "confidence": 0.88,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1,
+        "ammonia": 1
+      }
+    },
+    {
+      "disease_id": "primary_biliary_cholangitis",
+      "name": "Primary biliary cholangitis",
+      "aliases": [
+        "PBC",
+        "primary biliary cirrhosis"
+      ],
+      "mondo_id": "MONDO:0005387",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "cytochrome_p450_detox": 1.5,
+        "methionine_transsulfuration": 1.35,
+        "urea_cycle": 1.25,
+        "lipid_peroxidation": 1.25
+      },
+      "genes": [
+        {
+          "gene": "HLA-DRB1",
+          "score": 0.75
+        },
+        {
+          "gene": "IL12A",
+          "score": 0.7
+        },
+        {
+          "gene": "NR1H4",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "chronic_liver_disease",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "ammonia": 1,
+        "dimethyl_sulfide": 1
+      }
+    },
+    {
+      "disease_id": "fabry_disease",
+      "name": "Fabry disease",
+      "aliases": [
+        "Anderson-Fabry disease",
+        "alpha-galactosidase A deficiency"
+      ],
+      "mondo_id": "MONDO:0010726",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "fatty_acid_oxidation": 1.35,
+        "lipid_peroxidation": 1.3,
+        "apoptosis_necrosis": 1.15
+      },
+      "genes": [
+        {
+          "gene": "GLA",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "chronic_kidney_disease",
+      "confidence": 0.83,
+      "expected_voc_direction": {
+        "pentane": 1,
+        "hexanal": 1
+      }
+    },
+    {
+      "disease_id": "gaucher_disease",
+      "name": "Gaucher disease",
+      "aliases": [
+        "glucocerebrosidase deficiency",
+        "Gaucher's disease"
+      ],
+      "mondo_id": "MONDO:0009265",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "fatty_acid_oxidation": 1.3,
+        "lipid_peroxidation": 1.25,
+        "apoptosis_necrosis": 1.2
+      },
+      "genes": [
+        {
+          "gene": "GBA",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "parkinson_disease",
+      "confidence": 0.83,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    },
+    {
+      "disease_id": "niemann_pick_disease",
+      "name": "Niemann-Pick disease",
+      "aliases": [
+        "Niemann-Pick",
+        "acid sphingomyelinase deficiency",
+        "NPC"
+      ],
+      "mondo_id": "MONDO:0009750",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "fatty_acid_oxidation": 1.35,
+        "lipid_peroxidation": 1.3,
+        "brain_energy_metabolism": 1.2
+      },
+      "genes": [
+        {
+          "gene": "SMPD1",
+          "score": 0.9
+        },
+        {
+          "gene": "NPC1",
+          "score": 0.9
+        },
+        {
+          "gene": "NPC2",
+          "score": 0.8
+        }
+      ],
+      "atlas_neighbor": "alzheimer_disease",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    },
+    {
+      "disease_id": "pompe_disease",
+      "name": "Pompe disease",
+      "aliases": [
+        "glycogen storage disease type II",
+        "GSD II",
+        "acid maltase deficiency"
+      ],
+      "mondo_id": "MONDO:0009290",
+      "category": "metabolic",
+      "default_site": "musculature",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.35,
+        "fatty_acid_oxidation": 1.25,
+        "ketone_body_metabolism": 1.15
+      },
+      "genes": [
+        {
+          "gene": "GAA",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "type_2_diabetes",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "acetone": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "leber_hereditary_optic_neuropathy",
+      "name": "Leber hereditary optic neuropathy",
+      "aliases": [
+        "LHON",
+        "Leber optic atrophy"
+      ],
+      "mondo_id": "MONDO:0010788",
+      "category": "metabolic",
+      "default_site": "eye",
+      "pathway_bias": {
+        "brain_energy_metabolism": 1.45,
+        "lipid_peroxidation": 1.3,
+        "ketone_body_metabolism": 1.2
+      },
+      "genes": [
+        {
+          "gene": "MT-ND1",
+          "score": 0.9
+        },
+        {
+          "gene": "MT-ND4",
+          "score": 0.9
+        },
+        {
+          "gene": "MT-ND6",
+          "score": 0.85
+        }
+      ],
+      "atlas_neighbor": "alzheimer_disease",
+      "confidence": 0.85,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1,
+        "acetone": 1
+      }
+    },
+    {
+      "disease_id": "ornithine_transcarbamylase_deficiency",
+      "name": "Ornithine transcarbamylase deficiency",
+      "aliases": [
+        "OTC deficiency",
+        "hyperammonemia due to OTC"
+      ],
+      "mondo_id": "MONDO:0010617",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "urea_cycle": 1.8,
+        "ketone_body_metabolism": 1.2
+      },
+      "genes": [
+        {
+          "gene": "OTC",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "chronic_liver_disease",
+      "confidence": 0.87,
+      "expected_voc_direction": {
+        "ammonia": 1,
+        "acetone": 1
+      }
+    },
+    {
+      "disease_id": "alpha_1_antitrypsin_deficiency",
+      "name": "Alpha-1 antitrypsin deficiency",
+      "aliases": [
+        "AAT deficiency",
+        "AATD",
+        "alpha1-antitrypsin deficiency",
+        "SERPINA1 deficiency"
+      ],
+      "mondo_id": "MONDO:0007039",
+      "category": "pulmonary",
+      "default_site": "lung",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.45,
+        "cytochrome_p450_detox": 1.25,
+        "apoptosis_necrosis": 1.2
+      },
+      "genes": [
+        {
+          "gene": "SERPINA1",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "copd",
+      "confidence": 0.86,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1,
+        "2_butanone": 1
+      }
+    },
+    {
+      "disease_id": "hereditary_hemochromatosis",
+      "name": "Hereditary hemochromatosis",
+      "aliases": [
+        "hemochromatosis",
+        "HFE-related hemochromatosis"
+      ],
+      "mondo_id": "MONDO:0006507",
+      "category": "metabolic",
+      "default_site": "liver",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.45,
+        "cytochrome_p450_detox": 1.3,
+        "methionine_transsulfuration": 1.2
+      },
+      "genes": [
+        {
+          "gene": "HFE",
+          "score": 0.9
+        },
+        {
+          "gene": "TFR2",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "chronic_liver_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "pentane": 1
+      }
+    }
+  ]
+}
