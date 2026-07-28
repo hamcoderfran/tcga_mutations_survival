@@ -388,13 +388,14 @@ TOKEN_CUES: list[tuple[tuple[str, ...], str, dict[str, float], str | None, list[
         ["TLR4", "MYD88", "TNF", "IL6"],
     ),
     (
-        ("steatohepat", "hepatic steatos", "alcohol use", "alcoholic liver"),
+        ("steatohepat", "hepatic steatos", "alcohol use", "alcoholic liver", "cirrhos", "cirrosis"),
         "metabolic",
         {
             "fatty_acid_oxidation": 1.4,
             "lipid_peroxidation": 1.35,
             "cytochrome_p450_detox": 1.35,
             "ketone_body_metabolism": 1.2,
+            "urea_cycle": 1.2,
         },
         "liver",
         ["PNPLA3", "CYP2E1", "ADH1B"],

@@ -1,0 +1,510 @@
+{
+  "ready_for_implementation": true,
+  "readiness_score": 1.0,
+  "n_gates_passed": 12,
+  "n_gates": 12,
+  "gates": {
+    "pytest": true,
+    "audit": true,
+    "calibrator_holdout": true,
+    "priority10": true,
+    "vision_fidelity_ge_90": true,
+    "multisite_ge_0.90": true,
+    "public_breath": true,
+    "comorbidity": true,
+    "stress_hard_ge_95": true,
+    "zero_shot_hard_ge_85": true,
+    "zero_shot_reliability": true,
+    "cohort_ok_ge_99": true
+  },
+  "layers": {
+    "pytest": {
+      "passed": true,
+      "returncode": 0,
+      "seconds": 56.4,
+      "tail": "........................................................................ [ 78%]\n....................                                                     [100%]\n92 passed in 54.92s"
+    },
+    "audit": {
+      "passed": true,
+      "seconds": 10.37,
+      "calibrator_holdout": {
+        "skipped": false,
+        "mae_log2fc": 0.16131710737762303,
+        "r2": 0.5593815399787896,
+        "n": 181,
+        "n_vocs": 29,
+        "min_rows_per_voc": 3,
+        "pass_mae_threshold": 0.45,
+        "per_voc": {
+          "2_butanone": {
+            "mae_log2fc": 0.022965753665368502,
+            "r2": 0.8471364652614712,
+            "n": 8,
+            "model": "2_butanone"
+          },
+          "2_pentanone": {
+            "mae_log2fc": 0.6548501418264532,
+            "r2": 0.7358446683023021,
+            "n": 5,
+            "model": "2_pentanone"
+          },
+          "acetaldehyde": {
+            "mae_log2fc": 0.022393912509830728,
+            "r2": 0.9925279840813719,
+            "n": 4,
+            "model": "__global__"
+          },
+          "acetone": {
+            "mae_log2fc": 0.2605587759056371,
+            "r2": 0.054153908440380594,
+            "n": 15,
+            "model": "acetone"
+          },
+          "ammonia": {
+            "mae_log2fc": 2.535456613312892e-05,
+            "r2": 0.9999983928649405,
+            "n": 5,
+            "model": "ammonia"
+          },
+          "benzaldehyde": {
+            "mae_log2fc": 0.20206233803837692,
+            "r2": 0.7511198729333797,
+            "n": 4,
+            "model": "__global__"
+          },
+          "benzene": {
+            "mae_log2fc": 0.11758630750395534,
+            "r2": 0.7745123729161021,
+            "n": 6,
+            "model": "benzene"
+          },
+          "butane": {
+            "mae_log2fc": 0.0661905343457991,
+            "r2": 0.9230370670821877,
+            "n": 4,
+            "model": "__global__"
+          },
+          "decanal": {
+            "mae_log2fc": 0.04831144027340788,
+            "r2": 0.9605490556093437,
+            "n": 4,
+            "model": "__global__"
+          },
+          "dms": {
+            "mae_log2fc": 0.013023861676416984,
+            "r2": 0.984804007795767,
+            "n": 3,
+            "model": "__global__"
+          },
+          "dodecane": {
+            "mae_log2fc": 0.062925,
+            "r2": 0.449920775209666,
+            "n": 4,
+            "model": "__global__"
+          },
+          "ethane": {
+            "mae_log2fc": 0.003099353429344087,
+            "r2": 0.9998949715913308,
+            "n": 4,
+            "model": "__global__"
+          },
+          "ethanol": {
+            "mae_log2fc": 0.003451488663359657,
+            "r2": 0.9997114297487268,
+            "n": 10,
+            "model": "ethanol"
+          },
+          "ethyl_acetate": {
+            "mae_log2fc": 0.08001215123184932,
+            "r2": 0.9769818376943211,
+            "n": 4,
+            "model": "__global__"
+          },
+          "ethylbenzene": {
+            "mae_log2fc": 0.16496839053993279,
+            "r2": 0.8987040611337757,
+            "n": 7,
+            "model": "ethylbenzene"
+          },
+          "furan": {
+            "mae_log2fc": 2.2495,
+            "r2": 0.36057286559062296,
+            "n": 4,
+            "model": "__global__"
+          },
+          "heptanal": {
+            "mae_log2fc": 0.00033047120256828933,
+            "r2": 0.9999980186198362,
+            "n": 5,
+            "model": "heptanal"
+          },
+          "hexanal": {
+            "mae_log2fc": 0.0613363022893877,
+            "r2": 0.9038463868028179,
+            "n": 13,
+            "model": "hexanal"
+          },
+          "hexane": {
+            "mae_log2fc": 0.0857453985371893,
+            "r2": 0.8813614266241161,
+            "n": 4,
+            "model": "__global__"
+          },
+          "hydrogen_sulfide": {
+            "mae_log2fc": 0.009355623331374685,
+            "r2": 0.9962605060871867,
+            "n": 3,
+            "model": "__global__"
+          },
+          "isoprene": {
+            "mae_log2fc": 0.32804082909832416,
+            "r2": -0.7279760306953165,
+            "n": 14,
+            "model": "isoprene"
+          },
+          "isopropanol": {
+            "mae_log2fc": 0.13264189481137564,
+            "r2": 0.6775506387355483,
+            "n": 7,
+            "model": "isopropanol"
+          },
+          "methanol": {
+            "mae_log2fc": 0.08215971770432551,
+            "r2": 0.8632752678899646,
+            "n": 4,
+            "model": "__global__"
+          },
+          "nonanal": {
+            "mae_log2fc": 0.04586111964424708,
+            "r2": 0.9300710304159463,
+            "n": 8,
+            "model": "nonanal"
+          },
+          "octane": {
+            "mae_log2fc": 0.13454461421280203,
+            "r2": 0.9405048519164456,
+            "n": 5,
+            "model": "octane"
+          },
+          "pentane": {
+            "mae_log2fc": 0.0016683728404379352,
+            "r2": 0.9990991367503448,
+            "n": 11,
+            "model": "pentane"
+          },
+          "phenol": {
+            "mae_log2fc": 0.11045313445700533,
+            "r2": 0.8810092751871721,
+            "n": 6,
+            "model": "phenol"
+          },
+          "propanol": {
+            "mae_log2fc": 0.032448637644650356,
+            "r2": 0.9889643066831177,
+            "n": 6,
+            "model": "propanol"
+          },
+          "toluene": {
+            "mae_log2fc": 0.006224515458706155,
+            "r2": 0.9989059778767674,
+            "n": 4,
+            "model": "__global__"
+          }
+        },
+        "pass": true
+      },
+      "zero_shot": {
+        "pass": true,
+        "pass_rate": 1.0,
+        "novel_vs_t2d_acetone_delta_ppb": 6360.6748596199295,
+        "novel_peak_abs_log2fc": 0.16727054877775338
+      }
+    },
+    "priority10": {
+      "passed": true,
+      "mean_directional_accuracy": 1.0,
+      "n_diseases": 13,
+      "seconds": 0.85
+    },
+    "vision": {
+      "passed": true,
+      "vision_fidelity_pct": 98.25,
+      "n_profiles": 50,
+      "seconds": 6.17
+    },
+    "multisite": {
+      "passed": true,
+      "composite_accuracy": 0.9875,
+      "seconds": 6.71
+    },
+    "public_breath": {
+      "passed": true,
+      "mean_directional_accuracy": 0.9821428571428571,
+      "mean_elevated_recall_at_k": 0.7482993197278912,
+      "scientific_data_elevated_directional_accuracy": 0.8888888888888888,
+      "scientific_data_elevated_recall_at_k": 0.41269841269841273,
+      "seconds": 0.92
+    },
+    "comorbidity": {
+      "passed": true,
+      "mean_directional_accuracy": 1.0,
+      "mean_elevated_recall_at_k": 0.95,
+      "n_cases": 4,
+      "seconds": 0.29
+    },
+    "stress_hard": {
+      "passed": true,
+      "pass_pct": 100.0,
+      "n_passed": 50,
+      "n_cases": 50,
+      "failed_ids": [],
+      "seconds": 3.28
+    },
+    "zero_shot_hard": {
+      "passed": true,
+      "pass_rate": 1.0,
+      "n_passed": 58,
+      "n_profiles": 58,
+      "failed_ids": [],
+      "by_trap": {
+        "acute_systemic": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "atlas_adjacent": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "atlas_category_sweep": {
+          "n": 8,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "category_word_vs_site": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "cell_frac_only": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "cholestatic_overlap": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "comorbidity_conflict": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "comorbidity_zero_shot": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "confounder": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "cross_level_genes": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "cross_level_site": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "drug_as_disease": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "endocrine": {
+          "n": 3,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "eponym_no_token": {
+          "n": 2,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "fibrotic_lung": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "gene_as_disease": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "granulomatous": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "hematologic": {
+          "n": 2,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "heme_pathway_gap": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "historical_deficiency": {
+          "n": 2,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "id_format": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "inflammatory_gyne": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "liver_immune": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "location_only": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "long_name": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "misleading_user_genes": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "mixed_categories": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "multi_system_name": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "near_healthy_control": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "neuroendocrine": {
+          "n": 2,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "noise_tokens": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "non_english": {
+          "n": 1,
+          "failed": 1,
+          "pass_rate": 0.0
+        },
+        "obstetric": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "override_only": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "post_infectious": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "sanity": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "site_sweep": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "suppress_not_elevate": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "toxic_metabolic": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "typo": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "unlisted_rare": {
+          "n": 2,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "unlisted_rare_no_token": {
+          "n": 2,
+          "failed": 0,
+          "pass_rate": 1.0
+        },
+        "wrong_location": {
+          "n": 1,
+          "failed": 0,
+          "pass_rate": 1.0
+        }
+      },
+      "seconds": 4.42
+    },
+    "zero_shot_reliability": {
+      "passed": true,
+      "holdout_pass_rate": 1.0,
+      "ldo_mean_directional_accuracy": 0.818894127536472,
+      "seconds": 8.34
+    },
+    "cohort": {
+      "passed": true,
+      "ok_pct": 100.0,
+      "n_ok": 1000,
+      "n_patients": 1000,
+      "n_unresolved": 0,
+      "seconds": 139.43
+    }
+  },
+  "limitations": [
+    "Zero-shot / hard-break suites score mechanism consistency and adversarial robustness \u2014 not external GC-MS clinical accuracy.",
+    "Public scientific-data elevated recall@15 remains modest; directional agreement is the stronger public-breath signal today.",
+    "Calibrator is fit on a small real corpus; treat MAE as small-n diagnostics, not a large held-out clinical trial.",
+    "Owlstone and other gated breath atlases are not used for training."
+  ],
+  "recommendation": "READY for research / hypothesis-generation deployment with uncertainty flags and mechanism audit trails."
+}

@@ -48,6 +48,7 @@ def evaluate_zero_shot_hard(
             genes=genes or None,
             description=prof.get("description"),
             pathway_overrides=prof.get("pathway_overrides"),
+            cell_state_fractions=prof.get("cell_state_fractions"),
             comorbidities=prof.get("comorbidities"),
             mode=mode,
             explain=False,

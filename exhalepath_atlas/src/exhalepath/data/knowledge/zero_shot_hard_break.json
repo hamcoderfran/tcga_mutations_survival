@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "Adversarial / hard zero-shot cases designed to break mechanism transfer: ambiguous names, conflicting sites, rare unlisted diseases, category traps, and near-healthy controls.",
+  "description": "Expanded adversarial / hard zero-shot + cross-level cases for implementation readiness.",
   "profiles": [
     {
       "id": "hard_ambiguous_lupus_nephritis",
@@ -716,6 +716,311 @@
         "acetone"
       ],
       "min_peak_abs_log2fc": 1.0
+    },
+    {
+      "id": "xlevel_wrong_site_msud_lung",
+      "difficulty": "hard",
+      "trap": "cross_level_site",
+      "disease": "Maple syrup urine disease",
+      "location": "lung",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "fatty_acid_oxidation"
+      ],
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "xlevel_cancer_gene_on_metabolic",
+      "difficulty": "hard",
+      "trap": "cross_level_genes",
+      "disease": "suspected ketotic crisis",
+      "location": "liver",
+      "description": "acute metabolic decompensation",
+      "genes": [
+        "TP53",
+        "KRAS"
+      ],
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism",
+        "fatty_acid_oxidation",
+        "glycolysis_warburg"
+      ],
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "xlevel_empty_disease_location_only",
+      "difficulty": "hard",
+      "trap": "location_only",
+      "disease": "unknown",
+      "location": "brain",
+      "expect_unresolved": true,
+      "near_healthy": true,
+      "max_abs_log2fc": 0.6,
+      "expect_mechanism": false
+    },
+    {
+      "id": "xlevel_multi_comorbid_zero_shot",
+      "difficulty": "hard",
+      "trap": "comorbidity_zero_shot",
+      "disease": "primary biliary cholangitis",
+      "location": "liver",
+      "comorbidities": [
+        "type 2 diabetes",
+        "obesity"
+      ],
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "ammonia",
+        "acetone"
+      ],
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "xlevel_atlas_all_categories_cancer",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "lung adenocarcinoma",
+      "location": "lung",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "min_peak_abs_log2fc": 0.5
+    },
+    {
+      "id": "xlevel_atlas_neuro",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "Alzheimer disease",
+      "location": "brain",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "xlevel_atlas_metabolic",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "type 2 diabetes",
+      "location": "systemic",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "acetone"
+      ],
+      "min_peak_abs_log2fc": 1.0
+    },
+    {
+      "id": "xlevel_atlas_microbiome",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "inflammatory bowel disease",
+      "location": "intestine",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "indole",
+        "hydrogen_sulfide"
+      ],
+      "min_peak_abs_log2fc": 0.2
+    },
+    {
+      "id": "xlevel_atlas_infectious",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "tuberculosis",
+      "location": "lung",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "xlevel_atlas_cv",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "heart failure",
+      "location": "heart",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "acetone",
+        "pentane"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "xlevel_atlas_pulm",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "COPD",
+      "location": "lung",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "min_peak_abs_log2fc": 0.3
+    },
+    {
+      "id": "xlevel_atlas_inflam",
+      "difficulty": "medium",
+      "trap": "atlas_category_sweep",
+      "disease": "rheumatoid arthritis",
+      "location": "systemic",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "pentane",
+        "hexanal"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "break_mondo_like",
+      "difficulty": "hard",
+      "trap": "id_format",
+      "disease": "cystic fibrosis",
+      "location": "lung",
+      "expect_unresolved": false,
+      "must_elevate": [
+        "hexanal",
+        "pentane"
+      ],
+      "min_peak_abs_log2fc": 0.2,
+      "notes": "CF mondo id if aliased; else may unresolved"
+    },
+    {
+      "id": "break_typo_diabetes",
+      "difficulty": "hard",
+      "trap": "typo",
+      "disease": "type 2 diabetees",
+      "location": "systemic",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone"
+      ],
+      "pathway_any": [
+        "ketone_body_metabolism"
+      ],
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "break_spanish_liver",
+      "difficulty": "hard",
+      "trap": "non_english",
+      "disease": "cirrosis hepatica",
+      "location": "liver",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "pentane",
+        "2_butanone"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "lipid_peroxidation",
+        "urea_cycle"
+      ],
+      "min_peak_abs_log2fc": 0.15
+    },
+    {
+      "id": "break_very_long_name",
+      "difficulty": "hard",
+      "trap": "long_name",
+      "disease": "autosomal recessive mitochondrial complex I deficiency with leukoencephalopathy and recurrent metabolic crises",
+      "location": "brain",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "hexanal"
+      ],
+      "pathway_any": [
+        "brain_energy_metabolism",
+        "ketone_body_metabolism",
+        "lipid_peroxidation",
+        "neuroinflammation"
+      ],
+      "min_peak_abs_log2fc": 0.25
+    },
+    {
+      "id": "break_confound_smoking_vocs",
+      "difficulty": "hard",
+      "trap": "confounder",
+      "disease": "benign essential freckling syndrome ZX-0",
+      "location": "skin",
+      "expect_unresolved": true,
+      "near_healthy": true,
+      "max_abs_log2fc": 0.5,
+      "expect_mechanism": false
+    },
+    {
+      "id": "break_pathway_override_only",
+      "difficulty": "hard",
+      "trap": "override_only",
+      "disease": "unnamed condition QQ",
+      "location": "systemic",
+      "pathway_overrides": {
+        "ketone_body_metabolism": 2.0,
+        "urea_cycle": 1.8
+      },
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "acetone",
+        "ammonia"
+      ],
+      "min_peak_abs_log2fc": 0.4
+    },
+    {
+      "id": "break_cell_frac_only",
+      "difficulty": "hard",
+      "trap": "cell_frac_only",
+      "disease": "unnamed condition RR",
+      "location": "liver",
+      "cell_state_fractions": {
+        "hepatocyte_ketogenic": 0.7,
+        "oxidative_stress_cell": 0.4
+      },
+      "expect_unresolved": true,
+      "near_healthy": true,
+      "expect_mechanism": false,
+      "notes": "Known limit: cell fractions alone without disease mechanism stay near-healthy unless physio chains fire strongly.",
+      "max_abs_log2fc": 0.5
+    },
+    {
+      "id": "break_all_sites_wilson",
+      "difficulty": "hard",
+      "trap": "site_sweep",
+      "disease": "Wilson disease",
+      "location": "kidney",
+      "expect_unresolved": true,
+      "expect_mechanism": true,
+      "must_elevate": [
+        "pentane",
+        "ammonia"
+      ],
+      "pathway_any": [
+        "cytochrome_p450_detox",
+        "lipid_peroxidation",
+        "urea_cycle"
+      ],
+      "min_peak_abs_log2fc": 0.25
     }
   ]
 }

@@ -1179,6 +1179,37 @@ def eval_zero_shot_reliability_cmd(
         raise typer.Exit(code=1)
 
 
+@app.command("eval-implementation-readiness")
+def eval_implementation_readiness_cmd(
+    out_dir: Path = typer.Option(Path("runs/implementation_readiness")),
+    max_cohort: Optional[int] = typer.Option(
+        1000, help="Patient cohort size (default full 1000)"
+    ),
+    skip_pytest: bool = typer.Option(False, help="Skip pytest layer"),
+):
+    """Comprehensive multi-layer readiness gate across all eval suites."""
+    from .eval.implementation_readiness import evaluate_implementation_readiness
+
+    report = evaluate_implementation_readiness(
+        out_dir=out_dir,
+        max_cohort_patients=max_cohort,
+        skip_pytest=skip_pytest,
+    )
+    rprint("[bold]Implementation readiness[/bold]")
+    ready = report["ready_for_implementation"]
+    color = "green" if ready else "red"
+    rprint(
+        f"  ready: [{color}]{ready}[/{color}]  "
+        f"score={report['n_gates_passed']}/{report['n_gates']}"
+    )
+    for k, v in report["gates"].items():
+        rprint(f"  {'✓' if v else '✗'} {k}")
+    rprint(f"  recommendation: {report['recommendation']}")
+    rprint(f"  report: {out_dir / 'IMPLEMENTATION_READINESS.md'}")
+    if not ready:
+        raise typer.Exit(code=1)
+
+
 @app.command("eval-zero-shot-hard")
 def eval_zero_shot_hard_cmd(
     out_dir: Path = typer.Option(Path("runs/zero_shot_hard_break")),
@@ -1468,6 +1499,7 @@ def main(argv: Optional[list[str]] = None):
         "biomarker",
         "predict-novel",
         "eval-zero-shot-reliability",
+        "eval-implementation-readiness",
         "eval-zero-shot-hard",
         "ask",
         "nl",
