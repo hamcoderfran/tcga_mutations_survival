@@ -3,6 +3,17 @@
 Single entry point for past evaluations and reports on `main`.
 Trained calibrators (`data/models/*.joblib`) are **not** modified by eval merges.
 
+## One-line product usage (v1.4)
+
+```bash
+pip install -e exhalepath_atlas   # or: bash exhalepath_atlas/install_voc.sh
+voc "depression" -l brain -c obesity --age 24 --sex male
+# → rich console + runs/voc_*/REPORT.html + dashboard.png + REPORT.md + CSVs
+voc eval-implementation-readiness   # research readiness gates
+```
+
+See [QUICKSTART.md](../../QUICKSTART.md).
+
 ## Headline reports (canonical)
 
 | Result | Path | How to re-run |

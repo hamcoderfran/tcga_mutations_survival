@@ -1,21 +1,23 @@
 # ExhalePath Atlas (`voc`)
 
-**Install once, predict exhaled VOC biomarkers:**
+**One line in → full visual + comprehensive report out:**
 
 ```bash
 pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 voc "depression" -l brain -c obesity --age 24 --sex male
+# → terminal panel + runs/voc_…/REPORT.html + dashboard.png
 ```
 
-See [QUICKSTART.md](QUICKSTART.md). Package name on pip: **`voc-breath`** · command: **`voc`**.
+See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.4.0**.
 
-**Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, comorbidities, whole-body physiology, and mechanism explainability across **100+ diseases**.
+**Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, comorbidities, whole-body physiology, zero-shot mechanism transfer, and mechanism explainability across **100+ diseases**.
 
 This folder is the GitHub deliverable that packages the complete stack (prediction + validation + all external data integrations).
 
 > Research / hypothesis-generation tool. Not a medical device.
 
-**Past results (vision, pipeline, stress, 1000-patient cohort):** see [`data/knowledge/RESULTS_INDEX.md`](data/knowledge/RESULTS_INDEX.md).
+**Past results (vision, pipeline, stress, 1000-patient cohort, zero-shot readiness):** see [`data/knowledge/RESULTS_INDEX.md`](data/knowledge/RESULTS_INDEX.md) and [`data/knowledge/implementation_readiness/`](data/knowledge/implementation_readiness/).
+
 
 ## Install
 

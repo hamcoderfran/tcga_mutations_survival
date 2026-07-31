@@ -45,10 +45,16 @@ def _run_biomarker_from_slots(
     out_dir: Optional[Path] = None,
     no_opentargets: bool = False,
     no_explain: bool = False,
+    no_save: bool = False,
+    top_display: int = 15,
 ):
-    """Shared path: QuerySlots → ExhaleBiomarkerEngine → rich table."""
+    """Shared path: QuerySlots → ExhaleBiomarkerEngine → visual + comprehensive report."""
     from .biomarker import ExhaleBiomarkerEngine
-    from .viz.report import save_biomarker_report
+    from .viz.dashboard import (
+        default_report_dir,
+        print_comprehensive_console,
+        save_visual_dashboard,
+    )
 
     miss = slots.missing_required()
     if miss:
@@ -59,53 +65,16 @@ def _run_biomarker_from_slots(
     )
     kwargs = slots.to_biomarker_kwargs()
     report = engine.predict(**kwargs, explain=not no_explain)
+    print_comprehensive_console(report, top_display=top_display)
 
-    comorb_label = ""
-    meta = report.result.bundle.metadata or {}
-    if meta.get("comorbidities"):
-        comorb_label = " + " + "+".join(
-            str(c.get("name") or c.get("disease_id")) for c in meta["comorbidities"]
+    if not no_save:
+        dest = Path(out_dir) if out_dir else default_report_dir(
+            report.disease_name, slots.location
         )
-    loc = report.location.get("name") or slots.location
-    table = Table(
-        title=f"ExhalePath Biomarker · {report.disease_name}{comorb_label} @ {loc}"
-    )
-    table.add_column("#", justify="right")
-    table.add_column("VOC")
-    table.add_column("Healthy ppb", justify="right")
-    table.add_column("Predicted ppb", justify="right")
-    table.add_column("Δ ppb", justify="right")
-    table.add_column("Fold", justify="right")
-    table.add_column("Conf", justify="right")
-    for i, p in enumerate(report.top_vocs, 1):
-        table.add_row(
-            str(i),
-            p.name,
-            f"{p.healthy_ppb:.2f}",
-            f"{p.predicted_ppb:.2f}",
-            f"{p.delta_ppb:+.2f}",
-            f"{p.fold_change:.2f}x",
-            f"{p.confidence:.2f}",
-        )
-    rprint(table)
-    if slots.parse_method:
-        rprint(f"[dim]Parsed via: {slots.parse_method}[/dim]")
-    rprint(
-        f"[dim]Modeled {report.n_vocs_modeled} VOCs · showing top {len(report.top_vocs)} "
-        f"by |Δppb| · {report.model_version}[/dim]"
-    )
-    for note in report.notes[:6]:
-        rprint(f"[dim]• {note}[/dim]")
-    if report.mechanisms:
-        rprint("[cyan]Why (mechanisms)[/cyan]")
-        for m in report.mechanisms[:5]:
-            rprint(f"  • {m.get('why')}")
-    if out_dir:
-        paths = save_biomarker_report(report, out_dir)
-        rprint(
-            "[green]Wrote biomarker report:[/green]",
-            json.dumps({k: str(v) for k, v in paths.items()}, indent=2),
-        )
+        paths = save_visual_dashboard(report, dest)
+        rprint(f"[green]Full visual report:[/green] {paths.get('report_html')}")
+        rprint(f"[green]Dashboard:[/green] {paths.get('dashboard')}")
+        rprint(f"[dim]All artifacts → {dest}[/dim]")
     return report
 
 
@@ -946,7 +915,11 @@ def biomarker_cmd(
         help="Allow ontology NN to copy VOC priors (default: mechanism-only transfer)",
     ),
     out_dir: Optional[Path] = typer.Option(
-        None, help="Write top-50 biomarker CSV/JSON/plots here"
+        None,
+        help="Write full visual report here (default: auto runs/voc_<disease>_…)",
+    ),
+    no_save: bool = typer.Option(
+        False, help="Do not write HTML/dashboard/CSV artifacts"
     ),
     no_opentargets: bool = typer.Option(False, help="Disable Open Targets enrichment"),
     no_explain: bool = typer.Option(
@@ -956,12 +929,18 @@ def biomarker_cmd(
     """
     Whole-body exhaled biomarker prediction: disease + any cell location → top VOCs (ppb).
 
-    Models ~100 atlas diseases × full-body tissue map × 50-VOC panel.
-    Comorbidities fuse pathway bias, VOC priors, and cell-state modulation.
-    Unseen diseases use zero-shot mechanism transfer (no VOC prior copy by default).
+    One-liner friendly (also the default when you run `voc "disease" …`):
+      voc "depression" -l brain -c obesity --age 24 --sex male
+
+    Auto-writes a comprehensive visual pack (HTML + dashboard PNG + CSV/JSON)
+    unless --no-save is set.
     """
     from .biomarker import ExhaleBiomarkerEngine
-    from .viz.report import save_biomarker_report
+    from .viz.dashboard import (
+        default_report_dir,
+        print_comprehensive_console,
+        save_visual_dashboard,
+    )
 
     engine = ExhaleBiomarkerEngine(
         use_opentargets=not no_opentargets, reload_knowledge=True
@@ -993,58 +972,13 @@ def biomarker_cmd(
         comorbidity_weight=comorbidity_weight,
         copy_voc_priors_from_neighbor=copy_voc_priors,
     )
-    comorb_label = ""
-    meta = report.result.bundle.metadata or {}
-    if meta.get("comorbidities"):
-        comorb_label = " + " + "+".join(
-            str(c.get("name") or c.get("disease_id")) for c in meta["comorbidities"]
-        )
-    table = Table(
-        title=(
-            f"ExhalePath Biomarker · {report.disease_name}{comorb_label} @ "
-            f"{report.location.get('name') or location}"
-        )
-    )
-    table.add_column("#", justify="right")
-    table.add_column("VOC")
-    table.add_column("Healthy ppb", justify="right")
-    table.add_column("Predicted ppb", justify="right")
-    table.add_column("Δ ppb", justify="right")
-    table.add_column("Fold", justify="right")
-    table.add_column("Conf", justify="right")
-    for i, p in enumerate(report.top_vocs, 1):
-        table.add_row(
-            str(i),
-            p.name,
-            f"{p.healthy_ppb:.2f}",
-            f"{p.predicted_ppb:.2f}",
-            f"{p.delta_ppb:+.2f}",
-            f"{p.fold_change:.2f}x",
-            f"{p.confidence:.2f}",
-        )
-    rprint(table)
-    rprint(
-        f"[dim]Modeled {report.n_vocs_modeled} VOCs · showing top {len(report.top_vocs)} "
-        f"by |Δppb| · {report.model_version}[/dim]"
-    )
-    zs = meta.get("zero_shot")
-    if zs:
-        rprint(
-            f"[yellow]Zero-shot[/yellow] mode={meta.get('zero_shot_mode')} "
-            f"mechanism_confidence={meta.get('mechanism_confidence')}"
-        )
-    for note in report.notes[:8]:
-        rprint(f"[dim]• {note}[/dim]")
-    if report.mechanisms:
-        rprint("[cyan]Why (mechanisms)[/cyan]")
-        for m in report.mechanisms[:5]:
-            rprint(f"  • {m.get('why')}")
-    if out_dir:
-        paths = save_biomarker_report(report, out_dir)
-        rprint(
-            "[green]Wrote biomarker report:[/green]",
-            json.dumps({k: str(v) for k, v in paths.items()}, indent=2),
-        )
+    print_comprehensive_console(report, top_display=min(15, top))
+    if not no_save:
+        dest = Path(out_dir) if out_dir else default_report_dir(disease, location)
+        paths = save_visual_dashboard(report, dest)
+        rprint(f"[green]Full visual report:[/green] {paths.get('report_html')}")
+        rprint(f"[green]Dashboard:[/green] {paths.get('dashboard')}")
+        rprint(f"[dim]Open REPORT.html in a browser · artifacts → {dest}[/dim]")
 
 
 @app.command("predict-novel")
@@ -1070,19 +1004,29 @@ def predict_novel_cmd(
     ),
     top: int = typer.Option(15, help="Top-N VOCs to display"),
     mode: str = typer.Option("hybrid"),
-    out_dir: Optional[Path] = typer.Option(None, help="Write report directory"),
+    out_dir: Optional[Path] = typer.Option(
+        None, help="Write visual report here (default: auto under runs/)"
+    ),
+    no_save: bool = typer.Option(
+        False, help="Do not write HTML/dashboard/CSV artifacts"
+    ),
     copy_voc_priors: bool = typer.Option(
         False, help="Allow VOC prior copy from ontology neighbor (off by default)"
     ),
 ):
     """
-    Zero-shot novel-disease path: mechanism-first prediction with uncertainty flags.
+    Zero-shot novel-disease path: mechanism-first prediction with full visual report.
 
     Prefer genes / pathway overrides / tissue / description over bare names.
     VOC priors are not copied from atlas neighbors unless --copy-voc-priors.
+    Same output pack as `voc \"disease\" …` (REPORT.html + dashboard.png).
     """
     from .biomarker import ExhaleBiomarkerEngine
-    from .viz.report import save_biomarker_report
+    from .viz.dashboard import (
+        default_report_dir,
+        print_comprehensive_console,
+        save_visual_dashboard,
+    )
 
     engine = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
     mode_norm = mode if mode in {"physiology", "hybrid", "legacy"} else "hybrid"
@@ -1099,43 +1043,13 @@ def predict_novel_cmd(
         explain=True,
         copy_voc_priors_from_neighbor=copy_voc_priors,
     )
-    meta = report.result.bundle.metadata or {}
-    table = Table(
-        title=(
-            f"Zero-shot · {report.disease_name} @ "
-            f"{report.location.get('name') or location or 'systemic'}"
-        )
-    )
-    table.add_column("#", justify="right")
-    table.add_column("VOC")
-    table.add_column("Δ ppb", justify="right")
-    table.add_column("Fold", justify="right")
-    table.add_column("Conf", justify="right")
-    table.add_column("Drivers")
-    for i, p in enumerate(report.top_vocs, 1):
-        table.add_row(
-            str(i),
-            p.name,
-            f"{p.delta_ppb:+.2f}",
-            f"{p.fold_change:.2f}x",
-            f"{p.confidence:.2f}",
-            ", ".join(p.top_pathway_drivers[:3]) or "—",
-        )
-    rprint(table)
-    rprint(
-        f"[yellow]zero_shot[/yellow] mode={meta.get('zero_shot_mode')} "
-        f"mechanism_confidence={meta.get('mechanism_confidence')} "
-        f"category={meta.get('category')} site={meta.get('default_site')}"
-    )
-    if meta.get("zero_shot_evidence"):
-        rprint("[cyan]Evidence[/cyan]")
-        for ev in meta["zero_shot_evidence"][:6]:
-            rprint(f"  • {ev}")
-    for note in report.notes[:8]:
-        rprint(f"[dim]• {note}[/dim]")
-    if out_dir:
-        paths = save_biomarker_report(report, out_dir)
-        rprint("[green]Wrote:[/green]", json.dumps({k: str(v) for k, v in paths.items()}))
+    print_comprehensive_console(report, top_display=min(15, top))
+    if not no_save:
+        dest = Path(out_dir) if out_dir else default_report_dir(disease, location)
+        paths = save_visual_dashboard(report, dest)
+        rprint(f"[green]Full visual report:[/green] {paths.get('report_html')}")
+        rprint(f"[green]Dashboard:[/green] {paths.get('dashboard')}")
+        rprint(f"[dim]Open REPORT.html in a browser · artifacts → {dest}[/dim]")
 
 
 @app.command("eval-zero-shot-reliability")
