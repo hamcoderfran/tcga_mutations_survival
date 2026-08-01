@@ -8,8 +8,18 @@ One comprehensive folder that fuses **16 models** across exhaled VOCs and the re
 
 ```bash
 pip install -e "exhalepath_atlas[dev,stack]"
+
+# Structured
 voc stack "depression" -l brain -c obesity --age 24 --sex male
+
+# Naturalistic patient input → PatientTemplate → 16-model stack
+voc patient "35M with schizophrenia, smokes, on olanzapine, BMI 32, hallucinations"
+voc stack --nl "62F former smoker, stage II lung adenocarcinoma LLL, KRAS/TP53"
 ```
+
+`voc patient` accepts vignettes, clinic-note sections (`CC:`/`HPI:`/`PMH:`/`Meds:`),
+`key: value` blocks, or JSON — then normalizes to a `PatientTemplate` the stack understands.
+Use `--show-template` to inspect the parsed template without running models.
 
 Writes `runs/stack_*/`:
 

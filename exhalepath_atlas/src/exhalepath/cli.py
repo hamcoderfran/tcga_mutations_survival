@@ -23,6 +23,7 @@ app = typer.Typer(
         "Quick start:\n"
         '  voc "depression" -l brain -c obesity --age 24 --sex male\n'
         '  voc stack "depression" -l brain -c obesity --age 24 --sex male\n'
+        '  voc patient "35M schizophrenia, smokes, on olanzapine, BMI 32"\n'
         '  voc ask                    # interactive question fields\n'
         '  voc nl "24yo obese male with depression"   # optional light LLM\n'
         '  voc "lung adenocarcinoma" -l lung --stage II --genes KRAS,TP53\n'
@@ -982,31 +983,22 @@ def biomarker_cmd(
         rprint(f"[dim]Open REPORT.html in a browser · artifacts → {dest}[/dim]")
 
 
-@app.command("stack")
-def great_stack_cmd(
-    disease: str = typer.Argument(..., help="Disease name (atlas or novel)"),
-    location: Optional[str] = typer.Option(None, "--location", "-l"),
-    comorbidity: Optional[list[str]] = typer.Option(None, "--comorbidity", "-c"),
-    age: Optional[float] = typer.Option(None, "--age"),
-    sex: Optional[str] = typer.Option(None, "--sex"),
-    genes: Optional[str] = typer.Option(None, help="Comma-separated genes"),
-    description: Optional[str] = typer.Option(None, "--description", "-d"),
-    smoking: Optional[str] = typer.Option(None, help="never|former|current"),
-    top: int = typer.Option(20, "--top", "-k"),
-    out_dir: Optional[Path] = typer.Option(
-        None, "--out-dir", help="Write STACK_REPORT.html pack (default: runs/stack_…)"
-    ),
-    no_save: bool = typer.Option(False, "--no-save"),
-    json_out: bool = typer.Option(False, "--json"),
+def _run_stack_and_report(
+    *,
+    disease: str,
+    location: Optional[str],
+    comorbidities: Optional[list[str]],
+    age: Optional[float],
+    sex: Optional[str],
+    genes: Optional[list[str]],
+    description: Optional[str],
+    smoking: Optional[str],
+    top: int,
+    out_dir: Optional[Path],
+    no_save: bool,
+    json_out: bool,
+    patient_template: Optional[dict] = None,
 ):
-    """
-    Great Disease Prediction Stack — fuse 16 models across VOC + disease biology.
-
-    Models: ExhalePath hybrid/physio/calibrator, zero-shot, literature priors,
-    Open Targets genes, Human-GEM flux proxy, OPERA ADME, PrimeKG graph,
-    OmniPath signaling, AGORA microbiome, PBPK/Farhi, Census cell-states,
-    comorbidity, ChEMBL pharmacology, pathway enrichment.
-    """
     from .great_stack import run_great_stack
     from .great_stack.report import (
         default_stack_dir,
@@ -1015,9 +1007,124 @@ def great_stack_cmd(
         save_stack_report,
     )
 
-    gene_list = [g.strip().upper() for g in genes.split(",") if g.strip()] if genes else None
     result = run_great_stack(
         disease,
+        location=location,
+        comorbidities=list(comorbidities or []),
+        age=age,
+        sex=sex,
+        genes=genes,
+        description=description,
+        smoking=smoking,
+        top_n=top,
+    )
+    payload = result_to_dict(result)
+    if patient_template is not None:
+        payload["patient_template"] = patient_template
+    if json_out:
+        typer.echo(json.dumps(payload, indent=2, default=str))
+        return result
+    print_stack_console(result, top_display=min(15, top))
+    if not no_save:
+        dest = Path(out_dir) if out_dir else default_stack_dir(disease, location)
+        paths = save_stack_report(result, dest)
+        if patient_template is not None:
+            (dest / "PATIENT_TEMPLATE.json").write_text(
+                json.dumps(patient_template, indent=2, default=str)
+            )
+            rprint(f"[cyan]Patient template:[/cyan] {dest / 'PATIENT_TEMPLATE.json'}")
+        rprint(f"[green]Stack HTML report:[/green] {paths.get('html')}")
+        rprint(f"[green]Dashboard:[/green] {paths.get('dashboard')}")
+        rprint(f"[dim]Full pack → {dest}[/dim]")
+    return result
+
+
+@app.command("stack")
+def great_stack_cmd(
+    disease: Optional[str] = typer.Argument(
+        None, help="Disease name (atlas or novel). Optional if --nl is set."
+    ),
+    location: Optional[str] = typer.Option(None, "--location", "-l"),
+    comorbidity: Optional[list[str]] = typer.Option(None, "--comorbidity", "-c"),
+    age: Optional[float] = typer.Option(None, "--age"),
+    sex: Optional[str] = typer.Option(None, "--sex"),
+    genes: Optional[str] = typer.Option(None, help="Comma-separated genes"),
+    description: Optional[str] = typer.Option(None, "--description", "-d"),
+    smoking: Optional[str] = typer.Option(None, help="never|former|current"),
+    nl: Optional[str] = typer.Option(
+        None,
+        "--nl",
+        help="Naturalistic patient vignette/note → PatientTemplate → stack",
+    ),
+    llm: str = typer.Option(
+        "rules",
+        "--llm",
+        help="NL backend for --nl: rules | auto | ollama | openai",
+    ),
+    top: int = typer.Option(20, "--top", "-k"),
+    out_dir: Optional[Path] = typer.Option(
+        None, "--out-dir", help="Write STACK_REPORT.html pack (default: runs/stack_…)"
+    ),
+    no_save: bool = typer.Option(False, "--no-save"),
+    json_out: bool = typer.Option(False, "--json"),
+    show_template: bool = typer.Option(
+        False, "--show-template", help="Print parsed PatientTemplate JSON and exit"
+    ),
+):
+    """
+    Great Disease Prediction Stack — fuse 16 models across VOC + disease biology.
+
+    Structured flags **or** naturalistic input:
+      voc stack "schizophrenia" -l brain --age 35 --sex male
+      voc stack --nl "35M with schizophrenia, smokes, on olanzapine, BMI 32"
+    """
+    template_dump = None
+    if nl:
+        from .nl import parse_patient_template
+
+        tpl = parse_patient_template(nl, disease_catalog=_disease_catalog(), llm=llm)
+        template_dump = tpl.model_dump()
+        rprint("[cyan]Parsed patient template[/cyan]")
+        for line in tpl.summary_lines():
+            rprint(f"  {line}")
+        if show_template:
+            typer.echo(json.dumps(template_dump, indent=2, default=str))
+            raise typer.Exit(code=0)
+        if tpl.missing_required():
+            raise typer.BadParameter(
+                "Could not resolve primary_disease from --nl; try a clearer vignette "
+                "or pass disease as the first argument"
+            )
+        kw = tpl.to_stack_kwargs()
+        # CLI flags override template when explicitly provided
+        _run_stack_and_report(
+            disease=disease or kw["disease"],
+            location=location or kw.get("location"),
+            comorbidities=list(comorbidity or kw.get("comorbidities") or []),
+            age=age if age is not None else kw.get("age"),
+            sex=sex or kw.get("sex"),
+            genes=(
+                [g.strip().upper() for g in genes.split(",") if g.strip()]
+                if genes
+                else kw.get("genes")
+            ),
+            description=description or kw.get("description"),
+            smoking=smoking or kw.get("smoking"),
+            top=top,
+            out_dir=out_dir,
+            no_save=no_save,
+            json_out=json_out,
+            patient_template=template_dump,
+        )
+        return
+
+    if not disease:
+        raise typer.BadParameter("Provide a disease argument or --nl vignette")
+    if show_template:
+        raise typer.BadParameter("--show-template requires --nl")
+    gene_list = [g.strip().upper() for g in genes.split(",") if g.strip()] if genes else None
+    _run_stack_and_report(
+        disease=disease,
         location=location,
         comorbidities=list(comorbidity or []),
         age=age,
@@ -1025,18 +1132,139 @@ def great_stack_cmd(
         genes=gene_list,
         description=description,
         smoking=smoking,
-        top_n=top,
+        top=top,
+        out_dir=out_dir,
+        no_save=no_save,
+        json_out=json_out,
     )
-    if json_out:
-        typer.echo(json.dumps(result_to_dict(result), indent=2, default=str))
+
+
+@app.command("patient")
+def patient_cmd(
+    text: Optional[str] = typer.Argument(
+        None,
+        help="Naturalistic patient vignette, clinic note, or JSON/key=value block",
+    ),
+    file: Optional[Path] = typer.Option(
+        None, "--file", "-f", help="Read patient text from a file"
+    ),
+    llm: str = typer.Option(
+        "auto",
+        "--llm",
+        help="rules | auto | ollama | openai — enrich gaps when available",
+    ),
+    engine: str = typer.Option(
+        "stack",
+        "--engine",
+        help="stack (16-model fusion) | biomarker (single ExhalePath engine)",
+    ),
+    show_template: bool = typer.Option(
+        False, "--show-template", help="Print PatientTemplate JSON only"
+    ),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmation"),
+    out_dir: Optional[Path] = typer.Option(None, "--out-dir"),
+    no_save: bool = typer.Option(False, "--no-save"),
+    json_out: bool = typer.Option(False, "--json"),
+    top: int = typer.Option(20, "--top", "-k"),
+):
+    """
+    Naturalistic patient input → PatientTemplate → prediction.
+
+    Accepts vignettes, clinic-note sections (CC/HPI/PMH/Meds), key=value lines,
+    or JSON. Example:
+
+      voc patient "35M with schizophrenia, smokes, on olanzapine, BMI 32, hallucinations"
+      voc patient -f note.txt --engine stack
+      voc patient --show-template "24yo obese female with depression and insomnia"
+    """
+    from .nl import confirm_slots, parse_patient_template
+
+    if file is not None:
+        text = Path(file).read_text()
+    if text is None or not str(text).strip():
+        # read stdin if piped
+        import sys
+
+        if not sys.stdin.isatty():
+            text = sys.stdin.read()
+    if not text or not str(text).strip():
+        raise typer.BadParameter("Provide vignette text, --file, or stdin")
+
+    tpl = parse_patient_template(
+        text, disease_catalog=_disease_catalog(), llm=llm
+    )
+    rprint("[cyan]Patient template[/cyan]")
+    for line in tpl.summary_lines():
+        rprint(f"  {line}")
+
+    if show_template:
+        typer.echo(tpl.model_dump_json(indent=2))
+        raise typer.Exit(code=0)
+
+    if tpl.missing_required():
+        raise typer.BadParameter(
+            "primary_disease unresolved — include a condition name or diagnosis"
+        )
+
+    if not yes:
+        slots = tpl.to_query_slots()
+        if not confirm_slots(slots):
+            rprint("[yellow]Cancelled[/yellow]")
+            raise typer.Exit(code=0)
+
+    tpl.top = top
+    if engine == "biomarker":
+        slots = tpl.to_query_slots()
+        # stash description via engine predict kwargs
+        from .biomarker import ExhaleBiomarkerEngine
+        from .viz.dashboard import (
+            default_report_dir,
+            print_comprehensive_console,
+            save_visual_dashboard,
+        )
+
+        kw = tpl.to_biomarker_kwargs()
+        eng = ExhaleBiomarkerEngine(use_opentargets=True, reload_knowledge=True)
+        report = eng.predict(**kw, explain=True)
+        if json_out:
+            typer.echo(
+                json.dumps(
+                    {
+                        "patient_template": tpl.model_dump(),
+                        "top_vocs": [p.model_dump() for p in report.top_vocs],
+                    },
+                    indent=2,
+                    default=str,
+                )
+            )
+            return
+        print_comprehensive_console(report, top_display=min(15, top))
+        if not no_save:
+            dest = Path(out_dir) if out_dir else default_report_dir(
+                report.disease_name, slots.location
+            )
+            paths = save_visual_dashboard(report, dest)
+            (dest / "PATIENT_TEMPLATE.json").write_text(tpl.model_dump_json(indent=2))
+            rprint(f"[green]Report:[/green] {paths.get('report_html')}")
         return
-    print_stack_console(result, top_display=min(15, top))
-    if not no_save:
-        dest = Path(out_dir) if out_dir else default_stack_dir(disease, location)
-        paths = save_stack_report(result, dest)
-        rprint(f"[green]Stack HTML report:[/green] {paths.get('html')}")
-        rprint(f"[green]Dashboard:[/green] {paths.get('dashboard')}")
-        rprint(f"[dim]Full pack → {dest}[/dim]")
+
+    # default: full stack
+    kw = tpl.to_stack_kwargs()
+    _run_stack_and_report(
+        disease=kw["disease"],
+        location=kw.get("location"),
+        comorbidities=kw.get("comorbidities"),
+        age=kw.get("age"),
+        sex=kw.get("sex"),
+        genes=kw.get("genes"),
+        description=kw.get("description"),
+        smoking=kw.get("smoking"),
+        top=top,
+        out_dir=out_dir,
+        no_save=no_save,
+        json_out=json_out,
+        patient_template=tpl.model_dump(),
+    )
 
 
 @app.command("predict-novel")
@@ -1471,6 +1699,7 @@ def main(argv: Optional[list[str]] = None):
         "biomarker",
         "predict-novel",
         "stack",
+        "patient",
         "eval-zero-shot-reliability",
         "eval-implementation-readiness",
         "eval-zero-shot-hard",
