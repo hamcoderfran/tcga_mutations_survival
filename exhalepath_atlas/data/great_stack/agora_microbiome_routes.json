@@ -1,0 +1,172 @@
+{
+  "version": "1.0",
+  "description": "AGORA2/mVOC-style microbial VOC emission priors",
+  "routes": [
+    {
+      "taxon": "microbe",
+      "voc_id": "indole",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "phenol",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "hydrogen_sulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "methyl_mercaptan",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "dimethyl_disulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "ethanol",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "propanol",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "acetaldehyde",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "ethyl_acetate",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "hydrogen_sulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "hydrogen_sulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "methyl_mercaptan",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "carbon_disulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "trimethylamine",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "dimethyl_amine",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "ammonia",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "hydrogen_sulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "hydrogen_sulfide",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "methyl_mercaptan",
+      "weight": 1.0,
+      "src": "mvoc"
+    },
+    {
+      "taxon": "microbe",
+      "voc_id": "indole",
+      "weight": 1.0,
+      "src": "mvoc"
+    }
+  ],
+  "category_taxa": {
+    "metabolic": [
+      "Akkermansia",
+      "Bacteroides",
+      "Escherichia"
+    ],
+    "gastrointestinal": [
+      "Helicobacter",
+      "Fusobacterium",
+      "Escherichia",
+      "Bacteroides"
+    ],
+    "cancer": [
+      "Fusobacterium",
+      "Bacteroides"
+    ],
+    "infectious": [
+      "Streptococcus",
+      "Haemophilus",
+      "Pseudomonas"
+    ],
+    "respiratory": [
+      "Streptococcus",
+      "Haemophilus",
+      "Pseudomonas",
+      "Moraxella"
+    ],
+    "neurological": [
+      "Bacteroides",
+      "Lactobacillus"
+    ],
+    "psychiatric": [
+      "Lactobacillus",
+      "Bifidobacterium",
+      "Bacteroides"
+    ],
+    "cardiovascular": [
+      "Escherichia",
+      "Bacteroides"
+    ],
+    "autoimmune": [
+      "Bacteroides",
+      "Prevotella"
+    ]
+  },
+  "n_routes": 20
+}

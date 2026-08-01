@@ -3,16 +3,18 @@
 Single entry point for past evaluations and reports on `main`.
 Trained calibrators (`data/models/*.joblib`) are **not** modified by eval merges.
 
-## One-line product usage (v1.4)
+## One-line product usage (v1.5)
 
 ```bash
-pip install -e exhalepath_atlas   # or: bash exhalepath_atlas/install_voc.sh
+pip install -e "exhalepath_atlas[dev,stack]"
 voc "depression" -l brain -c obesity --age 24 --sex male
 # → rich console + runs/voc_*/REPORT.html + dashboard.png + REPORT.md + CSVs
+voc stack "depression" -l brain -c obesity --age 24 --sex male
+# → 16-model fused consensus (VOC + genes + flux + ADME + microbiome + …)
 voc eval-implementation-readiness   # research readiness gates
 ```
 
-See [QUICKSTART.md](../../QUICKSTART.md).
+See [QUICKSTART.md](../../QUICKSTART.md) and [great_disease_stack/README.md](../../great_disease_stack/README.md).
 
 ## Headline reports (canonical)
 

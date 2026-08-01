@@ -1,0 +1,1812 @@
+{
+  "version": "1.0",
+  "description": "Human-GEM-style flux capacity priors",
+  "pathway_capacity": {
+    "lipid_peroxidation": {
+      "n_genes": 16,
+      "capacity": 1.63,
+      "genes": [
+        "GPX4",
+        "SOD2",
+        "CAT",
+        "ACSL4",
+        "ALOX15",
+        "ALOX5",
+        "NOS2",
+        "CYBB",
+        "NFE2L2",
+        "KEAP1",
+        "HMOX1",
+        "PTGS2",
+        "SERPINA1",
+        "HHIP",
+        "FAM13A"
+      ]
+    },
+    "glycolysis_warburg": {
+      "n_genes": 12,
+      "capacity": 1.31,
+      "genes": [
+        "HK2",
+        "PKM",
+        "LDHA",
+        "PFKP",
+        "GAPDH",
+        "ENO1",
+        "SLC2A1",
+        "MYC",
+        "HIF1A",
+        "TP53",
+        "PIK3CA",
+        "STK11"
+      ]
+    },
+    "ketone_body_metabolism": {
+      "n_genes": 5,
+      "capacity": 0.75,
+      "genes": [
+        "HMGCS2",
+        "HMGCL",
+        "BDH1",
+        "OXCT1",
+        "ACAT1"
+      ]
+    },
+    "mevalonate_cholesterol": {
+      "n_genes": 7,
+      "capacity": 0.91,
+      "genes": [
+        "HMGCR",
+        "MVK",
+        "MVD",
+        "FDPS",
+        "SQLE",
+        "CYP51A1",
+        "SREBF2"
+      ]
+    },
+    "fatty_acid_oxidation": {
+      "n_genes": 7,
+      "capacity": 0.91,
+      "genes": [
+        "CPT1A",
+        "CPT2",
+        "ACADM",
+        "ACADL",
+        "HADHA",
+        "ACADVL",
+        "PPARA"
+      ]
+    },
+    "methionine_transsulfuration": {
+      "n_genes": 7,
+      "capacity": 0.91,
+      "genes": [
+        "MAT1A",
+        "MAT2A",
+        "AHCY",
+        "CBS",
+        "CTH",
+        "BHMT",
+        "MTR"
+      ]
+    },
+    "urea_cycle": {
+      "n_genes": 6,
+      "capacity": 0.83,
+      "genes": [
+        "CPS1",
+        "OTC",
+        "ASS1",
+        "ASL",
+        "ARG1",
+        "NAGS"
+      ]
+    },
+    "one_carbon_folate": {
+      "n_genes": 7,
+      "capacity": 0.91,
+      "genes": [
+        "MTHFR",
+        "MTR",
+        "SHMT1",
+        "SHMT2",
+        "DHFR",
+        "TYMS",
+        "PHGDH"
+      ]
+    },
+    "cytochrome_p450_detox": {
+      "n_genes": 12,
+      "capacity": 1.31,
+      "genes": [
+        "CYP1A1",
+        "CYP1A2",
+        "CYP2E1",
+        "CYP3A4",
+        "CYP2D6",
+        "GSTM1",
+        "GSTT1",
+        "NAT2",
+        "CYP2A6",
+        "CHRNA3",
+        "NFE2L2",
+        "KEAP1"
+      ]
+    },
+    "apoptosis_necrosis": {
+      "n_genes": 11,
+      "capacity": 1.23,
+      "genes": [
+        "CASP3",
+        "CASP8",
+        "CASP9",
+        "BAX",
+        "BCL2",
+        "TP53",
+        "RIPK1",
+        "MLKL",
+        "TNF",
+        "CDKN2A",
+        "FAT1"
+      ]
+    },
+    "Kras_mapk_proliferation": {
+      "n_genes": 9,
+      "capacity": 1.0699999999999998,
+      "genes": [
+        "KRAS",
+        "NRAS",
+        "HRAS",
+        "BRAF",
+        "MAP2K1",
+        "EGFR",
+        "ERBB2",
+        "SOX2",
+        "PIK3CA"
+      ]
+    },
+    "pi3k_akt_mtor": {
+      "n_genes": 7,
+      "capacity": 0.91,
+      "genes": [
+        "PIK3CA",
+        "PTEN",
+        "AKT1",
+        "MTOR",
+        "TSC1",
+        "TSC2",
+        "RHEB"
+      ]
+    },
+    "gut_microbiome_fermentation": {
+      "n_genes": 11,
+      "capacity": 1.23,
+      "genes": [
+        "FFAR2",
+        "FFAR3",
+        "SLC5A8",
+        "GPR41",
+        "GPR43",
+        "MUC2",
+        "TJP1",
+        "OCLN",
+        "MYD88",
+        "TLR4",
+        "NOD2"
+      ]
+    },
+    "microbial_proteolysis_putrefaction": {
+      "n_genes": 8,
+      "capacity": 0.99,
+      "genes": [
+        "IDO1",
+        "TDO2",
+        "AHR",
+        "CYP1B1",
+        "SULT1A1",
+        "FMO3",
+        "IL10",
+        "IL17A"
+      ]
+    },
+    "neuroinflammation": {
+      "n_genes": 12,
+      "capacity": 1.31,
+      "genes": [
+        "TNF",
+        "IL1B",
+        "IL6",
+        "NFKB1",
+        "TLR4",
+        "CX3CR1",
+        "TREM2",
+        "AIF1",
+        "GFAP",
+        "CSF1R",
+        "NLRP3",
+        "TGFB1"
+      ]
+    },
+    "neurotransmitter_metabolism": {
+      "n_genes": 11,
+      "capacity": 1.23,
+      "genes": [
+        "MAOA",
+        "MAOB",
+        "COMT",
+        "TH",
+        "DDC",
+        "TPH2",
+        "GAD1",
+        "GAD2",
+        "SLC6A4",
+        "SLC6A3",
+        "DRD2"
+      ]
+    },
+    "brain_energy_metabolism": {
+      "n_genes": 11,
+      "capacity": 1.23,
+      "genes": [
+        "PPARGC1A",
+        "TFAM",
+        "SOD2",
+        "PARK7",
+        "PINK1",
+        "PRKN",
+        "SNCA",
+        "APP",
+        "PSEN1",
+        "MAPT",
+        "TOMM40"
+      ]
+    }
+  },
+  "voc_producers": {
+    "pentane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.55,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "fatty_acid_oxidation",
+        "weight": 0.2,
+        "enzymes": [
+          "CPT1A",
+          "CPT2",
+          "ACADM",
+          "ACADL",
+          "HADHA",
+          "ACADVL",
+          "PPARA"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neuroinflammation",
+        "weight": 0.3,
+        "enzymes": [
+          "TNF",
+          "IL1B",
+          "IL6",
+          "NFKB1",
+          "TLR4",
+          "CX3CR1",
+          "TREM2",
+          "AIF1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "brain_energy_metabolism",
+        "weight": 0.25,
+        "enzymes": [
+          "PPARGC1A",
+          "TFAM",
+          "SOD2",
+          "PARK7",
+          "PINK1",
+          "PRKN",
+          "SNCA",
+          "APP"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "ethane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.45,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neuroinflammation",
+        "weight": 0.2,
+        "enzymes": [
+          "TNF",
+          "IL1B",
+          "IL6",
+          "NFKB1",
+          "TLR4",
+          "CX3CR1",
+          "TREM2",
+          "AIF1"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "hexanal": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.7,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "apoptosis_necrosis",
+        "weight": 0.25,
+        "enzymes": [
+          "CASP3",
+          "CASP8",
+          "CASP9",
+          "BAX",
+          "BCL2",
+          "TP53",
+          "RIPK1",
+          "MLKL"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "Kras_mapk_proliferation",
+        "weight": 0.2,
+        "enzymes": [
+          "KRAS",
+          "NRAS",
+          "HRAS",
+          "BRAF",
+          "MAP2K1",
+          "EGFR",
+          "ERBB2",
+          "SOX2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neuroinflammation",
+        "weight": 0.35,
+        "enzymes": [
+          "TNF",
+          "IL1B",
+          "IL6",
+          "NFKB1",
+          "TLR4",
+          "CX3CR1",
+          "TREM2",
+          "AIF1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "brain_energy_metabolism",
+        "weight": 0.3,
+        "enzymes": [
+          "PPARGC1A",
+          "TFAM",
+          "SOD2",
+          "PARK7",
+          "PINK1",
+          "PRKN",
+          "SNCA",
+          "APP"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "heptanal": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.6,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "nonanal": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.65,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neuroinflammation",
+        "weight": 0.25,
+        "enzymes": [
+          "TNF",
+          "IL1B",
+          "IL6",
+          "NFKB1",
+          "TLR4",
+          "CX3CR1",
+          "TREM2",
+          "AIF1"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "decanal": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.55,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "butane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.35,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "hexane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.4,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "octane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.35,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "cyclohexane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.3,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "octanal": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.55,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "undecane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.3,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "dodecane": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.28,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "propionaldehyde": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.45,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "crotonaldehyde": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.4,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "furan": [
+      {
+        "pathway_id": "lipid_peroxidation",
+        "weight": 0.25,
+        "enzymes": [
+          "GPX4",
+          "SOD2",
+          "CAT",
+          "ACSL4",
+          "ALOX15",
+          "ALOX5",
+          "NOS2",
+          "CYBB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "ethanol": [
+      {
+        "pathway_id": "glycolysis_warburg",
+        "weight": 0.35,
+        "enzymes": [
+          "HK2",
+          "PKM",
+          "LDHA",
+          "PFKP",
+          "GAPDH",
+          "ENO1",
+          "SLC2A1",
+          "MYC"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "Kras_mapk_proliferation",
+        "weight": 0.2,
+        "enzymes": [
+          "KRAS",
+          "NRAS",
+          "HRAS",
+          "BRAF",
+          "MAP2K1",
+          "EGFR",
+          "ERBB2",
+          "SOX2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "pi3k_akt_mtor",
+        "weight": 0.15,
+        "enzymes": [
+          "PIK3CA",
+          "PTEN",
+          "AKT1",
+          "MTOR",
+          "TSC1",
+          "TSC2",
+          "RHEB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.55,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "acetaldehyde": [
+      {
+        "pathway_id": "glycolysis_warburg",
+        "weight": 0.4,
+        "enzymes": [
+          "HK2",
+          "PKM",
+          "LDHA",
+          "PFKP",
+          "GAPDH",
+          "ENO1",
+          "SLC2A1",
+          "MYC"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "Kras_mapk_proliferation",
+        "weight": 0.25,
+        "enzymes": [
+          "KRAS",
+          "NRAS",
+          "HRAS",
+          "BRAF",
+          "MAP2K1",
+          "EGFR",
+          "ERBB2",
+          "SOX2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.4,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neurotransmitter_metabolism",
+        "weight": 0.2,
+        "enzymes": [
+          "MAOA",
+          "MAOB",
+          "COMT",
+          "TH",
+          "DDC",
+          "TPH2",
+          "GAD1",
+          "GAD2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "acetone": [
+      {
+        "pathway_id": "glycolysis_warburg",
+        "weight": 0.2,
+        "enzymes": [
+          "HK2",
+          "PKM",
+          "LDHA",
+          "PFKP",
+          "GAPDH",
+          "ENO1",
+          "SLC2A1",
+          "MYC"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "ketone_body_metabolism",
+        "weight": 0.9,
+        "enzymes": [
+          "HMGCS2",
+          "HMGCL",
+          "BDH1",
+          "OXCT1",
+          "ACAT1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "fatty_acid_oxidation",
+        "weight": 0.35,
+        "enzymes": [
+          "CPT1A",
+          "CPT2",
+          "ACADM",
+          "ACADL",
+          "HADHA",
+          "ACADVL",
+          "PPARA"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "apoptosis_necrosis",
+        "weight": 0.15,
+        "enzymes": [
+          "CASP3",
+          "CASP8",
+          "CASP9",
+          "BAX",
+          "BCL2",
+          "TP53",
+          "RIPK1",
+          "MLKL"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "pi3k_akt_mtor",
+        "weight": 0.2,
+        "enzymes": [
+          "PIK3CA",
+          "PTEN",
+          "AKT1",
+          "MTOR",
+          "TSC1",
+          "TSC2",
+          "RHEB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "brain_energy_metabolism",
+        "weight": 0.35,
+        "enzymes": [
+          "PPARGC1A",
+          "TFAM",
+          "SOD2",
+          "PARK7",
+          "PINK1",
+          "PRKN",
+          "SNCA",
+          "APP"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "2_butanone": [
+      {
+        "pathway_id": "glycolysis_warburg",
+        "weight": 0.25,
+        "enzymes": [
+          "HK2",
+          "PKM",
+          "LDHA",
+          "PFKP",
+          "GAPDH",
+          "ENO1",
+          "SLC2A1",
+          "MYC"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "ketone_body_metabolism",
+        "weight": 0.4,
+        "enzymes": [
+          "HMGCS2",
+          "HMGCL",
+          "BDH1",
+          "OXCT1",
+          "ACAT1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "fatty_acid_oxidation",
+        "weight": 0.55,
+        "enzymes": [
+          "CPT1A",
+          "CPT2",
+          "ACADM",
+          "ACADL",
+          "HADHA",
+          "ACADVL",
+          "PPARA"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "Kras_mapk_proliferation",
+        "weight": 0.3,
+        "enzymes": [
+          "KRAS",
+          "NRAS",
+          "HRAS",
+          "BRAF",
+          "MAP2K1",
+          "EGFR",
+          "ERBB2",
+          "SOX2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "brain_energy_metabolism",
+        "weight": 0.2,
+        "enzymes": [
+          "PPARGC1A",
+          "TFAM",
+          "SOD2",
+          "PARK7",
+          "PINK1",
+          "PRKN",
+          "SNCA",
+          "APP"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "isopropanol": [
+      {
+        "pathway_id": "ketone_body_metabolism",
+        "weight": 0.55,
+        "enzymes": [
+          "HMGCS2",
+          "HMGCL",
+          "BDH1",
+          "OXCT1",
+          "ACAT1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "fatty_acid_oxidation",
+        "weight": 0.3,
+        "enzymes": [
+          "CPT1A",
+          "CPT2",
+          "ACADM",
+          "ACADL",
+          "HADHA",
+          "ACADVL",
+          "PPARA"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "2_pentanone": [
+      {
+        "pathway_id": "ketone_body_metabolism",
+        "weight": 0.35,
+        "enzymes": [
+          "HMGCS2",
+          "HMGCL",
+          "BDH1",
+          "OXCT1",
+          "ACAT1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "fatty_acid_oxidation",
+        "weight": 0.45,
+        "enzymes": [
+          "CPT1A",
+          "CPT2",
+          "ACADM",
+          "ACADL",
+          "HADHA",
+          "ACADVL",
+          "PPARA"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "isoprene": [
+      {
+        "pathway_id": "mevalonate_cholesterol",
+        "weight": 0.85,
+        "enzymes": [
+          "HMGCR",
+          "MVK",
+          "MVD",
+          "FDPS",
+          "SQLE",
+          "CYP51A1",
+          "SREBF2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "pi3k_akt_mtor",
+        "weight": 0.25,
+        "enzymes": [
+          "PIK3CA",
+          "PTEN",
+          "AKT1",
+          "MTOR",
+          "TSC1",
+          "TSC2",
+          "RHEB"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "brain_energy_metabolism",
+        "weight": 0.25,
+        "enzymes": [
+          "PPARGC1A",
+          "TFAM",
+          "SOD2",
+          "PARK7",
+          "PINK1",
+          "PRKN",
+          "SNCA",
+          "APP"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "limonene": [
+      {
+        "pathway_id": "mevalonate_cholesterol",
+        "weight": 0.3,
+        "enzymes": [
+          "HMGCR",
+          "MVK",
+          "MVD",
+          "FDPS",
+          "SQLE",
+          "CYP51A1",
+          "SREBF2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.5,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "dms": [
+      {
+        "pathway_id": "methionine_transsulfuration",
+        "weight": 0.75,
+        "enzymes": [
+          "MAT1A",
+          "MAT2A",
+          "AHCY",
+          "CBS",
+          "CTH",
+          "BHMT",
+          "MTR"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.35,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "dmts": [
+      {
+        "pathway_id": "methionine_transsulfuration",
+        "weight": 0.8,
+        "enzymes": [
+          "MAT1A",
+          "MAT2A",
+          "AHCY",
+          "CBS",
+          "CTH",
+          "BHMT",
+          "MTR"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "hydrogen_sulfide": [
+      {
+        "pathway_id": "methionine_transsulfuration",
+        "weight": 0.5,
+        "enzymes": [
+          "MAT1A",
+          "MAT2A",
+          "AHCY",
+          "CBS",
+          "CTH",
+          "BHMT",
+          "MTR"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.35,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.55,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "carbon_disulfide": [
+      {
+        "pathway_id": "methionine_transsulfuration",
+        "weight": 0.45,
+        "enzymes": [
+          "MAT1A",
+          "MAT2A",
+          "AHCY",
+          "CBS",
+          "CTH",
+          "BHMT",
+          "MTR"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "methyl_mercaptan": [
+      {
+        "pathway_id": "methionine_transsulfuration",
+        "weight": 0.6,
+        "enzymes": [
+          "MAT1A",
+          "MAT2A",
+          "AHCY",
+          "CBS",
+          "CTH",
+          "BHMT",
+          "MTR"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.55,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "ammonia": [
+      {
+        "pathway_id": "urea_cycle",
+        "weight": 0.85,
+        "enzymes": [
+          "CPS1",
+          "OTC",
+          "ASS1",
+          "ASL",
+          "ARG1",
+          "NAGS"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "apoptosis_necrosis",
+        "weight": 0.2,
+        "enzymes": [
+          "CASP3",
+          "CASP8",
+          "CASP9",
+          "BAX",
+          "BCL2",
+          "TP53",
+          "RIPK1",
+          "MLKL"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.45,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neuroinflammation",
+        "weight": 0.15,
+        "enzymes": [
+          "TNF",
+          "IL1B",
+          "IL6",
+          "NFKB1",
+          "TLR4",
+          "CX3CR1",
+          "TREM2",
+          "AIF1"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neurotransmitter_metabolism",
+        "weight": 0.3,
+        "enzymes": [
+          "MAOA",
+          "MAOB",
+          "COMT",
+          "TH",
+          "DDC",
+          "TPH2",
+          "GAD1",
+          "GAD2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "formaldehyde": [
+      {
+        "pathway_id": "one_carbon_folate",
+        "weight": 0.45,
+        "enzymes": [
+          "MTHFR",
+          "MTR",
+          "SHMT1",
+          "SHMT2",
+          "DHFR",
+          "TYMS",
+          "PHGDH"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neurotransmitter_metabolism",
+        "weight": 0.15,
+        "enzymes": [
+          "MAOA",
+          "MAOB",
+          "COMT",
+          "TH",
+          "DDC",
+          "TPH2",
+          "GAD1",
+          "GAD2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "methanol": [
+      {
+        "pathway_id": "one_carbon_folate",
+        "weight": 0.25,
+        "enzymes": [
+          "MTHFR",
+          "MTR",
+          "SHMT1",
+          "SHMT2",
+          "DHFR",
+          "TYMS",
+          "PHGDH"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.25,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "toluene": [
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.4,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "benzene": [
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.35,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "styrene": [
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.35,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "ethylbenzene": [
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.35,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "xylene": [
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.35,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "benzaldehyde": [
+      {
+        "pathway_id": "cytochrome_p450_detox",
+        "weight": 0.3,
+        "enzymes": [
+          "CYP1A1",
+          "CYP1A2",
+          "CYP2E1",
+          "CYP3A4",
+          "CYP2D6",
+          "GSTM1",
+          "GSTT1",
+          "NAT2"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "3_methylbutanal": [
+      {
+        "pathway_id": "apoptosis_necrosis",
+        "weight": 0.35,
+        "enzymes": [
+          "CASP3",
+          "CASP8",
+          "CASP9",
+          "BAX",
+          "BCL2",
+          "TP53",
+          "RIPK1",
+          "MLKL"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "dimethyl_amine": [
+      {
+        "pathway_id": "apoptosis_necrosis",
+        "weight": 0.25,
+        "enzymes": [
+          "CASP3",
+          "CASP8",
+          "CASP9",
+          "BAX",
+          "BCL2",
+          "TP53",
+          "RIPK1",
+          "MLKL"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.45,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "indole": [
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.3,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.85,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "neurotransmitter_metabolism",
+        "weight": 0.25,
+        "enzymes": [
+          "MAOA",
+          "MAOB",
+          "COMT",
+          "TH",
+          "DDC",
+          "TPH2",
+          "GAD1",
+          "GAD2"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "propanol": [
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.4,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "ethyl_acetate": [
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.35,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "trimethylamine": [
+      {
+        "pathway_id": "gut_microbiome_fermentation",
+        "weight": 0.4,
+        "enzymes": [
+          "FFAR2",
+          "FFAR3",
+          "SLC5A8",
+          "GPR41",
+          "GPR43",
+          "MUC2",
+          "TJP1",
+          "OCLN"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.7,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      },
+      {
+        "pathway_id": null,
+        "enzymes": [],
+        "weight": 1.0,
+        "src": "pathway_chain"
+      }
+    ],
+    "phenol": [
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.75,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "dimethyl_disulfide": [
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.5,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "pyrrole": [
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.35,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      }
+    ],
+    "allyl_methyl_sulfide": [
+      {
+        "pathway_id": "microbial_proteolysis_putrefaction",
+        "weight": 0.3,
+        "enzymes": [
+          "IDO1",
+          "TDO2",
+          "AHR",
+          "CYP1B1",
+          "SULT1A1",
+          "FMO3",
+          "IL10",
+          "IL17A"
+        ],
+        "src": "voc_effects"
+      }
+    ]
+  }
+}

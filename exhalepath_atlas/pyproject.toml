@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "voc-breath"
-version = "1.4.0"
-description = "voc: whole-body exhaled VOC biomarker prediction (ExhalePath Atlas)"
+version = "1.5.0"
+description = "voc: whole-body exhaled VOC biomarker prediction + 16-model Great Disease Stack"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -39,6 +39,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "openpyxl>=3.1", "build>=1.0"]
 census = ["cellxgene-census>=1.18.0"]
+stack = ["networkx>=3.0"]
+# Optional full GSMM FBA (Human-GEM / Recon3D) — large download, not required for flux proxy
+gsmm = ["cobra>=0.29"]
 # Optional light NL backends use HTTP only (requests already required).
 # Install Ollama separately and pull e.g. `ollama pull qwen2.5:0.5b`.
 llm = []
@@ -60,6 +63,7 @@ where = ["src"]
 exhalepath = [
   "data/knowledge/*.json",
   "data/knowledge/**/*",
+  "data/great_stack/*",
   "data/census/*",
   "data/models/*",
   "data/clinical_comorbidity/*.json",

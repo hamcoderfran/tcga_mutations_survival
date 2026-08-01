@@ -22,6 +22,7 @@ app = typer.Typer(
         "voc — exhaled VOC biomarker prediction.\n\n"
         "Quick start:\n"
         '  voc "depression" -l brain -c obesity --age 24 --sex male\n'
+        '  voc stack "depression" -l brain -c obesity --age 24 --sex male\n'
         '  voc ask                    # interactive question fields\n'
         '  voc nl "24yo obese male with depression"   # optional light LLM\n'
         '  voc "lung adenocarcinoma" -l lung --stage II --genes KRAS,TP53\n'
@@ -981,6 +982,63 @@ def biomarker_cmd(
         rprint(f"[dim]Open REPORT.html in a browser · artifacts → {dest}[/dim]")
 
 
+@app.command("stack")
+def great_stack_cmd(
+    disease: str = typer.Argument(..., help="Disease name (atlas or novel)"),
+    location: Optional[str] = typer.Option(None, "--location", "-l"),
+    comorbidity: Optional[list[str]] = typer.Option(None, "--comorbidity", "-c"),
+    age: Optional[float] = typer.Option(None, "--age"),
+    sex: Optional[str] = typer.Option(None, "--sex"),
+    genes: Optional[str] = typer.Option(None, help="Comma-separated genes"),
+    description: Optional[str] = typer.Option(None, "--description", "-d"),
+    smoking: Optional[str] = typer.Option(None, help="never|former|current"),
+    top: int = typer.Option(20, "--top", "-k"),
+    out_dir: Optional[Path] = typer.Option(
+        None, "--out-dir", help="Write STACK_REPORT.html pack (default: runs/stack_…)"
+    ),
+    no_save: bool = typer.Option(False, "--no-save"),
+    json_out: bool = typer.Option(False, "--json"),
+):
+    """
+    Great Disease Prediction Stack — fuse 16 models across VOC + disease biology.
+
+    Models: ExhalePath hybrid/physio/calibrator, zero-shot, literature priors,
+    Open Targets genes, Human-GEM flux proxy, OPERA ADME, PrimeKG graph,
+    OmniPath signaling, AGORA microbiome, PBPK/Farhi, Census cell-states,
+    comorbidity, ChEMBL pharmacology, pathway enrichment.
+    """
+    from .great_stack import run_great_stack
+    from .great_stack.report import (
+        default_stack_dir,
+        print_stack_console,
+        result_to_dict,
+        save_stack_report,
+    )
+
+    gene_list = [g.strip().upper() for g in genes.split(",") if g.strip()] if genes else None
+    result = run_great_stack(
+        disease,
+        location=location,
+        comorbidities=list(comorbidity or []),
+        age=age,
+        sex=sex,
+        genes=gene_list,
+        description=description,
+        smoking=smoking,
+        top_n=top,
+    )
+    if json_out:
+        typer.echo(json.dumps(result_to_dict(result), indent=2, default=str))
+        return
+    print_stack_console(result, top_display=min(15, top))
+    if not no_save:
+        dest = Path(out_dir) if out_dir else default_stack_dir(disease, location)
+        paths = save_stack_report(result, dest)
+        rprint(f"[green]Stack HTML report:[/green] {paths.get('html')}")
+        rprint(f"[green]Dashboard:[/green] {paths.get('dashboard')}")
+        rprint(f"[dim]Full pack → {dest}[/dim]")
+
+
 @app.command("predict-novel")
 def predict_novel_cmd(
     disease: str = typer.Argument(..., help="Novel / unseen disease name"),
@@ -1412,6 +1470,7 @@ def main(argv: Optional[list[str]] = None):
         "predict",
         "biomarker",
         "predict-novel",
+        "stack",
         "eval-zero-shot-reliability",
         "eval-implementation-readiness",
         "eval-zero-shot-hard",

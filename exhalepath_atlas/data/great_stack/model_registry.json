@@ -1,0 +1,118 @@
+{
+  "version": "1.0.0",
+  "name": "Great Disease Prediction Stack",
+  "models": [
+    {
+      "id": "exhalepath_hybrid",
+      "aspect": "voc_quantity",
+      "family": "exhalepath",
+      "weight": 1.2,
+      "description": "Hybrid physiology + ML calibrator"
+    },
+    {
+      "id": "exhalepath_physiology",
+      "aspect": "voc_quantity",
+      "family": "exhalepath",
+      "weight": 0.9,
+      "description": "Pure Farhi/cell-state physiology"
+    },
+    {
+      "id": "exhalepath_calibrator",
+      "aspect": "voc_quantity",
+      "family": "ml",
+      "weight": 0.85,
+      "description": "Per-VOC supervised calibrator head"
+    },
+    {
+      "id": "zero_shot_mechanism",
+      "aspect": "mechanism",
+      "family": "zero_shot",
+      "weight": 0.8,
+      "description": "Custom resolver + ontology NN transfer"
+    },
+    {
+      "id": "literature_voc_prior",
+      "aspect": "voc_prior",
+      "family": "literature",
+      "weight": 0.7,
+      "description": "Curated disease\u2192VOC log2fc priors"
+    },
+    {
+      "id": "opentargets_genes",
+      "aspect": "genetics",
+      "family": "genetics",
+      "weight": 0.75,
+      "description": "Open Targets disease\u2013gene associations"
+    },
+    {
+      "id": "humangem_flux",
+      "aspect": "metabolic_flux",
+      "family": "gsmm",
+      "weight": 0.95,
+      "description": "Human-GEM-style flux capacity proxy"
+    },
+    {
+      "id": "opera_physchem",
+      "aspect": "transport_adme",
+      "family": "qsar",
+      "weight": 0.85,
+      "description": "OPERA-style ADME / partition transport"
+    },
+    {
+      "id": "primekg_graph",
+      "aspect": "knowledge_graph",
+      "family": "graph",
+      "weight": 0.9,
+      "description": "PrimeKG-lite multi-hop disease graph"
+    },
+    {
+      "id": "omnipath_signaling",
+      "aspect": "signaling",
+      "family": "network",
+      "weight": 0.7,
+      "description": "OmniPath-style pathway crosstalk"
+    },
+    {
+      "id": "agora_microbiome",
+      "aspect": "microbiome",
+      "family": "microbiome",
+      "weight": 0.65,
+      "description": "AGORA2/mVOC microbial VOC routes"
+    },
+    {
+      "id": "pbpk_transport",
+      "aspect": "transport_adme",
+      "family": "pbpk",
+      "weight": 0.8,
+      "description": "PBPK/Farhi alveolar delivery model"
+    },
+    {
+      "id": "cell_census",
+      "aspect": "cell_state",
+      "family": "single_cell",
+      "weight": 0.75,
+      "description": "CELLxGENE Census cell-state densities"
+    },
+    {
+      "id": "comorbidity_clinical",
+      "aspect": "clinical",
+      "family": "clinical",
+      "weight": 0.7,
+      "description": "Comorbidity clinical prior fusion"
+    },
+    {
+      "id": "chembl_pharm",
+      "aspect": "pharmacology",
+      "family": "pharmacology",
+      "weight": 0.55,
+      "description": "ChEMBL pathway/pharmacology priors"
+    },
+    {
+      "id": "pathway_enrichment",
+      "aspect": "pathways",
+      "family": "enrichment",
+      "weight": 0.8,
+      "description": "KEGG/Reactome pathway enrichment consensus"
+    }
+  ]
+}

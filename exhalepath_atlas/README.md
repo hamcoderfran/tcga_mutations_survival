@@ -8,7 +8,15 @@ voc "depression" -l brain -c obesity --age 24 --sex male
 # → terminal panel + runs/voc_…/REPORT.html + dashboard.png
 ```
 
-See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.4.0**.
+See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.5.0**.
+
+**16-model Great Disease Stack** (VOC + genetics + flux + ADME + microbiome + …):
+
+```bash
+voc stack "depression" -l brain -c obesity --age 24 --sex male
+```
+
+Details: [great_disease_stack/README.md](great_disease_stack/README.md).
 
 **Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, comorbidities, whole-body physiology, zero-shot mechanism transfer, and mechanism explainability across **100+ diseases**.
 
