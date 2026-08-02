@@ -3,18 +3,24 @@
 Single entry point for past evaluations and reports on `main`.
 Trained calibrators (`data/models/*.joblib`) are **not** modified by eval merges.
 
-## One-line product usage (v1.5)
+## One-line product usage (v1.6)
 
 ```bash
 pip install -e "exhalepath_atlas[dev,stack]"
 voc "depression" -l brain -c obesity --age 24 --sex male
-# → rich console + runs/voc_*/REPORT.html + dashboard.png + REPORT.md + CSVs
 voc stack "depression" -l brain -c obesity --age 24 --sex male
-# → 16-model fused consensus (VOC + genes + flux + ADME + microbiome + …)
-voc eval-implementation-readiness   # research readiness gates
+voc eval-patient-diagnostic --study ST000883   # patient-level GC-MS AUROC research pack
+voc eval-implementation-readiness
 ```
 
-## Great Disease Stack holdout (v1.5.1)
+## GC-MS patient diagnostic research (v1.6)
+
+| Result | Path | How to re-run |
+|---|---|---|
+| Patient GC-MS diagnostic (AUROC / locked splits) | [`gcms_diagnostic/`](gcms_diagnostic/) | `voc eval-patient-diagnostic --all` |
+| Research impact rationale | [`../../RESEARCH.md`](../../RESEARCH.md) | — |
+
+## Great Disease Stack holdout
 
 | Result | Path | How to re-run |
 |---|---|---|

@@ -1,0 +1,424 @@
+{
+  "title": "Malaria patient-level GC-MS diagnostic (ST000883)",
+  "generated_utc": "2026-08-02T02:19:44.752455+00:00",
+  "study_id": "ST000883",
+  "disease_id": "malaria",
+  "disease_name": "Malaria",
+  "modality": "gcms",
+  "signature_source": "hybrid",
+  "score_method": "cosine",
+  "n_voc_features": 17,
+  "signature_vocs_used": [
+    "2_butanone",
+    "2_pentanone",
+    "acetone",
+    "benzene",
+    "butane",
+    "ethanol",
+    "ethylbenzene",
+    "heptanal",
+    "hexanal",
+    "hexane",
+    "isoprene",
+    "isopropanol",
+    "nonanal",
+    "octane",
+    "pentane",
+    "propanol",
+    "toluene"
+  ],
+  "matrix_metadata": {
+    "doi": "10.1093/infdis/jiy072",
+    "title": "Breathprinting Reveals Malaria-Associated Biomarkers (ST000883)",
+    "n_voc_features": 17,
+    "n_subjects": 35,
+    "n_positive": 17,
+    "n_negative": 18,
+    "unmapped_metabolites_dropped": true
+  },
+  "metrics": {
+    "n_subjects": 35,
+    "n_positive": 17,
+    "n_negative": 18,
+    "auroc": 0.5686274509803921,
+    "auroc_ci95": [
+      0.37494164332399627,
+      0.7612412587412585
+    ],
+    "auprc": 0.5309674935234943,
+    "sensitivity": 0.9411764705882353,
+    "specificity": 0.3333333333333333,
+    "ppv": 0.5714285714285714,
+    "npv": 0.8571428571428571,
+    "youden_threshold": -0.399316107923744,
+    "confusion": {
+      "tn": 6,
+      "fp": 12,
+      "fn": 1,
+      "tp": 16
+    },
+    "brier": 0.33271601583490906,
+    "nested_auroc": null,
+    "non_nested_auroc": null,
+    "optimism_gap": null,
+    "notes": []
+  },
+  "nested": {
+    "strategy": "stratified_kfold",
+    "seed": 42,
+    "content_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df",
+    "mean_test_auroc": 0.5333333333333333,
+    "non_nested_auroc": 0.5686274509803921,
+    "optimism_gap": 0.03529411764705881,
+    "folds": [
+      {
+        "fold_id": "fold_0",
+        "n_test": 7,
+        "auroc": 0.6666666666666666,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_1",
+        "n_test": 7,
+        "auroc": 0.5833333333333334,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_2",
+        "n_test": 7,
+        "auroc": 0.3333333333333333,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_3",
+        "n_test": 7,
+        "auroc": 0.5,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_4",
+        "n_test": 7,
+        "auroc": 0.5833333333333334,
+        "model": "signature_hybrid_cosine"
+      }
+    ],
+    "logistic_baseline": {
+      "mean_test_auroc": 0.7333333333333334,
+      "non_nested_auroc": 0.977124183006536,
+      "optimism_gap": 0.24379084967320264,
+      "folds": [
+        {
+          "fold_id": "fold_0",
+          "n_test": 7,
+          "auroc": 0.41666666666666663,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_1",
+          "n_test": 7,
+          "auroc": 0.8333333333333334,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_2",
+          "n_test": 7,
+          "auroc": 0.5,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_3",
+          "n_test": 7,
+          "auroc": 1.0,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_4",
+          "n_test": 7,
+          "auroc": 0.9166666666666667,
+          "model": "logistic_voc_matrix"
+        }
+      ]
+    }
+  },
+  "patient_scores": [
+    {
+      "subject_id": "Patient 1",
+      "label": 0,
+      "score": -0.46781015144704835,
+      "oof_signature_score": -0.4678070348692534,
+      "oof_logistic_score": 0.9984504609184223
+    },
+    {
+      "subject_id": "Patient 2",
+      "label": 0,
+      "score": 0.15817251420691902,
+      "oof_signature_score": 0.1182673557923944,
+      "oof_logistic_score": 0.2610323223720417
+    },
+    {
+      "subject_id": "Patient 3",
+      "label": 0,
+      "score": -0.41602143220857785,
+      "oof_signature_score": -0.41792272758695753,
+      "oof_logistic_score": 0.12942697582287632
+    },
+    {
+      "subject_id": "Patient 4",
+      "label": 0,
+      "score": 0.1777565608957408,
+      "oof_signature_score": 0.19705424963737758,
+      "oof_logistic_score": 0.7148995740262856
+    },
+    {
+      "subject_id": "Patient 5",
+      "label": 0,
+      "score": -0.3190337759015366,
+      "oof_signature_score": -0.32434726382228257,
+      "oof_logistic_score": 0.5783769855587511
+    },
+    {
+      "subject_id": "Patient 6",
+      "label": 0,
+      "score": 0.17123964046401863,
+      "oof_signature_score": 0.1870970559701307,
+      "oof_logistic_score": 0.12772166193943532
+    },
+    {
+      "subject_id": "Patient 7",
+      "label": 0,
+      "score": 0.1673396164524061,
+      "oof_signature_score": 0.14529907987561722,
+      "oof_logistic_score": 0.09211212147477864
+    },
+    {
+      "subject_id": "Patient 8",
+      "label": 0,
+      "score": -0.3559746338013069,
+      "oof_signature_score": -0.3426909858304487,
+      "oof_logistic_score": 0.7151387479988248
+    },
+    {
+      "subject_id": "Patient 9",
+      "label": 0,
+      "score": -0.08430357747237659,
+      "oof_signature_score": -0.07162547456942642,
+      "oof_logistic_score": 0.9840171417743886
+    },
+    {
+      "subject_id": "Patient 10",
+      "label": 0,
+      "score": -0.527025110094532,
+      "oof_signature_score": -0.5236409757037168,
+      "oof_logistic_score": 0.10383429709848713
+    },
+    {
+      "subject_id": "Patient 11",
+      "label": 0,
+      "score": 0.1426286463087289,
+      "oof_signature_score": 0.13979949370478872,
+      "oof_logistic_score": 0.7630763947115516
+    },
+    {
+      "subject_id": "Patient 12",
+      "label": 0,
+      "score": -0.4462373216164884,
+      "oof_signature_score": -0.4206450509975423,
+      "oof_logistic_score": 0.23561224834704975
+    },
+    {
+      "subject_id": "Patient 13",
+      "label": 0,
+      "score": 0.2167530741142048,
+      "oof_signature_score": 0.22360009075509607,
+      "oof_logistic_score": 0.012438043220092152
+    },
+    {
+      "subject_id": "Patient 14",
+      "label": 0,
+      "score": -0.41374858600592046,
+      "oof_signature_score": -0.40285745501787007,
+      "oof_logistic_score": 0.395169634279622
+    },
+    {
+      "subject_id": "Patient 15",
+      "label": 0,
+      "score": -0.45201788100531487,
+      "oof_signature_score": -0.4430165466331424,
+      "oof_logistic_score": 0.37469573504761944
+    },
+    {
+      "subject_id": "Patient 16",
+      "label": 0,
+      "score": -0.2129207559495538,
+      "oof_signature_score": -0.20604992943126982,
+      "oof_logistic_score": 0.06415244266379767
+    },
+    {
+      "subject_id": "Patient 17",
+      "label": 0,
+      "score": -0.07240532699959937,
+      "oof_signature_score": -0.06408911191563804,
+      "oof_logistic_score": 0.3399828442927154
+    },
+    {
+      "subject_id": "Patient 18",
+      "label": 0,
+      "score": -0.1693937935706994,
+      "oof_signature_score": -0.15560043720101202,
+      "oof_logistic_score": 0.1617974715557357
+    },
+    {
+      "subject_id": "Patient 19",
+      "label": 1,
+      "score": 0.1746819682796847,
+      "oof_signature_score": 0.1626191543606418,
+      "oof_logistic_score": 0.3672555303402597
+    },
+    {
+      "subject_id": "Patient 20",
+      "label": 1,
+      "score": -0.28120580892958086,
+      "oof_signature_score": -0.27558141789006313,
+      "oof_logistic_score": 0.9791311791490491
+    },
+    {
+      "subject_id": "Patient 21",
+      "label": 1,
+      "score": -0.14582304747039534,
+      "oof_signature_score": -0.1318221454798463,
+      "oof_logistic_score": 0.5139534440972466
+    },
+    {
+      "subject_id": "Patient 22",
+      "label": 1,
+      "score": -0.3287313966060219,
+      "oof_signature_score": -0.33357374548897945,
+      "oof_logistic_score": 0.5411042237881805
+    },
+    {
+      "subject_id": "Patient 23",
+      "label": 1,
+      "score": -0.399316107923744,
+      "oof_signature_score": -0.400304829618654,
+      "oof_logistic_score": 0.3473543241038428
+    },
+    {
+      "subject_id": "Patient 24",
+      "label": 1,
+      "score": -0.07977509994419546,
+      "oof_signature_score": -0.07219055144970946,
+      "oof_logistic_score": 0.8339062834803732
+    },
+    {
+      "subject_id": "Patient 25",
+      "label": 1,
+      "score": 0.15952431931471328,
+      "oof_signature_score": 0.1776711720636571,
+      "oof_logistic_score": 0.6872138020768233
+    },
+    {
+      "subject_id": "Patient 26",
+      "label": 1,
+      "score": -0.17029673409237675,
+      "oof_signature_score": -0.17018761059945312,
+      "oof_logistic_score": 0.7217652475383797
+    },
+    {
+      "subject_id": "Patient 27",
+      "label": 1,
+      "score": 0.16862993624815137,
+      "oof_signature_score": 0.19009238096474998,
+      "oof_logistic_score": 0.5702445472983236
+    },
+    {
+      "subject_id": "Patient 28",
+      "label": 1,
+      "score": 0.14909626327348358,
+      "oof_signature_score": 0.13450152414930708,
+      "oof_logistic_score": 0.849451981261476
+    },
+    {
+      "subject_id": "Patient 29",
+      "label": 1,
+      "score": 0.16183640883732886,
+      "oof_signature_score": 0.17473689981534846,
+      "oof_logistic_score": 0.8456889868850361
+    },
+    {
+      "subject_id": "Patient 30",
+      "label": 1,
+      "score": 0.1049047557038789,
+      "oof_signature_score": 0.09918059015962363,
+      "oof_logistic_score": 0.9937735860584409
+    },
+    {
+      "subject_id": "Patient 31",
+      "label": 1,
+      "score": 0.19033855715443815,
+      "oof_signature_score": 0.21146894589327134,
+      "oof_logistic_score": 0.6043232226074196
+    },
+    {
+      "subject_id": "Patient 32",
+      "label": 1,
+      "score": -0.47508139437043406,
+      "oof_signature_score": -0.4674221972328709,
+      "oof_logistic_score": 0.950441956485755
+    },
+    {
+      "subject_id": "Patient 33",
+      "label": 1,
+      "score": -0.31179202458839034,
+      "oof_signature_score": -0.3138981147703134,
+      "oof_logistic_score": 0.792684712778859
+    },
+    {
+      "subject_id": "Patient 34",
+      "label": 1,
+      "score": -0.3427554924079337,
+      "oof_signature_score": -0.314390269966311,
+      "oof_logistic_score": 0.690354196692004
+    },
+    {
+      "subject_id": "Patient 35",
+      "label": 1,
+      "score": -0.3902966757547957,
+      "oof_signature_score": -0.4098270592027356,
+      "oof_logistic_score": 0.07824607931264102
+    }
+  ],
+  "bundled_studies": [
+    {
+      "study_id": "ST000883",
+      "available": true,
+      "disease_id": "malaria",
+      "disease_name": "Malaria",
+      "modality": "gcms",
+      "title": "Breathprinting Reveals Malaria-Associated Biomarkers (ST000883)"
+    },
+    {
+      "study_id": "ST000587",
+      "available": true,
+      "disease_id": "heart_failure",
+      "disease_name": "Heart failure",
+      "modality": "gcms_ebc",
+      "title": "Heart failure exhaled breath condensate (ST000587)"
+    }
+  ],
+  "caveats": [
+    "Mapped atlas VOC subset only \u2014 many GC-MS peaks are unmapped and dropped.",
+    "ST000883 lacks smoking/age in factors.json \u2014 confounder-stratified AUCs unavailable.",
+    "Mechanism signature is independent of these patient labels, but VOC name mapping can still introduce circularity with literature priors.",
+    "Small n (\u224835) \u2192 wide bootstrap CIs; treat AUROC as research enablement evidence, not clinical validation.",
+    "Not a medical device. No clinical diagnostic claim."
+  ],
+  "impact": {
+    "research_question": "Can an open mechanism-aware exhaled-VOC signature discriminate disease vs control on public patient-level GC-MS intensities?",
+    "enables": [
+      "Preregisterable locked splits (SHA256)",
+      "Paper-ready ROC / sens / spec / confusion + TRIPOD+AI checklist stub",
+      "Optimism-gap reporting (nested vs non-nested)",
+      "Comparison of mechanism signature vs data-fit logistic baseline"
+    ]
+  }
+}

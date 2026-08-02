@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "voc-breath"
-version = "1.5.1"
-description = "voc: whole-body exhaled VOC biomarker prediction + 16-model Great Disease Stack"
+version = "1.6.0"
+description = "voc: exhaled VOC biomarker stack + GC-MS patient-level diagnostic research enablement"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -63,6 +63,8 @@ where = ["src"]
 exhalepath = [
   "data/knowledge/*.json",
   "data/knowledge/**/*",
+  "data/knowledge/gcms_diagnostic/**/*",
+  "data/knowledge/gcms_splits/*",
   "data/great_stack/*",
   "data/census/*",
   "data/models/*",

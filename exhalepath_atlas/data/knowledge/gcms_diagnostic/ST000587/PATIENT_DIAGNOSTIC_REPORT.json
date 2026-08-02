@@ -1,0 +1,326 @@
+{
+  "title": "Heart failure patient-level GC-MS diagnostic (ST000587)",
+  "generated_utc": "2026-08-02T02:19:45.438659+00:00",
+  "study_id": "ST000587",
+  "disease_id": "heart_failure",
+  "disease_name": "Heart failure",
+  "modality": "gcms_ebc",
+  "signature_source": "hybrid",
+  "score_method": "cosine",
+  "n_voc_features": 3,
+  "signature_vocs_used": [
+    "acetone",
+    "isopropanol",
+    "methanol"
+  ],
+  "matrix_metadata": {
+    "doi": null,
+    "title": "Heart failure exhaled breath condensate (ST000587)",
+    "n_voc_features": 3,
+    "n_subjects": 23,
+    "n_positive": 11,
+    "n_negative": 12,
+    "unmapped_metabolites_dropped": true
+  },
+  "metrics": {
+    "n_subjects": 23,
+    "n_positive": 11,
+    "n_negative": 12,
+    "auroc": 0.5530303030303031,
+    "auroc_ci95": [
+      0.27852855477855476,
+      0.7950689935064935
+    ],
+    "auprc": 0.6111988974218078,
+    "sensitivity": 0.36363636363636365,
+    "specificity": 0.9166666666666666,
+    "ppv": 0.8,
+    "npv": 0.6111111111111112,
+    "youden_threshold": -0.05007194817204806,
+    "confusion": {
+      "tn": 11,
+      "fp": 1,
+      "fn": 7,
+      "tp": 4
+    },
+    "brier": 0.305119800337177,
+    "nested_auroc": null,
+    "non_nested_auroc": null,
+    "optimism_gap": null,
+    "notes": []
+  },
+  "nested": {
+    "strategy": "stratified_kfold",
+    "seed": 42,
+    "content_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570",
+    "mean_test_auroc": 0.6,
+    "non_nested_auroc": 0.5530303030303031,
+    "optimism_gap": -0.046969696969696884,
+    "folds": [
+      {
+        "fold_id": "fold_0",
+        "n_test": 5,
+        "auroc": 1.0,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_1",
+        "n_test": 5,
+        "auroc": 0.16666666666666669,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_2",
+        "n_test": 5,
+        "auroc": 0.33333333333333337,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_3",
+        "n_test": 4,
+        "auroc": 0.75,
+        "model": "signature_hybrid_cosine"
+      },
+      {
+        "fold_id": "fold_4",
+        "n_test": 4,
+        "auroc": 0.75,
+        "model": "signature_hybrid_cosine"
+      }
+    ],
+    "logistic_baseline": {
+      "mean_test_auroc": 0.55,
+      "non_nested_auroc": 0.6439393939393939,
+      "optimism_gap": 0.09393939393939388,
+      "folds": [
+        {
+          "fold_id": "fold_0",
+          "n_test": 5,
+          "auroc": 0.16666666666666666,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_1",
+          "n_test": 5,
+          "auroc": 0.5,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_2",
+          "n_test": 5,
+          "auroc": 0.8333333333333334,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_3",
+          "n_test": 4,
+          "auroc": 0.5,
+          "model": "logistic_voc_matrix"
+        },
+        {
+          "fold_id": "fold_4",
+          "n_test": 4,
+          "auroc": 0.75,
+          "model": "logistic_voc_matrix"
+        }
+      ]
+    }
+  },
+  "patient_scores": [
+    {
+      "subject_id": "HF01",
+      "label": 1,
+      "score": -0.10232696738626355,
+      "oof_signature_score": -0.09518638889600878,
+      "oof_logistic_score": 0.42524793553831336
+    },
+    {
+      "subject_id": "HF02",
+      "label": 1,
+      "score": 0.03101489149505647,
+      "oof_signature_score": -0.012395370734888861,
+      "oof_logistic_score": 0.5843292335812059
+    },
+    {
+      "subject_id": "HF03",
+      "label": 1,
+      "score": -0.05007194817204806,
+      "oof_signature_score": -0.052896495620295594,
+      "oof_logistic_score": 0.9999999102086411
+    },
+    {
+      "subject_id": "HF04",
+      "label": 1,
+      "score": -0.7964034622290003,
+      "oof_signature_score": -0.7949567123832477,
+      "oof_logistic_score": 0.5696194862491791
+    },
+    {
+      "subject_id": "HF05",
+      "label": 1,
+      "score": -0.11138394957428183,
+      "oof_signature_score": -0.11623444163937299,
+      "oof_logistic_score": 0.48300939134059184
+    },
+    {
+      "subject_id": "HF06",
+      "label": 1,
+      "score": 0.017652819731094244,
+      "oof_signature_score": -0.029982706150043205,
+      "oof_logistic_score": 0.556823863996206
+    },
+    {
+      "subject_id": "HF07",
+      "label": 1,
+      "score": -0.796390394238924,
+      "oof_signature_score": -0.7949890176403684,
+      "oof_logistic_score": 0.5874080269083789
+    },
+    {
+      "subject_id": "HF09",
+      "label": 1,
+      "score": -0.10797453333894692,
+      "oof_signature_score": -0.10289409115710753,
+      "oof_logistic_score": 0.38424352127875805
+    },
+    {
+      "subject_id": "HF12",
+      "label": 1,
+      "score": 0.3179347566712163,
+      "oof_signature_score": 0.3015937241932682,
+      "oof_logistic_score": 0.4295217834428704
+    },
+    {
+      "subject_id": "HF13",
+      "label": 1,
+      "score": -0.089516365792641,
+      "oof_signature_score": -0.08396475566392882,
+      "oof_logistic_score": 0.32562986645469183
+    },
+    {
+      "subject_id": "HF17",
+      "label": 1,
+      "score": -0.1052138873885878,
+      "oof_signature_score": -0.09804316275546465,
+      "oof_logistic_score": 0.48847176128438613
+    },
+    {
+      "subject_id": "C10",
+      "label": 0,
+      "score": -0.7963984952480687,
+      "oof_signature_score": -0.8016205978016425,
+      "oof_logistic_score": 0.6186203215385474
+    },
+    {
+      "subject_id": "C11",
+      "label": 0,
+      "score": -0.11139327378319976,
+      "oof_signature_score": -0.10415846341790033,
+      "oof_logistic_score": 0.4354196160705324
+    },
+    {
+      "subject_id": "C14",
+      "label": 0,
+      "score": -0.7964001418618619,
+      "oof_signature_score": -0.7949987176535059,
+      "oof_logistic_score": 0.5925351341910168
+    },
+    {
+      "subject_id": "C15",
+      "label": 0,
+      "score": -0.1002699642442281,
+      "oof_signature_score": -0.1260583229994575,
+      "oof_logistic_score": 0.5781592522132181
+    },
+    {
+      "subject_id": "C16",
+      "label": 0,
+      "score": -0.09088782423680478,
+      "oof_signature_score": -0.09341016562743568,
+      "oof_logistic_score": 0.27320414217582595
+    },
+    {
+      "subject_id": "C18",
+      "label": 0,
+      "score": -0.07074324683739859,
+      "oof_signature_score": -0.0639449781886397,
+      "oof_logistic_score": 0.36639488547552634
+    },
+    {
+      "subject_id": "C19",
+      "label": 0,
+      "score": -0.08699438854319226,
+      "oof_signature_score": -0.08137880694598314,
+      "oof_logistic_score": 0.3198251379588011
+    },
+    {
+      "subject_id": "C20",
+      "label": 0,
+      "score": -0.092455919813888,
+      "oof_signature_score": -0.09514163361650547,
+      "oof_logistic_score": 0.4067856962816711
+    },
+    {
+      "subject_id": "C21",
+      "label": 0,
+      "score": -0.7965246577983844,
+      "oof_signature_score": -0.795076860798931,
+      "oof_logistic_score": 0.8826713729335346
+    },
+    {
+      "subject_id": "C22",
+      "label": 0,
+      "score": 0.23397074635113843,
+      "oof_signature_score": 0.2511204477163098,
+      "oof_logistic_score": 0.7808838853826138
+    },
+    {
+      "subject_id": "C23",
+      "label": 0,
+      "score": -0.09243192043805475,
+      "oof_signature_score": -0.08695439386728154,
+      "oof_logistic_score": 0.3349641630527828
+    },
+    {
+      "subject_id": "C24",
+      "label": 0,
+      "score": -0.08819965898152284,
+      "oof_signature_score": -0.08120958073163871,
+      "oof_logistic_score": 0.3909772114487491
+    }
+  ],
+  "bundled_studies": [
+    {
+      "study_id": "ST000883",
+      "available": true,
+      "disease_id": "malaria",
+      "disease_name": "Malaria",
+      "modality": "gcms",
+      "title": "Breathprinting Reveals Malaria-Associated Biomarkers (ST000883)"
+    },
+    {
+      "study_id": "ST000587",
+      "available": true,
+      "disease_id": "heart_failure",
+      "disease_name": "Heart failure",
+      "modality": "gcms_ebc",
+      "title": "Heart failure exhaled breath condensate (ST000587)"
+    }
+  ],
+  "caveats": [
+    "Mapped atlas VOC subset only \u2014 many GC-MS peaks are unmapped and dropped.",
+    "ST000883 lacks smoking/age in factors.json \u2014 confounder-stratified AUCs unavailable.",
+    "Mechanism signature is independent of these patient labels, but VOC name mapping can still introduce circularity with literature priors.",
+    "Small n (\u224835) \u2192 wide bootstrap CIs; treat AUROC as research enablement evidence, not clinical validation.",
+    "Not a medical device. No clinical diagnostic claim."
+  ],
+  "impact": {
+    "research_question": "Can an open mechanism-aware exhaled-VOC signature discriminate disease vs control on public patient-level GC-MS intensities?",
+    "enables": [
+      "Preregisterable locked splits (SHA256)",
+      "Paper-ready ROC / sens / spec / confusion + TRIPOD+AI checklist stub",
+      "Optimism-gap reporting (nested vs non-nested)",
+      "Comparison of mechanism signature vs data-fit logistic baseline"
+    ]
+  }
+}

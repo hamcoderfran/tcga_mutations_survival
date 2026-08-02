@@ -4,14 +4,22 @@
 pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 ```
 
-## Great Disease Stack (16 models fused)
+## Great Disease Stack
 
 ```bash
 voc stack "depression" -l brain -c obesity --age 24 --sex male
 # → STACK_REPORT.html + multi-model consensus
 ```
 
-See [great_disease_stack/README.md](great_disease_stack/README.md).
+## GC-MS patient diagnostic research
+
+```bash
+voc eval-patient-diagnostic --study ST000883          # AUROC + locked splits + paper pack
+voc eval-patient-diagnostic --benchmark               # hybrid/stack/literature comparison
+voc lock-split --study ST000883                       # preregistration-style SHA256 folds
+```
+
+See [RESEARCH.md](RESEARCH.md) and [great_disease_stack/README.md](great_disease_stack/README.md).
 
 ## One-line prediction (recommended)
 

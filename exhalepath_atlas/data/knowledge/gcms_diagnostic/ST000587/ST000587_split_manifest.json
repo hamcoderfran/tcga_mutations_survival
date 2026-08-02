@@ -1,0 +1,203 @@
+{
+  "dataset_id": "ST000587",
+  "schema_version": "BreathVOC-1.0",
+  "seed": 42,
+  "strategy": "stratified_kfold",
+  "n_splits": 5,
+  "subject_ids": [
+    "HF01",
+    "HF02",
+    "HF03",
+    "HF04",
+    "HF05",
+    "HF06",
+    "HF07",
+    "HF09",
+    "HF12",
+    "HF13",
+    "HF17",
+    "C10",
+    "C11",
+    "C14",
+    "C15",
+    "C16",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24"
+  ],
+  "folds": [
+    {
+      "fold_id": "fold_0",
+      "train_subject_ids": [
+        "HF01",
+        "HF03",
+        "HF04",
+        "HF07",
+        "HF09",
+        "HF12",
+        "HF13",
+        "HF17",
+        "C11",
+        "C14",
+        "C16",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "test_subject_ids": [
+        "HF02",
+        "HF05",
+        "HF06",
+        "C10",
+        "C15"
+      ],
+      "val_subject_ids": []
+    },
+    {
+      "fold_id": "fold_1",
+      "train_subject_ids": [
+        "HF01",
+        "HF02",
+        "HF03",
+        "HF04",
+        "HF05",
+        "HF06",
+        "HF07",
+        "HF12",
+        "HF17",
+        "C10",
+        "C11",
+        "C14",
+        "C15",
+        "C16",
+        "C18",
+        "C20",
+        "C21",
+        "C24"
+      ],
+      "test_subject_ids": [
+        "HF09",
+        "HF13",
+        "C19",
+        "C22",
+        "C23"
+      ],
+      "val_subject_ids": []
+    },
+    {
+      "fold_id": "fold_2",
+      "train_subject_ids": [
+        "HF02",
+        "HF03",
+        "HF04",
+        "HF05",
+        "HF06",
+        "HF07",
+        "HF09",
+        "HF12",
+        "HF13",
+        "C10",
+        "C14",
+        "C15",
+        "C16",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "test_subject_ids": [
+        "HF01",
+        "HF17",
+        "C11",
+        "C18",
+        "C24"
+      ],
+      "val_subject_ids": []
+    },
+    {
+      "fold_id": "fold_3",
+      "train_subject_ids": [
+        "HF01",
+        "HF02",
+        "HF03",
+        "HF04",
+        "HF05",
+        "HF06",
+        "HF09",
+        "HF13",
+        "HF17",
+        "C10",
+        "C11",
+        "C15",
+        "C16",
+        "C18",
+        "C19",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "test_subject_ids": [
+        "HF07",
+        "HF12",
+        "C14",
+        "C20"
+      ],
+      "val_subject_ids": []
+    },
+    {
+      "fold_id": "fold_4",
+      "train_subject_ids": [
+        "HF01",
+        "HF02",
+        "HF05",
+        "HF06",
+        "HF07",
+        "HF09",
+        "HF12",
+        "HF13",
+        "HF17",
+        "C10",
+        "C11",
+        "C14",
+        "C15",
+        "C18",
+        "C19",
+        "C20",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "test_subject_ids": [
+        "HF03",
+        "HF04",
+        "C16",
+        "C21"
+      ],
+      "val_subject_ids": []
+    }
+  ],
+  "content_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570",
+  "created_utc": "2026-08-02T02:19:45.402879+00:00",
+  "notes": [
+    "Patient-level only — do not fit scalers/feature selectors on test subjects.",
+    "disease_id=heart_failure",
+    "n_positive=11 n_negative=12"
+  ],
+  "forbidden_ops_on_test": [
+    "fit_scaler",
+    "fit_batch_corrector",
+    "feature_selection",
+    "imputer_fit",
+    "threshold_tuning_on_test"
+  ]
+}

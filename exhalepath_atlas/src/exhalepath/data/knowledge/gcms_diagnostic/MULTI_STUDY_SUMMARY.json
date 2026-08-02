@@ -1,0 +1,27 @@
+{
+  "generated_utc": "2026-08-02T02:19:45.560101+00:00",
+  "signature_source": "hybrid",
+  "studies": [
+    {
+      "study_id": "ST000883",
+      "disease_id": "malaria",
+      "auroc": 0.5686274509803921,
+      "nested_auroc": 0.5333333333333333,
+      "logistic_nested_auroc": 0.7333333333333334,
+      "n": 35,
+      "ok": true
+    },
+    {
+      "study_id": "ST000587",
+      "disease_id": "heart_failure",
+      "auroc": 0.5530303030303031,
+      "nested_auroc": 0.6,
+      "logistic_nested_auroc": 0.55,
+      "n": 23,
+      "ok": true
+    }
+  ],
+  "notes": [
+    "Multi-study research enablement summary \u2014 not a pooled clinical validation."
+  ]
+}

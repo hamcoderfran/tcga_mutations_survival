@@ -5,7 +5,7 @@ from .model.predict import ExhalePathPredictor, PredictionResult
 from .physio import PhysiologyEngine
 from .schemas import CellStateActivity, DiseaseQuery, PhysiologyTrace, TumorContext, VOCPrediction
 
-__version__ = "1.3.0"
+__version__ = "1.6.0"
 __all__ = [
     "ExhaleBiomarkerEngine",
     "BiomarkerReport",
