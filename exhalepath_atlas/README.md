@@ -12,7 +12,7 @@ See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc
 
 Install / SOTA notes: [great_disease_stack/INSTALL.md](great_disease_stack/INSTALL.md) · [great_disease_stack/SOTA.md](great_disease_stack/SOTA.md).
 
-**16-model Great Disease Stack** (VOC + genetics + flux + ADME + microbiome + …):
+**20-model Great Disease Stack** (VOC + genetics + flux + ADME + microbiome + …):
 
 ```bash
 voc stack "depression" -l brain -c obesity --age 24 --sex male

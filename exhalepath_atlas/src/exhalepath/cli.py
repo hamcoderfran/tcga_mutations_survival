@@ -1119,7 +1119,7 @@ def great_stack_cmd(
     ),
 ):
     """
-    Great Disease Prediction Stack — fuse 16 models across VOC + disease biology.
+    Great Disease Prediction Stack — fuse 20 models across VOC + disease biology.
 
     Structured flags **or** naturalistic input:
       voc stack "schizophrenia" -l brain --age 35 --sex male
@@ -1203,7 +1203,7 @@ def patient_cmd(
     engine: str = typer.Option(
         "stack",
         "--engine",
-        help="stack (16-model fusion) | biomarker (single ExhalePath engine)",
+        help="stack (20-model fusion) | biomarker (single ExhalePath engine)",
     ),
     show_template: bool = typer.Option(
         False, "--show-template", help="Print PatientTemplate JSON only"

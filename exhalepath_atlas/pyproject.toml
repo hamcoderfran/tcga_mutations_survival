@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "voc-breath"
-version = "1.5.1"
-description = "voc: whole-body exhaled VOC biomarker prediction + 16-model Great Disease Stack"
+version = "1.6.0"
+description = "voc: whole-body exhaled VOC biomarker prediction + 20-model cutting-edge Great Disease Stack"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

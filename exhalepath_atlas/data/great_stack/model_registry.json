@@ -1,96 +1,103 @@
 {
-  "version": "1.0.0",
-  "name": "Great Disease Prediction Stack",
+  "version": "2.0.0",
+  "name": "Great Disease Prediction Stack (cutting-edge)",
   "models": [
     {
       "id": "exhalepath_hybrid",
       "aspect": "voc_quantity",
       "family": "exhalepath",
-      "weight": 1.2,
-      "description": "Hybrid physiology + ML calibrator"
+      "weight": 1.35,
+      "description": "Hybrid physiology + ML calibrator (atlas anchor)"
     },
     {
       "id": "exhalepath_physiology",
       "aspect": "voc_quantity",
       "family": "exhalepath",
-      "weight": 0.9,
-      "description": "Pure Farhi/cell-state physiology"
+      "weight": 1.05,
+      "description": "Pure Farhi/cell-state physiology (atlas anchor)"
     },
     {
       "id": "exhalepath_calibrator",
       "aspect": "voc_quantity",
       "family": "ml",
-      "weight": 0.85,
-      "description": "Per-VOC supervised calibrator head"
+      "weight": 1.0,
+      "description": "Per-VOC supervised calibrator residual (atlas anchor)"
     },
     {
       "id": "zero_shot_mechanism",
       "aspect": "mechanism",
       "family": "zero_shot",
-      "weight": 0.8,
-      "description": "Custom resolver + ontology NN transfer"
+      "weight": 0.95,
+      "description": "Custom resolver + pathway→VOC projection"
+    },
+    {
+      "id": "zero_shot_evidence",
+      "aspect": "voc_prior",
+      "family": "zero_shot",
+      "weight": 1.35,
+      "description": "Literature expected_voc_direction + mechanism themes"
     },
     {
       "id": "literature_voc_prior",
       "aspect": "voc_prior",
       "family": "literature",
-      "weight": 0.7,
-      "description": "Curated disease\u2192VOC log2fc priors"
+      "weight": 0.55,
+      "description": "Curated disease→VOC log2fc priors (downweighted to reduce circularity)"
     },
     {
       "id": "opentargets_genes",
       "aspect": "genetics",
       "family": "genetics",
-      "weight": 0.75,
-      "description": "Open Targets disease\u2013gene associations"
+      "weight": 0.8,
+      "description": "Open Targets disease–gene associations"
     },
     {
       "id": "humangem_flux",
       "aspect": "metabolic_flux",
       "family": "gsmm",
-      "weight": 0.95,
+      "weight": 1.0,
       "description": "Human-GEM-style flux capacity proxy"
     },
     {
       "id": "opera_physchem",
       "aspect": "transport_adme",
       "family": "qsar",
-      "weight": 0.85,
+      "weight": 0.9,
       "description": "OPERA-style ADME / partition transport"
     },
     {
       "id": "primekg_graph",
       "aspect": "knowledge_graph",
       "family": "graph",
-      "weight": 0.9,
+      "weight": 0.95,
       "description": "PrimeKG-lite multi-hop disease graph"
     },
     {
       "id": "omnipath_signaling",
       "aspect": "signaling",
       "family": "network",
-      "weight": 0.7,
+      "weight": 0.75,
       "description": "OmniPath-style pathway crosstalk"
     },
     {
       "id": "agora_microbiome",
       "aspect": "microbiome",
       "family": "microbiome",
-      "weight": 0.65,
+      "weight": 0.7,
       "description": "AGORA2/mVOC microbial VOC routes"
     },
     {
       "id": "pbpk_transport",
       "aspect": "transport_adme",
       "family": "pbpk",
-      "weight": 0.8,
+      "weight": 0.85,
       "description": "PBPK/Farhi alveolar delivery model"
     },
     {
       "id": "cell_census",
       "aspect": "cell_state",
       "family": "single_cell",
-      "weight": 0.75,
+      "weight": 0.8,
       "description": "CELLxGENE Census cell-state densities"
     },
     {
@@ -104,15 +111,36 @@
       "id": "chembl_pharm",
       "aspect": "pharmacology",
       "family": "pharmacology",
-      "weight": 0.55,
+      "weight": 0.5,
       "description": "ChEMBL pathway/pharmacology priors"
     },
     {
       "id": "pathway_enrichment",
       "aspect": "pathways",
       "family": "enrichment",
-      "weight": 0.8,
+      "weight": 0.9,
       "description": "KEGG/Reactome pathway enrichment consensus"
+    },
+    {
+      "id": "phenotype_mondo",
+      "aspect": "phenotype",
+      "family": "phenotype",
+      "weight": 1.05,
+      "description": "Free-text phenotype / MONDO → VOC themes"
+    },
+    {
+      "id": "counterfactual_null",
+      "aspect": "null",
+      "family": "null",
+      "weight": 0.3,
+      "description": "Deterministic null shrinkage for epistemic contrast"
+    },
+    {
+      "id": "meta_ensemble",
+      "aspect": "voc_quantity",
+      "family": "meta",
+      "weight": 1.15,
+      "description": "Second-order hybrid×literature agreement meta head"
     }
   ]
 }

@@ -11,6 +11,7 @@ from .core_exhalepath import (
     PhysiologyExhalePathModel,
     ZeroShotModel,
 )
+from .cutting_edge import CounterfactualNullModel, MetaEnsembleModel, PhenotypeMondoModel
 from .graph_genetics import OmniPathSignalingModel, OpenTargetsGenesModel, PrimeKGGraphModel
 from .literature_clinical import (
     CellCensusModel,
@@ -20,15 +21,17 @@ from .literature_clinical import (
     PathwayEnrichmentModel,
 )
 from .systems import AgoraMicrobiomeModel, HumanGEMFluxModel, OperaPhyschemModel, PBPKTransportModel
+from .zero_shot_evidence import ZeroShotEvidenceModel
 
 
 def build_all_models(ctx: dict[str, Any]) -> list[StackModel]:
-    """Instantiate the full 16-model stack."""
+    """Instantiate the full cutting-edge multi-model stack (20 heads)."""
     classes: list[type[StackModel]] = [
         HybridExhalePathModel,
         PhysiologyExhalePathModel,
         CalibratorModel,
         ZeroShotModel,
+        ZeroShotEvidenceModel,
         LiteraturePriorModel,
         OpenTargetsGenesModel,
         HumanGEMFluxModel,
@@ -41,6 +44,9 @@ def build_all_models(ctx: dict[str, Any]) -> list[StackModel]:
         ComorbidityModel,
         ChemblPharmModel,
         PathwayEnrichmentModel,
+        PhenotypeMondoModel,
+        CounterfactualNullModel,
+        MetaEnsembleModel,
     ]
     # apply registry weights if present
     reg = {m["id"]: m for m in (ctx.get("registry") or {}).get("models") or []}

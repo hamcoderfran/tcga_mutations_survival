@@ -29,7 +29,7 @@ You get the `voc` command (aliases: `exhalepath`, `voc-breath`).
 ## Easy usage
 
 ```bash
-# Naturalistic patient → template → 16-model stack
+# Naturalistic patient → template → 20-model stack
 voc patient "35M with schizophrenia, smokes, on olanzapine, BMI 32, hallucinations"
 
 # Inspect template only
@@ -46,7 +46,7 @@ Artifacts land in `runs/stack_*/` and `runs/stack_holdout/`.
 
 ## What you get
 
-- 16 fused models (VOC + genetics + flux + ADME + microbiome + …)
+- 20 fused models (VOC + genetics + flux + ADME + microbiome + …)
 - PatientTemplate for vignettes, clinic notes, JSON, key=value
 - HTML/PNG/CSV/JSON comprehensive reports
 

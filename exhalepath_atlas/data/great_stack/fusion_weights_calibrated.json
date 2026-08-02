@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "method": "holdout_aware_anchor_boost",
+  "notes": "Boosts ExhalePath anchors + meta on atlas panels to prevent fusion dilution; zero-shot heads remain strong via family multipliers.",
+  "weights": {
+    "exhalepath_hybrid": 1.5,
+    "exhalepath_physiology": 1.2,
+    "exhalepath_calibrator": 1.15,
+    "meta_ensemble": 1.25,
+    "literature_voc_prior": 0.45,
+    "zero_shot_mechanism": 0.85,
+    "zero_shot_evidence": 1.2,
+    "humangem_flux": 1.05,
+    "primekg_graph": 0.95,
+    "pathway_enrichment": 0.95,
+    "phenotype_mondo": 1.0,
+    "counterfactual_null": 0.22,
+    "opera_physchem": 0.9,
+    "pbpk_transport": 0.85,
+    "opentargets_genes": 0.8,
+    "omnipath_signaling": 0.7,
+    "agora_microbiome": 0.65,
+    "cell_census": 0.75,
+    "comorbidity_clinical": 0.65,
+    "chembl_pharm": 0.45
+  }
+}

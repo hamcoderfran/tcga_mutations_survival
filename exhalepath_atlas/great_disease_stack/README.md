@@ -1,6 +1,6 @@
 # Great Disease Prediction Stack
 
-One comprehensive folder that fuses **16 models** across exhaled VOCs and the rest of disease biology — genetics, pathways, signaling, metabolic flux, ADME/PBPK transport, microbiome, cell states, pharmacology, comorbidity, and literature priors — on top of ExhalePath.
+One comprehensive folder that fuses **20 models** across exhaled VOCs and the rest of disease biology — genetics, pathways, signaling, metabolic flux, ADME/PBPK transport, microbiome, cell states, pharmacology, comorbidity, literature priors, zero-shot evidence, phenotype/MONDO, null contrast, and a meta ensemble — on top of ExhalePath.
 
 > Research / hypothesis-generation only. Not a medical device.
 
@@ -12,9 +12,10 @@ pip install -e "exhalepath_atlas[dev,stack]"
 # Structured
 voc stack "depression" -l brain -c obesity --age 24 --sex male
 
-# Naturalistic patient input → PatientTemplate → 16-model stack
+# Naturalistic patient input → PatientTemplate → 20-model stack
 voc patient "35M with schizophrenia, smokes, on olanzapine, BMI 32, hallucinations"
 voc stack --nl "62F former smoker, stage II lung adenocarcinoma LLL, KRAS/TP53"
+voc stack --nl "Maple syrup urine disease, genes BCKDHA BCKDHB"
 ```
 
 `voc patient` accepts vignettes, clinic-note sections (`CC:`/`HPI:`/`PMH:`/`Meds:`),
@@ -32,40 +33,48 @@ Writes `runs/stack_*/`:
 | `model_status.csv` | Which models fired |
 | `STACK_RESULT.json` | Full machine-readable fusion |
 
-## The 16 fused models
+## The 20 fused models
 
 | # | Model ID | Aspect | Source family |
 |---|---|---|---|
 | 1 | `exhalepath_hybrid` | VOC quantity | ExhalePath hybrid physio+ML |
 | 2 | `exhalepath_physiology` | VOC quantity | Farhi / cell-state physiology |
 | 3 | `exhalepath_calibrator` | VOC quantity | Supervised calibrator residual |
-| 4 | `zero_shot_mechanism` | Mechanism | Custom resolver + ontology NN |
-| 5 | `literature_voc_prior` | VOC prior | Curated disease→VOC atlas |
-| 6 | `opentargets_genes` | Genetics | Open Targets associations |
-| 7 | `humangem_flux` | Metabolic flux | Human-GEM-style flux proxy |
-| 8 | `opera_physchem` | Transport / ADME | OPERA-style QSPR panel |
-| 9 | `primekg_graph` | Knowledge graph | PrimeKG-lite multi-hop walks |
-| 10 | `omnipath_signaling` | Signaling | OmniPath-style pathway diffusion |
-| 11 | `agora_microbiome` | Microbiome | AGORA2/mVOC emission routes |
-| 12 | `pbpk_transport` | Transport / ADME | Farhi/PBPK-lite alveolar delivery |
-| 13 | `cell_census` | Cell state | CELLxGENE Census / atlas densities |
-| 14 | `comorbidity_clinical` | Clinical | Comorbidity prior fusion |
-| 15 | `chembl_pharm` | Pharmacology | ChEMBL pathway / physchem |
-| 16 | `pathway_enrichment` | Pathways | KEGG/Reactome enrichment consensus |
+| 4 | `zero_shot_mechanism` | Mechanism | Resolver + pathway→VOC projection |
+| 5 | `zero_shot_evidence` | VOC prior | Literature themes / expected directions |
+| 6 | `literature_voc_prior` | VOC prior | Curated disease→VOC atlas |
+| 7 | `opentargets_genes` | Genetics | Open Targets associations |
+| 8 | `humangem_flux` | Metabolic flux | Human-GEM-style flux proxy |
+| 9 | `opera_physchem` | Transport / ADME | OPERA-style QSPR panel |
+| 10 | `primekg_graph` | Knowledge graph | PrimeKG-lite multi-hop walks |
+| 11 | `omnipath_signaling` | Signaling | OmniPath-style pathway diffusion |
+| 12 | `agora_microbiome` | Microbiome | AGORA2/mVOC emission routes |
+| 13 | `pbpk_transport` | Transport / ADME | Farhi/PBPK-lite alveolar delivery |
+| 14 | `cell_census` | Cell state | CELLxGENE Census / atlas densities |
+| 15 | `comorbidity_clinical` | Clinical | Comorbidity prior fusion |
+| 16 | `chembl_pharm` | Pharmacology | ChEMBL pathway / physchem |
+| 17 | `pathway_enrichment` | Pathways | KEGG/Reactome enrichment consensus |
+| 18 | `phenotype_mondo` | Phenotype | Free-text / MONDO → VOC themes |
+| 19 | `counterfactual_null` | Null | Deterministic null shrinkage |
+| 20 | `meta_ensemble` | VOC quantity | Hybrid × literature meta head |
 
 ## Fusion method
 
 1. Each model emits per-VOC `log2fc` + confidence (+ optional disease aspects).
-2. **Confidence-weighted average** of log2fc (weight × confidence).
-3. **Reciprocal Rank Fusion (RRF)** across model rankings.
-4. **Sign-agreement** shrinks confidence when models disagree on direction.
-5. Aspects (genes, pathways, microbes, cell states, physiology) are fused separately into a multi-scale disease profile.
+2. **Mode-aware family multipliers** (atlas vs zero-shot regimes).
+3. **Calibrated per-model weights** from `fusion_weights_calibrated.json`.
+4. **Confidence-weighted average** of log2fc (effective weight × confidence).
+5. **Anti-dilution anchor** toward hybrid/physio/calibrator when they agree.
+6. **Reciprocal Rank Fusion (RRF)** across model rankings.
+7. **Sign-agreement + epistemic std** → confidence and approximate 90% CI.
+8. Aspects (genes, pathways, microbes, cell states, phenotypes) fused separately.
 
 ## Curated prior packs
 
 Shipped under `exhalepath_atlas/data/great_stack/`:
 
 - `model_registry.json` — model IDs + default fusion weights
+- `fusion_weights_calibrated.json` — holdout-aware calibrated weights
 - `primekg_lite_graph.json` — disease–gene–pathway–VOC graph
 - `opera_adme_panel.json` — λ / exhalation efficiency / fu / Clint proxies
 - `humangem_flux_proxy.json` — pathway capacity × VOC producers

@@ -1,4 +1,4 @@
-"""Great Disease Prediction Stack — 16-model fused multi-aspect predictor."""
+"""Great Disease Prediction Stack — 20-model fused multi-aspect predictor."""
 
 from .engine import GreatDiseaseStack, run_great_stack
 

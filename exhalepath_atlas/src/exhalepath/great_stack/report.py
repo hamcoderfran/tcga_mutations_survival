@@ -57,6 +57,9 @@ def result_to_dict(result: StackResult) -> dict[str, Any]:
                 "model_votes": v.model_votes,
                 "model_confidences": v.model_confidences,
                 "evidence": v.evidence,
+                "epistemic_std": v.epistemic_std,
+                "ci_low_log2fc": v.ci_low_log2fc,
+                "ci_high_log2fc": v.ci_high_log2fc,
             }
             for v in result.fused_vocs
         ],
@@ -117,6 +120,9 @@ def save_stack_report(result: StackResult, out_dir: Path) -> dict[str, Path]:
                 "fused_confidence",
                 "rrf_score",
                 "n_models_agreeing",
+                "epistemic_std",
+                "ci_low_log2fc",
+                "ci_high_log2fc",
             ]
         )
         for i, v in enumerate(result.fused_vocs, 1):
@@ -130,6 +136,9 @@ def save_stack_report(result: StackResult, out_dir: Path) -> dict[str, Path]:
                     f"{v.fused_confidence:.4f}",
                     f"{v.rrf_score:.4f}",
                     v.n_models_agreeing,
+                    f"{v.epistemic_std:.4f}",
+                    f"{v.ci_low_log2fc:.4f}",
+                    f"{v.ci_high_log2fc:.4f}",
                 ]
             )
     paths["csv"] = cp

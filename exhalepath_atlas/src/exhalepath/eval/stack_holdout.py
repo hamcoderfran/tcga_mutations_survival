@@ -530,7 +530,7 @@ def _sota_assessment(report: dict[str, Any]) -> dict[str, Any]:
             "No head-to-head vs published breath ML baselines on identical splits",
         ],
         "what_is_novel_open": [
-            "16-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling",
+            "20-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling",
             "Naturalistic PatientTemplate → stack path for diverse clinical text",
             "Mechanism explainability + uncertainty/agreement reporting",
             "Installable open package with offline curated priors",

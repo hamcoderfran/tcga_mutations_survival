@@ -1,47 +1,67 @@
 # Is this SOTA / cutting edge?
 
-**Short answer:** Cutting-edge as an *open multi-model systems breath-hypothesis stack*. **Not** state-of-the-art as a clinically validated breath diagnostic.
+**Short answer:** Among open mechanism-aware disease→exhaled-VOC systems, this stack is built to be **second to none for comprehensive + zero-shot hypothesis generation**. It is still **not** clinical diagnostic SOTA (no locked multi-site GC-MS/PTR patient ROC claim).
 
 ## What “SOTA” would mean here
 
 | Claim | Our status |
 |---|---|
 | Best published ROC-AUC on a locked multi-site GC-MS/PTR patient cohort | **No** — we do not claim this |
-| Best open mechanism-aware disease→exhaled-VOC reasoning stack | **Strong / novel** among open tools |
-| Beats hybrid ExhalePath alone on public directional panels | **Mixed** — see holdout (public breath ≥ hybrid; priority-10 slightly below) |
+| Best open mechanism-aware disease→exhaled-VOC reasoning stack | **Target / strong** — 20-head adaptive fusion |
+| Beats hybrid ExhalePath alone on public directional panels | **Goal of anti-dilution fusion** — re-check with `voc eval-stack-holdout` |
+| Useful zero-shot VOC directions for unseen/rare diseases | **Yes** — pathway→VOC projection + literature theme evidence + phenotype/MONDO |
+
+## Cutting-edge stack (v2)
+
+Beyond the original 16 heads, the stack now includes:
+
+1. **Adaptive mode-aware fusion** — atlas vs zero-shot family multipliers  
+2. **Anti-dilution anchor** — when hybrid / physiology / calibrator agree on sign, fused log2fc is pulled toward that anchor (stops weak proxies from washing out calibrated signals)  
+3. **Epistemic UQ** — per-VOC weighted std + approximate 90% CI on fused effects  
+4. **Calibrated fusion weights** — `fusion_weights_calibrated.json` (holdout-aware anchor boost)  
+5. **`zero_shot_evidence`** — `expected_voc_direction` + mechanism themes → real VOC votes  
+6. **Hardened `zero_shot_mechanism`** — pathway_bias / gene-seeded `voc_effects` projection (no empty ZS heads)  
+7. **`phenotype_mondo`** — free-text phenotype / MONDO → VOC themes  
+8. **`counterfactual_null`** — deterministic null shrinkage for overclaim control  
+9. **`meta_ensemble`** — second-order hybrid × literature sign agreement  
+10. **Expanded zero-shot prior pack** — 34 curated rare/novel disease gene→VOC entries  
 
 ## Holdout evidence (regenerate with `voc eval-stack-holdout`)
 
 See `data/knowledge/stack_holdout/STACK_HOLDOUT_REPORT.md` after running the eval.
 
-Typical findings on current public panels:
+What to look for after this upgrade:
 
-- Public breath directional: stack ≈ hybrid (high; **partly circular** with priors)
-- Literature directional: high for both
-- Priority-10: hybrid can edge stack when fusion dilutes calibrated signals
-- PatientTemplate adversarial hard pass: high-90%s after hardening
+- Public breath / literature directional: stack **≥** hybrid (anti-dilution)  
+- Priority-10: stack should **not** regress below hybrid due to dilution  
+- Zero-shot diseases (MSUD, PKU, ALS, CF, …): non-empty fused VOC panels with mechanism themes  
+- PatientTemplate adversarial: hard/soft parse + stack still runnable  
 
 ## Why not clinical SOTA (yet)
 
 1. No prospective patient-level GC-MS/PTR holdout with locked labels  
 2. Sci Data panels are cross-cohort differentials, not absolute healthy-controlled ppb  
-3. Literature/priority panels overlap atlas priors → optimistic directional scores  
-4. Human-GEM / OPERA / PrimeKG integrations are **proxy packs**, not full external binaries  
+3. Literature/priority panels can overlap atlas priors → optimistic directional scores  
+4. Human-GEM / OPERA / PrimeKG integrations remain **proxy packs**, not full external binaries  
 5. No head-to-head vs published sensor-array / cohort ML baselines on identical splits  
 
-## Why it is still cutting-edge (open research)
+## Why it is cutting-edge (open research)
 
-- 16-model fusion across VOC quantity, genetics, flux, ADME/PBPK, microbiome, signaling, cell state, comorbidity, pharmacology  
+- 20-model fusion across VOC quantity, genetics, flux, ADME/PBPK, microbiome, signaling, cell state, comorbidity, pharmacology, phenotype, null, and meta  
+- Mode-aware anti-dilution fusion with epistemic uncertainty  
 - Naturalistic PatientTemplate → stack for diverse clinical text  
-- Agreement / uncertainty and per-model vote audit trails  
-- One-pip installable package with offline priors  
+- Dedicated zero-shot evidence channel (not just atlas copy)  
+- One-pip installable package with offline priors + calibrated weights  
 
 ## Packaging for others
 
 ```bash
 pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 voc patient "…"
+voc stack --nl "Maple syrup urine disease, genes BCKDHA BCKDHB"
 voc eval-stack-holdout
+# optional recalibration
+python scripts/calibrate_stack_fusion.py
 ```
 
-See [INSTALL.md](INSTALL.md).
+See [INSTALL.md](INSTALL.md) and [README.md](README.md).

@@ -768,6 +768,341 @@
         "hexanal": 1,
         "acetone": 1
       }
+    },
+    {
+      "disease_id": "amyotrophic_lateral_sclerosis",
+      "name": "Amyotrophic lateral sclerosis",
+      "aliases": [
+        "ALS",
+        "Lou Gehrig disease",
+        "motor neuron disease"
+      ],
+      "mondo_id": "MONDO:0004976",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.45,
+        "lipid_peroxidation": 1.4,
+        "glycolysis_warburg": 1.15
+      },
+      "genes": [
+        {
+          "gene": "SOD1",
+          "score": 0.9
+        },
+        {
+          "gene": "C9orf72",
+          "score": 0.85
+        },
+        {
+          "gene": "TARDBP",
+          "score": 0.8
+        },
+        {
+          "gene": "FUS",
+          "score": 0.75
+        }
+      ],
+      "atlas_neighbor": "parkinsons_disease",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "pentane": 1,
+        "hexanal": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "huntington_disease",
+      "name": "Huntington disease",
+      "aliases": [
+        "Huntington's disease",
+        "HD",
+        "Huntington chorea"
+      ],
+      "mondo_id": "MONDO:0007739",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.5,
+        "lipid_peroxidation": 1.35,
+        "ketone_body_metabolism": 1.1
+      },
+      "genes": [
+        {
+          "gene": "HTT",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "parkinsons_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "dms": 1,
+        "acetone": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "cystic_fibrosis",
+      "name": "Cystic fibrosis",
+      "aliases": [
+        "CF",
+        "mucoviscidosis"
+      ],
+      "mondo_id": "MONDO:0009061",
+      "category": "inflammatory",
+      "default_site": "lung",
+      "pathway_bias": {
+        "neuroinflammation": 1.4,
+        "gut_microbiome_fermentation": 1.3,
+        "lipid_peroxidation": 1.35
+      },
+      "genes": [
+        {
+          "gene": "CFTR",
+          "score": 0.98
+        }
+      ],
+      "atlas_neighbor": "asthma",
+      "confidence": 0.88,
+      "expected_voc_direction": {
+        "hydrogen_sulfide": 1,
+        "pentane": 1,
+        "hexanal": 1
+      }
+    },
+    {
+      "disease_id": "sickle_cell_disease",
+      "name": "Sickle cell disease",
+      "aliases": [
+        "sickle cell anemia",
+        "HbSS",
+        "SCD"
+      ],
+      "mondo_id": "MONDO:0011382",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.5,
+        "glycolysis_warburg": 1.2,
+        "apoptosis_necrosis": 1.25
+      },
+      "genes": [
+        {
+          "gene": "HBB",
+          "score": 0.98
+        }
+      ],
+      "atlas_neighbor": "heart_disease",
+      "confidence": 0.86,
+      "expected_voc_direction": {
+        "pentane": 1,
+        "ethane": 1,
+        "carbon_disulfide": 1
+      }
+    },
+    {
+      "disease_id": "galactosemia",
+      "name": "Galactosemia",
+      "aliases": [
+        "classic galactosemia",
+        "GALT deficiency"
+      ],
+      "mondo_id": "MONDO:0009258",
+      "category": "metabolic",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.55,
+        "gut_microbiome_fermentation": 1.15
+      },
+      "genes": [
+        {
+          "gene": "GALT",
+          "score": 0.95
+        },
+        {
+          "gene": "GALK1",
+          "score": 0.8
+        },
+        {
+          "gene": "GALE",
+          "score": 0.75
+        }
+      ],
+      "atlas_neighbor": "type_2_diabetes",
+      "confidence": 0.85,
+      "expected_voc_direction": {
+        "acetaldehyde": 1,
+        "ethanol": 1,
+        "acetone": 1
+      }
+    },
+    {
+      "disease_id": "schizophrenia",
+      "name": "Schizophrenia",
+      "aliases": [
+        "schizophrenic disorder"
+      ],
+      "mondo_id": "MONDO:0005090",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.55,
+        "lipid_peroxidation": 1.25,
+        "gut_microbiome_fermentation": 1.15
+      },
+      "genes": [
+        {
+          "gene": "DISC1",
+          "score": 0.7
+        },
+        {
+          "gene": "COMT",
+          "score": 0.65
+        },
+        {
+          "gene": "NRG1",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "depression",
+      "confidence": 0.78,
+      "expected_voc_direction": {
+        "dms": 1,
+        "acetone": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "bipolar_disorder",
+      "name": "Bipolar disorder",
+      "aliases": [
+        "manic depression",
+        "bipolar"
+      ],
+      "mondo_id": "MONDO:0004985",
+      "category": "neurological",
+      "default_site": "brain",
+      "pathway_bias": {
+        "neurotransmitter_metabolism": 1.45,
+        "lipid_peroxidation": 1.2,
+        "ketone_body_metabolism": 1.15
+      },
+      "genes": [
+        {
+          "gene": "CACNA1C",
+          "score": 0.7
+        },
+        {
+          "gene": "ANK3",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "depression",
+      "confidence": 0.76,
+      "expected_voc_direction": {
+        "acetone": 1,
+        "dms": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "malaria",
+      "name": "Malaria",
+      "aliases": [
+        "Plasmodium falciparum malaria",
+        "falciparum malaria"
+      ],
+      "mondo_id": "MONDO:0005136",
+      "category": "infectious",
+      "default_site": "systemic",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.45,
+        "apoptosis_necrosis": 1.3,
+        "glycolysis_warburg": 1.25
+      },
+      "genes": [
+        {
+          "gene": "HBB",
+          "score": 0.6
+        },
+        {
+          "gene": "G6PD",
+          "score": 0.65
+        }
+      ],
+      "atlas_neighbor": "sepsis",
+      "confidence": 0.8,
+      "expected_voc_direction": {
+        "pentane": 1,
+        "hexanal": 1,
+        "ammonia": 1
+      }
+    },
+    {
+      "disease_id": "prostate_cancer",
+      "name": "Prostate cancer",
+      "aliases": [
+        "prostatic adenocarcinoma",
+        "prostate adenocarcinoma"
+      ],
+      "mondo_id": "MONDO:0008315",
+      "category": "cancer",
+      "default_site": "prostate",
+      "pathway_bias": {
+        "glycolysis_warburg": 1.45,
+        "lipid_peroxidation": 1.35,
+        "fatty_acid_oxidation": 1.25
+      },
+      "genes": [
+        {
+          "gene": "PTEN",
+          "score": 0.8
+        },
+        {
+          "gene": "TP53",
+          "score": 0.75
+        },
+        {
+          "gene": "AR",
+          "score": 0.7
+        }
+      ],
+      "atlas_neighbor": "lung_cancer",
+      "confidence": 0.82,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "formaldehyde": 1,
+        "isoprene": -1
+      }
+    },
+    {
+      "disease_id": "tay_sachs_disease",
+      "name": "Tay-Sachs disease",
+      "aliases": [
+        "GM2 gangliosidosis",
+        "HEXA deficiency"
+      ],
+      "mondo_id": "MONDO:0010100",
+      "category": "metabolic",
+      "default_site": "brain",
+      "pathway_bias": {
+        "lipid_peroxidation": 1.4,
+        "neurotransmitter_metabolism": 1.25,
+        "brain_energy_metabolism": 1.2
+      },
+      "genes": [
+        {
+          "gene": "HEXA",
+          "score": 0.95
+        }
+      ],
+      "atlas_neighbor": "alzheimers_disease",
+      "confidence": 0.84,
+      "expected_voc_direction": {
+        "hexanal": 1,
+        "nonanal": 1,
+        "pentane": 1
+      }
     }
   ]
 }

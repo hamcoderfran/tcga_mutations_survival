@@ -64,6 +64,9 @@ class FusedVOC:
     model_votes: dict[str, float]
     model_confidences: dict[str, float]
     evidence: list[str] = field(default_factory=list)
+    epistemic_std: float = 0.0
+    ci_low_log2fc: float = 0.0
+    ci_high_log2fc: float = 0.0
 
 
 @dataclass

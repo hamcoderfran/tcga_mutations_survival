@@ -153,7 +153,7 @@ class ZeroShotModel(StackModel):
     model_id = "zero_shot_mechanism"
     family = "zero_shot"
     aspect = "mechanism"
-    default_weight = 0.8
+    default_weight = 0.95
 
     def predict(self, query: StackQuery):
         from ...knowledge.loader import KnowledgeBase
@@ -169,14 +169,52 @@ class ZeroShotModel(StackModel):
         is_zs = bool(d.get("custom") or str(d.get("disease_id", "")).startswith("custom"))
         # also treat unresolved atlas-adjacent via flags
         zs_flag = bool(meta.get("zero_shot") or is_zs)
-        signals = []
+        zs_mode = meta.get("resolver") or meta.get("zero_shot_mode")
+
+        # Aggregate VOC effects: explicit prior + pathway_bias projection
+        voc_acc: dict[str, float] = {}
         for vid, fc in (d.get("voc_log2fc_prior") or {}).items():
+            voc_acc[str(vid)] = voc_acc.get(str(vid), 0.0) + float(fc)
+
+        for pw, w in (d.get("pathway_bias") or {}).items():
+            effects = (kb.pathways.get(pw) or {}).get("voc_effects") or {}
+            if not isinstance(effects, dict):
+                continue
+            for vid, eff in effects.items():
+                val = float(eff) if isinstance(eff, (int, float)) else float(
+                    (eff or {}).get("log2fc") or (eff or {}).get("weight") or 0.0
+                )
+                voc_acc[str(vid)] = voc_acc.get(str(vid), 0.0) + val * float(w) * 0.55
+
+        # Gene-seeded pathway enrichment fallback for true zero-shot empty priors
+        if len(voc_acc) < 3:
+            genes = {str(g).upper() for g in (d.get("driver_genes") or query.genes or [])}
+            for pw in kb.pathways.values():
+                seeds = {str(g).upper() for g in (pw.get("seed_genes") or [])}
+                if not genes or not (genes & seeds):
+                    continue
+                cover = len(genes & seeds) / max(1, len(seeds))
+                effects = pw.get("voc_effects") or {}
+                if isinstance(effects, dict):
+                    for vid, eff in effects.items():
+                        val = float(eff) if isinstance(eff, (int, float)) else float(
+                            (eff or {}).get("log2fc") or 0.0
+                        )
+                        voc_acc[str(vid)] = voc_acc.get(str(vid), 0.0) + val * (0.4 + cover)
+
+        signals = []
+        for vid, fc in voc_acc.items():
+            if vid not in kb.vocs:
+                continue
+            fc = max(-2.2, min(2.2, float(fc)))
+            if abs(fc) < 0.04:
+                continue
             signals.append(
                 VOCSignal(
                     voc_id=vid,
-                    log2fc=float(fc),
-                    confidence=0.55 if zs_flag else 0.4,
-                    evidence=["zero_shot_or_resolved_prior"],
+                    log2fc=fc,
+                    confidence=0.62 if zs_flag else 0.45,
+                    evidence=["zero_shot_pathway_voc_projection"],
                 )
             )
         aspects = []
@@ -191,11 +229,16 @@ class ZeroShotModel(StackModel):
         return self._ok(
             voc_signals=signals,
             aspects=aspects,
+            status="ok" if signals else ("degraded" if zs_flag else "ok"),
             metadata={
                 "zero_shot": zs_flag,
+                "zero_shot_mode": zs_mode or ("mechanism_transfer" if zs_flag else "atlas"),
                 "disease_id": d.get("disease_id"),
                 "category": d.get("category"),
-                "resolver": meta.get("resolver") or meta.get("zero_shot_mode"),
+                "resolver": zs_mode,
+                "n_voc_projected": len(signals),
             },
-            notes=["mechanism-first zero-shot head"] if zs_flag else ["atlas-resolved mechanism head"],
+            notes=["mechanism-first zero-shot head + pathway→VOC projection"]
+            if zs_flag
+            else ["atlas-resolved mechanism head"],
         )

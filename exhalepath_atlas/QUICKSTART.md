@@ -4,7 +4,7 @@
 pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 ```
 
-## Great Disease Stack (16 models fused)
+## Great Disease Stack (20 models fused)
 
 ```bash
 voc stack "depression" -l brain -c obesity --age 24 --sex male

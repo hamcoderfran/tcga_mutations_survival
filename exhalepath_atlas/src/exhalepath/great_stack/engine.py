@@ -6,13 +6,20 @@ from typing import Any, Optional
 
 from ..knowledge.loader import KnowledgeBase, default_knowledge
 from .data import model_registry
-from .fusion import fuse_aspects, fuse_vocs, fusion_summary
+from .fusion import (
+    calibrated_weight_overrides,
+    detect_zero_shot,
+    effective_weight,
+    fuse_aspects,
+    fuse_vocs,
+    fusion_summary,
+)
 from .models import build_all_models
 from .types import StackQuery, StackResult
 
 
 class GreatDiseaseStack:
-    """16-model fused disease × VOC × mechanism predictor."""
+    """20-model cutting-edge fused disease × VOC × mechanism predictor."""
 
     def __init__(self, kb: KnowledgeBase | None = None):
         self.kb = kb or default_knowledge()
@@ -27,13 +34,23 @@ class GreatDiseaseStack:
     def predict(self, query: StackQuery | dict[str, Any]) -> StackResult:
         if isinstance(query, dict):
             query = StackQuery(**query)
+        # fresh per-query context fields
+        self.ctx["biomarker_report"] = None
+        self.ctx["disease_resolved"] = None
+
         models = build_all_models(self.ctx)
         outputs = []
-        # run hybrid first so others can reuse biomarker_report
+        # hybrid first (ctx), meta last (needs hybrid report)
+        priority = {
+            "exhalepath_hybrid": 0,
+            "exhalepath_physiology": 1,
+            "exhalepath_calibrator": 2,
+            "meta_ensemble": 90,
+        }
         order = {m.model_id: i for i, m in enumerate(models)}
         models.sort(
             key=lambda m: (
-                0 if m.model_id == "exhalepath_hybrid" else 1,
+                priority.get(m.model_id, 10),
                 order.get(m.model_id, 99),
             )
         )
@@ -51,14 +68,28 @@ class GreatDiseaseStack:
                 "location": {"name": query.location or d.get("default_site")},
             }
 
-        fused_vocs = fuse_vocs(outputs, voc_catalog=self.kb.vocs, top_n=query.top_n)
+        zero_shot = detect_zero_shot(outputs, query)
+        fused_vocs = fuse_vocs(
+            outputs,
+            voc_catalog=self.kb.vocs,
+            top_n=query.top_n,
+            query=query,
+            zero_shot=zero_shot,
+        )
         aspects = fuse_aspects(outputs)
-        weights = {m.model_id: m.weight for m in outputs}
-        summary = fusion_summary(query, outputs, fused_vocs)
+        overrides = calibrated_weight_overrides()
+        weights = {
+            m.model_id: effective_weight(m, zero_shot=zero_shot, overrides=overrides)
+            for m in outputs
+        }
+        summary = fusion_summary(query, outputs, fused_vocs, zero_shot=zero_shot)
         notes = [
-            "Great Disease Prediction Stack — multi-model fusion across VOC + disease biology.",
+            "Great Disease Prediction Stack — cutting-edge multi-model fusion "
+            "(adaptive anti-dilution + epistemic UQ + zero-shot VOC projection).",
             "Research / hypothesis-generation only — not a medical device.",
         ]
+        if zero_shot:
+            notes.append("Zero-shot regime: mechanism/theme channels upweighted.")
         for mo in outputs:
             notes.extend(mo.notes[:1])
 

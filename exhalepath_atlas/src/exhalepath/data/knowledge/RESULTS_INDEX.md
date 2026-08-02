@@ -10,7 +10,7 @@ pip install -e "exhalepath_atlas[dev,stack]"
 voc "depression" -l brain -c obesity --age 24 --sex male
 # → rich console + runs/voc_*/REPORT.html + dashboard.png + REPORT.md + CSVs
 voc stack "depression" -l brain -c obesity --age 24 --sex male
-# → 16-model fused consensus (VOC + genes + flux + ADME + microbiome + …)
+# → 20-model fused consensus (VOC + genes + flux + ADME + microbiome + …)
 voc eval-implementation-readiness   # research readiness gates
 ```
 
