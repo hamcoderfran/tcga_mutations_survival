@@ -82,14 +82,21 @@ pip install -e "exhalepath_atlas[stack,gsmm]"   # networkx + cobrapy
 
 The stack **runs without** those installs — proxies use the bundled packs.
 
+## Install / SOTA
+
+- [INSTALL.md](INSTALL.md) — one-line pip + usage  
+- [SOTA.md](SOTA.md) — honest cutting-edge vs clinical-SOTA assessment  
+- Holdout: `voc eval-stack-holdout` → `STACK_HOLDOUT_REPORT.md`
+
 ## Layout
 
 ```
 great_disease_stack/          ← you are here (docs + entry)
   README.md
+  INSTALL.md
+  SOTA.md
   docs/
   examples/
-  scripts/
 ../src/exhalepath/great_stack/  ← engine, models, fusion, report
 ../data/great_stack/            ← curated multi-model priors
 ```

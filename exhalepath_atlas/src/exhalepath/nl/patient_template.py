@@ -352,7 +352,9 @@ def _apply_structured(tpl: PatientTemplate, data: dict[str, Any]) -> None:
 
 def _extract_compact_demographics(text: str, tpl: PatientTemplate) -> None:
     """Handle forms like 35M, 35 F, 24yo F, Mr./Ms."""
-    # 35M / 35F / 35 M
+    # strip common emoji / pictographs that break token boundaries
+    text = re.sub(r"[\U0001F300-\U0001FAFF]", " ", text)
+    # 35M / 35F / 35 M / 28F w/
     m = re.search(r"\b(\d{1,3})\s*([MFmf])\b(?!\w)", text)
     if m and tpl.age_years is None:
         tpl.age_years = float(m.group(1))
@@ -535,17 +537,11 @@ def parse_patient_template(
         except Exception as exc:  # noqa: BLE001
             tpl.warnings.append(f"llm_enrichment_failed:{exc}")
 
-    # 7) if still no disease, use chief complaint / first noun phrase fallback
+    # 7) cautious fallback — only from CC/HPI, never from bare gene/demo fragments
     if not tpl.primary_disease:
-        for cand in (
-            tpl.chief_complaint,
-            tpl.history,
-            raw.split(".")[0],
-            raw.split(",")[0],
-        ):
+        for cand in (tpl.chief_complaint, tpl.history):
             if not cand:
                 continue
-            # strip leading demographics
             frag = re.sub(
                 r"^\s*\d{1,3}\s*[yoMFmf\- ]*(?:year\s*old)?\s*", "", cand, flags=re.I
             )
@@ -555,6 +551,12 @@ def parse_patient_template(
                 frag,
                 flags=re.I,
             ).strip(" .;")
+            if re.search(
+                r"\b(mutation|gene|BMI|smoker|year old|taking|metformin|insulin)\b",
+                frag,
+                re.I,
+            ):
+                continue
             if 3 <= len(frag) <= 80:
                 tpl.primary_disease = frag
                 tpl.field_sources["primary_disease"] = "fallback_phrase"

@@ -14,6 +14,12 @@ voc stack "depression" -l brain -c obesity --age 24 --sex male
 voc eval-implementation-readiness   # research readiness gates
 ```
 
+## Great Disease Stack holdout (v1.5.1)
+
+| Result | Path | How to re-run |
+|---|---|---|
+| Stack holdout + break + SOTA note | [`stack_holdout/STACK_HOLDOUT_REPORT.md`](stack_holdout/STACK_HOLDOUT_REPORT.md) | `voc eval-stack-holdout` |
+
 See [QUICKSTART.md](../../QUICKSTART.md) and [great_disease_stack/README.md](../../great_disease_stack/README.md).
 
 ## Headline reports (canonical)

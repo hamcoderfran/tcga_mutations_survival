@@ -1,0 +1,937 @@
+{
+  "version": "1.0.0",
+  "description": "Great Disease Stack holdout + adversarial evaluation",
+  "patient_break": {
+    "benchmark": "patient_template_adversarial",
+    "n_cases": 18,
+    "hard_pass": 13,
+    "hard_total": 13,
+    "hard_pass_rate": 1.0,
+    "soft_pass": 5,
+    "soft_total": 5,
+    "soft_pass_rate": 1.0,
+    "cases": [
+      {
+        "id": "compact_ok",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "schizophrenia",
+        "parse_confidence": 0.8500000000000001,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "json_ok",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "asthma",
+        "parse_confidence": 0.8,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "kv_ok",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "type 2 diabetes",
+        "parse_confidence": 0.75,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "note_ok",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "copd",
+        "parse_confidence": 0.9000000000000001,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "empty",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": null,
+        "parse_confidence": 0.0,
+        "warnings": [
+          "empty_input"
+        ],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "whitespace",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": null,
+        "parse_confidence": 0.0,
+        "warnings": [
+          "empty_input"
+        ],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "no_disease_demographics_only",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": null,
+        "parse_confidence": 0.35,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "gene_only_trap",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": null,
+        "parse_confidence": 0.2,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "multi_disease_primary",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "depression",
+        "parse_confidence": 0.65,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "typo_disease",
+        "soft": true,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "schizophrenia",
+        "parse_confidence": 0.75,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "emoji_noise",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "asthma",
+        "parse_confidence": 0.8500000000000001,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "spanish_mix",
+        "soft": true,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "Type 2 diabetes mellitus",
+        "parse_confidence": 0.65,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "contradictory_sex",
+        "soft": true,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "depression",
+        "parse_confidence": 0.75,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "huge_note",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "pancreatic adenocarcinoma",
+        "parse_confidence": 0.8,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "injectiony",
+        "soft": true,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "copd",
+        "parse_confidence": 0.6,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "bare_cancer",
+        "soft": true,
+        "pass": true,
+        "fails": [],
+        "primary_disease": null,
+        "parse_confidence": 0.15,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "medication_as_disease_trap",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": null,
+        "parse_confidence": 0.2,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      },
+      {
+        "id": "luad_lll_genes",
+        "soft": false,
+        "pass": true,
+        "fails": [],
+        "primary_disease": "lung adenocarcinoma",
+        "parse_confidence": 0.65,
+        "warnings": [],
+        "stack_kwargs_ok": true,
+        "stack_err": null
+      }
+    ]
+  },
+  "naturalistic_e2e": {
+    "benchmark": "naturalistic_e2e",
+    "n_cases": 3,
+    "mean_models_ok": 15.666666666666666,
+    "cases": [
+      {
+        "text": "35M with schizophrenia, smokes, on olanzapine, BMI 32, hallucinations",
+        "primary_disease": "schizophrenia",
+        "n_models_ok": 16,
+        "n_models_total": 16,
+        "n_fused_vocs": 15,
+        "top_voc": "pentane",
+        "seconds": 0.382
+      },
+      {
+        "text": "24yo obese male with depression and insomnia on sertraline",
+        "primary_disease": "depression",
+        "n_models_ok": 16,
+        "n_models_total": 16,
+        "n_fused_vocs": 15,
+        "top_voc": "pentane",
+        "seconds": 0.292
+      },
+      {
+        "text": "Stage II lung adenocarcinoma in the left lower lobe with KRAS and TP53, current smoker, 58F",
+        "primary_disease": "lung adenocarcinoma",
+        "n_models_ok": 15,
+        "n_models_total": 16,
+        "n_fused_vocs": 15,
+        "top_voc": "pentane",
+        "seconds": 0.298
+      }
+    ]
+  },
+  "public_breath": {
+    "benchmark": "public_breath",
+    "n_cases": 7,
+    "hybrid_mean_directional": 0.9821428571428571,
+    "stack_mean_directional": 1.0,
+    "hybrid_mean_recall_at_k": 0.7482993197278912,
+    "stack_mean_recall_at_k": 0.9523809523809524,
+    "cases": [
+      {
+        "case_id": "sci_data_2024_asthma",
+        "source": "scientific_data_2024_figshare_23522490",
+        "disease": "Asthma",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 0.5714285714285714,
+        "stack_recall_at_k": 1.0,
+        "n_scored": 12,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.1,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "sci_data_2024_copd",
+        "source": "scientific_data_2024_figshare_23522490",
+        "disease": "COPD",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 0.0,
+        "stack_recall_at_k": 1.0,
+        "n_scored": 5,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "sci_data_2024_bronchiectasis",
+        "source": "scientific_data_2024_figshare_23522490",
+        "disease": "COPD",
+        "hybrid_directional": 0.875,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 0.6666666666666666,
+        "stack_recall_at_k": 0.6666666666666666,
+        "n_scored": 5,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "lit_t2d_acetone",
+        "source": "literature_public",
+        "disease": "type 2 diabetes",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 1.0,
+        "stack_recall_at_k": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 7.85,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "lit_luad_aldehydes",
+        "source": "literature_public",
+        "disease": "lung adenocarcinoma",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 1.0,
+        "stack_recall_at_k": 1.0,
+        "n_scored": 6,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.2,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "lit_ad_oxidative",
+        "source": "literature_public",
+        "disease": "Alzheimer disease",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 1.0,
+        "stack_recall_at_k": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 9.05,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "lit_ibd_microbiome",
+        "source": "literature_public",
+        "disease": "inflammatory bowel disease",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_k": 1.0,
+        "stack_recall_at_k": 1.0,
+        "n_scored": 4,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 12.85,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      }
+    ]
+  },
+  "literature": {
+    "benchmark": "literature_holdout",
+    "n_cases": 17,
+    "hybrid_mean_directional": 1.0,
+    "stack_mean_directional": 1.0,
+    "hybrid_mean_recall_at_15": 0.953125,
+    "stack_mean_recall_at_15": 0.9791666666666666,
+    "stack_mean_min_fold_pass": 1.0,
+    "cases": [
+      {
+        "case_id": "paad_kras_tp53_stage3",
+        "disease": "pancreatic adenocarcinoma",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "luad_tp53_stage4_smoker",
+        "disease": "LUAD",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 0.75,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 4,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.3,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "brca_pik3ca",
+        "disease": "breast cancer",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 0.5,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 2,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.05,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "lihc_liver",
+        "disease": "hepatocellular carcinoma",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.0,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "t2d_zero_shot_metabolic",
+        "disease": "type 2 diabetes",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 1,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 7.85,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "luad_acetaldehyde_warburg",
+        "disease": "LUAD",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 2,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.5,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "cld_zero_shot",
+        "disease": "cirrhosis",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 8.15,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "ckd_zero_shot",
+        "disease": "chronic kidney disease",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 1,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 7.0,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "ibd_zero_shot",
+        "disease": "inflammatory bowel disease",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 2,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 12.85,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "coad_apc_kras",
+        "disease": "colon adenocarcinoma",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 0.6666666666666666,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.1,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "healthy_like_unknown",
+        "disease": "benign essential freckling syndrome ZX-0",
+        "zero_shot": true,
+        "hybrid_directional": null,
+        "stack_directional": null,
+        "hybrid_recall_at_15": null,
+        "stack_recall_at_15": null,
+        "stack_min_fold_pass_rate": null,
+        "n_scored": 0,
+        "stack_meta": {
+          "n_models_ok": 14,
+          "n_models_total": 16,
+          "mean_model_agreement": 2.15,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "gut_dysbiosis",
+        "disease": "dysbiosis",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 4,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "sibo",
+        "disease": "SIBO",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.65,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "alzheimer",
+        "disease": "Alzheimer's disease",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 9.05,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "parkinson",
+        "disease": "Parkinson's disease",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 2,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 9.4,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "depression",
+        "disease": "depression",
+        "zero_shot": true,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 1,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 8.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "case_id": "glioblastoma",
+        "disease": "glioblastoma",
+        "zero_shot": false,
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "hybrid_recall_at_15": 1.0,
+        "stack_recall_at_15": 1.0,
+        "stack_min_fold_pass_rate": 1.0,
+        "n_scored": 3,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.95,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      }
+    ]
+  },
+  "priority10": {
+    "benchmark": "priority10",
+    "n_cases": 13,
+    "hybrid_mean_directional": 1.0,
+    "stack_mean_directional": 0.978021978021978,
+    "cases": [
+      {
+        "disease_id": "asthma",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 19,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 11.1,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "copd",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 18,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "covid19",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 8,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.4,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "pneumonia_bacterial",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 11,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.8,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "tuberculosis",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 9,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 9.75,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "cystic_fibrosis",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 11,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.45,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "sleep_apnea",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 9,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.05,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "cancer_stomach",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 9,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 9.05,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "head_neck_cancer",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 8,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 9.0,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "cancer_prostate",
+        "hybrid_directional": 1.0,
+        "stack_directional": 0.8571428571428571,
+        "n_scored": 7,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 8.3,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "heart_failure",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 7,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 8.45,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "malaria",
+        "hybrid_directional": 1.0,
+        "stack_directional": 0.8571428571428571,
+        "n_scored": 7,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 6.9,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      },
+      {
+        "disease_id": "ards",
+        "hybrid_directional": 1.0,
+        "stack_directional": 1.0,
+        "n_scored": 9,
+        "stack_meta": {
+          "n_models_ok": 15,
+          "n_models_total": 16,
+          "mean_model_agreement": 10.6,
+          "models_skipped": [
+            "comorbidity_clinical"
+          ]
+        }
+      }
+    ]
+  },
+  "sota_assessment": {
+    "is_sota_clinical_breathomics": false,
+    "is_cutting_edge_systems_stack": true,
+    "verdict": "Cutting-edge as an open, multi-model *systems* breath-hypothesis stack (physiology + GSMM-style flux + KG + ADME + microbiome + zero-shot + fusion). Not SOTA as a validated clinical diagnostic vs GC-MS/PTR trial models (e.g. sensor-array or cohort-trained classifiers reporting ROC-AUC on held-out patients).",
+    "evidence": {
+      "public_breath_stack_dir": 1.0,
+      "public_breath_hybrid_dir": 0.9821428571428571,
+      "literature_stack_dir": 1.0,
+      "priority10_stack_dir": 0.978021978021978,
+      "patient_template_hard_pass_rate": 1.0
+    },
+    "gaps_to_sota_clinical": [
+      "No prospective multi-site GC-MS/PTR patient-level holdout with locked labels",
+      "Public Sci Data panels are cross-cohort differentials, not healthy-controlled absolute ppb",
+      "Literature/priority10 directional labels partially overlap atlas priors (circularity risk)",
+      "Human-GEM/OPERA/PrimeKG are proxy packs, not full downloaded GEMs/OPERA binaries",
+      "No head-to-head vs published breath ML baselines on identical splits"
+    ],
+    "what_is_novel_open": [
+      "16-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling",
+      "Naturalistic PatientTemplate \u2192 stack path for diverse clinical text",
+      "Mechanism explainability + uncertainty/agreement reporting",
+      "Installable open package with offline curated priors"
+    ]
+  }
+}

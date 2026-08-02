@@ -17,6 +17,7 @@ _COMORBID_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"\bcirrhosis\b|\bliver failure\b", re.I), "cirrhosis"),
     (re.compile(r"\bCKD\b|\bchronic kidney\b|\brenal failure\b", re.I), "chronic_kidney_disease"),
     (re.compile(r"\bhypertension\b|\bhigh blood pressure\b", re.I), "hypertension"),
+    (re.compile(r"\banxiety\b|\bpanic\b", re.I), "anxiety_disorder"),
 ]
 
 # Primary disease phrase hints (order matters — more specific first)
@@ -28,7 +29,7 @@ _DISEASE_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"\bpancreatic\b", re.I), "pancreatic adenocarcinoma"),
     (re.compile(r"\bcolon cancer\b|\bcolorectal\b", re.I), "colon adenocarcinoma"),
     (re.compile(r"\bmajor depressive\b|\bdepression\b|\bMDD\b|\bdepressive disorder\b", re.I), "depression"),
-    (re.compile(r"\bschizophren", re.I), "schizophrenia"),
+    (re.compile(r"\bschizophren|\bschitzophren|\bschizofren", re.I), "schizophrenia"),
     (re.compile(r"\bAlzheimer", re.I), "alzheimer disease"),
     (re.compile(r"\bParkinson", re.I), "parkinson disease"),
     (
@@ -42,6 +43,7 @@ _DISEASE_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"\bcirrhosis\b", re.I), "cirrhosis"),
     (re.compile(r"\basthma\b", re.I), "asthma"),
     (re.compile(r"\bCOPD\b", re.I), "copd"),
+    (re.compile(r"\banxiety disorder\b|\bGAD\b", re.I), "anxiety_disorder"),
     (re.compile(r"\bobesity\b", re.I), "obesity"),
     (re.compile(r"\bheart (?:disease|failure|condition)\b", re.I), "heart disease"),
 ]
@@ -74,24 +76,54 @@ _DEFAULT_SITE = {
 }
 
 
+_COMORBIDITY_LIKE = {
+    "obesity",
+    "heart disease",
+    "heart_disease",
+    "hypertension",
+    "type 2 diabetes",
+    "type_2_diabetes",
+    "type 2 diabetes mellitus",
+    "anxiety disorders",
+    "anxiety_disorder",
+}
+
+
 def _match_disease_catalog(text: str, catalog: list[dict[str, Any]] | None) -> str | None:
     if not catalog:
         return None
     low = text.lower()
-    # Prefer longest alias hits
-    hits: list[tuple[int, str]] = []
+    # Prefer earliest mention, then longer alias (avoids "depression … type 2 diabetes"
+    # collapsing to the longer diabetes string).
+    hits: list[tuple[int, int, str]] = []
     for d in catalog:
         names = [d.get("name") or "", d.get("disease_id") or ""] + list(d.get("aliases") or [])
+        best_for_d: tuple[int, int, str] | None = None
         for name in names:
             n = str(name).strip().lower()
             if len(n) < 4:
                 continue
-            if n in low:
-                hits.append((len(n), d.get("name") or d.get("disease_id") or n))
+            pos = low.find(n)
+            if pos < 0:
+                continue
+            cand = (pos, -len(n), d.get("name") or d.get("disease_id") or n)
+            if best_for_d is None or cand < best_for_d:
+                best_for_d = cand
+        if best_for_d:
+            hits.append(best_for_d)
     if not hits:
         return None
-    hits.sort(reverse=True)
-    return hits[0][1]
+    hits.sort()
+    # If an early non-comorbidity disease exists, prefer it over later metabolic comorbid labels
+    primaryish = [
+        h
+        for h in hits
+        if h[2].lower().replace("_", " ") not in _COMORBIDITY_LIKE
+        and h[2].lower() not in _COMORBIDITY_LIKE
+    ]
+    if primaryish:
+        return primaryish[0][2]
+    return hits[0][2]
 
 
 def parse_rules(text: str, *, disease_catalog: list[dict[str, Any]] | None = None) -> QuerySlots:
@@ -151,9 +183,15 @@ def parse_rules(text: str, *, disease_catalog: list[dict[str, Any]] | None = Non
             slots.location = loc
             break
 
-    # Primary disease
-    disease = _match_disease_catalog(raw, disease_catalog)
+    # Primary disease — patterns first (explicit clinical phrases), then catalog
+    disease = None
     catalog_hit = None
+    for pat, name in _DISEASE_PATTERNS:
+        if pat.search(raw):
+            disease = name
+            break
+    if not disease:
+        disease = _match_disease_catalog(raw, disease_catalog)
     if disease and disease_catalog:
         dlow = str(disease).strip().lower()
         for d in disease_catalog:
@@ -163,10 +201,11 @@ def parse_rules(text: str, *, disease_catalog: list[dict[str, Any]] | None = Non
             if any(str(n).strip().lower() == dlow for n in names):
                 catalog_hit = d
                 break
-    if not disease:
-        for pat, name in _DISEASE_PATTERNS:
-            if pat.search(raw):
-                disease = name
+            # pattern may return a short name — fuzzy match
+            if dlow in str(d.get("name") or "").lower() or dlow in str(
+                d.get("disease_id") or ""
+            ).lower().replace("_", " "):
+                catalog_hit = d
                 break
     # If obesity/heart matched only as comorbidity phrases and no other disease, keep comorbidity role
     if disease:

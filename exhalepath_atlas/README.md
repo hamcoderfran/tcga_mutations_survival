@@ -8,7 +8,9 @@ voc "depression" -l brain -c obesity --age 24 --sex male
 # → terminal panel + runs/voc_…/REPORT.html + dashboard.png
 ```
 
-See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.5.0**.
+See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.5.1**.
+
+Install / SOTA notes: [great_disease_stack/INSTALL.md](great_disease_stack/INSTALL.md) · [great_disease_stack/SOTA.md](great_disease_stack/SOTA.md).
 
 **16-model Great Disease Stack** (VOC + genetics + flux + ADME + microbiome + …):
 

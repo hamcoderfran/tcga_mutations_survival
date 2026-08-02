@@ -437,6 +437,53 @@ def harvest_public_breath_cmd(
         rprint(f"  {k}: {v}")
 
 
+@app.command("eval-stack-holdout")
+def eval_stack_holdout_cmd(
+    out_dir: Path = typer.Option(Path("runs/stack_holdout")),
+    skip_slow: bool = typer.Option(
+        False, help="Only adversarial + e2e smoke (skip public/lit/priority10)"
+    ),
+):
+    """
+    Holdout + adversarial evaluation of Great Disease Stack + PatientTemplate.
+
+    Compares stack vs hybrid on public breath, literature, and priority-10 panels;
+    runs a PatientTemplate break suite; writes STACK_HOLDOUT_REPORT.md with an
+    honest SOTA assessment.
+    """
+    from .eval.stack_holdout import evaluate_stack_holdout
+
+    report = evaluate_stack_holdout(out_dir=out_dir, skip_slow=skip_slow)
+    sota = report.get("sota_assessment") or {}
+    brk = report.get("patient_break") or {}
+    pb = report.get("public_breath") or {}
+    lit = report.get("literature") or {}
+    p10 = report.get("priority10") or {}
+    rprint("[bold]Stack holdout[/bold]")
+    rprint(
+        f"  patient hard pass: {brk.get('hard_pass')}/{brk.get('hard_total')} "
+        f"({brk.get('hard_pass_rate')})"
+    )
+    if pb:
+        rprint(
+            f"  public_breath dir  hybrid={pb.get('hybrid_mean_directional')} "
+            f"stack={pb.get('stack_mean_directional')}"
+        )
+    if lit:
+        rprint(
+            f"  literature dir     hybrid={lit.get('hybrid_mean_directional')} "
+            f"stack={lit.get('stack_mean_directional')}"
+        )
+    if p10:
+        rprint(
+            f"  priority10 dir     hybrid={p10.get('hybrid_mean_directional')} "
+            f"stack={p10.get('stack_mean_directional')}"
+        )
+    rprint(f"  clinical SOTA? {sota.get('is_sota_clinical_breathomics')}")
+    rprint(f"  cutting-edge systems stack? {sota.get('is_cutting_edge_systems_stack')}")
+    rprint(f"  report → {out_dir / 'STACK_HOLDOUT_REPORT.md'}")
+
+
 @app.command("eval-public-breath")
 def eval_public_breath_cmd(
     out_dir: Path = typer.Option(Path("runs/public_breath_eval")),
@@ -1686,6 +1733,7 @@ def main(argv: Optional[list[str]] = None):
         "integrate-datasources",
         "harvest-public-breath",
         "eval-public-breath",
+        "eval-stack-holdout",
         "harvest-clinical-comorbidity",
         "eval-comorbidity-clinical",
         "eval-vision",
