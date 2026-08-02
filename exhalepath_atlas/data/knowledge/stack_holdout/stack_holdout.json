@@ -218,34 +218,34 @@
   "naturalistic_e2e": {
     "benchmark": "naturalistic_e2e",
     "n_cases": 3,
-    "mean_models_ok": 15.666666666666666,
+    "mean_models_ok": 19.666666666666668,
     "cases": [
       {
         "text": "35M with schizophrenia, smokes, on olanzapine, BMI 32, hallucinations",
         "primary_disease": "schizophrenia",
-        "n_models_ok": 16,
-        "n_models_total": 16,
+        "n_models_ok": 20,
+        "n_models_total": 20,
         "n_fused_vocs": 15,
-        "top_voc": "pentane",
-        "seconds": 0.382
+        "top_voc": "2_butanone",
+        "seconds": 0.376
       },
       {
         "text": "24yo obese male with depression and insomnia on sertraline",
         "primary_disease": "depression",
-        "n_models_ok": 16,
-        "n_models_total": 16,
+        "n_models_ok": 20,
+        "n_models_total": 20,
         "n_fused_vocs": 15,
-        "top_voc": "pentane",
-        "seconds": 0.292
+        "top_voc": "2_butanone",
+        "seconds": 0.296
       },
       {
         "text": "Stage II lung adenocarcinoma in the left lower lobe with KRAS and TP53, current smoker, 58F",
         "primary_disease": "lung adenocarcinoma",
-        "n_models_ok": 15,
-        "n_models_total": 16,
+        "n_models_ok": 19,
+        "n_models_total": 20,
         "n_fused_vocs": 15,
-        "top_voc": "pentane",
-        "seconds": 0.298
+        "top_voc": "hexanal",
+        "seconds": 0.302
       }
     ]
   },
@@ -267,9 +267,9 @@
         "stack_recall_at_k": 1.0,
         "n_scored": 12,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.1,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.45,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -285,9 +285,9 @@
         "stack_recall_at_k": 1.0,
         "n_scored": 5,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.45,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -303,9 +303,9 @@
         "stack_recall_at_k": 0.6666666666666666,
         "n_scored": 5,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.45,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -321,9 +321,9 @@
         "stack_recall_at_k": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 7.85,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 9.25,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -339,9 +339,9 @@
         "stack_recall_at_k": 1.0,
         "n_scored": 6,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.2,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.55,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -357,9 +357,9 @@
         "stack_recall_at_k": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 9.05,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 10.7,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -375,9 +375,9 @@
         "stack_recall_at_k": 1.0,
         "n_scored": 4,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 12.85,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 14.05,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -391,7 +391,7 @@
     "hybrid_mean_directional": 1.0,
     "stack_mean_directional": 1.0,
     "hybrid_mean_recall_at_15": 0.953125,
-    "stack_mean_recall_at_15": 0.9791666666666666,
+    "stack_mean_recall_at_15": 1.0,
     "stack_mean_min_fold_pass": 1.0,
     "cases": [
       {
@@ -405,9 +405,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.85,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -424,9 +424,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 4,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.3,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.85,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -443,9 +443,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 2,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.05,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.35,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -462,9 +462,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.0,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.2,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -481,9 +481,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 1,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 7.85,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 9.25,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -500,9 +500,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 2,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.5,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.5,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -519,9 +519,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 8.15,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 9.05,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -538,9 +538,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 1,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 7.0,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 8.35,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -557,9 +557,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 2,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 12.85,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 14.05,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -572,13 +572,13 @@
         "hybrid_directional": 1.0,
         "stack_directional": 1.0,
         "hybrid_recall_at_15": 1.0,
-        "stack_recall_at_15": 0.6666666666666666,
+        "stack_recall_at_15": 1.0,
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.1,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.15,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -595,9 +595,9 @@
         "stack_min_fold_pass_rate": null,
         "n_scored": 0,
         "stack_meta": {
-          "n_models_ok": 14,
-          "n_models_total": 16,
-          "mean_model_agreement": 2.15,
+          "n_models_ok": 16,
+          "n_models_total": 20,
+          "mean_model_agreement": 3.65,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -614,9 +614,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 4,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.15,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -633,9 +633,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.65,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.55,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -652,9 +652,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 9.05,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 10.5,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -671,9 +671,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 2,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 9.4,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 10.75,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -690,9 +690,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 1,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 8.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 9.35,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -709,9 +709,9 @@
         "stack_min_fold_pass_rate": 1.0,
         "n_scored": 3,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.95,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.1,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -723,7 +723,7 @@
     "benchmark": "priority10",
     "n_cases": 13,
     "hybrid_mean_directional": 1.0,
-    "stack_mean_directional": 0.978021978021978,
+    "stack_mean_directional": 1.0,
     "cases": [
       {
         "disease_id": "asthma",
@@ -731,9 +731,9 @@
         "stack_directional": 1.0,
         "n_scored": 19,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 11.1,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.35,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -745,9 +745,9 @@
         "stack_directional": 1.0,
         "n_scored": 18,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.4,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -759,9 +759,9 @@
         "stack_directional": 1.0,
         "n_scored": 8,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.4,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.2,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -773,9 +773,9 @@
         "stack_directional": 1.0,
         "n_scored": 11,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.8,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.45,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -787,9 +787,9 @@
         "stack_directional": 1.0,
         "n_scored": 9,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 9.75,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.0,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -801,9 +801,9 @@
         "stack_directional": 1.0,
         "n_scored": 11,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.45,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.5,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -815,9 +815,9 @@
         "stack_directional": 1.0,
         "n_scored": 9,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.05,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 10.75,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -829,9 +829,9 @@
         "stack_directional": 1.0,
         "n_scored": 9,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 9.05,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 12.65,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -843,9 +843,9 @@
         "stack_directional": 1.0,
         "n_scored": 8,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 9.0,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 11.35,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -854,12 +854,12 @@
       {
         "disease_id": "cancer_prostate",
         "hybrid_directional": 1.0,
-        "stack_directional": 0.8571428571428571,
+        "stack_directional": 1.0,
         "n_scored": 7,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 8.3,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 10.25,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -871,9 +871,9 @@
         "stack_directional": 1.0,
         "n_scored": 7,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 8.45,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 10.1,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -882,12 +882,12 @@
       {
         "disease_id": "malaria",
         "hybrid_directional": 1.0,
-        "stack_directional": 0.8571428571428571,
+        "stack_directional": 1.0,
         "n_scored": 7,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 6.9,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 9.4,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -899,9 +899,9 @@
         "stack_directional": 1.0,
         "n_scored": 9,
         "stack_meta": {
-          "n_models_ok": 15,
-          "n_models_total": 16,
-          "mean_model_agreement": 10.6,
+          "n_models_ok": 19,
+          "n_models_total": 20,
+          "mean_model_agreement": 13.45,
           "models_skipped": [
             "comorbidity_clinical"
           ]
@@ -917,7 +917,7 @@
       "public_breath_stack_dir": 1.0,
       "public_breath_hybrid_dir": 0.9821428571428571,
       "literature_stack_dir": 1.0,
-      "priority10_stack_dir": 0.978021978021978,
+      "priority10_stack_dir": 1.0,
       "patient_template_hard_pass_rate": 1.0
     },
     "gaps_to_sota_clinical": [
@@ -928,7 +928,7 @@
       "No head-to-head vs published breath ML baselines on identical splits"
     ],
     "what_is_novel_open": [
-      "16-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling",
+      "20-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling",
       "Naturalistic PatientTemplate \u2192 stack path for diverse clinical text",
       "Mechanism explainability + uncertainty/agreement reporting",
       "Installable open package with offline curated priors"

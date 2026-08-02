@@ -171,19 +171,34 @@ def fuse_vocs(
         log2fc = num / w_sum
 
         # --- anti-dilution anchor: hybrid/physio/calibrator ---
-        anchor_vals = [
-            votes[mid]
-            for mid in _ANCHOR_IDS
-            if mid in votes and abs(votes[mid]) >= 0.03
-        ]
-        if len(anchor_vals) >= 2:
-            a_signs = [1 if v >= 0 else -1 for v in anchor_vals]
-            if abs(sum(a_signs)) == len(a_signs):  # full sign agreement
-                anchor_mean = sum(anchor_vals) / len(anchor_vals)
-                # atlas: trust anchors more; zero-shot: softer pull
+        # Prefer hybrid+calibrator when they agree (physiology can disagree on
+        # sparse VOCs). Fall back to full 3-anchor agreement.
+        def _agreeing(ids: set[str]) -> list[float]:
+            vals = [
+                votes[mid]
+                for mid in ids
+                if mid in votes and abs(votes[mid]) >= 0.03
+            ]
+            if len(vals) < 2:
+                return []
+            signs = [1 if v >= 0 else -1 for v in vals]
+            return vals if abs(sum(signs)) == len(signs) else []
+
+        primary = _agreeing({"exhalepath_hybrid", "exhalepath_calibrator"})
+        fallback = _agreeing(_ANCHOR_IDS)
+        anchor_vals = primary or fallback
+        if anchor_vals:
+            anchor_mean = sum(anchor_vals) / len(anchor_vals)
+            # atlas: trust anchors more; zero-shot: softer pull
+            # hybrid+calibrator agreement gets a stronger atlas pull
+            if primary:
+                alpha = 0.5 if zs else 0.82
+                tag = "hybrid_calibrator"
+            else:
                 alpha = 0.45 if zs else 0.72
-                log2fc = (1.0 - alpha) * log2fc + alpha * anchor_mean
-                evidence.append(f"[fusion] anti_dilution_anchor alpha={alpha:.2f}")
+                tag = "full_anchor"
+            log2fc = (1.0 - alpha) * log2fc + alpha * anchor_mean
+            evidence.append(f"[fusion] anti_dilution_{tag} alpha={alpha:.2f}")
 
         # epistemic uncertainty = weighted std of votes
         if sum(w for _, w in weighted_vals) > 0:

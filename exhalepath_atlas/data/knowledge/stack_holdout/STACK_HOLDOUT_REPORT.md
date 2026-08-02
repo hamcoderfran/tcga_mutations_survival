@@ -9,7 +9,7 @@ Cutting-edge as an open, multi-model *systems* breath-hypothesis stack (physiolo
 
 ### Novel (open)
 
-- 16-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling
+- 20-model fusion across VOC quantity + genetics + flux + ADME + microbiome + signaling
 - Naturalistic PatientTemplate → stack path for diverse clinical text
 - Mechanism explainability + uncertainty/agreement reporting
 - Installable open package with offline curated priors
@@ -27,8 +27,8 @@ Cutting-edge as an open, multi-model *systems* breath-hypothesis stack (physiolo
 | Benchmark | Hybrid dir | Stack dir | Stack recall@k |
 |---|---:|---:|---:|
 | Public breath | 98.2% | 100.0% | 95.2% |
-| Literature | 100.0% | 100.0% | 97.9% |
-| Priority-10 | 100.0% | 97.8% | — |
+| Literature | 100.0% | 100.0% | 100.0% |
+| Priority-10 | 100.0% | 100.0% | — |
 
 ## PatientTemplate adversarial suite
 
@@ -37,11 +37,11 @@ Cutting-edge as an open, multi-model *systems* breath-hypothesis stack (physiolo
 
 ## Naturalistic → stack e2e
 
-- Cases: 3 · mean models ok: 15.666666666666666
+- Cases: 3 · mean models ok: 19.666666666666668
 
-- `schizophrenia` · models 16/16 · top=pentane · 0.382s
-- `depression` · models 16/16 · top=pentane · 0.292s
-- `lung adenocarcinoma` · models 15/16 · top=pentane · 0.298s
+- `schizophrenia` · models 20/20 · top=2_butanone · 0.376s
+- `depression` · models 20/20 · top=2_butanone · 0.296s
+- `lung adenocarcinoma` · models 19/20 · top=hexanal · 0.302s
 
 ## Break case details
 

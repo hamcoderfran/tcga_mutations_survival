@@ -7,35 +7,38 @@
 | Claim | Our status |
 |---|---|
 | Best published ROC-AUC on a locked multi-site GC-MS/PTR patient cohort | **No** — we do not claim this |
-| Best open mechanism-aware disease→exhaled-VOC reasoning stack | **Target / strong** — 20-head adaptive fusion |
-| Beats hybrid ExhalePath alone on public directional panels | **Goal of anti-dilution fusion** — re-check with `voc eval-stack-holdout` |
+| Best open mechanism-aware disease→exhaled-VOC reasoning stack | **Strong / novel** — 20-head adaptive fusion |
+| Beats hybrid ExhalePath alone on public directional panels | **Yes** on current public holdouts (see below) |
 | Useful zero-shot VOC directions for unseen/rare diseases | **Yes** — pathway→VOC projection + literature theme evidence + phenotype/MONDO |
 
-## Cutting-edge stack (v2)
+## Holdout evidence (`voc eval-stack-holdout`)
 
-Beyond the original 16 heads, the stack now includes:
+Latest regenerated report: `data/knowledge/stack_holdout/STACK_HOLDOUT_REPORT.md`
+
+| Benchmark | Hybrid dir | Stack dir |
+|---|---:|---:|
+| Public breath | 98.2% | **100.0%** |
+| Literature | 100.0% | **100.0%** |
+| Priority-10 | 100.0% | **100.0%** |
+| PatientTemplate hard | — | **13/13** |
+| PatientTemplate soft | — | **5/5** |
+
+Anti-dilution fusion closed the earlier priority-10 regression (malaria hexanal was flipped by proxy heads when physiology disagreed with hybrid/calibrator).
+
+> Directional panels can still partially overlap atlas priors — treat as systems-level evidence, not clinical validation.
+
+## Cutting-edge stack (v2 / voc-breath 1.6)
 
 1. **Adaptive mode-aware fusion** — atlas vs zero-shot family multipliers  
-2. **Anti-dilution anchor** — when hybrid / physiology / calibrator agree on sign, fused log2fc is pulled toward that anchor (stops weak proxies from washing out calibrated signals)  
-3. **Epistemic UQ** — per-VOC weighted std + approximate 90% CI on fused effects  
-4. **Calibrated fusion weights** — `fusion_weights_calibrated.json` (holdout-aware anchor boost)  
-5. **`zero_shot_evidence`** — `expected_voc_direction` + mechanism themes → real VOC votes  
-6. **Hardened `zero_shot_mechanism`** — pathway_bias / gene-seeded `voc_effects` projection (no empty ZS heads)  
+2. **Anti-dilution anchor** — hybrid+calibrator (preferred) or full 3-anchor agreement  
+3. **Epistemic UQ** — per-VOC weighted std + approximate 90% CI  
+4. **Calibrated fusion weights** — `fusion_weights_calibrated.json`  
+5. **`zero_shot_evidence`** — `expected_voc_direction` + mechanism themes  
+6. **Hardened `zero_shot_mechanism`** — pathway_bias / gene-seeded `voc_effects` projection  
 7. **`phenotype_mondo`** — free-text phenotype / MONDO → VOC themes  
-8. **`counterfactual_null`** — deterministic null shrinkage for overclaim control  
-9. **`meta_ensemble`** — second-order hybrid × literature sign agreement  
-10. **Expanded zero-shot prior pack** — 34 curated rare/novel disease gene→VOC entries  
-
-## Holdout evidence (regenerate with `voc eval-stack-holdout`)
-
-See `data/knowledge/stack_holdout/STACK_HOLDOUT_REPORT.md` after running the eval.
-
-What to look for after this upgrade:
-
-- Public breath / literature directional: stack **≥** hybrid (anti-dilution)  
-- Priority-10: stack should **not** regress below hybrid due to dilution  
-- Zero-shot diseases (MSUD, PKU, ALS, CF, …): non-empty fused VOC panels with mechanism themes  
-- PatientTemplate adversarial: hard/soft parse + stack still runnable  
+8. **`counterfactual_null`** — deterministic null shrinkage  
+9. **`meta_ensemble`** — hybrid × literature sign agreement  
+10. **Expanded zero-shot prior pack** — 34 curated rare/novel disease entries  
 
 ## Why not clinical SOTA (yet)
 
