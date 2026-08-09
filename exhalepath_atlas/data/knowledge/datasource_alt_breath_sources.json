@@ -1,0 +1,622 @@
+{
+  "version": "1.0.0",
+  "access_matrix": {
+    "version": "1.0.0",
+    "description": "Access audit for bulk VOC / breath databases suggested as alternatives to Owlstone VOC Atlas en-masse download.",
+    "sources": [
+      {
+        "key": "hbdb",
+        "name": "Human Breathomics Database",
+        "url": "https://hbdb.cmdm.tw/?disease_page=1&tab=disease",
+        "modality": "VOC / disease associations",
+        "status": "partial_open",
+        "access": "Live site Cloudflare-blocked for automated scrape. Open Zenodo SQL dump hbdb2_wo_sentences.sql (10.5281/zenodo.14958797) is the bulk path; see HBDB scrape PR.",
+        "bulk_download": "zenodo_sql",
+        "in_atlas": true,
+        "notes": "Google-style BeautifulSoup scrape of hbdb.cmdm.tw fails with 403 here."
+      },
+      {
+        "key": "clinical_breathomics_figshare",
+        "name": "Clinical Breathomics Dataset (Scientific Data / Figshare)",
+        "url": "https://doi.org/10.6084/m9.figshare.23522490",
+        "paper": "10.1038/s41597-024-03052-2",
+        "modality": "GC-MS peak tables + clinical metadata",
+        "status": "open_downloaded",
+        "access": "Anonymous Figshare file download (peak CSVs + metadata xlsx).",
+        "bulk_download": "figshare",
+        "in_atlas": true,
+        "local_dir": "data/public_breath/",
+        "harvest_cmd": "voc harvest-public-breath"
+      },
+      {
+        "key": "owlstone_voc_atlas",
+        "name": "Breath Biopsy VOC Atlas (Owlstone)",
+        "url": "https://www.owlstonemedical.com/",
+        "modality": "VOC catalog / OMNI feature tables",
+        "status": "gated_license_restricted",
+        "access": "Registration required. License bars AI training / fine-tuning / validation \u2014 do not ingest into ExhalePath ML calibrator.",
+        "bulk_download": "manual_registration_only",
+        "in_atlas": false
+      },
+      {
+        "key": "physionet",
+        "name": "PhysioNet respiratory / vital-sign databases",
+        "url": "https://physionet.org/about/database/",
+        "modality": "waveforms / ventilation (not VOC chemistry)",
+        "status": "open_cataloged",
+        "access": "Public database listing; waveform dumps are large and out of VOC scope.",
+        "bulk_download": "physionet_per_project",
+        "in_atlas": false,
+        "n_respir_related_cataloged": 19,
+        "notes": "Useful for breathing-pattern models, not breath VOC panels."
+      },
+      {
+        "key": "breathomix_breathbase",
+        "name": "BreathBase\u00ae Data (Breathomix)",
+        "url": "https://www.breathomix.com/breathbase-data/",
+        "modality": "eNose breath profiles + clinical data",
+        "status": "gated_contact",
+        "access": "No public CSV/ZIP; access via vendor contact / partnership.",
+        "bulk_download": null,
+        "in_atlas": false
+      },
+      {
+        "key": "hmdb",
+        "name": "Human Metabolome Database",
+        "url": "https://hmdb.ca/downloads",
+        "modality": "metabolite structures / biofluids (incl. breath subset)",
+        "status": "cloudflare_blocked_bulk",
+        "access": "hmdb.ca downloads return Cloudflare 403 here. Atlas keeps PubChem-bridged VOC\u2194HMDB seed annotations (ds02).",
+        "bulk_download": "blocked_here",
+        "in_atlas": true,
+        "local_artifact": "data/datasources/hmdb/hmdb_voc_annotations.json"
+      },
+      {
+        "key": "shirley_human_breath_atlas",
+        "name": "Human Breath Atlas (Shirley Diagnostics)",
+        "url": "https://www.shirleydiagnostics.com/",
+        "modality": "end-tidal VOC reference (vendor)",
+        "status": "gated_marketing",
+        "access": "No public bulk export found on the marketing site.",
+        "bulk_download": null,
+        "in_atlas": false
+      },
+      {
+        "key": "zenodo_breathomics_adjuncts",
+        "name": "Zenodo open breathomics adjunct datasets",
+        "url": "https://zenodo.org/",
+        "modality": "feature lists / sampling variability / HBDB eval texts",
+        "status": "open_downloaded",
+        "access": "Anonymous Zenodo file API.",
+        "bulk_download": "zenodo",
+        "in_atlas": true,
+        "files": [
+          "common78_features.csv",
+          "table3_metrics.csv",
+          "Tedlar_temp_raw.xlsx",
+          "hbdb_eval_dataset.zip"
+        ]
+      }
+    ]
+  },
+  "common78": {
+    "n_features": 78,
+    "n_mapped_to_atlas_panel": 3,
+    "features": [
+      {
+        "pubchem_cid": 240,
+        "iupac_name": "benzaldehyde",
+        "atlas_voc_id": "benzaldehyde"
+      },
+      {
+        "pubchem_cid": 244,
+        "iupac_name": "phenylmethanol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 460,
+        "iupac_name": "2-methoxyphenol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 998,
+        "iupac_name": "2-phenylacetaldehyde",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 1303,
+        "iupac_name": "2-hydroxy-2-phenylpropanoic acid",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 2758,
+        "iupac_name": "1,3,3-trimethyl-2-oxabicyclo[2.2.2]octane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 2879,
+        "iupac_name": "4-methylphenol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 3102,
+        "iupac_name": "diphenylmethanone",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 4133,
+        "iupac_name": "methyl 2-hydroxybenzoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 7147,
+        "iupac_name": "1-phenylpropan-1-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 7222,
+        "iupac_name": "1,3-benzothiazole",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 7410,
+        "iupac_name": "1-phenylethanone",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 7500,
+        "iupac_name": "ethylbenzene",
+        "atlas_voc_id": "ethylbenzene"
+      },
+      {
+        "pubchem_cid": 7602,
+        "iupac_name": "1,3,5-triethylbenzene",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 7720,
+        "iupac_name": "2-ethylhexan-1-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 7874,
+        "iupac_name": "2,2,4,4,6,6,8,8,10,10,12,12,14,14-tetradecamethyl-1,3,5,7,9,11,13-heptaoxa-2,4,6,8,10,12,14-heptasilacyclotetradecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 8133,
+        "iupac_name": "2-butoxyethanol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 8194,
+        "iupac_name": "dodecanal",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 8343,
+        "iupac_name": "bis(2-ethylhexyl) benzene-1,2-dicarboxylate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 8814,
+        "iupac_name": "4-(2,4,4-trimethylpentan-2-yl)phenol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 9231,
+        "iupac_name": "azulene",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 9268,
+        "iupac_name": "cyclododecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 10914,
+        "iupac_name": "2,2,4,4,6,6-hexamethyl-1,3,5,2,4,6-trioxatrisilinane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 11006,
+        "iupac_name": "hexadecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 11169,
+        "iupac_name": "2,2,4,4,6,6,8,8-octamethyl-1,3,5,7,2,4,6,8-tetraoxatetrasilocane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 11170,
+        "iupac_name": "2,2,4,4,6,6,8,8,10,10,12,12,14,14,16,16-hexadecamethyl-1,3,5,7,9,11,13,15-octaoxa-2,4,6,8,10,12,14,16-octasilacyclohexadecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 11172,
+        "iupac_name": "2,2,4,4,6,6,8,8,10,10,12,12,14,14,16,16,18,18-octadecamethyl-1,3,5,7,9,11,13,15,17-nonaoxa-2,4,6,8,10,12,14,16,18-nonasilacyclooctadecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 11230,
+        "iupac_name": "4-methyl-1-propan-2-ylcyclohex-3-en-1-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 12053,
+        "iupac_name": "2-phenylpropan-2-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 12160,
+        "iupac_name": "1-ethyl-4-methylbenzene",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 12388,
+        "iupac_name": "tridecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 14257,
+        "iupac_name": "undecane",
+        "atlas_voc_id": "undecane"
+      },
+      {
+        "pubchem_cid": 15600,
+        "iupac_name": "decane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 16663,
+        "iupac_name": "4-ethylheptane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 16821,
+        "iupac_name": "5-octyloxolan-2-one",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 17100,
+        "iupac_name": "2-(4-methylcyclohex-3-en-1-yl)propan-2-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 17835,
+        "iupac_name": "4-methyldecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 19602,
+        "iupac_name": "2-pentylfuran",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 21205,
+        "iupac_name": "methyl 14-methylpentadecanoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 21630,
+        "iupac_name": "2-ethylhexyl 3-(4-methoxyphenyl)prop-2-enoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 22568,
+        "iupac_name": "2-phenoxyethyl acetate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 23229,
+        "iupac_name": "1-(3-acetylphenyl)ethanone",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 23284,
+        "iupac_name": "[2,2,4-trimethyl-3-(2-methylpropanoyloxy)pentyl] 2-methylpropanoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 29996,
+        "iupac_name": "N-propylhexan-1-amine",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 31236,
+        "iupac_name": "2-phenoxyethanol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 31355,
+        "iupac_name": "tris(2-methylpropyl) phosphate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 41209,
+        "iupac_name": "2,6,10,15-tetramethylheptadecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 73219,
+        "iupac_name": "3,5-ditert-butyl-4-hydroxybenzaldehyde",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 75084,
+        "iupac_name": "dodecyl prop-2-enoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 85781,
+        "iupac_name": "bis(2-ethylhexyl) carbonate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 90232,
+        "iupac_name": "ethyl 4-ethoxybenzoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 103653,
+        "iupac_name": "2-methylbutyl benzoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 136569,
+        "iupac_name": "2,3,3-trimethylpenta-1,4-diene",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 137353,
+        "iupac_name": "3-ethyl-3-[4-(hydroxyamino)phenyl]piperidine-2,6-dione",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 141033,
+        "iupac_name": "3,6,6-trimethylcyclohex-2-en-1-one",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 146102,
+        "iupac_name": "2,6-ditert-butyl-4-hydroxy-4-methylcyclohexa-2,5-dien-1-one",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 160669,
+        "iupac_name": "(2S)-5-amino-2-(methylamino)-5-oxopentanoic acid",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 520958,
+        "iupac_name": "1-(2,4-dimethylphenyl)-2,4-dimethylbenzene",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 537332,
+        "iupac_name": "5-ethyl-2-methyloctane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 551986,
+        "iupac_name": "2-[(2,4,4,6,6,8,8-heptamethyl-1,3,5,7,2,4,6,8-tetraoxatetrasilocan-2-yl)oxy]-2,4,4,6,6,8,8,10,10-nonamethyl-1,3,5,7,9,2,4,6,8,10-pentaoxapentasilecane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 557859,
+        "iupac_name": "3,7-dimethyloct-7-en-3-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 558880,
+        "iupac_name": "(5-oxooxolan-2-yl)methyl 3,5-dinitrobenzoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 567717,
+        "iupac_name": "2-benzyl-1-morpholin-4-yl-3-phenylpropan-2-ol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 574439,
+        "iupac_name": "2-(hydroxymethyl)-2-methylpyrrolidine-1-carbaldehyde",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 575987,
+        "iupac_name": "5H-cyclopenta[b]pyridine",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 622436,
+        "iupac_name": "trimethyl-[2-trimethylsilyloxy-1-(4-trimethylsilyloxyphenyl)ethoxy]silane",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 637516,
+        "iupac_name": "(1R)-1-phenylethanol",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 5370158,
+        "iupac_name": "(E)-3-(2,2,6-trimethyl-7-oxabicyclo[4.1.0]heptan-1-yl)prop-2-enal",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 5370325,
+        "iupac_name": "bis(2-ethylhexyl) (E)-but-2-enedioate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 6041429,
+        "iupac_name": "E)-3-(2,4-dimethoxyphenyl)-1-(2-hydroxyphenyl)prop-2-en-1-one",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 6429350,
+        "iupac_name": "1-[(1R,7R)-4-methylidene-7-propan-2-yl-1,2,3,3a,5,6,7,7a-octahydroinden-1-yl]ethanone",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 9602988,
+        "iupac_name": "methyl (Z)-N-hydroxybenzenecarboximidate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 13544681,
+        "iupac_name": "N-methyl-N-[2-(methylamino)ethyl]benzamide",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 13596727,
+        "iupac_name": "2-but-3-enoxycarbonylbenzoic acid",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 91713521,
+        "iupac_name": "1-O-butyl 6-O-propan-2-yl hexanedioate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 91726212,
+        "iupac_name": "4-O-[2-(2-chlorophenoxy)ethyl] 1-O-ethyl butanedioate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 91731726,
+        "iupac_name": "(4-trimethylsilyloxybenzoyl) 4-trimethylsilyloxybenzoate",
+        "atlas_voc_id": null
+      },
+      {
+        "pubchem_cid": 91742720,
+        "iupac_name": "bis[[(3-ethylphenoxy)-dimethylsilyl]oxy]-dimethylsilane",
+        "atlas_voc_id": null
+      }
+    ],
+    "doi": "10.5281/zenodo.21238613"
+  },
+  "hbdb_eval_index": {
+    "n_json_records": 110,
+    "compounds": [
+      {
+        "name": "Ethylbenzene",
+        "n_records": 27
+      },
+      {
+        "name": "Hydrogen peroxide",
+        "n_records": 6
+      },
+      {
+        "name": "acetone",
+        "n_records": 6
+      },
+      {
+        "name": "urea",
+        "n_records": 71
+      }
+    ],
+    "doi": "10.5281/zenodo.14958797"
+  },
+  "physionet_respir": {
+    "n_databases": 19,
+    "databases": [
+      {
+        "slug": "bidmc",
+        "title": "BIDMC PPG and Respiration Dataset",
+        "url": "https://physionet.org/content/bidmc/"
+      },
+      {
+        "slug": "actes-cycloergometer-exercise",
+        "title": "Cardiorespiratory measurement from graded cycloergometer exercise testing",
+        "url": "https://physionet.org/content/actes-cycloergometer-exercise/"
+      },
+      {
+        "slug": "cebsdb",
+        "title": "Combined measurement of ECG, Breathing and Seismocardiograms",
+        "url": "https://physionet.org/content/cebsdb/"
+      },
+      {
+        "slug": "cpap-data-canterbury",
+        "title": "CPAP Pressure and Flow Data from a Local Trial of 30 Adults at the University of Canterbury",
+        "url": "https://physionet.org/content/cpap-data-canterbury/"
+      },
+      {
+        "slug": "ecg-spider-clip",
+        "title": "Electrocardiogram, skin conductance and respiration from spider-fearful individuals watching spider video clips",
+        "url": "https://physionet.org/content/ecg-spider-clip/"
+      },
+      {
+        "slug": "heart-lung-segmentations-data",
+        "title": "Heart and lung segmentations for MIMIC-CXR/MIMIC-CXR-JPG and Montgomery County TB databases",
+        "url": "https://physionet.org/content/heart-lung-segmentations-data/"
+      },
+      {
+        "slug": "pressure-flow-circum-cpap",
+        "title": "Pressure, flow, and dynamic thoraco-abdominal circumferences data for adults breathing under CPAP therapy",
+        "url": "https://physionet.org/content/pressure-flow-circum-cpap/"
+      },
+      {
+        "slug": "picsdb",
+        "title": "Preterm Infant Cardio-Respiratory Signals Database",
+        "url": "https://physionet.org/content/picsdb/"
+      },
+      {
+        "slug": "respiratory-heartrate-dataset",
+        "title": "Respiratory and heart rate monitoring dataset from aeration study",
+        "url": "https://physionet.org/content/respiratory-heartrate-dataset/"
+      },
+      {
+        "slug": "respiratory-oximetry-apnoea",
+        "title": "Respiratory and Pulse Oximetry Waveforms from Healthy Adults During Simulated Apnoea Events",
+        "url": "https://physionet.org/content/respiratory-oximetry-apnoea/"
+      },
+      {
+        "slug": "respiratory-dataset",
+        "title": "Respiratory dataset from PEEP study with expiratory occlusion",
+        "url": "https://physionet.org/content/respiratory-dataset/"
+      },
+      {
+        "slug": "simulated-obstructive-disease",
+        "title": "Simulated Obstructive Disease Respiratory Pressure and Flow",
+        "url": "https://physionet.org/content/simulated-obstructive-disease/"
+      },
+      {
+        "slug": "cardioresp-response-orthostat",
+        "title": "Two-tiered response of cardiorespiratory-cerebrovascular networks to orthostatic challenge",
+        "url": "https://physionet.org/content/cardioresp-response-orthostat/"
+      },
+      {
+        "slug": "micro-nav",
+        "title": "Microbiological, Immunological and Biochemical Characteristics of the Development of Ventilator Associated Pneumonia",
+        "url": "https://physionet.org/content/micro-nav/"
+      },
+      {
+        "slug": "temporal-respiratory-support",
+        "title": "A Temporal Dataset for Respiratory Support in Critically Ill Patients",
+        "url": "https://physionet.org/content/temporal-respiratory-support/"
+      },
+      {
+        "slug": "chest-x-ray-segmentation",
+        "title": "Chest X-ray Dataset with Lung Segmentation",
+        "url": "https://physionet.org/content/chest-x-ray-segmentation/"
+      },
+      {
+        "slug": "lung-segment-mimic-cxr",
+        "title": "Chest X-ray segmentation images based on MIMIC-CXR",
+        "url": "https://physionet.org/content/lung-segment-mimic-cxr/"
+      },
+      {
+        "slug": "lunguage",
+        "title": "Lunguage: A Benchmark for Structured and Sequential Chest X-ray Interpretation",
+        "url": "https://physionet.org/content/lunguage/"
+      },
+      {
+        "slug": "mimic-iii-ext-ppg",
+        "title": "MIMIC-III-Ext-PPG: A PPG Benchmark Dataset for Cardiorespiratory Analysis",
+        "url": "https://physionet.org/content/mimic-iii-ext-ppg/"
+      }
+    ],
+    "note": "Waveform / ventilation modality \u2014 not fused into VOC priors."
+  }
+}

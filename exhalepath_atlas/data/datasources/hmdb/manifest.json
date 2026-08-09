@@ -4,5 +4,6 @@
   "title": "HMDB + breath VOC annotation layer",
   "n_vocs": 50,
   "offline": true,
-  "reused": true
+  "reused": true,
+  "mirror": "https://hmdbfix.wishartlab.com"
 }

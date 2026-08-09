@@ -770,6 +770,98 @@ def export_paper_pack_cmd(
     rprint(f"  split_sha256={info.get('split_content_sha256') or '—'}")
 
 
+@app.command("eval-coverage")
+def eval_coverage_cmd(
+    out_dir: Path = typer.Option(Path("runs/coverage_audit")),
+    offline: bool = typer.Option(True, help="Skip live network expansion (default True)"),
+    no_expand: bool = typer.Option(False, help="Audit only; do not expand catalogs"),
+):
+    """Secure open-VOC coverage audit (VOLATILOME 99% target) + anti-poisoning checks."""
+    from .eval.coverage_audit import run_coverage_audit
+
+    report = run_coverage_audit(expand=not no_expand, offline=offline)
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "COVERAGE_AUDIT.json").write_text(
+        __import__("json").dumps(report, indent=2) + "\n"
+    )
+    src_md = Path("data/knowledge/COVERAGE_AUDIT.md")
+    if src_md.exists():
+        (out_dir / "COVERAGE_AUDIT.md").write_text(src_md.read_text())
+    m = report["metrics"]
+    rprint("[bold]VOC coverage audit[/bold]")
+    rprint(
+        f"  open-compound coverage: [green]{m['open_compound_coverage_pct']}%[/green] "
+        f"({m['open_compound_secured_n']}/{m['open_compound_universe_n']}) "
+        f"≥99%={m['meets_99pct_open_compound_target']}"
+    )
+    rprint(
+        f"  studies curated={m.get('curated_public_studies')} "
+        f"expanded={m.get('expanded_public_studies')} "
+        f"(+{m.get('mw_discovered_additional')})"
+    )
+    rprint(f"  integrity files hashed: {report['security'].get('n_hashed_files')}")
+    rprint(f"  report: {out_dir / 'COVERAGE_AUDIT.md'}")
+
+
+@app.command("eval-lit-compare")
+def eval_lit_compare_cmd(
+    out_dir: Path = typer.Option(Path("runs/lit_compare")),
+    demo_max_patients: Optional[int] = typer.Option(
+        200, help="Patients for demographics PCA (default 200 for speed)"
+    ),
+    n_diseases: int = typer.Option(50, help="Diseases in connection suite"),
+):
+    """Literature concordance + demographics PCA + disease VOC connections."""
+    from .eval.lit_compare import run_lit_demo_disease100
+
+    report = run_lit_demo_disease100(
+        out_dir=out_dir,
+        demo_max_patients=demo_max_patients,
+        n_diseases=n_diseases,
+    )
+    lit = report["literature"]
+    demo = report["demographics_pca"]
+    d100 = report["disease100"]
+    rprint("[bold]Literature / demographics / disease suite[/bold]")
+    rprint(
+        f"  lit concordance: [green]{lit.get('mean_concordance_pct')}%[/green] "
+        f"({lit.get('n_diseases')} diseases)"
+    )
+    sil = demo.get("silhouette") or {}
+    rprint(
+        f"  demo PCA sil smoking={sil.get('demo_by_smoking')} "
+        f"category={sil.get('demo_by_category')}"
+    )
+    rprint(f"  disease suite: {d100.get('n_diseases')} diseases")
+    rprint(f"  report: {out_dir / 'LITERATURE_COMPARE.md'}")
+
+
+@app.command("eval-industry-pack")
+def eval_industry_pack_cmd(
+    out_dir: Path = typer.Option(Path("runs/industry_pack")),
+    quick: bool = typer.Option(
+        False, "--quick", help="Skip heavier lit-compare / multi-cohort steps"
+    ),
+):
+    """
+    Comprehensive industry-standard smoke + benchmark pack with commercial framing.
+
+    Runs nested AUROC / optimism gap / stratified metrics / stack holdout / coverage /
+    Sci Data per-sample / paper-pack completeness — then writes BUYER_BRIEF.md with
+    honest TAM comps (research enablement, not clinical SOTA).
+    """
+    from .eval.industry_benchmark import run_industry_pack
+
+    report = run_industry_pack(out_dir=out_dir, quick=quick)
+    score = report.get("industry_scorecard") or {}
+    rprint("[bold]Industry benchmark pack[/bold]")
+    for row in score.get("rows") or []:
+        rprint(f"  {row['metric']}: {row['value']}  ({row['standard']})")
+    rprint(f"  buyer brief → {out_dir / 'BUYER_BRIEF.md'}")
+    rprint(f"  full report → {out_dir / 'INDUSTRY_PACK.md'}")
+
+
 @app.command("eval-public-breath")
 def eval_public_breath_cmd(
     out_dir: Path = typer.Option(Path("runs/public_breath_eval")),
@@ -2024,6 +2116,9 @@ def main(argv: Optional[list[str]] = None):
         "eval-scidata-samples",
         "export-metabolights",
         "export-paper-pack",
+        "eval-coverage",
+        "eval-lit-compare",
+        "eval-industry-pack",
         "lock-split",
         "score-sample",
         "harvest-clinical-comorbidity",

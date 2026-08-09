@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "files": [
+    {
+      "file": "common78_features.csv",
+      "path": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/raw/common78_features.csv",
+      "offline": true
+    },
+    {
+      "file": "table3_metrics.csv",
+      "path": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/raw/table3_metrics.csv",
+      "offline": true
+    },
+    {
+      "file": "Tedlar_temp_raw.xlsx",
+      "path": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/raw/Tedlar_temp_raw.xlsx",
+      "offline": true
+    },
+    {
+      "file": "hbdb_eval_dataset.zip",
+      "path": "/workspace/exhalepath_atlas/data/datasources/alt_breath_sources/raw/hbdb_eval_dataset.zip",
+      "offline": true
+    }
+  ]
+}

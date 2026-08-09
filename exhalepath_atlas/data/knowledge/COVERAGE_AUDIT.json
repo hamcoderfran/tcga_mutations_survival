@@ -1,0 +1,137 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-08-09T19:02:53.997952+00:00",
+  "honesty_preamble": "This audit does NOT claim 99% of all VOC content on the internet. It targets 99% of the defined open machine-readable breath-VOC compound universe (EPA VOLATILOME / HBDB backbone). HBDB live HTML, restricted SQL, Owlstone gated Atlas, and exhaustive PDF scraping remain out of scope.",
+  "universe": {
+    "version": "1.0.0",
+    "generated_at": "2026-08-09T19:02:53.975409+00:00",
+    "definition": "Open, machine-readable human exhaled-breath VOC resources that can be fetched over allowlisted HTTPS APIs/files without executing untrusted code, accepting restrictive licenses, or bypassing Cloudflare/paywalls.",
+    "in_scope": [
+      {
+        "id": "epa_volatilome",
+        "title": "EPA CompTox VOLATILOME breath chemical list",
+        "role": "primary open compound universe (HBDB backbone)",
+        "doi": "10.23645/epacomptox.9762410.v2",
+        "expected_n_compounds": 777
+      },
+      {
+        "id": "mw_breath_studies",
+        "title": "Metabolomics Workbench public breath/VOC studies",
+        "role": "quantified cohort accessions",
+        "api": "https://www.metabolomicsworkbench.org/rest/"
+      },
+      {
+        "id": "metabolights_breath",
+        "title": "MetaboLights breath/VOC studies",
+        "role": "ISA/MAF structured studies",
+        "api": "https://www.ebi.ac.uk/metabolights/"
+      },
+      {
+        "id": "scidata_breathomics",
+        "title": "Scientific Data clinical breathomics (Figshare)",
+        "role": "open peak tables",
+        "doi": "10.1038/s41597-024-03052-2"
+      },
+      {
+        "id": "priority_literature_panels",
+        "title": "Curated DOI-backed literature VOC panels",
+        "role": "disease directionality with provenance"
+      },
+      {
+        "id": "pubchem_enrichment",
+        "title": "PubChem physchem for catalog VOCs",
+        "role": "identity / property hardening"
+      }
+    ],
+    "out_of_scope_blocked": [
+      {
+        "id": "hbdb_live_html",
+        "title": "HBDB website (hbdb.cmdm.tw)",
+        "reason": "Cloudflare-blocked; HTML scrape refused by secure_fetch policy",
+        "doi": "10.1093/database/baz139",
+        "claimed_n_compounds": 1140,
+        "claimed_n_refs": 2766
+      },
+      {
+        "id": "hbdb_zenodo_sql",
+        "title": "HBDB Zenodo SQL dump",
+        "reason": "Access-restricted; not redistributable here"
+      },
+      {
+        "id": "owlstone_voc_atlas",
+        "title": "Breath Biopsy VOC Atlas (Owlstone)",
+        "reason": "Gated commercial partnership access (Gates/FDA), not open bulk API",
+        "url": "https://www.owlstonemedical.com/science-technology/breath-biopsy-voc-atlas/"
+      },
+      {
+        "id": "fulltext_pdf_scrape",
+        "title": "Exhaustive full-text scrape of all breath-VOC papers",
+        "reason": "Paywalls, ToS, and non-machine-readable PDFs; we use DOI metadata + curated panels instead"
+      }
+    ],
+    "ninety_nine_percent_target": {
+      "metric": "open_compound_universe_secured",
+      "formula": "n_volatilome_compounds_with_local_sha256_provenance / n_volatilome_compounds_in_universe",
+      "secondary_metrics": [
+        "public_study_accessions_harvested_or_cataloged",
+        "literature_dois_metadata_verified",
+        "atlas_vocs_with_pubchem_or_hmdb_link"
+      ],
+      "note": "99% refers to the open machine-readable compound universe (VOLATILOME), not 99% of all online VOC content ever published."
+    }
+  },
+  "metrics": {
+    "open_compound_universe_n": 777,
+    "open_compound_secured_n": 777,
+    "open_compound_coverage": 1.0,
+    "open_compound_coverage_pct": 100.0,
+    "meets_99pct_open_compound_target": true,
+    "atlas_prediction_vocs": 50,
+    "extended_mapped_to_atlas_voc": 44,
+    "atlas_chem_enrichment_coverage": 1.0,
+    "atlas_chem_enrichment_pct": 100.0,
+    "curated_public_studies": 9,
+    "expanded_public_studies": 25,
+    "mw_discovered_additional": 16,
+    "literature_panels": 13,
+    "literature_panel_dois": 34,
+    "europepmc_breath_records": 100,
+    "europepmc_with_doi": 97
+  },
+  "security": {
+    "allowlisted_hosts_only": true,
+    "sha256_integrity_manifest": "/workspace/exhalepath_atlas/data/datasources/INTEGRITY_MANIFEST.json",
+    "n_hashed_files": 8,
+    "no_execution_of_downloads": true,
+    "html_scrape_disabled": true,
+    "script_payloads_rejected": true,
+    "poisoning_controls": [
+      "host allowlist (SSRF)",
+      "max download size",
+      "executable magic-byte reject",
+      "shebang reject",
+      "HTML refuse by default",
+      "SHA-256 provenance sidecars",
+      "JSON depth/required-key validation",
+      "quarantine-then-promote writes"
+    ]
+  },
+  "gaps": [
+    {
+      "id": "hbdb_full_1140",
+      "detail": "HBDB claims ~1140 compounds / 2766 refs; live DB blocked \u2014 using VOLATILOME 777 as open substitute"
+    },
+    {
+      "id": "owlstone_atlas",
+      "detail": "Breath Biopsy VOC Atlas is gated; not bulk-downloadable"
+    },
+    {
+      "id": "prediction_panel_50",
+      "detail": "Mechanistic predictor still uses 50 VOCs; extended catalog is inventory/coverage, not full retrain"
+    },
+    {
+      "id": "pdf_fulltext",
+      "detail": "Europe PMC harvest is metadata-only; no automated full-text VOC table extraction yet"
+    }
+  ]
+}

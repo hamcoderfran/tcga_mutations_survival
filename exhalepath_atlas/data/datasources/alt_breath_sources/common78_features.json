@@ -1,0 +1,320 @@
+{
+  "version": "1.0.0",
+  "doi": "10.5281/zenodo.21238613",
+  "description": "Common-78 breathomics feature list (PubChem CID + IUPAC) from Zenodo aggregation-stability study.",
+  "n_features": 78,
+  "features": [
+    {
+      "pubchem_cid": 240,
+      "iupac_name": "benzaldehyde"
+    },
+    {
+      "pubchem_cid": 244,
+      "iupac_name": "phenylmethanol"
+    },
+    {
+      "pubchem_cid": 460,
+      "iupac_name": "2-methoxyphenol"
+    },
+    {
+      "pubchem_cid": 998,
+      "iupac_name": "2-phenylacetaldehyde"
+    },
+    {
+      "pubchem_cid": 1303,
+      "iupac_name": "2-hydroxy-2-phenylpropanoic acid"
+    },
+    {
+      "pubchem_cid": 2758,
+      "iupac_name": "1,3,3-trimethyl-2-oxabicyclo[2.2.2]octane"
+    },
+    {
+      "pubchem_cid": 2879,
+      "iupac_name": "4-methylphenol"
+    },
+    {
+      "pubchem_cid": 3102,
+      "iupac_name": "diphenylmethanone"
+    },
+    {
+      "pubchem_cid": 4133,
+      "iupac_name": "methyl 2-hydroxybenzoate"
+    },
+    {
+      "pubchem_cid": 7147,
+      "iupac_name": "1-phenylpropan-1-ol"
+    },
+    {
+      "pubchem_cid": 7222,
+      "iupac_name": "1,3-benzothiazole"
+    },
+    {
+      "pubchem_cid": 7410,
+      "iupac_name": "1-phenylethanone"
+    },
+    {
+      "pubchem_cid": 7500,
+      "iupac_name": "ethylbenzene"
+    },
+    {
+      "pubchem_cid": 7602,
+      "iupac_name": "1,3,5-triethylbenzene"
+    },
+    {
+      "pubchem_cid": 7720,
+      "iupac_name": "2-ethylhexan-1-ol"
+    },
+    {
+      "pubchem_cid": 7874,
+      "iupac_name": "2,2,4,4,6,6,8,8,10,10,12,12,14,14-tetradecamethyl-1,3,5,7,9,11,13-heptaoxa-2,4,6,8,10,12,14-heptasilacyclotetradecane"
+    },
+    {
+      "pubchem_cid": 8133,
+      "iupac_name": "2-butoxyethanol"
+    },
+    {
+      "pubchem_cid": 8194,
+      "iupac_name": "dodecanal"
+    },
+    {
+      "pubchem_cid": 8343,
+      "iupac_name": "bis(2-ethylhexyl) benzene-1,2-dicarboxylate"
+    },
+    {
+      "pubchem_cid": 8814,
+      "iupac_name": "4-(2,4,4-trimethylpentan-2-yl)phenol"
+    },
+    {
+      "pubchem_cid": 9231,
+      "iupac_name": "azulene"
+    },
+    {
+      "pubchem_cid": 9268,
+      "iupac_name": "cyclododecane"
+    },
+    {
+      "pubchem_cid": 10914,
+      "iupac_name": "2,2,4,4,6,6-hexamethyl-1,3,5,2,4,6-trioxatrisilinane"
+    },
+    {
+      "pubchem_cid": 11006,
+      "iupac_name": "hexadecane"
+    },
+    {
+      "pubchem_cid": 11169,
+      "iupac_name": "2,2,4,4,6,6,8,8-octamethyl-1,3,5,7,2,4,6,8-tetraoxatetrasilocane"
+    },
+    {
+      "pubchem_cid": 11170,
+      "iupac_name": "2,2,4,4,6,6,8,8,10,10,12,12,14,14,16,16-hexadecamethyl-1,3,5,7,9,11,13,15-octaoxa-2,4,6,8,10,12,14,16-octasilacyclohexadecane"
+    },
+    {
+      "pubchem_cid": 11172,
+      "iupac_name": "2,2,4,4,6,6,8,8,10,10,12,12,14,14,16,16,18,18-octadecamethyl-1,3,5,7,9,11,13,15,17-nonaoxa-2,4,6,8,10,12,14,16,18-nonasilacyclooctadecane"
+    },
+    {
+      "pubchem_cid": 11230,
+      "iupac_name": "4-methyl-1-propan-2-ylcyclohex-3-en-1-ol"
+    },
+    {
+      "pubchem_cid": 12053,
+      "iupac_name": "2-phenylpropan-2-ol"
+    },
+    {
+      "pubchem_cid": 12160,
+      "iupac_name": "1-ethyl-4-methylbenzene"
+    },
+    {
+      "pubchem_cid": 12388,
+      "iupac_name": "tridecane"
+    },
+    {
+      "pubchem_cid": 14257,
+      "iupac_name": "undecane"
+    },
+    {
+      "pubchem_cid": 15600,
+      "iupac_name": "decane"
+    },
+    {
+      "pubchem_cid": 16663,
+      "iupac_name": "4-ethylheptane"
+    },
+    {
+      "pubchem_cid": 16821,
+      "iupac_name": "5-octyloxolan-2-one"
+    },
+    {
+      "pubchem_cid": 17100,
+      "iupac_name": "2-(4-methylcyclohex-3-en-1-yl)propan-2-ol"
+    },
+    {
+      "pubchem_cid": 17835,
+      "iupac_name": "4-methyldecane"
+    },
+    {
+      "pubchem_cid": 19602,
+      "iupac_name": "2-pentylfuran"
+    },
+    {
+      "pubchem_cid": 21205,
+      "iupac_name": "methyl 14-methylpentadecanoate"
+    },
+    {
+      "pubchem_cid": 21630,
+      "iupac_name": "2-ethylhexyl 3-(4-methoxyphenyl)prop-2-enoate"
+    },
+    {
+      "pubchem_cid": 22568,
+      "iupac_name": "2-phenoxyethyl acetate"
+    },
+    {
+      "pubchem_cid": 23229,
+      "iupac_name": "1-(3-acetylphenyl)ethanone"
+    },
+    {
+      "pubchem_cid": 23284,
+      "iupac_name": "[2,2,4-trimethyl-3-(2-methylpropanoyloxy)pentyl] 2-methylpropanoate"
+    },
+    {
+      "pubchem_cid": 29996,
+      "iupac_name": "N-propylhexan-1-amine"
+    },
+    {
+      "pubchem_cid": 31236,
+      "iupac_name": "2-phenoxyethanol"
+    },
+    {
+      "pubchem_cid": 31355,
+      "iupac_name": "tris(2-methylpropyl) phosphate"
+    },
+    {
+      "pubchem_cid": 41209,
+      "iupac_name": "2,6,10,15-tetramethylheptadecane"
+    },
+    {
+      "pubchem_cid": 73219,
+      "iupac_name": "3,5-ditert-butyl-4-hydroxybenzaldehyde"
+    },
+    {
+      "pubchem_cid": 75084,
+      "iupac_name": "dodecyl prop-2-enoate"
+    },
+    {
+      "pubchem_cid": 85781,
+      "iupac_name": "bis(2-ethylhexyl) carbonate"
+    },
+    {
+      "pubchem_cid": 90232,
+      "iupac_name": "ethyl 4-ethoxybenzoate"
+    },
+    {
+      "pubchem_cid": 103653,
+      "iupac_name": "2-methylbutyl benzoate"
+    },
+    {
+      "pubchem_cid": 136569,
+      "iupac_name": "2,3,3-trimethylpenta-1,4-diene"
+    },
+    {
+      "pubchem_cid": 137353,
+      "iupac_name": "3-ethyl-3-[4-(hydroxyamino)phenyl]piperidine-2,6-dione"
+    },
+    {
+      "pubchem_cid": 141033,
+      "iupac_name": "3,6,6-trimethylcyclohex-2-en-1-one"
+    },
+    {
+      "pubchem_cid": 146102,
+      "iupac_name": "2,6-ditert-butyl-4-hydroxy-4-methylcyclohexa-2,5-dien-1-one"
+    },
+    {
+      "pubchem_cid": 160669,
+      "iupac_name": "(2S)-5-amino-2-(methylamino)-5-oxopentanoic acid"
+    },
+    {
+      "pubchem_cid": 520958,
+      "iupac_name": "1-(2,4-dimethylphenyl)-2,4-dimethylbenzene"
+    },
+    {
+      "pubchem_cid": 537332,
+      "iupac_name": "5-ethyl-2-methyloctane"
+    },
+    {
+      "pubchem_cid": 551986,
+      "iupac_name": "2-[(2,4,4,6,6,8,8-heptamethyl-1,3,5,7,2,4,6,8-tetraoxatetrasilocan-2-yl)oxy]-2,4,4,6,6,8,8,10,10-nonamethyl-1,3,5,7,9,2,4,6,8,10-pentaoxapentasilecane"
+    },
+    {
+      "pubchem_cid": 557859,
+      "iupac_name": "3,7-dimethyloct-7-en-3-ol"
+    },
+    {
+      "pubchem_cid": 558880,
+      "iupac_name": "(5-oxooxolan-2-yl)methyl 3,5-dinitrobenzoate"
+    },
+    {
+      "pubchem_cid": 567717,
+      "iupac_name": "2-benzyl-1-morpholin-4-yl-3-phenylpropan-2-ol"
+    },
+    {
+      "pubchem_cid": 574439,
+      "iupac_name": "2-(hydroxymethyl)-2-methylpyrrolidine-1-carbaldehyde"
+    },
+    {
+      "pubchem_cid": 575987,
+      "iupac_name": "5H-cyclopenta[b]pyridine"
+    },
+    {
+      "pubchem_cid": 622436,
+      "iupac_name": "trimethyl-[2-trimethylsilyloxy-1-(4-trimethylsilyloxyphenyl)ethoxy]silane"
+    },
+    {
+      "pubchem_cid": 637516,
+      "iupac_name": "(1R)-1-phenylethanol"
+    },
+    {
+      "pubchem_cid": 5370158,
+      "iupac_name": "(E)-3-(2,2,6-trimethyl-7-oxabicyclo[4.1.0]heptan-1-yl)prop-2-enal"
+    },
+    {
+      "pubchem_cid": 5370325,
+      "iupac_name": "bis(2-ethylhexyl) (E)-but-2-enedioate"
+    },
+    {
+      "pubchem_cid": 6041429,
+      "iupac_name": "E)-3-(2,4-dimethoxyphenyl)-1-(2-hydroxyphenyl)prop-2-en-1-one"
+    },
+    {
+      "pubchem_cid": 6429350,
+      "iupac_name": "1-[(1R,7R)-4-methylidene-7-propan-2-yl-1,2,3,3a,5,6,7,7a-octahydroinden-1-yl]ethanone"
+    },
+    {
+      "pubchem_cid": 9602988,
+      "iupac_name": "methyl (Z)-N-hydroxybenzenecarboximidate"
+    },
+    {
+      "pubchem_cid": 13544681,
+      "iupac_name": "N-methyl-N-[2-(methylamino)ethyl]benzamide"
+    },
+    {
+      "pubchem_cid": 13596727,
+      "iupac_name": "2-but-3-enoxycarbonylbenzoic acid"
+    },
+    {
+      "pubchem_cid": 91713521,
+      "iupac_name": "1-O-butyl 6-O-propan-2-yl hexanedioate"
+    },
+    {
+      "pubchem_cid": 91726212,
+      "iupac_name": "4-O-[2-(2-chlorophenoxy)ethyl] 1-O-ethyl butanedioate"
+    },
+    {
+      "pubchem_cid": 91731726,
+      "iupac_name": "(4-trimethylsilyloxybenzoyl) 4-trimethylsilyloxybenzoate"
+    },
+    {
+      "pubchem_cid": 91742720,
+      "iupac_name": "bis[[(3-ethylphenoxy)-dimethylsilyl]oxy]-dimethylsilane"
+    }
+  ]
+}
