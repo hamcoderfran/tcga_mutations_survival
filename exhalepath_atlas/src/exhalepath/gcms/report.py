@@ -85,6 +85,30 @@ def _markdown(report: dict[str, Any]) -> str:
         f"- Confusion: `{m.get('confusion')}`",
         f"- Brier (rank-scaled): {m.get('brier')}",
         "",
+        "## Stratified AUROC (when metadata exist)",
+        "",
+    ]
+    strata = report.get("stratified_auroc") or {}
+    if strata.get("note") and not strata.get("strata"):
+        lines.append(f"- {strata.get('note')}")
+    elif strata.get("strata"):
+        lines.append(f"- Overall: **{_pct(strata.get('overall'))}**")
+        for name, bucket in (strata.get("strata") or {}).items():
+            lines.append(f"- **{name}**")
+            if isinstance(bucket, dict) and "error" in bucket:
+                lines.append(f"  - error: {bucket['error']}")
+                continue
+            for level, stats in (bucket or {}).items():
+                if not isinstance(stats, dict):
+                    continue
+                lines.append(
+                    f"  - `{level}`: n={stats.get('n')} AUROC={_pct(stats.get('auroc'))}"
+                    + (f" ({stats.get('note')})" if stats.get("note") else "")
+                )
+    else:
+        lines.append("- No age/sex/smoking strata available for this run.")
+    lines += [
+        "",
         "## Nested / locked-split evaluation",
         "",
         f"- Strategy: `{nested.get('strategy')}` · seed={nested.get('seed')} · sha256=`{(nested.get('content_sha256') or '')[:16]}…`",
@@ -101,7 +125,13 @@ def _markdown(report: dict[str, Any]) -> str:
         lines.append(
             f"| {row.get('fold_id')} | {row.get('n_test')} | {_pct(row.get('auroc'))} |"
         )
+    pack = report.get("paper_pack") or {}
     lines += [
+        "",
+        "## Paper pack",
+        "",
+        f"- Zip: `{pack.get('zip_path') or 'not written'}`",
+        f"- Zip SHA256: `{(pack.get('zip_sha256') or '')[:24]}…`" if pack.get("zip_sha256") else "- Zip SHA256: —",
         "",
         "## Why this matters for science",
         "",

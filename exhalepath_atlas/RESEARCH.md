@@ -22,10 +22,14 @@ This release implements the highest-leverage missing piece for *this* repo: **pa
 | Capability | Command / API | Why it matters |
 |---|---|---|
 | Patient×VOC matrix from MW | `load_mw_patient_matrix("ST000883")` | Restores per-patient intensities (not only group medians) |
+| Sci Data **per-sample** peak tables | `voc eval-scidata-samples` / `load_scidata_ovr_matrix` | Asthma/COPD/bronchiectasis sample×VOC (not cohort means) |
 | Locked patient splits | `voc lock-split --study ST000883` | Preregistration-style SHA256 manifests |
 | Signature diagnostic scoring | `voc eval-patient-diagnostic` | Tests hybrid/stack/literature templates with AUROC/AUPRC/sens/spec |
+| Age/sex/smoking stratified AUCs | auto in diagnostic reports when metadata exist | Confounder-aware reporting (smoking N/A on Sci Data 2024) |
+| Blank-ratio / detection filters | `blank_ratio_filter` on peak tables | On-breath vs background when blanks present |
+| MetaboLights scaffold | `voc export-metabolights` | mzTab-M-like + ISA-Tab investigation/study/assay |
 | Observed vector scoring | `voc score-sample … --vocs '{…}'` | Lab peak tables → disease template match |
-| Paper pack | `PATIENT_DIAGNOSTIC_REPORT.md` + ROC + TRIPOD checklist stub | Citation-grade methods scaffolding |
+| One-zip paper pack | `voc export-paper-pack` | figures + Methods + overlay + split hash |
 
 Bundled studies today:
 
@@ -45,7 +49,16 @@ voc lock-split --study ST000883 --seed 42 \
 voc eval-patient-diagnostic --study ST000883 --signature hybrid
 voc eval-patient-diagnostic --all --signature stack
 
-# 3) Score a new patient's mapped VOC vector
+# 3) Sci Data per-sample (one-vs-rest; age/sex strata; paper zip)
+voc eval-scidata-samples --cohort asthma
+voc eval-scidata-samples --all
+
+# 4) Deposit scaffolds + re-zip a run
+voc export-metabolights --study ST000883
+voc export-metabolights --study scidata:asthma
+voc export-paper-pack runs/patient_diagnostic/ST000883
+
+# 5) Score a new patient's mapped VOC vector
 voc score-sample malaria --signature stack \
   --vocs '{"acetone":0.4,"pentane":0.5,"isoprene":-0.3,"benzene":0.6}'
 ```
@@ -56,18 +69,30 @@ voc score-sample malaria --signature stack \
 2. Report **nested** AUROC (and optimism gap vs non-nested)  
 3. Report Youden sens/spec + confusion + AUPRC  
 4. State MSI / mapping limits (atlas VOC subset only)  
-5. If smoking/age available, add stratified AUCs (schema fields ready; ST000883 factors lack them)  
-6. Claim *research enablement / transferable signature test*, not clinical SOTA  
+5. Report stratified AUCs when age/sex/smoking metadata exist (Sci Data: age/sex yes, smoking no)  
+6. Attach the one-zip paper pack + MetaboLights scaffold if depositing  
+7. Claim *research enablement / transferable signature test*, not clinical SOTA  
 
-## Public datasets to prioritize next (adapters)
+## Public datasets (adapters)
 
-| Tier | Dataset | Why |
+| Tier | Dataset | Status |
 |---|---|---|
-| A | Sci Data 2024 clinical breathomics (Figshare 23522490) | Asthma/COPD/bronchiectasis peak tables; ML baseline community |
-| A | ST003200 healthy PTR (n=504) | Confounder effect-size reference (age/sex/smoking) |
-| A | MSV000095340 pediatric asthma GC-qTOF (mzML) | Raw-spectrum pipeline demos |
-| B | RADicA / ReCIVA blank-aware tables | Blank-first schema gold standard |
-| B | Owlstone OMNI example | Industry feature-table shape reference |
+| A | Sci Data 2024 clinical breathomics (Figshare) | **Per-sample adapter shipped** (`eval-scidata-samples`); OVR only (no healthy arm) |
+| A | ST000883 / ST000587 MW patient matrices | **Shipped** (`eval-patient-diagnostic`) |
+| A | ST003200 healthy PTR (n=504) | Confounder effect-size reference (age/sex/smoking) — next |
+| A | MSV000095340 pediatric asthma GC-qTOF (mzML) | Raw-spectrum pipeline demos — next |
+| B | RADicA / ReCIVA blank-aware tables | Blank-first schema gold standard — next |
+| B | Owlstone OMNI example | Industry feature-table shape reference — next |
+
+## Open draft branches — keep / prune
+
+Do **not** merge wholesale draft PRs #13–#19 into `main` (calibrator/prior rewrites and CLI conflicts regress current 1.6 stack). Prefer additive cherry-picks only:
+
+| Keep (additive only) | Skip / ignore |
+|---|---|
+| `secure_fetch.py`, `eval/lit_compare.py`, `eval/coverage_audit.py` (#16 tip) | Wholesale `cli.py` / `predict.py` rewrites |
+| HBDB 60-disease JSON/scripts (#16) | Recalibrated `voc_calibrator.joblib` from draft tips |
+| `ds15_alt_breath_sources.py` (#17), `extract_hmdb_wishart.py` (#18) | `disease_voc_priors.json` replacements that break holdouts |
 
 ## Current results on bundled patient GC-MS (regenerate anytime)
 

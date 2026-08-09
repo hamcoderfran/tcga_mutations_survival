@@ -159,3 +159,75 @@ def confounder_proxy_auroc(
         return float(np.nanmean(scores))
     except Exception:  # noqa: BLE001
         return None
+
+
+def stratified_auroc(
+    y_true: list[int] | np.ndarray,
+    scores: list[float] | np.ndarray,
+    strata: dict[str, list[Any] | np.ndarray],
+    *,
+    min_n: int = 8,
+) -> dict[str, Any]:
+    """Compute AUROC within strata (sex, smoking, age tertile, …) when possible.
+
+    strata maps stratum_name → per-subject values aligned with y_true/scores.
+    Missing strata or single-class subsets are reported as unavailable.
+    """
+    y, s = _as_arrays(y_true, scores)
+    out: dict[str, Any] = {"overall": None, "strata": {}}
+    if len(np.unique(y)) >= 2:
+        out["overall"] = float(roc_auc_score(y, s))
+
+    for name, values in strata.items():
+        vals = list(values)
+        if len(vals) != len(y):
+            out["strata"][name] = {"error": "length_mismatch"}
+            continue
+        # derive age tertiles if numeric age
+        series = pd_series_safe(vals)
+        if name.lower() == "age" and series is not None:
+            try:
+                cats = pd_qcut_tertiles(series)
+            except Exception:  # noqa: BLE001
+                cats = [str(v) if v is not None else "NA" for v in vals]
+        else:
+            cats = [("NA" if v is None or (isinstance(v, float) and np.isnan(v)) else str(v)) for v in vals]
+
+        bucket: dict[str, dict[str, Any]] = {}
+        for level in sorted(set(cats)):
+            idx = [i for i, c in enumerate(cats) if c == level]
+            if len(idx) < min_n:
+                bucket[level] = {"n": len(idx), "auroc": None, "note": f"n<{min_n}"}
+                continue
+            yb = y[idx]
+            sb = s[idx]
+            if len(np.unique(yb)) < 2:
+                bucket[level] = {"n": len(idx), "auroc": None, "note": "single_class"}
+                continue
+            bucket[level] = {
+                "n": len(idx),
+                "n_positive": int((yb == 1).sum()),
+                "n_negative": int((yb == 0).sum()),
+                "auroc": float(roc_auc_score(yb, sb)),
+            }
+        out["strata"][name] = bucket
+    return out
+
+
+def pd_series_safe(vals: list[Any]):
+    try:
+        import pandas as pd
+
+        s = pd.to_numeric(pd.Series(vals), errors="coerce")
+        if s.notna().sum() >= 6:
+            return s
+    except Exception:  # noqa: BLE001
+        return None
+    return None
+
+
+def pd_qcut_tertiles(series) -> list[str]:
+    import pandas as pd
+
+    cats = pd.qcut(series, q=3, labels=["age_T1", "age_T2", "age_T3"], duplicates="drop")
+    return [str(c) if pd.notna(c) else "NA" for c in cats]

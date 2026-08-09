@@ -650,6 +650,126 @@ def score_sample_cmd(
         rprint(f"  vocs={', '.join(result['vocs_used'][:12])}")
 
 
+@app.command("eval-scidata-samples")
+def eval_scidata_samples_cmd(
+    cohort: str = typer.Option(
+        "asthma",
+        "--cohort",
+        "-c",
+        help="Positive cohort for one-vs-rest: asthma | copd | bronchiectasis",
+    ),
+    all_cohorts: bool = typer.Option(
+        False, "--all", help="Run all Sci Data pulmonary cohorts"
+    ),
+    out_dir: Path = typer.Option(Path("runs/scidata_samples")),
+    signature: str = typer.Option("hybrid", "--signature"),
+    seed: int = typer.Option(42, "--seed"),
+    n_splits: int = typer.Option(5, "--n-splits"),
+    min_detect_frac: float = typer.Option(0.3, "--min-detect-frac"),
+):
+    """
+    Per-sample Sci Data 2024 peak-table diagnostic (not cohort means).
+
+    One-vs-rest across Asthma/COPD/Bronchiectasis (no healthy arm). Writes
+    stratified AUCs (age/sex), blank/detection filter report, and a paper pack zip.
+    """
+    from .eval.scidata_samples import (
+        evaluate_all_scidata_cohorts,
+        evaluate_scidata_samples,
+    )
+
+    if cohort not in {"asthma", "copd", "bronchiectasis"}:
+        raise typer.BadParameter("cohort must be asthma|copd|bronchiectasis")
+
+    if all_cohorts:
+        summary = evaluate_all_scidata_cohorts(
+            out_dir=out_dir,
+            signature_source=signature,
+            seed=seed,
+            n_splits=n_splits,
+            min_detect_frac=min_detect_frac,
+        )
+        rprint("[bold]Sci Data per-sample (all cohorts)[/bold]")
+        for row in summary.get("cohorts") or []:
+            if row.get("ok"):
+                rprint(
+                    f"  {row['cohort']}: AUROC={row.get('auroc')} "
+                    f"nested={row.get('nested_auroc')} n={row.get('n')}"
+                )
+            else:
+                rprint(f"  {row['cohort']}: ERROR {row.get('error')}")
+        rprint(f"  summary → {out_dir / 'SCIDATA_ALL_SUMMARY.md'}")
+        return
+
+    report = evaluate_scidata_samples(
+        positive_cohort=cohort,
+        out_dir=out_dir / cohort,
+        signature_source=signature,
+        seed=seed,
+        n_splits=n_splits,
+        min_detect_frac=min_detect_frac,
+    )
+    m = report.get("metrics") or {}
+    nested = report.get("nested") or {}
+    pack = report.get("paper_pack") or {}
+    rprint("[bold]Sci Data per-sample diagnostic[/bold]")
+    rprint(f"  cohort={cohort} study={report.get('study_id')}")
+    rprint(
+        f"  n={m.get('n_subjects')} (pos={m.get('n_positive')} neg={m.get('n_negative')})"
+    )
+    rprint(
+        f"  logistic AUROC={m.get('auroc')}  nested={nested.get('mean_test_auroc')}"
+    )
+    strata = (report.get("stratified_auroc") or {}).get("strata") or {}
+    rprint(f"  stratified keys={list(strata.keys()) or ['none']}")
+    rprint(f"  filter={(report.get('filter') or {}).get('note')}")
+    if pack.get("zip_path"):
+        rprint(f"  paper pack → {pack['zip_path']}")
+    rprint(f"  report → {out_dir / cohort / 'SCIDATA_SAMPLE_EVAL.md'}")
+
+
+@app.command("export-metabolights")
+def export_metabolights_cmd(
+    study: str = typer.Option(
+        "ST000883",
+        "--study",
+        "-s",
+        help="Bundled MW study id, or Sci Data cohort via scidata:<asthma|copd|bronchiectasis>",
+    ),
+    out_dir: Path = typer.Option(Path("runs/metabolights_export")),
+):
+    """Export mzTab-M-like + ISA-Tab scaffold for MetaboLights-oriented deposit."""
+    from .gcms import export_metabolights_bundle, load_mw_patient_matrix, load_scidata_ovr_matrix
+
+    if study.startswith("scidata:"):
+        cohort = study.split(":", 1)[1]
+        matrix = load_scidata_ovr_matrix(cohort, mapped_vocs_only=True)
+    else:
+        matrix = load_mw_patient_matrix(study)
+    paths = export_metabolights_bundle(matrix, out_dir / matrix.study_id)
+    rprint("[bold]MetaboLights-oriented export[/bold]")
+    rprint(f"  study={matrix.study_id} disease={matrix.disease_id}")
+    for k, p in paths.items():
+        rprint(f"  {k} → {p}")
+
+
+@app.command("export-paper-pack")
+def export_paper_pack_cmd(
+    run_dir: Path = typer.Argument(..., help="Directory with diagnostic/report artifacts"),
+    out: Path = typer.Option(
+        None, "--out", help="Output zip path (default: <run_dir>/<name>_paper_pack.zip)"
+    ),
+):
+    """Zip figures + Methods + literature overlay + split hash into one paper pack."""
+    from .gcms import export_paper_pack
+
+    info = export_paper_pack(run_dir, out_zip=out)
+    rprint("[bold]Paper pack[/bold]")
+    rprint(f"  zip → {info['zip_path']}")
+    rprint(f"  files={info['n_files']}  zip_sha256={info['zip_sha256'][:24]}…")
+    rprint(f"  split_sha256={info.get('split_content_sha256') or '—'}")
+
+
 @app.command("eval-public-breath")
 def eval_public_breath_cmd(
     out_dir: Path = typer.Option(Path("runs/public_breath_eval")),
@@ -1901,6 +2021,9 @@ def main(argv: Optional[list[str]] = None):
         "eval-public-breath",
         "eval-stack-holdout",
         "eval-patient-diagnostic",
+        "eval-scidata-samples",
+        "export-metabolights",
+        "export-paper-pack",
         "lock-split",
         "score-sample",
         "harvest-clinical-comorbidity",

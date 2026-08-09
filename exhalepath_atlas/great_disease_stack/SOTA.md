@@ -8,7 +8,8 @@
 |---|---|
 | Best published ROC-AUC on a locked multi-site GC-MS/PTR patient cohort | **No** — we do not claim this |
 | Best open mechanism-aware disease→exhaled-VOC reasoning stack | **Strong / novel** — 20-head adaptive fusion |
-| Patient-level GC-MS diagnostic *research harness* (AUROC, locked splits, paper pack) | **Yes — shipped** (`voc eval-patient-diagnostic`) |
+| Patient-level GC-MS diagnostic *research harness* (AUROC, locked splits, paper pack) | **Yes — shipped** (`voc eval-patient-diagnostic`, `voc export-paper-pack`) |
+| Sci Data per-sample adapters + stratified AUCs + MetaboLights scaffold | **Yes — shipped** (`voc eval-scidata-samples`, `voc export-metabolights`) |
 | Beats hybrid ExhalePath alone on public directional panels | **Yes** on current public holdouts (see below) |
 | Useful zero-shot VOC directions for unseen/rare diseases | **Yes** — pathway→VOC projection + literature theme evidence + phenotype/MONDO |
 
@@ -35,6 +36,9 @@ The scarce public good is not another optimistic directional %. It is **patient-
 ```bash
 voc eval-patient-diagnostic --study ST000883 --signature hybrid
 voc eval-patient-diagnostic --all --signature stack
+voc eval-scidata-samples --all
+voc export-metabolights --study scidata:asthma
+voc export-paper-pack runs/scidata_samples/asthma
 voc lock-split --study ST000883
 ```
 

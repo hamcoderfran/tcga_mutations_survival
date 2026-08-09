@@ -18,12 +18,13 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from ..gcms.locked_split import lock_split
-from ..gcms.metrics import compute_diagnostic_metrics
+from ..gcms.metrics import compute_diagnostic_metrics, stratified_auroc
 from ..gcms.patient_matrix import (
     export_patient_matrix_csv,
     list_bundled_diagnostic_studies,
     load_mw_patient_matrix,
 )
+from ..gcms.paper_pack import export_paper_pack, write_methods_stub
 from ..gcms.report import write_diagnostic_report
 from ..gcms.score import disease_signature, score_patients
 
@@ -189,6 +190,30 @@ def evaluate_patient_diagnostic(
     sig_non_nested = metrics.auroc
     logistic = _nested_logistic_auroc(matrix_l, manifest)
 
+    # Smoking / age / sex stratified AUCs when sample metadata exist
+    sid_to_rec = {s.subject_id: s for s in matrix.samples}
+    age_vals = [getattr(sid_to_rec.get(sid), "age", None) for sid in full_scores.index]
+    sex_vals = [getattr(sid_to_rec.get(sid), "sex", None) for sid in full_scores.index]
+    smoke_vals = [
+        getattr(sid_to_rec.get(sid), "smoking_status", None) for sid in full_scores.index
+    ]
+    strata_in: dict[str, list] = {}
+    if any(v is not None for v in age_vals):
+        strata_in["age"] = age_vals
+    if any(v is not None for v in sex_vals):
+        strata_in["sex"] = sex_vals
+    if any(v is not None for v in smoke_vals):
+        strata_in["smoking"] = smoke_vals
+    strata = (
+        stratified_auroc(y.tolist(), full_scores.tolist(), strata_in)
+        if strata_in
+        else {
+            "overall": metrics.auroc,
+            "strata": {},
+            "note": "age/sex/smoking metadata unavailable for this study",
+        }
+    )
+
     report: dict[str, Any] = {
         "title": f"{matrix.disease_name} patient-level GC-MS diagnostic ({study_id})",
         "generated_utc": datetime.now(timezone.utc).isoformat(),
@@ -202,6 +227,7 @@ def evaluate_patient_diagnostic(
         "signature_vocs_used": sorted(sig.keys()),
         "matrix_metadata": matrix.metadata,
         "metrics": metrics.model_dump(),
+        "stratified_auroc": strata,
         "nested": {
             "strategy": manifest.strategy,
             "seed": manifest.seed,
@@ -231,13 +257,16 @@ def evaluate_patient_diagnostic(
                 if sid in logistic["oof_scores"].index
                 and not np.isnan(logistic["oof_scores"].loc[sid])
                 else None,
+                "age": getattr(sid_to_rec.get(sid), "age", None),
+                "sex": getattr(sid_to_rec.get(sid), "sex", None),
+                "smoking": getattr(sid_to_rec.get(sid), "smoking_status", None),
             }
             for sid in matrix.subject_ids
         ],
         "bundled_studies": list_bundled_diagnostic_studies(),
         "caveats": [
             "Mapped atlas VOC subset only — many GC-MS peaks are unmapped and dropped.",
-            "ST000883 lacks smoking/age in factors.json — confounder-stratified AUCs unavailable.",
+            "Smoking/age stratified AUCs reported only when SampleRecord metadata exist.",
             "Mechanism signature is independent of these patient labels, but VOC name mapping can still introduce circularity with literature priors.",
             "Small n (≈35) → wide bootstrap CIs; treat AUROC as research enablement evidence, not clinical validation.",
             "Not a medical device. No clinical diagnostic claim.",
@@ -252,6 +281,7 @@ def evaluate_patient_diagnostic(
                 "Paper-ready ROC / sens / spec / confusion + TRIPOD+AI checklist stub",
                 "Optimism-gap reporting (nested vs non-nested)",
                 "Comparison of mechanism signature vs data-fit logistic baseline",
+                "One-zip paper pack (figures + Methods + overlay + split hash)",
             ],
         },
     }
@@ -264,6 +294,28 @@ def evaluate_patient_diagnostic(
         pd.DataFrame(report["patient_scores"]).to_csv(
             out_dir / "patient_scores.csv", index=False
         )
+        (out_dir / "stratified_auroc.json").write_text(
+            __import__("json").dumps(strata, indent=2, default=str)
+        )
+        write_methods_stub(
+            out_dir / "METHODS.md",
+            study_id=study_id,
+            disease_id=matrix.disease_id,
+            n_subjects=metrics.n_subjects,
+            split_sha256=manifest.content_sha256,
+            signature_source=signature_source,
+            extra_notes=report["caveats"],
+        )
+        pack = export_paper_pack(
+            out_dir,
+            study_id=study_id,
+            disease_id=matrix.disease_id,
+            n_subjects=metrics.n_subjects,
+            split_sha256=manifest.content_sha256,
+            signature_source=signature_source,
+            methods_notes=report["caveats"],
+        )
+        report["paper_pack"] = pack
 
     return report
 

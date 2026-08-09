@@ -76,6 +76,17 @@ voc lock-split --study ST000883 --out data/knowledge/gcms_splits/ST000883_split_
 # Score an observed VOC vector against a disease signature
 voc score-sample malaria --signature hybrid \
   --vocs '{"acetone":0.4,"pentane":0.5,"isoprene":-0.3,"benzene":0.6}'
+
+# Sci Data 2024 per-sample peak tables (one-vs-rest; age/sex strata; paper pack zip)
+voc eval-scidata-samples --cohort asthma
+voc eval-scidata-samples --all
+
+# MetaboLights-oriented mzTab-M + ISA-Tab scaffold
+voc export-metabolights --study ST000883
+voc export-metabolights --study scidata:asthma
+
+# Re-zip an existing run dir into one paper pack (figures + Methods + overlay + split hash)
+voc export-paper-pack runs/patient_diagnostic/ST000883
 ```
 
 ## Evaluation / readiness
@@ -114,7 +125,7 @@ voc train-chembl          # refreshes chembl aux model
 2. **Literature overlay + DOIs in every pack** — done for stack + biomarker exports  
 3. **Prism/GraphPad long CSV** — done (`graphpad_voc_long.csv`)  
 4. **Next-experiment bullets** — done from disagreements / missing mappings / model gaps  
-5. **Next ups:** Sci Data per-sample adapters, smoking-stratified AUCs when metadata exist, mzTab-M export, blank-ratio filters  
+5. **Shipped enablement:** Sci Data per-sample adapters (`voc eval-scidata-samples`), age/sex/(smoking) stratified AUCs when metadata exist, blank-ratio/detection filters, mzTab-M + ISA-Tab (`voc export-metabolights`), one-zip paper pack (`voc export-paper-pack`)
 
 ## Honesty bar
 
