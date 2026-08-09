@@ -1,0 +1,130 @@
+{
+  "title": "Partner LOSO diligence slide",
+  "generated_utc": "2026-08-09T22:10:10.588701+00:00",
+  "honesty": "Diligence fixture only: stratified split of public ST000883 into two OMNI-style CSVs to demonstrate partner ingest + LOSO. NOT independent external clinical validation. Replace with real partner intensity tables for buyer diligence.",
+  "fixture_manifest": {
+    "generated_utc": "2026-08-09T22:09:53.764498+00:00",
+    "honesty": "Diligence fixture only: stratified split of public ST000883 into two OMNI-style CSVs to demonstrate partner ingest + LOSO. NOT independent external clinical validation. Replace with real partner intensity tables for buyer diligence.",
+    "source_study": "ST000883",
+    "feature_map": "malaria_lit",
+    "seed": 42,
+    "site_a": {
+      "path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/partner_loso/PARTNER_SITE_A_omni_feature_table.csv",
+      "n": 17,
+      "n_pos": 8
+    },
+    "site_b": {
+      "path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/partner_loso/PARTNER_SITE_B_omni_feature_table.csv",
+      "n": 18,
+      "n_pos": 9
+    }
+  },
+  "site_a": {
+    "path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/partner_loso/PARTNER_SITE_A_omni_feature_table.csv",
+    "source": "omni_style_csv",
+    "n_voc_features": 25,
+    "n_subjects": 17,
+    "n_positive": 8,
+    "n_negative": 9
+  },
+  "site_b": {
+    "path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/partner_loso/PARTNER_SITE_B_omni_feature_table.csv",
+    "source": "omni_style_csv",
+    "n_voc_features": 25,
+    "n_subjects": 18,
+    "n_positive": 9,
+    "n_negative": 9
+  },
+  "loso": {
+    "status": "ok",
+    "n_studies": 2,
+    "shared_vocs": [
+      "2_butanone",
+      "2_pentanone",
+      "acetone",
+      "alpha_pinene",
+      "benzene",
+      "butane",
+      "cyclohexanone",
+      "delta_3_carene",
+      "ethanol",
+      "ethylbenzene",
+      "heptanal",
+      "hexanal",
+      "hexane",
+      "isoprene",
+      "isopropanol",
+      "methyl_undecane",
+      "nonanal",
+      "octane",
+      "pentane",
+      "propanol",
+      "toluene",
+      "tridecane",
+      "trimethyl_alkene",
+      "trimethyl_decane",
+      "xylene"
+    ],
+    "folds": [
+      {
+        "holdout_study": "PARTNER_SITE_A",
+        "train_studies": [
+          "PARTNER_SITE_B"
+        ],
+        "n_train": 18,
+        "n_test": 17,
+        "n_shared_vocs": 25,
+        "n_test_positive": 8,
+        "n_test_negative": 9,
+        "auroc_signature": 0.4166666666666667,
+        "auprc_signature": 0.444860235760971,
+        "auroc_sparse": 0.7222222222222222,
+        "auprc_sparse": 0.7556818181818182,
+        "selected_features": [
+          "delta_3_carene",
+          "heptanal",
+          "isoprene",
+          "methyl_undecane",
+          "nonanal",
+          "propanol",
+          "tridecane",
+          "trimethyl_decane"
+        ]
+      },
+      {
+        "holdout_study": "PARTNER_SITE_B",
+        "train_studies": [
+          "PARTNER_SITE_A"
+        ],
+        "n_train": 17,
+        "n_test": 18,
+        "n_shared_vocs": 25,
+        "n_test_positive": 9,
+        "n_test_negative": 9,
+        "auroc_signature": 0.6049382716049383,
+        "auprc_signature": 0.6431108470324156,
+        "auroc_sparse": 0.8148148148148149,
+        "auprc_sparse": 0.8537376204042872,
+        "selected_features": [
+          "2_pentanone",
+          "alpha_pinene",
+          "cyclohexanone",
+          "isoprene",
+          "isopropanol",
+          "methyl_undecane",
+          "propanol",
+          "tridecane"
+        ]
+      }
+    ],
+    "mean_auroc_signature": 0.5108024691358025,
+    "mean_auroc_sparse": 0.7685185185185186
+  },
+  "buyer_slide": {
+    "headline": "Cut the cost of wrong VOC panels \u2014 multi-site LOSO before assay spend",
+    "mean_auroc_signature": 0.5108024691358025,
+    "mean_auroc_sparse": 0.7685185185185186,
+    "n_shared_vocs": 25,
+    "do_not_claim": "Not clinical diagnostic SOTA; diligence on partner-format intensity tables"
+  }
+}

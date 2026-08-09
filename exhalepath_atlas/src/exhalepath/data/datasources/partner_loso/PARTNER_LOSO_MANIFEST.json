@@ -1,0 +1,17 @@
+{
+  "generated_utc": "2026-08-09T22:09:53.764498+00:00",
+  "honesty": "Diligence fixture only: stratified split of public ST000883 into two OMNI-style CSVs to demonstrate partner ingest + LOSO. NOT independent external clinical validation. Replace with real partner intensity tables for buyer diligence.",
+  "source_study": "ST000883",
+  "feature_map": "malaria_lit",
+  "seed": 42,
+  "site_a": {
+    "path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/partner_loso/PARTNER_SITE_A_omni_feature_table.csv",
+    "n": 17,
+    "n_pos": 8
+  },
+  "site_b": {
+    "path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/partner_loso/PARTNER_SITE_B_omni_feature_table.csv",
+    "n": 18,
+    "n_pos": 9
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exhalepath.dev/schemas/breathvoc-1.1.json",
+  "title": "BreathVOC patient matrix bundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "study_id",
+    "disease_id",
+    "matrix",
+    "labels",
+    "samples"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "BreathVOC-1.1"
+    },
+    "study_id": {
+      "type": "string"
+    },
+    "disease_id": {
+      "type": "string"
+    },
+    "disease_name": {
+      "type": "string"
+    },
+    "modality": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "generated_utc": {
+      "type": "string"
+    },
+    "matrix": {
+      "type": "object",
+      "description": "subject_id \u2192 {voc_id \u2192 intensity}"
+    },
+    "labels": {
+      "type": "object",
+      "description": "subject_id \u2192 0|1"
+    },
+    "samples": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "split_manifest": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

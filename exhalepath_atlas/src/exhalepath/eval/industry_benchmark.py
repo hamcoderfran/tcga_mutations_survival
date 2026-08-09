@@ -445,12 +445,22 @@ def _scorecard_rows(by_name: dict[str, dict]) -> list[dict[str, Any]]:
 def _commercial_brief(rows: list[dict], by_name: dict) -> dict[str, Any]:
     """Honest commercial narrative — R&D OS, not clinical unicorn math."""
     return {
+        "one_liner": (
+            "We cut the cost of being wrong about VOCs — never lead with clinical AUROC, "
+            "Sci Data 100% OVR, or n≈35 as product proof."
+        ),
         "positioning": (
             "ExhalePath / voc-breath is an open **VOC R&D operating system**: "
             "mechanism-aware disease→VOC hypothesis generation + patient-level GC-MS "
             "eval harness + deposit/reporting scaffolds. Buyers are breath-biopsy platforms, "
             "pharma biomarker teams, and metabolomics CROs entering VOCs — not hospital IVD."
         ),
+        "closing_commands": [
+            "voc demo-close --disease malaria",
+            "voc diligence-loso",
+            "voc import-breathvoc their_table.csv",
+            "voc serve-api --port 8787",
+        ],
         "what_is_actually_revolutionary": [
             "Patient-level nested AUROC + locked split SHA256 on public GC-MS (rare in open stacks)",
             "Optimism-gap reporting that prevents $1–10M wasted follow-ups on peak-level CV mirages",
@@ -514,7 +524,8 @@ def _commercial_brief(rows: list[dict], by_name: dict) -> dict[str, Any]:
         "pitch_one_liner": (
             "We cut the cost of being wrong about VOCs: locked patient-level eval, "
             "mechanism hypotheses for unseen diseases, and deposit-ready paper packs — "
-            "so your VOC program spends money on real signal, not optimistic CV."
+            "so your VOC program spends money on real signal, not optimistic CV. "
+            "Never lead with clinical AUROC, Sci Data 100% OVR, or n≈35 as product proof."
         ),
     }
 

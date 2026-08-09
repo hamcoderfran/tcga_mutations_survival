@@ -60,9 +60,15 @@ def literature_overlay(
     for v in panel.get("expect_suppressed") or panel.get("suppressed") or []:
         measured.setdefault(str(v), -1.0)
 
+    voc_evidence = dict(panel.get("voc_evidence") or {})
     rows = []
     agree = 0
     for voc, lit_fc in measured.items():
+        ev = voc_evidence.get(voc) or {}
+        grade = ev.get("evidence") or panel.get("evidence_grade") or "mixed"
+        doi = ev.get("source_doi")
+        if not doi and (panel.get("refs") or []):
+            doi = (panel.get("refs") or [{}])[0].get("doi")
         pred = predicted_log2fc.get(voc)
         if pred is None:
             rows.append(
@@ -72,6 +78,9 @@ def literature_overlay(
                     "predicted_log2fc": None,
                     "agree": None,
                     "status": "not_in_prediction",
+                    "evidence_grade": grade,
+                    "doi": doi,
+                    "circularity_risk": grade in {"directional_only", "mixed", "atlas_prior"},
                 }
             )
             continue
@@ -86,6 +95,9 @@ def literature_overlay(
                 "predicted_log2fc": float(pred),
                 "agree": ok,
                 "status": "agree" if ok else "disagree",
+                "evidence_grade": grade,
+                "doi": doi,
+                "circularity_risk": grade in {"directional_only", "mixed", "atlas_prior"},
             }
         )
     compared = sum(1 for r in rows if r["agree"] is not None)
@@ -126,6 +138,9 @@ def write_literature_overlay_csv(overlay: dict[str, Any], path: Path) -> Path:
                 "predicted_log2fc",
                 "agree",
                 "status",
+                "evidence_grade",
+                "doi",
+                "circularity_risk",
             ],
         )
         w.writeheader()

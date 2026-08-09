@@ -102,6 +102,12 @@ voc eval-malaria-diagnostic
 
 # Confounder diligence: ST003200 smoking/sex/age + Sci Data age/sex strata
 voc eval-confounder-ptr
+
+# Sellability pack — cut the cost of wrong VOC panels (not AUROC theater)
+voc demo-close --disease malaria
+voc diligence-loso
+voc import-breathvoc path/to/omni_or_breathvoc.csv
+voc serve-api --port 8787
 ```
 
 ## Evaluation / readiness

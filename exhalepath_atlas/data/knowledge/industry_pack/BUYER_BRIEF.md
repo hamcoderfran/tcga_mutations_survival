@@ -2,7 +2,20 @@
 
 **One-liner:** We cut the cost of being wrong about VOCs: locked patient-level eval, mechanism hypotheses for unseen diseases, and deposit-ready paper packs — so your VOC program spends money on real signal, not optimistic CV.
 
+**Never lead with:** clinical AUROC, Sci Data 100% OVR, or n≈35 malaria numbers as product proof.
+
 **Positioning:** ExhalePath / voc-breath is an open **VOC R&D operating system**: mechanism-aware disease→VOC hypothesis generation + patient-level GC-MS eval harness + deposit/reporting scaffolds. Buyers are breath-biopsy platforms, pharma biomarker teams, and metabolomics CROs entering VOCs — not hospital IVD.
+
+## Sellability pack (how to close)
+
+```bash
+voc demo-close --disease malaria          # note → ledger-cited VOCs + optimism gap + paper zip
+voc diligence-loso                        # partner OMNI-style multi-site LOSO diligence slide
+voc import-breathvoc their_table.csv      # one-click BreathVOC / OMNI import
+voc serve-api --port 8787                 # OEM / procurement JSON API
+```
+
+Docs: `data/knowledge/sellability/` (`PROCUREMENT.md`, `OEM_EMBED.md`, `SECURITY.md`).
 
 ## What is actually revolutionary (evidence-backed)
 

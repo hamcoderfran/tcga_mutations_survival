@@ -948,6 +948,121 @@ def eval_confounder_ptr_cmd(
     rprint(f"  report → {out_dir / 'CONFOUNDER_PTR.md'}")
 
 
+@app.command("demo-close")
+def demo_close_cmd(
+    disease: str = typer.Option(
+        "malaria", "--disease", "-d", help="malaria | asthma (fixed closing demos)"
+    ),
+    note: Optional[str] = typer.Option(
+        None, "--note", "-n", help="Patient vignette (default: bundled demo note)"
+    ),
+    out_dir: Path = typer.Option(Path("runs/closing_demo")),
+    no_loso: bool = typer.Option(False, "--no-loso", help="Skip partner LOSO block"),
+):
+    """
+    One demo that closes: paste note → ledger-cited VOCs + optimism gap + paper zip.
+
+    Lead message: cut the cost of wrong VOC panels — not clinical AUROC theater.
+    """
+    from .eval.closing_demo import run_closing_demo
+
+    if disease not in {"malaria", "asthma"}:
+        raise typer.BadParameter("disease must be malaria|asthma")
+    report = run_closing_demo(
+        disease=disease,  # type: ignore[arg-type]
+        note=note,
+        out_dir=out_dir,
+        include_partner_loso=not no_loso,
+    )
+    gap = report.get("optimism_gap") or {}
+    rprint("[bold]Closing demo — cut the cost of wrong VOC panels[/bold]")
+    rprint(f"  disease={report.get('disease')}")
+    rprint(
+        f"  nested AUROC={gap.get('nested_auroc')}  "
+        f"optimism_gap={gap.get('optimism_gap')}"
+    )
+    rprint(f"  citations={report.get('citation_summary')}")
+    pack = report.get("paper_pack") or {}
+    rprint(f"  paper zip → {pack.get('zip_path')}")
+    rprint(f"  summary → {out_dir / 'CLOSING_DEMO.md'}")
+
+
+@app.command("diligence-loso")
+def diligence_loso_cmd(
+    site_a: Optional[Path] = typer.Option(
+        None, "--site-a", help="OMNI-style CSV (default: bundled fixture)"
+    ),
+    site_b: Optional[Path] = typer.Option(None, "--site-b"),
+    disease_id: str = typer.Option("malaria", "--disease-id"),
+    out: Path = typer.Option(Path("runs/partner_loso/PARTNER_LOSO.json"), "--out"),
+    rebuild_fixture: bool = typer.Option(
+        False, "--rebuild-fixture", help="Regenerate ST000883 split OMNI fixture"
+    ),
+):
+    """Partner OMNI-style LOSO diligence slide (fixture or your two site CSVs)."""
+    from .gcms.omni_partner import (
+        build_partner_loso_fixture,
+        run_partner_loso_diligence,
+    )
+
+    if rebuild_fixture:
+        build_partner_loso_fixture()
+    report = run_partner_loso_diligence(
+        site_a=site_a, site_b=site_b, disease_id=disease_id
+    )
+    out = Path(out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2, default=str))
+    slide = report.get("buyer_slide") or {}
+    rprint("[bold]Partner LOSO diligence[/bold]")
+    rprint(f"  {slide.get('headline')}")
+    rprint(
+        f"  signature LOSO={slide.get('mean_auroc_signature')}  "
+        f"sparse LOSO={slide.get('mean_auroc_sparse')}"
+    )
+    rprint(f"  report → {out}")
+
+
+@app.command("import-breathvoc")
+def import_breathvoc_cmd(
+    path: Path = typer.Argument(..., help="BreathVOC JSON or OMNI-style CSV"),
+    fmt: str = typer.Option("auto", "--format", help="auto|breathvoc|omni"),
+    disease_id: str = typer.Option("malaria", "--disease-id"),
+    out_dir: Path = typer.Option(Path("runs/imported_matrix"), "--out-dir"),
+):
+    """One-click import of partner feature table (BreathVOC JSON or OMNI CSV)."""
+    from .gcms.interchange import export_breathvoc
+    from .oem.kit import import_feature_table
+
+    if fmt not in {"auto", "breathvoc", "omni"}:
+        raise typer.BadParameter("format must be auto|breathvoc|omni")
+    packed = import_feature_table(
+        path, fmt=fmt, disease_id=disease_id  # type: ignore[arg-type]
+    )
+    matrix = packed["matrix"]
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    export_breathvoc(matrix, out_dir / f"{matrix.study_id}.breathvoc.json")
+    matrix.matrix.to_csv(out_dir / f"{matrix.study_id}_matrix.csv")
+    matrix.labels.to_frame("label").to_csv(out_dir / f"{matrix.study_id}_labels.csv")
+    meta = {k: v for k, v in packed.items() if k != "matrix"}
+    (out_dir / "IMPORT_META.json").write_text(json.dumps(meta, indent=2, default=str))
+    rprint("[bold]Imported partner matrix[/bold]")
+    rprint(f"  format={meta.get('format')} n={meta.get('n_subjects')}×{meta.get('n_vocs')}")
+    rprint(f"  → {out_dir}")
+
+
+@app.command("serve-api")
+def serve_api_cmd(
+    host: str = typer.Option("127.0.0.1", "--host"),
+    port: int = typer.Option(8787, "--port"),
+):
+    """Procurement/OEM JSON API (score-sample, verify-split, import, demo-close)."""
+    from .oem.api_server import serve_api
+
+    serve_api(host=host, port=port)
+
+
 @app.command("eval-industry-pack")
 def eval_industry_pack_cmd(
     out_dir: Path = typer.Option(Path("runs/industry_pack")),
@@ -2231,6 +2346,10 @@ def main(argv: Optional[list[str]] = None):
         "eval-lit-compare",
         "eval-malaria-diagnostic",
         "eval-confounder-ptr",
+        "demo-close",
+        "diligence-loso",
+        "import-breathvoc",
+        "serve-api",
         "eval-industry-pack",
         "lock-split",
         "score-sample",
