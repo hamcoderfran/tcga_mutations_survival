@@ -1,0 +1,147 @@
+{
+  "title": "Mechanism \u2192 cohort closed loop",
+  "generated_utc": "2026-08-09T19:32:40.714654+00:00",
+  "honesty": "Nested AUROC tests whether mechanism/literature signatures transfer to patient intensities. Literature may be partly circular with atlas priors. Research enablement \u2014 not a diagnostic claim.",
+  "studies": [
+    {
+      "study_id": "ST000883",
+      "disease_id": "malaria",
+      "disease_name": "Malaria",
+      "sources": {
+        "hybrid": {
+          "status": "ok",
+          "source": "hybrid",
+          "n_signature_vocs": 17,
+          "signature_vocs": [
+            "2_butanone",
+            "2_pentanone",
+            "acetone",
+            "benzene",
+            "butane",
+            "ethanol",
+            "ethylbenzene",
+            "heptanal",
+            "hexanal",
+            "hexane",
+            "isoprene",
+            "isopropanol",
+            "nonanal",
+            "octane",
+            "pentane",
+            "propanol",
+            "toluene"
+          ],
+          "nested_auroc": 0.5333333333333333,
+          "non_nested_auroc": 0.5686274509803921,
+          "optimism_gap": 0.03529411764705881,
+          "n_folds_scored": 5,
+          "split_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df"
+        },
+        "stack": {
+          "status": "ok",
+          "source": "stack",
+          "n_signature_vocs": 16,
+          "signature_vocs": [
+            "2_butanone",
+            "2_pentanone",
+            "acetone",
+            "benzene",
+            "butane",
+            "ethanol",
+            "ethylbenzene",
+            "heptanal",
+            "hexanal",
+            "hexane",
+            "isoprene",
+            "isopropanol",
+            "nonanal",
+            "octane",
+            "pentane",
+            "propanol"
+          ],
+          "nested_auroc": 0.5499999999999999,
+          "non_nested_auroc": 0.5816993464052288,
+          "optimism_gap": 0.03169934640522887,
+          "n_folds_scored": 5,
+          "split_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df"
+        },
+        "literature": {
+          "status": "ok",
+          "source": "literature",
+          "n_signature_vocs": 7,
+          "signature_vocs": [
+            "2_butanone",
+            "acetone",
+            "benzene",
+            "hexanal",
+            "isoprene",
+            "nonanal",
+            "pentane"
+          ],
+          "nested_auroc": 0.6333333333333333,
+          "non_nested_auroc": 0.6601307189542485,
+          "optimism_gap": 0.02679738562091516,
+          "n_folds_scored": 5,
+          "split_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df"
+        }
+      }
+    },
+    {
+      "study_id": "ST000587",
+      "disease_id": "heart_failure",
+      "disease_name": "Heart failure",
+      "sources": {
+        "hybrid": {
+          "status": "ok",
+          "source": "hybrid",
+          "n_signature_vocs": 3,
+          "signature_vocs": [
+            "acetone",
+            "isopropanol",
+            "methanol"
+          ],
+          "nested_auroc": 0.6,
+          "non_nested_auroc": 0.5530303030303031,
+          "optimism_gap": -0.046969696969696884,
+          "n_folds_scored": 5,
+          "split_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570"
+        },
+        "stack": {
+          "status": "ok",
+          "source": "stack",
+          "n_signature_vocs": 3,
+          "signature_vocs": [
+            "acetone",
+            "isopropanol",
+            "methanol"
+          ],
+          "nested_auroc": 0.5666666666666667,
+          "non_nested_auroc": 0.5454545454545455,
+          "optimism_gap": -0.021212121212121127,
+          "n_folds_scored": 5,
+          "split_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570"
+        },
+        "literature": {
+          "status": "ok",
+          "source": "literature",
+          "n_signature_vocs": 3,
+          "signature_vocs": [
+            "acetone",
+            "isopropanol",
+            "methanol"
+          ],
+          "nested_auroc": 0.5666666666666667,
+          "non_nested_auroc": 0.5378787878787878,
+          "optimism_gap": -0.028787878787878807,
+          "n_folds_scored": 5,
+          "split_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570"
+        }
+      }
+    }
+  ],
+  "how_to_improve_packs": [
+    "Ablate VOCs with negative contribution on nested folds",
+    "Prefer quantified literature claims over atlas priors (see claim ledger)",
+    "Add external intensity cohort + LOSO before raising clinical language"
+  ]
+}
