@@ -1,0 +1,18 @@
+{
+  "status": "skipped",
+  "reason": "external_intensity_matrix_required",
+  "csiro": {
+    "study_id": "CSIRO_CHMI_33843",
+    "labels_bundled": true,
+    "overview_bundled": true,
+    "intensity_status": "raw_agilent_d_mzdata_only",
+    "n_subjects": 7,
+    "n_labeled_baseline_peak": 14,
+    "doi": "10.25919/5b5b7530a39f4",
+    "url": "https://data.csiro.au/collection/csiro:33843",
+    "labels_path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/malaria_external/csiro_chmi_labels.csv",
+    "note": "Deposit contains Agilent .D and large mzdata.xml (~1GB/file), not a ready patient\u00d7VOC peak table. Export MassHunter/peak areas aligned to Sample name, then pass --external-matrix + bundled csiro_chmi_labels.csv for LOSO.",
+    "loso_ready_when": "Provide --external-matrix patient\u00d7VOC CSV indexed by Sample name (see csiro_chmi_labels.csv) with --loso"
+  },
+  "hint": "Export CSIRO MassHunter peaks indexed by Sample name, then: voc eval-malaria-diagnostic --external-matrix peaks.csv --external-labels <bundled csiro_chmi_labels.csv> --loso"
+}

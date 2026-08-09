@@ -1,6 +1,6 @@
 {
   "title": "Malaria breath diagnostic upgrade (literature remap + nested sparse)",
-  "generated_utc": "2026-08-09T19:13:30.214066+00:00",
+  "generated_utc": "2026-08-09T19:26:56.896800+00:00",
   "study_id": "ST000883",
   "disease_id": "malaria",
   "disease_name": "Malaria",
@@ -532,7 +532,43 @@
     ],
     "note": "Gains typically flatten near n\u224850 in breath ML; n=35 remains wide-CI territory."
   },
-  "external_catalog": "runs/malaria_diagnostic/external/EXTERNAL_MALARIA_CATALOG.json",
+  "external_catalog": "runs/malaria_diagnostic_next/external/EXTERNAL_MALARIA_CATALOG.json",
+  "csiro_chmi": {
+    "study_id": "CSIRO_CHMI_33843",
+    "labels_bundled": true,
+    "overview_bundled": true,
+    "intensity_status": "raw_agilent_d_mzdata_only",
+    "n_subjects": 7,
+    "n_labeled_baseline_peak": 14,
+    "doi": "10.25919/5b5b7530a39f4",
+    "url": "https://data.csiro.au/collection/csiro:33843",
+    "labels_path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/malaria_external/csiro_chmi_labels.csv",
+    "note": "Deposit contains Agilent .D and large mzdata.xml (~1GB/file), not a ready patient\u00d7VOC peak table. Export MassHunter/peak areas aligned to Sample name, then pass --external-matrix + bundled csiro_chmi_labels.csv for LOSO.",
+    "loso_ready_when": "Provide --external-matrix patient\u00d7VOC CSV indexed by Sample name (see csiro_chmi_labels.csv) with --loso"
+  },
+  "leave_one_study_out": {
+    "status": "skipped",
+    "reason": "external_intensity_matrix_required",
+    "csiro": {
+      "study_id": "CSIRO_CHMI_33843",
+      "labels_bundled": true,
+      "overview_bundled": true,
+      "intensity_status": "raw_agilent_d_mzdata_only",
+      "n_subjects": 7,
+      "n_labeled_baseline_peak": 14,
+      "doi": "10.25919/5b5b7530a39f4",
+      "url": "https://data.csiro.au/collection/csiro:33843",
+      "labels_path": "/workspace/exhalepath_atlas/src/exhalepath/data/datasources/malaria_external/csiro_chmi_labels.csv",
+      "note": "Deposit contains Agilent .D and large mzdata.xml (~1GB/file), not a ready patient\u00d7VOC peak table. Export MassHunter/peak areas aligned to Sample name, then pass --external-matrix + bundled csiro_chmi_labels.csv for LOSO.",
+      "loso_ready_when": "Provide --external-matrix patient\u00d7VOC CSV indexed by Sample name (see csiro_chmi_labels.csv) with --loso"
+    },
+    "hint": "Export CSIRO MassHunter peaks indexed by Sample name, then: voc eval-malaria-diagnostic --external-matrix peaks.csv --external-labels <bundled csiro_chmi_labels.csv> --loso"
+  },
+  "story": {
+    "transferable_nested_auroc": 0.5833333333333333,
+    "fit_on_cohort_sparse_ceiling": 0.7333333333333334,
+    "do_not_chase": "Stop tuning ST000883 AUROC. Report transferable nested AUROC vs fit-on-cohort sparse ceiling; widen n via external intensity / LOSO."
+  },
   "patient_scores": [
     {
       "subject_id": "Patient 1",
@@ -783,8 +819,10 @@
   "caveats": [
     "ST000883 n\u224835 \u2014 AUROC CIs remain wide (JBR: curves flatten near n\u224850).",
     "Schaber 2018: thioethers largely absent; terpenes (pinene/carene) are the remap unlock.",
-    "CSIRO CHMI and JID 2024 Malawi lack open intensity tables \u2014 catalog recorded for when deposits appear.",
+    "CSIRO CHMI: baseline/peak labels bundled; intensity still needs MassHunter peak export.",
+    "JID 2024 Malawi: no open intensity matrix yet.",
     "Fit-on-cohort sparse AUROC is a ceiling, not a transferable clinical claim.",
+    "Do not chase further ST000883 AUROC gains \u2014 see STOP_CHASING_ST000883.md.",
     "Research enablement only \u2014 not a diagnostic device claim."
   ],
   "comparison_to_baseline_atlas_map": {

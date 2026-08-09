@@ -1,6 +1,6 @@
 # Malaria breath diagnostic upgrade
 
-Generated: 2026-08-09T19:13:30.214066+00:00
+Generated: 2026-08-09T19:26:56.896800+00:00
 Study: `ST000883` · feature_map=`malaria_lit`
 
 > Transferable signature vs fit-on-cohort sparse — research enablement only.
@@ -43,15 +43,26 @@ Study: `ST000883` · feature_map=`malaria_lit`
 | 32 | 67.8% | 0.10230304775639347 |
 | 35 | 69.9% | 0.09030583609558028 |
 
-## External cohorts
+## Transferable vs ceiling (the story — stop chasing ST000883 AUROC)
 
-- Catalog: `runs/malaria_diagnostic/external/EXTERNAL_MALARIA_CATALOG.json`
+- Transferable nested AUROC: **58.3%**
+- Fit-on-cohort sparse ceiling: **73.3%**
+- Stop tuning ST000883 AUROC. Report transferable nested AUROC vs fit-on-cohort sparse ceiling; widen n via external intensity / LOSO.
+
+## External cohorts / LOSO
+
+- Catalog: `runs/malaria_diagnostic_next/external/EXTERNAL_MALARIA_CATALOG.json`
 - Pooled: ST000883 only (no open second intensity table)
+- CSIRO labels bundled: True (n_subjects=7, labeled baseline/peak=14)
+- Intensity status: raw_agilent_d_mzdata_only
+- LOSO status: skipped · mean signature AUROC=— · mean sparse AUROC=—
 
 ## Caveats
 
 - ST000883 n≈35 — AUROC CIs remain wide (JBR: curves flatten near n≈50).
 - Schaber 2018: thioethers largely absent; terpenes (pinene/carene) are the remap unlock.
-- CSIRO CHMI and JID 2024 Malawi lack open intensity tables — catalog recorded for when deposits appear.
+- CSIRO CHMI: baseline/peak labels bundled; intensity still needs MassHunter peak export.
+- JID 2024 Malawi: no open intensity matrix yet.
 - Fit-on-cohort sparse AUROC is a ceiling, not a transferable clinical claim.
+- Do not chase further ST000883 AUROC gains — see STOP_CHASING_ST000883.md.
 - Research enablement only — not a diagnostic device claim.

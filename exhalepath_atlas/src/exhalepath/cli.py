@@ -852,12 +852,24 @@ def eval_malaria_diagnostic_cmd(
         None, "--external-matrix", help="Optional external patient×VOC CSV"
     ),
     external_labels: Optional[Path] = typer.Option(
-        None, "--external-labels", help="Optional external labels CSV (0/1)"
+        None,
+        "--external-labels",
+        help="Optional external labels CSV (0/1); use bundled csiro_chmi_labels.csv",
+    ),
+    loso: bool = typer.Option(
+        False,
+        "--loso",
+        help="Leave-one-study-out vs ST000883 when external intensity matrix is provided",
+    ),
+    pool_external: bool = typer.Option(
+        False,
+        "--pool-external",
+        help="Also pool external with ST000883 for nested metrics (default: pool only when not --loso)",
     ),
 ):
     """
     Malaria upgrade pack: literature peak remaps + nested sparse vs transferable
-    signature + fixed-sens curves + learning curve / external catalog.
+    signature + fixed-sens curves + learning curve / CSIRO labels / LOSO.
     """
     from .eval.malaria_diagnostic import evaluate_malaria_diagnostic
 
@@ -871,6 +883,8 @@ def eval_malaria_diagnostic_cmd(
         n_splits=n_splits,
         external_matrix=external_matrix,
         external_labels=external_labels,
+        loso=loso,
+        pool_external=pool_external,
     )
     t = report.get("transferable_signature") or {}
     sk = report.get("fit_on_cohort_sparse_kbest") or {}
@@ -895,7 +909,43 @@ def eval_malaria_diagnostic_cmd(
             f"  fixed-sens≥{p.get('target_sensitivity')}: "
             f"spec={p.get('specificity')} CI={p.get('specificity_ci95')}"
         )
+    csiro = report.get("csiro_chmi") or {}
+    loso_r = report.get("leave_one_study_out") or {}
+    rprint(
+        f"  CSIRO labels bundled={csiro.get('labels_bundled')} "
+        f"intensity={csiro.get('intensity_status')}"
+    )
+    rprint(
+        f"  LOSO status={loso_r.get('status')} "
+        f"sig={loso_r.get('mean_auroc_signature')} "
+        f"sparse={loso_r.get('mean_auroc_sparse')}"
+    )
     rprint(f"  report → {out_dir / 'MALARIA_DIAGNOSTIC_UPGRADE.md'}")
+    rprint(f"  stop-chasing → {out_dir / 'STOP_CHASING_ST000883.md'}")
+
+
+@app.command("eval-confounder-ptr")
+def eval_confounder_ptr_cmd(
+    out_dir: Path = typer.Option(Path("runs/confounder_ptr")),
+    skip_scidata: bool = typer.Option(
+        False, "--skip-scidata", help="Skip Sci Data age/sex strata block"
+    ),
+):
+    """
+    Metadata-rich confounder pack: ST003200 smoking/sex/age + Sci Data GC-MS strata.
+
+    Healthy PTR (n=504) measures VOC→confounder signal — not disease AUROC.
+    """
+    from .eval.confounder_ptr import evaluate_confounder_ptr
+
+    report = evaluate_confounder_ptr(
+        out_dir=out_dir, include_scidata=not skip_scidata
+    )
+    s = (report.get("st003200") or {}).get("confounder_proxy_auroc") or {}
+    rprint("[bold]Confounder / demographics pack[/bold]")
+    rprint(f"  smoking current vs never AUROC={s.get('smoking_current_vs_never')}")
+    rprint(f"  sex male vs female AUROC={s.get('sex_male_vs_female')}")
+    rprint(f"  report → {out_dir / 'CONFOUNDER_PTR.md'}")
 
 
 @app.command("eval-industry-pack")
@@ -2180,6 +2230,7 @@ def main(argv: Optional[list[str]] = None):
         "eval-coverage",
         "eval-lit-compare",
         "eval-malaria-diagnostic",
+        "eval-confounder-ptr",
         "eval-industry-pack",
         "lock-split",
         "score-sample",

@@ -3,16 +3,18 @@
 Public reality (2026):
 - ST000883 (Schaber 2018, MW PR000612) is the only open *quantified* pediatric
   malaria breath intensity table on Metabolomics Workbench.
-- Berna CHMI thioether work has CSIRO QTOF raw deposits (Agilent .D) — not a
-  ready patient×VOC CSV; adapter records the DOI and fetch instructions.
+- Berna CHMI (CSIRO csiro:33843) has overview-derived baseline/peak labels bundled
+  under ``datasources/malaria_external/``; intensity still requires MassHunter
+  peak export from Agilent ``.D`` / mzdata.xml.
 - 2024 Malawi reproducibility (J Infect Dis jiae323) is not deposited as an
   open intensity matrix at time of writing.
 
 This module therefore:
-1. Documents / optionally fetches CSIRO CHMI metadata for diligence
+1. Documents CSIRO CHMI labels + catalog for diligence
 2. Builds a *virtual external* protocol: learning curves + multi-seed nested
    CIs on the remapped ST000883 matrix (JBR-style n≥50 guidance)
 3. Loads a user-supplied second mwtab/CSV when available (`--external-matrix`)
+4. Runs leave-one-study-out when ≥2 intensity matrices share VOC columns
 """
 
 from __future__ import annotations
@@ -41,10 +43,13 @@ EXTERNAL_CATALOG = {
         "doi": "10.25919/5b5b7530a39f4",
         "url": "https://data.csiro.au/collection/csiro:33843",
         "n_subjects": 7,
-        "status": "raw_agilent_d_only",
+        "n_labeled_baseline_peak": 14,
+        "status": "labels_bundled_intensity_pending",
+        "labels": "datasources/malaria_external/csiro_chmi_labels.csv",
         "note": (
-            "Controlled human malaria infection QTOF breath (.D + xml). "
-            "Requires MassHunter peak table export before PatientVOCMatrix ingest."
+            "CHMI QTOF breath (.D + mzdata.xml). Overview labels bundled "
+            "(Day0/ND vs per-subject peak parasitemia). Export MassHunter peak "
+            "table aligned to Sample name, then --external-matrix + --loso."
         ),
     },
     "JID_2024_MALAWI": {
@@ -179,9 +184,138 @@ def combine_cohorts(
     )
 
 
+def leave_one_study_out(
+    matrices: list[PatientVOCMatrix],
+    *,
+    signature: dict[str, float] | None = None,
+    max_features: int = 8,
+    seed: int = 42,
+) -> dict[str, Any]:
+    """Train on all-but-one study; evaluate on the held-out study.
+
+    Scoring modes:
+    - If ``signature`` is provided: transferable cosine scores with control mean
+      from the *train* studies only.
+    - Always also fit a train-only sparse logistic (SelectKBest) on shared VOCs.
+    """
+    from sklearn.feature_selection import SelectKBest, f_classif
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import average_precision_score, roc_auc_score
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import StandardScaler
+
+    from .score import score_observed_vector
+
+    if len(matrices) < 2:
+        return {
+            "status": "skipped",
+            "reason": "need_at_least_two_studies_with_intensity",
+            "n_studies": len(matrices),
+        }
+
+    # shared columns across all studies
+    cols = set(matrices[0].matrix.columns.astype(str))
+    for m in matrices[1:]:
+        cols &= set(m.matrix.columns.astype(str))
+    cols = sorted(cols)
+    if len(cols) < 2:
+        return {
+            "status": "skipped",
+            "reason": "fewer_than_2_shared_voc_features",
+            "n_shared": len(cols),
+        }
+
+    folds: list[dict[str, Any]] = []
+    for i, holdout in enumerate(matrices):
+        train_mats = [m for j, m in enumerate(matrices) if j != i]
+        train = combine_cohorts(train_mats, study_id="LOSO_TRAIN")
+        # holdout without prefix (keep native ids)
+        X_te = holdout.matrix[cols].astype(float)
+        y_te = holdout.labels.astype(int)
+        X_tr = train.matrix[cols].astype(float)
+        y_tr = train.labels.astype(int)
+
+        row: dict[str, Any] = {
+            "holdout_study": holdout.study_id,
+            "train_studies": [m.study_id for m in train_mats],
+            "n_train": int(X_tr.shape[0]),
+            "n_test": int(X_te.shape[0]),
+            "n_shared_vocs": len(cols),
+            "n_test_positive": int((y_te == 1).sum()),
+            "n_test_negative": int((y_te == 0).sum()),
+        }
+        if len(np.unique(y_te)) < 2 or len(np.unique(y_tr)) < 2:
+            row["auroc_signature"] = None
+            row["auroc_sparse"] = None
+            row["note"] = "single_class_in_train_or_test"
+            folds.append(row)
+            continue
+
+        # Transferable signature (optional)
+        if signature:
+            ctrl = X_tr.loc[y_tr == 0]
+            ref = ctrl.mean(axis=0) if len(ctrl) else X_tr.mean(axis=0)
+            sig_use = {k: v for k, v in signature.items() if k in cols}
+            scores = []
+            for sid in X_te.index:
+                vec = (X_te.loc[sid] - ref).to_dict()
+                out = score_observed_vector(vec, sig_use, method="cosine")
+                scores.append(
+                    float(out["score"]) if out.get("score") is not None else 0.0
+                )
+            try:
+                row["auroc_signature"] = float(roc_auc_score(y_te, scores))
+                row["auprc_signature"] = float(average_precision_score(y_te, scores))
+            except Exception as exc:  # noqa: BLE001
+                row["auroc_signature"] = None
+                row["signature_error"] = str(exc)
+        else:
+            row["auroc_signature"] = None
+
+        # Sparse logistic fit on train only
+        k = min(max_features, X_tr.shape[1], max(1, int(y_tr.sum()), int((1 - y_tr).sum())))
+        pipe = Pipeline(
+            [
+                ("scaler", StandardScaler()),
+                ("select", SelectKBest(f_classif, k=k)),
+                (
+                    "clf",
+                    LogisticRegression(
+                        max_iter=1000, class_weight="balanced", random_state=seed
+                    ),
+                ),
+            ]
+        )
+        try:
+            pipe.fit(X_tr.to_numpy(), y_tr.to_numpy())
+            proba = pipe.predict_proba(X_te.to_numpy())[:, 1]
+            row["auroc_sparse"] = float(roc_auc_score(y_te, proba))
+            row["auprc_sparse"] = float(average_precision_score(y_te, proba))
+            sel = pipe.named_steps["select"]
+            mask = sel.get_support()
+            row["selected_features"] = [c for c, m in zip(cols, mask) if m]
+        except Exception as exc:  # noqa: BLE001
+            row["auroc_sparse"] = None
+            row["sparse_error"] = str(exc)
+
+        folds.append(row)
+
+    sig_aucs = [f["auroc_signature"] for f in folds if f.get("auroc_signature") is not None]
+    sp_aucs = [f["auroc_sparse"] for f in folds if f.get("auroc_sparse") is not None]
+    return {
+        "status": "ok",
+        "n_studies": len(matrices),
+        "shared_vocs": cols,
+        "folds": folds,
+        "mean_auroc_signature": float(np.mean(sig_aucs)) if sig_aucs else None,
+        "mean_auroc_sparse": float(np.mean(sp_aucs)) if sp_aucs else None,
+    }
+
+
 __all__ = [
     "EXTERNAL_CATALOG",
     "combine_cohorts",
+    "leave_one_study_out",
     "load_external_patient_csv",
     "write_external_catalog",
 ]

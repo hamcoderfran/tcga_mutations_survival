@@ -95,8 +95,13 @@ voc eval-lit-compare --n-diseases 50
 
 # Malaria upgrade: lit peak remaps + nested sparse vs transferable + fixed-sens
 voc eval-malaria-diagnostic
-# Optional second cohort CSV when deposited:
-# voc eval-malaria-diagnostic --external-matrix path.csv --external-labels labels.csv
+# CSIRO CHMI labels are bundled; when you have a peak table:
+# voc eval-malaria-diagnostic --external-matrix peaks.csv \
+#   --external-labels $(python -c "from exhalepath.gcms.csiro_chmi import CSIRO_LABELS; print(CSIRO_LABELS)") \
+#   --loso
+
+# Confounder diligence: ST003200 smoking/sex/age + Sci Data age/sex strata
+voc eval-confounder-ptr
 ```
 
 ## Evaluation / readiness

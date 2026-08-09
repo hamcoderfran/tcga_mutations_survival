@@ -1,0 +1,224 @@
+{
+  "title": "Confounder / demographics pack (ST003200 PTR + Sci Data GC-MS)",
+  "generated_utc": "2026-08-09T19:27:02.558780+00:00",
+  "honesty": "ST003200 is healthy-only \u2014 VOC\u2192smoking/sex AUROC measures confounder signal in the feature space, not disease discrimination. Sci Data OVR strata are pulmonary case-mix, not case\u2013control vs healthy.",
+  "st003200": {
+    "n_subjects": 504,
+    "n_voc_features": 8,
+    "voc_ids": [
+      "acetaldehyde",
+      "acetone",
+      "ethanol",
+      "isoprene",
+      "methanol",
+      "phenol",
+      "propanol",
+      "toluene"
+    ],
+    "coverage": {
+      "n": 504,
+      "sex": {
+        "Male": 285,
+        "Female": 219
+      },
+      "smoking_status": {
+        "Non smoker": 376,
+        "Current smoker": 114,
+        "Ex smoker": 13,
+        "NaN": 1
+      },
+      "age_non_null": 504,
+      "age_median": 36.0
+    },
+    "confounder_proxy_auroc": {
+      "smoking_current_vs_never": 0.725474100270439,
+      "sex_male_vs_female": 0.6318626905530211,
+      "n_smoking": 490,
+      "n_sex": 504
+    },
+    "voc_means_by_age_tertile": {
+      "young": {
+        "n": 168,
+        "top_mean_vocs": {
+          "acetone": 317.956,
+          "ethanol": 214.329,
+          "propanol": 118.285,
+          "acetaldehyde": 112.604,
+          "methanol": 110.096
+        }
+      },
+      "mid": {
+        "n": 171,
+        "top_mean_vocs": {
+          "acetone": 318.72,
+          "ethanol": 255.215,
+          "propanol": 131.402,
+          "methanol": 127.868,
+          "acetaldehyde": 122.791
+        }
+      },
+      "older": {
+        "n": 165,
+        "top_mean_vocs": {
+          "acetone": 326.044,
+          "ethanol": 245.143,
+          "methanol": 161.379,
+          "propanol": 142.201,
+          "acetaldehyde": 118.641
+        }
+      }
+    }
+  },
+  "scidata_gcms_age_sex": {
+    "n_cohorts_reported": 3,
+    "cohorts": [
+      {
+        "cohort": "SCIDATA2024_asthma_ovr",
+        "n": 121,
+        "overall_auroc": 0.5194228634850167,
+        "strata": {
+          "age": {
+            "NA": {
+              "n": 1,
+              "auroc": null,
+              "note": "n<8"
+            },
+            "age_T1": {
+              "n": 40,
+              "n_positive": 29,
+              "n_negative": 11,
+              "auroc": 0.8181818181818181
+            },
+            "age_T2": {
+              "n": 41,
+              "n_positive": 12,
+              "n_negative": 29,
+              "auroc": 0.5862068965517242
+            },
+            "age_T3": {
+              "n": 39,
+              "n_positive": 12,
+              "n_negative": 27,
+              "auroc": 0.30864197530864196
+            }
+          },
+          "sex": {
+            "female": {
+              "n": 61,
+              "n_positive": 32,
+              "n_negative": 29,
+              "auroc": 0.8394396551724138
+            },
+            "male": {
+              "n": 60,
+              "n_positive": 21,
+              "n_negative": 39,
+              "auroc": 0.28205128205128205
+            }
+          }
+        },
+        "note": "Sci Data OVR pulmonary \u2014 age/sex when present; no smoking; no healthy arm"
+      },
+      {
+        "cohort": "SCIDATA2024_copd_ovr",
+        "n": 121,
+        "overall_auroc": 0.5795454545454546,
+        "strata": {
+          "age": {
+            "NA": {
+              "n": 1,
+              "auroc": null,
+              "note": "n<8"
+            },
+            "age_T1": {
+              "n": 40,
+              "n_positive": 2,
+              "n_negative": 38,
+              "auroc": 0.7631578947368421
+            },
+            "age_T2": {
+              "n": 41,
+              "n_positive": 12,
+              "n_negative": 29,
+              "auroc": 0.3448275862068966
+            },
+            "age_T3": {
+              "n": 39,
+              "n_positive": 19,
+              "n_negative": 20,
+              "auroc": 0.6
+            }
+          },
+          "sex": {
+            "female": {
+              "n": 61,
+              "n_positive": 5,
+              "n_negative": 56,
+              "auroc": 0.5357142857142857
+            },
+            "male": {
+              "n": 60,
+              "n_positive": 28,
+              "n_negative": 32,
+              "auroc": 0.65625
+            }
+          }
+        },
+        "note": "Sci Data OVR pulmonary \u2014 age/sex when present; no smoking; no healthy arm"
+      },
+      {
+        "cohort": "SCIDATA2024_bronchiectasis_ovr",
+        "n": 121,
+        "overall_auroc": 0.711295681063123,
+        "strata": {
+          "age": {
+            "NA": {
+              "n": 1,
+              "auroc": null,
+              "note": "n<8"
+            },
+            "age_T1": {
+              "n": 40,
+              "n_positive": 9,
+              "n_negative": 31,
+              "auroc": 0.935483870967742
+            },
+            "age_T2": {
+              "n": 41,
+              "n_positive": 17,
+              "n_negative": 24,
+              "auroc": 0.6593137254901961
+            },
+            "age_T3": {
+              "n": 39,
+              "n_positive": 8,
+              "n_negative": 31,
+              "auroc": 0.5201612903225806
+            }
+          },
+          "sex": {
+            "female": {
+              "n": 61,
+              "n_positive": 24,
+              "n_negative": 37,
+              "auroc": 0.8918918918918919
+            },
+            "male": {
+              "n": 60,
+              "n_positive": 11,
+              "n_negative": 49,
+              "auroc": 0.5714285714285714
+            }
+          }
+        },
+        "note": "Sci Data OVR pulmonary \u2014 age/sex when present; no smoking; no healthy arm"
+      }
+    ],
+    "smoking_available": false
+  },
+  "caveats": [
+    "ST003200: no disease labels \u2014 use as confounder effect-size reference only.",
+    "Sci Data: one-vs-rest pulmonary cohorts; smoking metadata absent.",
+    "Do not treat confounder-proxy AUROC as diagnostic performance."
+  ]
+}

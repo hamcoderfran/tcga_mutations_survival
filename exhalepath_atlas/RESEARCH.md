@@ -79,7 +79,7 @@ voc score-sample malaria --signature stack \
 |---|---|---|
 | A | Sci Data 2024 clinical breathomics (Figshare) | **Per-sample adapter shipped** (`eval-scidata-samples`); OVR only (no healthy arm) |
 | A | ST000883 / ST000587 MW patient matrices | **Shipped** (`eval-patient-diagnostic`) |
-| A | ST003200 healthy PTR (n=504) | Confounder effect-size reference (age/sex/smoking) — next |
+| A | ST003200 healthy PTR (n=504) | **Shipped** (`voc eval-confounder-ptr`) — smoking/sex proxy AUROC + age tertiles |
 | A | MSV000095340 pediatric asthma GC-qTOF (mzML) | Raw-spectrum pipeline demos — next |
 | B | RADicA / ReCIVA blank-aware tables | Blank-first schema gold standard — next |
 | B | Owlstone OMNI example | Industry feature-table shape reference — next |
@@ -107,9 +107,13 @@ Literature-guided unlocks on ST000883 (Schaber 2018 / Berna 2015):
 1. **Peak remaps** — α-pinene, 3-carene, cyclohexanone, tridecane, methyl-alkanes (+ thioether aliases)  
 2. **Nested sparse** (inner FS) vs **transferable hybrid+lit signature**  
 3. **Fixed-sensitivity** operating points with bootstrap spec CI95  
-4. **External catalog + learning curve** — CSIRO CHMI / JID 2024 noted; open intensity table still only ST000883 (n=35)
+4. **External catalog + learning curve** — CSIRO CHMI / JID 2024 noted; open intensity table still only ST000883 (n=35)  
+5. **CSIRO CHMI labels bundled** (`csiro_chmi_labels.csv`) + **`--loso`** when a peak table is exported  
+6. **Stop chasing ST000883 AUROC** — report transferable nested vs sparse ceiling (`STOP_CHASING_ST000883.md`)
 
 Latest archived report: `data/knowledge/malaria_diagnostic/MALARIA_DIAGNOSTIC_UPGRADE.md`.
+
+Confounder pack: `voc eval-confounder-ptr` → `data/knowledge/confounder_ptr/`.
 
 ## Current results on bundled patient GC-MS (regenerate anytime)
 

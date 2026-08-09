@@ -1,0 +1,140 @@
+subject_id,sample_name,trial_day,parasites_per_ml,role,label,design
+S012,S012 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S012,S012 D4 R1.D,Day 4 AM,178.5,other,,chmi_baseline_vs_peak
+S012,S012 D5 AM R1.D,Day 5 AM,1241.5,other,,chmi_baseline_vs_peak
+S012,S012 D5 PM R1.D,Day 5 PM,65.0,other,,chmi_baseline_vs_peak
+S012,S012 D6 AM R1.D,Day 6 AM,1212.0,other,,chmi_baseline_vs_peak
+S012,S012 D6 PM R1.D,Day 6 PM,8655.5,other,,chmi_baseline_vs_peak
+S012,S012 D7 AM R1.D,Day 7 AM,13790.0,other,,chmi_baseline_vs_peak
+S012,S012 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S012,S012 D7 8h R1.D,Day 7 8h,9774.0,other,,chmi_baseline_vs_peak
+S012,S012 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S012,S012 D8 AM R1.D,Day 8 AM,43542.0,peak_parasitemia,1,chmi_baseline_vs_peak
+S012,S012 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S012,S012 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S012,S012 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S012,S012 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S012,S012 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S012,S012 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S012,S012 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S012,S012 D24 AM R1.D,Day 24 AM,,other,,chmi_baseline_vs_peak
+S012,S012 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak
+S014,S014 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S014,S014 D4 R1.D,Day 4 AM,73.0,other,,chmi_baseline_vs_peak
+S014,S014 D5 AM R1.D,Day 5 AM,301.5,other,,chmi_baseline_vs_peak
+S014,S014 D5 PM R1.D,Day 5 PM,153.5,other,,chmi_baseline_vs_peak
+S014,S014 D6 AM R1.D,Day 6 AM,526.0,other,,chmi_baseline_vs_peak
+S014,S014 D6 PM R1.D,Day 6 PM,1470.0,other,,chmi_baseline_vs_peak
+S014,S014 D7 AM R1.D,Day 7 AM,2108.0,other,,chmi_baseline_vs_peak
+S014,S014 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S014,S014 D7 8h R1.D,Day 7 8h,1914.5,other,,chmi_baseline_vs_peak
+S014,S014 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S014,S014 D8 AM R1.D,Day 8 AM,5899.0,peak_parasitemia,1,chmi_baseline_vs_peak
+S014,S014 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S014,S014 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S014,S014 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S014,S014 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S014,S014 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S014,S014 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S014,S014 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S014,S014 D21 AM R1.D,Day 21 AM,,other,,chmi_baseline_vs_peak
+S014,S014 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak
+S023,S023 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S023,S023 D4 R1.D,Day 4 AM,101.0,other,,chmi_baseline_vs_peak
+S023,S023 D5 AM R1.D,Day 5 AM,2088.0,other,,chmi_baseline_vs_peak
+S023,S023 D5 PM R1.D,Day 5 PM,378.5,other,,chmi_baseline_vs_peak
+S023,S023 D6 AM R1.D,Day 6 AM,2036.5,other,,chmi_baseline_vs_peak
+S023,S023 D6 PM R1.D,Day 6 PM,8911.0,other,,chmi_baseline_vs_peak
+S023,S023 D7 AM R1.D,Day 7 AM,30570.5,other,,chmi_baseline_vs_peak
+S023,S023 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S023,S023 D7 8h R1.D,Day 7 8h,14499.5,other,,chmi_baseline_vs_peak
+S023,S023 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S023,S023 D8 AM R1.D,Day 8 AM,75231.0,peak_parasitemia,1,chmi_baseline_vs_peak
+S023,S023 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S023,S023 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S023,S023 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S023,S023 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S023,S023 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S023,S023 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S023,S023 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S023,S023 D33 AM R1.D,Day 33 AM,,other,,chmi_baseline_vs_peak
+S023,S023 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak
+S025,S025 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S025,S025 D4 R1.D,Day 4 AM,136.0,other,,chmi_baseline_vs_peak
+S025,S025 D5 AM R1.D,Day 5 AM,883.5,other,,chmi_baseline_vs_peak
+S025,S025 D5 PM R1.D,Day 5 PM,257.5,other,,chmi_baseline_vs_peak
+S025,S025 D6 AM R1.D,Day 6 AM,841.0,other,,chmi_baseline_vs_peak
+S025,S025 D6 PM R1.D,Day 6 PM,4496.5,other,,chmi_baseline_vs_peak
+S025,S025 D7 AM R1.D,Day 7 AM,11195.5,other,,chmi_baseline_vs_peak
+S025,S025 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S025,S025 D7 8h R1.D,Day 7 8h,5556.5,other,,chmi_baseline_vs_peak
+S025,S025 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S025,S025 D8 AM R1.D,Day 8 AM,30750.333333333332,peak_parasitemia,1,chmi_baseline_vs_peak
+S025,S025 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S025,S025 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S025,S025 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S025,S025 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S025,S025 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S025,S025 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S025,S025 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S025,S025 D15 AM R1.D,Day 15 PM,,other,,chmi_baseline_vs_peak
+S025,S025 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak
+S028,S028 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S028,S028 D4 R1.D,Day 4 AM,81.0,other,,chmi_baseline_vs_peak
+S028,S028 D5 AM R1.D,Day 5 AM,1605.5,other,,chmi_baseline_vs_peak
+S028,S028 D5 PM R1.D,Day 5 PM,466.5,other,,chmi_baseline_vs_peak
+S028,S028 D6 AM R1.D,Day 6 AM,2230.5,other,,chmi_baseline_vs_peak
+S028,S028 D6 PM R1.D,Day 6 PM,9057.0,other,,chmi_baseline_vs_peak
+S028,S028 D7 AM R1.D,Day 7 AM,16397.5,other,,chmi_baseline_vs_peak
+S028,S028 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S028,S028 D7 8h R1.D,Day 7 8h,11517.0,other,,chmi_baseline_vs_peak
+S028,S028 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S028,S028 D8 AM R1.D,Day 8 AM,58760.666666666664,peak_parasitemia,1,chmi_baseline_vs_peak
+S028,S028 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S028,S028 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S028,S028 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S028,S028 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S028,S028 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S028,S028 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S028,S028 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S028,S028 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak
+S030,S030 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S030,S030 D4 R1.D,Day 4 AM,56.0,other,,chmi_baseline_vs_peak
+S030,S030 D5 AM R1.D,Day 5 AM,1080.0,other,,chmi_baseline_vs_peak
+S030,S030 D5 PM R1.D,Day 5 PM,328.0,other,,chmi_baseline_vs_peak
+S030,S030 D6 AM R1.D,Day 6 AM,1717.5,other,,chmi_baseline_vs_peak
+S030,S030 D6 PM R1.D,Day 6 PM,9902.5,other,,chmi_baseline_vs_peak
+S030,S030 D7 AM R1.D,Day 7 AM,26227.5,other,,chmi_baseline_vs_peak
+S030,S030 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S030,S030 D7 8h R1.D,Day 7 8h,10149.5,other,,chmi_baseline_vs_peak
+S030,S030 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S030,S030 D8 AM R1.D,Day 8 AM,66574.33333333333,peak_parasitemia,1,chmi_baseline_vs_peak
+S030,S030 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S030,S030 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S030,S030 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S030,S030 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S030,S030 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S030,S030 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S030,S030 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S030,S030 D18 AM R1.D,Day 18 AM,,other,,chmi_baseline_vs_peak
+S030,S030 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak
+S013,S013 D0 R1.D,Day 0 AM,0.0,baseline,0,chmi_baseline_vs_peak
+S013,S013 D4 R1.D,Day 4 AM,39.5,other,,chmi_baseline_vs_peak
+S013,S013 D5 AM R1.D,Day 5 AM,766.0,other,,chmi_baseline_vs_peak
+S013,S013 D5 PM R1.D,Day 5 PM,237.0,other,,chmi_baseline_vs_peak
+S013,S013 D6 AM R1.D,Day 6 AM,1261.0,other,,chmi_baseline_vs_peak
+S013,S013 D6 PM R1.D,Day 6 PM,1716.5,other,,chmi_baseline_vs_peak
+S013,S013 D7 AM R1.D,Day 7 AM,7667.5,other,,chmi_baseline_vs_peak
+S013,S013 D7 4h R1.D,Day 7 4h,,other,,chmi_baseline_vs_peak
+S013,S013 D7 8h R1.D,Day 7 8h,5883.0,other,,chmi_baseline_vs_peak
+S013,S013 D7 12h R1.D,Day 7 12h,,other,,chmi_baseline_vs_peak
+S013,S013 D8 AM R1.D,Day 8 AM,21860.333333333332,peak_parasitemia,1,chmi_baseline_vs_peak
+S013,S013 D8 4h R1.D,Day 8 4h,,other,,chmi_baseline_vs_peak
+S013,S013 D8 8h R1.D,Day 8 8h,,other,,chmi_baseline_vs_peak
+S013,S013 D8 12h R1.D,Day 8 12h,,other,,chmi_baseline_vs_peak
+S013,S013 D9 AM R1.D,Day 9 AM,,other,,chmi_baseline_vs_peak
+S013,S013 D9 PM R1.D,Day 9 PM,,other,,chmi_baseline_vs_peak
+S013,S013 D10 AM R1.D,Day 10 AM,,other,,chmi_baseline_vs_peak
+S013,S013 D10 PM R1.D,Day 10 PM,,other,,chmi_baseline_vs_peak
+S013,S013 D19 AM R1.D,Day 19 PM,,other,,chmi_baseline_vs_peak
+S013,S013 D36 AM R1.D,Day 36 AM,,other,,chmi_baseline_vs_peak

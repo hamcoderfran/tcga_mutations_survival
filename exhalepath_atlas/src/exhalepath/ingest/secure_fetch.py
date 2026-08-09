@@ -55,6 +55,7 @@ ALLOWED_HOSTS: frozenset[str] = frozenset(
         "www.reactome.org",
         "reactome.org",
         "content.cryst.bbk.ac.uk",
+        "data.csiro.au",
     }
 )
 

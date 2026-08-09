@@ -1,0 +1,26 @@
+{
+  "collection": "csiro:33843",
+  "doi": "10.25919/5b5b7530a39f4",
+  "url": "https://data.csiro.au/collection/csiro:33843",
+  "companion_healthy": {
+    "collection": "csiro:33838",
+    "url": "https://data.csiro.au/collection/csiro:33838"
+  },
+  "n_subjects": 7,
+  "n_samples_annotated": 139,
+  "n_labeled_baseline_peak": 14,
+  "n_baseline": 7,
+  "n_peak": 7,
+  "subjects": [
+    "S012",
+    "S014",
+    "S023",
+    "S025",
+    "S028",
+    "S030",
+    "S013"
+  ],
+  "label_rule": "Day0/ND parasites = control (0); per-subject max parasitemia sample = case (1)",
+  "intensity_status": "raw_agilent_d_mzdata_only",
+  "intensity_note": "Deposit contains Agilent .D and large mzdata.xml (~1GB/file), not a ready patient\u00d7VOC peak table. Export MassHunter/peak areas aligned to Sample name, then pass --external-matrix + bundled csiro_chmi_labels.csv for LOSO."
+}

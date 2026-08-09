@@ -46,22 +46,35 @@ def evaluate_malaria_diagnostic(
     max_features: int = 8,
     external_matrix: Path | None = None,
     external_labels: Path | None = None,
+    loso: bool = False,
+    pool_external: bool = False,
 ) -> dict[str, Any]:
-    """Full malaria upgrade: remap + nested sparse + fixed-sens + learning curve."""
+    """Full malaria upgrade: remap + nested sparse + fixed-sens + learning curve.
+
+    When ``external_matrix`` (+ labels) is provided and ``loso`` is True, run
+    leave-one-study-out vs ST000883 instead of (or in addition to) pooling.
+    CSIRO CHMI labels are always exported for readiness; intensity still needs
+    a user peak table.
+    """
     matrix = load_mw_patient_matrix("ST000883", feature_map=feature_map)
     matrix_l = matrix.log1p()
+    primary = matrix  # keep unpooled for LOSO
 
-    # Optional pooled external CSV
+    # Optional external CSV
     pooled_note = None
+    ext = None
     if external_matrix and external_labels:
         from ..gcms.external_malaria import combine_cohorts, load_external_patient_csv
 
         ext = load_external_patient_csv(
             Path(external_matrix), Path(external_labels), study_id="EXTERNAL_MALARIA"
         )
-        matrix = combine_cohorts([matrix, ext], study_id="MALARIA_POOLED")
-        matrix_l = matrix.log1p()
-        pooled_note = f"Pooled ST000883 + EXTERNAL ({ext.metadata.get('n_subjects')} subjects)"
+        if pool_external or not loso:
+            matrix = combine_cohorts([primary, ext], study_id="MALARIA_POOLED")
+            matrix_l = matrix.log1p()
+            pooled_note = (
+                f"Pooled ST000883 + EXTERNAL ({ext.metadata.get('n_subjects')} subjects)"
+            )
 
     manifest = lock_split(
         matrix,
@@ -124,6 +137,37 @@ def evaluate_malaria_diagnostic(
         Path(out_dir) / "external" if out_dir else None
     )
 
+    # CSIRO CHMI label readiness + optional LOSO
+    from ..gcms.csiro_chmi import csiro_readiness, export_csiro_label_bundle
+    from ..gcms.external_malaria import leave_one_study_out
+
+    csiro = csiro_readiness()
+    loso_report: dict[str, Any]
+    if loso and ext is not None:
+        loso_report = leave_one_study_out(
+            [primary.log1p(), ext.log1p() if hasattr(ext, "log1p") else ext],
+            signature=sig,
+            max_features=max_features,
+            seed=seed,
+        )
+    elif loso:
+        loso_report = {
+            "status": "skipped",
+            "reason": "external_intensity_matrix_required",
+            "csiro": csiro,
+            "hint": (
+                "Export CSIRO MassHunter peaks indexed by Sample name, then: "
+                "voc eval-malaria-diagnostic --external-matrix peaks.csv "
+                "--external-labels <bundled csiro_chmi_labels.csv> --loso"
+            ),
+        }
+    else:
+        loso_report = {
+            "status": "not_requested",
+            "csiro": csiro,
+            "hint": "Pass --loso with --external-matrix/--external-labels for LOSO AUROC",
+        }
+
     report: dict[str, Any] = {
         "title": "Malaria breath diagnostic upgrade (literature remap + nested sparse)",
         "generated_utc": datetime.now(timezone.utc).isoformat(),
@@ -183,6 +227,16 @@ def evaluate_malaria_diagnostic(
         "metrics": metrics_sig.model_dump(),
         "learning_curve": curve,
         "external_catalog": str(catalog_path),
+        "csiro_chmi": csiro,
+        "leave_one_study_out": loso_report,
+        "story": {
+            "transferable_nested_auroc": sig_nested,
+            "fit_on_cohort_sparse_ceiling": sparse["mean_test_auroc"],
+            "do_not_chase": (
+                "Stop tuning ST000883 AUROC. Report transferable nested AUROC vs "
+                "fit-on-cohort sparse ceiling; widen n via external intensity / LOSO."
+            ),
+        },
         "patient_scores": [
             {
                 "subject_id": sid,
@@ -201,8 +255,10 @@ def evaluate_malaria_diagnostic(
         "caveats": [
             "ST000883 n≈35 — AUROC CIs remain wide (JBR: curves flatten near n≈50).",
             "Schaber 2018: thioethers largely absent; terpenes (pinene/carene) are the remap unlock.",
-            "CSIRO CHMI and JID 2024 Malawi lack open intensity tables — catalog recorded for when deposits appear.",
+            "CSIRO CHMI: baseline/peak labels bundled; intensity still needs MassHunter peak export.",
+            "JID 2024 Malawi: no open intensity matrix yet.",
             "Fit-on-cohort sparse AUROC is a ceiling, not a transferable clinical claim.",
+            "Do not chase further ST000883 AUROC gains — see STOP_CHASING_ST000883.md.",
             "Research enablement only — not a diagnostic device claim.",
         ],
         "comparison_to_baseline_atlas_map": None,
@@ -250,6 +306,11 @@ def evaluate_malaria_diagnostic(
             )
         )
         (out_dir / "learning_curve.json").write_text(json.dumps(curve, indent=2))
+        (out_dir / "leave_one_study_out.json").write_text(
+            json.dumps(loso_report, indent=2, default=str)
+        )
+        export_csiro_label_bundle(out_dir / "csiro_chmi")
+        (out_dir / "STOP_CHASING_ST000883.md").write_text(_stop_chasing_md(report))
         write_methods_stub(
             out_dir / "METHODS.md",
             study_id=matrix.study_id,
@@ -328,12 +389,28 @@ def _md(report: dict[str, Any]) -> str:
         lines.append(
             f"| {r.get('n')} | {_pct(r.get('mean_auroc'))} | {r.get('std_auroc')} |"
         )
+    story = report.get("story") or {}
+    loso = report.get("leave_one_study_out") or {}
+    csiro = report.get("csiro_chmi") or {}
     lines += [
         "",
-        "## External cohorts",
+        "## Transferable vs ceiling (the story — stop chasing ST000883 AUROC)",
+        "",
+        f"- Transferable nested AUROC: **{_pct(story.get('transferable_nested_auroc'))}**",
+        f"- Fit-on-cohort sparse ceiling: **{_pct(story.get('fit_on_cohort_sparse_ceiling'))}**",
+        f"- {story.get('do_not_chase')}",
+        "",
+        "## External cohorts / LOSO",
         "",
         f"- Catalog: `{report.get('external_catalog')}`",
         f"- Pooled: {report.get('pooled_note') or 'ST000883 only (no open second intensity table)'}",
+        f"- CSIRO labels bundled: {csiro.get('labels_bundled')} "
+        f"(n_subjects={csiro.get('n_subjects')}, "
+        f"labeled baseline/peak={csiro.get('n_labeled_baseline_peak')})",
+        f"- Intensity status: {csiro.get('intensity_status')}",
+        f"- LOSO status: {loso.get('status')} · "
+        f"mean signature AUROC={_pct(loso.get('mean_auroc_signature'))} · "
+        f"mean sparse AUROC={_pct(loso.get('mean_auroc_sparse'))}",
         "",
         "## Caveats",
         "",
@@ -342,6 +419,40 @@ def _md(report: dict[str, Any]) -> str:
         lines.append(f"- {c}")
     lines.append("")
     return "\n".join(lines)
+
+
+def _stop_chasing_md(report: dict[str, Any]) -> str:
+    story = report.get("story") or {}
+    t = report.get("transferable_signature") or {}
+    sk = report.get("fit_on_cohort_sparse_kbest") or {}
+    return "\n".join(
+        [
+            "# Stop chasing ST000883 AUROC",
+            "",
+            "ST000883 (n≈35) is a **methods harness**, not a clinical benchmark to hill-climb.",
+            "",
+            "## Report these two numbers",
+            "",
+            f"1. **Transferable nested AUROC** (hybrid+lit signature): {_pct(story.get('transferable_nested_auroc') or t.get('nested_auroc'))}",
+            f"2. **Fit-on-cohort sparse ceiling** (nested SelectKBest): {_pct(story.get('fit_on_cohort_sparse_ceiling') or sk.get('mean_test_auroc'))}",
+            "",
+            "The gap is expected: signatures were not trained on these labels; sparse logistic was.",
+            "",
+            "## What to do instead",
+            "",
+            "- Add a second **intensity** cohort and run `--loso` (CSIRO labels are bundled; export peaks).",
+            "- Widen n (JBR: learning curves flatten near n≈50).",
+            "- Report fixed-sensitivity operating points + AUPRC CI95.",
+            "- Use ST003200 / Sci Data for confounder (age/sex/smoking) diligence — not malaria AUROC.",
+            "",
+            "## Do not",
+            "",
+            "- Retune atlas priors or remaps solely to raise ST000883 nested AUROC.",
+            "- Market sparse ceiling (~70%+) as transferable diagnostic performance.",
+            "- Claim FDA/clinical readiness from this n.",
+            "",
+        ]
+    )
 
 
 def _pct(x: Any) -> str:

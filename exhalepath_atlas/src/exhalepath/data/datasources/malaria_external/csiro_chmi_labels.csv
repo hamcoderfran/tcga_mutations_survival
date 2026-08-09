@@ -1,0 +1,15 @@
+sample_id,label,subject_id,role,trial_day,parasites_per_ml
+S012 D0 R1.D,0,S012,baseline,Day 0 AM,0.0
+S012 D8 AM R1.D,1,S012,peak_parasitemia,Day 8 AM,43542.0
+S014 D0 R1.D,0,S014,baseline,Day 0 AM,0.0
+S014 D8 AM R1.D,1,S014,peak_parasitemia,Day 8 AM,5899.0
+S023 D0 R1.D,0,S023,baseline,Day 0 AM,0.0
+S023 D8 AM R1.D,1,S023,peak_parasitemia,Day 8 AM,75231.0
+S025 D0 R1.D,0,S025,baseline,Day 0 AM,0.0
+S025 D8 AM R1.D,1,S025,peak_parasitemia,Day 8 AM,30750.333333333332
+S028 D0 R1.D,0,S028,baseline,Day 0 AM,0.0
+S028 D8 AM R1.D,1,S028,peak_parasitemia,Day 8 AM,58760.666666666664
+S030 D0 R1.D,0,S030,baseline,Day 0 AM,0.0
+S030 D8 AM R1.D,1,S030,peak_parasitemia,Day 8 AM,66574.33333333333
+S013 D0 R1.D,0,S013,baseline,Day 0 AM,0.0
+S013 D8 AM R1.D,1,S013,peak_parasitemia,Day 8 AM,21860.333333333332
