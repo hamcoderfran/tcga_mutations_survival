@@ -64,7 +64,7 @@ Reports land in `runs/patient_diagnostic/` and under `data/knowledge/gcms_diagno
 3. Sci Data panels are cross-cohort differentials, not absolute healthy-controlled ppb  
 4. Literature/priority panels can overlap atlas priors → optimistic directional scores  
 5. Human-GEM / OPERA / PrimeKG integrations remain **proxy packs**  
-6. Confounders (smoking/age) often missing from public MW factors  
+6. Confounders (smoking/age) often missing from disease MW factors — use `voc eval-confounder-ptr` (ST003200) + Sci Data age/sex strata; do not hill-climb ST000883 AUROC (`STOP_CHASING_ST000883.md`)  
 
 ## Why it is cutting-edge (open research)
 
@@ -82,6 +82,8 @@ pip install "voc-breath[stack] @ git+https://github.com/hamcoderfran/tcga_mutati
 voc patient "…"
 voc stack --nl "Maple syrup urine disease, genes BCKDHA BCKDHB"
 voc eval-patient-diagnostic --study ST000883
+voc eval-malaria-diagnostic          # transferable vs sparse ceiling + CSIRO labels / --loso
+voc eval-confounder-ptr              # ST003200 smoking/sex + Sci Data age/sex
 voc eval-stack-holdout
 ```
 
