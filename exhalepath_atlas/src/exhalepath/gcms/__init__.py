@@ -2,6 +2,7 @@
 
 from .export_metabolights import export_metabolights_bundle
 from .locked_split import lock_split, load_split_manifest, verify_split_manifest
+from .malaria_remap import map_malaria_lit_voc
 from .paper_pack import export_paper_pack
 from .patient_matrix import (
     PatientVOCMatrix,
@@ -29,6 +30,7 @@ __all__ = [
     "load_scidata_ovr_matrix",
     "load_split_manifest",
     "lock_split",
+    "map_malaria_lit_voc",
     "score_observed_vector",
     "score_patients",
     "verify_split_manifest",

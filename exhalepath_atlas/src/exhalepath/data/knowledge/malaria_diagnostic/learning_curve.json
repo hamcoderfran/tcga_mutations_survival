@@ -1,0 +1,48 @@
+{
+  "description": "Learning curve: nested-ish sparse logistic vs subsample size (JBR-style)",
+  "rows": [
+    {
+      "n": 12,
+      "mean_auroc": 0.51875,
+      "std_auroc": 0.16691387915795244,
+      "n_repeats_ok": 20
+    },
+    {
+      "n": 16,
+      "mean_auroc": 0.48703703703703705,
+      "std_auroc": 0.16059944293165793,
+      "n_repeats_ok": 20
+    },
+    {
+      "n": 20,
+      "mean_auroc": 0.5740740740740742,
+      "std_auroc": 0.1473066378064415,
+      "n_repeats_ok": 20
+    },
+    {
+      "n": 24,
+      "mean_auroc": 0.5760416666666666,
+      "std_auroc": 0.15649633360100024,
+      "n_repeats_ok": 20
+    },
+    {
+      "n": 28,
+      "mean_auroc": 0.5868333333333333,
+      "std_auroc": 0.11368804784242811,
+      "n_repeats_ok": 20
+    },
+    {
+      "n": 32,
+      "mean_auroc": 0.6776666666666668,
+      "std_auroc": 0.10230304775639347,
+      "n_repeats_ok": 20
+    },
+    {
+      "n": 35,
+      "mean_auroc": 0.6988888888888889,
+      "std_auroc": 0.09030583609558028,
+      "n_repeats_ok": 20
+    }
+  ],
+  "note": "Gains typically flatten near n\u224850 in breath ML; n=35 remains wide-CI territory."
+}

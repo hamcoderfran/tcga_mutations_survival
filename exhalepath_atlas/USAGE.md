@@ -92,6 +92,11 @@ voc export-paper-pack runs/patient_diagnostic/ST000883
 voc eval-industry-pack
 voc eval-coverage --offline
 voc eval-lit-compare --n-diseases 50
+
+# Malaria upgrade: lit peak remaps + nested sparse vs transferable + fixed-sens
+voc eval-malaria-diagnostic
+# Optional second cohort CSV when deposited:
+# voc eval-malaria-diagnostic --external-matrix path.csv --external-labels labels.csv
 ```
 
 ## Evaluation / readiness

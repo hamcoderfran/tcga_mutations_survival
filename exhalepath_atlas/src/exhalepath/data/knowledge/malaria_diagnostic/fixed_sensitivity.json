@@ -1,0 +1,120 @@
+{
+  "signature": {
+    "points": [
+      {
+        "target_sensitivity": 0.8,
+        "threshold": -0.34651204439923206,
+        "sensitivity": 0.8235294117647058,
+        "specificity": 0.2777777777777778,
+        "specificity_ci95": [
+          0.02065217391304354,
+          0.7030882352941176
+        ],
+        "ppv": 0.5185185185185185,
+        "npv": 0.625,
+        "confusion": {
+          "tn": 5,
+          "fp": 13,
+          "fn": 3,
+          "tp": 14
+        }
+      },
+      {
+        "target_sensitivity": 0.9,
+        "threshold": -0.47199679498455255,
+        "sensitivity": 1.0,
+        "specificity": 0.1111111111111111,
+        "specificity_ci95": [
+          0.0,
+          0.4362092391304347
+        ],
+        "ppv": 0.5151515151515151,
+        "npv": 1.0,
+        "confusion": {
+          "tn": 2,
+          "fp": 16,
+          "fn": 0,
+          "tp": 17
+        }
+      },
+      {
+        "target_sensitivity": 0.95,
+        "threshold": -0.47199679498455255,
+        "sensitivity": 1.0,
+        "specificity": 0.1111111111111111,
+        "specificity_ci95": [
+          0.0,
+          0.375
+        ],
+        "ppv": 0.5151515151515151,
+        "npv": 1.0,
+        "confusion": {
+          "tn": 2,
+          "fp": 16,
+          "fn": 0,
+          "tp": 17
+        }
+      }
+    ],
+    "notes": []
+  },
+  "sparse_oof": {
+    "points": [
+      {
+        "target_sensitivity": 0.8,
+        "threshold": 0.15505771004334856,
+        "sensitivity": 0.8823529411764706,
+        "specificity": 0.5555555555555556,
+        "specificity_ci95": [
+          0.0,
+          0.9332589285714283
+        ],
+        "ppv": 0.6521739130434783,
+        "npv": 0.8333333333333334,
+        "confusion": {
+          "tn": 10,
+          "fp": 8,
+          "fn": 2,
+          "tp": 15
+        }
+      },
+      {
+        "target_sensitivity": 0.9,
+        "threshold": 0.06552318253498941,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "specificity_ci95": [
+          0.0,
+          0.8537499999999998
+        ],
+        "ppv": 0.4857142857142857,
+        "npv": null,
+        "confusion": {
+          "tn": 0,
+          "fp": 18,
+          "fn": 0,
+          "tp": 17
+        }
+      },
+      {
+        "target_sensitivity": 0.95,
+        "threshold": 0.06552318253498941,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "specificity_ci95": [
+          0.0,
+          0.7142857142857143
+        ],
+        "ppv": 0.4857142857142857,
+        "npv": null,
+        "confusion": {
+          "tn": 0,
+          "fp": 18,
+          "fn": 0,
+          "tp": 17
+        }
+      }
+    ],
+    "notes": []
+  }
+}

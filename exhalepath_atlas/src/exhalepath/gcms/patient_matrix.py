@@ -91,8 +91,17 @@ def _label_from_factors(
     return None
 
 
-def load_mw_patient_matrix(study_id: str) -> PatientVOCMatrix:
-    """Build patient×VOC matrix for a bundled MW study."""
+def load_mw_patient_matrix(
+    study_id: str,
+    *,
+    feature_map: str = "atlas",
+) -> PatientVOCMatrix:
+    """Build patient×VOC matrix for a bundled MW study.
+
+    feature_map:
+      - ``atlas`` — default ExhalePath catalog mapper
+      - ``malaria_lit`` — atlas + Schaber/Berna terpene/thioether/alkane remaps
+    """
     meta = BUNDLED_DIAGNOSTIC_STUDIES.get(study_id)
     if meta is None:
         raise ValueError(
@@ -109,7 +118,18 @@ def load_mw_patient_matrix(study_id: str) -> PatientVOCMatrix:
         raise RuntimeError(f"No MS rows/factors for {study_id}")
 
     df = pd.DataFrame(rows)
-    df["voc_id"] = df["metabolite"].map(_map_voc)
+    if feature_map == "malaria_lit":
+        from .malaria_remap import map_voc_malaria_expanded
+
+        df["voc_id"] = df["metabolite"].map(
+            lambda n: map_voc_malaria_expanded(n, _map_voc)
+        )
+    elif feature_map == "atlas":
+        df["voc_id"] = df["metabolite"].map(_map_voc)
+    else:
+        raise ValueError("feature_map must be atlas|malaria_lit")
+    n_before = df["metabolite"].nunique()
+    n_mapped = df.dropna(subset=["voc_id"])["metabolite"].nunique()
     df = df.dropna(subset=["voc_id"])
     df["sample"] = df["sample"].astype(str)
 
@@ -169,6 +189,10 @@ def load_mw_patient_matrix(study_id: str) -> PatientVOCMatrix:
             "n_positive": int((y == 1).sum()),
             "n_negative": int((y == 0).sum()),
             "unmapped_metabolites_dropped": True,
+            "feature_map": feature_map,
+            "n_library_metabolites": int(n_before),
+            "n_library_metabolites_mapped": int(n_mapped),
+            "voc_ids": list(piv.columns.astype(str)),
         },
     )
 

@@ -137,6 +137,118 @@ def compute_diagnostic_metrics(
     )
 
 
+def threshold_at_sensitivity(
+    y_true: np.ndarray, scores: np.ndarray, *, target_sens: float
+) -> Optional[float]:
+    """Lowest threshold achieving sensitivity >= target_sens (high scores = disease)."""
+    if len(np.unique(y_true)) < 2:
+        return None
+    fpr, tpr, thr = roc_curve(y_true, scores)
+    # roc_curve thresholds correspond to tpr/fpr points; pick first tpr >= target
+    ok = np.where(tpr >= float(target_sens))[0]
+    if len(ok) == 0:
+        return None
+    return float(thr[ok[0]])
+
+
+def fixed_sensitivity_metrics(
+    y_true: list[int] | np.ndarray,
+    scores: list[float] | np.ndarray,
+    *,
+    target_sensitivities: list[float] | None = None,
+    n_boot: int = 500,
+    seed: int = 42,
+) -> dict[str, Any]:
+    """STARD-style fixed-sensitivity operating points with bootstrap CI on specificity."""
+    y, s = _as_arrays(y_true, scores)
+    targets = target_sensitivities or [0.80, 0.90, 0.95]
+    out: dict[str, Any] = {"points": [], "notes": []}
+    if len(np.unique(y)) < 2:
+        out["notes"].append("single class — fixed-sens undefined")
+        return out
+
+    rng = np.random.default_rng(seed)
+    for ts in targets:
+        thr = threshold_at_sensitivity(y, s, target_sens=ts)
+        if thr is None:
+            out["points"].append(
+                {
+                    "target_sensitivity": ts,
+                    "threshold": None,
+                    "sensitivity": None,
+                    "specificity": None,
+                    "specificity_ci95": None,
+                    "note": "target sensitivity not achievable",
+                }
+            )
+            continue
+        op = binary_operating_point(y, s, thr)
+        # bootstrap specificity at this threshold (threshold re-estimated each boot)
+        specs = []
+        n = len(y)
+        for _ in range(n_boot):
+            idx = rng.integers(0, n, n)
+            yb, sb = y[idx], s[idx]
+            if len(np.unique(yb)) < 2:
+                continue
+            thr_b = threshold_at_sensitivity(yb, sb, target_sens=ts)
+            if thr_b is None:
+                continue
+            op_b = binary_operating_point(yb, sb, thr_b)
+            if op_b["specificity"] is not None:
+                specs.append(float(op_b["specificity"]))
+        ci = None
+        if len(specs) >= 20:
+            lo, hi = np.percentile(specs, [2.5, 97.5])
+            ci = (float(lo), float(hi))
+        out["points"].append(
+            {
+                "target_sensitivity": ts,
+                "threshold": thr,
+                "sensitivity": op["sensitivity"],
+                "specificity": op["specificity"],
+                "specificity_ci95": ci,
+                "ppv": op["ppv"],
+                "npv": op["npv"],
+                "confusion": op["confusion"],
+            }
+        )
+    return out
+
+
+def bootstrap_metric_ci(
+    y_true: list[int] | np.ndarray,
+    scores: list[float] | np.ndarray,
+    *,
+    metric: str = "auroc",
+    n_boot: int = 500,
+    seed: int = 42,
+) -> Optional[tuple[float, float]]:
+    """Bootstrap CI for AUROC or AUPRC."""
+    y, s = _as_arrays(y_true, scores)
+    if len(np.unique(y)) < 2:
+        return None
+    rng = np.random.default_rng(seed)
+    vals = []
+    n = len(y)
+    for _ in range(n_boot):
+        idx = rng.integers(0, n, n)
+        yb, sb = y[idx], s[idx]
+        if len(np.unique(yb)) < 2:
+            continue
+        if metric == "auprc":
+            try:
+                vals.append(float(average_precision_score(yb, sb)))
+            except Exception:  # noqa: BLE001
+                continue
+        else:
+            vals.append(float(roc_auc_score(yb, sb)))
+    if len(vals) < 20:
+        return None
+    lo, hi = np.percentile(vals, [2.5, 97.5])
+    return float(lo), float(hi)
+
+
 def confounder_proxy_auroc(
     feature_matrix: np.ndarray,
     confounder: np.ndarray,

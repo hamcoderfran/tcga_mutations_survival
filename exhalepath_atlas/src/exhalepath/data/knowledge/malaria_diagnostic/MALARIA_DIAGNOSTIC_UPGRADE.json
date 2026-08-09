@@ -1,0 +1,804 @@
+{
+  "title": "Malaria breath diagnostic upgrade (literature remap + nested sparse)",
+  "generated_utc": "2026-08-09T19:13:30.214066+00:00",
+  "study_id": "ST000883",
+  "disease_id": "malaria",
+  "disease_name": "Malaria",
+  "feature_map": "malaria_lit",
+  "n_voc_features": 25,
+  "voc_ids": [
+    "2_butanone",
+    "2_pentanone",
+    "acetone",
+    "alpha_pinene",
+    "benzene",
+    "butane",
+    "cyclohexanone",
+    "delta_3_carene",
+    "ethanol",
+    "ethylbenzene",
+    "heptanal",
+    "hexanal",
+    "hexane",
+    "isoprene",
+    "isopropanol",
+    "methyl_undecane",
+    "nonanal",
+    "octane",
+    "pentane",
+    "propanol",
+    "toluene",
+    "tridecane",
+    "trimethyl_alkene",
+    "trimethyl_decane",
+    "xylene"
+  ],
+  "library_mapping": {
+    "n_library_metabolites": 147,
+    "n_library_metabolites_mapped": 70
+  },
+  "pooled_note": null,
+  "transferable_signature": {
+    "source": "hybrid+malaria_lit",
+    "n_vocs": 24,
+    "vocs": [
+      "2_butanone",
+      "2_pentanone",
+      "acetone",
+      "alpha_pinene",
+      "benzene",
+      "butane",
+      "cyclohexanone",
+      "delta_3_carene",
+      "ethanol",
+      "ethylbenzene",
+      "heptanal",
+      "hexanal",
+      "hexane",
+      "isoprene",
+      "isopropanol",
+      "methyl_undecane",
+      "nonanal",
+      "octane",
+      "pentane",
+      "propanol",
+      "toluene",
+      "tridecane",
+      "trimethyl_decane",
+      "xylene"
+    ],
+    "metrics": {
+      "n_subjects": 35,
+      "n_positive": 17,
+      "n_negative": 18,
+      "auroc": 0.588235294117647,
+      "auroc_ci95": [
+        0.39918137254901964,
+        0.7861842105263157
+      ],
+      "auprc": 0.6412693412439863,
+      "sensitivity": 0.4117647058823529,
+      "specificity": 0.7777777777777778,
+      "ppv": 0.6363636363636364,
+      "npv": 0.5833333333333334,
+      "youden_threshold": 0.0025317454798531565,
+      "confusion": {
+        "tn": 14,
+        "fp": 4,
+        "fn": 10,
+        "tp": 7
+      },
+      "brier": 0.29384161861283936,
+      "nested_auroc": null,
+      "non_nested_auroc": null,
+      "optimism_gap": null,
+      "notes": []
+    },
+    "nested_auroc": 0.5833333333333333,
+    "non_nested_auroc": 0.588235294117647,
+    "optimism_gap": 0.004901960784313708,
+    "auprc_ci95": [
+      0.41965453725815444,
+      0.8373129258547501
+    ],
+    "folds": [
+      {
+        "fold_id": "fold_0",
+        "n_test": 7,
+        "auroc": 0.75
+      },
+      {
+        "fold_id": "fold_1",
+        "n_test": 7,
+        "auroc": 0.9166666666666666
+      },
+      {
+        "fold_id": "fold_2",
+        "n_test": 7,
+        "auroc": 0.25
+      },
+      {
+        "fold_id": "fold_3",
+        "n_test": 7,
+        "auroc": 0.5
+      },
+      {
+        "fold_id": "fold_4",
+        "n_test": 7,
+        "auroc": 0.5
+      }
+    ],
+    "fixed_sensitivity": {
+      "points": [
+        {
+          "target_sensitivity": 0.8,
+          "threshold": -0.34651204439923206,
+          "sensitivity": 0.8235294117647058,
+          "specificity": 0.2777777777777778,
+          "specificity_ci95": [
+            0.02065217391304354,
+            0.7030882352941176
+          ],
+          "ppv": 0.5185185185185185,
+          "npv": 0.625,
+          "confusion": {
+            "tn": 5,
+            "fp": 13,
+            "fn": 3,
+            "tp": 14
+          }
+        },
+        {
+          "target_sensitivity": 0.9,
+          "threshold": -0.47199679498455255,
+          "sensitivity": 1.0,
+          "specificity": 0.1111111111111111,
+          "specificity_ci95": [
+            0.0,
+            0.4362092391304347
+          ],
+          "ppv": 0.5151515151515151,
+          "npv": 1.0,
+          "confusion": {
+            "tn": 2,
+            "fp": 16,
+            "fn": 0,
+            "tp": 17
+          }
+        },
+        {
+          "target_sensitivity": 0.95,
+          "threshold": -0.47199679498455255,
+          "sensitivity": 1.0,
+          "specificity": 0.1111111111111111,
+          "specificity_ci95": [
+            0.0,
+            0.375
+          ],
+          "ppv": 0.5151515151515151,
+          "npv": 1.0,
+          "confusion": {
+            "tn": 2,
+            "fp": 16,
+            "fn": 0,
+            "tp": 17
+          }
+        }
+      ],
+      "notes": []
+    }
+  },
+  "fit_on_cohort_sparse_kbest": {
+    "mean_test_auroc": 0.7333333333333334,
+    "non_nested_auroc": 0.9607843137254902,
+    "optimism_gap": 0.22745098039215683,
+    "consensus_features": [
+      "2_pentanone",
+      "methyl_undecane",
+      "propanol",
+      "tridecane",
+      "cyclohexanone",
+      "isoprene",
+      "nonanal",
+      "delta_3_carene"
+    ],
+    "folds": [
+      {
+        "fold_id": "fold_0",
+        "n_test": 7,
+        "auroc": 0.6666666666666666,
+        "n_features": 8,
+        "features": [
+          "2_pentanone",
+          "cyclohexanone",
+          "heptanal",
+          "isoprene",
+          "methyl_undecane",
+          "nonanal",
+          "propanol",
+          "tridecane"
+        ],
+        "model": "nested_sparse_kbest"
+      },
+      {
+        "fold_id": "fold_1",
+        "n_test": 7,
+        "auroc": 0.75,
+        "n_features": 8,
+        "features": [
+          "2_pentanone",
+          "acetone",
+          "cyclohexanone",
+          "delta_3_carene",
+          "methyl_undecane",
+          "nonanal",
+          "propanol",
+          "tridecane"
+        ],
+        "model": "nested_sparse_kbest"
+      },
+      {
+        "fold_id": "fold_2",
+        "n_test": 7,
+        "auroc": 0.5833333333333334,
+        "n_features": 8,
+        "features": [
+          "2_pentanone",
+          "cyclohexanone",
+          "isoprene",
+          "isopropanol",
+          "methyl_undecane",
+          "nonanal",
+          "propanol",
+          "tridecane"
+        ],
+        "model": "nested_sparse_kbest"
+      },
+      {
+        "fold_id": "fold_3",
+        "n_test": 7,
+        "auroc": 0.7500000000000001,
+        "n_features": 8,
+        "features": [
+          "2_pentanone",
+          "ethanol",
+          "isoprene",
+          "isopropanol",
+          "methyl_undecane",
+          "nonanal",
+          "propanol",
+          "tridecane"
+        ],
+        "model": "nested_sparse_kbest"
+      },
+      {
+        "fold_id": "fold_4",
+        "n_test": 7,
+        "auroc": 0.9166666666666667,
+        "n_features": 8,
+        "features": [
+          "2_pentanone",
+          "alpha_pinene",
+          "cyclohexanone",
+          "delta_3_carene",
+          "isoprene",
+          "methyl_undecane",
+          "propanol",
+          "tridecane"
+        ],
+        "model": "nested_sparse_kbest"
+      }
+    ],
+    "fixed_sensitivity_oof": {
+      "points": [
+        {
+          "target_sensitivity": 0.8,
+          "threshold": 0.15505771004334856,
+          "sensitivity": 0.8823529411764706,
+          "specificity": 0.5555555555555556,
+          "specificity_ci95": [
+            0.0,
+            0.9332589285714283
+          ],
+          "ppv": 0.6521739130434783,
+          "npv": 0.8333333333333334,
+          "confusion": {
+            "tn": 10,
+            "fp": 8,
+            "fn": 2,
+            "tp": 15
+          }
+        },
+        {
+          "target_sensitivity": 0.9,
+          "threshold": 0.06552318253498941,
+          "sensitivity": 1.0,
+          "specificity": 0.0,
+          "specificity_ci95": [
+            0.0,
+            0.8537499999999998
+          ],
+          "ppv": 0.4857142857142857,
+          "npv": null,
+          "confusion": {
+            "tn": 0,
+            "fp": 18,
+            "fn": 0,
+            "tp": 17
+          }
+        },
+        {
+          "target_sensitivity": 0.95,
+          "threshold": 0.06552318253498941,
+          "sensitivity": 1.0,
+          "specificity": 0.0,
+          "specificity_ci95": [
+            0.0,
+            0.7142857142857143
+          ],
+          "ppv": 0.4857142857142857,
+          "npv": null,
+          "confusion": {
+            "tn": 0,
+            "fp": 18,
+            "fn": 0,
+            "tp": 17
+          }
+        }
+      ],
+      "notes": []
+    }
+  },
+  "fit_on_cohort_sparse_l1": {
+    "mean_test_auroc": 0.65,
+    "non_nested_auroc": 0.9738562091503268,
+    "optimism_gap": 0.32385620915032676,
+    "consensus_features": [
+      "propanol",
+      "nonanal",
+      "isoprene",
+      "tridecane",
+      "2_pentanone",
+      "acetone",
+      "cyclohexanone",
+      "delta_3_carene"
+    ],
+    "folds": [
+      {
+        "fold_id": "fold_0",
+        "n_test": 7,
+        "auroc": 0.5,
+        "n_features": 8,
+        "features": [
+          "propanol",
+          "nonanal",
+          "isoprene",
+          "heptanal",
+          "delta_3_carene",
+          "benzene",
+          "octane",
+          "acetone"
+        ],
+        "model": "nested_sparse_l1"
+      },
+      {
+        "fold_id": "fold_1",
+        "n_test": 7,
+        "auroc": 0.6666666666666666,
+        "n_features": 6,
+        "features": [
+          "propanol",
+          "nonanal",
+          "tridecane",
+          "2_pentanone",
+          "cyclohexanone",
+          "acetone"
+        ],
+        "model": "nested_sparse_l1"
+      },
+      {
+        "fold_id": "fold_2",
+        "n_test": 7,
+        "auroc": 0.5833333333333333,
+        "n_features": 8,
+        "features": [
+          "propanol",
+          "tridecane",
+          "nonanal",
+          "2_pentanone",
+          "isoprene",
+          "methyl_undecane",
+          "delta_3_carene",
+          "cyclohexanone"
+        ],
+        "model": "nested_sparse_l1"
+      },
+      {
+        "fold_id": "fold_3",
+        "n_test": 7,
+        "auroc": 0.7500000000000001,
+        "n_features": 5,
+        "features": [
+          "isoprene",
+          "tridecane",
+          "2_pentanone",
+          "nonanal",
+          "propanol"
+        ],
+        "model": "nested_sparse_l1"
+      },
+      {
+        "fold_id": "fold_4",
+        "n_test": 7,
+        "auroc": 0.75,
+        "n_features": 8,
+        "features": [
+          "2_pentanone",
+          "propanol",
+          "isoprene",
+          "tridecane",
+          "hexane",
+          "cyclohexanone",
+          "acetone",
+          "trimethyl_alkene"
+        ],
+        "model": "nested_sparse_l1"
+      }
+    ]
+  },
+  "nested": {
+    "strategy": "stratified_kfold",
+    "seed": 42,
+    "content_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df",
+    "mean_test_auroc": 0.5833333333333333,
+    "logistic_baseline": {
+      "mean_test_auroc": 0.7333333333333334,
+      "non_nested_auroc": 0.9607843137254902,
+      "optimism_gap": 0.22745098039215683
+    }
+  },
+  "metrics": {
+    "n_subjects": 35,
+    "n_positive": 17,
+    "n_negative": 18,
+    "auroc": 0.588235294117647,
+    "auroc_ci95": [
+      0.39918137254901964,
+      0.7861842105263157
+    ],
+    "auprc": 0.6412693412439863,
+    "sensitivity": 0.4117647058823529,
+    "specificity": 0.7777777777777778,
+    "ppv": 0.6363636363636364,
+    "npv": 0.5833333333333334,
+    "youden_threshold": 0.0025317454798531565,
+    "confusion": {
+      "tn": 14,
+      "fp": 4,
+      "fn": 10,
+      "tp": 7
+    },
+    "brier": 0.29384161861283936,
+    "nested_auroc": null,
+    "non_nested_auroc": null,
+    "optimism_gap": null,
+    "notes": []
+  },
+  "learning_curve": {
+    "description": "Learning curve: nested-ish sparse logistic vs subsample size (JBR-style)",
+    "rows": [
+      {
+        "n": 12,
+        "mean_auroc": 0.51875,
+        "std_auroc": 0.16691387915795244,
+        "n_repeats_ok": 20
+      },
+      {
+        "n": 16,
+        "mean_auroc": 0.48703703703703705,
+        "std_auroc": 0.16059944293165793,
+        "n_repeats_ok": 20
+      },
+      {
+        "n": 20,
+        "mean_auroc": 0.5740740740740742,
+        "std_auroc": 0.1473066378064415,
+        "n_repeats_ok": 20
+      },
+      {
+        "n": 24,
+        "mean_auroc": 0.5760416666666666,
+        "std_auroc": 0.15649633360100024,
+        "n_repeats_ok": 20
+      },
+      {
+        "n": 28,
+        "mean_auroc": 0.5868333333333333,
+        "std_auroc": 0.11368804784242811,
+        "n_repeats_ok": 20
+      },
+      {
+        "n": 32,
+        "mean_auroc": 0.6776666666666668,
+        "std_auroc": 0.10230304775639347,
+        "n_repeats_ok": 20
+      },
+      {
+        "n": 35,
+        "mean_auroc": 0.6988888888888889,
+        "std_auroc": 0.09030583609558028,
+        "n_repeats_ok": 20
+      }
+    ],
+    "note": "Gains typically flatten near n\u224850 in breath ML; n=35 remains wide-CI territory."
+  },
+  "external_catalog": "runs/malaria_diagnostic/external/EXTERNAL_MALARIA_CATALOG.json",
+  "patient_scores": [
+    {
+      "subject_id": "Patient 1",
+      "label": 0,
+      "score": -0.4385251037691707,
+      "oof_signature_score": -0.43856571797423016,
+      "oof_sparse_score": 0.2350060143896478
+    },
+    {
+      "subject_id": "Patient 2",
+      "label": 0,
+      "score": 0.03828406027797856,
+      "oof_signature_score": 0.009859605570539278,
+      "oof_sparse_score": 0.11701456663685494
+    },
+    {
+      "subject_id": "Patient 3",
+      "label": 0,
+      "score": -0.4777398315803048,
+      "oof_signature_score": -0.4725969836576805,
+      "oof_sparse_score": 0.14842757449123034
+    },
+    {
+      "subject_id": "Patient 4",
+      "label": 0,
+      "score": -0.1529306996880459,
+      "oof_signature_score": -0.14070442652173895,
+      "oof_sparse_score": 0.5658979705822359
+    },
+    {
+      "subject_id": "Patient 5",
+      "label": 0,
+      "score": -0.44621541540266135,
+      "oof_signature_score": -0.44644283780321276,
+      "oof_sparse_score": 0.10742142951001059
+    },
+    {
+      "subject_id": "Patient 6",
+      "label": 0,
+      "score": 0.05900001202668865,
+      "oof_signature_score": 0.07807753356493244,
+      "oof_sparse_score": 0.22797809276759878
+    },
+    {
+      "subject_id": "Patient 7",
+      "label": 0,
+      "score": 0.07013589956191327,
+      "oof_signature_score": 0.062491831494895664,
+      "oof_sparse_score": 0.11670551383516796
+    },
+    {
+      "subject_id": "Patient 8",
+      "label": 0,
+      "score": -0.22473700243766762,
+      "oof_signature_score": -0.2157931238677341,
+      "oof_sparse_score": 0.13530714298280447
+    },
+    {
+      "subject_id": "Patient 9",
+      "label": 0,
+      "score": -0.013445866182678847,
+      "oof_signature_score": -0.005397751729807761,
+      "oof_sparse_score": 0.518231148234836
+    },
+    {
+      "subject_id": "Patient 10",
+      "label": 0,
+      "score": -0.27773432868129827,
+      "oof_signature_score": -0.2903973187680522,
+      "oof_sparse_score": 0.12541519301904047
+    },
+    {
+      "subject_id": "Patient 11",
+      "label": 0,
+      "score": -0.08087634626030855,
+      "oof_signature_score": -0.06827155617948909,
+      "oof_sparse_score": 0.7294536085617667
+    },
+    {
+      "subject_id": "Patient 12",
+      "label": 0,
+      "score": -0.48916633920064523,
+      "oof_signature_score": -0.47183263454299457,
+      "oof_sparse_score": 0.41226272671624675
+    },
+    {
+      "subject_id": "Patient 13",
+      "label": 0,
+      "score": 0.11971716056785178,
+      "oof_signature_score": 0.12393327037708146,
+      "oof_sparse_score": 0.10984801712207468
+    },
+    {
+      "subject_id": "Patient 14",
+      "label": 0,
+      "score": -0.33730339201892673,
+      "oof_signature_score": -0.31862187324874336,
+      "oof_sparse_score": 0.13039813109317183
+    },
+    {
+      "subject_id": "Patient 15",
+      "label": 0,
+      "score": -0.3771326962518228,
+      "oof_signature_score": -0.3698225446104884,
+      "oof_sparse_score": 0.14637866542184766
+    },
+    {
+      "subject_id": "Patient 16",
+      "label": 0,
+      "score": -0.23586940850163732,
+      "oof_signature_score": -0.23010860132831437,
+      "oof_sparse_score": 0.1352210362340499
+    },
+    {
+      "subject_id": "Patient 17",
+      "label": 0,
+      "score": -0.0056545321848007965,
+      "oof_signature_score": 0.005428155407930781,
+      "oof_sparse_score": 0.7497454754659619
+    },
+    {
+      "subject_id": "Patient 18",
+      "label": 0,
+      "score": -0.2818504730058507,
+      "oof_signature_score": -0.2737327065287424,
+      "oof_sparse_score": 0.2511118433132362
+    },
+    {
+      "subject_id": "Patient 19",
+      "label": 1,
+      "score": 0.010934167731250763,
+      "oof_signature_score": 0.007678298955947776,
+      "oof_sparse_score": 0.15505771004334856
+    },
+    {
+      "subject_id": "Patient 20",
+      "label": 1,
+      "score": -0.34012819498677294,
+      "oof_signature_score": -0.3340009533231574,
+      "oof_sparse_score": 0.9038652603642473
+    },
+    {
+      "subject_id": "Patient 21",
+      "label": 1,
+      "score": -0.1852330427292849,
+      "oof_signature_score": -0.17361589710326847,
+      "oof_sparse_score": 0.6407848076193746
+    },
+    {
+      "subject_id": "Patient 22",
+      "label": 1,
+      "score": -0.37823646840484787,
+      "oof_signature_score": -0.38097942035321575,
+      "oof_sparse_score": 0.5849837731304094
+    },
+    {
+      "subject_id": "Patient 23",
+      "label": 1,
+      "score": -0.47199679498455255,
+      "oof_signature_score": -0.4737490490323798,
+      "oof_sparse_score": 0.10022503278392876
+    },
+    {
+      "subject_id": "Patient 24",
+      "label": 1,
+      "score": -0.07612925380721974,
+      "oof_signature_score": -0.06280624607335879,
+      "oof_sparse_score": 0.889960809397822
+    },
+    {
+      "subject_id": "Patient 25",
+      "label": 1,
+      "score": 0.03481588170829419,
+      "oof_signature_score": 0.04247171584190026,
+      "oof_sparse_score": 0.7477844752549735
+    },
+    {
+      "subject_id": "Patient 26",
+      "label": 1,
+      "score": -0.1444277834419741,
+      "oof_signature_score": -0.13454528492835968,
+      "oof_sparse_score": 0.5888326240315582
+    },
+    {
+      "subject_id": "Patient 27",
+      "label": 1,
+      "score": 0.07730975337523104,
+      "oof_signature_score": 0.09683723617998322,
+      "oof_sparse_score": 0.5074070825766739
+    },
+    {
+      "subject_id": "Patient 28",
+      "label": 1,
+      "score": 0.19271489653779647,
+      "oof_signature_score": 0.17797177697222297,
+      "oof_sparse_score": 0.6288847705003126
+    },
+    {
+      "subject_id": "Patient 29",
+      "label": 1,
+      "score": 0.21617969520475613,
+      "oof_signature_score": 0.22335041471420478,
+      "oof_sparse_score": 0.5534068063811272
+    },
+    {
+      "subject_id": "Patient 30",
+      "label": 1,
+      "score": 0.0025317454798531565,
+      "oof_signature_score": 0.0008553711018458747,
+      "oof_sparse_score": 0.9288277583696352
+    },
+    {
+      "subject_id": "Patient 31",
+      "label": 1,
+      "score": 0.22941696055216892,
+      "oof_signature_score": 0.24585294204895847,
+      "oof_sparse_score": 0.2209614159354752
+    },
+    {
+      "subject_id": "Patient 32",
+      "label": 1,
+      "score": -0.4501844784541341,
+      "oof_signature_score": -0.44550210904422916,
+      "oof_sparse_score": 0.463159358579185
+    },
+    {
+      "subject_id": "Patient 33",
+      "label": 1,
+      "score": -0.2776019448566538,
+      "oof_signature_score": -0.26962371909135774,
+      "oof_sparse_score": 0.7460638909094377
+    },
+    {
+      "subject_id": "Patient 34",
+      "label": 1,
+      "score": -0.34651204439923206,
+      "oof_signature_score": -0.3280636618773559,
+      "oof_sparse_score": 0.98780373238546
+    },
+    {
+      "subject_id": "Patient 35",
+      "label": 1,
+      "score": -0.26400625392089055,
+      "oof_signature_score": -0.2879083209817429,
+      "oof_sparse_score": 0.06552318253498941
+    }
+  ],
+  "caveats": [
+    "ST000883 n\u224835 \u2014 AUROC CIs remain wide (JBR: curves flatten near n\u224850).",
+    "Schaber 2018: thioethers largely absent; terpenes (pinene/carene) are the remap unlock.",
+    "CSIRO CHMI and JID 2024 Malawi lack open intensity tables \u2014 catalog recorded for when deposits appear.",
+    "Fit-on-cohort sparse AUROC is a ceiling, not a transferable clinical claim.",
+    "Research enablement only \u2014 not a diagnostic device claim."
+  ],
+  "comparison_to_baseline_atlas_map": {
+    "n_voc_features_atlas": 17,
+    "n_voc_features_malaria_lit": 25,
+    "newly_mapped_vocs": [
+      "alpha_pinene",
+      "cyclohexanone",
+      "delta_3_carene",
+      "methyl_undecane",
+      "tridecane",
+      "trimethyl_alkene",
+      "trimethyl_decane",
+      "xylene"
+    ]
+  }
+}

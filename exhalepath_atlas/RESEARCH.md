@@ -100,6 +100,17 @@ Do **not** merge wholesale draft PRs #13–#19 into `main`. This branch cherry-p
 
 Industry diligence pack: `voc eval-industry-pack` → `data/knowledge/industry_pack/` (`INDUSTRY_PACK.md`, `BUYER_BRIEF.md`).
 
+## Malaria metric upgrade (`voc eval-malaria-diagnostic`)
+
+Literature-guided unlocks on ST000883 (Schaber 2018 / Berna 2015):
+
+1. **Peak remaps** — α-pinene, 3-carene, cyclohexanone, tridecane, methyl-alkanes (+ thioether aliases)  
+2. **Nested sparse** (inner FS) vs **transferable hybrid+lit signature**  
+3. **Fixed-sensitivity** operating points with bootstrap spec CI95  
+4. **External catalog + learning curve** — CSIRO CHMI / JID 2024 noted; open intensity table still only ST000883 (n=35)
+
+Latest archived report: `data/knowledge/malaria_diagnostic/MALARIA_DIAGNOSTIC_UPGRADE.md`.
+
 ## Current results on bundled patient GC-MS (regenerate anytime)
 
 `voc eval-patient-diagnostic --benchmark --study ST000883`

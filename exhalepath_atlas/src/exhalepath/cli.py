@@ -837,6 +837,67 @@ def eval_lit_compare_cmd(
     rprint(f"  report: {out_dir / 'LITERATURE_COMPARE.md'}")
 
 
+@app.command("eval-malaria-diagnostic")
+def eval_malaria_diagnostic_cmd(
+    out_dir: Path = typer.Option(Path("runs/malaria_diagnostic")),
+    feature_map: str = typer.Option(
+        "malaria_lit",
+        "--feature-map",
+        help="atlas | malaria_lit (terpene/thioether/alkane remaps)",
+    ),
+    max_features: int = typer.Option(8, "--max-features"),
+    seed: int = typer.Option(42, "--seed"),
+    n_splits: int = typer.Option(5, "--n-splits"),
+    external_matrix: Optional[Path] = typer.Option(
+        None, "--external-matrix", help="Optional external patient×VOC CSV"
+    ),
+    external_labels: Optional[Path] = typer.Option(
+        None, "--external-labels", help="Optional external labels CSV (0/1)"
+    ),
+):
+    """
+    Malaria upgrade pack: literature peak remaps + nested sparse vs transferable
+    signature + fixed-sens curves + learning curve / external catalog.
+    """
+    from .eval.malaria_diagnostic import evaluate_malaria_diagnostic
+
+    if feature_map not in {"atlas", "malaria_lit"}:
+        raise typer.BadParameter("feature_map must be atlas|malaria_lit")
+    report = evaluate_malaria_diagnostic(
+        out_dir=out_dir,
+        feature_map=feature_map,
+        max_features=max_features,
+        seed=seed,
+        n_splits=n_splits,
+        external_matrix=external_matrix,
+        external_labels=external_labels,
+    )
+    t = report.get("transferable_signature") or {}
+    sk = report.get("fit_on_cohort_sparse_kbest") or {}
+    cmp_ = report.get("comparison_to_baseline_atlas_map") or {}
+    rprint("[bold]Malaria diagnostic upgrade[/bold]")
+    rprint(
+        f"  features: atlas={cmp_.get('n_voc_features_atlas')} → "
+        f"malaria_lit={cmp_.get('n_voc_features_malaria_lit')} "
+        f"(+{len(cmp_.get('newly_mapped_vocs') or [])})"
+    )
+    rprint(
+        f"  transferable nested AUROC={t.get('nested_auroc')} "
+        f"gap={t.get('optimism_gap')}"
+    )
+    rprint(
+        f"  sparse nested AUROC={sk.get('mean_test_auroc')} "
+        f"gap={sk.get('optimism_gap')} "
+        f"feats={sk.get('consensus_features')}"
+    )
+    for p in (t.get("fixed_sensitivity") or {}).get("points") or []:
+        rprint(
+            f"  fixed-sens≥{p.get('target_sensitivity')}: "
+            f"spec={p.get('specificity')} CI={p.get('specificity_ci95')}"
+        )
+    rprint(f"  report → {out_dir / 'MALARIA_DIAGNOSTIC_UPGRADE.md'}")
+
+
 @app.command("eval-industry-pack")
 def eval_industry_pack_cmd(
     out_dir: Path = typer.Option(Path("runs/industry_pack")),
@@ -2118,6 +2179,7 @@ def main(argv: Optional[list[str]] = None):
         "export-paper-pack",
         "eval-coverage",
         "eval-lit-compare",
+        "eval-malaria-diagnostic",
         "eval-industry-pack",
         "lock-split",
         "score-sample",
