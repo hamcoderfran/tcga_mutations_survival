@@ -1,17 +1,28 @@
 # Quick start — one line in, full visual out
 
 ```bash
-pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
+pip install "voc-breath[stack] @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 ```
+
+Full guide: [USAGE.md](USAGE.md).
 
 ## Great Disease Stack (20 models fused)
 
 ```bash
 voc stack "depression" -l brain -c obesity --age 24 --sex male
 # → STACK_REPORT.html + multi-model consensus
+voc patient "35M with schizophrenia, smokes, on olanzapine, BMI 32"
 ```
 
-See [great_disease_stack/README.md](great_disease_stack/README.md).
+## GC-MS patient diagnostic research
+
+```bash
+voc eval-patient-diagnostic --study ST000883          # AUROC + locked splits + paper pack
+voc eval-patient-diagnostic --benchmark               # hybrid/stack/literature comparison
+voc lock-split --study ST000883                       # preregistration-style SHA256 folds
+```
+
+See [RESEARCH.md](RESEARCH.md) and [great_disease_stack/README.md](great_disease_stack/README.md).
 
 ## One-line prediction (recommended)
 
@@ -43,6 +54,7 @@ voc "COPD" -l lung --no-save
 
 ```bash
 voc eval-implementation-readiness
+voc eval-stack-holdout
 ```
 
 Research / hypothesis tool only — not a medical device.

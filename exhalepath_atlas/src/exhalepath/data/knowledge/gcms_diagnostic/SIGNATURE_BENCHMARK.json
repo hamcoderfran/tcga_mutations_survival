@@ -1,0 +1,61 @@
+{
+  "generated_utc": "2026-08-02T02:20:34.159811+00:00",
+  "study_id": "ST000883",
+  "rows": [
+    {
+      "signature": "hybrid",
+      "method": "cosine",
+      "auroc": 0.5686274509803921,
+      "nested_auroc": 0.5333333333333333,
+      "logistic_nested": 0.7333333333333334,
+      "auprc": 0.5309674935234943,
+      "ok": true
+    },
+    {
+      "signature": "hybrid",
+      "method": "dot",
+      "auroc": 0.5849673202614379,
+      "nested_auroc": 0.5833333333333334,
+      "logistic_nested": 0.7333333333333334,
+      "auprc": 0.6764877154478908,
+      "ok": true
+    },
+    {
+      "signature": "stack",
+      "method": "cosine",
+      "auroc": 0.5751633986928104,
+      "nested_auroc": 0.5833333333333334,
+      "logistic_nested": 0.7333333333333334,
+      "auprc": 0.5183054771168802,
+      "ok": true
+    },
+    {
+      "signature": "stack",
+      "method": "dot",
+      "auroc": 0.5490196078431373,
+      "nested_auroc": 0.5499999999999999,
+      "logistic_nested": 0.7333333333333334,
+      "auprc": 0.6091906236277433,
+      "ok": true
+    },
+    {
+      "signature": "literature",
+      "method": "cosine",
+      "auroc": 0.6601307189542485,
+      "nested_auroc": 0.6333333333333333,
+      "logistic_nested": 0.7333333333333334,
+      "auprc": 0.7050055245852915,
+      "ok": true
+    },
+    {
+      "signature": "literature",
+      "method": "dot",
+      "auroc": 0.696078431372549,
+      "nested_auroc": 0.65,
+      "logistic_nested": 0.7333333333333334,
+      "auprc": 0.7469791709763443,
+      "ok": true
+    }
+  ],
+  "takeaway": "Data-fit nested logistic is an upper reference on the same mapped VOC features. Mechanism signatures are transferable templates; literature panels can score higher when they encode the same cohort's published directions (partly circular). Report nested AUROC + optimism gap."
+}

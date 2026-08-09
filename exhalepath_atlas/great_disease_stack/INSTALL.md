@@ -2,10 +2,12 @@
 
 Research / hypothesis-generation tool. **Not a medical device.**
 
+**Full usage guide:** [../USAGE.md](../USAGE.md)
+
 ## One-line install (from GitHub)
 
 ```bash
-pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
+pip install "voc-breath[stack] @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 ```
 
 Optional extras:

@@ -1,6 +1,6 @@
 # Is this SOTA / cutting edge?
 
-**Short answer:** Among open mechanism-aware disease→exhaled-VOC systems, this stack is built to be **second to none for comprehensive + zero-shot hypothesis generation**. It is still **not** clinical diagnostic SOTA (no locked multi-site GC-MS/PTR patient ROC claim).
+**Short answer:** Cutting-edge as an *open multi-model systems breath-hypothesis + GC-MS research-enablement* stack. **Not** clinical diagnostic SOTA (no locked multi-site GC-MS/PTR patient ROC claim).
 
 ## What “SOTA” would mean here
 
@@ -8,6 +8,7 @@
 |---|---|
 | Best published ROC-AUC on a locked multi-site GC-MS/PTR patient cohort | **No** — we do not claim this |
 | Best open mechanism-aware disease→exhaled-VOC reasoning stack | **Strong / novel** — 20-head adaptive fusion |
+| Patient-level GC-MS diagnostic *research harness* (AUROC, locked splits, paper pack) | **Yes — shipped** (`voc eval-patient-diagnostic`) |
 | Beats hybrid ExhalePath alone on public directional panels | **Yes** on current public holdouts (see below) |
 | Useful zero-shot VOC directions for unseen/rare diseases | **Yes** — pathway→VOC projection + literature theme evidence + phenotype/MONDO |
 
@@ -27,6 +28,18 @@ Anti-dilution fusion closed the earlier priority-10 regression (malaria hexanal 
 
 > Directional panels can still partially overlap atlas priors — treat as systems-level evidence, not clinical validation.
 
+## GC-MS / diagnostic research enablement
+
+The scarce public good is not another optimistic directional %. It is **patient-level**, leakage-aware evaluation that other labs can cite and extend.
+
+```bash
+voc eval-patient-diagnostic --study ST000883 --signature hybrid
+voc eval-patient-diagnostic --all --signature stack
+voc lock-split --study ST000883
+```
+
+Reports land in `runs/patient_diagnostic/` and under `data/knowledge/gcms_diagnostic/`. See [RESEARCH.md](../RESEARCH.md) and [GCMS_DIAGNOSTIC.md](GCMS_DIAGNOSTIC.md).
+
 ## Cutting-edge stack (v2 / voc-breath 1.6)
 
 1. **Adaptive mode-aware fusion** — atlas vs zero-shot family multipliers  
@@ -34,37 +47,38 @@ Anti-dilution fusion closed the earlier priority-10 regression (malaria hexanal 
 3. **Epistemic UQ** — per-VOC weighted std + approximate 90% CI  
 4. **Calibrated fusion weights** — `fusion_weights_calibrated.json`  
 5. **`zero_shot_evidence`** — `expected_voc_direction` + mechanism themes  
-6. **Hardened `zero_shot_mechanism`** — pathway_bias / gene-seeded `voc_effects` projection  
-7. **`phenotype_mondo`** — free-text phenotype / MONDO → VOC themes  
-8. **`counterfactual_null`** — deterministic null shrinkage  
-9. **`meta_ensemble`** — hybrid × literature sign agreement  
-10. **Expanded zero-shot prior pack** — 34 curated rare/novel disease entries  
+6. Hardened **`zero_shot_mechanism`** — pathway_bias / gene-seeded `voc_effects` projection  
+7. **`phenotype_mondo`**, **`counterfactual_null`**, **`meta_ensemble`**  
+8. Expanded zero-shot prior pack (34 curated rare/novel disease entries)  
+9. Patient-level GC-MS matrices + AUROC/AUPRC/sens/spec + locked SHA256 splits  
+10. Paper-ready TRIPOD+AI / BreathVOC checklist stubs  
 
 ## Why not clinical SOTA (yet)
 
-1. No prospective patient-level GC-MS/PTR holdout with locked labels  
-2. Sci Data panels are cross-cohort differentials, not absolute healthy-controlled ppb  
-3. Literature/priority panels can overlap atlas priors → optimistic directional scores  
-4. Human-GEM / OPERA / PrimeKG integrations remain **proxy packs**, not full external binaries  
-5. No head-to-head vs published sensor-array / cohort ML baselines on identical splits  
+1. No prospective multi-site GC-MS/PTR trial with locked external labels  
+2. Bundled patient GC-MS n is small (ST000883 ≈35; ST000587 ≈23)  
+3. Sci Data panels are cross-cohort differentials, not absolute healthy-controlled ppb  
+4. Literature/priority panels can overlap atlas priors → optimistic directional scores  
+5. Human-GEM / OPERA / PrimeKG integrations remain **proxy packs**  
+6. Confounders (smoking/age) often missing from public MW factors  
 
 ## Why it is cutting-edge (open research)
 
-- 20-model fusion across VOC quantity, genetics, flux, ADME/PBPK, microbiome, signaling, cell state, comorbidity, pharmacology, phenotype, null, and meta  
+- 20-model fusion across VOC quantity + systems biology  
 - Mode-aware anti-dilution fusion with epistemic uncertainty  
-- Naturalistic PatientTemplate → stack for diverse clinical text  
-- Dedicated zero-shot evidence channel (not just atlas copy)  
+- Naturalistic PatientTemplate → stack  
+- Dedicated zero-shot evidence channel  
+- Patient-level GC-MS diagnostic research harness  
 - One-pip installable package with offline priors + calibrated weights  
 
 ## Packaging for others
 
 ```bash
-pip install "voc-breath @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
+pip install "voc-breath[stack] @ git+https://github.com/hamcoderfran/tcga_mutations_survival.git#subdirectory=exhalepath_atlas"
 voc patient "…"
 voc stack --nl "Maple syrup urine disease, genes BCKDHA BCKDHB"
+voc eval-patient-diagnostic --study ST000883
 voc eval-stack-holdout
-# optional recalibration
-python scripts/calibrate_stack_fusion.py
 ```
 
-See [INSTALL.md](INSTALL.md) and [README.md](README.md).
+See [USAGE.md](../USAGE.md), [INSTALL.md](INSTALL.md), and [RESEARCH.md](../RESEARCH.md).

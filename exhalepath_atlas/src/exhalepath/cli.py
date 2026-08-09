@@ -484,6 +484,172 @@ def eval_stack_holdout_cmd(
     rprint(f"  report → {out_dir / 'STACK_HOLDOUT_REPORT.md'}")
 
 
+@app.command("eval-patient-diagnostic")
+def eval_patient_diagnostic_cmd(
+    study: str = typer.Option(
+        "ST000883",
+        "--study",
+        "-s",
+        help="Bundled MW study id (ST000883 malaria GC-MS, ST000587 HF EBC)",
+    ),
+    all_studies: bool = typer.Option(
+        False, "--all", help="Run all bundled diagnostic studies"
+    ),
+    benchmark: bool = typer.Option(
+        False,
+        "--benchmark",
+        help="Compare hybrid/stack/literature × cosine/dot on one study",
+    ),
+    signature: str = typer.Option(
+        "hybrid",
+        "--signature",
+        help="Disease signature source: hybrid | stack | literature",
+    ),
+    method: str = typer.Option("cosine", "--method", help="cosine | dot"),
+    out_dir: Path = typer.Option(Path("runs/patient_diagnostic")),
+    seed: int = typer.Option(42, "--seed"),
+    n_splits: int = typer.Option(5, "--n-splits"),
+):
+    """
+    Patient-level GC-MS diagnostic research eval (AUROC / sens / spec / locked splits).
+
+    Uses bundled Metabolomics Workbench patient×VOC matrices. Writes a paper-ready
+    pack (ROC, TRIPOD+AI checklist stub, split SHA256). Research enablement only —
+    not a clinical validation claim.
+    """
+    from .eval.patient_diagnostic import (
+        evaluate_patient_diagnostic,
+        run_multi_study_diagnostic,
+        run_signature_benchmark,
+    )
+
+    if signature not in {"hybrid", "stack", "literature"}:
+        raise typer.BadParameter("signature must be hybrid|stack|literature")
+    if method not in {"cosine", "dot"}:
+        raise typer.BadParameter("method must be cosine|dot")
+
+    if benchmark:
+        payload = run_signature_benchmark(study_id=study, out_dir=out_dir / "benchmark")
+        rprint("[bold]Signature benchmark[/bold]")
+        for row in payload.get("rows") or []:
+            if row.get("ok"):
+                rprint(
+                    f"  {row['signature']}/{row['method']}: "
+                    f"AUROC={row.get('auroc'):.3f} nested={row.get('nested_auroc'):.3f}"
+                )
+            else:
+                rprint(f"  {row['signature']}/{row['method']}: ERROR {row.get('error')}")
+        rprint(f"  report → {out_dir / 'benchmark' / 'SIGNATURE_BENCHMARK.md'}")
+        return
+
+    if all_studies:
+        summary = run_multi_study_diagnostic(
+            signature_source=signature,  # type: ignore[arg-type]
+            out_dir=out_dir,
+        )
+        rprint("[bold]Multi-study patient diagnostic[/bold]")
+        for s in summary.get("studies") or []:
+            if s.get("ok"):
+                rprint(
+                    f"  {s['study_id']} ({s['disease_id']}): "
+                    f"AUROC={s.get('auroc')} nested={s.get('nested_auroc')} "
+                    f"logistic_nested={s.get('logistic_nested_auroc')}"
+                )
+            else:
+                rprint(f"  {s['study_id']}: ERROR {s.get('error')}")
+        rprint(f"  summary → {out_dir / 'MULTI_STUDY_SUMMARY.md'}")
+        return
+
+    report = evaluate_patient_diagnostic(
+        study_id=study,
+        signature_source=signature,  # type: ignore[arg-type]
+        score_method=method,  # type: ignore[arg-type]
+        seed=seed,
+        n_splits=n_splits,
+        out_dir=out_dir / study,
+    )
+    m = report.get("metrics") or {}
+    nested = report.get("nested") or {}
+    rprint("[bold]Patient-level GC-MS diagnostic[/bold]")
+    rprint(f"  study={report.get('study_id')} disease={report.get('disease_id')}")
+    rprint(
+        f"  n={m.get('n_subjects')} (pos={m.get('n_positive')} neg={m.get('n_negative')})"
+    )
+    rprint(
+        f"  AUROC={m.get('auroc')}  CI95={m.get('auroc_ci95')}  AUPRC={m.get('auprc')}"
+    )
+    rprint(
+        f"  sens/spec={m.get('sensitivity')}/{m.get('specificity')}  "
+        f"confusion={m.get('confusion')}"
+    )
+    rprint(
+        f"  nested sig AUROC={nested.get('mean_test_auroc')}  "
+        f"optimism_gap={nested.get('optimism_gap')}"
+    )
+    log_b = (nested.get("logistic_baseline") or {}).get("mean_test_auroc")
+    rprint(f"  nested logistic AUROC={log_b}")
+    rprint(f"  split sha256={(nested.get('content_sha256') or '')[:20]}…")
+    rprint(f"  report → {out_dir / study / 'PATIENT_DIAGNOSTIC_REPORT.md'}")
+
+
+@app.command("lock-split")
+def lock_split_cmd(
+    study: str = typer.Option("ST000883", "--study", "-s"),
+    strategy: str = typer.Option("stratified_kfold", "--strategy"),
+    n_splits: int = typer.Option(5, "--n-splits"),
+    seed: int = typer.Option(42, "--seed"),
+    out: Path = typer.Option(
+        Path("data/knowledge/gcms_splits/ST000883_split_v1.json"), "--out"
+    ),
+):
+    """Write a preregistration-style locked patient-level split manifest (SHA256)."""
+    from .gcms import load_mw_patient_matrix, lock_split, verify_split_manifest
+
+    matrix = load_mw_patient_matrix(study)
+    # default out path per study if user left the malaria default while changing study
+    if out.name.startswith("ST000883") and study != "ST000883":
+        out = Path("data/knowledge/gcms_splits") / f"{study}_split_v1.json"
+    manifest = lock_split(
+        matrix, strategy=strategy, n_splits=n_splits, seed=seed, out_path=out
+    )
+    problems = verify_split_manifest(manifest, matrix)
+    rprint(f"[bold]Locked split[/bold] → {out}")
+    rprint(f"  strategy={manifest.strategy} folds={manifest.n_splits} seed={manifest.seed}")
+    rprint(f"  sha256={manifest.content_sha256}")
+    if problems:
+        rprint(f"  [yellow]integrity issues:[/yellow] {problems}")
+    else:
+        rprint("  integrity: OK")
+
+
+@app.command("score-sample")
+def score_sample_cmd(
+    disease: str = typer.Argument(..., help="Disease id/name for signature"),
+    voc_json: str = typer.Option(
+        ...,
+        "--vocs",
+        help='JSON object of voc_id→value (log2fc or relative intensity), e.g. \'{"acetone":0.4}\'',
+    ),
+    signature: str = typer.Option("hybrid", "--signature"),
+    method: str = typer.Option("cosine", "--method"),
+):
+    """Score an observed VOC vector against a disease signature (research template match)."""
+    import json as _json
+
+    from .gcms import disease_signature, score_observed_vector
+
+    observed = _json.loads(voc_json)
+    if not isinstance(observed, dict):
+        raise typer.BadParameter("--vocs must be a JSON object")
+    sig = disease_signature(disease, source=signature)  # type: ignore[arg-type]
+    result = score_observed_vector(observed, sig, method=method)  # type: ignore[arg-type]
+    rprint("[bold]Sample signature score[/bold]")
+    rprint(f"  disease={disease} signature={signature} method={method}")
+    rprint(f"  score={result.get('score')} overlap={result.get('n_overlap')}")
+    if result.get("vocs_used"):
+        rprint(f"  vocs={', '.join(result['vocs_used'][:12])}")
+
+
 @app.command("eval-public-breath")
 def eval_public_breath_cmd(
     out_dir: Path = typer.Option(Path("runs/public_breath_eval")),
@@ -1734,6 +1900,9 @@ def main(argv: Optional[list[str]] = None):
         "harvest-public-breath",
         "eval-public-breath",
         "eval-stack-holdout",
+        "eval-patient-diagnostic",
+        "lock-split",
+        "score-sample",
         "harvest-clinical-comorbidity",
         "eval-comorbidity-clinical",
         "eval-vision",

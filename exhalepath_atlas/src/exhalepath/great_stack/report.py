@@ -143,6 +143,70 @@ def save_stack_report(result: StackResult, out_dir: Path) -> dict[str, Path]:
             )
     paths["csv"] = cp
 
+    # Researcher exports: GraphPad long table + literature overlay + Methods
+    from ..viz.analysis_export import (
+        literature_overlay,
+        methods_markdown,
+        next_experiments,
+        write_graphpad_long_csv,
+        write_literature_overlay_csv,
+    )
+
+    pred_map = {v.voc_id: float(v.fused_log2fc) for v in result.fused_vocs}
+    # also include hybrid votes for coverage
+    for mo in result.model_outputs:
+        if mo.model_id == "exhalepath_hybrid":
+            for sig in mo.voc_signals:
+                pred_map.setdefault(sig.voc_id, float(sig.log2fc))
+    overlay = literature_overlay(result.disease_id, pred_map)
+    # try query disease name too
+    if not overlay.get("available"):
+        overlay = literature_overlay(result.query.disease, pred_map)
+    lit_path = write_literature_overlay_csv(overlay, out_dir / "literature_overlay.csv")
+    paths["literature_csv"] = lit_path
+    (out_dir / "literature_overlay.json").write_text(json.dumps(overlay, indent=2))
+    paths["literature_json"] = out_dir / "literature_overlay.json"
+
+    gp_rows = [
+        {
+            "group": result.disease_id,
+            "voc": v.name,
+            "metric": "fused_log2fc",
+            "estimate": f"{v.fused_log2fc:.6f}",
+            "ci_low": f"{v.ci_low_log2fc:.6f}",
+            "ci_high": f"{v.ci_high_log2fc:.6f}",
+            "source": "great_disease_stack",
+            "confidence": f"{v.fused_confidence:.4f}",
+        }
+        for v in result.fused_vocs
+    ]
+    paths["graphpad_csv"] = write_graphpad_long_csv(gp_rows, out_dir / "graphpad_voc_long.csv")
+
+    mean_epi = result.summary.get("mean_epistemic_std")
+    tips = next_experiments(
+        top_vocs=[v.voc_id for v in result.fused_vocs[:8]],
+        overlay=overlay,
+        mean_epistemic=float(mean_epi) if mean_epi is not None else None,
+        n_models_ok=result.summary.get("n_models_ok"),
+        n_models_total=result.summary.get("n_models_total"),
+    )
+    methods = methods_markdown(
+        tool="voc stack (Great Disease Stack)",
+        disease=result.disease_name,
+        location=str(result.location.get("name") or result.query.location or ""),
+        model_version=str(result.summary.get("fusion_method") or "stack-1.6"),
+        extra_bullets=[
+            f"Models OK: {result.summary.get('n_models_ok')}/{result.summary.get('n_models_total')}.",
+            f"Zero-shot regime: {result.summary.get('zero_shot_mode')}.",
+            f"Mean epistemic std: {result.summary.get('mean_epistemic_std')}.",
+        ],
+    )
+    (out_dir / "METHODS.md").write_text(methods)
+    paths["methods"] = out_dir / "METHODS.md"
+    nex = ["# Next experiments", ""] + [f"- {t}" for t in tips] + [""]
+    (out_dir / "NEXT_EXPERIMENTS.md").write_text("\n".join(nex))
+    paths["next_experiments"] = out_dir / "NEXT_EXPERIMENTS.md"
+
     # model status table
     mp = out_dir / "model_status.csv"
     with mp.open("w", newline="") as f:
@@ -239,12 +303,14 @@ def save_stack_report(result: StackResult, out_dir: Path) -> dict[str, Path]:
         "",
         "## Fused VOC biomarkers",
         "",
-        "| Rank | VOC | log2fc | Δppb | Conf | Agree |",
-        "|---|---|---:|---:|---:|---:|",
+        "| Rank | VOC | log2fc | 90% CI | epi σ | Δppb | Conf | Agree |",
+        "|---|---|---:|---|---:|---:|---:|---:|",
     ]
     for i, v in enumerate(result.fused_vocs, 1):
         md.append(
-            f"| {i} | {v.name} | {v.fused_log2fc:+.3f} | {v.fused_delta_ppb:+.2f} | "
+            f"| {i} | {v.name} | {v.fused_log2fc:+.3f} | "
+            f"[{v.ci_low_log2fc:+.2f}, {v.ci_high_log2fc:+.2f}] | "
+            f"{v.epistemic_std:.2f} | {v.fused_delta_ppb:+.2f} | "
             f"{v.fused_confidence:.2f} | {v.n_models_agreeing} |"
         )
     md += ["", "## Models", ""]
@@ -257,7 +323,43 @@ def save_stack_report(result: StackResult, out_dir: Path) -> dict[str, Path]:
         md += ["", f"## Aspect: {kind}", ""]
         for h in hits[:10]:
             md.append(f"- **{h.name}** (`{h.id}`) score={h.score:.3f}")
-    md += ["", "![Dashboard](stack_dashboard.png)", ""]
+
+    if overlay.get("available"):
+        md += [
+            "",
+            "## Literature overlay (published directional panels)",
+            "",
+            f"Directional agreement: **{overlay.get('n_agree')}/{overlay.get('n_compared')}** "
+            f"({(100 * (overlay.get('directional_accuracy') or 0)):.0f}%)",
+            "",
+            "| VOC | Literature | Predicted | Agree |",
+            "|---|---:|---:|:---:|",
+        ]
+        for r in overlay.get("rows") or []:
+            pred = "—" if r["predicted_log2fc"] is None else f"{r['predicted_log2fc']:+.2f}"
+            lit = f"{r['literature_log2fc']:+.2f}"
+            ag = "—" if r["agree"] is None else ("yes" if r["agree"] else "no")
+            md.append(f"| {r['voc_id']} | {lit} | {pred} | {ag} |")
+        if overlay.get("refs"):
+            md += ["", "### References", ""]
+            for ref in overlay["refs"]:
+                doi = ref.get("doi") or ""
+                title = ref.get("title") or ""
+                year = ref.get("year") or ""
+                md.append(f"- {title} ({year}) — `{doi}`")
+        md += ["", f"> {overlay.get('note')}", ""]
+
+    md += ["", "## Next experiments", ""]
+    for t in tips:
+        md.append(f"- {t}")
+    md += [
+        "",
+        "See also `METHODS.md`, `NEXT_EXPERIMENTS.md`, `graphpad_voc_long.csv`, "
+        "`literature_overlay.csv`.",
+        "",
+        "![Dashboard](stack_dashboard.png)",
+        "",
+    ]
     if "heatmap" in paths:
         md += ["![Votes](model_vote_heatmap.png)", ""]
     md += ["", "> Research / hypothesis-generation only — not a medical device.", ""]
@@ -273,9 +375,34 @@ def save_stack_report(result: StackResult, out_dir: Path) -> dict[str, Path]:
             "<tr>"
             f"<td>{i}</td><td>{html.escape(v.name)}</td>"
             f"<td style='color:{tone}'>{v.fused_log2fc:+.3f}</td>"
+            f"<td>[{v.ci_low_log2fc:+.2f}, {v.ci_high_log2fc:+.2f}]</td>"
+            f"<td>{v.epistemic_std:.2f}</td>"
             f"<td>{v.fused_delta_ppb:+.2f}</td><td>{v.fused_confidence:.2f}</td>"
             f"<td>{v.n_models_agreeing}</td></tr>"
         )
+    lit_parts: list[str] = []
+    if overlay.get("available"):
+        for r in overlay.get("rows") or []:
+            pred_s = "—" if r["predicted_log2fc"] is None else f"{r['predicted_log2fc']:+.2f}"
+            ag_s = "—" if r["agree"] is None else ("yes" if r["agree"] else "no")
+            lit_parts.append(
+                "<tr>"
+                f"<td>{html.escape(str(r['voc_id']))}</td>"
+                f"<td>{r['literature_log2fc']:+.2f}</td>"
+                f"<td>{pred_s}</td><td>{ag_s}</td></tr>"
+            )
+    lit_rows = "".join(lit_parts)
+    tip_html = "".join(f"<li>{html.escape(t)}</li>" for t in tips)
+    lit_card = ""
+    if overlay.get("available"):
+        lit_card = f"""
+<div class="card"><h2>Literature overlay</h2>
+<p>Directional agreement: <b>{overlay.get('n_agree')}/{overlay.get('n_compared')}</b>
+ ({100 * (overlay.get('directional_accuracy') or 0):.0f}%)</p>
+<table><thead><tr><th>VOC</th><th>Literature</th><th>Predicted</th><th>Agree</th></tr></thead>
+<tbody>{lit_rows}</tbody></table>
+<p style="color:#667066;font-size:.85rem">{html.escape(str(overlay.get('note') or ''))}</p>
+</div>"""
     model_rows = "".join(
         f"<tr><td><code>{html.escape(m.model_id)}</code></td><td>{html.escape(m.family)}</td>"
         f"<td>{html.escape(m.aspect)}</td><td>{m.weight:.2f}</td><td>{m.status}</td>"
@@ -309,8 +436,12 @@ img {{ width:100%; border-radius:8px; border:1px solid #d5dcd6; }}
 </div>
 <div class="card"><img alt="dashboard" src="data:image/png;base64,{dash_b64}"/></div>
 <div class="card"><h2>Fused VOC biomarkers</h2>
-<table><thead><tr><th>#</th><th>VOC</th><th>log2fc</th><th>Δppb</th><th>Conf</th><th>Agree</th></tr></thead>
+<table><thead><tr><th>#</th><th>VOC</th><th>log2fc</th><th>90% CI</th><th>epi σ</th><th>Δppb</th><th>Conf</th><th>Agree</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>
+{lit_card}
+<div class="card"><h2>Next experiments</h2><ul>{tip_html}</ul>
+<p style="font-size:.88rem">Exports: <code>METHODS.md</code>, <code>graphpad_voc_long.csv</code>, <code>literature_overlay.csv</code></p>
+</div>
 <div class="card"><h2>Model stack</h2>
 <table><thead><tr><th>Model</th><th>Family</th><th>Aspect</th><th>Weight</th><th>Status</th><th>VOCs</th></tr></thead>
 <tbody>{model_rows}</tbody></table></div>

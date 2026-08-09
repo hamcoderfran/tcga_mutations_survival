@@ -8,17 +8,18 @@ voc "depression" -l brain -c obesity --age 24 --sex male
 # → terminal panel + runs/voc_…/REPORT.html + dashboard.png
 ```
 
-See [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.5.1**.
+See [USAGE.md](USAGE.md) · [QUICKSTART.md](QUICKSTART.md). Package: **`voc-breath`** · command: **`voc`** · version **1.6.0**.
 
 Install / SOTA notes: [great_disease_stack/INSTALL.md](great_disease_stack/INSTALL.md) · [great_disease_stack/SOTA.md](great_disease_stack/SOTA.md).
 
-**20-model Great Disease Stack** (VOC + genetics + flux + ADME + microbiome + …):
+**20-model Great Disease Stack** + **GC-MS patient diagnostic research** (AUROC / locked splits):
 
 ```bash
 voc stack "depression" -l brain -c obesity --age 24 --sex male
+voc eval-patient-diagnostic --study ST000883
 ```
 
-Details: [great_disease_stack/README.md](great_disease_stack/README.md).
+Details: [great_disease_stack/README.md](great_disease_stack/README.md) · [RESEARCH.md](RESEARCH.md).
 
 **Fully integrated exhaled VOC biomarker platform** — priority datasources **1–14**, comorbidities, whole-body physiology, zero-shot mechanism transfer, and mechanism explainability across **100+ diseases**.
 

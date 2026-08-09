@@ -265,6 +265,102 @@ code {{ background: #f0ebe3; padding: .1rem .35rem; border-radius: 4px; }}
     except OSError:
         (Path("runs") / "LATEST.txt").write_text(str(out_dir.resolve()) + "\n")
 
+    # Research-facing exports (literature overlay, Methods, Prism/GraphPad long CSV)
+    from .analysis_export import (
+        literature_overlay,
+        methods_markdown,
+        next_experiments,
+        write_graphpad_long_csv,
+        write_literature_overlay_csv,
+    )
+
+    pred_map = {
+        str(row.get("voc_id") or row.get("name")): float(row["log2_fold_change"])
+        for _, row in panel.iterrows()
+        if "log2_fold_change" in row and row.get("voc_id") is not None
+    }
+    # panel may use index; also pull from top_vocs
+    for p in report.top_vocs:
+        pred_map[p.voc_id] = float(p.log2_fold_change)
+    overlay = literature_overlay(report.disease_id, pred_map)
+    if not overlay.get("available"):
+        overlay = literature_overlay(report.disease_name, pred_map)
+    paths["literature_csv"] = write_literature_overlay_csv(
+        overlay, out_dir / "literature_overlay.csv"
+    )
+    (out_dir / "literature_overlay.json").write_text(json.dumps(overlay, indent=2))
+    paths["literature_json"] = out_dir / "literature_overlay.json"
+
+    gp_rows = []
+    for p in report.top_vocs:
+        gp_rows.append(
+            {
+                "group": report.disease_id,
+                "voc": p.name,
+                "metric": "log2_fold_change",
+                "estimate": f"{p.log2_fold_change:.6f}",
+                "ci_low": f"{getattr(p, 'ci_low_log2fc', getattr(p, 'ci_low_ppb', ''))}",
+                "ci_high": f"{getattr(p, 'ci_high_log2fc', getattr(p, 'ci_high_ppb', ''))}",
+                "source": "exhalepath_biomarker",
+                "confidence": f"{p.confidence:.4f}",
+            }
+        )
+    paths["graphpad_csv"] = write_graphpad_long_csv(
+        gp_rows, out_dir / "graphpad_voc_long.csv"
+    )
+    tips = next_experiments(
+        top_vocs=[p.voc_id for p in report.top_vocs[:8]],
+        overlay=overlay,
+    )
+    (out_dir / "METHODS.md").write_text(
+        methods_markdown(
+            tool="voc / ExhaleBiomarkerEngine",
+            disease=report.disease_name,
+            location=str(report.location.get("name") or report.location_query or ""),
+            model_version=report.model_version,
+            extra_bullets=[
+                f"Zero-shot: {bool(meta.get('zero_shot'))} mode={meta.get('zero_shot_mode')}.",
+                f"VOCs modeled: {report.n_vocs_modeled}.",
+            ],
+        )
+    )
+    paths["methods"] = out_dir / "METHODS.md"
+    (out_dir / "NEXT_EXPERIMENTS.md").write_text(
+        "# Next experiments\n\n" + "\n".join(f"- {t}" for t in tips) + "\n"
+    )
+    paths["next_experiments"] = out_dir / "NEXT_EXPERIMENTS.md"
+
+    # Append literature + next-experiment sections to REPORT.md if present
+    md_path = out_dir / "REPORT.md"
+    if md_path.exists():
+        extra = ["", "## Literature overlay", ""]
+        if overlay.get("available"):
+            extra.append(
+                f"Directional agreement: **{overlay.get('n_agree')}/{overlay.get('n_compared')}**"
+            )
+            extra += [
+                "",
+                "| VOC | Literature | Predicted | Agree |",
+                "|---|---:|---:|:---:|",
+            ]
+            for r in overlay.get("rows") or []:
+                pred = "—" if r["predicted_log2fc"] is None else f"{r['predicted_log2fc']:+.2f}"
+                ag = "—" if r["agree"] is None else ("yes" if r["agree"] else "no")
+                extra.append(
+                    f"| {r['voc_id']} | {r['literature_log2fc']:+.2f} | {pred} | {ag} |"
+                )
+            if overlay.get("refs"):
+                extra += ["", "### References", ""]
+                for ref in overlay["refs"]:
+                    extra.append(
+                        f"- {ref.get('title')} ({ref.get('year')}) — `{ref.get('doi')}`"
+                    )
+        else:
+            extra.append("_No curated literature panel matched this disease id._")
+        extra += ["", "## Next experiments", ""] + [f"- {t}" for t in tips] + ["",
+            "Also see `METHODS.md`, `graphpad_voc_long.csv`, `literature_overlay.csv`.", ""]
+        md_path.write_text(md_path.read_text() + "\n".join(extra))
+
     manifest = {
         "disease": report.disease_name,
         "disease_id": report.disease_id,
@@ -274,6 +370,7 @@ code {{ background: #f0ebe3; padding: .1rem .35rem; border-radius: 4px; }}
         "zero_shot": bool(meta.get("zero_shot")),
         "zero_shot_mode": meta.get("zero_shot_mode"),
         "mechanism_confidence": meta.get("mechanism_confidence"),
+        "literature_overlay_available": bool(overlay.get("available")),
         "created_utc": datetime.now(timezone.utc).isoformat(),
     }
     man_path = out_dir / "manifest.json"
