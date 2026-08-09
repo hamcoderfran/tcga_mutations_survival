@@ -948,6 +948,85 @@ def eval_confounder_ptr_cmd(
     rprint(f"  report → {out_dir / 'CONFOUNDER_PTR.md'}")
 
 
+@app.command("eval-revolutionary-gap")
+def eval_revolutionary_gap_cmd(
+    out_dir: Path = typer.Option(Path("runs/revolutionary_gap")),
+    quick: bool = typer.Option(
+        False, "--quick", help="Skip Sci Data DDx + mechanism↔cohort loop"
+    ),
+):
+    """
+    Full field evaluation: scorecard vs BreathXplorer/ptairMS/Owlstone/SciRep XGB,
+    plus claim ledger, BreathVOC interchange, mechanism DDx, residualization, roadmap.
+    """
+    from .eval.revolutionary_gap import evaluate_revolutionary_gap
+
+    report = evaluate_revolutionary_gap(out_dir=out_dir, quick=quick)
+    sc = report.get("scorecard") or {}
+    ddx = (report.get("live_differentiators") or {}).get("scidata_differential") or {}
+    rprint("[bold]Revolutionary gap evaluation[/bold]")
+    rprint(
+        f"  scorecard: {sc.get('exhalepath_total')} "
+        f"({sc.get('exhalepath_pct')}%)"
+    )
+    ceil = (ddx.get("fit_on_cohort_ceiling") or {}).get("macro_ovr_auroc")
+    mech = (ddx.get("mechanism_ddx_hybrid") or {}).get("macro_ovr_auroc")
+    if ceil is not None or mech is not None:
+        rprint(f"  Sci Data DDx: fit-ceiling={ceil}  mechanism-hybrid={mech}")
+    rprint(f"  report → {out_dir / 'REVOLUTIONARY_GAP.md'}")
+
+
+@app.command("eval-differential")
+def eval_differential_cmd(
+    out_dir: Path = typer.Option(Path("runs/differential")),
+    seed: int = typer.Option(42, "--seed"),
+):
+    """
+    Sci Data multiclass DDx: fit-on-cohort nested ceiling vs mechanism-signature ranking
+    (± age/sex residualization).
+    """
+    from .gcms.differential import evaluate_scidata_differential
+
+    report = evaluate_scidata_differential(seed=seed)
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "DIFFERENTIAL.json").write_text(
+        json.dumps(report, indent=2, default=str)
+    )
+    ceil = (report.get("fit_on_cohort_ceiling") or {}).get("macro_ovr_auroc")
+    mech = (report.get("mechanism_ddx_hybrid") or {}).get("macro_ovr_auroc")
+    rprint("[bold]Cross-disease differential[/bold]")
+    rprint(f"  fit-on-cohort macro AUROC={ceil}")
+    rprint(f"  mechanism hybrid macro AUROC={mech}")
+    rprint(f"  report → {out_dir / 'DIFFERENTIAL.json'}")
+
+
+@app.command("export-claim-ledger")
+def export_claim_ledger_cmd(
+    out: Path = typer.Option(Path("runs/CLAIM_LEDGER.json"), "--out"),
+):
+    """Export evidence-graded VOC↔disease claim ledger (literature + priors)."""
+    from .gcms.claim_ledger import export_claim_ledger
+
+    path = export_claim_ledger(out)
+    rprint(f"Claim ledger → {path}")
+
+
+@app.command("export-breathvoc")
+def export_breathvoc_cmd(
+    study: str = typer.Option("ST000883", "--study"),
+    out: Path = typer.Option(Path("runs/breathvoc/bundle.breathvoc.json"), "--out"),
+    feature_map: str = typer.Option("malaria_lit", "--feature-map"),
+):
+    """Export a bundled MW study as BreathVOC-1.1 interchange JSON (+ schema)."""
+    from .gcms.interchange import export_breathvoc
+    from .gcms.patient_matrix import load_mw_patient_matrix
+
+    matrix = load_mw_patient_matrix(study, feature_map=feature_map)
+    path = export_breathvoc(matrix, out)
+    rprint(f"BreathVOC bundle → {path}")
+
+
 @app.command("eval-industry-pack")
 def eval_industry_pack_cmd(
     out_dir: Path = typer.Option(Path("runs/industry_pack")),
@@ -2231,6 +2310,10 @@ def main(argv: Optional[list[str]] = None):
         "eval-lit-compare",
         "eval-malaria-diagnostic",
         "eval-confounder-ptr",
+        "eval-revolutionary-gap",
+        "eval-differential",
+        "export-claim-ledger",
+        "export-breathvoc",
         "eval-industry-pack",
         "lock-split",
         "score-sample",

@@ -102,6 +102,12 @@ voc eval-malaria-diagnostic
 
 # Confounder diligence: ST003200 smoking/sex/age + Sci Data age/sex strata
 voc eval-confounder-ptr
+
+# Field gap eval + new differentiators (DDx, claim ledger, BreathVOC, closed loop)
+voc eval-revolutionary-gap
+voc eval-differential
+voc export-claim-ledger
+voc export-breathvoc --study ST000883
 ```
 
 ## Evaluation / readiness

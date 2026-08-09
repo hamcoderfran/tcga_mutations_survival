@@ -73,6 +73,7 @@ exhalepath = [
   "data/public_breath/*",
   "data/datasources/metabolomics/**/*",
   "data/datasources/malaria_external/**/*",
+  "data/knowledge/revolutionary/**/*",
   "data/processed/*",
   "data/cache/.gitkeep",
 ]

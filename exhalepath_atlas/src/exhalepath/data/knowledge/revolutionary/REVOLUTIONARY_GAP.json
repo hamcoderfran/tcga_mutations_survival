@@ -1,0 +1,563 @@
+{
+  "title": "Revolutionary gap evaluation \u2014 ExhalePath vs breathomics field",
+  "generated_utc": "2026-08-09T19:32:40.715247+00:00",
+  "honesty_bar": "Research / hypothesis-generation enablement. Not clinical diagnostic SOTA, not FDA claims, not a substitute for prospective multi-site trials.",
+  "field_landscape_2026": {
+    "open_preprocess": [
+      "BreathXplorer (SESI-HRMS peak recognition)",
+      "ptairMS (PTR-TOF-MS Bioconductor)"
+    ],
+    "commercial_closed": [
+      "Owlstone Breath Biopsy OMNI + VOC Atlas (on-breath MSI)"
+    ],
+    "fit_on_cohort_ml": [
+      "Sci Reports 2025 XGBoost on Sci Data GC-MS (macro-AUC\u22480.998 nested)",
+      "PTR multiclass lung-disease ensembles (IJMS 2026)",
+      "e-nose multi-site CRC \u2014 external validation often fails"
+    ],
+    "reporting_standard": "TRIPOD+AI (2024); nested CV consensus in JBR breath-ML",
+    "exhalepath_wedge": "Only open stack that joins mechanism-fused VOC reasoning + patient-level diagnostic harness + evidence ledger + NL clinical front-door."
+  },
+  "scorecard": {
+    "scale": "0=absent 1=partial 2=shipped 3=field-leading open",
+    "n_capabilities": 12,
+    "exhalepath_total": 29,
+    "exhalepath_pct": 80.6,
+    "competitors": {
+      "breathxplorer": 4,
+      "ptairms": 8,
+      "owlstone_omni": 17,
+      "scireports_xgboost_baseline": 6
+    },
+    "rows": [
+      {
+        "id": "mechanism_fusion",
+        "name": "Mechanism \u2192 VOC multi-model fusion",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 1,
+        "scireports_xgboost": 0,
+        "note": "20-head Great Disease Stack + hybrid physiology \u2014 unique open"
+      },
+      {
+        "id": "patient_nested_cv",
+        "name": "Patient-level nested CV + locked splits",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 1,
+        "owlstone_omni": 2,
+        "scireports_xgboost": 2,
+        "note": "SHA256 manifests + optimism gaps; Sci Reports has nested CV but not locked hashes"
+      },
+      {
+        "id": "raw_ms_preprocess",
+        "name": "Raw SESI/PTR/GC-MS peak picking",
+        "us": 0,
+        "breathxplorer": 3,
+        "ptairms": 3,
+        "owlstone_omni": 3,
+        "scireports_xgboost": 0,
+        "note": "Largest instrument gap \u2014 we consume peak tables, not .mzML/.D"
+      },
+      {
+        "id": "on_breath_blank",
+        "name": "On-breath vs blank / MSI identification",
+        "us": 1,
+        "breathxplorer": 1,
+        "ptairms": 2,
+        "owlstone_omni": 3,
+        "scireports_xgboost": 0,
+        "note": "Schema + filters exist; Owlstone VOC Atlas is the commercial gold standard"
+      },
+      {
+        "id": "multiclass_ddx",
+        "name": "Cross-disease differential diagnosis",
+        "us": 2,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 1,
+        "scireports_xgboost": 3,
+        "note": "NEW: mechanism DDx + nested multinomial on Sci Data; XGBoost still wins fit-on-cohort"
+      },
+      {
+        "id": "confounder_residual",
+        "name": "Confounder residualization (age/sex/smoking)",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 1,
+        "scireports_xgboost": 0,
+        "note": "NEW: residualize + re-score; ST003200 smoking probes already shipped"
+      },
+      {
+        "id": "claim_ledger",
+        "name": "Evidence-graded VOC\u2194disease claim ledger",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 2,
+        "scireports_xgboost": 0,
+        "note": "NEW: quantified/directional/prior grades with DOIs \u2014 open citeable graph"
+      },
+      {
+        "id": "interchange_schema",
+        "name": "Open BreathVOC interchange format",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 1,
+        "owlstone_omni": 1,
+        "scireports_xgboost": 0,
+        "note": "NEW: BreathVOC-1.1 JSON + validator; MetaboLights scaffold already shipped"
+      },
+      {
+        "id": "mechanism_cohort_loop",
+        "name": "Mechanism \u2194 cohort closed-loop eval",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 0,
+        "scireports_xgboost": 0,
+        "note": "NEW: unique \u2014 packs scored on locked patient matrices with optimism gaps"
+      },
+      {
+        "id": "external_loso",
+        "name": "Multi-cohort leave-one-study-out",
+        "us": 2,
+        "breathxplorer": 0,
+        "ptairms": 1,
+        "owlstone_omni": 2,
+        "scireports_xgboost": 0,
+        "note": "Harness + CSIRO labels shipped; blocked on second open intensity table"
+      },
+      {
+        "id": "paper_tripod",
+        "name": "TRIPOD+AI / paper-pack automation",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 1,
+        "scireports_xgboost": 1,
+        "note": "One-zip paper pack + Methods stubs \u2014 field-leading open"
+      },
+      {
+        "id": "nl_clinical",
+        "name": "Natural-language clinical \u2192 VOC prediction",
+        "us": 3,
+        "breathxplorer": 0,
+        "ptairms": 0,
+        "owlstone_omni": 0,
+        "scireports_xgboost": 0,
+        "note": "voc ask / patient / stack \u2014 unique product surface"
+      }
+    ],
+    "verdict": "ExhalePath already leads the *open research-reasoning* axis (mechanism fusion, NL, paper packs, claim ledger, closed loop). It does not lead instrument preprocessing or commercial on-breath identification (BreathXplorer / ptairMS / Owlstone). Revolutionary path = deepen the reasoning axis + bridge to peak tables, not chase fit-on-cohort AUROC."
+  },
+  "live_differentiators": {
+    "claim_ledger": {
+      "n_claims": 958,
+      "by_evidence_grade": {
+        "atlas_prior": 823,
+        "directional_only": 57,
+        "directional_only_mixed": 1,
+        "mixed": 52,
+        "quantified": 23,
+        "quantified_null": 2
+      },
+      "path": "runs/revolutionary_gap/CLAIM_LEDGER.json"
+    },
+    "breathvoc_interchange": {
+      "schema_version": "BreathVOC-1.1",
+      "exported": "runs/revolutionary_gap/breathvoc/ST000883.breathvoc.json",
+      "roundtrip_ok": true,
+      "n_subjects": 35,
+      "n_vocs": 25,
+      "validation_errors": []
+    },
+    "scidata_differential": {
+      "title": "Sci Data cross-disease differential (mechanism DDx vs fit-on-cohort)",
+      "dataset": "Sci Data 2024 clinical breathomics (Kuo et al.)",
+      "n_samples": 121,
+      "n_features": 19,
+      "class_counts": {
+        "asthma": 53,
+        "bronchiectasis": 35,
+        "copd": 33
+      },
+      "field_baseline_note": "Sci Reports 2025 (doi:10.1038/s41598-025-28143-x) reports nested XGBoost macro-AUC \u22480.998 on this dataset \u2014 a fit-on-cohort ceiling, not a mechanism-transferable claim. Our multinomial logistic nested AUROC is the open comparable ceiling; hybrid/stack DDx is the transferable score.",
+      "fit_on_cohort_ceiling": {
+        "status": "ok",
+        "kind": "fit_on_cohort_nested_multinomial",
+        "classes": [
+          "asthma",
+          "bronchiectasis",
+          "copd"
+        ],
+        "macro_ovr_auroc": 1.0,
+        "mean_fold_macro_auroc": 1.0,
+        "per_class_ovr_auroc": {
+          "asthma": 1.0,
+          "bronchiectasis": 1.0,
+          "copd": 1.0
+        },
+        "n_samples": 121,
+        "n_features": 19,
+        "caveat": "Fit-on-cohort ceiling (labels used in training). Compare to mechanism signature DDx below \u2014 that is the transferable scientific claim."
+      },
+      "mechanism_ddx_hybrid": {
+        "status": "ok",
+        "kind": "mechanism_signature_ddx",
+        "source": "hybrid",
+        "per_class_ovr_auroc": {
+          "asthma": {
+            "disease_id": "asthma",
+            "auroc": 0.5238623751387347,
+            "n_overlap_median": 19,
+            "source": "hybrid"
+          },
+          "bronchiectasis": {
+            "disease_id": "bronchiectasis",
+            "auroc": 0.6156146179401992,
+            "n_overlap_median": 19,
+            "source": "hybrid"
+          },
+          "copd": {
+            "disease_id": "copd",
+            "auroc": 0.5795454545454546,
+            "n_overlap_median": 19,
+            "source": "hybrid"
+          }
+        },
+        "macro_ovr_auroc": 0.5730074825414628,
+        "top1_accuracy": 0.2809917355371901,
+        "n_samples": 121,
+        "caveat": "Transferable: signatures from ExhalePath hybrid/stack, not fit on these labels. Expect lower AUROC than fit-on-cohort XGBoost/logistic \u2014 that gap is the point."
+      },
+      "mechanism_ddx_stack": {
+        "status": "ok",
+        "kind": "mechanism_signature_ddx",
+        "source": "stack",
+        "per_class_ovr_auroc": {
+          "asthma": {
+            "disease_id": "asthma",
+            "auroc": 0.5147058823529411,
+            "n_overlap_median": 19,
+            "source": "stack"
+          },
+          "bronchiectasis": {
+            "disease_id": "bronchiectasis",
+            "auroc": 0.6159468438538205,
+            "n_overlap_median": 19,
+            "source": "stack"
+          },
+          "copd": {
+            "disease_id": "copd",
+            "auroc": 0.5795454545454546,
+            "n_overlap_median": 19,
+            "source": "stack"
+          }
+        },
+        "macro_ovr_auroc": 0.5700660602507387,
+        "top1_accuracy": 0.0,
+        "n_samples": 121,
+        "caveat": "Transferable: signatures from ExhalePath hybrid/stack, not fit on these labels. Expect lower AUROC than fit-on-cohort XGBoost/logistic \u2014 that gap is the point."
+      },
+      "age_sex_residualized": {
+        "mean_covariate_r2": 0.04797760438617417,
+        "covariate_names": [
+          "age",
+          "sex_male"
+        ],
+        "fit_on_cohort_ceiling": {
+          "status": "ok",
+          "kind": "fit_on_cohort_nested_multinomial",
+          "classes": [
+            "asthma",
+            "bronchiectasis",
+            "copd"
+          ],
+          "macro_ovr_auroc": 0.9972831432068642,
+          "mean_fold_macro_auroc": 0.9958643317466848,
+          "per_class_ovr_auroc": {
+            "asthma": 0.9966703662597114,
+            "bronchiectasis": 1.0,
+            "copd": 0.9951790633608815
+          },
+          "n_samples": 121,
+          "n_features": 19,
+          "caveat": "Fit-on-cohort ceiling (labels used in training). Compare to mechanism signature DDx below \u2014 that is the transferable scientific claim."
+        },
+        "mechanism_hybrid": {
+          "status": "ok",
+          "kind": "mechanism_signature_ddx",
+          "source": "hybrid",
+          "per_class_ovr_auroc": {
+            "asthma": {
+              "disease_id": "asthma",
+              "auroc": 0.9406215316315205,
+              "n_overlap_median": 19,
+              "source": "hybrid"
+            },
+            "bronchiectasis": {
+              "disease_id": "bronchiectasis",
+              "auroc": 0.45514950166112955,
+              "n_overlap_median": 19,
+              "source": "hybrid"
+            },
+            "copd": {
+              "disease_id": "copd",
+              "auroc": 0.6535812672176309,
+              "n_overlap_median": 19,
+              "source": "hybrid"
+            }
+          },
+          "macro_ovr_auroc": 0.683117433503427,
+          "top1_accuracy": 0.5206611570247934,
+          "n_samples": 121,
+          "caveat": "Transferable: signatures from ExhalePath hybrid/stack, not fit on these labels. Expect lower AUROC than fit-on-cohort XGBoost/logistic \u2014 that gap is the point."
+        }
+      }
+    },
+    "demo_ddx_ranking": [
+      {
+        "disease_id": "lung_adenocarcinoma",
+        "score": 0.7900237934128941,
+        "n_overlap": 4,
+        "method": "cosine",
+        "source": "hybrid",
+        "rank": 1
+      },
+      {
+        "disease_id": "copd",
+        "score": 0.7016135594374683,
+        "n_overlap": 4,
+        "method": "cosine",
+        "source": "hybrid",
+        "rank": 2
+      },
+      {
+        "disease_id": "asthma",
+        "score": 0.7006146847298316,
+        "n_overlap": 4,
+        "method": "cosine",
+        "source": "hybrid",
+        "rank": 3
+      },
+      {
+        "disease_id": "malaria",
+        "score": 0.45451754277488005,
+        "n_overlap": 4,
+        "method": "cosine",
+        "source": "hybrid",
+        "rank": 4
+      },
+      {
+        "disease_id": "heart_failure",
+        "score": 0.3000072125236532,
+        "n_overlap": 4,
+        "method": "cosine",
+        "source": "hybrid",
+        "rank": 5
+      }
+    ],
+    "mechanism_cohort_loop": {
+      "title": "Mechanism \u2192 cohort closed loop",
+      "generated_utc": "2026-08-09T19:32:40.714654+00:00",
+      "honesty": "Nested AUROC tests whether mechanism/literature signatures transfer to patient intensities. Literature may be partly circular with atlas priors. Research enablement \u2014 not a diagnostic claim.",
+      "studies": [
+        {
+          "study_id": "ST000883",
+          "disease_id": "malaria",
+          "disease_name": "Malaria",
+          "sources": {
+            "hybrid": {
+              "status": "ok",
+              "source": "hybrid",
+              "n_signature_vocs": 17,
+              "signature_vocs": [
+                "2_butanone",
+                "2_pentanone",
+                "acetone",
+                "benzene",
+                "butane",
+                "ethanol",
+                "ethylbenzene",
+                "heptanal",
+                "hexanal",
+                "hexane",
+                "isoprene",
+                "isopropanol",
+                "nonanal",
+                "octane",
+                "pentane",
+                "propanol",
+                "toluene"
+              ],
+              "nested_auroc": 0.5333333333333333,
+              "non_nested_auroc": 0.5686274509803921,
+              "optimism_gap": 0.03529411764705881,
+              "n_folds_scored": 5,
+              "split_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df"
+            },
+            "stack": {
+              "status": "ok",
+              "source": "stack",
+              "n_signature_vocs": 16,
+              "signature_vocs": [
+                "2_butanone",
+                "2_pentanone",
+                "acetone",
+                "benzene",
+                "butane",
+                "ethanol",
+                "ethylbenzene",
+                "heptanal",
+                "hexanal",
+                "hexane",
+                "isoprene",
+                "isopropanol",
+                "nonanal",
+                "octane",
+                "pentane",
+                "propanol"
+              ],
+              "nested_auroc": 0.5499999999999999,
+              "non_nested_auroc": 0.5816993464052288,
+              "optimism_gap": 0.03169934640522887,
+              "n_folds_scored": 5,
+              "split_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df"
+            },
+            "literature": {
+              "status": "ok",
+              "source": "literature",
+              "n_signature_vocs": 7,
+              "signature_vocs": [
+                "2_butanone",
+                "acetone",
+                "benzene",
+                "hexanal",
+                "isoprene",
+                "nonanal",
+                "pentane"
+              ],
+              "nested_auroc": 0.6333333333333333,
+              "non_nested_auroc": 0.6601307189542485,
+              "optimism_gap": 0.02679738562091516,
+              "n_folds_scored": 5,
+              "split_sha256": "e1b4271ace3b6d550d764e756449842ec5ec14eeba2cd1ffd99a5ede27fb08df"
+            }
+          }
+        },
+        {
+          "study_id": "ST000587",
+          "disease_id": "heart_failure",
+          "disease_name": "Heart failure",
+          "sources": {
+            "hybrid": {
+              "status": "ok",
+              "source": "hybrid",
+              "n_signature_vocs": 3,
+              "signature_vocs": [
+                "acetone",
+                "isopropanol",
+                "methanol"
+              ],
+              "nested_auroc": 0.6,
+              "non_nested_auroc": 0.5530303030303031,
+              "optimism_gap": -0.046969696969696884,
+              "n_folds_scored": 5,
+              "split_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570"
+            },
+            "stack": {
+              "status": "ok",
+              "source": "stack",
+              "n_signature_vocs": 3,
+              "signature_vocs": [
+                "acetone",
+                "isopropanol",
+                "methanol"
+              ],
+              "nested_auroc": 0.5666666666666667,
+              "non_nested_auroc": 0.5454545454545455,
+              "optimism_gap": -0.021212121212121127,
+              "n_folds_scored": 5,
+              "split_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570"
+            },
+            "literature": {
+              "status": "ok",
+              "source": "literature",
+              "n_signature_vocs": 3,
+              "signature_vocs": [
+                "acetone",
+                "isopropanol",
+                "methanol"
+              ],
+              "nested_auroc": 0.5666666666666667,
+              "non_nested_auroc": 0.5378787878787878,
+              "optimism_gap": -0.028787878787878807,
+              "n_folds_scored": 5,
+              "split_sha256": "c56043631bf59929dfb037a3e742b7c28220402d36f6159386d654afb886a570"
+            }
+          }
+        }
+      ],
+      "how_to_improve_packs": [
+        "Ablate VOCs with negative contribution on nested folds",
+        "Prefer quantified literature claims over atlas priors (see claim ledger)",
+        "Add external intensity cohort + LOSO before raising clinical language"
+      ]
+    }
+  },
+  "roadmap": [
+    {
+      "priority": 1,
+      "theme": "Second open intensity cohort (malaria or pulmonary)",
+      "why": "LOSO / external validation is the #1 credibility gap vs closed multi-site e-nose trials",
+      "effort": "data + adapter",
+      "blocks": "CSIRO intensity (MassHunter export) or Malawi JID deposit",
+      "status": "labels_ready_intensity_pending"
+    },
+    {
+      "priority": 2,
+      "theme": "Raw-spectrum bridge (mzML / Agilent .D \u2192 BreathVOC)",
+      "why": "Without peak picking we cannot ingest the majority of public deposits",
+      "effort": "large engineering; partner BreathXplorer/ptairMS rather than reimplement",
+      "status": "not_started"
+    },
+    {
+      "priority": 3,
+      "theme": "Claim-ledger-grounded NL answers",
+      "why": "voc ask should cite quantified DOIs, not only atlas priors",
+      "effort": "medium; extend nl/ with ledger retrieval",
+      "status": "ledger_shipped_nl_ungrounded"
+    },
+    {
+      "priority": 4,
+      "theme": "On-breath MSI enrichment vs Owlstone/NIST",
+      "why": "Identification confidence is what converts research \u2192 translational trust",
+      "effort": "medium; FeatureAnnotation already has MSI fields",
+      "status": "schema_ready"
+    },
+    {
+      "priority": 5,
+      "theme": "Prospective multi-site protocol template",
+      "why": "Field failures (e-nose CRC external validation) are protocol failures",
+      "effort": "docs + locked split federation; not more ST000883 tuning",
+      "status": "partial_multisite_literature_only"
+    },
+    {
+      "priority": 6,
+      "theme": "Do not: hill-climb ST000883 or Sci Data fit-on-cohort AUROC",
+      "why": "Sci Reports already owns the black-box ceiling (~0.998); our wedge is transferable mechanism DDx",
+      "effort": "discipline",
+      "status": "documented_stop_chasing"
+    }
+  ],
+  "what_revolutionary_means_here": [
+    "Be the open *reasoning layer* of breathomics \u2014 not another peak picker",
+    "Make mechanism hypotheses falsifiable on locked patient matrices",
+    "Make every VOC\u2194disease edge citeable with an evidence grade",
+    "Make BreathVOC the interchange labs actually ship between instruments and papers",
+    "Refuse AUROC theater on n\u224835 / fit-on-cohort ceilings"
+  ]
+}

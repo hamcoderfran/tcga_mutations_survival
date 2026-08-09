@@ -115,6 +115,22 @@ Latest archived report: `data/knowledge/malaria_diagnostic/MALARIA_DIAGNOSTIC_UP
 
 Confounder pack: `voc eval-confounder-ptr` → `data/knowledge/confounder_ptr/`.
 
+## Revolutionary gap pack (`voc eval-revolutionary-gap`)
+
+Field research (2024–2026) + live differentiators vs BreathXplorer / ptairMS / Owlstone OMNI / Sci Reports XGBoost:
+
+| Differentiator | Command | Why it matters |
+|---|---|---|
+| Mechanism DDx vs fit-on-cohort ceiling | `voc eval-differential` | Sci Data multiclass — transferable signatures, not AUROC theater |
+| Age/sex residualization | (inside differential) | Disease signal after demographic regression |
+| Evidence-graded claim ledger | `voc export-claim-ledger` | Quantified / directional / atlas_prior with DOIs |
+| BreathVOC-1.1 interchange | `voc export-breathvoc` | Versioned patient×VOC JSON + schema |
+| Mechanism↔cohort closed loop | (inside revolutionary-gap) | Nested AUROC feedback on ST000883 / ST000587 |
+
+Archived: `data/knowledge/revolutionary/REVOLUTIONARY_GAP.md`.
+
+**Wedge:** be the open *reasoning layer* of breathomics (mechanism fusion + falsifiable cohort loops + citeable claims). Do **not** reimplement SESI/PTR peak pickers — partner or ingest their tables. Do **not** chase Sci Reports fit-on-cohort ceilings (~0.998) or ST000883 n≈35 AUROC.
+
 ## Current results on bundled patient GC-MS (regenerate anytime)
 
 `voc eval-patient-diagnostic --benchmark --study ST000883`
