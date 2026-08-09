@@ -39,9 +39,9 @@ Cutting-edge as an open, multi-model *systems* breath-hypothesis stack (physiolo
 
 - Cases: 3 · mean models ok: 19.666666666666668
 
-- `schizophrenia` · models 20/20 · top=2_butanone · 0.376s
-- `depression` · models 20/20 · top=2_butanone · 0.296s
-- `lung adenocarcinoma` · models 19/20 · top=hexanal · 0.302s
+- `schizophrenia` · models 20/20 · top=2_butanone · 0.333s
+- `depression` · models 20/20 · top=2_butanone · 0.347s
+- `lung adenocarcinoma` · models 19/20 · top=hexanal · 0.306s
 
 ## Break case details
 

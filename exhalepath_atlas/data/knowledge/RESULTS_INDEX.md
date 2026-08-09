@@ -11,6 +11,7 @@ voc "depression" -l brain -c obesity --age 24 --sex male
 voc stack "depression" -l brain -c obesity --age 24 --sex male
 # → 20-model fused consensus (VOC + genes + flux + ADME + microbiome + …)
 voc eval-patient-diagnostic --study ST000883   # patient-level GC-MS AUROC research pack
+voc eval-industry-pack                         # diligence scorecard + BUYER_BRIEF.md
 voc eval-implementation-readiness
 ```
 
@@ -19,6 +20,7 @@ voc eval-implementation-readiness
 | Result | Path | How to re-run |
 |---|---|---|
 | Patient GC-MS diagnostic (AUROC / locked splits) | [`gcms_diagnostic/`](gcms_diagnostic/) | `voc eval-patient-diagnostic --all` |
+| Industry diligence pack + buyer brief | [`industry_pack/`](industry_pack/) | `voc eval-industry-pack` |
 | Research impact rationale | [`../../RESEARCH.md`](../../RESEARCH.md) | — |
 
 ## Great Disease Stack holdout

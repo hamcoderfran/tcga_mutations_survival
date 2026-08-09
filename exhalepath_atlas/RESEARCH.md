@@ -84,15 +84,21 @@ voc score-sample malaria --signature stack \
 | B | RADicA / ReCIVA blank-aware tables | Blank-first schema gold standard — next |
 | B | Owlstone OMNI example | Industry feature-table shape reference — next |
 
-## Open draft branches — keep / prune
+## Draft branches — cherry-picked vs pruned
 
-Do **not** merge wholesale draft PRs #13–#19 into `main` (calibrator/prior rewrites and CLI conflicts regress current 1.6 stack). Prefer additive cherry-picks only:
+Do **not** merge wholesale draft PRs #13–#19 into `main`. This branch cherry-picked additive modules only:
 
-| Keep (additive only) | Skip / ignore |
+| Cherry-picked | Skipped (regressive) |
 |---|---|
-| `secure_fetch.py`, `eval/lit_compare.py`, `eval/coverage_audit.py` (#16 tip) | Wholesale `cli.py` / `predict.py` rewrites |
-| HBDB 60-disease JSON/scripts (#16) | Recalibrated `voc_calibrator.joblib` from draft tips |
-| `ds15_alt_breath_sources.py` (#17), `extract_hmdb_wishart.py` (#18) | `disease_voc_priors.json` replacements that break holdouts |
+| `secure_fetch` + HTTP allowlist (#14) | Wholesale `cli.py` / `predict.py` tip rewrites |
+| `eval/coverage_audit.py` + COVERAGE_AUDIT artifacts (#14) | `disease_voc_priors.json` replacements |
+| `eval/lit_compare.py` + lit_compare artifacts (#13) | Recalibrated `voc_calibrator.joblib` |
+| Surgical post-blend smoking/age exo fix in `predict.py` | Full model-improve-100disease merge (#15) |
+| `ds15_alt_breath_sources` + catalogs (#17) | Prior/CLI conflicts that strip zero-shot hardening |
+| HBDB 60-disease JSON + extract script (#16) | |
+| HMDB Wishart mirror constant + breath extracts (#18) | |
+
+Industry diligence pack: `voc eval-industry-pack` → `data/knowledge/industry_pack/` (`INDUSTRY_PACK.md`, `BUYER_BRIEF.md`).
 
 ## Current results on bundled patient GC-MS (regenerate anytime)
 

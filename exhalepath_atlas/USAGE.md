@@ -87,6 +87,11 @@ voc export-metabolights --study scidata:asthma
 
 # Re-zip an existing run dir into one paper pack (figures + Methods + overlay + split hash)
 voc export-paper-pack runs/patient_diagnostic/ST000883
+
+# Diligence / industry scorecard + buyer brief (honest commercial framing)
+voc eval-industry-pack
+voc eval-coverage --offline
+voc eval-lit-compare --n-diseases 50
 ```
 
 ## Evaluation / readiness
@@ -96,6 +101,7 @@ voc eval-stack-holdout              # stack vs hybrid + PatientTemplate breaks
 voc eval-implementation-readiness
 voc eval-public-breath
 voc eval-priority10
+voc eval-industry-pack              # nested AUROC + strata + coverage + BUYER_BRIEF.md
 ```
 
 Canonical archived reports: [`data/knowledge/RESULTS_INDEX.md`](data/knowledge/RESULTS_INDEX.md).

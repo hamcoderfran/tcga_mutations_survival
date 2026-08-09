@@ -227,7 +227,7 @@
         "n_models_total": 20,
         "n_fused_vocs": 15,
         "top_voc": "2_butanone",
-        "seconds": 0.376
+        "seconds": 0.333
       },
       {
         "text": "24yo obese male with depression and insomnia on sertraline",
@@ -236,7 +236,7 @@
         "n_models_total": 20,
         "n_fused_vocs": 15,
         "top_voc": "2_butanone",
-        "seconds": 0.296
+        "seconds": 0.347
       },
       {
         "text": "Stage II lung adenocarcinoma in the left lower lobe with KRAS and TP53, current smoker, 58F",
@@ -245,7 +245,7 @@
         "n_models_total": 20,
         "n_fused_vocs": 15,
         "top_voc": "hexanal",
-        "seconds": 0.302
+        "seconds": 0.306
       }
     ]
   },
@@ -426,7 +426,7 @@
         "stack_meta": {
           "n_models_ok": 19,
           "n_models_total": 20,
-          "mean_model_agreement": 13.85,
+          "mean_model_agreement": 13.7,
           "models_skipped": [
             "comorbidity_clinical"
           ]

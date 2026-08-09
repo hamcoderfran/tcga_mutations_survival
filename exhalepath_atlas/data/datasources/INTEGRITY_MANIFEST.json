@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-08-09T19:02:53.997800+00:00",
+  "generated_at": "2026-08-09T19:06:29.235917+00:00",
   "n_files": 8,
   "files": [
     {
@@ -15,7 +15,7 @@
     },
     {
       "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_extended_catalog.json",
-      "sha256": "cd5129a7cb1bcee1e60f6f9c3fe36915e7e630bfc1d8c7e5c1a7b57228df84f1",
+      "sha256": "8c94962b7adb59248d79150ac9623d1a8527f5714beabe05a96c274d1536a5b0",
       "n_bytes": 384052
     },
     {

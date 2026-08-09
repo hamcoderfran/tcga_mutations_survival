@@ -245,10 +245,18 @@ def _summarize_payload(name: str, payload: Any) -> dict[str, Any]:
         a = (payload.get("asthma") or {}).get("metrics") or {}
         return {"asthma_auroc": a.get("auroc"), "n": a.get("n_subjects")}
     if name == "stack_holdout":
+        pb = payload.get("public_breath") or {}
+        lit = payload.get("literature") or {}
+        p10 = payload.get("priority10") or {}
+        brk = payload.get("patient_break") or {}
         return {
-            "public_breath_stack": (payload.get("public_breath") or {}).get("stack_directional"),
-            "priority10_stack": (payload.get("priority10") or {}).get("stack_directional"),
-            "patient_template": payload.get("patient_template"),
+            "public_breath_stack": pb.get("stack_mean_directional"),
+            "public_breath_hybrid": pb.get("hybrid_mean_directional"),
+            "literature_stack": lit.get("stack_mean_directional"),
+            "priority10_stack": p10.get("stack_mean_directional"),
+            "patient_break_hard": brk.get("hard_pass"),
+            "patient_break_soft": brk.get("soft_pass"),
+            "sota": (payload.get("sota_assessment") or {}).get("is_cutting_edge_systems_stack"),
         }
     if name == "public_breath":
         o = payload.get("overall") or {}
@@ -361,32 +369,28 @@ def _scorecard_rows(by_name: dict[str, dict]) -> list[dict[str, Any]]:
     st = by_name.get("stack_holdout") or {}
     if st.get("ok"):
         p = st["payload"]
-        # tolerate schema variants
-        pb = p.get("public_breath") or p.get("benchmarks") or {}
-        if isinstance(pb, dict) and "stack_directional" in pb:
-            add(
-                "Stack directional (public breath)",
-                _pct(pb.get("stack_directional")),
-                "Systems holdout",
-                "Multi-head fusion directional agreement on public panels",
-            )
-        elif isinstance(p.get("overall"), dict):
-            add(
-                "Stack holdout overall",
-                str(p.get("overall")),
-                "Systems holdout",
-                "See STACK_HOLDOUT_REPORT",
-            )
-        else:
-            # try nested structure from evaluate_stack_holdout
-            summary = p.get("summary") or p
-            add(
-                "Stack holdout",
-                json.dumps(summary)[:120] + "…",
-                "Systems holdout",
-                "Full payload in INDUSTRY_PACK_PAYLOADS.json",
-                "measured",
-            )
+        pb = p.get("public_breath") or {}
+        lit = p.get("literature") or {}
+        p10 = p.get("priority10") or {}
+        brk = p.get("patient_break") or {}
+        add(
+            "Stack vs hybrid directional (public breath)",
+            f"stack={_pct(pb.get('stack_mean_directional'))} hybrid={_pct(pb.get('hybrid_mean_directional'))}",
+            "Systems holdout",
+            "Multi-head fusion vs hybrid baseline on public panels",
+        )
+        add(
+            "Stack directional (literature / priority-10)",
+            f"lit={_pct(lit.get('stack_mean_directional'))}; p10={_pct(p10.get('stack_mean_directional'))}",
+            "Systems holdout",
+            "Directional panels — treat as systems evidence; partial prior overlap possible",
+        )
+        add(
+            "PatientTemplate adversarial break",
+            f"hard={brk.get('hard_pass')}/{brk.get('hard_total')} soft={brk.get('soft_pass')}/{brk.get('soft_total')}",
+            "Adversarial / phenotype stress",
+            "Stack must not collapse under comorbidity/smoking template attacks",
+        )
 
     pub = by_name.get("public_breath") or {}
     if pub.get("ok"):
