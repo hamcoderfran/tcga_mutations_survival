@@ -48,8 +48,10 @@ Artifacts land in `runs/stack_*/` and `runs/stack_holdout/`.
 
 ## What you get
 
-- 20 fused models (VOC + genetics + flux + ADME + microbiome + …)
+- 20 fused models (VOC + genetics + flux + ADME + microbiome + zero-shot + meta + …)
 - PatientTemplate for vignettes, clinic notes, JSON, key=value
+- GC-MS patient diagnostic research (`voc eval-patient-diagnostic`)
+- Analysis exports: literature overlay, `METHODS.md`, GraphPad long CSV, next-experiment tips
 - HTML/PNG/CSV/JSON comprehensive reports
 
 ## Honesty bar
