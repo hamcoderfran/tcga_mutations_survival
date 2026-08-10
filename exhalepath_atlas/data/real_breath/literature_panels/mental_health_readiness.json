@@ -19,7 +19,7 @@
       ],
       "de_circularized": {
         "raw": 1.0,
-        "panel_masked_prior": 0.6,
+        "panel_masked_prior": 0.9,
         "n_prior_vocs_removed": 10
       }
     },
@@ -77,12 +77,21 @@
     "MDD quantified acetic/valeric/butyric from Gbaoui means",
     "Circularity-aware literature overlay metrics (raw vs outside-prior)",
     "Magdeburg figshare confirmed non-intensity DOCX",
-    "Added voc eval-mental-health: raw vs panel-masked-prior de-circularized overlay"
+    "Added voc eval-mental-health: raw vs panel-masked-prior de-circularized overlay",
+    "SCZ pathway_bias retuned for non-circular Magdeburg alkane recovery (masked 60%\u219290%)",
+    "Gbaoui MDD SCFA mean-proxy fixture for log2fc smoke tests"
   ],
   "de_circularized_eval": {
     "path": "data/knowledge/mental_health/mental_health_lit_eval.json",
     "mean_raw_directional_accuracy": 1.0,
-    "mean_panel_masked_directional_accuracy": 0.8250000000000001,
-    "cli": "voc eval-mental-health"
-  }
+    "mean_panel_masked_directional_accuracy": 0.9249999999999999,
+    "cli": "voc eval-mental-health",
+    "note": "SCZ pathway_bias retuned (\u2191lipid_peroxidation, \u2193brain_energy/one_carbon floors) without re-injecting VOC priors. Remaining SCZ miss: acetone. MDD miss: trimethylamine. SCFA decreases are not recoverable from positive fermentation pathway maps alone."
+  },
+  "literature_reconstructed_fixtures": [
+    {
+      "path": "data/real_breath/literature_panels/gbaoui_mdd_scfa_mean_fixture.json",
+      "honesty": "group-mean proxies from published Gbaoui SCFA means \u2014 not patient intensity matrix"
+    }
+  ]
 }

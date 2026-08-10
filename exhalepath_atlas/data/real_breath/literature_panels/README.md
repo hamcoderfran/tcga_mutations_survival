@@ -29,6 +29,9 @@ Loaders merge every `*_voc_panels.json` for claim ledger, literature overlays, a
 Also see `magdeburg_ptrms_mz_map.json` and `mental_health_readiness.json`. Overlay reports `directional_accuracy_outside_prior` to surface prior-circular agreement.
 
 Run de-circularized eval: `voc eval-mental-health` (archives under `data/knowledge/mental_health/`).
+Current archived mean **panel-masked** directional accuracy ≈ **92.5%** (raw 100% is circular).
+
+Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json` (not patient intensities).
 
 **Thin / no measured exhaled panel (documented in `thin_evidence_conditions`):**
 

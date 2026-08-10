@@ -677,9 +677,13 @@
       "default_site": "brain",
       "pathway_bias": {
         "neurotransmitter_metabolism": 1.8,
-        "neuroinflammation": 1.3,
-        "brain_energy_metabolism": 1.25,
-        "one_carbon_folate": 1.2
+        "lipid_peroxidation": 1.65,
+        "neuroinflammation": 1.35,
+        "gut_microbiome_fermentation": 1.0,
+        "brain_energy_metabolism": 1.0,
+        "one_carbon_folate": 1.0,
+        "ketone_body_metabolism": 1.0,
+        "mevalonate_cholesterol": 1.0
       },
       "voc_log2fc_prior": {
         "pentane": 0.7,
@@ -1165,9 +1169,10 @@
       "category": "neurological",
       "default_site": "brain",
       "pathway_bias": {
-        "neuroinflammation": 1.5,
-        "brain_energy_metabolism": 1.35,
-        "lipid_peroxidation": 1.3,
+        "neuroinflammation": 1.4,
+        "lipid_peroxidation": 1.45,
+        "microbial_proteolysis_putrefaction": 1.4,
+        "brain_energy_metabolism": 1.2,
         "neurotransmitter_metabolism": 1.25
       },
       "voc_log2fc_prior": {

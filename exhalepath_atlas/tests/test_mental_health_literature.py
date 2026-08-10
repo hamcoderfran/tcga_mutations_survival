@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import math
 
 from exhalepath.biomarker import ExhaleBiomarkerEngine
@@ -87,11 +88,36 @@ def test_mh_panel_masked_prior_eval_runs():
     assert by["major_depressive_disorder"]["n_prior_vocs_removed"] >= 1
     assert by["major_depressive_disorder"]["raw"]["directional_accuracy"] is not None
     assert by["major_depressive_disorder"]["panel_masked_prior"]["directional_accuracy"] is not None
+    # non-circular SCZ recovery improved via pathway_bias (not VOC prior re-injection)
+    assert by["schizophrenia"]["panel_masked_prior"]["directional_accuracy"] >= 0.8
+    assert report["mean_panel_masked_directional_accuracy"] >= 0.85
     # thin conditions documented
     thin_ids = {t["disease_id"] for t in report["thin_evidence_conditions"]}
     assert {"anxiety", "ptsd", "adhd", "autism_spectrum_disorder"} <= thin_ids
     # honesty: raw often perfect when circular; masked is the research metric
     assert "panel_masked_prior" in report["honesty"] or "de-circular" in report["honesty"].lower() or "masked" in report["honesty"]
+
+
+def test_gbaoui_mdd_scfa_mean_fixture_log2fc():
+    from pathlib import Path
+    import math
+
+    from exhalepath.config import DATA_DIR, PACKAGE_ROOT
+
+    paths = [
+        DATA_DIR / "real_breath" / "literature_panels" / "gbaoui_mdd_scfa_mean_fixture.json",
+        PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "gbaoui_mdd_scfa_mean_fixture.json",
+        Path("data/real_breath/literature_panels/gbaoui_mdd_scfa_mean_fixture.json"),
+    ]
+    path = next(p for p in paths if p.exists())
+    doc = json.loads(path.read_text())
+    assert "NOT patient-level" in doc["honesty"] or "not patient" in doc["honesty"].lower()
+    by = {s["label_int"]: s for s in doc["samples"]}
+    mdd, hc = by[1], by[0]
+    for voc in ("butyric_acid", "acetic_acid", "valeric_acid"):
+        got = math.log2(mdd[voc] / hc[voc])
+        assert abs(got - doc["expected_log2fc"][voc]) < 1e-3
+
 
 
 def test_thin_mh_conditions_documented_not_faked():
