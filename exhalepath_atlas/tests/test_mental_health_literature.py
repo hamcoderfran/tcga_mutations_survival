@@ -23,11 +23,26 @@ def test_mh_literature_panels_loaded_with_dois():
     scz = panels["schizophrenia"]
     assert any(r.get("doi") == "10.1080/15622975.2022.2040052" for r in scz["refs"])
     assert scz["measured_log2fc"]["trimethylamine"] < 0
+    assert scz["measured_log2fc"]["butyric_acid"] < 0
     assert scz["measured_log2fc"]["pentane"] > 0
+    mdd = panels["major_depressive_disorder"]
+    assert mdd["voc_evidence"]["butyric_acid"]["evidence"] == "quantified"
+    assert abs(mdd["measured_log2fc"]["butyric_acid"] - math.log2(116 / 169)) < 1e-3
     bd = panels["bipolar"]
     expected = math.log2(18.62 / 9.45)
     assert abs(bd["measured_log2fc"]["methyl_mercaptan"] - expected) < 1e-3
     assert bd["voc_evidence"]["methyl_mercaptan"]["evidence"] == "quantified"
+
+
+def test_butyric_acid_in_catalog_and_predictions():
+    clear_knowledge_cache()
+    kb = default_knowledge()
+    assert "butyric_acid" in kb.vocs
+    eng = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
+    r = eng.predict(disease="schizophrenia", location="brain", top_n=60, explain=False)
+    by = {p.voc_id: p for p in r.result.bundle.predictions}
+    assert "butyric_acid" in by
+    assert by["butyric_acid"].fold_change < 1.0
 
 
 def test_thin_mh_conditions_documented_not_faked():

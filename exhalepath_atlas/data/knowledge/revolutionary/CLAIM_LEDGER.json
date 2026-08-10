@@ -1,14 +1,14 @@
 {
   "schema_version": "ClaimLedger-1.0",
-  "generated_utc": "2026-08-10T02:13:43.884713+00:00",
+  "generated_utc": "2026-08-10T19:25:25.742468+00:00",
   "n_diseases": 110,
-  "n_claims": 959,
+  "n_claims": 961,
   "by_evidence_grade": {
     "atlas_prior": 810,
-    "directional_only": 70,
+    "directional_only": 71,
     "directional_only_mixed": 1,
     "mixed": 52,
-    "quantified": 24,
+    "quantified": 25,
     "quantified_null": 2
   },
   "diseases": [
@@ -7385,6 +7385,18 @@
       "notes": null
     },
     {
+      "claim_id": "lit:major_depressive_disorder:butyric_acid",
+      "disease_id": "major_depressive_disorder",
+      "voc_id": "butyric_acid",
+      "log2fc": -0.5429,
+      "direction": "decreased",
+      "evidence_grade": "quantified",
+      "source": "literature_panel",
+      "doi": "10.3389/fpsyt.2022.1061326",
+      "circularity_risk": false,
+      "notes": "log2(116 MDD / 169 healthy controls) from Gbaoui et al. reported exhaled butyric means"
+    },
+    {
       "claim_id": "prior:major_depressive_disorder:indole",
       "disease_id": "major_depressive_disorder",
       "voc_id": "indole",
@@ -9985,6 +9997,18 @@
       "evidence_grade": "directional_only",
       "source": "literature_panel",
       "doi": "10.3390/molecules28114385",
+      "circularity_risk": true,
+      "notes": null
+    },
+    {
+      "claim_id": "lit:schizophrenia:butyric_acid",
+      "disease_id": "schizophrenia",
+      "voc_id": "butyric_acid",
+      "log2fc": -0.4,
+      "direction": "decreased",
+      "evidence_grade": "directional_only",
+      "source": "literature_panel",
+      "doi": "10.1503/jpn.220139",
       "circularity_risk": true,
       "notes": null
     },

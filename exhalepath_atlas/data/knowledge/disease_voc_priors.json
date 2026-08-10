@@ -655,7 +655,8 @@
         "isoprene": -0.55,
         "trimethylamine": -0.45,
         "acetone": -0.2,
-        "propanol": 0.12
+        "propanol": 0.12,
+        "butyric_acid": -0.5429
       },
       "atlas_source": "literature_magdeburg_mdd_ptrms"
     },
@@ -688,7 +689,8 @@
         "isoprene": -0.55,
         "trimethylamine": -0.75,
         "methanol": -0.4,
-        "propanol": 0.1
+        "propanol": 0.1,
+        "butyric_acid": -0.55
       },
       "atlas_source": "literature_magdeburg_phillips"
     },

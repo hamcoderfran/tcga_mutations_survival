@@ -44,7 +44,10 @@ def test_hmdb_breath_extract_committed():
 
 def test_hmdb_panel_enrichment_complete():
     panel = json.loads((HMDB / "hmdb_panel_enrichment.json").read_text())
-    assert panel["n_enriched"] == 50
+    assert panel["n_enriched"] >= 50
+    assert "butyric_acid" in panel["by_voc"]
+    assert panel["by_voc"]["butyric_acid"]["hmdb_id"] == "HMDB0000039"
+    assert panel["by_voc"]["butyric_acid"]["in_breath"] is True
     assert not panel.get("missing_vocs")
     assert panel["by_voc"]["acetone"]["in_breath"] is True
 

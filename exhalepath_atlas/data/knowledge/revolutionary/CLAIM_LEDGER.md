@@ -1,14 +1,14 @@
 # VOC↔disease claim ledger
 
-Generated: 2026-08-10T02:13:43.884713+00:00
-Claims: **959** across **110** diseases
+Generated: 2026-08-10T19:25:25.742468+00:00
+Claims: **961** across **110** diseases
 
 ## By evidence grade
 
 - `atlas_prior`: 810
-- `directional_only`: 70
+- `directional_only`: 71
 - `mixed`: 52
-- `quantified`: 24
+- `quantified`: 25
 - `quantified_null`: 2
 - `directional_only_mixed`: 1
 

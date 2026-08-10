@@ -46,7 +46,7 @@
         "Saliva",
         "Urine"
       ],
-      "atlas_voc_id": null
+      "atlas_voc_id": "butyric_acid"
     },
     {
       "hmdb_id": "HMDB0000042",

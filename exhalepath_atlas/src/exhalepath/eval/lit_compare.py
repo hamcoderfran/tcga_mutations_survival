@@ -69,7 +69,7 @@ LIT_EXPECT: dict[str, dict[str, Any]] = {
     },
     "schizophrenia": {
         "elevate": ["pentane", "ethane", "carbon_disulfide", "ammonia"],
-        "suppress": ["acetone", "isoprene", "trimethylamine", "methanol"],
+        "suppress": ["acetone", "isoprene", "trimethylamine", "methanol", "butyric_acid"],
         "refs": [
             "doi:10.1080/15622975.2022.2040052 Magdeburg PTR-MS schizophrenia",
             "doi:10.1503/jpn.220139 gut–brain breath SCZ vs MDD",
@@ -78,7 +78,7 @@ LIT_EXPECT: dict[str, dict[str, Any]] = {
     },
     "major_depressive_disorder": {
         "elevate": ["ethanol", "acetaldehyde"],
-        "suppress": ["isoprene", "trimethylamine"],
+        "suppress": ["isoprene", "trimethylamine", "butyric_acid"],
         "refs": [
             "doi:10.3389/fpsyt.2022.819607 Magdeburg PTR-MS MDD",
             "doi:10.3389/fpsyt.2022.1061326 breathomics MDD pathways",
