@@ -30,8 +30,9 @@ Also see `magdeburg_ptrms_mz_map.json` and `mental_health_readiness.json`. Overl
 
 Run de-circularized eval: `voc eval-mental-health` (archives under `data/knowledge/mental_health/`).
 Current archived mean **panel-masked** directional accuracy = **100%** (raw 100% remains circular when priors overlap the panel).
+Eval also reports **mechanism-backed** accuracy (excludes |pred| < 0.02 near-floor sign luck).
 
-SCZ ↓acetone and MDD ↓TMA recover under mask via disease-local pathways `brain_energy_hypometabolism` and `choline_TMA_TMAO_axis` (negative `voc_effects`) — not by re-injecting VOC priors or inverting global ketone/gut maps.
+SCZ ↓acetone, MDD ↓SCFAs/TMA/butylamine recover under mask via disease-local pathways (`brain_energy_hypometabolism`, `scfa_metabolism`, `choline_TMA_TMAO_axis`, `amino_acid_decarboxylation`) — not by re-injecting VOC priors or inverting global ketone/gut maps. T2D acetone↑ and SIBO TMA↑ stay positive.
 
 Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json` (not patient intensities).
 
@@ -40,8 +41,9 @@ Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json
 - Anxiety, PTSD — acute-stress volatilomics / trauma-cue odour work exists; no named disease fold-change panel suitable for `measured_log2fc` (do not invent)
 - ADHD — no dedicated ADHD breath disease cohort found (EF-adjacent pilots not promoted)
 - Autism — published VOC signatures are primarily fecal/urine microbiome volatilomes, not exhaled alveolar gas
+- Bipolar OralChroma H2S/DMS — assayed but **unreported** as BD-vs-control means; not promoted
 
-Those four keep **de-cloned atlas priors** with explicit `atlas_source` labels instead of template clones.
+Those four thin conditions keep **de-cloned atlas priors** with explicit `atlas_source` labels instead of template clones.
 
 **Open intensity data:** Magdeburg figshare `19181742` is a DOCX supplement only — no patient×VOC intensity matrix is bundled.
 

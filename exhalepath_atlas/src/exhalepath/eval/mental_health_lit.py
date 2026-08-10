@@ -40,6 +40,46 @@ MH_THIN_DISEASES = (
     "autism_spectrum_disorder",
 )
 
+# Agreements with |pred| below this are treated as near-floor (not mechanism-backed).
+_MECHANISM_ABS_FLOOR = 0.02
+
+
+def _mechanism_backed_stats(overlay: dict[str, Any]) -> dict[str, Any]:
+    rows = list(overlay.get("rows") or [])
+    compared = [r for r in rows if r.get("agree") is not None]
+    backed = [
+        r
+        for r in compared
+        if r.get("predicted_log2fc") is not None
+        and abs(float(r["predicted_log2fc"])) >= _MECHANISM_ABS_FLOOR
+    ]
+    near = [r for r in compared if r not in backed]
+    backed_agree = sum(1 for r in backed if r.get("agree"))
+    return {
+        "abs_pred_floor": _MECHANISM_ABS_FLOOR,
+        "n_mechanism_backed": len(backed),
+        "n_near_floor": len(near),
+        "near_floor_vocs": sorted(r["voc_id"] for r in near),
+        "n_mechanism_backed_agree": backed_agree,
+        "mechanism_backed_directional_accuracy": (
+            (backed_agree / len(backed)) if backed else None
+        ),
+        "voc_rows": [
+            {
+                "voc_id": r.get("voc_id"),
+                "literature_log2fc": r.get("literature_log2fc"),
+                "predicted_log2fc": r.get("predicted_log2fc"),
+                "agree": r.get("agree"),
+                "mechanism_backed": (
+                    r.get("predicted_log2fc") is not None
+                    and abs(float(r["predicted_log2fc"])) >= _MECHANISM_ABS_FLOOR
+                ),
+            }
+            for r in rows
+            if r.get("agree") is not None
+        ],
+    }
+
 
 def _predict_vec(engine: ExhaleBiomarkerEngine, disease_id: str) -> dict[str, float]:
     d = engine.kb.diseases.get(disease_id) or {}
@@ -126,6 +166,7 @@ def evaluate_mental_health_literature(
             for v, ev in (panel.get("voc_evidence") or {}).items()
             if (ev or {}).get("evidence") == "quantified"
         ]
+        masked_extra = _mechanism_backed_stats(ov_masked)
         cases.append(
             {
                 "disease_id": did,
@@ -152,6 +193,7 @@ def evaluate_mental_health_literature(
                     "directional_accuracy_outside_prior": ov_masked.get(
                         "directional_accuracy_outside_prior"
                     ),
+                    **masked_extra,
                 },
                 "refs": [
                     {"doi": r.get("doi"), "title": r.get("title"), "year": r.get("year")}
@@ -187,20 +229,30 @@ def evaluate_mental_health_literature(
         for c in scored
         if c["panel_masked_prior"].get("directional_accuracy") is not None
     ]
+    mech_accs = [
+        c["panel_masked_prior"]["mechanism_backed_directional_accuracy"]
+        for c in scored
+        if c["panel_masked_prior"].get("mechanism_backed_directional_accuracy") is not None
+    ]
 
     report = {
-        "schema_version": "MentalHealthLitEval-1.0",
+        "schema_version": "MentalHealthLitEval-1.1",
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "honesty": (
             "Raw directional accuracy can be curation-circular when panel VOCs "
             "are also in atlas priors. panel_masked_prior removes those prior "
             "entries before prediction — that score is the de-circularized metric. "
+            "mechanism_backed_directional_accuracy further excludes near-floor "
+            f"|pred| < {_MECHANISM_ABS_FLOOR} agreements (physiology/sign luck). "
             "Neither score is a clinical AUROC; no MH patient intensity cohort is bundled."
         ),
         "n_panel_diseases": len(scored),
         "mean_raw_directional_accuracy": (sum(raw_accs) / len(raw_accs)) if raw_accs else None,
         "mean_panel_masked_directional_accuracy": (
             (sum(masked_accs) / len(masked_accs)) if masked_accs else None
+        ),
+        "mean_mechanism_backed_directional_accuracy": (
+            (sum(mech_accs) / len(mech_accs)) if mech_accs else None
         ),
         "cases": cases,
         "thin_evidence_conditions": thin_rows,
@@ -221,19 +273,28 @@ def evaluate_mental_health_literature(
             f"{report['mean_raw_directional_accuracy']}",
             f"- Mean **panel-masked prior** directional accuracy: "
             f"{report['mean_panel_masked_directional_accuracy']}",
+            f"- Mean **mechanism-backed** directional accuracy "
+            f"(|pred|≥{_MECHANISM_ABS_FLOOR}): "
+            f"{report['mean_mechanism_backed_directional_accuracy']}",
             "",
             "## Panel diseases",
             "",
         ]
         for c in scored:
+            pm = c["panel_masked_prior"]
+            near = pm.get("near_floor_vocs") or []
+            near_s = f"; near_floor={near}" if near else ""
             lines.append(
                 f"- **{c['disease_id']}**: raw="
                 f"{c['raw']['directional_accuracy']} "
                 f"({c['raw']['n_agree']}/{c['raw']['n_compared']}); "
                 f"masked="
-                f"{c['panel_masked_prior']['directional_accuracy']} "
-                f"({c['panel_masked_prior']['n_agree']}/{c['panel_masked_prior']['n_compared']}); "
-                f"removed_prior={c['n_prior_vocs_removed']}"
+                f"{pm['directional_accuracy']} "
+                f"({pm['n_agree']}/{pm['n_compared']}); "
+                f"mechanism_backed="
+                f"{pm.get('mechanism_backed_directional_accuracy')} "
+                f"({pm.get('n_mechanism_backed_agree')}/{pm.get('n_mechanism_backed')}); "
+                f"removed_prior={c['n_prior_vocs_removed']}{near_s}"
             )
         lines += ["", "## Thin-evidence conditions", ""]
         for t in thin_rows:

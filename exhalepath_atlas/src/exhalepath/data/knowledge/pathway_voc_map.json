@@ -1218,9 +1218,9 @@
         "MT-ND1"
       ],
       "voc_effects": {
-        "acetone": -0.6
+        "acetone": -0.95
       },
-      "note": "Disease-local negative acetone effect for Magdeburg schizophrenia ↓acetone under panel-masked eval. Do not invert ketone_body_metabolism / brain_energy_metabolism acetone coefs (breaks T2D/obesity ketosis maps).",
+      "note": "Disease-local negative acetone effect for Magdeburg schizophrenia ↓acetone under panel-masked eval. Magnitude sized to survive neurological hybrid physio blend (w_phys≈0.7). Do not invert ketone_body_metabolism / brain_energy_metabolism acetone coefs (breaks T2D/obesity ketosis maps).",
       "kegg_pathways": [
         {
           "kegg_pathway_id": "map00020",
@@ -1229,6 +1229,70 @@
         {
           "kegg_pathway_id": "map00010",
           "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
+    },
+    {
+      "pathway_id": "scfa_metabolism",
+      "name": "Short-chain fatty acid metabolism (host–microbe)",
+      "reactome_ids": [],
+      "seed_genes": [
+        "FFAR2",
+        "FFAR3",
+        "SLC5A8",
+        "ACSS2",
+        "ACADS",
+        "HDACs"
+      ],
+      "voc_effects": {
+        "butyric_acid": -0.55,
+        "acetic_acid": -0.45,
+        "valeric_acid": -0.5
+      },
+      "note": "Negative exhaled-SCFA effects are disease-scoped for Magdeburg/Gbaoui MH decreases. Do not add positive SCFA coefs to gut_microbiome_fermentation solely to force MH recovery (that map stays ethanol/acetaldehyde-positive).",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00650",
+          "name": "Butanoate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00061",
+          "name": "Fatty acid biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
+    },
+    {
+      "pathway_id": "amino_acid_decarboxylation",
+      "name": "Amino acid decarboxylation / biogenic amines",
+      "reactome_ids": [],
+      "seed_genes": [
+        "DDC",
+        "AOC1",
+        "MAOA",
+        "MAOB",
+        "ODC1",
+        "GAD1"
+      ],
+      "voc_effects": {
+        "butylamine": -0.55
+      },
+      "note": "Negative butylamine effect encodes Magdeburg/Gbaoui ↓n-butylamine (m/z 74) under panel-masked MH eval — disease-local, not a global amine-putrefaction inversion.",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00330",
+          "name": "Arginine and proline metabolism"
+        },
+        {
+          "kegg_pathway_id": "map00410",
+          "name": "beta-Alanine metabolism"
         },
         {
           "kegg_pathway_id": "map01100",

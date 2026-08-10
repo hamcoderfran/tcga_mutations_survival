@@ -426,7 +426,12 @@
         "ANK3",
         "BDNF",
         "CLOCK"
-      ]
+      ],
+      "assayed_but_unreported": {
+        "note": "OralChroma assay also measured H2S and dimethyl sulfide, but the paper reports significant BD-vs-control means only for CH3SH. Do not invent directional_only panels for H2S/DMS without published direction or means.",
+        "vocs": ["hydrogen_sulfide", "dms"],
+        "source_doi": "10.3390/jcm14062025"
+      }
     }
   ]
 }

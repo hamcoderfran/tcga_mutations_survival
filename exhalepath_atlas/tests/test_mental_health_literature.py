@@ -93,11 +93,27 @@ def test_mh_panel_masked_prior_eval_runs():
     assert by["schizophrenia"]["panel_masked_prior"]["directional_accuracy"] >= 0.95
     assert by["major_depressive_disorder"]["panel_masked_prior"]["directional_accuracy"] >= 0.95
     assert report["mean_panel_masked_directional_accuracy"] >= 0.95
+    assert report["mean_mechanism_backed_directional_accuracy"] is not None
+    assert report["mean_mechanism_backed_directional_accuracy"] >= 0.9
+    # MDD SCFAs / butylamine must be mechanism-backed (not near-floor sign luck)
+    mdd_rows = {
+        r["voc_id"]: r
+        for r in by["major_depressive_disorder"]["panel_masked_prior"]["voc_rows"]
+    }
+    for voc in ("butyric_acid", "acetic_acid", "valeric_acid", "butylamine", "trimethylamine"):
+        assert mdd_rows[voc]["agree"] is True
+        assert mdd_rows[voc]["mechanism_backed"] is True
+        assert abs(float(mdd_rows[voc]["predicted_log2fc"])) >= 0.02
+    scz_rows = {r["voc_id"]: r for r in by["schizophrenia"]["panel_masked_prior"]["voc_rows"]}
+    assert scz_rows["acetone"]["agree"] is True
+    assert scz_rows["acetone"]["mechanism_backed"] is True
+    assert abs(float(scz_rows["acetone"]["predicted_log2fc"])) >= 0.02
     # thin conditions documented
     thin_ids = {t["disease_id"] for t in report["thin_evidence_conditions"]}
     assert {"anxiety", "ptsd", "adhd", "autism_spectrum_disorder"} <= thin_ids
     # honesty: raw often perfect when circular; masked is the research metric
     assert "panel_masked_prior" in report["honesty"] or "de-circular" in report["honesty"].lower() or "masked" in report["honesty"]
+    assert "mechanism" in report["honesty"].lower()
 
 
 def test_mh_negative_pathway_effects_exist_for_masked_recovery():
@@ -107,13 +123,45 @@ def test_mh_negative_pathway_effects_exist_for_masked_recovery():
     kb = default_knowledge()
     hypo = kb.pathways["brain_energy_hypometabolism"]
     choline = kb.pathways["choline_TMA_TMAO_axis"]
+    scfa = kb.pathways["scfa_metabolism"]
+    amine = kb.pathways["amino_acid_decarboxylation"]
     assert hypo["voc_effects"]["acetone"] < 0
     assert choline["voc_effects"]["trimethylamine"] < 0
+    assert scfa["voc_effects"]["butyric_acid"] < 0
+    assert amine["voc_effects"]["butylamine"] < 0
     # global ketone / gut fermentation acetone/TMA stay non-negative (T2D/SIBO honesty)
     assert kb.pathways["ketone_body_metabolism"]["voc_effects"]["acetone"] > 0
     assert kb.pathways["gut_microbiome_fermentation"]["voc_effects"]["trimethylamine"] > 0
     assert kb.diseases["schizophrenia"]["pathway_bias"].get("brain_energy_hypometabolism", 1.0) > 1.05
     assert kb.diseases["major_depressive_disorder"]["pathway_bias"].get("choline_TMA_TMAO_axis", 1.0) > 1.05
+    assert kb.diseases["major_depressive_disorder"]["pathway_bias"].get("scfa_metabolism", 1.0) > 1.05
+
+
+def test_negative_mh_pathways_do_not_invert_t2d_or_sibo():
+    """Disease-local MH negative effects must not flip T2D acetone or SIBO TMA."""
+    from exhalepath.biomarker import ExhaleBiomarkerEngine
+    from exhalepath.knowledge.loader import clear_knowledge_cache
+
+    clear_knowledge_cache()
+    eng = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
+    t2d = eng.predict(disease="type_2_diabetes", location="liver", top_n=40, explain=False)
+    sibo = eng.predict(disease="sibo", location="gut", top_n=40, explain=False)
+    t2d_by = {p.voc_id: p.log2_fold_change for p in t2d.result.bundle.predictions}
+    sibo_by = {p.voc_id: p.log2_fold_change for p in sibo.result.bundle.predictions}
+    assert t2d_by["acetone"] > 0.5
+    assert sibo_by["trimethylamine"] > 0.2
+
+
+def test_bipolar_h2s_dms_not_invented_as_panels():
+    panels = {p["disease_id"]: p for p in load_literature_panels()}
+    bd = panels["bipolar"]
+    measured = set(bd["measured_log2fc"])
+    assert "methyl_mercaptan" in measured
+    assert "hydrogen_sulfide" not in measured
+    assert "dms" not in measured
+    note = bd.get("assayed_but_unreported") or {}
+    assert "hydrogen_sulfide" in (note.get("vocs") or [])
+    assert "dms" in (note.get("vocs") or [])
 
 
 def test_gbaoui_mdd_scfa_mean_fixture_log2fc():

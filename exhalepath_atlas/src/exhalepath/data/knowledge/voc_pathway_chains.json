@@ -567,12 +567,159 @@
             "FMO3"
           ],
           "pathway_ids": [
+            "choline_TMA_TMAO_axis",
             "microbial_proteolysis_putrefaction",
             "gut_microbiome_fermentation"
           ]
         }
       ],
-      "stoichiometry": 1.0
+      "stoichiometry": 1.0,
+      "notes": "Includes disease-local choline_TMA_TMAO_axis (can suppress free exhaled TMA in MH) alongside classical microbial TMA production maps."
+    },
+    {
+      "chain_id": "acetone_brain_hypometabolism",
+      "voc_id": "acetone",
+      "name": "Brain energy hypometabolism \u2192 reduced acetone",
+      "disease_anchors": [
+        "schizophrenia"
+      ],
+      "primary_tissues": [
+        "brain"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "cerebral_glucose_ketone_flux",
+          "to": "acetone",
+          "enzymes": [
+            "HK1",
+            "PDHA1",
+            "PPARGC1A"
+          ],
+          "pathway_ids": [
+            "brain_energy_hypometabolism"
+          ]
+        }
+      ],
+      "stoichiometry": 0.85,
+      "notes": "Hypothesis chain for Magdeburg schizophrenia \u2193acetone; does not replace acetone_ketogenesis for T2D."
+    },
+    {
+      "chain_id": "butyric_scfa_host_microbe",
+      "voc_id": "butyric_acid",
+      "name": "Host\u2013microbe SCFA axis \u2192 exhaled butyrate",
+      "disease_anchors": [
+        "major_depressive_disorder",
+        "schizophrenia"
+      ],
+      "primary_tissues": [
+        "gut",
+        "colon"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "dietary_fiber_pyruvate",
+          "to": "butyric_acid",
+          "enzymes": [
+            "FFAR2",
+            "SLC5A8",
+            "ACADS"
+          ],
+          "pathway_ids": [
+            "scfa_metabolism",
+            "gut_microbiome_fermentation"
+          ]
+        }
+      ],
+      "stoichiometry": 0.9,
+      "notes": "Gbaoui/Magdeburg MH show exhaled SCFA decreases; scfa_metabolism carries the negative disease-local effect."
+    },
+    {
+      "chain_id": "acetic_scfa_host_microbe",
+      "voc_id": "acetic_acid",
+      "name": "Host\u2013microbe SCFA axis \u2192 exhaled acetate",
+      "disease_anchors": [
+        "major_depressive_disorder"
+      ],
+      "primary_tissues": [
+        "gut",
+        "colon"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "dietary_fiber_pyruvate",
+          "to": "acetic_acid",
+          "enzymes": [
+            "ACSS2",
+            "FFAR2",
+            "SLC5A8"
+          ],
+          "pathway_ids": [
+            "scfa_metabolism"
+          ]
+        }
+      ],
+      "stoichiometry": 0.85
+    },
+    {
+      "chain_id": "valeric_scfa_host_microbe",
+      "voc_id": "valeric_acid",
+      "name": "Host\u2013microbe SCFA axis \u2192 exhaled valerate",
+      "disease_anchors": [
+        "major_depressive_disorder"
+      ],
+      "primary_tissues": [
+        "gut",
+        "colon"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "dietary_fiber_amino_acids",
+          "to": "valeric_acid",
+          "enzymes": [
+            "FFAR3",
+            "SLC5A8"
+          ],
+          "pathway_ids": [
+            "scfa_metabolism"
+          ]
+        }
+      ],
+      "stoichiometry": 0.8,
+      "notes": "Gbaoui notes m/z 85 lysine interference caveat for valeric."
+    },
+    {
+      "chain_id": "butylamine_decarboxylation",
+      "voc_id": "butylamine",
+      "name": "Amino-acid decarboxylation \u2192 n-butylamine",
+      "disease_anchors": [
+        "schizophrenia",
+        "major_depressive_disorder"
+      ],
+      "primary_tissues": [
+        "gut",
+        "brain"
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "from": "amino_acids",
+          "to": "butylamine",
+          "enzymes": [
+            "DDC",
+            "AOC1",
+            "MAOA"
+          ],
+          "pathway_ids": [
+            "amino_acid_decarboxylation"
+          ]
+        }
+      ],
+      "stoichiometry": 0.85,
+      "notes": "Magdeburg m/z 74 / Gbaoui n-butanamine directional decreases."
     },
     {
       "chain_id": "isopropanol_ketone",

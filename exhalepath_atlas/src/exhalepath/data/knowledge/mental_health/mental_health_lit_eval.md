@@ -1,17 +1,18 @@
 # Mental-health literature eval (de-circularized)
 
-Generated: 2026-08-10T19:45:01.436469+00:00
+Generated: 2026-08-10T19:54:26.591696+00:00
 
-> Raw directional accuracy can be curation-circular when panel VOCs are also in atlas priors. panel_masked_prior removes those prior entries before prediction — that score is the de-circularized metric. Neither score is a clinical AUROC; no MH patient intensity cohort is bundled.
+> Raw directional accuracy can be curation-circular when panel VOCs are also in atlas priors. panel_masked_prior removes those prior entries before prediction — that score is the de-circularized metric. mechanism_backed_directional_accuracy further excludes near-floor |pred| < 0.02 agreements (physiology/sign luck). Neither score is a clinical AUROC; no MH patient intensity cohort is bundled.
 
 - Mean **raw** directional accuracy: 1.0
 - Mean **panel-masked prior** directional accuracy: 1.0
+- Mean **mechanism-backed** directional accuracy (|pred|≥0.02): 1.0
 
 ## Panel diseases
 
-- **schizophrenia**: raw=1.0 (10/10); masked=1.0 (10/10); removed_prior=10
-- **major_depressive_disorder**: raw=1.0 (8/8); masked=1.0 (8/8); removed_prior=8
-- **bipolar**: raw=1.0 (2/2); masked=1.0 (2/2); removed_prior=2
+- **schizophrenia**: raw=1.0 (10/10); masked=1.0 (10/10); mechanism_backed=1.0 (7/7); removed_prior=10; near_floor=['carbon_disulfide', 'isoprene', 'methanol']
+- **major_depressive_disorder**: raw=1.0 (8/8); masked=1.0 (8/8); mechanism_backed=1.0 (6/6); removed_prior=8; near_floor=['ethanol', 'isoprene']
+- **bipolar**: raw=1.0 (2/2); masked=1.0 (2/2); mechanism_backed=1.0 (2/2); removed_prior=2
 
 ## Thin-evidence conditions
 
