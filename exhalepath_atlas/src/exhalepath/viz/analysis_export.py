@@ -13,27 +13,23 @@ from typing import Any, Iterable, Optional
 
 
 def _panel_for_disease(disease_id: str) -> dict[str, Any] | None:
-    from ..config import DATA_DIR
+    from ..data.literature_panels import literature_panel_for_disease
 
-    path = DATA_DIR / "real_breath" / "literature_panels" / "priority10_voc_panels.json"
-    if not path.exists():
-        # also try knowledge literature benchmarks
-        alt = Path(__file__).resolve().parents[1] / "data" / "knowledge" / "literature_benchmarks.json"
-        if alt.exists():
-            doc = json.loads(alt.read_text())
-            for c in doc.get("cases") or []:
-                if (c.get("disease_id") or c.get("disease") or "").lower().replace(" ", "_") in {
-                    disease_id.lower(),
-                    disease_id.lower().replace(" ", "_"),
-                }:
-                    return c
-        return None
-    doc = json.loads(path.read_text())
-    did = disease_id.lower().replace(" ", "_")
-    for p in doc.get("panels") or []:
-        pid = str(p.get("disease_id") or "").lower()
-        if pid == did or did in pid or pid in did:
-            return p
+    panel = literature_panel_for_disease(disease_id)
+    if panel:
+        return panel
+    # also try knowledge literature benchmarks
+    alt = Path(__file__).resolve().parents[1] / "data" / "knowledge" / "literature_benchmarks.json"
+    if alt.exists():
+        doc = json.loads(alt.read_text())
+        want = {
+            disease_id.lower(),
+            disease_id.lower().replace(" ", "_"),
+        }
+        for c in doc.get("cases") or []:
+            key = (c.get("disease_id") or c.get("disease") or "").lower().replace(" ", "_")
+            if key in want:
+                return c
     return None
 
 

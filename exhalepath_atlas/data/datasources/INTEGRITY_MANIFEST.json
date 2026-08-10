@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-08-09T19:06:29.235917+00:00",
-  "n_files": 8,
+  "generated_at": "2026-08-10T02:14:00.929111+00:00",
+  "n_files": 9,
   "files": [
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/hbdb/volatilome_compounds.json",
@@ -37,6 +37,11 @@
       "path": "/workspace/exhalepath_atlas/data/real_breath/literature_panels/priority10_voc_panels.json",
       "sha256": "4955672496c01563a370c7e040606a4a14617f8f9c822e523977cdca2dca550b",
       "n_bytes": 45710
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/real_breath/literature_panels/mental_health_voc_panels.json",
+      "sha256": "4e464b86f11ed25253894c43bf18f90a7c1609a0c6948383dee83f49d330ad82",
+      "n_bytes": 13690
     },
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/INTEGRATION_MANIFEST.json",

@@ -442,15 +442,19 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
     n_pubchem = int(pubchem.get("n_vocs_enriched") or pubchem.get("n_vocs") or 0)
     n_hmdb = int(hmdb.get("n_vocs") or hmdb.get("n_catalog_enriched") or 0)
 
-    panels = _load(ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json") or {}
-    n_panels = len(panels.get("panels") or [])
-    dois = set()
-    for p in panels.get("panels") or []:
-        for ref in p.get("refs") or []:
-            if isinstance(ref, dict) and ref.get("doi"):
-                dois.add(str(ref["doi"]).lower())
-            elif isinstance(ref, str) and ref.startswith("10."):
-                dois.add(ref.lower())
+    panels_dir = ROOT / "data" / "real_breath" / "literature_panels"
+    n_panels = 0
+    dois: set[str] = set()
+    if panels_dir.is_dir():
+        for path in sorted(panels_dir.glob("*_voc_panels.json")):
+            payload = _load(path) or {}
+            for p in payload.get("panels") or []:
+                n_panels += 1
+                for ref in p.get("refs") or []:
+                    if isinstance(ref, dict) and ref.get("doi"):
+                        dois.add(str(ref["doi"]).lower())
+                    elif isinstance(ref, str) and ref.startswith("10."):
+                        dois.add(ref.lower())
 
     catalog = _load(DS / "metabolomics" / "breath_study_catalog.json") or {}
     n_curated_studies = len(catalog.get("studies") or [])
@@ -468,6 +472,7 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
         DS / "metabolomics" / "breath_study_catalog_expanded.json",
         DS / "literature" / "europepmc_breath_voc_metadata.json",
         ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json",
+        ROOT / "data" / "real_breath" / "literature_panels" / "mental_health_voc_panels.json",
         DS / "INTEGRATION_MANIFEST.json",
     ]
     integrity = write_integrity_manifest(
