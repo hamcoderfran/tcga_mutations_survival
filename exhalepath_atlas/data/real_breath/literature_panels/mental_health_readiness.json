@@ -16,7 +16,12 @@
         "no open intensity matrix",
         "overlay prior-overlap is circular",
         "most claims directional_only"
-      ]
+      ],
+      "de_circularized": {
+        "raw": 1.0,
+        "panel_masked_prior": 0.6,
+        "n_prior_vocs_removed": 10
+      }
     },
     "major_depressive_disorder": {
       "status": "literature_panel_ready",
@@ -26,7 +31,12 @@
         "no open intensity matrix",
         "overlay prior-overlap is circular",
         "valeric m/z 85 lysine caveat"
-      ]
+      ],
+      "de_circularized": {
+        "raw": 1.0,
+        "panel_masked_prior": 0.875,
+        "n_prior_vocs_removed": 8
+      }
     },
     "bipolar": {
       "status": "literature_panel_ready",
@@ -35,7 +45,12 @@
       "holes": [
         "single sulfur VOC quantified",
         "oral microbiome confounder"
-      ]
+      ],
+      "de_circularized": {
+        "raw": 1.0,
+        "panel_masked_prior": 1.0,
+        "n_prior_vocs_removed": 2
+      }
     },
     "anxiety": {
       "status": "thin_prior_only",
@@ -61,6 +76,13 @@
     "Core VOC catalog expanded for MH SCFAs/amines: butyric_acid, acetic_acid, valeric_acid, butylamine (54 VOCs)",
     "MDD quantified acetic/valeric/butyric from Gbaoui means",
     "Circularity-aware literature overlay metrics (raw vs outside-prior)",
-    "Magdeburg figshare confirmed non-intensity DOCX"
-  ]
+    "Magdeburg figshare confirmed non-intensity DOCX",
+    "Added voc eval-mental-health: raw vs panel-masked-prior de-circularized overlay"
+  ],
+  "de_circularized_eval": {
+    "path": "data/knowledge/mental_health/mental_health_lit_eval.json",
+    "mean_raw_directional_accuracy": 1.0,
+    "mean_panel_masked_directional_accuracy": 0.8250000000000001,
+    "cli": "voc eval-mental-health"
+  }
 }

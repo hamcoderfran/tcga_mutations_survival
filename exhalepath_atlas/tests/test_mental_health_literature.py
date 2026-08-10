@@ -74,6 +74,26 @@ def test_overlay_reports_circularity_outside_prior():
     assert any(row.get("in_atlas_prior") for row in ov2["rows"])
 
 
+def test_mh_panel_masked_prior_eval_runs():
+    from exhalepath.eval.mental_health_lit import evaluate_mental_health_literature
+
+    report = evaluate_mental_health_literature(out_dir=None)
+    assert report["n_panel_diseases"] == 3
+    by = {c["disease_id"]: c for c in report["cases"] if not c.get("skipped")}
+    assert "schizophrenia" in by
+    assert "major_depressive_disorder" in by
+    assert by["major_depressive_disorder"]["n_quantified_vocs"] >= 3
+    # masking should remove panel VOC prior entries
+    assert by["major_depressive_disorder"]["n_prior_vocs_removed"] >= 1
+    assert by["major_depressive_disorder"]["raw"]["directional_accuracy"] is not None
+    assert by["major_depressive_disorder"]["panel_masked_prior"]["directional_accuracy"] is not None
+    # thin conditions documented
+    thin_ids = {t["disease_id"] for t in report["thin_evidence_conditions"]}
+    assert {"anxiety", "ptsd", "adhd", "autism_spectrum_disorder"} <= thin_ids
+    # honesty: raw often perfect when circular; masked is the research metric
+    assert "panel_masked_prior" in report["honesty"] or "de-circular" in report["honesty"].lower() or "masked" in report["honesty"]
+
+
 def test_thin_mh_conditions_documented_not_faked():
     notes = load_thin_evidence_notes()
     for did in ("anxiety", "ptsd", "adhd", "autism_spectrum_disorder"):
