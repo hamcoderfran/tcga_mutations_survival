@@ -154,6 +154,48 @@
       "mw_healthy_n": 504.0
     },
     {
+      "voc_id": "acetic_acid",
+      "name": "Acetic acid",
+      "cas": "64-19-7",
+      "formula": "C2H4O2",
+      "healthy_ppb_median": 40.0,
+      "healthy_ppb_low": 5.0,
+      "healthy_ppb_high": 200.0,
+      "sources": [
+        "gut_microbiome_fermentation",
+        "scfa_metabolism"
+      ],
+      "refs": [
+        "DOI:10.3389/fpsyt.2022.1061326",
+        "HMDB0000042"
+      ],
+      "hmdb_id": "HMDB0000042",
+      "dtxsid": "DTXSID8021486",
+      "mw": "60.05",
+      "kegg_compound_id": "C00033",
+      "kegg_pathways": [
+        "map00010",
+        "map00620",
+        "map01100"
+      ],
+      "kegg_enzymes": [
+        "1.2.1.3",
+        "6.2.1.1"
+      ],
+      "aliases": [
+        "ethanoic acid",
+        "acetate"
+      ],
+      "notes": "SCFA; Gbaoui MDD breathomics quantified means available.",
+      "inchikey": "QTBSBXVTEAMEQO-UHFFFAOYSA-N",
+      "smiles": "CC(O)=O",
+      "breath_reported": true,
+      "breath_volatilome": true,
+      "in_blood": true,
+      "in_urine": true,
+      "in_saliva": true
+    },
+    {
       "voc_id": "acetone",
       "name": "Acetone",
       "cas": "67-64-1",
@@ -431,6 +473,44 @@
       "breath_volatilome": true,
       "dtxsid": "DTXSID7024665",
       "smiles": "CCCC"
+    },
+    {
+      "voc_id": "butylamine",
+      "name": "Butylamine",
+      "cas": "109-73-9",
+      "formula": "C4H11N",
+      "healthy_ppb_median": 1.0,
+      "healthy_ppb_low": 0.1,
+      "healthy_ppb_high": 15.0,
+      "sources": [
+        "microbiome",
+        "amino_acid_decarboxylation"
+      ],
+      "refs": [
+        "DOI:10.3389/fpsyt.2022.1061326",
+        "DOI:10.1503/jpn.220139",
+        "HMDB0031321"
+      ],
+      "hmdb_id": "HMDB0031321",
+      "dtxsid": "DTXSID8021484",
+      "mw": "73.14",
+      "kegg_compound_id": null,
+      "kegg_pathways": [],
+      "kegg_enzymes": [],
+      "aliases": [
+        "1-butylamine",
+        "n-butylamine",
+        "butan-1-amine",
+        "n-butanamine"
+      ],
+      "notes": "Magdeburg/Gbaoui PTR-MS m/z 74 biogenic amine; decreased in MDD and schizophrenia cohorts.",
+      "inchikey": "HQABUPZFAYXKJW-UHFFFAOYSA-N",
+      "smiles": "CCCCN",
+      "breath_reported": true,
+      "breath_volatilome": true,
+      "in_blood": false,
+      "in_urine": false,
+      "in_saliva": false
     },
     {
       "voc_id": "butyric_acid",
@@ -1801,6 +1881,43 @@
       "breath_volatilome": true,
       "dtxsid": "DTXSID9021689",
       "smiles": "CCCCCCCCCCC"
+    },
+    {
+      "voc_id": "valeric_acid",
+      "name": "Valeric acid",
+      "cas": "109-52-4",
+      "formula": "C5H10O2",
+      "healthy_ppb_median": 4.0,
+      "healthy_ppb_low": 0.5,
+      "healthy_ppb_high": 30.0,
+      "sources": [
+        "gut_microbiome_fermentation",
+        "scfa_metabolism"
+      ],
+      "refs": [
+        "DOI:10.3389/fpsyt.2022.1061326",
+        "HMDB0000892"
+      ],
+      "hmdb_id": "HMDB0000892",
+      "dtxsid": "DTXSID8021519",
+      "mw": "102.13",
+      "kegg_compound_id": "C00803",
+      "kegg_pathways": [
+        "map01100"
+      ],
+      "kegg_enzymes": [],
+      "aliases": [
+        "pentanoic acid",
+        "valerate"
+      ],
+      "notes": "SCFA; Gbaoui MDD breathomics quantified means; m/z 85 may overlap lysine.",
+      "inchikey": "NQPDZGIKBAWPEJ-UHFFFAOYSA-N",
+      "smiles": "CCCCC(O)=O",
+      "breath_reported": true,
+      "breath_volatilome": true,
+      "in_blood": true,
+      "in_urine": true,
+      "in_saliva": true
     },
     {
       "voc_id": "xylene",

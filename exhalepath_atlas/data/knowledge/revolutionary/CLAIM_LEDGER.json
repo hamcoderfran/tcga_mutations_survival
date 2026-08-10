@@ -1,14 +1,14 @@
 {
   "schema_version": "ClaimLedger-1.0",
-  "generated_utc": "2026-08-10T19:25:25.742468+00:00",
+  "generated_utc": "2026-08-10T19:30:32.970974+00:00",
   "n_diseases": 110,
-  "n_claims": 961,
+  "n_claims": 965,
   "by_evidence_grade": {
     "atlas_prior": 810,
-    "directional_only": 71,
+    "directional_only": 73,
     "directional_only_mixed": 1,
     "mixed": 52,
-    "quantified": 25,
+    "quantified": 27,
     "quantified_null": 2
   },
   "diseases": [
@@ -7397,6 +7397,42 @@
       "notes": "log2(116 MDD / 169 healthy controls) from Gbaoui et al. reported exhaled butyric means"
     },
     {
+      "claim_id": "lit:major_depressive_disorder:acetic_acid",
+      "disease_id": "major_depressive_disorder",
+      "voc_id": "acetic_acid",
+      "log2fc": -0.2356,
+      "direction": "decreased",
+      "evidence_grade": "quantified",
+      "source": "literature_panel",
+      "doi": "10.3389/fpsyt.2022.1061326",
+      "circularity_risk": false,
+      "notes": "log2(124 MDD / 146 healthy controls) from Gbaoui et al. reported exhaled acetic means"
+    },
+    {
+      "claim_id": "lit:major_depressive_disorder:valeric_acid",
+      "disease_id": "major_depressive_disorder",
+      "voc_id": "valeric_acid",
+      "log2fc": -1.0,
+      "direction": "decreased",
+      "evidence_grade": "quantified",
+      "source": "literature_panel",
+      "doi": "10.3389/fpsyt.2022.1061326",
+      "circularity_risk": false,
+      "notes": "log2(4 MDD / 8 healthy controls) from Gbaoui et al. reported exhaled valeric means"
+    },
+    {
+      "claim_id": "lit:major_depressive_disorder:butylamine",
+      "disease_id": "major_depressive_disorder",
+      "voc_id": "butylamine",
+      "log2fc": -0.4,
+      "direction": "decreased",
+      "evidence_grade": "directional_only",
+      "source": "literature_panel",
+      "doi": "10.3389/fpsyt.2022.1061326",
+      "circularity_risk": true,
+      "notes": null
+    },
+    {
       "claim_id": "prior:major_depressive_disorder:indole",
       "disease_id": "major_depressive_disorder",
       "voc_id": "indole",
@@ -10004,6 +10040,18 @@
       "claim_id": "lit:schizophrenia:butyric_acid",
       "disease_id": "schizophrenia",
       "voc_id": "butyric_acid",
+      "log2fc": -0.4,
+      "direction": "decreased",
+      "evidence_grade": "directional_only",
+      "source": "literature_panel",
+      "doi": "10.1503/jpn.220139",
+      "circularity_risk": true,
+      "notes": null
+    },
+    {
+      "claim_id": "lit:schizophrenia:butylamine",
+      "disease_id": "schizophrenia",
+      "voc_id": "butylamine",
       "log2fc": -0.4,
       "direction": "decreased",
       "evidence_grade": "directional_only",

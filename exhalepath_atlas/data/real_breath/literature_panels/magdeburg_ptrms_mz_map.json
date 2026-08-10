@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "title": "Magdeburg PTR-MS psychiatric breath m/z → atlas VOC map",
+  "title": "Magdeburg PTR-MS psychiatric breath m/z \u2192 atlas VOC map",
   "honesty": "This maps published Magdeburg PTR-MS mass channels to atlas VOC identities when authors named them. Unnamed m/z channels are listed but not forced into measured_log2fc. Figshare 19181742 is a DOCX supplement, not a patient intensity matrix.",
   "cohorts": [
     {
@@ -29,26 +29,87 @@
     }
   ],
   "mz_map": [
-    {"mz": 33, "atlas_voc_id": "methanol", "identity_confidence": "literature_assigned", "notes": "Common PTR-MS methanol channel; reduced in Magdeburg schizophrenia stability cohort"},
-    {"mz": 59, "atlas_voc_id": "acetone", "identity_confidence": "literature_assigned", "notes": "Jiang 2022 reduced mass among schizophrenia signatures"},
-    {"mz": 60, "atlas_voc_id": "trimethylamine", "identity_confidence": "author_identified", "notes": "JPN 2023 explicitly identifies m/z 60 as trimethylamine"},
-    {"mz": 69, "atlas_voc_id": "isoprene", "identity_confidence": "author_identified", "notes": "JPN 2023 / Luib identify m/z 69 as isoprene"},
-    {"mz": 74, "atlas_voc_id": null, "candidate": "butylamine / N-butylamine", "identity_confidence": "author_discussed", "notes": "Discussed as N-butylamine in Magdeburg series; not in atlas core catalog"},
-    {"mz": 88, "atlas_voc_id": null, "candidate": "butyric-related / SCFA ester fragment", "identity_confidence": "uncertain", "notes": "Reduced in MDD/SCZ; not uniquely mapped to a single atlas VOC"},
-    {"mz": 89, "atlas_voc_id": "butyric_acid", "identity_confidence": "literature_assigned", "notes": "Luib associates m/z 89 with butanoic/butyric acid"},
-    {"mz": 90, "atlas_voc_id": "butyric_acid", "identity_confidence": "author_identified", "notes": "JPN 2023 identifies m/z 90 as butyric acid and esters"}
+    {
+      "mz": 33,
+      "atlas_voc_id": "methanol",
+      "identity_confidence": "literature_assigned",
+      "notes": "Common PTR-MS methanol channel; reduced in Magdeburg schizophrenia stability cohort"
+    },
+    {
+      "mz": 59,
+      "atlas_voc_id": "acetone",
+      "identity_confidence": "literature_assigned",
+      "notes": "Jiang 2022 reduced mass among schizophrenia signatures"
+    },
+    {
+      "mz": 60,
+      "atlas_voc_id": "trimethylamine",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 explicitly identifies m/z 60 as trimethylamine"
+    },
+    {
+      "mz": 69,
+      "atlas_voc_id": "isoprene",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 / Luib identify m/z 69 as isoprene"
+    },
+    {
+      "mz": 74,
+      "atlas_voc_id": "butylamine",
+      "candidate": "butylamine / N-butylamine / n-butanamine",
+      "identity_confidence": "author_discussed",
+      "notes": "Gbaoui identifies n-butanamine at m/z 74; Magdeburg SCZ series uses m/z 74 as discriminator."
+    },
+    {
+      "mz": 88,
+      "atlas_voc_id": null,
+      "candidate": "butyric-related / SCFA ester fragment",
+      "identity_confidence": "uncertain",
+      "notes": "Reduced in MDD/SCZ; not uniquely mapped to a single atlas VOC"
+    },
+    {
+      "mz": 89,
+      "atlas_voc_id": "butyric_acid",
+      "identity_confidence": "literature_assigned",
+      "notes": "Luib associates m/z 89 with butanoic/butyric acid"
+    },
+    {
+      "mz": 90,
+      "atlas_voc_id": "butyric_acid",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 identifies m/z 90 as butyric acid and esters"
+    }
   ],
   "open_intensity_data": {
     "available": false,
     "checked": [
       {
         "doi": "10.6084/m9.figshare.19181742",
-        "result": "DOCX supplement only; no patient×VOC intensity matrix"
+        "result": "DOCX supplement only; no patient\u00d7VOC intensity matrix"
       },
       {
         "source": "Metabolomics Workbench search",
         "result": "No public schizophrenia/MDD exhaled PTR-MS intensity study accession found for bundling"
       }
     ]
+  },
+  "quantified_scfa_means": {
+    "source_doi": "10.3389/fpsyt.2022.1061326",
+    "butyric_acid": {
+      "mdd": 116,
+      "hc": 169,
+      "log2fc": -0.5429
+    },
+    "acetic_acid": {
+      "mdd": 124,
+      "hc": 146,
+      "log2fc": -0.2356
+    },
+    "valeric_acid": {
+      "mdd": 4,
+      "hc": 8,
+      "log2fc": -1.0,
+      "caveat": "m/z 85 lysine interference"
+    }
   }
 }

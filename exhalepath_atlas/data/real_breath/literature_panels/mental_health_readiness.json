@@ -12,33 +12,55 @@
       "status": "literature_panel_ready",
       "evidence": "directional_only Magdeburg/Phillips; butyric + TMA + isoprene named",
       "quantified_vocs": 0,
-      "holes": ["no open intensity matrix", "overlay agreement is curation-circular"]
+      "holes": [
+        "no open intensity matrix",
+        "overlay prior-overlap is circular",
+        "most claims directional_only"
+      ]
     },
     "major_depressive_disorder": {
       "status": "literature_panel_ready",
-      "evidence": "mixed; butyric_acid quantified from Gbaoui means; other Magdeburg directions",
-      "quantified_vocs": 1,
-      "holes": ["no open intensity matrix", "small PTR-MS cohorts"]
+      "evidence": "mixed; butyric/acetic/valeric quantified from Gbaoui means; Magdeburg directions; IOP VSAW-SA supporting but IDs uncertain",
+      "quantified_vocs": 3,
+      "holes": [
+        "no open intensity matrix",
+        "overlay prior-overlap is circular",
+        "valeric m/z 85 lysine caveat"
+      ]
     },
     "bipolar": {
       "status": "literature_panel_ready",
       "evidence": "mixed; methyl_mercaptan quantified OralChroma",
       "quantified_vocs": 1,
-      "holes": ["single sulfur VOC quantified", "oral microbiome confounder"]
+      "holes": [
+        "single sulfur VOC quantified",
+        "oral microbiome confounder"
+      ]
     },
-    "anxiety": {"status": "thin_prior_only", "quantified_vocs": 0},
-    "ptsd": {"status": "thin_prior_only", "quantified_vocs": 0},
-    "adhd": {"status": "thin_prior_only", "quantified_vocs": 0},
+    "anxiety": {
+      "status": "thin_prior_only",
+      "quantified_vocs": 0
+    },
+    "ptsd": {
+      "status": "thin_prior_only",
+      "quantified_vocs": 0
+    },
+    "adhd": {
+      "status": "thin_prior_only",
+      "quantified_vocs": 0
+    },
     "autism_spectrum_disorder": {
       "status": "microbiome_proxy_prior_only",
       "quantified_vocs": 0,
-      "holes": ["no exhaled ASD disease panel; fecal/urine VOC literature only"]
+      "holes": [
+        "no exhaled ASD disease panel; fecal/urine VOC literature only"
+      ]
     }
   },
   "atlas_changes_this_iteration": [
-    "Added butyric_acid to core VOC catalog (51 VOCs)",
-    "Mapped Magdeburg m/z 89/90 → butyric_acid",
-    "MDD butyric quantified log2(116/169)",
-    "Documented figshare Magdeburg as non-intensity supplement"
+    "Core VOC catalog expanded for MH SCFAs/amines: butyric_acid, acetic_acid, valeric_acid, butylamine (54 VOCs)",
+    "MDD quantified acetic/valeric/butyric from Gbaoui means",
+    "Circularity-aware literature overlay metrics (raw vs outside-prior)",
+    "Magdeburg figshare confirmed non-intensity DOCX"
   ]
 }

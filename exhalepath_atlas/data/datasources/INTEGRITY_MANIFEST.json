@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-08-10T19:25:47.144590+00:00",
+  "generated_at": "2026-08-10T19:31:02.109531+00:00",
   "n_files": 9,
   "files": [
     {
@@ -10,13 +10,13 @@
     },
     {
       "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_catalog.json",
-      "sha256": "e6f9a370cdc7b8419b23fcdd96a8a97523a3a86a60e72f76700d1e3127fd5312",
-      "n_bytes": 44566
+      "sha256": "1e47362e91ff4697c2014bd43275312b353ac775b45c28b61b4d806bb2e11f5b",
+      "n_bytes": 47644
     },
     {
       "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_extended_catalog.json",
-      "sha256": "0a86ea9944d79db33498bcb17bedc005e15f3419b7f389774baeec5e3d0cd536",
-      "n_bytes": 384061
+      "sha256": "55d5e4c592ac3434cdc0039e13a6d01ab0ab41816b7fc09462484a45585983b5",
+      "n_bytes": 384069
     },
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog.json",
@@ -40,8 +40,8 @@
     },
     {
       "path": "/workspace/exhalepath_atlas/data/real_breath/literature_panels/mental_health_voc_panels.json",
-      "sha256": "e37135336fb5beca1a60282d2b72e1bf3634e5f41b1eaae4557ae0e4cdec2e2c",
-      "n_bytes": 15816
+      "sha256": "8eb58c046d2ce11f4622bf403c61f36fc15a4e9323769bed7e3037fc79e5c614",
+      "n_bytes": 17969
     },
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/INTEGRATION_MANIFEST.json",

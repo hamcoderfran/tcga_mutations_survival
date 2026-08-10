@@ -106,7 +106,8 @@
         "isoprene": -0.4,
         "trimethylamine": -0.4,
         "methanol": -0.4,
-        "butyric_acid": -0.4
+        "butyric_acid": -0.4,
+        "butylamine": -0.4
       },
       "evidence_grade": "directional_only",
       "voc_evidence": {
@@ -163,6 +164,12 @@
           "source_doi": "10.1503/jpn.220139",
           "direction": "decreased",
           "note": "m/z 90 identified as butyric acid / esters; lower in schizophrenia (and MDD) vs healthy controls in Magdeburg PTR-MS cohorts."
+        },
+        "butylamine": {
+          "evidence": "directional_only",
+          "source_doi": "10.1503/jpn.220139",
+          "direction": "decreased",
+          "note": "m/z 74 among schizophrenia-discriminating Magdeburg masses; Gbaoui/Magdeburg discuss as N-butylamine / biogenic amine."
         }
       },
       "pathway_links": {
@@ -194,6 +201,10 @@
           "gut_microbiome_fermentation",
           "scfa_metabolism",
           "histone_acetylation"
+        ],
+        "butylamine": [
+          "amino_acid_decarboxylation",
+          "gut_microbiome_fermentation"
         ]
       },
       "cell_states": [
@@ -238,6 +249,12 @@
           "title": "Breathomics profiling of metabolic pathways affected by major depression: Possibilities and limitations",
           "year": 2022,
           "method": "Non-targeted PTR-MS breathomics; pathway and SVM breathprint analyses"
+        },
+        {
+          "doi": "10.1088/1752-7163/ad7eef",
+          "title": "Rapid detection of depression by volatile organic compounds from exhalation",
+          "year": 2024,
+          "method": "VSAW-SA virtual sensor array; VOC identities uncertain \u2014 supporting method-diverse depression breath signal, not used for measured_log2fc"
         }
       ],
       "measured_log2fc": {
@@ -245,7 +262,10 @@
         "trimethylamine": -0.4,
         "ethanol": 0.6,
         "acetaldehyde": 0.6,
-        "butyric_acid": -0.5429
+        "butyric_acid": -0.5429,
+        "acetic_acid": -0.2356,
+        "valeric_acid": -1.0,
+        "butylamine": -0.4
       },
       "evidence_grade": "mixed",
       "voc_evidence": {
@@ -279,6 +299,25 @@
           "direction": "decreased",
           "calculation": "log2(116 MDD / 169 healthy controls) from Gbaoui et al. reported exhaled butyric means",
           "note": "Gbaoui et al. report exhaled butyric 116\u00b13.10 vs 169\u00b13.54 (MDD vs HC)."
+        },
+        "acetic_acid": {
+          "evidence": "quantified",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "calculation": "log2(124 MDD / 146 healthy controls) from Gbaoui et al. reported exhaled acetic means"
+        },
+        "valeric_acid": {
+          "evidence": "quantified",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "calculation": "log2(4 MDD / 8 healthy controls) from Gbaoui et al. reported exhaled valeric means",
+          "note": "Authors note m/z 85 interference with lysine; retained as valeric SCFA claim with that caveat."
+        },
+        "butylamine": {
+          "evidence": "directional_only",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "note": "n-Butanamine (m/z 74) among strongest univariate MDD discriminators; decreased vs controls."
         }
       },
       "pathway_links": {
@@ -302,6 +341,18 @@
           "gut_microbiome_fermentation",
           "scfa_metabolism",
           "pyruvate_metabolism"
+        ],
+        "acetic_acid": [
+          "scfa_metabolism",
+          "gut_microbiome_fermentation"
+        ],
+        "valeric_acid": [
+          "scfa_metabolism",
+          "gut_microbiome_fermentation"
+        ],
+        "butylamine": [
+          "amino_acid_decarboxylation",
+          "gut_microbiome_fermentation"
         ]
       },
       "cell_states": [

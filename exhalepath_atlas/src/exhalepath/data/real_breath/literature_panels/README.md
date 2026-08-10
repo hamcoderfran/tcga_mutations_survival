@@ -22,9 +22,13 @@ Loaders merge every `*_voc_panels.json` for claim ledger, literature overlays, a
 
 **Measured panels (DOI-backed):**
 
-- **Schizophrenia** — Magdeburg PTR-MS (Jiang 2022; JPN 2023; Molecules 2023) + Phillips pentane/CS2; butyric acid (m/z 90) in atlas catalog
-- **Major depressive disorder** — Magdeburg MDD PTR-MS + Gbaoui; **butyric quantified** `log2(116/169)`
+- **Schizophrenia** — Magdeburg PTR-MS + Phillips pentane/CS2; butyric (m/z 90) + butylamine (m/z 74) in atlas catalog
+- **Major depressive disorder** — Magdeburg + Gbaoui; **quantified SCFAs** butyric `log2(116/169)`, acetic `log2(124/146)`, valeric `log2(4/8)`; butylamine directional
 - **Bipolar** — OralChroma CH3SH quantified (`log2(18.62/9.45 ppb)`), plus directional pentane accent
+
+Also see `magdeburg_ptrms_mz_map.json` and `mental_health_readiness.json`. Overlay reports `directional_accuracy_outside_prior` to surface prior-circular agreement.
+
+**Thin
 
 **Thin / no measured exhaled panel (documented in `thin_evidence_conditions`):**
 

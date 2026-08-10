@@ -8,7 +8,7 @@
   "license": "CC-BY-NC-4.0",
   "citation": "Wishart DS et al. HMDB 5.0. Nucleic Acids Res. 2022;50(D1):D622-D631.",
   "n_metabolites_scanned": 217920,
-  "n_breath": 60,
+  "n_breath": 61,
   "biofluid_counts": {
     "Blood": 40678,
     "Feces": 6791,
@@ -64,7 +64,7 @@
         "Saliva",
         "Urine"
       ],
-      "atlas_voc_id": null
+      "atlas_voc_id": "acetic_acid"
     },
     {
       "hmdb_id": "HMDB0000474",
@@ -113,7 +113,7 @@
         "Saliva",
         "Urine"
       ],
-      "atlas_voc_id": null
+      "atlas_voc_id": "valeric_acid"
     },
     {
       "hmdb_id": "HMDB0001485",
@@ -879,6 +879,18 @@
         "Breath"
       ],
       "atlas_voc_id": null
+    },
+    {
+      "hmdb_id": "HMDB0031321",
+      "name": "1-Butylamine",
+      "pubchem_cid": 8007,
+      "formula": "C4H11N",
+      "inchikey": "HQABUPZFAYXKJW-UHFFFAOYSA-N",
+      "cas": "109-73-9",
+      "biospecimens": [
+        "Feces"
+      ],
+      "atlas_voc_id": "butylamine"
     }
   ]
 }

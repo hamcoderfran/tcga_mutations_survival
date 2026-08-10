@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
   "description": "HMDB annotations for ExhalePath VOC panel (XML + PubChem bridge)",
-  "n_vocs": 51,
+  "n_vocs": 54,
   "vocs": [
     {
       "voc_id": "2_butanone",
@@ -841,6 +841,27 @@
       "voc_id": "butyric_acid",
       "hmdb_id": "HMDB0000039",
       "name": "Butyric acid",
+      "source": "hmdbfix_wishart_bulk_xml",
+      "in_breath": true
+    },
+    {
+      "voc_id": "acetic_acid",
+      "hmdb_id": "HMDB0000042",
+      "name": "Acetic acid",
+      "source": "hmdbfix_wishart_bulk_xml",
+      "in_breath": true
+    },
+    {
+      "voc_id": "valeric_acid",
+      "hmdb_id": "HMDB0000892",
+      "name": "Valeric acid",
+      "source": "hmdbfix_wishart_bulk_xml",
+      "in_breath": true
+    },
+    {
+      "voc_id": "butylamine",
+      "hmdb_id": "HMDB0031321",
+      "name": "Butylamine",
       "source": "hmdbfix_wishart_bulk_xml",
       "in_breath": true
     }

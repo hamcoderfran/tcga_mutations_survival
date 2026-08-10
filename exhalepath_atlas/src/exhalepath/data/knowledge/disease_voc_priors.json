@@ -656,7 +656,10 @@
         "trimethylamine": -0.45,
         "acetone": -0.2,
         "propanol": 0.12,
-        "butyric_acid": -0.5429
+        "butyric_acid": -0.5429,
+        "acetic_acid": -0.2356,
+        "valeric_acid": -1.0,
+        "butylamine": -0.5
       },
       "atlas_source": "literature_magdeburg_mdd_ptrms"
     },
@@ -690,7 +693,8 @@
         "trimethylamine": -0.75,
         "methanol": -0.4,
         "propanol": 0.1,
-        "butyric_acid": -0.55
+        "butyric_acid": -0.55,
+        "butylamine": -0.45
       },
       "atlas_source": "literature_magdeburg_phillips"
     },

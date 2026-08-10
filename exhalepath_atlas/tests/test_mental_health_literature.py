@@ -37,12 +37,41 @@ def test_mh_literature_panels_loaded_with_dois():
 def test_butyric_acid_in_catalog_and_predictions():
     clear_knowledge_cache()
     kb = default_knowledge()
-    assert "butyric_acid" in kb.vocs
+    for vid in ("butyric_acid", "acetic_acid", "valeric_acid", "butylamine"):
+        assert vid in kb.vocs
     eng = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
     r = eng.predict(disease="schizophrenia", location="brain", top_n=60, explain=False)
     by = {p.voc_id: p for p in r.result.bundle.predictions}
-    assert "butyric_acid" in by
     assert by["butyric_acid"].fold_change < 1.0
+    assert by["butylamine"].fold_change < 1.0
+
+
+def test_mdd_quantified_scfa_panel():
+    panels = {p["disease_id"]: p for p in load_literature_panels()}
+    mdd = panels["major_depressive_disorder"]
+    assert mdd["voc_evidence"]["acetic_acid"]["evidence"] == "quantified"
+    assert mdd["voc_evidence"]["valeric_acid"]["evidence"] == "quantified"
+    assert abs(mdd["measured_log2fc"]["acetic_acid"] - math.log2(124 / 146)) < 1e-3
+    assert abs(mdd["measured_log2fc"]["valeric_acid"] - math.log2(4 / 8)) < 1e-3
+
+
+def test_overlay_reports_circularity_outside_prior():
+    clear_knowledge_cache()
+    eng = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
+    r = eng.predict(disease="major_depressive_disorder", location="brain", top_n=60, explain=False)
+    pred = {p.voc_id: float(p.log2_fold_change) for p in r.result.bundle.predictions}
+    # empty prior → outside-prior accuracy equals raw
+    ov = literature_overlay("major_depressive_disorder", pred, prior_log2fc={})
+    assert ov["available"]
+    assert ov["n_compared_outside_prior"] == ov["n_compared"]
+    # full prior overlap → outside-prior null
+    prior = dict(
+        (eng.kb.diseases.get("major_depressive_disorder") or {}).get("voc_log2fc_prior") or {}
+    )
+    ov2 = literature_overlay("major_depressive_disorder", pred, prior_log2fc=prior)
+    assert "directional_accuracy_outside_prior" in ov2
+    assert ov2["n_panel_vocs_also_in_prior"] >= 1
+    assert any(row.get("in_atlas_prior") for row in ov2["rows"])
 
 
 def test_thin_mh_conditions_documented_not_faked():
