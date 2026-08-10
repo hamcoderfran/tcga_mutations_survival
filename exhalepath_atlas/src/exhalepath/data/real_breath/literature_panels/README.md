@@ -28,8 +28,6 @@ Loaders merge every `*_voc_panels.json` for claim ledger, literature overlays, a
 
 Also see `magdeburg_ptrms_mz_map.json` and `mental_health_readiness.json`. Overlay reports `directional_accuracy_outside_prior` to surface prior-circular agreement.
 
-**Thin
-
 **Thin / no measured exhaled panel (documented in `thin_evidence_conditions`):**
 
 - Anxiety, PTSD — acute-stress volatilomics / trauma-cue odour work exists; no named disease fold-change panel suitable for `measured_log2fc`
