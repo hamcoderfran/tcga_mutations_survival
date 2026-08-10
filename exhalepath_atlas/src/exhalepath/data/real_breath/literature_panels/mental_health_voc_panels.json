@@ -195,7 +195,7 @@
         ],
         "acetone": [
           "ketone_body_metabolism",
-          "energy_metabolism"
+          "brain_energy_hypometabolism"
         ],
         "butyric_acid": [
           "gut_microbiome_fermentation",

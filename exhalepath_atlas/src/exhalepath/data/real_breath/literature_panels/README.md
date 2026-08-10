@@ -29,14 +29,16 @@ Loaders merge every `*_voc_panels.json` for claim ledger, literature overlays, a
 Also see `magdeburg_ptrms_mz_map.json` and `mental_health_readiness.json`. Overlay reports `directional_accuracy_outside_prior` to surface prior-circular agreement.
 
 Run de-circularized eval: `voc eval-mental-health` (archives under `data/knowledge/mental_health/`).
-Current archived mean **panel-masked** directional accuracy ≈ **92.5%** (raw 100% is circular).
+Current archived mean **panel-masked** directional accuracy = **100%** (raw 100% remains circular when priors overlap the panel).
+
+SCZ ↓acetone and MDD ↓TMA recover under mask via disease-local pathways `brain_energy_hypometabolism` and `choline_TMA_TMAO_axis` (negative `voc_effects`) — not by re-injecting VOC priors or inverting global ketone/gut maps.
 
 Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json` (not patient intensities).
 
 **Thin / no measured exhaled panel (documented in `thin_evidence_conditions`):**
 
-- Anxiety, PTSD — acute-stress volatilomics / trauma-cue odour work exists; no named disease fold-change panel suitable for `measured_log2fc`
-- ADHD — no dedicated ADHD breath disease cohort found
+- Anxiety, PTSD — acute-stress volatilomics / trauma-cue odour work exists; no named disease fold-change panel suitable for `measured_log2fc` (do not invent)
+- ADHD — no dedicated ADHD breath disease cohort found (EF-adjacent pilots not promoted)
 - Autism — published VOC signatures are primarily fecal/urine microbiome volatilomes, not exhaled alveolar gas
 
 Those four keep **de-cloned atlas priors** with explicit `atlas_source` labels instead of template clones.

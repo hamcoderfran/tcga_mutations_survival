@@ -643,7 +643,8 @@
         "neurotransmitter_metabolism": 1.7,
         "neuroinflammation": 1.3,
         "one_carbon_folate": 1.2,
-        "gut_microbiome_fermentation": 1.15
+        "gut_microbiome_fermentation": 1.15,
+        "choline_TMA_TMAO_axis": 1.5
       },
       "voc_log2fc_prior": {
         "ethanol": 0.55,
@@ -683,7 +684,8 @@
         "brain_energy_metabolism": 1.0,
         "one_carbon_folate": 1.0,
         "ketone_body_metabolism": 1.0,
-        "mevalonate_cholesterol": 1.0
+        "mevalonate_cholesterol": 1.0,
+        "brain_energy_hypometabolism": 1.55
       },
       "voc_log2fc_prior": {
         "pentane": 0.7,

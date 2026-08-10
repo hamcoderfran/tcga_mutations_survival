@@ -1173,6 +1173,68 @@
           "name": "Biosynthesis of secondary metabolites"
         }
       ]
+    },
+    {
+      "pathway_id": "choline_TMA_TMAO_axis",
+      "name": "Choline → TMA / TMAO axis (host–microbe)",
+      "reactome_ids": [],
+      "seed_genes": [
+        "FMO3",
+        "CHDH",
+        "PEMT",
+        "BHMT",
+        "SLC22A1",
+        "FMO1"
+      ],
+      "voc_effects": {
+        "trimethylamine": -0.55
+      },
+      "note": "Negative exhaled-TMA effect is disease-scoped for Magdeburg/Gbaoui MH decreases (reduced free TMA / altered choline flux). Do not invert gut_microbiome_fermentation or microbial_proteolysis_putrefaction globally (SIBO/IBD expect ↑TMA).",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00260",
+          "name": "Glycine, serine and threonine metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
+    },
+    {
+      "pathway_id": "brain_energy_hypometabolism",
+      "name": "Brain energy hypometabolism (ketone-sparing)",
+      "reactome_ids": [
+        "R-HSA-163200",
+        "R-HSA-1428517"
+      ],
+      "seed_genes": [
+        "PPARGC1A",
+        "TFAM",
+        "BDNF",
+        "HK1",
+        "PDHA1",
+        "SLC2A1",
+        "MT-ND1"
+      ],
+      "voc_effects": {
+        "acetone": -0.6
+      },
+      "note": "Disease-local negative acetone effect for Magdeburg schizophrenia ↓acetone under panel-masked eval. Do not invert ketone_body_metabolism / brain_energy_metabolism acetone coefs (breaks T2D/obesity ketosis maps).",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00020",
+          "name": "Citrate cycle (TCA cycle)"
+        },
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
     }
   ]
 }

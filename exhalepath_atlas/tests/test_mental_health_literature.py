@@ -88,14 +88,32 @@ def test_mh_panel_masked_prior_eval_runs():
     assert by["major_depressive_disorder"]["n_prior_vocs_removed"] >= 1
     assert by["major_depressive_disorder"]["raw"]["directional_accuracy"] is not None
     assert by["major_depressive_disorder"]["panel_masked_prior"]["directional_accuracy"] is not None
-    # non-circular SCZ recovery improved via pathway_bias (not VOC prior re-injection)
-    assert by["schizophrenia"]["panel_masked_prior"]["directional_accuracy"] >= 0.8
-    assert report["mean_panel_masked_directional_accuracy"] >= 0.85
+    # non-circular recovery via pathway_bias + disease-local negative voc_effects
+    # (not VOC prior re-injection; global ketone/gut TMA maps stay positive)
+    assert by["schizophrenia"]["panel_masked_prior"]["directional_accuracy"] >= 0.95
+    assert by["major_depressive_disorder"]["panel_masked_prior"]["directional_accuracy"] >= 0.95
+    assert report["mean_panel_masked_directional_accuracy"] >= 0.95
     # thin conditions documented
     thin_ids = {t["disease_id"] for t in report["thin_evidence_conditions"]}
     assert {"anxiety", "ptsd", "adhd", "autism_spectrum_disorder"} <= thin_ids
     # honesty: raw often perfect when circular; masked is the research metric
     assert "panel_masked_prior" in report["honesty"] or "de-circular" in report["honesty"].lower() or "masked" in report["honesty"]
+
+
+def test_mh_negative_pathway_effects_exist_for_masked_recovery():
+    from exhalepath.knowledge.loader import clear_knowledge_cache, default_knowledge
+
+    clear_knowledge_cache()
+    kb = default_knowledge()
+    hypo = kb.pathways["brain_energy_hypometabolism"]
+    choline = kb.pathways["choline_TMA_TMAO_axis"]
+    assert hypo["voc_effects"]["acetone"] < 0
+    assert choline["voc_effects"]["trimethylamine"] < 0
+    # global ketone / gut fermentation acetone/TMA stay non-negative (T2D/SIBO honesty)
+    assert kb.pathways["ketone_body_metabolism"]["voc_effects"]["acetone"] > 0
+    assert kb.pathways["gut_microbiome_fermentation"]["voc_effects"]["trimethylamine"] > 0
+    assert kb.diseases["schizophrenia"]["pathway_bias"].get("brain_energy_hypometabolism", 1.0) > 1.05
+    assert kb.diseases["major_depressive_disorder"]["pathway_bias"].get("choline_TMA_TMAO_axis", 1.0) > 1.05
 
 
 def test_gbaoui_mdd_scfa_mean_fixture_log2fc():
