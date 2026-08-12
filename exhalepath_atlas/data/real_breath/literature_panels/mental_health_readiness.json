@@ -15,14 +15,14 @@
       "holes": [
         "no open intensity matrix",
         "overlay prior-overlap is circular",
-        "most claims directional_only",
-        "some masked VOCs remain near-floor after physio blend (CS2/isoprene/methanol)"
+        "most claims directional_only"
       ],
       "de_circularized": {
         "raw": 1.0,
         "panel_masked_prior": 1.0,
         "mechanism_backed": 1.0,
-        "n_prior_vocs_removed": 10
+        "n_prior_vocs_removed": 10,
+        "near_floor_vocs": []
       }
     },
     "major_depressive_disorder": {
@@ -32,14 +32,14 @@
       "holes": [
         "no open intensity matrix",
         "overlay prior-overlap is circular",
-        "valeric m/z 85 lysine caveat",
-        "masked ethanol/isoprene near-floor (sign agree, weak magnitude)"
+        "valeric m/z 85 lysine caveat"
       ],
       "de_circularized": {
         "raw": 1.0,
         "panel_masked_prior": 1.0,
         "mechanism_backed": 1.0,
-        "n_prior_vocs_removed": 8
+        "n_prior_vocs_removed": 8,
+        "near_floor_vocs": []
       }
     },
     "bipolar": {
@@ -55,7 +55,8 @@
         "raw": 1.0,
         "panel_masked_prior": 1.0,
         "mechanism_backed": 1.0,
-        "n_prior_vocs_removed": 2
+        "n_prior_vocs_removed": 2,
+        "near_floor_vocs": []
       }
     },
     "anxiety": {
@@ -93,11 +94,10 @@
     "Circularity-aware literature overlay metrics (raw vs outside-prior)",
     "Magdeburg figshare confirmed non-intensity DOCX",
     "Added voc eval-mental-health: raw vs panel-masked-prior de-circularized overlay",
-    "SCZ pathway_bias retuned for non-circular Magdeburg alkane recovery (masked 60%\u219290%)",
-    "Gbaoui MDD SCFA mean-proxy fixture for log2fc smoke tests",
-    "Added disease-local negative pathway effects: brain_energy_hypometabolism, choline_TMA_TMAO_axis, scfa_metabolism, amino_acid_decarboxylation",
-    "Eval v1.1 adds mechanism_backed_directional_accuracy (|pred|\u22650.02) to exclude near-floor sign luck",
-    "T2D acetone / SIBO TMA regression guards; OralChroma H2S/DMS assayed-but-unreported honesty"
+    "Disease-local negative/positive pathways for masked recovery (acetone/TMA/SCFA/amine/isoprene/methanol/CS2/ethanol)",
+    "Eval v1.1 mechanism_backed_directional_accuracy (|pred|\u22650.02); near-floor list now empty for panel diseases",
+    "T2D acetone / SIBO TMA regression guards; OralChroma H2S/DMS assayed-but-unreported honesty",
+    "CS2/ethanol physio explain chains wired via hepatocyte_sulfur / gut_fermentative cell states"
   ],
   "de_circularized_eval": {
     "path": "data/knowledge/mental_health/mental_health_lit_eval.json",
@@ -105,15 +105,18 @@
     "mean_panel_masked_directional_accuracy": 1.0,
     "mean_mechanism_backed_directional_accuracy": 1.0,
     "cli": "voc eval-mental-health",
-    "note": "Panel-masked recovery uses disease-local negative voc_effects plus pathway_bias — not re-injected VOC priors. Global ketone/gut maps left positive for T2D/SIBO. Near-floor VOCs (e.g. MDD ethanol) are excluded from mechanism_backed accuracy."
+    "note": "All SCZ/MDD/bipolar panel VOCs are mechanism-backed under mask (|pred|\u22650.02). Disease-local pathways used; global ketone/mevalonate/gut TMA maps left intact for T2D/SIBO honesty. No MH intensity cohort bundled."
   },
   "negative_voc_effects_convention": {
-    "policy": "Prefer disease-local pathways with negative coefs over inverting shared ketone/gut maps",
+    "policy": "Prefer disease-local pathways with signed coefs over inverting shared ketone/gut/mevalonate maps",
     "pathways": [
       "brain_energy_hypometabolism",
       "choline_TMA_TMAO_axis",
       "scfa_metabolism",
-      "amino_acid_decarboxylation"
+      "amino_acid_decarboxylation",
+      "mevalonate_flux_suppression",
+      "methanol_one_carbon_suppression",
+      "pyruvate_ethanol_axis"
     ]
   },
   "literature_reconstructed_fixtures": [

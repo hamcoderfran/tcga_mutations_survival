@@ -108,6 +108,16 @@ def test_mh_panel_masked_prior_eval_runs():
     assert scz_rows["acetone"]["agree"] is True
     assert scz_rows["acetone"]["mechanism_backed"] is True
     assert abs(float(scz_rows["acetone"]["predicted_log2fc"])) >= 0.02
+    for voc in ("isoprene", "carbon_disulfide", "methanol"):
+        assert scz_rows[voc]["agree"] is True
+        assert scz_rows[voc]["mechanism_backed"] is True
+        assert abs(float(scz_rows[voc]["predicted_log2fc"])) >= 0.02
+    assert mdd_rows["isoprene"]["mechanism_backed"] is True
+    assert mdd_rows["ethanol"]["mechanism_backed"] is True
+    assert abs(float(mdd_rows["ethanol"]["predicted_log2fc"])) >= 0.02
+    # near-floor list should be empty for panel diseases after pathway wiring
+    assert by["schizophrenia"]["panel_masked_prior"].get("near_floor_vocs") == []
+    assert by["major_depressive_disorder"]["panel_masked_prior"].get("near_floor_vocs") == []
     # thin conditions documented
     thin_ids = {t["disease_id"] for t in report["thin_evidence_conditions"]}
     assert {"anxiety", "ptsd", "adhd", "autism_spectrum_disorder"} <= thin_ids
@@ -129,12 +139,18 @@ def test_mh_negative_pathway_effects_exist_for_masked_recovery():
     assert choline["voc_effects"]["trimethylamine"] < 0
     assert scfa["voc_effects"]["butyric_acid"] < 0
     assert amine["voc_effects"]["butylamine"] < 0
+    assert kb.pathways["mevalonate_flux_suppression"]["voc_effects"]["isoprene"] < 0
+    assert kb.pathways["methanol_one_carbon_suppression"]["voc_effects"]["methanol"] < 0
+    assert kb.pathways["pyruvate_ethanol_axis"]["voc_effects"]["ethanol"] > 0
     # global ketone / gut fermentation acetone/TMA stay non-negative (T2D/SIBO honesty)
     assert kb.pathways["ketone_body_metabolism"]["voc_effects"]["acetone"] > 0
     assert kb.pathways["gut_microbiome_fermentation"]["voc_effects"]["trimethylamine"] > 0
+    assert kb.pathways["mevalonate_cholesterol"]["voc_effects"]["isoprene"] > 0
     assert kb.diseases["schizophrenia"]["pathway_bias"].get("brain_energy_hypometabolism", 1.0) > 1.05
     assert kb.diseases["major_depressive_disorder"]["pathway_bias"].get("choline_TMA_TMAO_axis", 1.0) > 1.05
     assert kb.diseases["major_depressive_disorder"]["pathway_bias"].get("scfa_metabolism", 1.0) > 1.05
+    assert kb.diseases["schizophrenia"]["pathway_bias"].get("methionine_transsulfuration", 1.0) > 1.05
+    assert kb.diseases["major_depressive_disorder"]["pathway_bias"].get("pyruvate_ethanol_axis", 1.0) > 1.05
 
 
 def test_negative_mh_pathways_do_not_invert_t2d_or_sibo():

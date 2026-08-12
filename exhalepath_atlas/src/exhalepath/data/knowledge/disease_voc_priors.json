@@ -644,9 +644,11 @@
         "neuroinflammation": 1.3,
         "one_carbon_folate": 1.2,
         "gut_microbiome_fermentation": 1.15,
-        "choline_TMA_TMAO_axis": 1.5,
+        "choline_TMA_TMAO_axis": 1.55,
         "scfa_metabolism": 1.5,
-        "amino_acid_decarboxylation": 1.45
+        "amino_acid_decarboxylation": 1.45,
+        "mevalonate_flux_suppression": 1.65,
+        "pyruvate_ethanol_axis": 1.75
       },
       "voc_log2fc_prior": {
         "ethanol": 0.55,
@@ -690,7 +692,10 @@
         "brain_energy_hypometabolism": 1.7,
         "choline_TMA_TMAO_axis": 1.45,
         "scfa_metabolism": 1.45,
-        "amino_acid_decarboxylation": 1.45
+        "amino_acid_decarboxylation": 1.45,
+        "mevalonate_flux_suppression": 1.65,
+        "methionine_transsulfuration": 1.55,
+        "methanol_one_carbon_suppression": 1.6
       },
       "voc_log2fc_prior": {
         "pentane": 0.7,

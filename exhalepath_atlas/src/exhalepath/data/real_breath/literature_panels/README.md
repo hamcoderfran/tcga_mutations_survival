@@ -32,7 +32,7 @@ Run de-circularized eval: `voc eval-mental-health` (archives under `data/knowled
 Current archived mean **panel-masked** directional accuracy = **100%** (raw 100% remains circular when priors overlap the panel).
 Eval also reports **mechanism-backed** accuracy (excludes |pred| < 0.02 near-floor sign luck).
 
-SCZ ↓acetone, MDD ↓SCFAs/TMA/butylamine recover under mask via disease-local pathways (`brain_energy_hypometabolism`, `scfa_metabolism`, `choline_TMA_TMAO_axis`, `amino_acid_decarboxylation`) — not by re-injecting VOC priors or inverting global ketone/gut maps. T2D acetone↑ and SIBO TMA↑ stay positive.
+SCZ ↓acetone/isoprene/methanol/TMA/SCFAs/amines and ↑CS2, MDD ↓SCFAs/TMA/isoprene and ↑ethanol/acetaldehyde recover under mask via disease-local pathways — not by re-injecting VOC priors or inverting global ketone/gut/mevalonate maps. Near-floor list is empty for panel diseases. T2D acetone↑ and SIBO TMA↑ stay positive.
 
 Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json` (not patient intensities).
 

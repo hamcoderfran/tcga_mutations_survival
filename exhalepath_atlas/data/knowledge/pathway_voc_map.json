@@ -1299,6 +1299,94 @@
           "name": "Metabolic pathways"
         }
       ]
+    },
+    {
+      "pathway_id": "mevalonate_flux_suppression",
+      "name": "Mevalonate / cholesterol flux suppression (hypoisoprene)",
+      "reactome_ids": [
+        "R-HSA-191273"
+      ],
+      "seed_genes": [
+        "HMGCR",
+        "MVK",
+        "MVD",
+        "FDPS",
+        "SREBF2",
+        "LDLR"
+      ],
+      "voc_effects": {
+        "isoprene": -0.75
+      },
+      "note": "Disease-local negative isoprene effect for Magdeburg SCZ/MDD ↓isoprene under panel-masked eval. Do not invert global mevalonate_cholesterol (isoprene +0.85).",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00900",
+          "name": "Terpenoid backbone biosynthesis"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
+    },
+    {
+      "pathway_id": "methanol_one_carbon_suppression",
+      "name": "One-carbon / methanol volatile suppression",
+      "reactome_ids": [],
+      "seed_genes": [
+        "MTHFR",
+        "MTR",
+        "SHMT1",
+        "ADH1B",
+        "ADH1C",
+        "CAT"
+      ],
+      "voc_effects": {
+        "methanol": -0.7
+      },
+      "note": "Disease-local negative methanol effect for Magdeburg SCZ ↓methanol (m/z 33). Do not invert one_carbon_folate or gut_microbiome_fermentation methanol coefs globally.",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00670",
+          "name": "One carbon pool by folate"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
+    },
+    {
+      "pathway_id": "pyruvate_ethanol_axis",
+      "name": "Pyruvate / endogenous ethanol axis",
+      "reactome_ids": [],
+      "seed_genes": [
+        "LDHA",
+        "LDHB",
+        "PDHA1",
+        "ADH1B",
+        "ADH1C",
+        "ALDH2"
+      ],
+      "voc_effects": {
+        "ethanol": 0.7,
+        "acetaldehyde": 0.85
+      },
+      "note": "Disease-local positive ethanol/acetaldehyde for Gbaoui MDD ↑ethanol without raising gut_microbiome_fermentation enough to cancel choline_TMA_TMAO_axis ↓TMA. Acetaldehyde coef sized to survive neurological physio blend.",
+      "kegg_pathways": [
+        {
+          "kegg_pathway_id": "map00010",
+          "name": "Glycolysis / Gluconeogenesis"
+        },
+        {
+          "kegg_pathway_id": "map00620",
+          "name": "Pyruvate metabolism"
+        },
+        {
+          "kegg_pathway_id": "map01100",
+          "name": "Metabolic pathways"
+        }
+      ]
     }
   ]
 }
