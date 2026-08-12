@@ -841,7 +841,7 @@
   "mirror": "https://hmdbfix.wishartlab.com",
   "mirror_zip": "https://hmdbfix.wishartlab.com/system/downloads/current/hmdb_metabolites.zip",
   "breath_metabolites_summary": {
-    "n_breath": 60,
+    "n_breath": 61,
     "n_metabolites_scanned": 217920,
     "source": "hmdbfix.wishartlab.com",
     "path": "/workspace/exhalepath_atlas/data/datasources/hmdb/hmdb_breath_metabolites.json"

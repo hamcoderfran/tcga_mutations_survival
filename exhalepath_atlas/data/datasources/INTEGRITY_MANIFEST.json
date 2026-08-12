@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-08-09T19:06:29.235917+00:00",
-  "n_files": 8,
+  "generated_at": "2026-08-12T05:40:16.383937+00:00",
+  "n_files": 9,
   "files": [
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/hbdb/volatilome_compounds.json",
@@ -10,13 +10,13 @@
     },
     {
       "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_catalog.json",
-      "sha256": "80de8de3b8a64fcc206e5ffe22ce74ccdae9559a53db1f16bc594f5837023e03",
-      "n_bytes": 43413
+      "sha256": "1e47362e91ff4697c2014bd43275312b353ac775b45c28b61b4d806bb2e11f5b",
+      "n_bytes": 47644
     },
     {
       "path": "/workspace/exhalepath_atlas/src/exhalepath/data/knowledge/voc_extended_catalog.json",
-      "sha256": "8c94962b7adb59248d79150ac9623d1a8527f5714beabe05a96c274d1536a5b0",
-      "n_bytes": 384052
+      "sha256": "854e6f630ccd2c458aa5b4faef7a2345b714105cd1401449c722ad65554f37e9",
+      "n_bytes": 384069
     },
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/metabolomics/breath_study_catalog.json",
@@ -37,6 +37,11 @@
       "path": "/workspace/exhalepath_atlas/data/real_breath/literature_panels/priority10_voc_panels.json",
       "sha256": "4955672496c01563a370c7e040606a4a14617f8f9c822e523977cdca2dca550b",
       "n_bytes": 45710
+    },
+    {
+      "path": "/workspace/exhalepath_atlas/data/real_breath/literature_panels/mental_health_voc_panels.json",
+      "sha256": "3475dd5ab684e99a3698ab57336564fbb36309a9e3a7fce2c72eed260ff06914",
+      "n_bytes": 18477
     },
     {
       "path": "/workspace/exhalepath_atlas/data/datasources/INTEGRATION_MANIFEST.json",

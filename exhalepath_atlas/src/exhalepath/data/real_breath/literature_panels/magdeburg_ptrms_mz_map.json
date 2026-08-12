@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Magdeburg PTR-MS psychiatric breath m/z \u2192 atlas VOC map",
+  "honesty": "This maps published Magdeburg PTR-MS mass channels to atlas VOC identities when authors named them. Unnamed m/z channels are listed but not forced into measured_log2fc. Figshare 19181742 is a DOCX supplement, not a patient intensity matrix.",
+  "cohorts": [
+    {
+      "doi": "10.1080/15622975.2022.2040052",
+      "label": "Jiang 2022 schizophrenia vs controls",
+      "method": "PTR-MS awakening 0/30/60 min",
+      "direction_summary": "10 masses reduced in schizophrenia"
+    },
+    {
+      "doi": "10.1503/jpn.220139",
+      "label": "Jiang/Frodl 2023 schizophrenia vs MDD vs controls",
+      "method": "PTR-MS; mixed-model + BART",
+      "direction_summary": "m/z 60,69,74,88,90 discriminate groups; TMA and butyric identified"
+    },
+    {
+      "doi": "10.3389/fpsyt.2022.819607",
+      "label": "Luib/Frodl 2022 MDD vs controls",
+      "method": "PTR-MS awakening",
+      "direction_summary": "m/z 88,89,90 decreased in MDD"
+    },
+    {
+      "doi": "10.3389/fpsyt.2022.1061326",
+      "label": "Gbaoui 2022 MDD breathomics pathways",
+      "method": "Non-targeted PTR-MS",
+      "direction_summary": "SCFA and amine alterations; butyric means published"
+    }
+  ],
+  "mz_map": [
+    {
+      "mz": 33,
+      "atlas_voc_id": "methanol",
+      "identity_confidence": "literature_assigned",
+      "notes": "Common PTR-MS methanol channel; reduced in Magdeburg schizophrenia stability cohort"
+    },
+    {
+      "mz": 59,
+      "atlas_voc_id": "acetone",
+      "identity_confidence": "literature_assigned",
+      "notes": "Jiang 2022 reduced mass among schizophrenia signatures"
+    },
+    {
+      "mz": 60,
+      "atlas_voc_id": "trimethylamine",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 explicitly identifies m/z 60 as trimethylamine"
+    },
+    {
+      "mz": 69,
+      "atlas_voc_id": "isoprene",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 / Luib identify m/z 69 as isoprene"
+    },
+    {
+      "mz": 74,
+      "atlas_voc_id": "butylamine",
+      "candidate": "butylamine / N-butylamine / n-butanamine",
+      "identity_confidence": "author_discussed",
+      "notes": "Gbaoui identifies n-butanamine at m/z 74; Magdeburg SCZ series uses m/z 74 as discriminator."
+    },
+    {
+      "mz": 88,
+      "atlas_voc_id": null,
+      "candidate": "butyric-related / SCFA ester fragment",
+      "identity_confidence": "uncertain",
+      "notes": "Reduced in MDD/SCZ; not uniquely mapped to a single atlas VOC"
+    },
+    {
+      "mz": 89,
+      "atlas_voc_id": "butyric_acid",
+      "identity_confidence": "literature_assigned",
+      "notes": "Luib associates m/z 89 with butanoic/butyric acid"
+    },
+    {
+      "mz": 90,
+      "atlas_voc_id": "butyric_acid",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 identifies m/z 90 as butyric acid and esters"
+    }
+  ],
+  "open_intensity_data": {
+    "available": false,
+    "last_rechecked_utc": "2026-08-12T05:43:00Z",
+    "conclusion": "No open Magdeburg/psych exhaled PTR-MS patient\u00d7VOC intensity matrix found for bundling. Do not invent cohorts or AUROCs.",
+    "checked": [
+      {
+        "doi": "10.6084/m9.figshare.19181742",
+        "api": "https://api.figshare.com/v2/articles/19181742",
+        "result": "Single file iwbp_a_2040052_sm8481.docx (application/vnd.openxmlformats-officedocument.wordprocessingml.document); no CSV/TSV intensity matrix"
+      },
+      {
+        "source": "Metabolomics Workbench study_title=schizophrenia",
+        "result": "Hits are non-breath (e.g. ST005005 LC-MS early-onset schizophrenia metabolite profiling) — not exhaled PTR-MS panels"
+      },
+      {
+        "source": "Metabolomics Workbench study_title=depression breath",
+        "result": "Empty result set"
+      },
+      {
+        "source": "MetaboLights search schizophrenia breath",
+        "result": "No study found (API 400 / empty)"
+      },
+      {
+        "source": "JPN 2023 / Frontiers MDD Magdeburg papers",
+        "result": "Methods appendices / figures only; no machine-readable patient intensity deposit cited for bundling"
+      }
+    ]
+  },
+  "quantified_scfa_means": {
+    "source_doi": "10.3389/fpsyt.2022.1061326",
+    "butyric_acid": {
+      "mdd": 116,
+      "hc": 169,
+      "log2fc": -0.5429
+    },
+    "acetic_acid": {
+      "mdd": 124,
+      "hc": 146,
+      "log2fc": -0.2356
+    },
+    "valeric_acid": {
+      "mdd": 4,
+      "hc": 8,
+      "log2fc": -1.0,
+      "caveat": "m/z 85 lysine interference"
+    }
+  }
+}

@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 from ..config import DATA_DIR, PACKAGE_ROOT
+from ..data.literature_panels import load_literature_panels
 
 
 def _load_json(path: Path) -> Any:
@@ -24,13 +25,8 @@ def _load_json(path: Path) -> Any:
 
 
 def _priority_panels() -> list[dict[str, Any]]:
-    path = DATA_DIR / "real_breath" / "literature_panels" / "priority10_voc_panels.json"
-    if not path.exists():
-        alt = PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json"
-        path = alt if alt.exists() else path
-    if not path.exists():
-        return []
-    return list((_load_json(path).get("panels") or []))
+    """All curated literature panels (priority10 + mental health + future packs)."""
+    return load_literature_panels()
 
 
 def _disease_priors() -> list[dict[str, Any]]:

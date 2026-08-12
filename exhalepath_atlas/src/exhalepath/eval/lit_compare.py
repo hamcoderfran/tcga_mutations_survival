@@ -68,9 +68,29 @@ LIT_EXPECT: dict[str, dict[str, Any]] = {
         "refs": ["lit_t2d_acetone", "ketone-body breath literature"],
     },
     "schizophrenia": {
-        "elevate": ["pentane", "ethane"],
-        "suppress": ["acetone", "isoprene", "trimethylamine"],
-        "refs": ["Magdeburg PTR-MS schizophrenia breath"],
+        "elevate": ["pentane", "ethane", "carbon_disulfide", "ammonia"],
+        "suppress": ["acetone", "isoprene", "trimethylamine", "methanol", "butyric_acid", "butylamine"],
+        "refs": [
+            "doi:10.1080/15622975.2022.2040052 Magdeburg PTR-MS schizophrenia",
+            "doi:10.1503/jpn.220139 gut–brain breath SCZ vs MDD",
+            "doi:10.1136/jcp.46.9.861 Phillips pentane/CS2",
+        ],
+    },
+    "major_depressive_disorder": {
+        "elevate": ["ethanol", "acetaldehyde"],
+        "suppress": ["isoprene", "trimethylamine", "butyric_acid", "acetic_acid", "valeric_acid", "butylamine"],
+        "refs": [
+            "doi:10.3389/fpsyt.2022.819607 Magdeburg PTR-MS MDD",
+            "doi:10.3389/fpsyt.2022.1061326 breathomics MDD pathways",
+            "doi:10.1503/jpn.220139 SCZ vs MDD breath",
+        ],
+    },
+    "bipolar": {
+        "elevate": ["methyl_mercaptan", "pentane"],
+        "suppress": [],
+        "refs": [
+            "doi:10.3390/jcm14062025 OralChroma CH3SH bipolar spectrum",
+        ],
     },
     "heart_failure": {
         "elevate": ["acetone", "pentane"],
@@ -123,30 +143,20 @@ def _voc_vector(report) -> dict[str, float]:
 
 
 def _load_priority_panels() -> dict[str, dict[str, list[str]]]:
-    paths = [
-        KNOWLEDGE_DIR.parent / "real_breath" / "literature_panels" / "priority10_voc_panels.json",
-        PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "priority10_voc_panels.json",
-        Path("data/real_breath/literature_panels/priority10_voc_panels.json"),
-    ]
-    for p in paths:
-        if not p.exists():
+    from ..data.literature_panels import load_literature_panels
+
+    out: dict[str, dict[str, list[str]]] = {}
+    for row in load_literature_panels():
+        did = row.get("disease_id")
+        if not did:
             continue
-        doc = json.loads(p.read_text())
-        out: dict[str, dict[str, list[str]]] = {}
-        for row in doc.get("panels") or []:
-            did = row.get("disease_id")
-            if not did:
-                continue
-            measured = row.get("measured_log2fc") or {}
-            elevate = [k for k, v in measured.items() if float(v) > 0]
-            suppress = [k for k, v in measured.items() if float(v) < 0]
-            # also honor explicit lists if present
-            elevate = list(dict.fromkeys([*(row.get("elevate") or []), *elevate]))
-            suppress = list(dict.fromkeys([*(row.get("suppress") or []), *suppress]))
-            out[str(did)] = {"elevate": elevate, "suppress": suppress}
-        if out:
-            return out
-    return {}
+        measured = row.get("measured_log2fc") or {}
+        elevate = [k for k, v in measured.items() if float(v) > 0]
+        suppress = [k for k, v in measured.items() if float(v) < 0]
+        elevate = list(dict.fromkeys([*(row.get("elevate") or []), *elevate]))
+        suppress = list(dict.fromkeys([*(row.get("suppress") or []), *suppress]))
+        out[str(did)] = {"elevate": elevate, "suppress": suppress}
+    return out
 
 
 def _direction_score(vec: dict[str, float], elevate: list[str], suppress: list[str]) -> dict[str, Any]:
@@ -744,8 +754,9 @@ def _md(report: dict[str, Any]) -> str:
         "",
         f"**Mean directional concordance: {lit.get('mean_concordance_pct')}%** "
         f"across {lit.get('n_diseases')} diseases with curated elevate/suppress panels "
-        "(priority10 + review-backed expectations for COPD / bronchitis / lung cancer / "
-        "asthma / T2D / schizophrenia / HF / IBD / malaria).",
+        "(priority10 + MH Magdeburg/Gbaoui/OralChroma panels + review-backed expectations "
+        "for COPD / bronchitis / lung cancer / asthma / T2D / schizophrenia / MDD / "
+        "bipolar / HF / IBD / malaria).",
         "",
         "### What matches well",
         "",
@@ -757,7 +768,9 @@ def _md(report: dict[str, Any]) -> str:
         "- **Lung cancer → hexanal / heptanal / nonanal / 2-butanone**: aldehyde–ketone pattern "
         "(JTO breath VOC reviews).",
         "- **T2D → acetone**: ketone-body breath literature; atlas min-fold gates.",
-        "- **Schizophrenia → ↓ acetone / isoprene, ↑ pentane/ethane**: Magdeburg PTR-MS panel.",
+        "- **Schizophrenia → ↓ acetone / isoprene / trimethylamine, ↑ pentane/ethane/CS2**: Magdeburg PTR-MS (doi:10.1080/15622975.2022.2040052; doi:10.1503/jpn.220139) + Phillips pentane/CS2.",
+        "- **MDD → ↑ ethanol/acetaldehyde, ↓ SCFAs / isoprene / TMA**: Magdeburg + Gbaoui breathomics (doi:10.3389/fpsyt.2022.1061326).",
+        "- **Bipolar → ↑ methyl_mercaptan (CH3SH)**: OralChroma VSC (doi:10.3390/jcm14062025); H2S/DMS assayed but unreported — not invented.",
         "- **COPD ↔ chronic bronchitis closer than either ↔ LUAD**: expected obstructive continuum.",
         "",
         "### Where it is only partly aligned / cautious",
@@ -768,6 +781,9 @@ def _md(report: dict[str, Any]) -> str:
         "emphasizes multi-VOC patterns, which is why cosine neighborhoods matter more than "
         "single-marker claims (PMC7796324).",
         "- Hybrid physiology previously **attenuated** smoking BTEX (bug; now fixed).",
+        "- Magdeburg psych figshare `19181742` is a **DOCX supplement**, not a patient×VOC "
+        "intensity matrix — use `voc eval-mental-health` (panel-masked / mechanism-backed) "
+        "rather than AUROC claims.",
         "",
         "### Per-disease concordance",
         "",

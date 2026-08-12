@@ -643,20 +643,30 @@
         "neurotransmitter_metabolism": 1.7,
         "neuroinflammation": 1.3,
         "one_carbon_folate": 1.2,
-        "gut_microbiome_fermentation": 1.15
+        "gut_microbiome_fermentation": 1.15,
+        "choline_TMA_TMAO_axis": 1.55,
+        "scfa_metabolism": 1.5,
+        "amino_acid_decarboxylation": 1.45,
+        "mevalonate_flux_suppression": 1.65,
+        "pyruvate_ethanol_axis": 1.75
       },
       "voc_log2fc_prior": {
-        "isoprene": -0.4,
-        "indole": 0.45,
-        "ammonia": 0.3,
-        "acetone": 0.25,
-        "hexanal": 0.5525,
-        "pentane": 0.51,
-        "ethane": 0.34,
-        "nonanal": 0.34,
-        "octanal": 0.2975,
-        "propanol": 0.17
-      }
+        "ethanol": 0.55,
+        "acetaldehyde": 0.5,
+        "indole": 0.35,
+        "ammonia": 0.25,
+        "hexanal": 0.3,
+        "pentane": 0.25,
+        "isoprene": -0.55,
+        "trimethylamine": -0.45,
+        "acetone": -0.2,
+        "propanol": 0.12,
+        "butyric_acid": -0.5429,
+        "acetic_acid": -0.2356,
+        "valeric_acid": -1.0,
+        "butylamine": -0.5
+      },
+      "atlas_source": "literature_magdeburg_mdd_ptrms"
     },
     {
       "disease_id": "schizophrenia",
@@ -672,23 +682,37 @@
       "default_site": "brain",
       "pathway_bias": {
         "neurotransmitter_metabolism": 1.8,
-        "neuroinflammation": 1.3,
-        "brain_energy_metabolism": 1.25,
-        "one_carbon_folate": 1.2
+        "lipid_peroxidation": 1.65,
+        "neuroinflammation": 1.35,
+        "gut_microbiome_fermentation": 1.0,
+        "brain_energy_metabolism": 1.0,
+        "one_carbon_folate": 1.0,
+        "ketone_body_metabolism": 1.0,
+        "mevalonate_cholesterol": 1.0,
+        "brain_energy_hypometabolism": 1.7,
+        "choline_TMA_TMAO_axis": 1.45,
+        "scfa_metabolism": 1.45,
+        "amino_acid_decarboxylation": 1.45,
+        "mevalonate_flux_suppression": 1.65,
+        "methionine_transsulfuration": 1.55,
+        "methanol_one_carbon_suppression": 1.6
       },
       "voc_log2fc_prior": {
         "pentane": 0.7,
         "ethane": 0.6,
-        "ammonia": 0.25,
-        "formaldehyde": 0.2,
-        "hexanal": 0.35,
+        "carbon_disulfide": 0.55,
+        "ammonia": 0.35,
+        "hexanal": 0.3,
+        "formaldehyde": 0.15,
         "acetone": -0.85,
         "isoprene": -0.55,
         "trimethylamine": -0.75,
         "methanol": -0.4,
-        "propanol": 0.1
+        "propanol": 0.1,
+        "butyric_acid": -0.55,
+        "butylamine": -0.45
       },
-      "atlas_source": "stress_hardened_magdeburg"
+      "atlas_source": "literature_magdeburg_phillips"
     },
     {
       "disease_id": "epilepsy",
@@ -840,15 +864,16 @@
         "phenol": 0.55,
         "hydrogen_sulfide": 0.5,
         "ammonia": 0.35,
+        "acetone": 0.3,
         "isoprene": -0.2,
-        "hexanal": 0.5525,
-        "pentane": 0.51,
-        "ethane": 0.34,
-        "nonanal": 0.34,
-        "octanal": 0.2975,
-        "acetone": 0.255,
-        "propanol": 0.17
-      }
+        "hexanal": 0.35,
+        "pentane": 0.3,
+        "ethane": 0.25,
+        "nonanal": 0.25,
+        "octanal": 0.2,
+        "propanol": 0.15
+      },
+      "atlas_source": "gut_microbiome_voc_proxy_not_exhaled_panel"
     },
     {
       "disease_id": "heart_disease",
@@ -1156,22 +1181,23 @@
       "category": "neurological",
       "default_site": "brain",
       "pathway_bias": {
-        "neuroinflammation": 1.5,
-        "brain_energy_metabolism": 1.35,
-        "lipid_peroxidation": 1.3,
+        "neuroinflammation": 1.4,
+        "lipid_peroxidation": 1.45,
+        "microbial_proteolysis_putrefaction": 1.4,
+        "brain_energy_metabolism": 1.2,
         "neurotransmitter_metabolism": 1.25
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.65,
-        "pentane": 0.6,
-        "ethane": 0.4,
-        "nonanal": 0.4,
-        "acetone": 0.3,
-        "octanal": 0.2975,
-        "propanol": 0.17,
-        "isoprene": -0.1275
+        "methyl_mercaptan": 0.98,
+        "hydrogen_sulfide": 0.4,
+        "pentane": 0.55,
+        "ethane": 0.35,
+        "hexanal": 0.35,
+        "acetone": 0.2,
+        "isoprene": -0.2,
+        "nonanal": 0.25
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "literature_oralchroma_ch3sh"
     },
     {
       "disease_id": "als",
@@ -1923,16 +1949,16 @@
         "neurotransmitter_metabolism": 1.25
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.65,
-        "pentane": 0.6,
-        "ethane": 0.4,
-        "nonanal": 0.4,
-        "acetone": 0.3,
-        "octanal": 0.2975,
-        "propanol": 0.17,
-        "isoprene": -0.1275
+        "acetaldehyde": 0.4,
+        "ethanol": 0.35,
+        "acetone": 0.25,
+        "ammonia": 0.2,
+        "isoprene": -0.45,
+        "pentane": 0.2,
+        "hexanal": 0.2,
+        "propanol": 0.12
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "literature_thin_ef_adjacent_not_adhd_cohort"
     },
     {
       "disease_id": "migraine",
@@ -2440,16 +2466,16 @@
         "neurotransmitter_metabolism": 1.25
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.65,
-        "pentane": 0.6,
-        "ethane": 0.4,
-        "nonanal": 0.4,
-        "acetone": 0.3,
-        "octanal": 0.2975,
-        "propanol": 0.17,
-        "isoprene": -0.1275
+        "acetone": 0.45,
+        "pentane": 0.4,
+        "ethane": 0.35,
+        "ammonia": 0.3,
+        "hexanal": 0.25,
+        "isoprene": -0.35,
+        "ethanol": 0.2,
+        "propanol": 0.15
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "stress_proximal_hypothesis_thin_breath_lit"
     },
     {
       "disease_id": "ptsd",
@@ -2469,16 +2495,16 @@
         "neurotransmitter_metabolism": 1.25
       },
       "voc_log2fc_prior": {
-        "hexanal": 0.65,
-        "pentane": 0.6,
-        "ethane": 0.4,
-        "nonanal": 0.4,
-        "acetone": 0.3,
-        "octanal": 0.2975,
-        "propanol": 0.17,
-        "isoprene": -0.1275
+        "pentane": 0.55,
+        "ethane": 0.5,
+        "hexanal": 0.45,
+        "acetone": 0.35,
+        "ammonia": 0.25,
+        "nonanal": 0.3,
+        "isoprene": -0.4,
+        "trimethylamine": -0.2
       },
-      "atlas_source": "top100_template"
+      "atlas_source": "trauma_stress_proximal_hypothesis_thin_breath_lit"
     },
     {
       "disease_id": "sleep_apnea",

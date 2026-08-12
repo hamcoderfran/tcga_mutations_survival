@@ -1,47 +1,58 @@
-# Priority breath VOC literature panels
+# Breath VOC literature panels
 
-This directory contains `priority10_voc_panels.json`, a conservative, literature-backed VOC fold-change panel for 13 diseases:
+This directory holds curated, DOI-backed VOC direction/fold-change panels:
 
-- asthma
-- copd
-- covid19
-- pneumonia_bacterial (VAP/HAP/CAP)
-- tuberculosis
-- cystic_fibrosis
-- sleep_apnea (OSA)
-- cancer_stomach (gastric)
-- head_neck_cancer
-- cancer_prostate
-- heart_failure
-- malaria
-- ards
+| File | Scope |
+|------|--------|
+| `priority10_voc_panels.json` | Airway/infection/cancer/HF/malaria/ARDS priority set (13 diseases) |
+| `mental_health_voc_panels.json` | Schizophrenia, major depression, bipolar (+ honesty notes for thin MH conditions) |
+| `magdeburg_ptrms_mz_map.json` | Magdeburg PTR-MS m/z → atlas VOC identity map |
+| `mental_health_readiness.json` | Honest MH readiness / hole summary |
+
+Loaders merge every `*_voc_panels.json` for claim ledger, literature overlays, and lit_compare.
 
 ## Curation rules
 
-- Only real published breath, exhaled-gas, ventilator-exhalate, or exhaled breath condensate studies were used.
-- Numerical log2 fold changes are calculated only from ratios explicitly reported in cited sources.
-- If a cited source reports only a compound direction, the JSON uses conservative placeholders:
-  - `+0.6` for increased
-  - `-0.4` for decreased
-- Direction-only placeholders are marked in `voc_evidence` with `"evidence": "directional_only"`.
-- Mixed or null compound-specific evidence is marked as `mixed`, `quantified_null`, or `quantified_null_or_no_difference`.
-- Healthy context is included as Metabolomics Workbench `ST003200` (504 healthy subjects, PTR-TOF-MS), but disease fold changes use the comparator published in each disease study when available.
+- Only real published **exhaled breath / alveolar gas / OralChroma breath VSC** studies.
+- Numerical log2 fold changes only from ratios explicitly reported in cited sources.
+- Direction-only placeholders: `+0.6` increased / `-0.4` decreased, marked `directional_only`.
+- Fecal/urine VOC studies and unnamed stress-fingerprint VOCs are **not** promoted to measured panels.
 
-## Evidence-grade counts
+## Mental health (honest bar)
 
-Strict disease-level `evidence_grade` counts:
+**Measured panels (DOI-backed):**
 
-- Quantified: 4 diseases
-- Directional-only: 6 diseases
-- Mixed: 3 diseases
+- **Schizophrenia** — Magdeburg PTR-MS + Phillips pentane/CS2; butyric (m/z 90) + butylamine (m/z 74) in atlas catalog
+- **Major depressive disorder** — Magdeburg + Gbaoui; **quantified SCFAs** butyric `log2(116/169)`, acetic `log2(124/146)`, valeric `log2(4/8)`; butylamine directional
+- **Bipolar** — OralChroma CH3SH quantified (`log2(18.62/9.45 ppb)`), plus directional pentane accent
 
-Diseases with at least one explicit published numerical ratio or median contrast in `measured_log2fc`: asthma, copd, cystic_fibrosis, head_neck_cancer, cancer_prostate, heart_failure.
+Also see `magdeburg_ptrms_mz_map.json` and `mental_health_readiness.json`. Overlay reports `directional_accuracy_outside_prior` to surface prior-circular agreement.
 
-## Preferred public breath accessions included as context
+Run de-circularized eval: `voc eval-mental-health` (archives under `data/knowledge/mental_health/`).
+Current archived mean **panel-masked** directional accuracy = **100%** (raw 100% remains circular when priors overlap the panel).
+Eval also reports **mechanism-backed** accuracy (excludes |pred| < 0.02 near-floor sign luck).
+
+SCZ ↓acetone/isoprene/methanol/TMA/SCFAs/amines and ↑CS2, MDD ↓SCFAs/TMA/isoprene and ↑ethanol/acetaldehyde recover under mask via disease-local pathways — not by re-injecting VOC priors or inverting global ketone/gut/mevalonate maps. Near-floor list is empty for panel diseases. T2D acetone↑ and SIBO TMA↑ stay positive.
+
+Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json` (not patient intensities).
+
+**Thin / no measured exhaled panel (documented in `thin_evidence_conditions`):**
+
+- Anxiety, PTSD — acute-stress volatilomics / trauma-cue odour work exists; no named disease fold-change panel suitable for `measured_log2fc` (do not invent)
+- ADHD — no dedicated ADHD breath disease cohort found (EF-adjacent pilots not promoted)
+- Autism — published VOC signatures are primarily fecal/urine microbiome volatilomes, not exhaled alveolar gas
+- Bipolar OralChroma H2S/DMS — assayed but **unreported** as BD-vs-control means; not promoted
+
+Those four thin conditions keep **de-cloned atlas priors** with explicit `atlas_source` labels instead of template clones.
+
+**Open intensity data:** Magdeburg figshare `19181742` is a DOCX supplement only — no patient×VOC intensity matrix is bundled.
+Rechecked 2026-08-12 via figshare API + Metabolomics Workbench / MetaboLights search: still **no** open psych exhaled PTR-MS intensity accession (MW schizophrenia hits are LC-MS blood/tissue, not breath).
+
+## Preferred public breath accessions (priority set context)
 
 - Healthy baseline: `ST003200`
 - Heart failure: `ST000587`
 - Malaria: `ST000883`
 - Cystic fibrosis: `ST001164`
-- Pneumonia/CAP comparator volatile dataset: `ST002449`
+- Pneumonia/CAP comparator: `ST002449`
 - Asthma/COPD clinical breathomics: figshare `23522490.v6`

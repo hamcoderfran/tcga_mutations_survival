@@ -1,0 +1,402 @@
+{
+  "schema_version": "MentalHealthLitEval-1.1",
+  "generated_utc": "2026-08-12T05:34:31.696484+00:00",
+  "honesty": "Raw directional accuracy can be curation-circular when panel VOCs are also in atlas priors. panel_masked_prior removes those prior entries before prediction \u2014 that score is the de-circularized metric. mechanism_backed_directional_accuracy further excludes near-floor |pred| < 0.02 agreements (physiology/sign luck). Neither score is a clinical AUROC; no MH patient intensity cohort is bundled.",
+  "n_panel_diseases": 3,
+  "mean_raw_directional_accuracy": 1.0,
+  "mean_panel_masked_directional_accuracy": 1.0,
+  "mean_mechanism_backed_directional_accuracy": 1.0,
+  "cases": [
+    {
+      "disease_id": "schizophrenia",
+      "skipped": false,
+      "n_panel_vocs": 10,
+      "n_quantified_vocs": 0,
+      "quantified_vocs": [],
+      "n_prior_vocs_removed": 10,
+      "removed_prior_vocs": [
+        "acetone",
+        "ammonia",
+        "butylamine",
+        "butyric_acid",
+        "carbon_disulfide",
+        "ethane",
+        "isoprene",
+        "methanol",
+        "pentane",
+        "trimethylamine"
+      ],
+      "raw": {
+        "n_agree": 10,
+        "n_compared": 10,
+        "directional_accuracy": 1.0,
+        "n_panel_vocs_also_in_prior": 10,
+        "directional_accuracy_outside_prior": null
+      },
+      "panel_masked_prior": {
+        "n_agree": 10,
+        "n_compared": 10,
+        "directional_accuracy": 1.0,
+        "n_panel_vocs_also_in_prior": 0,
+        "directional_accuracy_outside_prior": 1.0,
+        "abs_pred_floor": 0.02,
+        "n_mechanism_backed": 10,
+        "n_near_floor": 0,
+        "near_floor_vocs": [],
+        "n_mechanism_backed_agree": 10,
+        "mechanism_backed_directional_accuracy": 1.0,
+        "voc_rows": [
+          {
+            "voc_id": "pentane",
+            "literature_log2fc": 0.6,
+            "predicted_log2fc": 3.9441987288555405,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "ethane",
+            "literature_log2fc": 0.6,
+            "predicted_log2fc": 0.12855648013129012,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "carbon_disulfide",
+            "literature_log2fc": 0.6,
+            "predicted_log2fc": 0.9940938335975644,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "ammonia",
+            "literature_log2fc": 0.6,
+            "predicted_log2fc": 0.7609641908397465,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "acetone",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.052729016926981995,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "isoprene",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.2106228466916184,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "trimethylamine",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.02647864686757926,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "methanol",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.04927111785296031,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "butyric_acid",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.027598303116733662,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "butylamine",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.027598303116733662,
+            "agree": true,
+            "mechanism_backed": true
+          }
+        ]
+      },
+      "refs": [
+        {
+          "doi": "10.1080/15622975.2022.2040052",
+          "title": "Volatile organic compounds from exhaled breath in schizophrenia",
+          "year": 2022
+        },
+        {
+          "doi": "10.1503/jpn.220139",
+          "title": "Gut\u2013brain axis volatile organic compounds derived from breath distinguish between schizophrenia and major depressive disorder",
+          "year": 2023
+        },
+        {
+          "doi": "10.3390/molecules28114385",
+          "title": "Dynamic Stability of Volatile Organic Compounds in Respiratory Air in Schizophrenic Patients and Its Potential Predicting Efficacy of TAAR Agonists",
+          "year": 2023
+        },
+        {
+          "doi": "10.1136/jcp.46.9.861",
+          "title": "Increased pentane and carbon disulfide in the breath of patients with schizophrenia",
+          "year": 1993
+        },
+        {
+          "doi": "10.1136/jcp.48.5.466",
+          "title": "Volatile organic compounds in the breath of patients with schizophrenia",
+          "year": 1995
+        }
+      ]
+    },
+    {
+      "disease_id": "major_depressive_disorder",
+      "skipped": false,
+      "n_panel_vocs": 8,
+      "n_quantified_vocs": 3,
+      "quantified_vocs": [
+        "butyric_acid",
+        "acetic_acid",
+        "valeric_acid"
+      ],
+      "n_prior_vocs_removed": 8,
+      "removed_prior_vocs": [
+        "acetaldehyde",
+        "acetic_acid",
+        "butylamine",
+        "butyric_acid",
+        "ethanol",
+        "isoprene",
+        "trimethylamine",
+        "valeric_acid"
+      ],
+      "raw": {
+        "n_agree": 8,
+        "n_compared": 8,
+        "directional_accuracy": 1.0,
+        "n_panel_vocs_also_in_prior": 8,
+        "directional_accuracy_outside_prior": null
+      },
+      "panel_masked_prior": {
+        "n_agree": 8,
+        "n_compared": 8,
+        "directional_accuracy": 1.0,
+        "n_panel_vocs_also_in_prior": 0,
+        "directional_accuracy_outside_prior": 1.0,
+        "abs_pred_floor": 0.02,
+        "n_mechanism_backed": 8,
+        "n_near_floor": 0,
+        "near_floor_vocs": [],
+        "n_mechanism_backed_agree": 8,
+        "mechanism_backed_directional_accuracy": 1.0,
+        "voc_rows": [
+          {
+            "voc_id": "isoprene",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.2106228466916184,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "trimethylamine",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.029296199346933626,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "ethanol",
+            "literature_log2fc": 0.6,
+            "predicted_log2fc": 0.9658226344293896,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "acetaldehyde",
+            "literature_log2fc": 0.6,
+            "predicted_log2fc": 0.06357205042719384,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "butyric_acid",
+            "literature_log2fc": -0.5429,
+            "predicted_log2fc": -0.03127358553828154,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "acetic_acid",
+            "literature_log2fc": -0.2356,
+            "predicted_log2fc": -0.026126793774805285,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "valeric_acid",
+            "literature_log2fc": -1.0,
+            "predicted_log2fc": -0.028705921347708368,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "butylamine",
+            "literature_log2fc": -0.4,
+            "predicted_log2fc": -0.027598303116733662,
+            "agree": true,
+            "mechanism_backed": true
+          }
+        ]
+      },
+      "refs": [
+        {
+          "doi": "10.3389/fpsyt.2022.819607",
+          "title": "Volatile Organic Compounds From Breath Differ Between Patients With Major Depression and Healthy Controls",
+          "year": 2022
+        },
+        {
+          "doi": "10.1503/jpn.220139",
+          "title": "Gut\u2013brain axis volatile organic compounds derived from breath distinguish between schizophrenia and major depressive disorder",
+          "year": 2023
+        },
+        {
+          "doi": "10.3389/fpsyt.2022.1061326",
+          "title": "Breathomics profiling of metabolic pathways affected by major depression: Possibilities and limitations",
+          "year": 2022
+        },
+        {
+          "doi": "10.1088/1752-7163/ad7eef",
+          "title": "Rapid detection of depression by volatile organic compounds from exhalation",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "disease_id": "bipolar",
+      "skipped": false,
+      "n_panel_vocs": 2,
+      "n_quantified_vocs": 1,
+      "quantified_vocs": [
+        "methyl_mercaptan"
+      ],
+      "n_prior_vocs_removed": 2,
+      "removed_prior_vocs": [
+        "methyl_mercaptan",
+        "pentane"
+      ],
+      "raw": {
+        "n_agree": 2,
+        "n_compared": 2,
+        "directional_accuracy": 1.0,
+        "n_panel_vocs_also_in_prior": 2,
+        "directional_accuracy_outside_prior": null
+      },
+      "panel_masked_prior": {
+        "n_agree": 2,
+        "n_compared": 2,
+        "directional_accuracy": 1.0,
+        "n_panel_vocs_also_in_prior": 0,
+        "directional_accuracy_outside_prior": 1.0,
+        "abs_pred_floor": 0.02,
+        "n_mechanism_backed": 2,
+        "n_near_floor": 0,
+        "near_floor_vocs": [],
+        "n_mechanism_backed_agree": 2,
+        "mechanism_backed_directional_accuracy": 1.0,
+        "voc_rows": [
+          {
+            "voc_id": "methyl_mercaptan",
+            "literature_log2fc": 0.9785,
+            "predicted_log2fc": 0.02146953802112712,
+            "agree": true,
+            "mechanism_backed": true
+          },
+          {
+            "voc_id": "pentane",
+            "literature_log2fc": 0.45,
+            "predicted_log2fc": 3.1971231400784,
+            "agree": true,
+            "mechanism_backed": true
+          }
+        ]
+      },
+      "refs": [
+        {
+          "doi": "10.3390/jcm14062025",
+          "title": "The Breathomics Profile of Volatile Sulfur Compounds in the Bipolar Spectrum, Does It Represent a Potential Tool for Early Diagnosis?",
+          "year": 2025
+        },
+        {
+          "doi": "10.1136/jcp.46.9.861",
+          "title": "Increased pentane and carbon disulfide in the breath of patients with schizophrenia",
+          "year": 1993
+        }
+      ]
+    }
+  ],
+  "thin_evidence_conditions": [
+    {
+      "disease_id": "anxiety",
+      "has_measured_panel": false,
+      "atlas_source": "stress_proximal_hypothesis_thin_breath_lit",
+      "n_prior_vocs": 8,
+      "note": "Acute psychosocial-stress breath/skin volatilomics exists (Mansour et al. ACS Sensors 2023), but the eight stress VOCs are not named in the abstract and a large e-nose community sample found no generalizable link to clinical anxiety severity.",
+      "refs": [
+        {
+          "doi": "10.1021/acssensors.3c00945",
+          "title": "Continuous Monitoring of Psychosocial Stress by Non-Invasive Volatilomics",
+          "year": 2023
+        },
+        {
+          "doi": "10.3389/fpsyt.2020.503248",
+          "title": "Machine Learning Analysis of Electronic Nose in a Transdiagnostic Community Sample: No Links Between Volatile Organic Compounds and Psychiatric Symptoms",
+          "year": 2020
+        }
+      ]
+    },
+    {
+      "disease_id": "ptsd",
+      "has_measured_panel": false,
+      "atlas_source": "trauma_stress_proximal_hypothesis_thin_breath_lit",
+      "n_prior_vocs": 8,
+      "note": "Trauma-cue breath odour discrimination (canine proof-of-concept) and acute-stress volatilomics exist, but no named PTSD-vs-control exhaled VOC fold-change panel suitable for atlas measured_log2fc.",
+      "refs": [
+        {
+          "doi": "10.3389/falgy.2024.1352840",
+          "title": "Can scent-detection dogs detect the stress associated with trauma cue exposure in people with trauma histories?",
+          "year": 2024
+        },
+        {
+          "doi": "10.1021/acssensors.3c00945",
+          "title": "Continuous Monitoring of Psychosocial Stress by Non-Invasive Volatilomics",
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "disease_id": "adhd",
+      "has_measured_panel": false,
+      "atlas_source": "literature_thin_ef_adjacent_not_adhd_cohort",
+      "n_prior_vocs": 8,
+      "note": "No dedicated ADHD case-control exhaled VOC disease panel found. Pediatric executive-function breath pilots are not ADHD diagnostic cohorts and are not copied into measured panels.",
+      "refs": [
+        {
+          "doi": "10.1007/s11306-025-02277-5",
+          "title": "Exploring the use of exhaled breath profiling for non-invasive monitoring of cognitive functioning in children: a pilot study",
+          "year": 2025
+        }
+      ]
+    },
+    {
+      "disease_id": "autism_spectrum_disorder",
+      "has_measured_panel": false,
+      "atlas_source": "gut_microbiome_voc_proxy_not_exhaled_panel",
+      "n_prior_vocs": 12,
+      "note": "Published ASD VOC signatures are primarily fecal/urine microbiome volatilomes, not exhaled alveolar gas. Atlas ASD prior remains microbiome-flavored hypothesis, not a breath literature panel.",
+      "refs": [
+        {
+          "doi": "10.3389/fmicb.2023.1287350",
+          "title": "Gut microbiota functional profiling in autism spectrum disorders: bacterial VOCs and related metabolic pathways",
+          "year": 2023
+        }
+      ]
+    }
+  ]
+}

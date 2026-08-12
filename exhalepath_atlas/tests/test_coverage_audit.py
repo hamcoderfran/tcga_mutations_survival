@@ -91,3 +91,7 @@ def test_coverage_audit_offline_meets_open_compound_target():
     assert Path("data/knowledge/COVERAGE_AUDIT.md").exists()
     assert Path("data/datasources/INTEGRITY_MANIFEST.json").exists()
     assert report["security"]["no_execution_of_downloads"] is True
+    gap_ids = {g["id"] for g in report.get("gaps") or []}
+    assert "magdeburg_no_intensity_matrix" in gap_ids
+    assert "mh_thin_conditions_unpromoted" in gap_ids
+    assert report["metrics"]["literature_panels"] >= 3

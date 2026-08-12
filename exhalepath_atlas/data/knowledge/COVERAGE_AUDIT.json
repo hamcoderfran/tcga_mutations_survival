@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-08-09T19:06:29.236071+00:00",
+  "generated_at": "2026-08-12T05:40:16.384099+00:00",
   "honesty_preamble": "This audit does NOT claim 99% of all VOC content on the internet. It targets 99% of the defined open machine-readable breath-VOC compound universe (EPA VOLATILOME / HBDB backbone). HBDB live HTML, restricted SQL, Owlstone gated Atlas, and exhaustive PDF scraping remain out of scope.",
   "universe": {
     "version": "1.0.0",
-    "generated_at": "2026-08-09T19:06:29.207487+00:00",
+    "generated_at": "2026-08-12T05:40:16.358078+00:00",
     "definition": "Open, machine-readable human exhaled-breath VOC resources that can be fetched over allowlisted HTTPS APIs/files without executing untrusted code, accepting restrictive licenses, or bypassing Cloudflare/paywalls.",
     "in_scope": [
       {
@@ -86,22 +86,22 @@
     "open_compound_coverage": 1.0,
     "open_compound_coverage_pct": 100.0,
     "meets_99pct_open_compound_target": true,
-    "atlas_prediction_vocs": 50,
-    "extended_mapped_to_atlas_voc": 44,
+    "atlas_prediction_vocs": 54,
+    "extended_mapped_to_atlas_voc": 46,
     "atlas_chem_enrichment_coverage": 1.0,
     "atlas_chem_enrichment_pct": 100.0,
     "curated_public_studies": 9,
     "expanded_public_studies": 25,
     "mw_discovered_additional": 16,
-    "literature_panels": 13,
-    "literature_panel_dois": 34,
+    "literature_panels": 16,
+    "literature_panel_dois": 43,
     "europepmc_breath_records": 100,
     "europepmc_with_doi": 97
   },
   "security": {
     "allowlisted_hosts_only": true,
     "sha256_integrity_manifest": "/workspace/exhalepath_atlas/data/datasources/INTEGRITY_MANIFEST.json",
-    "n_hashed_files": 8,
+    "n_hashed_files": 9,
     "no_execution_of_downloads": true,
     "html_scrape_disabled": true,
     "script_payloads_rejected": true,
@@ -127,11 +127,19 @@
     },
     {
       "id": "prediction_panel_50",
-      "detail": "Mechanistic predictor still uses 50 VOCs; extended catalog is inventory/coverage, not full retrain"
+      "detail": "Mechanistic predictor still uses 54 VOCs; extended catalog is inventory/coverage, not full retrain"
     },
     {
       "id": "pdf_fulltext",
       "detail": "Europe PMC harvest is metadata-only; no automated full-text VOC table extraction yet"
+    },
+    {
+      "id": "magdeburg_no_intensity_matrix",
+      "detail": "Magdeburg psych breath figshare 19181742 is a DOCX supplement only \u2014 no open patient\u00d7VOC intensity matrix is bundled. MH literature panels are directional/quantified means; use `voc eval-mental-health` (panel-masked + mechanism-backed) rather than AUROC claims."
+    },
+    {
+      "id": "mh_thin_conditions_unpromoted",
+      "detail": "Anxiety/PTSD/ADHD/ASD remain thin_prior_only / microbiome_proxy \u2014 no named exhaled disease fold-change panels promoted (see mental_health_readiness.json)."
     }
   ]
 }

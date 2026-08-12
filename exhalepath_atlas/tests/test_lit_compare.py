@@ -97,3 +97,18 @@ def test_lusc_farther_from_copd_than_bronchitis():
     assert d_cb < d_luad
     # Soft bound: main priors are less separated than the lit-compare tip rewrite
     assert d_lusc > d_cb * 0.7
+
+
+def test_lit_concordance_includes_mh_panels():
+    clear_knowledge_cache()
+    lit = literature_concordance()
+    by = {r["disease_id"]: r for r in lit.get("by_disease") or []}
+    assert "schizophrenia" in by
+    assert "major_depressive_disorder" in by
+    assert "bipolar" in by
+    assert by["schizophrenia"]["n_checked"] >= 8
+    assert by["major_depressive_disorder"]["n_checked"] >= 6
+    assert by["bipolar"]["n_checked"] >= 2
+    assert by["schizophrenia"]["concordance"] == 1.0
+    assert by["major_depressive_disorder"]["concordance"] == 1.0
+    assert by["bipolar"]["concordance"] == 1.0
