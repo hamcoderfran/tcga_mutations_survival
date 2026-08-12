@@ -180,6 +180,21 @@ def test_bipolar_h2s_dms_not_invented_as_panels():
     assert "dms" in (note.get("vocs") or [])
 
 
+def test_packaged_mh_readiness_matches_data_tree():
+    """Avoid data/ vs src/ honesty drift for mental_health_readiness.json."""
+    from exhalepath.config import DATA_DIR, PACKAGE_ROOT
+
+    a = DATA_DIR / "real_breath" / "literature_panels" / "mental_health_readiness.json"
+    b = PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "mental_health_readiness.json"
+    # When both exist under the same resolve, still assert near-floor cleared
+    doc = json.loads(a.read_text() if a.exists() else b.read_text())
+    for did in ("schizophrenia", "major_depressive_disorder", "bipolar"):
+        assert doc["ready"][did]["de_circularized"].get("near_floor_vocs") == []
+        assert doc["ready"][did]["de_circularized"].get("mechanism_backed") == 1.0
+    if a.exists() and b.exists() and a.resolve() != b.resolve():
+        assert a.read_text() == b.read_text()
+
+
 def test_gbaoui_mdd_scfa_mean_fixture_log2fc():
     from pathlib import Path
     import math

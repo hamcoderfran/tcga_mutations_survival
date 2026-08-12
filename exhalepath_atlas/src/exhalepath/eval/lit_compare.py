@@ -754,8 +754,9 @@ def _md(report: dict[str, Any]) -> str:
         "",
         f"**Mean directional concordance: {lit.get('mean_concordance_pct')}%** "
         f"across {lit.get('n_diseases')} diseases with curated elevate/suppress panels "
-        "(priority10 + review-backed expectations for COPD / bronchitis / lung cancer / "
-        "asthma / T2D / schizophrenia / HF / IBD / malaria).",
+        "(priority10 + MH Magdeburg/Gbaoui/OralChroma panels + review-backed expectations "
+        "for COPD / bronchitis / lung cancer / asthma / T2D / schizophrenia / MDD / "
+        "bipolar / HF / IBD / malaria).",
         "",
         "### What matches well",
         "",
@@ -768,6 +769,8 @@ def _md(report: dict[str, Any]) -> str:
         "(JTO breath VOC reviews).",
         "- **T2D → acetone**: ketone-body breath literature; atlas min-fold gates.",
         "- **Schizophrenia → ↓ acetone / isoprene / trimethylamine, ↑ pentane/ethane/CS2**: Magdeburg PTR-MS (doi:10.1080/15622975.2022.2040052; doi:10.1503/jpn.220139) + Phillips pentane/CS2.",
+        "- **MDD → ↑ ethanol/acetaldehyde, ↓ SCFAs / isoprene / TMA**: Magdeburg + Gbaoui breathomics (doi:10.3389/fpsyt.2022.1061326).",
+        "- **Bipolar → ↑ methyl_mercaptan (CH3SH)**: OralChroma VSC (doi:10.3390/jcm14062025); H2S/DMS assayed but unreported — not invented.",
         "- **COPD ↔ chronic bronchitis closer than either ↔ LUAD**: expected obstructive continuum.",
         "",
         "### Where it is only partly aligned / cautious",
@@ -778,6 +781,9 @@ def _md(report: dict[str, Any]) -> str:
         "emphasizes multi-VOC patterns, which is why cosine neighborhoods matter more than "
         "single-marker claims (PMC7796324).",
         "- Hybrid physiology previously **attenuated** smoking BTEX (bug; now fixed).",
+        "- Magdeburg psych figshare `19181742` is a **DOCX supplement**, not a patient×VOC "
+        "intensity matrix — use `voc eval-mental-health` (panel-masked / mechanism-backed) "
+        "rather than AUROC claims.",
         "",
         "### Per-disease concordance",
         "",

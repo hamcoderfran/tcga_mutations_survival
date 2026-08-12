@@ -35,6 +35,8 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 - **owlstone_atlas**: Breath Biopsy VOC Atlas is gated; not bulk-downloadable
 - **prediction_panel_50**: Mechanistic predictor still uses 54 VOCs; extended catalog is inventory/coverage, not full retrain
 - **pdf_fulltext**: Europe PMC harvest is metadata-only; no automated full-text VOC table extraction yet
+- **magdeburg_no_intensity_matrix**: Magdeburg psych breath figshare 19181742 is a DOCX supplement only — no open patient×VOC intensity matrix is bundled. MH literature panels are directional/quantified means; use `voc eval-mental-health` (panel-masked + mechanism-backed) rather than AUROC claims.
+- **mh_thin_conditions_unpromoted**: Anxiety/PTSD/ADHD/ASD remain thin_prior_only / microbiome_proxy — no named exhaled disease fold-change panels promoted (see mental_health_readiness.json).
 
 ## Artifacts
 
@@ -44,4 +46,4 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 - `data/datasources/literature/europepmc_breath_voc_metadata.json`
 - `data/datasources/metabolomics/breath_study_catalog_expanded.json`
 
-Generated: 2026-08-10T19:30:44.187803+00:00
+Generated: 2026-08-12T05:40:16.384099+00:00

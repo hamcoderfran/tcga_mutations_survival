@@ -543,6 +543,23 @@ def run_coverage_audit(*, expand: bool = True, offline: bool = False) -> dict[st
                 "id": "pdf_fulltext",
                 "detail": "Europe PMC harvest is metadata-only; no automated full-text VOC table extraction yet",
             },
+            {
+                "id": "magdeburg_no_intensity_matrix",
+                "detail": (
+                    "Magdeburg psych breath figshare 19181742 is a DOCX supplement only — "
+                    "no open patient×VOC intensity matrix is bundled. MH literature panels "
+                    "are directional/quantified means; use `voc eval-mental-health` "
+                    "(panel-masked + mechanism-backed) rather than AUROC claims."
+                ),
+            },
+            {
+                "id": "mh_thin_conditions_unpromoted",
+                "detail": (
+                    "Anxiety/PTSD/ADHD/ASD remain thin_prior_only / microbiome_proxy — "
+                    "no named exhaled disease fold-change panels promoted (see "
+                    "mental_health_readiness.json)."
+                ),
+            },
         ],
     }
 

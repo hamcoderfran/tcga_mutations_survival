@@ -92,6 +92,8 @@ voc export-paper-pack runs/patient_diagnostic/ST000883
 voc eval-industry-pack
 voc eval-coverage --offline
 voc eval-lit-compare --n-diseases 50
+# MH Magdeburg/Gbaoui/OralChroma panels: raw vs panel-masked vs mechanism-backed
+voc eval-mental-health
 
 # Malaria upgrade: lit peak remaps + nested sparse vs transferable + fixed-sens
 voc eval-malaria-diagnostic
