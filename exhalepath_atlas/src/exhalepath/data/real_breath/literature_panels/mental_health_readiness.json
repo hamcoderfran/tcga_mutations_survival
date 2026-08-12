@@ -93,6 +93,7 @@
     "MDD quantified acetic/valeric/butyric from Gbaoui means",
     "Circularity-aware literature overlay metrics (raw vs outside-prior)",
     "Magdeburg figshare confirmed non-intensity DOCX",
+    "2026-08-12 recheck: figshare API still DOCX-only; MW/MetaboLights have no exhaled psych PTR-MS intensity accession to bundle",
     "Added voc eval-mental-health: raw vs panel-masked-prior de-circularized overlay",
     "Disease-local negative/positive pathways for masked recovery (acetone/TMA/SCFA/amine/isoprene/methanol/CS2/ethanol)",
     "Eval v1.1 mechanism_backed_directional_accuracy (|pred|\u22650.02); near-floor list now empty for panel diseases",

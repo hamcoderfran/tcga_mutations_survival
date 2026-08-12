@@ -195,6 +195,21 @@ def test_packaged_mh_readiness_matches_data_tree():
         assert a.read_text() == b.read_text()
 
 
+def test_magdeburg_open_intensity_still_unavailable():
+    from exhalepath.config import DATA_DIR, PACKAGE_ROOT
+
+    paths = [
+        DATA_DIR / "real_breath" / "literature_panels" / "magdeburg_ptrms_mz_map.json",
+        PACKAGE_ROOT / "data" / "real_breath" / "literature_panels" / "magdeburg_ptrms_mz_map.json",
+    ]
+    path = next(p for p in paths if p.exists())
+    doc = json.loads(path.read_text())
+    oi = doc["open_intensity_data"]
+    assert oi["available"] is False
+    assert any("DOCX" in str(c.get("result", "")) or "docx" in str(c.get("result", "")).lower() for c in oi["checked"])
+    assert oi.get("last_rechecked_utc")
+
+
 def test_gbaoui_mdd_scfa_mean_fixture_log2fc():
     from pathlib import Path
     import math

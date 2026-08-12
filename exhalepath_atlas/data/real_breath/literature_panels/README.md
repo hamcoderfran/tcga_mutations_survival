@@ -46,6 +46,7 @@ Gbaoui MDD SCFA **group-mean proxy** fixture: `gbaoui_mdd_scfa_mean_fixture.json
 Those four thin conditions keep **de-cloned atlas priors** with explicit `atlas_source` labels instead of template clones.
 
 **Open intensity data:** Magdeburg figshare `19181742` is a DOCX supplement only — no patient×VOC intensity matrix is bundled.
+Rechecked 2026-08-12 via figshare API + Metabolomics Workbench / MetaboLights search: still **no** open psych exhaled PTR-MS intensity accession (MW schizophrenia hits are LC-MS blood/tissue, not breath).
 
 ## Preferred public breath accessions (priority set context)
 

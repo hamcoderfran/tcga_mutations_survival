@@ -82,14 +82,29 @@
   ],
   "open_intensity_data": {
     "available": false,
+    "last_rechecked_utc": "2026-08-12T05:43:00Z",
+    "conclusion": "No open Magdeburg/psych exhaled PTR-MS patient\u00d7VOC intensity matrix found for bundling. Do not invent cohorts or AUROCs.",
     "checked": [
       {
         "doi": "10.6084/m9.figshare.19181742",
-        "result": "DOCX supplement only; no patient\u00d7VOC intensity matrix"
+        "api": "https://api.figshare.com/v2/articles/19181742",
+        "result": "Single file iwbp_a_2040052_sm8481.docx (application/vnd.openxmlformats-officedocument.wordprocessingml.document); no CSV/TSV intensity matrix"
       },
       {
-        "source": "Metabolomics Workbench search",
-        "result": "No public schizophrenia/MDD exhaled PTR-MS intensity study accession found for bundling"
+        "source": "Metabolomics Workbench study_title=schizophrenia",
+        "result": "Hits are non-breath (e.g. ST005005 LC-MS early-onset schizophrenia metabolite profiling) — not exhaled PTR-MS panels"
+      },
+      {
+        "source": "Metabolomics Workbench study_title=depression breath",
+        "result": "Empty result set"
+      },
+      {
+        "source": "MetaboLights search schizophrenia breath",
+        "result": "No study found (API 400 / empty)"
+      },
+      {
+        "source": "JPN 2023 / Frontiers MDD Magdeburg papers",
+        "result": "Methods appendices / figures only; no machine-readable patient intensity deposit cited for bundling"
       }
     ]
   },
