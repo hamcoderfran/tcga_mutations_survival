@@ -978,6 +978,155 @@ def eval_confounder_ptr_cmd(
     rprint(f"  report → {out_dir / 'CONFOUNDER_PTR.md'}")
 
 
+@app.command("eval-leaderboard")
+def eval_leaderboard_cmd(
+    out_dir: Path = typer.Option(Path("runs/leaderboard"), "--out-dir"),
+):
+    """Locked patient-level truth leaderboard (nested AUROC × split SHA256)."""
+    from .eval.leaderboard import write_locked_truth_leaderboard
+
+    report = write_locked_truth_leaderboard(out_dir=out_dir)
+    rprint("[bold]Locked truth leaderboard[/bold]")
+    rprint(f"  rows={report.get('n_rows')}")
+    top = (report.get("rows") or [None])[0]
+    if top:
+        rprint(
+            f"  top: {top.get('study_id')} / {top.get('signature')} "
+            f"nested={top.get('nested_auroc')}"
+        )
+    rprint(f"  → {out_dir / 'LOCKED_TRUTH_LEADERBOARD.md'}")
+
+
+@app.command("partner-diligence")
+def partner_diligence_cmd(
+    path: Optional[Path] = typer.Option(
+        None, "--path", "-p", help="OMNI CSV / BreathVOC JSON (default: bundled fixture)"
+    ),
+    fmt: str = typer.Option("auto", "--format", help="auto|breathvoc|omni"),
+    disease_id: str = typer.Option("malaria", "--disease-id"),
+    out_dir: Path = typer.Option(Path("runs/partner_diligence"), "--out-dir"),
+    seed: int = typer.Option(42, "--seed"),
+    n_splits: int = typer.Option(5, "--n-splits"),
+    no_score: bool = typer.Option(False, "--no-score", help="Skip signature score summary"),
+):
+    """Partner intensity ingest → lock-split → unmapped-rate + score summary."""
+    from .eval.partner_diligence import run_partner_diligence_pipeline
+
+    if fmt not in {"auto", "breathvoc", "omni"}:
+        raise typer.BadParameter("format must be auto|breathvoc|omni")
+    report = run_partner_diligence_pipeline(
+        path=path,
+        fmt=fmt,
+        disease_id=disease_id,
+        out_dir=out_dir,
+        seed=seed,
+        n_splits=n_splits,
+        run_diagnostic=not no_score,
+    )
+    rprint("[bold]Partner intensity diligence[/bold]")
+    rprint(
+        f"  {report.get('n_subjects')}×{report.get('n_vocs')} "
+        f"unmapped_rate={report.get('unmapped_rate')}"
+    )
+    rprint(f"  split sha256={(report.get('split_sha256') or '')[:16]}…")
+    rprint(f"  → {out_dir / 'PARTNER_DILIGENCE.md'}")
+
+
+@app.command("panel-decision")
+def panel_decision_cmd(
+    disease: str = typer.Option(..., "--disease", "-d", help="Atlas disease id"),
+    study: Optional[str] = typer.Option(None, "--study", "-s"),
+    out_dir: Path = typer.Option(Path("runs/panel_decision"), "--out-dir"),
+):
+    """Research go/no-go memo: proceed_research | hold | stop (not clinical clearance)."""
+    from .eval.panel_decision import write_panel_decision
+
+    report = write_panel_decision(disease_id=disease, out_dir=out_dir, study_id=study)
+    rprint("[bold]Panel decision[/bold]")
+    rprint(f"  disease={report.get('disease_id')} → `{report.get('decision')}`")
+    for reason in (report.get("reasons") or [])[:3]:
+        rprint(f"  - {reason}")
+    rprint(f"  → {out_dir / f'PANEL_DECISION_{disease}.md'}")
+
+
+@app.command("export-claim-ledger")
+def export_claim_ledger_cmd(
+    out: Path = typer.Option(
+        Path("runs/claim_ledger/CLAIM_LEDGER.json"), "--out", "-o"
+    ),
+    disease: Optional[str] = typer.Option(
+        None, "--disease", "-d", help="Restrict to one disease id (repeat via comma)"
+    ),
+    quantified_only: bool = typer.Option(
+        False, "--quantified-only", help="Keep quantified literature claims only"
+    ),
+    exclude_circular: bool = typer.Option(
+        False, "--exclude-circular", help="Drop claims flagged circularity_risk"
+    ),
+    no_atlas_priors: bool = typer.Option(
+        False, "--no-atlas-priors", help="Omit atlas_prior rows"
+    ),
+):
+    """Export evidence-graded VOC↔disease claim ledger (non-circular defaults available)."""
+    from .gcms.claim_ledger import export_claim_ledger
+
+    disease_ids = None
+    if disease:
+        disease_ids = [d.strip() for d in disease.split(",") if d.strip()]
+    path = export_claim_ledger(
+        out,
+        disease_ids=disease_ids,
+        include_atlas_priors=not no_atlas_priors,
+        quantified_only=quantified_only,
+        exclude_circular=exclude_circular,
+    )
+    rprint("[bold]Claim ledger[/bold]")
+    rprint(f"  → {path}")
+    rprint(f"  md → {path.with_suffix('.md')}")
+
+
+@app.command("audit-voc-aliases")
+def audit_voc_aliases_cmd(
+    out_dir: Path = typer.Option(
+        Path("runs/voc_alias_registry"), "--out-dir"
+    ),
+    columns: Optional[str] = typer.Option(
+        None,
+        "--columns",
+        help="Comma-separated column names to audit (optional)",
+    ),
+    csv_path: Optional[Path] = typer.Option(
+        None, "--csv", help="Audit feature columns from a partner CSV header"
+    ),
+):
+    """Build VOC alias/m/z registry and optionally report unmapped-rate on columns."""
+    from .knowledge.voc_alias_registry import (
+        audit_column_names,
+        write_voc_alias_registry,
+    )
+
+    report = write_voc_alias_registry(out_dir=out_dir)
+    rprint("[bold]VOC alias registry[/bold]")
+    rprint(f"  aliases={report.get('n_aliases')} mz_rows={len(report.get('mz_map') or [])}")
+    names: list[str] = []
+    if columns:
+        names.extend([c.strip() for c in columns.split(",") if c.strip()])
+    if csv_path:
+        import pandas as pd
+
+        names.extend(list(pd.read_csv(csv_path, nrows=0).columns.astype(str)))
+    if names:
+        audit = audit_column_names(names)
+        (out_dir / "COLUMN_ALIAS_AUDIT.json").write_text(
+            json.dumps(audit, indent=2) + "\n"
+        )
+        rprint(
+            f"  audit n={audit['n_columns']} mapped={audit['n_mapped']} "
+            f"unmapped_rate={audit['unmapped_rate']}"
+        )
+    rprint(f"  → {out_dir / 'VOC_ALIAS_REGISTRY.md'}")
+
+
 @app.command("demo-close")
 def demo_close_cmd(
     disease: str = typer.Option(
@@ -2377,6 +2526,11 @@ def main(argv: Optional[list[str]] = None):
         "eval-lit-compare",
         "eval-malaria-diagnostic",
         "eval-confounder-ptr",
+        "eval-leaderboard",
+        "partner-diligence",
+        "panel-decision",
+        "export-claim-ledger",
+        "audit-voc-aliases",
         "demo-close",
         "diligence-loso",
         "import-breathvoc",

@@ -20,6 +20,9 @@ voc eval-implementation-readiness
 | Result | Path | How to re-run |
 |---|---|---|
 | Patient GC-MS diagnostic (AUROC / locked splits) | [`gcms_diagnostic/`](gcms_diagnostic/) | `voc eval-patient-diagnostic --all` |
+| Locked truth leaderboard | [`leaderboard/`](leaderboard/) | `voc eval-leaderboard` |
+| Claim ledger (quantified-first) | `runs/claim_ledger/` | `voc export-claim-ledger --quantified-only` |
+| VOC alias / confounder registry | [`voc_alias_registry/`](voc_alias_registry/) | `voc audit-voc-aliases` |
 | Industry diligence pack + buyer brief | [`industry_pack/`](industry_pack/) | `voc eval-industry-pack` |
 | Research impact rationale | [`../../RESEARCH.md`](../../RESEARCH.md) | — |
 

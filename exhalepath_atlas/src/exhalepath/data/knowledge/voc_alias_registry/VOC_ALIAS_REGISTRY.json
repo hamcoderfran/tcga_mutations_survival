@@ -1,0 +1,827 @@
+{
+  "schema_version": "VocAliasRegistry-1.0",
+  "generated_utc": "2026-09-14T08:38:52.878522+00:00",
+  "honesty": "Unified name/m/z \u2192 atlas voc_id map for partner ingest diligence. Conflicts and uncertain Magdeburg channels are retained; do not treat as chemical identity certification.",
+  "n_aliases": 95,
+  "aliases": {
+    "acetone": {
+      "voc_id": "acetone",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "acetone"
+    },
+    "isoprene": {
+      "voc_id": "isoprene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "isoprene"
+    },
+    "pentane": {
+      "voc_id": "pentane",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "pentane"
+    },
+    "n pentane": {
+      "voc_id": "pentane",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "n-pentane"
+    },
+    "ethane": {
+      "voc_id": "ethane",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "ethane"
+    },
+    "hexanal": {
+      "voc_id": "hexanal",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "hexanal"
+    },
+    "heptanal": {
+      "voc_id": "heptanal",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "heptanal"
+    },
+    "nonanal": {
+      "voc_id": "nonanal",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "nonanal"
+    },
+    "decanal": {
+      "voc_id": "decanal",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "decanal"
+    },
+    "ethanol": {
+      "voc_id": "ethanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "ethanol"
+    },
+    "2 butanone": {
+      "voc_id": "2_butanone",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "2-butanone"
+    },
+    "butanone": {
+      "voc_id": "2_butanone",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "butanone"
+    },
+    "dimethyl sulfide": {
+      "voc_id": "dms",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "dimethyl sulfide"
+    },
+    "ammonia": {
+      "voc_id": "ammonia",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "ammonia"
+    },
+    "methanol": {
+      "voc_id": "methanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "methanol"
+    },
+    "toluene": {
+      "voc_id": "toluene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "toluene"
+    },
+    "benzene": {
+      "voc_id": "benzene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "benzene"
+    },
+    "limonene": {
+      "voc_id": "limonene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "limonene"
+    },
+    "hydrogen sulfide": {
+      "voc_id": "hydrogen_sulfide",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "hydrogen sulfide"
+    },
+    "acetaldehyde": {
+      "voc_id": "acetaldehyde",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "acetaldehyde"
+    },
+    "formaldehyde": {
+      "voc_id": "formaldehyde",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "formaldehyde"
+    },
+    "indole": {
+      "voc_id": "indole",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "indole"
+    },
+    "phenol": {
+      "voc_id": "phenol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "phenol"
+    },
+    "1 propanol": {
+      "voc_id": "propanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "1-propanol"
+    },
+    "propanol": {
+      "voc_id": "propanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "propanol"
+    },
+    "2 propanol": {
+      "voc_id": "isopropanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "2-propanol"
+    },
+    "isopropanol": {
+      "voc_id": "isopropanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "isopropanol"
+    },
+    "isopropyl alcohol": {
+      "voc_id": "isopropanol",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC"
+      ],
+      "raw_alias": "isopropyl alcohol"
+    },
+    "2 pentanone": {
+      "voc_id": "2_pentanone",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "2-pentanone"
+    },
+    "benzaldehyde": {
+      "voc_id": "benzaldehyde",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "benzaldehyde"
+    },
+    "trimethylamine": {
+      "voc_id": "trimethylamine",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "trimethylamine"
+    },
+    "propanal": {
+      "voc_id": "propionaldehyde",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "propanal"
+    },
+    "furan": {
+      "voc_id": "furan",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "furan"
+    },
+    "octanal": {
+      "voc_id": "octanal",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "octanal"
+    },
+    "styrene": {
+      "voc_id": "styrene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "styrene"
+    },
+    "ethylbenzene": {
+      "voc_id": "ethylbenzene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "ethylbenzene"
+    },
+    "hexane": {
+      "voc_id": "hexane",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "hexane"
+    },
+    "butane": {
+      "voc_id": "butane",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "butane"
+    },
+    "octane": {
+      "voc_id": "octane",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "octane"
+    },
+    "xylene": {
+      "voc_id": "xylene",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "xylene"
+    },
+    "ethyl acetate": {
+      "voc_id": "ethyl_acetate",
+      "sources": [
+        "real_breath_corpus.NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "ethyl acetate"
+    },
+    "methyl ethyl ketone": {
+      "voc_id": "2_butanone",
+      "sources": [
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "methyl ethyl ketone"
+    },
+    "dimethylsulphide": {
+      "voc_id": "dms",
+      "sources": [
+        "ds01_metabolomics._NAME_TO_VOC"
+      ],
+      "raw_alias": "dimethylsulphide"
+    },
+    "dimethyl disulfide": {
+      "voc_id": "dimethyl_disulfide",
+      "sources": [
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "dimethyl disulfide"
+    },
+    "propionaldehyde": {
+      "voc_id": "propionaldehyde",
+      "sources": [
+        "ds01_metabolomics._NAME_TO_VOC",
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "propionaldehyde"
+    },
+    "3 methylbutanal": {
+      "voc_id": "3_methylbutanal",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "3 methylbutanal"
+    },
+    "acetic acid": {
+      "voc_id": "acetic_acid",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "acetic acid"
+    },
+    "ethanoic acid": {
+      "voc_id": "acetic_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "ethanoic acid"
+    },
+    "acetate": {
+      "voc_id": "acetic_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "acetate"
+    },
+    "acetonitrile": {
+      "voc_id": "acetonitrile",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "acetonitrile"
+    },
+    "allyl methyl sulfide": {
+      "voc_id": "allyl_methyl_sulfide",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "allyl methyl sulfide"
+    },
+    "butylamine": {
+      "voc_id": "butylamine",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "butylamine"
+    },
+    "1 butylamine": {
+      "voc_id": "butylamine",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "1-butylamine"
+    },
+    "n butylamine": {
+      "voc_id": "butylamine",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "n-butylamine"
+    },
+    "butan 1 amine": {
+      "voc_id": "butylamine",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "butan-1-amine"
+    },
+    "n butanamine": {
+      "voc_id": "butylamine",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "n-butanamine"
+    },
+    "butyric acid": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "butyric acid"
+    },
+    "butanoic acid": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "butanoic acid"
+    },
+    "n butyric acid": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "n-butyric acid"
+    },
+    "butyrate": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "butyrate"
+    },
+    "carbon disulfide": {
+      "voc_id": "carbon_disulfide",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "carbon disulfide"
+    },
+    "crotonaldehyde": {
+      "voc_id": "crotonaldehyde",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "crotonaldehyde"
+    },
+    "cyclohexane": {
+      "voc_id": "cyclohexane",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "cyclohexane"
+    },
+    "dimethyl amine": {
+      "voc_id": "dimethyl_amine",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "dimethyl amine"
+    },
+    "dms": {
+      "voc_id": "dms",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "dms"
+    },
+    "dmts": {
+      "voc_id": "dmts",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "dmts"
+    },
+    "dodecane": {
+      "voc_id": "dodecane",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "dodecane"
+    },
+    "methyl acetate": {
+      "voc_id": "methyl_acetate",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "methyl acetate"
+    },
+    "methyl mercaptan": {
+      "voc_id": "methyl_mercaptan",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "methyl mercaptan"
+    },
+    "pyrrole": {
+      "voc_id": "pyrrole",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "pyrrole"
+    },
+    "undecane": {
+      "voc_id": "undecane",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "undecane"
+    },
+    "valeric acid": {
+      "voc_id": "valeric_acid",
+      "sources": [
+        "voc_catalog.voc_id"
+      ],
+      "raw_alias": "valeric acid"
+    },
+    "pentanoic acid": {
+      "voc_id": "valeric_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "pentanoic acid"
+    },
+    "valerate": {
+      "voc_id": "valeric_acid",
+      "sources": [
+        "voc_catalog.aliases"
+      ],
+      "raw_alias": "valerate"
+    },
+    "m z 33": {
+      "voc_id": "methanol",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 33"
+    },
+    "mz33": {
+      "voc_id": "methanol",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz33"
+    },
+    "33": {
+      "voc_id": "methanol",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "33"
+    },
+    "m z 59": {
+      "voc_id": "acetone",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 59"
+    },
+    "mz59": {
+      "voc_id": "acetone",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz59"
+    },
+    "59": {
+      "voc_id": "acetone",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "59"
+    },
+    "m z 60": {
+      "voc_id": "trimethylamine",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 60"
+    },
+    "mz60": {
+      "voc_id": "trimethylamine",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz60"
+    },
+    "60": {
+      "voc_id": "trimethylamine",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "60"
+    },
+    "m z 69": {
+      "voc_id": "isoprene",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 69"
+    },
+    "mz69": {
+      "voc_id": "isoprene",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz69"
+    },
+    "69": {
+      "voc_id": "isoprene",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "69"
+    },
+    "m z 74": {
+      "voc_id": "butylamine",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 74"
+    },
+    "mz74": {
+      "voc_id": "butylamine",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz74"
+    },
+    "74": {
+      "voc_id": "butylamine",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "74"
+    },
+    "m z 89": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 89"
+    },
+    "mz89": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz89"
+    },
+    "89": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "89"
+    },
+    "m z 90": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "m/z 90"
+    },
+    "mz90": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "mz90"
+    },
+    "90": {
+      "voc_id": "butyric_acid",
+      "sources": [
+        "magdeburg_ptrms_mz_map"
+      ],
+      "raw_alias": "90"
+    }
+  },
+  "mz_map": [
+    {
+      "mz": 33,
+      "atlas_voc_id": "methanol",
+      "identity_confidence": "literature_assigned",
+      "notes": "Common PTR-MS methanol channel; reduced in Magdeburg schizophrenia stability cohort"
+    },
+    {
+      "mz": 59,
+      "atlas_voc_id": "acetone",
+      "identity_confidence": "literature_assigned",
+      "notes": "Jiang 2022 reduced mass among schizophrenia signatures"
+    },
+    {
+      "mz": 60,
+      "atlas_voc_id": "trimethylamine",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 explicitly identifies m/z 60 as trimethylamine"
+    },
+    {
+      "mz": 69,
+      "atlas_voc_id": "isoprene",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 / Luib identify m/z 69 as isoprene"
+    },
+    {
+      "mz": 74,
+      "atlas_voc_id": "butylamine",
+      "candidate": "butylamine / N-butylamine / n-butanamine",
+      "identity_confidence": "author_discussed",
+      "notes": "Gbaoui identifies n-butanamine at m/z 74; Magdeburg SCZ series uses m/z 74 as discriminator."
+    },
+    {
+      "mz": 88,
+      "atlas_voc_id": null,
+      "candidate": "butyric-related / SCFA ester fragment",
+      "identity_confidence": "uncertain",
+      "notes": "Reduced in MDD/SCZ; not uniquely mapped to a single atlas VOC"
+    },
+    {
+      "mz": 89,
+      "atlas_voc_id": "butyric_acid",
+      "identity_confidence": "literature_assigned",
+      "notes": "Luib associates m/z 89 with butanoic/butyric acid"
+    },
+    {
+      "mz": 90,
+      "atlas_voc_id": "butyric_acid",
+      "identity_confidence": "author_identified",
+      "notes": "JPN 2023 identifies m/z 90 as butyric acid and esters"
+    }
+  ],
+  "confounder_sensitive": {
+    "smoking": [
+      "acetonitrile",
+      "toluene",
+      "benzene",
+      "xylene",
+      "styrene",
+      "furan",
+      "2_butanone"
+    ],
+    "oral_microbiome": [
+      "hydrogen_sulfide",
+      "methyl_mercaptan",
+      "indole",
+      "dimethyl_disulfide",
+      "dms"
+    ],
+    "diet_gut": [
+      "acetone",
+      "isoprene",
+      "ethanol",
+      "methanol",
+      "trimethylamine",
+      "butyric_acid",
+      "acetic_acid"
+    ],
+    "ambient_exogenous": [
+      "toluene",
+      "benzene",
+      "ethylbenzene",
+      "limonene",
+      "hexane"
+    ]
+  },
+  "clinical_claim": false
+}

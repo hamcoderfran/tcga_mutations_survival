@@ -1,0 +1,44 @@
+{
+  "schema_version": "ConfounderRegistry-1.0",
+  "generated_utc": "2026-09-14T08:38:52.878522+00:00",
+  "honesty": "Seed registry of breath VOCs often sensitive to smoking, oral microbiome, diet/gut, or ambient exposure. Use with voc eval-confounder-ptr \u2014 not disease AUROC.",
+  "strata": {
+    "smoking": [
+      "acetonitrile",
+      "toluene",
+      "benzene",
+      "xylene",
+      "styrene",
+      "furan",
+      "2_butanone"
+    ],
+    "oral_microbiome": [
+      "hydrogen_sulfide",
+      "methyl_mercaptan",
+      "indole",
+      "dimethyl_disulfide",
+      "dms"
+    ],
+    "diet_gut": [
+      "acetone",
+      "isoprene",
+      "ethanol",
+      "methanol",
+      "trimethylamine",
+      "butyric_acid",
+      "acetic_acid"
+    ],
+    "ambient_exogenous": [
+      "toluene",
+      "benzene",
+      "ethylbenzene",
+      "limonene",
+      "hexane"
+    ]
+  },
+  "related_reports": [
+    "knowledge/confounder_ptr/CONFOUNDER_PTR.json",
+    "knowledge/voc_alias_registry/VOC_ALIAS_REGISTRY.json"
+  ],
+  "clinical_claim": false
+}
