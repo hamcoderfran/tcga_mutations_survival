@@ -1,0 +1,441 @@
+{
+  "schema_version": "1.0.0",
+  "created_for": "mental health real breath VOC literature panels",
+  "curation_policy": {
+    "scope": "Human exhaled breath / alveolar gas studies in published literature for psychiatric and neurodevelopmental conditions.",
+    "no_invented_numbers": true,
+    "quantified_rule": "Numerical log2 fold changes are calculated only from ratios explicitly reported in the cited source.",
+    "directional_rule": "When a cited source reports only increased/decreased direction for an atlas VOC, measured_log2fc uses conservative placeholder values of +0.6 for increased and -0.4 for decreased, and voc_evidence marks evidence as directional_only.",
+    "honesty": "Fecal/urine VOC autism studies and unnamed stress-fingerprint VOCs are NOT promoted to measured panels. Anxiety/PTSD/ADHD lack disease-specific named exhaled VOC fold-change cohorts comparable to Magdeburg PTR-MS; those conditions are covered by de-cloned atlas priors with thin-evidence labels, not fake panels."
+  },
+  "thin_evidence_conditions": {
+    "anxiety": {
+      "note": "Acute psychosocial-stress breath/skin volatilomics exists (Mansour et al. ACS Sensors 2023), but the eight stress VOCs are not named in the abstract and a large e-nose community sample found no generalizable link to clinical anxiety severity.",
+      "refs": [
+        {
+          "doi": "10.1021/acssensors.3c00945",
+          "title": "Continuous Monitoring of Psychosocial Stress by Non-Invasive Volatilomics",
+          "year": 2023
+        },
+        {
+          "doi": "10.3389/fpsyt.2020.503248",
+          "title": "Machine Learning Analysis of Electronic Nose in a Transdiagnostic Community Sample: No Links Between Volatile Organic Compounds and Psychiatric Symptoms",
+          "year": 2020
+        }
+      ]
+    },
+    "ptsd": {
+      "note": "Trauma-cue breath odour discrimination (canine proof-of-concept) and acute-stress volatilomics exist, but no named PTSD-vs-control exhaled VOC fold-change panel suitable for atlas measured_log2fc.",
+      "refs": [
+        {
+          "doi": "10.3389/falgy.2024.1352840",
+          "title": "Can scent-detection dogs detect the stress associated with trauma cue exposure in people with trauma histories?",
+          "year": 2024
+        },
+        {
+          "doi": "10.1021/acssensors.3c00945",
+          "title": "Continuous Monitoring of Psychosocial Stress by Non-Invasive Volatilomics",
+          "year": 2023
+        }
+      ]
+    },
+    "adhd": {
+      "note": "No dedicated ADHD case-control exhaled VOC disease panel found. Pediatric executive-function breath pilots are not ADHD diagnostic cohorts and are not copied into measured panels.",
+      "refs": [
+        {
+          "doi": "10.1007/s11306-025-02277-5",
+          "title": "Exploring the use of exhaled breath profiling for non-invasive monitoring of cognitive functioning in children: a pilot study",
+          "year": 2025
+        }
+      ]
+    },
+    "autism_spectrum_disorder": {
+      "note": "Published ASD VOC signatures are primarily fecal/urine microbiome volatilomes, not exhaled alveolar gas. Atlas ASD prior remains microbiome-flavored hypothesis, not a breath literature panel.",
+      "refs": [
+        {
+          "doi": "10.3389/fmicb.2023.1287350",
+          "title": "Gut microbiota functional profiling in autism spectrum disorders: bacterial VOCs and related metabolic pathways",
+          "year": 2023
+        }
+      ]
+    }
+  },
+  "panels": [
+    {
+      "disease_id": "schizophrenia",
+      "disease_name": "Schizophrenia",
+      "location": "CNS / gut\u2013lung\u2013brain axis; Magdeburg PTR-MS awakening breath cohorts",
+      "refs": [
+        {
+          "doi": "10.1080/15622975.2022.2040052",
+          "title": "Volatile organic compounds from exhaled breath in schizophrenia",
+          "year": 2022,
+          "method": "PTR-MS awakening breath (0/30/60 min); Magdeburg acute schizophrenia vs healthy controls"
+        },
+        {
+          "doi": "10.1503/jpn.220139",
+          "title": "Gut\u2013brain axis volatile organic compounds derived from breath distinguish between schizophrenia and major depressive disorder",
+          "year": 2023,
+          "method": "PTR-MS; schizophrenia vs MDD vs healthy controls; identified trimethylamine (m/z 60) and butyric acid (m/z 90)"
+        },
+        {
+          "doi": "10.3390/molecules28114385",
+          "title": "Dynamic Stability of Volatile Organic Compounds in Respiratory Air in Schizophrenic Patients and Its Potential Predicting Efficacy of TAAR Agonists",
+          "year": 2023,
+          "method": "Longitudinal PTR-MS over 14 days; schizophrenia vs controls"
+        },
+        {
+          "doi": "10.1136/jcp.46.9.861",
+          "title": "Increased pentane and carbon disulfide in the breath of patients with schizophrenia",
+          "year": 1993,
+          "method": "GC-MS alveolar gradients; schizophrenia vs other psychiatry vs healthy"
+        },
+        {
+          "doi": "10.1136/jcp.48.5.466",
+          "title": "Volatile organic compounds in the breath of patients with schizophrenia",
+          "year": 1995,
+          "method": "GC-MS pattern recognition breath VOC panel"
+        }
+      ],
+      "measured_log2fc": {
+        "pentane": 0.6,
+        "ethane": 0.6,
+        "carbon_disulfide": 0.6,
+        "ammonia": 0.6,
+        "acetone": -0.4,
+        "isoprene": -0.4,
+        "trimethylamine": -0.4,
+        "methanol": -0.4,
+        "butyric_acid": -0.4,
+        "butylamine": -0.4
+      },
+      "evidence_grade": "directional_only",
+      "voc_evidence": {
+        "pentane": {
+          "evidence": "directional_only",
+          "source_doi": "10.1136/jcp.46.9.861",
+          "direction": "increased",
+          "note": "Phillips et al. reported significantly higher alveolar pentane gradients in schizophrenia vs controls (lipid-peroxidation marker)."
+        },
+        "ethane": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/molecules28114385",
+          "direction": "increased",
+          "note": "Review context in Magdeburg follow-up cites Ross ethane/butane elevation in schizophrenia breath; treated as directional alkane oxidative signal."
+        },
+        "carbon_disulfide": {
+          "evidence": "directional_only",
+          "source_doi": "10.1136/jcp.46.9.861",
+          "direction": "increased",
+          "note": "Phillips et al. reported elevated carbon disulfide alveolar gradients in schizophrenia."
+        },
+        "ammonia": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/molecules28114385",
+          "direction": "increased",
+          "note": "Cited Popa et al. breath ethylene/ammonia elevation in schizophrenia vs controls (directional only; no fold ratio retained)."
+        },
+        "acetone": {
+          "evidence": "directional_only",
+          "source_doi": "10.1080/15622975.2022.2040052",
+          "direction": "decreased",
+          "note": "Jiang et al. Magdeburg PTR-MS: m/z 59 among 10 masses with reduced concentration in schizophrenia vs controls."
+        },
+        "isoprene": {
+          "evidence": "directional_only",
+          "source_doi": "10.1503/jpn.220139",
+          "direction": "decreased",
+          "note": "m/z 69 identified as isoprene; lower in schizophrenia (and MDD) vs healthy controls."
+        },
+        "trimethylamine": {
+          "evidence": "directional_only",
+          "source_doi": "10.1503/jpn.220139",
+          "direction": "decreased",
+          "note": "m/z 60 identified as trimethylamine; strongest schizophrenia-vs-control / schizophrenia-vs-MDD discriminator in that cohort."
+        },
+        "methanol": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/molecules28114385",
+          "direction": "decreased",
+          "note": "m/z 33 among masses with significant schizophrenia vs control concentration differences (reduced patient signal in Magdeburg series)."
+        },
+        "butyric_acid": {
+          "evidence": "directional_only",
+          "source_doi": "10.1503/jpn.220139",
+          "direction": "decreased",
+          "note": "m/z 90 identified as butyric acid / esters; lower in schizophrenia (and MDD) vs healthy controls in Magdeburg PTR-MS cohorts."
+        },
+        "butylamine": {
+          "evidence": "directional_only",
+          "source_doi": "10.1503/jpn.220139",
+          "direction": "decreased",
+          "note": "m/z 74 among schizophrenia-discriminating Magdeburg masses; Gbaoui/Magdeburg discuss as N-butylamine / biogenic amine."
+        }
+      },
+      "pathway_links": {
+        "pentane": [
+          "lipid_peroxidation",
+          "oxidative_stress"
+        ],
+        "ethane": [
+          "lipid_peroxidation",
+          "oxidative_stress"
+        ],
+        "carbon_disulfide": [
+          "methionine_transsulfuration",
+          "neurotoxin_exposure_marker"
+        ],
+        "trimethylamine": [
+          "gut_microbiome_fermentation",
+          "choline_TMA_TMAO_axis"
+        ],
+        "isoprene": [
+          "mevalonate_flux_suppression",
+          "membrane_integrity"
+        ],
+        "acetone": [
+          "ketone_body_metabolism",
+          "brain_energy_hypometabolism"
+        ],
+        "methanol": [
+          "methanol_one_carbon_suppression",
+          "one_carbon_folate"
+        ],
+        "butyric_acid": [
+          "gut_microbiome_fermentation",
+          "scfa_metabolism",
+          "histone_acetylation"
+        ],
+        "butylamine": [
+          "amino_acid_decarboxylation",
+          "gut_microbiome_fermentation"
+        ]
+      },
+      "cell_states": [
+        "neuron under oxidative stress",
+        "gut microbiota (choline \u2192 TMA)",
+        "alveolar exchange of systemic volatiles"
+      ],
+      "genes": [
+        "COMT",
+        "DRD2",
+        "NMDAR1",
+        "DISC1",
+        "CHRM1"
+      ],
+      "supporting_datasets": [
+        {
+          "accession": "figshare 19181742",
+          "doi": "10.6084/m9.figshare.19181742",
+          "note": "Jiang et al. Magdeburg supplement is a DOCX methods/supplement text dump \u2014 not a patient\u00d7VOC intensity matrix. No open psych breath intensity cohort bundled."
+        }
+      ]
+    },
+    {
+      "disease_id": "major_depressive_disorder",
+      "disease_name": "Major depressive disorder",
+      "location": "CNS / gut\u2013lung\u2013brain axis; Magdeburg PTR-MS awakening breath cohorts",
+      "refs": [
+        {
+          "doi": "10.3389/fpsyt.2022.819607",
+          "title": "Volatile Organic Compounds From Breath Differ Between Patients With Major Depression and Healthy Controls",
+          "year": 2022,
+          "method": "PTR-MS awakening breath; MDD vs healthy controls"
+        },
+        {
+          "doi": "10.1503/jpn.220139",
+          "title": "Gut\u2013brain axis volatile organic compounds derived from breath distinguish between schizophrenia and major depressive disorder",
+          "year": 2023,
+          "method": "PTR-MS; MDD vs schizophrenia vs healthy controls"
+        },
+        {
+          "doi": "10.3389/fpsyt.2022.1061326",
+          "title": "Breathomics profiling of metabolic pathways affected by major depression: Possibilities and limitations",
+          "year": 2022,
+          "method": "Non-targeted PTR-MS breathomics; pathway and SVM breathprint analyses"
+        },
+        {
+          "doi": "10.1088/1752-7163/ad7eef",
+          "title": "Rapid detection of depression by volatile organic compounds from exhalation",
+          "year": 2024,
+          "method": "VSAW-SA virtual sensor array; VOC identities uncertain \u2014 supporting method-diverse depression breath signal, not used for measured_log2fc"
+        }
+      ],
+      "measured_log2fc": {
+        "isoprene": -0.4,
+        "trimethylamine": -0.4,
+        "ethanol": 0.6,
+        "acetaldehyde": 0.6,
+        "butyric_acid": -0.5429,
+        "acetic_acid": -0.2356,
+        "valeric_acid": -1.0,
+        "butylamine": -0.4
+      },
+      "evidence_grade": "mixed",
+      "voc_evidence": {
+        "isoprene": {
+          "evidence": "directional_only",
+          "source_doi": "10.3389/fpsyt.2022.819607",
+          "direction": "decreased",
+          "note": "m/z 69 (isoprene) awakening time-course differed; lower patient signal especially at awakening (Luib/Frodl Magdeburg MDD study)."
+        },
+        "trimethylamine": {
+          "evidence": "directional_only",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "note": "Gbaoui et al.: most exhaled VOCs decreased in MDD vs controls except ethanol and acetaldehyde; trimethylamine listed among disrupted biogenic amines."
+        },
+        "ethanol": {
+          "evidence": "directional_only",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "increased",
+          "note": "Endogenous ethanol / ethanol isotope increased in MDD breath vs controls (pyruvate / microbial fermentation narrative)."
+        },
+        "acetaldehyde": {
+          "evidence": "directional_only",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "increased",
+          "note": "Acetaldehyde increased in MDD breath vs controls alongside endogenous ethanol."
+        },
+        "butyric_acid": {
+          "evidence": "quantified",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "calculation": "log2(116 MDD / 169 healthy controls) from Gbaoui et al. reported exhaled butyric means",
+          "note": "Gbaoui et al. report exhaled butyric 116\u00b13.10 vs 169\u00b13.54 (MDD vs HC)."
+        },
+        "acetic_acid": {
+          "evidence": "quantified",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "calculation": "log2(124 MDD / 146 healthy controls) from Gbaoui et al. reported exhaled acetic means"
+        },
+        "valeric_acid": {
+          "evidence": "quantified",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "calculation": "log2(4 MDD / 8 healthy controls) from Gbaoui et al. reported exhaled valeric means",
+          "note": "Authors note m/z 85 interference with lysine; retained as valeric SCFA claim with that caveat."
+        },
+        "butylamine": {
+          "evidence": "directional_only",
+          "source_doi": "10.3389/fpsyt.2022.1061326",
+          "direction": "decreased",
+          "note": "n-Butanamine (m/z 74) among strongest univariate MDD discriminators; decreased vs controls."
+        }
+      },
+      "pathway_links": {
+        "isoprene": [
+          "mevalonate_flux_suppression",
+          "awakening_stress_response"
+        ],
+        "ethanol": [
+          "pyruvate_ethanol_axis",
+          "gut_microbiome_fermentation"
+        ],
+        "acetaldehyde": [
+          "pyruvate_ethanol_axis",
+          "oxidative_stress"
+        ],
+        "trimethylamine": [
+          "gut_microbiome_fermentation",
+          "choline_TMA_TMAO_axis"
+        ],
+        "butyric_acid": [
+          "gut_microbiome_fermentation",
+          "scfa_metabolism",
+          "pyruvate_metabolism"
+        ],
+        "acetic_acid": [
+          "scfa_metabolism",
+          "gut_microbiome_fermentation"
+        ],
+        "valeric_acid": [
+          "scfa_metabolism",
+          "gut_microbiome_fermentation"
+        ],
+        "butylamine": [
+          "amino_acid_decarboxylation",
+          "gut_microbiome_fermentation"
+        ]
+      },
+      "cell_states": [
+        "neuron under HPA dysregulation",
+        "gut microbiota (SCFA / amine fermentation)",
+        "alveolar exchange of systemic volatiles"
+      ],
+      "genes": [
+        "SLC6A4",
+        "BDNF",
+        "TPH2",
+        "FKBP5",
+        "IDO1"
+      ]
+    },
+    {
+      "disease_id": "bipolar",
+      "disease_name": "Bipolar disorder",
+      "location": "CNS / oral\u2013gut sulfur metabolism; OralChroma VSC breath",
+      "refs": [
+        {
+          "doi": "10.3390/jcm14062025",
+          "title": "The Breathomics Profile of Volatile Sulfur Compounds in the Bipolar Spectrum, Does It Represent a Potential Tool for Early Diagnosis?",
+          "year": 2025,
+          "method": "OralChroma GC quantification of H2S, CH3SH, and dimethyl sulfide in exhaled breath; BD vs matched controls"
+        },
+        {
+          "doi": "10.1136/jcp.46.9.861",
+          "title": "Increased pentane and carbon disulfide in the breath of patients with schizophrenia",
+          "year": 1993,
+          "method": "Historical oxidative alkane / CS2 breath context cited by bipolar VSC authors for lipid-peroxidation overlap"
+        }
+      ],
+      "measured_log2fc": {
+        "methyl_mercaptan": 0.9785,
+        "pentane": 0.45
+      },
+      "evidence_grade": "mixed",
+      "voc_evidence": {
+        "methyl_mercaptan": {
+          "evidence": "quantified",
+          "source_doi": "10.3390/jcm14062025",
+          "direction": "increased",
+          "calculation": "log2(18.62 ppb BD / 9.45 ppb healthy controls) \u2248 0.9785",
+          "note": "Cagliari OralChroma case\u2013control; CH3SH significantly higher in BD (p=0.022)."
+        },
+        "pentane": {
+          "evidence": "directional_only",
+          "source_doi": "10.3390/jcm14062025",
+          "direction": "increased",
+          "note": "Authors link BD pathophysiology to accelerated lipid peroxidation (historical pentane/CS2 psychiatry breath context); no BD-specific pentane ratio published \u2014 directional accent only."
+        }
+      },
+      "pathway_links": {
+        "methyl_mercaptan": [
+          "oral_dysbiosis",
+          "sulfur_amino_acid_metabolism"
+        ],
+        "pentane": [
+          "lipid_peroxidation",
+          "oxidative_stress"
+        ]
+      },
+      "cell_states": [
+        "oral anaerobic microbiota",
+        "neuron under oxidative stress",
+        "alveolar exchange of systemic volatiles"
+      ],
+      "genes": [
+        "CACNA1C",
+        "ANK3",
+        "BDNF",
+        "CLOCK"
+      ],
+      "assayed_but_unreported": {
+        "note": "OralChroma assay also measured H2S and dimethyl sulfide, but the paper reports significant BD-vs-control means only for CH3SH. Do not invent directional_only panels for H2S/DMS without published direction or means.",
+        "vocs": ["hydrogen_sulfide", "dms"],
+        "source_doi": "10.3390/jcm14062025"
+      }
+    }
+  ]
+}

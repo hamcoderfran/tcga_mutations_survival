@@ -3,10 +3,11 @@ from exhalepath.body.tissues import WholeBodyMap, resolve_location
 from exhalepath.knowledge.loader import clear_knowledge_cache, default_knowledge
 
 
-def test_atlas_has_50_vocs_and_100_diseases():
+def test_atlas_has_core_vocs_and_100_diseases():
     clear_knowledge_cache()
     kb = default_knowledge()
-    assert len(kb.vocs) == 50
+    assert len(kb.vocs) >= 50
+    assert "butyric_acid" in kb.vocs
     assert len(kb.diseases) >= 100
     assert len(kb.tissues) >= 50
 
@@ -37,7 +38,7 @@ def test_biomarker_top50_any_location():
         genes=["KRAS", "TP53"],
         top_n=50,
     )
-    assert report.n_vocs_modeled == 50
+    assert report.n_vocs_modeled >= 50
     assert len(report.top_vocs) == 50
     assert report.tissue == "lung"
     # Ranked by |Δppb|
@@ -55,7 +56,7 @@ def test_biomarker_brain_and_gut_locations():
     engine = ExhaleBiomarkerEngine(use_opentargets=False, reload_knowledge=True)
     ad = engine.predict("Alzheimer's disease", location="brain", top_n=50)
     assert ad.location["tissue_id"] == "brain"
-    assert ad.n_vocs_modeled == 50
+    assert ad.n_vocs_modeled >= 50
     assert abs(ad.top_vocs[0].delta_ppb) > 0
 
     gut = engine.predict("gut dysbiosis", location="small intestine", top_n=20)

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Gbaoui MDD SCFA literature-reconstructed breath fixture",
+  "honesty": "NOT patient-level raw PTR-MS intensities. Group-mean proxies reconstructed from published exhaled SCFA means in Gbaoui et al. Front Psychiatry 2022 for pipeline smoke tests and log2fc audit only. Do not report AUROC from this fixture.",
+  "source": {
+    "doi": "10.3389/fpsyt.2022.1061326",
+    "title": "Breathomics profiling of metabolic pathways affected by major depression: Possibilities and limitations",
+    "year": 2022,
+    "units": "reported exhaled abundance means (paper units; treated as relative ppb-scale proxies)",
+    "note": "butyric 116±3.10 vs 169±3.54; acetic 124±2.44 vs 146±2.31; valeric 4±2.07 vs 8±2.16 (MDD vs HC)"
+  },
+  "disease_id": "major_depressive_disorder",
+  "vocs": ["butyric_acid", "acetic_acid", "valeric_acid"],
+  "samples": [
+    {
+      "sample_id": "gbaoui_mdd_group_mean_proxy",
+      "label": "MDD",
+      "label_int": 1,
+      "n_subjects_represented": 26,
+      "butyric_acid": 116.0,
+      "acetic_acid": 124.0,
+      "valeric_acid": 4.0
+    },
+    {
+      "sample_id": "gbaoui_hc_group_mean_proxy",
+      "label": "HC",
+      "label_int": 0,
+      "n_subjects_represented": 25,
+      "butyric_acid": 169.0,
+      "acetic_acid": 146.0,
+      "valeric_acid": 8.0
+    }
+  ],
+  "expected_log2fc": {
+    "butyric_acid": -0.5429,
+    "acetic_acid": -0.2356,
+    "valeric_acid": -1.0
+  }
+}

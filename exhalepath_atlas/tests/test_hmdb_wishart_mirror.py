@@ -35,16 +35,24 @@ def test_wishart_mirror_serves_metabolite_xml():
 
 def test_hmdb_breath_extract_committed():
     breath = json.loads((HMDB / "hmdb_breath_metabolites.json").read_text())
-    assert breath["n_breath"] == 60
+    assert breath["n_breath"] >= 60
     assert breath["n_metabolites_scanned"] >= 200_000
     assert breath["source"] == "hmdbfix.wishartlab.com"
     ids = {m["hmdb_id"] for m in breath["metabolites"]}
     assert "HMDB0001659" in ids  # acetone
+    assert "HMDB0000039" in ids  # butyric acid
+    assert "HMDB0000042" in ids  # acetic acid
 
 
 def test_hmdb_panel_enrichment_complete():
     panel = json.loads((HMDB / "hmdb_panel_enrichment.json").read_text())
-    assert panel["n_enriched"] == 50
+    assert panel["n_enriched"] >= 50
+    assert "butyric_acid" in panel["by_voc"]
+    assert panel["by_voc"]["butyric_acid"]["hmdb_id"] == "HMDB0000039"
+    assert panel["by_voc"]["butyric_acid"]["in_breath"] is True
+    assert "acetic_acid" in panel["by_voc"]
+    assert "valeric_acid" in panel["by_voc"]
+    assert "butylamine" in panel["by_voc"]
     assert not panel.get("missing_vocs")
     assert panel["by_voc"]["acetone"]["in_breath"] is True
 
@@ -57,4 +65,4 @@ def test_hmdb_harvest_uses_wishart_bulk():
     assert doc.get("mirror") == HMDB_MIRROR
     assert any(v.get("source") == "hmdbfix_wishart_bulk_xml" for v in doc["vocs"])
     info = src.fuse(ROOT / "data" / "knowledge")
-    assert info.get("n_breath_metabolites") == 60
+    assert info.get("n_breath_metabolites") >= 60

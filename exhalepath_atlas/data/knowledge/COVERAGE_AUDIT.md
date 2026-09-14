@@ -10,12 +10,12 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 
 ## Metrics
 
-- Atlas prediction VOCs: 50
-- Extended catalog mapped to atlas IDs: 44
+- Atlas prediction VOCs: 54
+- Extended catalog mapped to atlas IDs: 46
 - Atlas chem enrichment (PubChem/HMDB): 100.0%
 - Curated public studies: 9
 - Expanded MW study catalog size: 25 (+16 discovered)
-- Literature panels: 13 · panel DOIs: 34
+- Literature panels: 16 · panel DOIs: 43
 - Europe PMC breath-VOC metadata records: 100 (DOIs: 97) — metadata only, no PDF scrape
 
 ## Security / anti-poisoning
@@ -33,8 +33,10 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 
 - **hbdb_full_1140**: HBDB claims ~1140 compounds / 2766 refs; live DB blocked — using VOLATILOME 777 as open substitute
 - **owlstone_atlas**: Breath Biopsy VOC Atlas is gated; not bulk-downloadable
-- **prediction_panel_50**: Mechanistic predictor still uses 50 VOCs; extended catalog is inventory/coverage, not full retrain
+- **prediction_panel_50**: Mechanistic predictor still uses 54 VOCs; extended catalog is inventory/coverage, not full retrain
 - **pdf_fulltext**: Europe PMC harvest is metadata-only; no automated full-text VOC table extraction yet
+- **magdeburg_no_intensity_matrix**: Magdeburg psych breath figshare 19181742 is a DOCX supplement only — no open patient×VOC intensity matrix is bundled. MH literature panels are directional/quantified means; use `voc eval-mental-health` (panel-masked + mechanism-backed) rather than AUROC claims.
+- **mh_thin_conditions_unpromoted**: Anxiety/PTSD/ADHD/ASD remain thin_prior_only / microbiome_proxy — no named exhaled disease fold-change panels promoted (see mental_health_readiness.json).
 
 ## Artifacts
 
@@ -44,4 +46,4 @@ Denominator = EPA VOLATILOME open breath-chemical list (HBDB literature backbone
 - `data/datasources/literature/europepmc_breath_voc_metadata.json`
 - `data/datasources/metabolomics/breath_study_catalog_expanded.json`
 
-Generated: 2026-08-09T19:06:29.236071+00:00
+Generated: 2026-08-12T05:40:16.384099+00:00

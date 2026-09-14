@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Mental-health breath VOC readiness",
+  "product_bar": "research_enablement_hypothesis_generation",
+  "not_claims": [
+    "Not a clinical diagnostic for psychiatric disease",
+    "Not FDA/CE performance claims",
+    "Not patient-level AUROC from in-repo MH intensity cohorts (none bundled)"
+  ],
+  "ready": {
+    "schizophrenia": {
+      "status": "literature_panel_ready",
+      "evidence": "directional_only Magdeburg/Phillips; butyric + TMA + isoprene named",
+      "quantified_vocs": 0,
+      "holes": [
+        "no open intensity matrix",
+        "overlay prior-overlap is circular",
+        "most claims directional_only"
+      ],
+      "de_circularized": {
+        "raw": 1.0,
+        "panel_masked_prior": 1.0,
+        "mechanism_backed": 1.0,
+        "n_prior_vocs_removed": 10,
+        "near_floor_vocs": []
+      }
+    },
+    "major_depressive_disorder": {
+      "status": "literature_panel_ready",
+      "evidence": "mixed; butyric/acetic/valeric quantified from Gbaoui means; Magdeburg directions; IOP VSAW-SA supporting but IDs uncertain",
+      "quantified_vocs": 3,
+      "holes": [
+        "no open intensity matrix",
+        "overlay prior-overlap is circular",
+        "valeric m/z 85 lysine caveat"
+      ],
+      "de_circularized": {
+        "raw": 1.0,
+        "panel_masked_prior": 1.0,
+        "mechanism_backed": 1.0,
+        "n_prior_vocs_removed": 8,
+        "near_floor_vocs": []
+      }
+    },
+    "bipolar": {
+      "status": "literature_panel_ready",
+      "evidence": "mixed; methyl_mercaptan quantified OralChroma",
+      "quantified_vocs": 1,
+      "holes": [
+        "single sulfur VOC quantified",
+        "oral microbiome confounder",
+        "OralChroma also assayed H2S/DMS but did not publish BD-vs-control means — not promoted"
+      ],
+      "de_circularized": {
+        "raw": 1.0,
+        "panel_masked_prior": 1.0,
+        "mechanism_backed": 1.0,
+        "n_prior_vocs_removed": 2,
+        "near_floor_vocs": []
+      }
+    },
+    "anxiety": {
+      "status": "thin_prior_only",
+      "quantified_vocs": 0,
+      "holes": [
+        "Mansour stress volatilomics VOCs unnamed in abstract; Cavallo e-nose null for clinical anxiety severity — no named exhaled panel to promote"
+      ]
+    },
+    "ptsd": {
+      "status": "thin_prior_only",
+      "quantified_vocs": 0,
+      "holes": [
+        "canine trauma-cue odour PoC / stress-proximal lit only — no named PTSD-vs-control exhaled fold-change panel"
+      ]
+    },
+    "adhd": {
+      "status": "thin_prior_only",
+      "quantified_vocs": 0,
+      "holes": [
+        "pediatric executive-function breath pilot is not an ADHD diagnostic cohort — not promoted"
+      ]
+    },
+    "autism_spectrum_disorder": {
+      "status": "microbiome_proxy_prior_only",
+      "quantified_vocs": 0,
+      "holes": [
+        "no exhaled ASD disease panel; fecal/urine VOC literature only"
+      ]
+    }
+  },
+  "atlas_changes_this_iteration": [
+    "Core VOC catalog expanded for MH SCFAs/amines: butyric_acid, acetic_acid, valeric_acid, butylamine (54 VOCs)",
+    "MDD quantified acetic/valeric/butyric from Gbaoui means",
+    "Circularity-aware literature overlay metrics (raw vs outside-prior)",
+    "Magdeburg figshare confirmed non-intensity DOCX",
+    "2026-08-12 recheck: figshare API still DOCX-only; MW/MetaboLights have no exhaled psych PTR-MS intensity accession to bundle",
+    "Added voc eval-mental-health: raw vs panel-masked-prior de-circularized overlay",
+    "Disease-local negative/positive pathways for masked recovery (acetone/TMA/SCFA/amine/isoprene/methanol/CS2/ethanol)",
+    "Eval v1.1 mechanism_backed_directional_accuracy (|pred|\u22650.02); near-floor list now empty for panel diseases",
+    "T2D acetone / SIBO TMA regression guards; OralChroma H2S/DMS assayed-but-unreported honesty",
+    "CS2/ethanol physio explain chains wired via hepatocyte_sulfur / gut_fermentative cell states"
+  ],
+  "de_circularized_eval": {
+    "path": "data/knowledge/mental_health/mental_health_lit_eval.json",
+    "mean_raw_directional_accuracy": 1.0,
+    "mean_panel_masked_directional_accuracy": 1.0,
+    "mean_mechanism_backed_directional_accuracy": 1.0,
+    "cli": "voc eval-mental-health",
+    "note": "All SCZ/MDD/bipolar panel VOCs are mechanism-backed under mask (|pred|\u22650.02). Disease-local pathways used; global ketone/mevalonate/gut TMA maps left intact for T2D/SIBO honesty. No MH intensity cohort bundled."
+  },
+  "negative_voc_effects_convention": {
+    "policy": "Prefer disease-local pathways with signed coefs over inverting shared ketone/gut/mevalonate maps",
+    "pathways": [
+      "brain_energy_hypometabolism",
+      "choline_TMA_TMAO_axis",
+      "scfa_metabolism",
+      "amino_acid_decarboxylation",
+      "mevalonate_flux_suppression",
+      "methanol_one_carbon_suppression",
+      "pyruvate_ethanol_axis"
+    ]
+  },
+  "literature_reconstructed_fixtures": [
+    {
+      "path": "data/real_breath/literature_panels/gbaoui_mdd_scfa_mean_fixture.json",
+      "honesty": "group-mean proxies from published Gbaoui SCFA means \u2014 not patient intensity matrix"
+    }
+  ]
+}

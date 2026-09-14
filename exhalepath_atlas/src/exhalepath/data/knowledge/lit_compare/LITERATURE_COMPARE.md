@@ -2,7 +2,7 @@
 
 ## Does the 1000-profile atlas match literature?
 
-**Mean directional concordance: 100.0%** across 19 diseases with curated elevate/suppress panels (priority10 + review-backed expectations for COPD / bronchitis / lung cancer / asthma / T2D / schizophrenia / HF / IBD / malaria).
+**Mean directional concordance: 100.0%** across 21 diseases with curated elevate/suppress panels (priority10 + MH Magdeburg/Gbaoui/OralChroma panels + review-backed expectations for COPD / bronchitis / lung cancer / asthma / T2D / schizophrenia / MDD / bipolar / HF / IBD / malaria).
 
 ### What matches well
 
@@ -10,7 +10,9 @@
 - **COPD → hexanal / ethane / pentane**: oxidative lipid-peroxidation alkanes & aldehydes (PMC8405872; PMC7796324).
 - **Lung cancer → hexanal / heptanal / nonanal / 2-butanone**: aldehyde–ketone pattern (JTO breath VOC reviews).
 - **T2D → acetone**: ketone-body breath literature; atlas min-fold gates.
-- **Schizophrenia → ↓ acetone / isoprene, ↑ pentane/ethane**: Magdeburg PTR-MS panel.
+- **Schizophrenia → ↓ acetone / isoprene / trimethylamine, ↑ pentane/ethane/CS2**: Magdeburg PTR-MS (doi:10.1080/15622975.2022.2040052; doi:10.1503/jpn.220139) + Phillips pentane/CS2.
+- **MDD → ↑ ethanol/acetaldehyde, ↓ SCFAs / isoprene / TMA**: Magdeburg + Gbaoui breathomics (doi:10.3389/fpsyt.2022.1061326).
+- **Bipolar → ↑ methyl_mercaptan (CH3SH)**: OralChroma VSC (doi:10.3390/jcm14062025); H2S/DMS assayed but unreported — not invented.
 - **COPD ↔ chronic bronchitis closer than either ↔ LUAD**: expected obstructive continuum.
 
 ### Where it is only partly aligned / cautious
@@ -18,11 +20,13 @@
 - Chronic bronchitis has **few dedicated breath GC-MS panels**; we treat it as an inflammatory airway neighbor of COPD (feasible, but not gold-standard validated).
 - Individual VOC markers are **non-specific** across airway diseases — literature emphasizes multi-VOC patterns, which is why cosine neighborhoods matter more than single-marker claims (PMC7796324).
 - Hybrid physiology previously **attenuated** smoking BTEX (bug; now fixed).
+- Magdeburg psych figshare `19181742` is a **DOCX supplement**, not a patient×VOC intensity matrix — use `voc eval-mental-health` (panel-masked / mechanism-backed) rather than AUROC claims.
 
 ### Per-disease concordance
 
 - **ards**: 100.0% (9/9)
 - **asthma**: 100.0% (19/19)
+- **bipolar**: 100.0% (2/2)
 - **cancer_prostate**: 100.0% (7/7)
 - **cancer_stomach**: 100.0% (9/9)
 - **chronic_bronchitis**: 100.0% (5/5)
@@ -34,20 +38,21 @@
 - **inflammatory_bowel_disease**: 100.0% (2/2)
 - **lung_adenocarcinoma**: 100.0% (7/7)
 - **lung_squamous_cell_carcinoma**: 100.0% (6/6)
+- **major_depressive_disorder**: 100.0% (8/8)
 - **malaria**: 100.0% (7/7)
 - **pneumonia_bacterial**: 100.0% (11/11)
-- **schizophrenia**: 100.0% (5/5)
+- **schizophrenia**: 100.0% (10/10)
 - **sleep_apnea**: 100.0% (9/9)
 - **tuberculosis**: 100.0% (9/9)
 - **type_2_diabetes**: 100.0% (3/3)
 
 ## Demographics / identity PCA — do we see clusters?
 
-- n=400 · demo PC var=[0.17895942058473377, 0.16707293586048094] · VOC PC var=[0.26599781495069225, 0.18575220089515854]
-- Silhouette demo←smoking: **0.24208500978370062**
-- Silhouette demo←disease category: **0.05592607488694657** (should be weak if demographics are not disease-leaking)
-- Silhouette VOC←smoking: **0.007846431029879275**
-- Silhouette VOC←category: **0.23635772970472957**
+- n=80 · demo PC var=[0.2117228446350147, 0.17526251509713534] · VOC PC var=[0.25710262993130706, 0.19655930136815994]
+- Silhouette demo←smoking: **0.278448309108771**
+- Silhouette demo←disease category: **None** (should be weak if demographics are not disease-leaking)
+- Silhouette VOC←smoking: **0.06015205286682022**
+- Silhouette VOC←category: **None**
 
 Demographics PCA should cluster by smoking/sex (identity axes), not by disease. VOC PCA should show both disease-category structure and a smoking axis (benzene/toluene literature).
 
@@ -68,61 +73,56 @@ Figures: `figures/demo_pca_by_smoking.png`, `demo_pca_by_sex.png`, `demo_pca_by_
 
 ### Focus centroid L2 after LUSC fix
 
-- `chronic_bronchitis__vs__lung_adenocarcinoma`: 4.004
-- `chronic_bronchitis__vs__lung_squamous_cell_carcinoma`: 2.461
+- `chronic_bronchitis__vs__lung_adenocarcinoma`: 4.125
+- `chronic_bronchitis__vs__lung_squamous_cell_carcinoma`: 2.356
 - `copd__vs__chronic_bronchitis`: 2.990
-- `copd__vs__lung_adenocarcinoma`: 4.113
-- `copd__vs__lung_squamous_cell_carcinoma`: 3.279
-- `lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma`: 2.712
+- `copd__vs__lung_adenocarcinoma`: 4.315
+- `copd__vs__lung_squamous_cell_carcinoma`: 2.856
+- `lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma`: 2.817
 
 ## 100-disease suite — interesting connections
 
-Ran **100** distinct atlas diseases on a shared patient template (55y female, never-smoker, default site, driver genes when available).
+Ran **40** distinct atlas diseases on a shared patient template (55y female, never-smoker, default site, driver genes when available).
 
 ### Top cross-category VOC neighbors
 
-- `multiple_sclerosis` (neurological) ↔ `rheumatoid_arthritis` (inflammatory): cosine=0.995
-- `hypertension` (cardiovascular) ↔ `parkinson_disease` (neurological): cosine=0.992
-- `hypertension` (cardiovascular) ↔ `sickle_cell` (unspecified): cosine=0.992
-- `hiv` (infectious) ↔ `hypertension` (cardiovascular): cosine=0.991
-- `hypertension` (cardiovascular) ↔ `influenza` (infectious): cosine=0.991
-- `ards` (pulmonary) ↔ `creutzfeldt_jakob` (neurological): cosine=0.991
-- `alzheimer_disease` (neurological) ↔ `hypertension` (cardiovascular): cosine=0.991
-- `migraine` (neurological) ↔ `rheumatoid_arthritis` (inflammatory): cosine=0.991
-- `ptsd` (neurological) ↔ `rheumatoid_arthritis` (inflammatory): cosine=0.991
-- `anxiety` (neurological) ↔ `rheumatoid_arthritis` (inflammatory): cosine=0.991
-- `huntington` (neurological) ↔ `rheumatoid_arthritis` (inflammatory): cosine=0.991
-- `adhd` (neurological) ↔ `rheumatoid_arthritis` (inflammatory): cosine=0.991
+- `ards` (pulmonary) ↔ `creutzfeldt_jakob` (neurological): cosine=0.990
+- `alzheimer_disease` (neurological) ↔ `arrhythmia` (cardiovascular): cosine=0.989
+- `anxiety` (neurological) ↔ `arrhythmia` (cardiovascular): cosine=0.988
+- `als` (neurological) ↔ `arrhythmia` (cardiovascular): cosine=0.988
+- `ards` (pulmonary) ↔ `covid19` (infectious): cosine=0.987
+- `covid19` (infectious) ↔ `creutzfeldt_jakob` (neurological): cosine=0.984
+- `arrhythmia` (cardiovascular) ↔ `endometriosis` (unspecified): cosine=0.982
+- `als` (neurological) ↔ `atopic_dermatitis` (inflammatory): cosine=0.980
+- `als` (neurological) ↔ `celiac` (inflammatory): cosine=0.980
+- `arrhythmia` (cardiovascular) ↔ `atopic_dermatitis` (inflammatory): cosine=0.980
+- `arrhythmia` (cardiovascular) ↔ `celiac` (inflammatory): cosine=0.980
+- `adhd` (neurological) ↔ `arrhythmia` (cardiovascular): cosine=0.978
 
 ### Highlighted biological bridges
 
-- **copd ↔ lung_adenocarcinoma** (cos=0.794, shared=6): Oxidative aldehydes overlap; cancer should still separate on ketone/aldehyde mix
-  - VOCs: `2_butanone|heptanal|hexanal|nonanal|pentane|propionaldehyde`
 - **chronic_bronchitis ↔ copd** (cos=0.927): Obstructive airway inflammation continuum (literature-expected)
-- **gut_dysbiosis ↔ inflammatory_bowel_disease** (cos=0.540, shared=13): Microbial sulfur / putrefaction VOCs
-  - VOCs: `acetaldehyde|ammonia|carbon_disulfide|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol`
-- **major_depressive_disorder ↔ schizophrenia** (cos=0.916): Neuro-oxidative + microbiome-adjacent breath features
-- **malaria ↔ sepsis** (cos=0.165): Systemic oxidative / infectious breath stress
-- **alzheimer_disease ↔ parkinson_disease** (cos=0.996): Neurodegeneration oxidative alkanes/aldehydes
 - **asthma ↔ copd** (cos=0.869): Airway oxidative alkane overlap with distinct ketone/ester accents
-- **inflammatory_bowel_disease ↔ sibo** (cos=0.543, shared=11): High shared elevated-VOC bridge across categories
-  - VOCs: `acetaldehyde|ammonia|dimethyl_amine|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine`
-- **clostridioides_difficile_infection ↔ inflammatory_bowel_disease** (cos=0.523, shared=11): High shared elevated-VOC bridge across categories
-  - VOCs: `ammonia|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine`
-- **ards ↔ lung_squamous_cell_carcinoma** (cos=0.949, shared=8): High shared elevated-VOC bridge across categories
+- **ards ↔ colon_adenocarcinoma** (cos=0.736, shared=8): High shared elevated-VOC bridge across categories
   - VOCs: `acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
-- **covid19 ↔ lung_squamous_cell_carcinoma** (cos=0.945, shared=8): High shared elevated-VOC bridge across categories
+- **colon_adenocarcinoma ↔ covid19** (cos=0.724, shared=8): High shared elevated-VOC bridge across categories
   - VOCs: `2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
-- **ards ↔ colon_adenocarcinoma** (cos=0.733, shared=8): High shared elevated-VOC bridge across categories
-  - VOCs: `acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
-- **colon_adenocarcinoma ↔ covid19** (cos=0.732, shared=8): High shared elevated-VOC bridge across categories
-  - VOCs: `2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
-- **covid19 ↔ pancreatic_adenocarcinoma** (cos=0.691, shared=8): High shared elevated-VOC bridge across categories
-  - VOCs: `2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
-- **ards ↔ pancreatic_adenocarcinoma** (cos=0.687, shared=8): High shared elevated-VOC bridge across categories
-  - VOCs: `acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
-- **ards ↔ glioblastoma** (cos=0.644, shared=8): High shared elevated-VOC bridge across categories
-  - VOCs: `acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **ards ↔ covid19** (cos=0.987, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **ards ↔ cancer_kidney** (cos=0.951, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **cancer_kidney ↔ covid19** (cos=0.944, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `2_butanone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **ards ↔ cervical_cancer** (cos=0.940, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **ards ↔ cancer_bladder** (cos=0.933, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **cervical_cancer ↔ covid19** (cos=0.932, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `2_butanone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **ards ↔ endometrial_cancer** (cos=0.928, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
+- **cancer_bladder ↔ covid19** (cos=0.925, shared=7): High shared elevated-VOC bridge across categories
+  - VOCs: `2_butanone|ethanol|heptanal|hexanal|nonanal|octanal|pentane`
 
 ## Outputs
 

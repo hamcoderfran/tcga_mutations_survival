@@ -65,8 +65,10 @@ def test_schizophrenia_suppresses_magdeburg_panel():
     by = {p.voc_id: p for p in r.result.bundle.predictions}
     assert by["acetone"].fold_change < 1.0
     assert by["isoprene"].fold_change < 1.0
+    assert by["trimethylamine"].fold_change < 1.0
     assert by["pentane"].fold_change > 1.0
     assert by["ethane"].fold_change > 1.0
+    assert by["carbon_disulfide"].fold_change > 1.0
 
 
 def test_autism_mondo_not_heart_failure():

@@ -288,6 +288,7 @@
       "baseline_activity": 0.35,
       "produces_chains": [
         "ethanol_fermentation",
+        "ethanol_pyruvate_mdd",
         "h2s_cysteine",
         "indole_tryptophan"
       ],
@@ -296,6 +297,8 @@
         "sibo": 2.4,
         "inflammatory_bowel_disease": 4.93096255896222,
         "autism_spectrum_disorder": 1.35,
+        "major_depressive_disorder": 1.35,
+        "schizophrenia": 1.2,
         "clostridioides_difficile_infection": 1.7,
         "lung_adenocarcinoma": 0.771506410867,
         "colon_adenocarcinoma": 4.46579734645228,
@@ -308,6 +311,8 @@
         "sibo": 2.6,
         "inflammatory_bowel_disease": 1.8,
         "autism_spectrum_disorder": 1.5,
+        "major_depressive_disorder": 1.4,
+        "schizophrenia": 1.2,
         "clostridioides_difficile_infection": 2.1,
         "cancer_stomach": 1.4,
         "head_neck_cancer": 1.2
@@ -366,16 +371,19 @@
       "baseline_activity": 0.4,
       "produces_chains": [
         "dms_methionine",
-        "ammonia_urea"
+        "ammonia_urea",
+        "carbon_disulfide_transsulfuration"
       ],
       "disease_density_mult": {
         "hepatocellular_carcinoma": 0.65,
         "chronic_liver_disease": 0.5,
-        "glioblastoma": 1.30333552462342
+        "glioblastoma": 1.30333552462342,
+        "schizophrenia": 1.35
       },
       "disease_activity_mult": {
         "hepatocellular_carcinoma": 1.8,
-        "chronic_liver_disease": 2.2
+        "chronic_liver_disease": 2.2,
+        "schizophrenia": 1.3
       },
       "census_healthy_fraction": 0.0003780683245859,
       "census_calibrated": true

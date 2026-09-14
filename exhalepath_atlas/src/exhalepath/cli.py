@@ -333,6 +333,36 @@ def eval_priority10_cmd(
     )
 
 
+@app.command("eval-mental-health")
+def eval_mental_health_cmd(
+    out_dir: Path = typer.Option(Path("runs/mental_health_lit_eval")),
+):
+    """MH literature panels: raw vs panel-masked-prior (de-circularized) overlay."""
+    from .eval.mental_health_lit import evaluate_mental_health_literature
+
+    report = evaluate_mental_health_literature(out_dir=out_dir)
+    raw = report.get("mean_raw_directional_accuracy")
+    masked = report.get("mean_panel_masked_directional_accuracy")
+    mech = report.get("mean_mechanism_backed_directional_accuracy")
+    rprint(
+        f"[bold]MH lit eval[/bold] raw={raw}  panel_masked_prior={masked}  "
+        f"mechanism_backed={mech}  "
+        f"→ {Path(out_dir) / 'mental_health_lit_eval.json'}"
+    )
+    for c in report.get("cases") or []:
+        if c.get("skipped"):
+            continue
+        pm = c["panel_masked_prior"]
+        near = pm.get("near_floor_vocs") or []
+        near_s = f"  near_floor={near}" if near else ""
+        rprint(
+            f"  {c['disease_id']:28} raw={c['raw']['directional_accuracy']}  "
+            f"masked={pm['directional_accuracy']}  "
+            f"mechanism_backed={pm.get('mechanism_backed_directional_accuracy')}  "
+            f"removed_prior={c['n_prior_vocs_removed']}{near_s}"
+        )
+
+
 @app.command("train")
 def train_cmd(
     case_features: Path = typer.Option(PROCESSED_DIR / "case_pathway_features.csv"),
@@ -2334,6 +2364,7 @@ def main(argv: Optional[list[str]] = None):
         "train",
         "eval-completion",
         "eval-priority10",
+        "eval-mental-health",
         "integrate-datasources",
         "harvest-public-breath",
         "eval-public-breath",

@@ -1,6 +1,6 @@
 {
   "literature": {
-    "n_diseases": 19,
+    "n_diseases": 21,
     "mean_concordance": 1.0,
     "mean_concordance_pct": 100.0,
     "by_disease": [
@@ -16,7 +16,7 @@
           {
             "voc": "acetaldehyde",
             "expect": "elevate",
-            "log2fc": 0.6098660725018727,
+            "log2fc": 0.7318138388122797,
             "ok": true
           },
           {
@@ -197,6 +197,29 @@
         ]
       },
       {
+        "disease_id": "bipolar",
+        "concordance": 1.0,
+        "n_hit": 2,
+        "n_checked": 2,
+        "refs": [
+          "doi:10.3390/jcm14062025 OralChroma CH3SH bipolar spectrum"
+        ],
+        "details": [
+          {
+            "voc": "methyl_mercaptan",
+            "expect": "elevate",
+            "log2fc": 0.9963038240303601,
+            "ok": true
+          },
+          {
+            "voc": "pentane",
+            "expect": "elevate",
+            "log2fc": 3.822375305578041,
+            "ok": true
+          }
+        ]
+      },
+      {
         "disease_id": "cancer_prostate",
         "concordance": 1.0,
         "n_hit": 7,
@@ -238,7 +261,7 @@
           {
             "voc": "acetaldehyde",
             "expect": "suppress",
-            "log2fc": -0.011471061754278486,
+            "log2fc": -0.4103356299993833,
             "ok": true
           },
           {
@@ -543,7 +566,7 @@
           {
             "voc": "methanol",
             "expect": "suppress",
-            "log2fc": -0.48798013730365913,
+            "log2fc": -0.4389285537623798,
             "ok": true
           },
           {
@@ -643,7 +666,7 @@
           {
             "voc": "ethanol",
             "expect": "elevate",
-            "log2fc": 4.395916417300085,
+            "log2fc": 4.447561086221065,
             "ok": true
           },
           {
@@ -720,7 +743,7 @@
           {
             "voc": "methanol",
             "expect": "elevate",
-            "log2fc": 0.17604618835896124,
+            "log2fc": 0.18926997451738523,
             "ok": true
           },
           {
@@ -779,19 +802,19 @@
           {
             "voc": "hexanal",
             "expect": "elevate",
-            "log2fc": 4.32612427127955,
+            "log2fc": 4.180505035976732,
             "ok": true
           },
           {
             "voc": "heptanal",
             "expect": "elevate",
-            "log2fc": 0.6179126665520833,
+            "log2fc": 0.5374075351506308,
             "ok": true
           },
           {
             "voc": "nonanal",
             "expect": "elevate",
-            "log2fc": 0.7118979118545048,
+            "log2fc": 0.6593979118545047,
             "ok": true
           },
           {
@@ -809,7 +832,7 @@
           {
             "voc": "acetaldehyde",
             "expect": "elevate",
-            "log2fc": 1.621561043628422,
+            "log2fc": 1.782521844821696,
             "ok": true
           },
           {
@@ -832,37 +855,98 @@
           {
             "voc": "hexanal",
             "expect": "elevate",
-            "log2fc": 3.565159556718095,
+            "log2fc": 3.68781625298716,
             "ok": true
           },
           {
             "voc": "heptanal",
             "expect": "elevate",
-            "log2fc": 0.6603750493645835,
+            "log2fc": 0.6252082524895834,
             "ok": true
           },
           {
             "voc": "nonanal",
             "expect": "elevate",
-            "log2fc": 0.75498215990138,
+            "log2fc": 0.7037597966201298,
             "ok": true
           },
           {
             "voc": "acetaldehyde",
             "expect": "elevate",
-            "log2fc": 0.6323543703822023,
+            "log2fc": 1.1761740619130532,
             "ok": true
           },
           {
             "voc": "2_butanone",
             "expect": "elevate",
-            "log2fc": 0.6875888121282415,
+            "log2fc": 0.5806756574809813,
             "ok": true
           },
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.3457117635192584,
+            "log2fc": -0.29012872236309517,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "disease_id": "major_depressive_disorder",
+        "concordance": 1.0,
+        "n_hit": 8,
+        "n_checked": 8,
+        "refs": [
+          "doi:10.3389/fpsyt.2022.819607 Magdeburg PTR-MS MDD",
+          "doi:10.3389/fpsyt.2022.1061326 breathomics MDD pathways",
+          "doi:10.1503/jpn.220139 SCZ vs MDD breath"
+        ],
+        "details": [
+          {
+            "voc": "ethanol",
+            "expect": "elevate",
+            "log2fc": 1.528407595866807,
+            "ok": true
+          },
+          {
+            "voc": "acetaldehyde",
+            "expect": "elevate",
+            "log2fc": 0.7096917439391348,
+            "ok": true
+          },
+          {
+            "voc": "isoprene",
+            "expect": "suppress",
+            "log2fc": -0.6762231543197246,
+            "ok": true
+          },
+          {
+            "voc": "trimethylamine",
+            "expect": "suppress",
+            "log2fc": -0.47955929409200126,
+            "ok": true
+          },
+          {
+            "voc": "butyric_acid",
+            "expect": "suppress",
+            "log2fc": -0.6111019235394332,
+            "ok": true
+          },
+          {
+            "voc": "acetic_acid",
+            "expect": "suppress",
+            "log2fc": -0.25045911601972554,
+            "ok": true
+          },
+          {
+            "voc": "valeric_acid",
+            "expect": "suppress",
+            "log2fc": -1.0347498342889434,
+            "ok": true
+          },
+          {
+            "voc": "butylamine",
+            "expect": "suppress",
+            "log2fc": -0.5676307984666628,
             "ok": true
           }
         ]
@@ -932,7 +1016,7 @@
           {
             "voc": "ethanol",
             "expect": "elevate",
-            "log2fc": 0.698426667551325,
+            "log2fc": 0.5432300879850563,
             "ok": true
           },
           {
@@ -1000,40 +1084,72 @@
       {
         "disease_id": "schizophrenia",
         "concordance": 1.0,
-        "n_hit": 5,
-        "n_checked": 5,
+        "n_hit": 10,
+        "n_checked": 10,
         "refs": [
-          "Magdeburg PTR-MS schizophrenia breath"
+          "doi:10.1080/15622975.2022.2040052 Magdeburg PTR-MS schizophrenia",
+          "doi:10.1503/jpn.220139 gut\u2013brain breath SCZ vs MDD",
+          "doi:10.1136/jcp.46.9.861 Phillips pentane/CS2"
         ],
         "details": [
           {
             "voc": "pentane",
             "expect": "elevate",
-            "log2fc": 3.6917648125293456,
+            "log2fc": 4.721784778278596,
             "ok": true
           },
           {
             "voc": "ethane",
             "expect": "elevate",
-            "log2fc": 0.6570420677402591,
+            "log2fc": 0.8087630599963174,
+            "ok": true
+          },
+          {
+            "voc": "carbon_disulfide",
+            "expect": "elevate",
+            "log2fc": 1.536661472717886,
+            "ok": true
+          },
+          {
+            "voc": "ammonia",
+            "expect": "elevate",
+            "log2fc": 1.0938245845883194,
             "ok": true
           },
           {
             "voc": "acetone",
             "expect": "suppress",
-            "log2fc": -0.7413964503301613,
+            "log2fc": -0.8413356002714828,
             "ok": true
           },
           {
             "voc": "isoprene",
             "expect": "suppress",
-            "log2fc": -0.4587981543197251,
+            "log2fc": -0.6762231543197246,
             "ok": true
           },
           {
             "voc": "trimethylamine",
             "expect": "suppress",
-            "log2fc": -0.7333633877799146,
+            "log2fc": -0.7548235186574096,
+            "ok": true
+          },
+          {
+            "voc": "methanol",
+            "expect": "suppress",
+            "log2fc": -0.47191519146145616,
+            "ok": true
+          },
+          {
+            "voc": "butyric_acid",
+            "expect": "suppress",
+            "log2fc": -0.6142901507601313,
+            "ok": true
+          },
+          {
+            "voc": "butylamine",
+            "expect": "suppress",
+            "log2fc": -0.5209502799806935,
             "ok": true
           }
         ]
@@ -1098,7 +1214,7 @@
           {
             "voc": "methanol",
             "expect": "elevate",
-            "log2fc": 0.3483535720073776,
+            "log2fc": 0.29509059334005544,
             "ok": true
           }
         ]
@@ -1201,298 +1317,211 @@
     ]
   },
   "demographics_pca": {
-    "n": 400,
+    "n": 80,
     "demo_pca_var": [
-      0.17895942058473377,
-      0.16707293586048094
+      0.2117228446350147,
+      0.17526251509713534
     ],
     "voc_pca_var": [
-      0.26599781495069225,
-      0.18575220089515854
+      0.25710262993130706,
+      0.19655930136815994
     ],
     "silhouette": {
-      "demo_by_smoking": 0.24208500978370062,
-      "demo_by_category": 0.05592607488694657,
-      "voc_by_smoking": 0.007846431029879275,
-      "voc_by_category": 0.23635772970472957
+      "demo_by_smoking": 0.278448309108771,
+      "demo_by_category": null,
+      "voc_by_smoking": 0.06015205286682022,
+      "voc_by_category": null
     },
     "interpretation": "Demographics PCA should cluster by smoking/sex (identity axes), not by disease. VOC PCA should show both disease-category structure and a smoking axis (benzene/toluene literature)."
   },
   "disease100": {
-    "n_diseases": 100,
+    "n_diseases": 40,
     "pca_var": [
-      0.20619344237907294,
-      0.14284477916860772
+      0.18899328979175903,
+      0.17585097988625428
     ],
     "top_cross_category": [
-      {
-        "disease_a": "multiple_sclerosis",
-        "disease_b": "rheumatoid_arthritis",
-        "category_a": "neurological",
-        "category_b": "inflammatory",
-        "cosine": 0.9945416954355305,
-        "cross_category": true
-      },
-      {
-        "disease_a": "hypertension",
-        "disease_b": "parkinson_disease",
-        "category_a": "cardiovascular",
-        "category_b": "neurological",
-        "cosine": 0.9922391393486003,
-        "cross_category": true
-      },
-      {
-        "disease_a": "hypertension",
-        "disease_b": "sickle_cell",
-        "category_a": "cardiovascular",
-        "category_b": "unspecified",
-        "cosine": 0.9921643161237647,
-        "cross_category": true
-      },
-      {
-        "disease_a": "hiv",
-        "disease_b": "hypertension",
-        "category_a": "infectious",
-        "category_b": "cardiovascular",
-        "cosine": 0.9913355944949137,
-        "cross_category": true
-      },
-      {
-        "disease_a": "hypertension",
-        "disease_b": "influenza",
-        "category_a": "cardiovascular",
-        "category_b": "infectious",
-        "cosine": 0.9912537528746556,
-        "cross_category": true
-      },
       {
         "disease_a": "ards",
         "disease_b": "creutzfeldt_jakob",
         "category_a": "pulmonary",
         "category_b": "neurological",
-        "cosine": 0.9909764538863304,
+        "cosine": 0.9902748581838201,
         "cross_category": true
       },
       {
         "disease_a": "alzheimer_disease",
-        "disease_b": "hypertension",
+        "disease_b": "arrhythmia",
         "category_a": "neurological",
         "category_b": "cardiovascular",
-        "cosine": 0.9908281789948885,
-        "cross_category": true
-      },
-      {
-        "disease_a": "migraine",
-        "disease_b": "rheumatoid_arthritis",
-        "category_a": "neurological",
-        "category_b": "inflammatory",
-        "cosine": 0.9906843235344414,
-        "cross_category": true
-      },
-      {
-        "disease_a": "ptsd",
-        "disease_b": "rheumatoid_arthritis",
-        "category_a": "neurological",
-        "category_b": "inflammatory",
-        "cosine": 0.9906843235344414,
+        "cosine": 0.9891759853217778,
         "cross_category": true
       },
       {
         "disease_a": "anxiety",
-        "disease_b": "rheumatoid_arthritis",
+        "disease_b": "arrhythmia",
         "category_a": "neurological",
-        "category_b": "inflammatory",
-        "cosine": 0.9906843235344414,
+        "category_b": "cardiovascular",
+        "cosine": 0.9882017760238667,
         "cross_category": true
       },
       {
-        "disease_a": "huntington",
-        "disease_b": "rheumatoid_arthritis",
+        "disease_a": "als",
+        "disease_b": "arrhythmia",
+        "category_a": "neurological",
+        "category_b": "cardiovascular",
+        "cosine": 0.9876406690822166,
+        "cross_category": true
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "covid19",
+        "category_a": "pulmonary",
+        "category_b": "infectious",
+        "cosine": 0.9866037549367999,
+        "cross_category": true
+      },
+      {
+        "disease_a": "covid19",
+        "disease_b": "creutzfeldt_jakob",
+        "category_a": "infectious",
+        "category_b": "neurological",
+        "cosine": 0.9843140288145912,
+        "cross_category": true
+      },
+      {
+        "disease_a": "arrhythmia",
+        "disease_b": "endometriosis",
+        "category_a": "cardiovascular",
+        "category_b": "unspecified",
+        "cosine": 0.9821053224035786,
+        "cross_category": true
+      },
+      {
+        "disease_a": "als",
+        "disease_b": "atopic_dermatitis",
         "category_a": "neurological",
         "category_b": "inflammatory",
-        "cosine": 0.9906843235344414,
+        "cosine": 0.9799169538306474,
+        "cross_category": true
+      },
+      {
+        "disease_a": "als",
+        "disease_b": "celiac",
+        "category_a": "neurological",
+        "category_b": "inflammatory",
+        "cosine": 0.9799169538306474,
+        "cross_category": true
+      },
+      {
+        "disease_a": "arrhythmia",
+        "disease_b": "atopic_dermatitis",
+        "category_a": "cardiovascular",
+        "category_b": "inflammatory",
+        "cosine": 0.9795404497646795,
+        "cross_category": true
+      },
+      {
+        "disease_a": "arrhythmia",
+        "disease_b": "celiac",
+        "category_a": "cardiovascular",
+        "category_b": "inflammatory",
+        "cosine": 0.9795404497646795,
         "cross_category": true
       },
       {
         "disease_a": "adhd",
-        "disease_b": "rheumatoid_arthritis",
+        "disease_b": "arrhythmia",
         "category_a": "neurological",
-        "category_b": "inflammatory",
-        "cosine": 0.9906843235344414,
+        "category_b": "cardiovascular",
+        "cosine": 0.9784218935159431,
         "cross_category": true
       }
     ],
     "top_same_category": [
       {
-        "disease_a": "adhd",
-        "disease_b": "huntington",
-        "category_a": "neurological",
-        "category_b": "neurological",
+        "disease_a": "atopic_dermatitis",
+        "disease_b": "celiac",
+        "category_a": "inflammatory",
+        "category_b": "inflammatory",
         "cosine": 1.0000000000000002,
         "cross_category": false
       },
       {
-        "disease_a": "adhd",
-        "disease_b": "anxiety",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "alcohol_use",
+        "disease_b": "breast_benign",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       },
       {
-        "disease_a": "anxiety",
-        "disease_b": "migraine",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "alcohol_use",
+        "disease_b": "anemia",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       },
       {
-        "disease_a": "adhd",
-        "disease_b": "stroke",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "anemia",
+        "disease_b": "breast_benign",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       },
       {
-        "disease_a": "adhd",
-        "disease_b": "ptsd",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "alcohol_use",
+        "disease_b": "chronic_pain",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       },
       {
-        "disease_a": "adhd",
-        "disease_b": "migraine",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "chronic_pain",
+        "disease_b": "diabetic_retinopathy",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       },
       {
-        "disease_a": "huntington",
-        "disease_b": "migraine",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "breast_benign",
+        "disease_b": "diabetic_retinopathy",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       },
       {
-        "disease_a": "anxiety",
-        "disease_b": "stroke",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 1.0000000000000002,
+        "disease_a": "anemia",
+        "disease_b": "diabetic_retinopathy",
+        "category_a": "unspecified",
+        "category_b": "unspecified",
+        "cosine": 0.9999999999999998,
         "cross_category": false
       }
     ],
     "interesting_connections": [
       {
-        "disease_a": "copd",
-        "disease_b": "lung_adenocarcinoma",
-        "category_a": "pulmonary",
-        "category_b": "cancer",
-        "n_shared_elevated": 6,
-        "shared_vocs": "2_butanone|heptanal|hexanal|nonanal|pentane|propionaldehyde",
-        "cosine": 0.7943703425483629,
-        "note": "Oxidative aldehydes overlap; cancer should still separate on ketone/aldehyde mix"
-      },
-      {
         "disease_a": "chronic_bronchitis",
         "disease_b": "copd",
         "category_a": "pulmonary",
         "category_b": "pulmonary",
-        "cosine": 0.9272613584390434,
+        "cosine": 0.927292901419215,
         "cross_category": false,
         "note": "Obstructive airway inflammation continuum (literature-expected)"
-      },
-      {
-        "disease_a": "gut_dysbiosis",
-        "disease_b": "inflammatory_bowel_disease",
-        "category_a": "microbiome",
-        "category_b": "inflammatory",
-        "n_shared_elevated": 13,
-        "shared_vocs": "acetaldehyde|ammonia|carbon_disulfide|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol",
-        "cosine": 0.5396901861454702,
-        "note": "Microbial sulfur / putrefaction VOCs"
-      },
-      {
-        "disease_a": "major_depressive_disorder",
-        "disease_b": "schizophrenia",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 0.9155739617627551,
-        "cross_category": false,
-        "note": "Neuro-oxidative + microbiome-adjacent breath features"
-      },
-      {
-        "disease_a": "malaria",
-        "disease_b": "sepsis",
-        "category_a": "infectious",
-        "category_b": "infectious",
-        "cosine": 0.1651199374343792,
-        "cross_category": false,
-        "note": "Systemic oxidative / infectious breath stress"
-      },
-      {
-        "disease_a": "alzheimer_disease",
-        "disease_b": "parkinson_disease",
-        "category_a": "neurological",
-        "category_b": "neurological",
-        "cosine": 0.9955825355002956,
-        "cross_category": false,
-        "note": "Neurodegeneration oxidative alkanes/aldehydes"
       },
       {
         "disease_a": "asthma",
         "disease_b": "copd",
         "category_a": "pulmonary",
         "category_b": "pulmonary",
-        "cosine": 0.8685845971521882,
+        "cosine": 0.8685851138717441,
         "cross_category": false,
         "note": "Airway oxidative alkane overlap with distinct ketone/ester accents"
-      },
-      {
-        "disease_a": "inflammatory_bowel_disease",
-        "disease_b": "sibo",
-        "category_a": "inflammatory",
-        "category_b": "microbiome",
-        "n_shared_elevated": 11,
-        "shared_vocs": "acetaldehyde|ammonia|dimethyl_amine|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine",
-        "cosine": 0.5425750864069679,
-        "note": "High shared elevated-VOC bridge across categories"
-      },
-      {
-        "disease_a": "clostridioides_difficile_infection",
-        "disease_b": "inflammatory_bowel_disease",
-        "category_a": "microbiome",
-        "category_b": "inflammatory",
-        "n_shared_elevated": 11,
-        "shared_vocs": "ammonia|dimethyl_amine|dimethyl_disulfide|ethanol|ethyl_acetate|hydrogen_sulfide|indole|methyl_mercaptan|phenol|propanol|trimethylamine",
-        "cosine": 0.5232864233943322,
-        "note": "High shared elevated-VOC bridge across categories"
-      },
-      {
-        "disease_a": "ards",
-        "disease_b": "lung_squamous_cell_carcinoma",
-        "category_a": "pulmonary",
-        "category_b": "cancer",
-        "n_shared_elevated": 8,
-        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.9486041749491592,
-        "note": "High shared elevated-VOC bridge across categories"
-      },
-      {
-        "disease_a": "covid19",
-        "disease_b": "lung_squamous_cell_carcinoma",
-        "category_a": "infectious",
-        "category_b": "cancer",
-        "n_shared_elevated": 8,
-        "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.944703713118131,
-        "note": "High shared elevated-VOC bridge across categories"
       },
       {
         "disease_a": "ards",
@@ -1501,7 +1530,7 @@
         "category_b": "cancer",
         "n_shared_elevated": 8,
         "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.7325018606192969,
+        "cosine": 0.7358068388906511,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
@@ -1511,41 +1540,91 @@
         "category_b": "infectious",
         "n_shared_elevated": 8,
         "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.7319542743522098,
-        "note": "High shared elevated-VOC bridge across categories"
-      },
-      {
-        "disease_a": "covid19",
-        "disease_b": "pancreatic_adenocarcinoma",
-        "category_a": "infectious",
-        "category_b": "cancer",
-        "n_shared_elevated": 8,
-        "shared_vocs": "2_butanone|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.6914199503365537,
+        "cosine": 0.7243866702509388,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
         "disease_a": "ards",
-        "disease_b": "pancreatic_adenocarcinoma",
+        "disease_b": "covid19",
         "category_a": "pulmonary",
-        "category_b": "cancer",
-        "n_shared_elevated": 8,
-        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.6873351631693211,
+        "category_b": "infectious",
+        "n_shared_elevated": 7,
+        "shared_vocs": "acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9866037549367999,
         "note": "High shared elevated-VOC bridge across categories"
       },
       {
         "disease_a": "ards",
-        "disease_b": "glioblastoma",
+        "disease_b": "cancer_kidney",
         "category_a": "pulmonary",
         "category_b": "cancer",
-        "n_shared_elevated": 8,
-        "shared_vocs": "acetaldehyde|acetone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
-        "cosine": 0.6440187649103146,
+        "n_shared_elevated": 7,
+        "shared_vocs": "acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9509846033450221,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "cancer_kidney",
+        "disease_b": "covid19",
+        "category_a": "cancer",
+        "category_b": "infectious",
+        "n_shared_elevated": 7,
+        "shared_vocs": "2_butanone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9438281039951125,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "cervical_cancer",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 7,
+        "shared_vocs": "acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.940001772517157,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "cancer_bladder",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 7,
+        "shared_vocs": "acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9326237057517267,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "cervical_cancer",
+        "disease_b": "covid19",
+        "category_a": "cancer",
+        "category_b": "infectious",
+        "n_shared_elevated": 7,
+        "shared_vocs": "2_butanone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9319980395419383,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "ards",
+        "disease_b": "endometrial_cancer",
+        "category_a": "pulmonary",
+        "category_b": "cancer",
+        "n_shared_elevated": 7,
+        "shared_vocs": "acetaldehyde|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.928039016961258,
+        "note": "High shared elevated-VOC bridge across categories"
+      },
+      {
+        "disease_a": "cancer_bladder",
+        "disease_b": "covid19",
+        "category_a": "cancer",
+        "category_b": "infectious",
+        "n_shared_elevated": 7,
+        "shared_vocs": "2_butanone|ethanol|heptanal|hexanal|nonanal|octanal|pentane",
+        "cosine": 0.9245125864453471,
         "note": "High shared elevated-VOC bridge across categories"
       }
     ],
-    "mean_cross_cosine": 0.6388362946276953
+    "mean_cross_cosine": 0.6631169920611379
   },
   "bugs": {
     "fixed": [
@@ -1587,12 +1666,12 @@
       }
     },
     "focus_centroid_l2_after_fix": {
-      "copd__vs__chronic_bronchitis": 2.9900657429485524,
-      "copd__vs__lung_adenocarcinoma": 4.112504449843492,
-      "copd__vs__lung_squamous_cell_carcinoma": 3.2791025493412254,
-      "chronic_bronchitis__vs__lung_adenocarcinoma": 4.003781813150507,
-      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.4606699360247353,
-      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.711961064291403
+      "copd__vs__chronic_bronchitis": 2.9899990322898873,
+      "copd__vs__lung_adenocarcinoma": 4.315034531526776,
+      "copd__vs__lung_squamous_cell_carcinoma": 2.8562483725565784,
+      "chronic_bronchitis__vs__lung_adenocarcinoma": 4.12455073345699,
+      "chronic_bronchitis__vs__lung_squamous_cell_carcinoma": 2.3556109240336833,
+      "lung_adenocarcinoma__vs__lung_squamous_cell_carcinoma": 2.8166397295800145
     }
   }
 }

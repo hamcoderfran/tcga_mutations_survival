@@ -40,6 +40,9 @@ See [QUICKSTART.md](../../QUICKSTART.md) and [great_disease_stack/README.md](../
 | Vision suite (50 diseases) | [`VISION_EVAL_REPORT.md`](VISION_EVAL_REPORT.md) · [`vision_eval_latest.json`](vision_eval_latest.json) | `voc eval-vision` |
 | Stress-hard (50 adversarial) | [`STRESS_HARD_REPORT.md`](STRESS_HARD_REPORT.md) | `voc eval-stress-hard` |
 | Stress baseline / after | [`STRESS_HARD_BASELINE.md`](STRESS_HARD_BASELINE.md) · [`STRESS_HARD_AFTER.md`](STRESS_HARD_AFTER.md) | — |
+| Literature concordance | [`lit_compare/LITERATURE_COMPARE.md`](lit_compare/LITERATURE_COMPARE.md) | `voc eval-lit-compare` |
+| Mental-health lit (de-circularized) | [`mental_health/mental_health_lit_eval.md`](mental_health/mental_health_lit_eval.md) | `voc eval-mental-health` (raw / panel-masked / mechanism-backed) |
+| Coverage audit (open compound universe) | [`COVERAGE_AUDIT.md`](COVERAGE_AUDIT.md) | `voc eval-coverage --offline` |
 | 1000-patient cohort | [`cohort_1000/COHORT_1000.md`](cohort_1000/COHORT_1000.md) | `voc eval-patient-cohort` |
 | Cohort embeddings / patients | [`cohort_1000/`](cohort_1000/) | PCA/UMAP PNGs + CSVs |
 
