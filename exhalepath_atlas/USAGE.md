@@ -105,6 +105,13 @@ voc eval-malaria-diagnostic
 # Confounder diligence: ST003200 smoking/sex/age + Sci Data age/sex strata
 voc eval-confounder-ptr
 
+# Irreplaceable VOC OS diligence pillars (research enablement — not clinical SOTA)
+voc eval-leaderboard                 # locked patient nested AUROC × split SHA256
+voc partner-diligence                # OMNI/BreathVOC → lock-split → unmapped-rate
+voc panel-decision --disease malaria # proceed_research | hold | stop memo
+voc export-claim-ledger --quantified-only
+voc audit-voc-aliases --csv data/datasources/partner_loso/PARTNER_SITE_A_omni_feature_table.csv
+
 # Sellability pack — cut the cost of wrong VOC panels (not AUROC theater)
 voc demo-close --disease malaria
 voc diligence-loso

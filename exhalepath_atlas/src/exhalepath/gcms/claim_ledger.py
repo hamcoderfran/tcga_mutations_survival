@@ -164,11 +164,60 @@ def build_claim_ledger(
     }
 
 
-def export_claim_ledger(out_path: Path, **kwargs: Any) -> Path:
-    ledger = build_claim_ledger(**kwargs)
+def filter_claim_ledger(
+    ledger: dict[str, Any],
+    *,
+    grades: list[str] | None = None,
+    quantified_only: bool = False,
+    exclude_circular: bool = False,
+) -> dict[str, Any]:
+    """Filter ledger claims for non-circular / quantified-first UX (Pillar 4)."""
+    claims = list(ledger.get("claims") or [])
+    if quantified_only:
+        grades = ["quantified"]
+    if grades:
+        allowed = set(grades)
+        claims = [c for c in claims if c.get("evidence_grade") in allowed]
+    if exclude_circular:
+        claims = [c for c in claims if not c.get("circularity_risk")]
+    by_grade: dict[str, int] = {}
+    for c in claims:
+        g = str(c.get("evidence_grade") or "unknown")
+        by_grade[g] = by_grade.get(g, 0) + 1
+    out = dict(ledger)
+    out["claims"] = claims
+    out["n_claims"] = len(claims)
+    out["by_evidence_grade"] = by_grade
+    out["filter"] = {
+        "grades": grades,
+        "quantified_only": quantified_only,
+        "exclude_circular": exclude_circular,
+    }
+    return out
+
+
+def export_claim_ledger(
+    out_path: Path,
+    *,
+    disease_ids: list[str] | None = None,
+    include_atlas_priors: bool = True,
+    quantified_only: bool = False,
+    exclude_circular: bool = False,
+    grades: list[str] | None = None,
+) -> Path:
+    ledger = build_claim_ledger(
+        disease_ids=disease_ids, include_atlas_priors=include_atlas_priors
+    )
+    if quantified_only or exclude_circular or grades:
+        ledger = filter_claim_ledger(
+            ledger,
+            grades=grades,
+            quantified_only=quantified_only,
+            exclude_circular=exclude_circular,
+        )
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(ledger, indent=2))
+    out_path.write_text(json.dumps(ledger, indent=2) + "\n")
     md = out_path.with_suffix(".md")
     lines = [
         "# VOC↔disease claim ledger",
@@ -176,24 +225,38 @@ def export_claim_ledger(out_path: Path, **kwargs: Any) -> Path:
         f"Generated: {ledger['generated_utc']}",
         f"Claims: **{ledger['n_claims']}** across **{ledger['n_diseases']}** diseases",
         "",
+        f"> {ledger.get('honesty')}",
+        "",
         "## By evidence grade",
         "",
     ]
     for g, n in sorted((ledger.get("by_evidence_grade") or {}).items(), key=lambda x: -x[1]):
         lines.append(f"- `{g}`: {n}")
-    lines += ["", f"> {ledger.get('honesty')}", ""]
-    # top quantified
-    quant = [c for c in ledger["claims"] if c.get("evidence_grade") == "quantified"][:15]
+    filt = ledger.get("filter") or {}
+    if any(filt.get(k) for k in ("quantified_only", "exclude_circular", "grades")):
+        lines += ["", f"Filter applied: `{filt}`", ""]
+    # Prefer quantified claims first (non-circular default UX)
+    quant = [c for c in ledger["claims"] if c.get("evidence_grade") == "quantified"]
     if quant:
-        lines += ["## Sample quantified claims", ""]
-        for c in quant:
+        lines += ["", "## Quantified claims (preferred for diligence)", ""]
+        for c in quant[:40]:
             lines.append(
                 f"- `{c['disease_id']}` / `{c['voc_id']}` log2fc={c.get('log2fc')} "
                 f"doi:{c.get('doi')}"
             )
         lines.append("")
+    circular = [c for c in ledger["claims"] if c.get("circularity_risk")]
+    if circular and not exclude_circular:
+        lines += [
+            "## Circularity-risk claims",
+            "",
+            f"{len(circular)} claims flagged (atlas_prior / directional_only / mixed overlap). "
+            "Prefer `voc eval-mental-health` panel-masked + mechanism-backed metrics "
+            "and `--quantified-only` ledger exports for non-circular defaults.",
+            "",
+        ]
     md.write_text("\n".join(lines))
     return out_path
 
 
-__all__ = ["build_claim_ledger", "export_claim_ledger"]
+__all__ = ["build_claim_ledger", "export_claim_ledger", "filter_claim_ledger"]
